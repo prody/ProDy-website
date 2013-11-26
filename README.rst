@@ -1,4 +1,4 @@
 ProDy-website
 =============
 
-This is the ProDy website (http://prody.csb.pitt.edu) repository.
+This repository contains source files for the `ProDy website <http://prody.csb.pitt.edu>`_.
