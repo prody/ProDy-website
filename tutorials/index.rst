@@ -1,6 +1,6 @@
-.. _tutorials:
-
 .. currentmodule:: prody
+
+.. _tutorials:
 
 *******************************************************************************
 ProDy Tutorials
