@@ -63,5 +63,4 @@ build: archive pdf
 
 copy: build
 	/bin/mv -f $(BASENAME).pdf ../../_build/html/tutorials/$(BASENAME)/
-	/bin/mv -f $(BASENAME)_files.zip ../../_build/html/tutorials/$(BASENAME)/
-	/bin/mv -f $(BASENAME)_files.tgz ../../_build/html/tutorials/$(BASENAME)/
+	if [ -f "$(BASENAME)_files.tgz" ]; then /bin/mv -f $(BASENAME)_files.* ../../_build/html/tutorials/$(BASENAME)/; fi
