@@ -16,7 +16,7 @@ clean:
 	-rm -rf $(BUILDDIR)/*
 
 clone:
-	if [ ! -d "ProDy/.git" ]; then git clone git@github.com:prody/ProDy.git; fi
+	if [ ! -d "ProDy/.git" ]; then git clone https://github.com/prody/ProDy.git; fi
 
 pull: clone
 	cd ProDy; git pull
