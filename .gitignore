@@ -1,4 +1,8 @@
 *.py[cod]
+*.pdf
+*.zip
+*.tgz
+files.txt
 
 ProDy
 manual
