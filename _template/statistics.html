@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+{% block body %}
+          <div class="row">
+            <div class="span12">
+              <h2>Statistics</h2>
+              <h3>Visitor Statistics</h3>
+              <p>
+                ProDy is widely used around the world. Below table and map overlay from
+                <a href="http://www.google.com/analytics/">Google Analytics</a>
+                shows the origin of visitors to ProDy Website from Jun 2013 to Dec 2013.
+
+              </p>
+            </div>
+            <div class="span4">
+              <img src="_static/visitor_country_list.png" width="260">
+            </div>
+            <div class="span8">
+              <img src="_static/visitor_country_map.png" width="600">
+            </div>
+            <div class="span12">
+              <h3>Code Statistics</h3>
+              <p>
+                ProDy is developed in Python and C. Detailed breakdown of lines of code lines
+                and other factoids can be found on <a href="https://www.ohloh.net/p/ProDy">Ohloh</a>.
+              </p>
+            </div>
+            <div class="span5">
+              <script type="text/javascript" src="http://www.ohloh.net/p/486435/widgets/project_languages.js"></script>
+            </div>
+            <div class="span7">
+              <script type="text/javascript" src="http://www.ohloh.net/p/486435/widgets/project_cocomo.js"></script>
+          </div>
+        </div>
+{% endblock %}

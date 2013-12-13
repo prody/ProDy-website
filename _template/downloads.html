@@ -1,0 +1,100 @@
+{% extends "index.html" %}
+{% block body %}
+          <div class="row">
+            <div class="span12">
+              <h2>Downloads</h2>
+              <h3>Release Notes</h3>
+              <p>{%- include "release.html" %}</p>
+              <h3>Installation</h3>
+              <h5><span class="badge badge-warning">0</span> Using a Package Manager</h5>
+              <p>You can install <i>ProDy</i> and <i>Evol</i> using
+                <a href="http://www.pip-installer.org/">pip</a>,
+                <code>pip install -U ProDy</code></a>, or by following these steps:</p>
+            </div>
+            <div class="span6">
+              <h5><span class="badge badge-warning">1</span> Requirements</h5>
+              You need to install the following software before installing <i>ProDy:</i>
+
+              <dl>
+                <dt><a href="http://www.python.org/download/" target="_blank">Python</a></dt>
+                <dd>We recommend that you use 2.7, 3.2 or later.
+                    For Windows, choose a <strong>32-bit</strong> Python installer.
+                </dd>
+                <dt><a href="http://sourceforge.net/projects/numpy/files/NumPy/" target="_blank">NumPy</a></dt>
+                <dd>We recommend that you use the latest version of NumPy, but v1.5 and later are supported.
+                    For Windows, make sure that you choose compatible versions of NumPy and <i>ProDy</i>.
+                </dd>
+              </dl>
+              <h5><span class="badge badge-warning">2</span> Download</h5>
+              <span class="help-inline">
+                Select a file:
+                <div class="btn-group dropup">
+                  <a class="btn btn-primary" id="download"><i class="icon-download-alt icon-white"></i> Select a ProDy download</a>
+                  <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+                  <ul class="dropdown-menu" id="downloads">
+                    <li class="nav-header">Source Distributions</li>
+                    <li><a href="http://pypi.python.org/packages/source/P/ProDy/ProDy-{{ version }}.tar.gz">ProDy-{{ version }}.tar.gz</a></li>
+                    <li><a href="http://pypi.python.org/packages/source/P/ProDy/ProDy-{{ version }}.zip">ProDy-{{ version }}.zip</a></li>
+                    <li class="nav-header">Recommended for Windows</li>
+                    <li><a href="http://pypi.python.org/packages/2.7/P/ProDy/ProDy-{{ version }}.win32-py2.7.exe">ProDy-{{ version }}.win32-py2.7.exe</a></li>
+                    <li><a href="http://pypi.python.org/packages/3.2/P/ProDy/ProDy-{{ version }}.win32-py3.2.exe">ProDy-{{ version }}.win32-py3.2.exe</a></li>
+                    <li><a href="http://pypi.python.org/packages/3.3/P/ProDy/ProDy-{{ version }}.win32-py3.3.exe">ProDy-{{ version }}.win32-py3.3.exe</a></li>
+                    <li class="nav-header">Other Options for Windows</li>
+                    <li><a href="http://pypi.python.org/packages/2.6/P/ProDy/ProDy-{{ version }}.win32-py2.6.exe">ProDy-{{ version }}.win32-py2.6.exe</a></li>
+                    <li><a href="http://pypi.python.org/packages/3.1/P/ProDy/ProDy-{{ version }}.win32-py3.1.exe">ProDy-{{ version }}.win32-py3.1.exe</a></li>
+                    <li><a href="http://pypi.python.org/packages/2.6/P/ProDy/ProDy-{{ version }}.win32-py2.6-numpy1.5.exe">ProDy-{{ version }}.win32-py2.6-numpy1.5.exe</a></li>
+                    <li><a href="http://pypi.python.org/packages/2.7/P/ProDy/ProDy-{{ version }}.win32-py2.7-numpy1.5.exe">ProDy-{{ version }}.win32-py2.7-numpy1.5.exe</a></li>
+                    <li><a href="http://pypi.python.org/packages/3.1/P/ProDy/ProDy-{{ version }}.win32-py3.1-numpy1.5.exe">ProDy-{{ version }}.win32-py3.1-numpy1.5.exe</a></li>
+                  </ul>
+                </div>
+              </span>
+            </div>
+            <div class="span6">
+              <h5><span class="badge badge-warning">3</span> Installation</h5>
+
+              <ul class="nav nav-tabs" id="myTab">
+                <li class="active"><a href="#linux">Linux & Mac OS</a></li>
+                <li><a href="#windows">Windows</a></li>
+              </ul>
+
+              <div class="tab-content">
+                <div class="tab-pane active" id="linux">
+                  <p>Extract tarball contents and run setup.py as follows:</p>
+
+                  <pre>$ tar -xzf ProDy-{{ version }}.tar.gz
+$ cd ProDy-{{ version }}
+$ python setup.py build
+$ sudo python setup.py install</pre>
+                If you don’t have root access, see alternate installation schemes in <a href="http://docs.python.org/2/install/">Installing Python Modules</a>.
+
+                </div>
+                <div class="tab-pane" id="windows">
+                  <p>Execute <code>ProDy-{{ version }}.win32-py2.z.exe</code> file and follow installation steps.</p>
+
+                  <p>To be able use ProDy Applications and Evol Applications in command prompt (<code>cmd.exe</code>), append Python and scripts folders
+                    (e.g. <code>C:\Python27</code> and <code>C:\Python27\Scripts</code>) to <code>PATH</code> environment variable.</p>
+                </div>
+              </div>
+
+              <script>
+                $('#myTab a').click(function (e) {
+                  e.preventDefault();
+                  $(this).tab('show');
+                })
+                $(function () {
+                  $('#myTab a:first').tab('show');
+                })
+              </script>
+              <h5><span class="badge badge-warning">4</span> Recommendations</h5>
+
+              We recommend that you also install
+              <a href="http://matplotlib.org/downloads.html" target="_blank">Matplotlib</a> for plotting, and
+              <a href="https://pypi.python.org/pypi/ipython#downloads" target="_blank">IPython</a> for interactive usage.
+              On Windows, you need to install
+              <a href="https://pypi.python.org/pypi/pyreadline/2.0" target="_blank">pyreadline</a>
+              for colorful IPython sessions.
+
+            </div>
+          </div>
+
+{% endblock %}

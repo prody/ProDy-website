@@ -32,7 +32,14 @@ copyright = u'2010-2014, University of Pittsburgh'
 
 html_favicon = 'manual/_static/favicon.ico'
 
-html_additional_pages = {'index': 'index.html'}
+html_additional_pages = {
+    'index': 'prody.html',
+    'nmwiz': 'nmwiz.html',
+    'evol': 'evol.html',
+    'downloads': 'downloads.html',
+    'tutorials': 'tutorials.html',
+    'statistics': 'statistics.html',
+}
 
 # -- Options for LaTeX output --------------------------------------------------
 latex_logo = 'manual/_static/logo.png'

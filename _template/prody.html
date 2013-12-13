@@ -1,0 +1,74 @@
+{% extends "index.html" %}
+{% block body %}
+
+          <div class="row">
+            <div class="span12">
+             <div class="span5 pull-right" style="padding-top: 20px">
+                <div class="well">
+                  <div id="panel-1-title" class="slide-title"></div>
+                  <i class="icon-circle-arrow-right slide-arrow" onclick="nextSlide(1);" title="Next slide"></i>
+                  <i class="icon-circle-arrow-left slide-arrow" onclick="prevSlide(1);" title="Previous slide"></i>
+                  <div id="panel-1-slide" class="slide-content"></div>
+                  <script>showSlide(1, -1);</script>
+                </div>
+              </div>
+              <h2><i>ProDy</i> Project</h2>
+              <p>
+                <i>ProDy</i> is a free and open-source Python package for protein structural dynamics analysis.
+                It is designed as a flexible and responsive API suitable for interactive usage and application development.
+              </p>
+
+              <h4>Structure analysis</h4>
+              <p>
+                <i>ProDy</i> has fast and flexible
+                <a href="tutorials/structure_analysis/pdbfiles.html">PDB</a> and
+                <a href="tutorials/trajectory_analysis/trajectory.html">DCD</a> file parsers,
+                and powerful and customizable <a href="manual/reference/atomic/select.html">atom selections</a>
+                for <a href="tutorials/structure_analysis/contacts.html">contact identification</a>,
+                <a href="tutorials/structure_analysis/compare.html">structure comparisons</a>,
+                and rapid implementation of new methods.
+              </p>
+
+              <h4>Dynamics analysis</h4>
+              <ul>
+                <li> Principal component analysis can be performed for
+                  <ul>
+                    <li>heterogeneous <a href="tutorials/ensemble_analysis/xray.html">X-ray structures</a> (missing residues, mutations)</li>
+                    <li>mixed structural datasets <a href="tutorials/ensemble_analysis/blast.html">from Blast search</a></li>
+                    <li><a href="tutorials/ensemble_analysis/nmr.html">NMR models</a> and <a href="tutorials/trajectory_analysis/eda.html">MD snapshots</a> (essential dynamics analysis)</li>
+                  </ul>
+                </li>
+                <li>
+                  Normal mode analysis can be performed using
+                  <ul>
+                  <li> <a href="tutorials/enm_analysis/anm.html">Anisotropic network model</a> (ANM)</li>
+                  <li> <a href="tutorials/enm_analysis/gnm.html">Gaussian network model</a> (GNM)</li>
+                  <li> ANM/GNM with <a href="tutorials/enm_analysis/gamma.html">distance</a> and <a href="manual/reference/dynamics/gamma.html">property</a> dependent force constants </li>
+                  </ul>
+                </li>
+              </ul>
+              <p>
+                  Dynamics from experimental datasets, theoretical models and simulations can be visualized
+                  using <a data-target="#carousel" data-slide-to="2" href="#nmwiz"><i>NMWiz</i></a>.
+              </p>
+
+              <p>
+                <small>
+                  <strong>Reference</strong><br>
+                  Bakan A, Meireles LM, Bahar I
+                  <a href="http://bioinformatics.oxfordjournals.org/content/27/11/1575">
+                    ProDy: Protein Dynamics Inferred from Theory and Experiments
+                  </a> <strong>2011</strong> <em>Bioinformatics</em> 27(11):1575-1577
+                </small>
+              </p>
+              <p>
+                <small>
+                  <strong>Funding</strong><br>
+                Continued development of <i>ProDy</i> is supported by
+                <a href="http://www.nih.gov/" target="_blank">NIH</a> through R01 GM099738 award.
+                </small>
+              </p>
+            </div>
+          </div>
+
+{% endblock %}

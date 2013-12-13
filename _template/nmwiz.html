@@ -1,0 +1,52 @@
+{% extends "index.html" %}
+{% block body %}
+
+        <div class="row">
+          <div class="span12">
+            <div class="span5 pull-right" style="padding-top: 20px">
+              <div class="well">
+                <div id="panel-3-title" class="slide-title"></div>
+                <i class="icon-circle-arrow-right slide-arrow" onclick="nextSlide(3);" title="Next slide"></i>
+                <i class="icon-circle-arrow-left slide-arrow" onclick="prevSlide(3);" title="Previous slide"></i>
+                <div id="panel-3-slide" class="slide-content"></div>
+                <script>showSlide(3, -1);</script>
+              </div>
+            </div>
+            <h2>Normal Mode Wizard</h2>
+            <p>Normal Mode Wizard (NMWiz) is a
+            <a href="http://www.ks.uiuc.edu/Research/vmd/">VMD</a>
+            plugin designed for visual comparative
+            analysis of normal mode data, i.e. modes may come from principal component,
+            essential dynamics, normal mode analysis or may be any vector describing a
+            molecular motion.</p>
+
+            <h4>Features</h4>
+            <p><i>NMWiz</i>, designed as a GUI for <a data-target="#carousel" data-slide-to="0" href="#prody"><i>ProDy</i></a>, can be used to</p>
+
+            <ul class="simple">
+              <li>perform ANM, GNM, and PCA/EDA calculations </li>
+              <li>draw customizable normal mode arrows</li>
+              <li>make animations (sample conformations)</li>
+              <li>make interactive square-fluctuations plots</li>
+              <li>compare two structures and draw deformation arrows</li>
+            </ul>
+
+
+            <h4>Download</h4>
+            <p><i>NMWiz</i> is distributed with <a href="http://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD">VMD</a>
+            since v1.9.1. For updates that are not yet available in VMD latest release, check out
+            <a href="tutorials/nmwiz_tutorial/intro.html">Getting NMWiz</a>.
+            </p>
+            <p>
+              <small>
+              <strong>Reference</strong><br>
+              <a href="http://bioinformatics.oxfordjournals.org/content/27/11/1575">ProDy: Protein Dynamics Inferred from Theory and Experiments</a>
+              Bakan A, Meireles LM, Bahar I <strong>2011</strong> <em>Bioinformatics</em> 27(11):1575-1577
+              </small>
+            </p>
+          </div>
+        </div>
+
+
+
+{% endblock %}
