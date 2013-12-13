@@ -7,7 +7,8 @@ files.txt
 ProDy
 manual
 _build
+*/*/_static
+_static/figures
 _sphinxext
-_static
 _theme
 _workdir

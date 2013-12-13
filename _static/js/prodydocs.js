@@ -67,6 +67,8 @@ $(document).ready(function() {
       carousel.carousel(3);
     } else if (url.search('tutorials') > -1) {
       carousel.carousel(4);
+    } else if (url.search('statistics') > -1) {
+      carousel.carousel(5);
     }
   } else {
     // Downloads
