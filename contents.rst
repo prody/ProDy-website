@@ -3,11 +3,18 @@ ProDy
 *****
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
    manual/index
-   tutorials/index
+   tutorials/prody_tutorial/index
+   tutorials/evol_tutorial/index
+   tutorials/nmwiz_tutorial/index
+   tutorials/structure_analysis/index
+   tutorials/enm_analysis/index
+   tutorials/ensemble_analysis/index
+   tutorials/trajectory_analysis/index
+   tutorials/conformational_sampling/index
 
 
 * :ref:`genindex`

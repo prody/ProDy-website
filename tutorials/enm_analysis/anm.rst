@@ -156,7 +156,7 @@ Get the slowest mode by indexing :class:`.ANM` instance as follows:
 Write NMD file
 -------------------------------------------------------------------------------
 
-ANM results in NMD format can be visualized using NMWiz_ VMD_ plugin.
+ANM results in NMD format can be visualized using :ref:`nmwiz` VMD_ plugin.
 The following statement writes the slowest 3 ANM modes into an NMD file:
 
 .. ipython:: python

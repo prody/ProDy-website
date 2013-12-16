@@ -18,8 +18,7 @@ IPython_ is strongly recommended.
 Getting Started
 -------------------------------------------------------------------------------
 
-To follow this tutorial, you will need the following files which can be
-downloaded from :ref:`tutorials`.
+To follow this tutorial, you will need the following files:
 
 .. files.txt will be automatically generated
 
