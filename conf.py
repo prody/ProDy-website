@@ -34,11 +34,11 @@ html_favicon = 'manual/_static/favicon.ico'
 
 html_additional_pages = {
     'index': 'prody.html',
-    'nmwiz': 'nmwiz.html',
-    'evol': 'evol.html',
-    'downloads': 'downloads.html',
-    'tutorials': 'tutorials.html',
-    'statistics': 'statistics.html',
+    'nmwiz/index': 'nmwiz.html',
+    'evol/index': 'evol.html',
+    'downloads/index': 'downloads.html',
+    'tutorials/index': 'tutorials.html',
+    'statistics/index': 'statistics.html',
 }
 
 # -- Options for LaTeX output --------------------------------------------------
