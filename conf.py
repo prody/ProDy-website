@@ -16,6 +16,7 @@ sys.path.append(os.path.abspath('manual/sphinxext'))
               #'ipython_directive']
 
 exclude_patterns.append('ProDy')
+exclude_patterns.append('DruGUI')
 exclude_patterns.append('tutorials/template')
 exclude_patterns.extend(glob.glob('tutorials/**/acknowledgments.rst'))
 templates_path = ['_template']
@@ -36,9 +37,15 @@ html_additional_pages = {
     'index': 'prody.html',
     'nmwiz/index': 'nmwiz.html',
     'evol/index': 'evol.html',
+    'drugui/index': 'drugui.html',
     'downloads/index': 'downloads.html',
     'tutorials/index': 'tutorials.html',
     'statistics/index': 'statistics.html',
+}
+
+html_sidebars = {
+    'tutorials/drugui_tutorial/**': ['toolbox.html', 'citedrugui.html'],
+    'tutorials/nmwiz_tutorial/**': ['toolbox.html', 'howtocite.html']
 }
 
 # -- Options for LaTeX output --------------------------------------------------

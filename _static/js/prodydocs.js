@@ -37,18 +37,22 @@ $(document).ready(function() {
     logo.src = "http://www.csb.pitt.edu/ProDy/_static/nmwiz.png";
   } else if (url.search("evol") > -1) {
     logo.src = "http://www.csb.pitt.edu/ProDy/_static/evol.png";
+  } else if (url.search("drugui") > -1) {
+    logo.src = "http://www.csb.pitt.edu/ProDy/_static/drugui_logo.png";
   }
   if ($('#homepagenav').length) {
     if (url.search("evol") > -1) {
       $('.nav-pills > li:nth-child(2)').addClass('active');
     } else if (url.search("nmwiz") > -1) {
       $('.nav-pills > li:nth-child(3)').addClass('active');
-    } else if (url.search("downloads") > -1) {
+    } else if (url.search("drugui") > -1) {
       $('.nav-pills > li:nth-child(4)').addClass('active');
-    } else if (url.search("tutorials") > -1) {
+    } else if (url.search("downloads") > -1) {
       $('.nav-pills > li:nth-child(5)').addClass('active');
-    } else if (url.search("statistics") > -1) {
+    } else if (url.search("tutorials") > -1) {
       $('.nav-pills > li:nth-child(6)').addClass('active');
+    } else if (url.search("statistics") > -1) {
+      $('.nav-pills > li:nth-child(7)').addClass('active');
     } else {
       $('.nav-pills > li:nth-child(1)').addClass('active');
     }

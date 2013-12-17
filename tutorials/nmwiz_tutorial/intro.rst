@@ -39,7 +39,6 @@ type the following command line in the VMD console::
 Getting Started
 -------------------------------------------------------------------------------
 
-To follow this tutorial, you will need the following files which can be
-downloaded from :ref:`tutorials`.
+To follow this tutorial, you will need the following files:\
 
 .. literalinclude:: files.txt

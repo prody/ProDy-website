@@ -18,6 +18,10 @@ clean:
 clone:
 	if [ ! -d "ProDy/.git" ]; then git clone https://github.com/prody/ProDy.git; fi
 
+drugui:
+	if [ ! -d "tutorials/drugui_tutorial/.git" ]; then git clone https://github.com/prody/DruGUI.git tutorials/drugui_tutorial; fi
+	cd tutorials/drugui_tutorial; git pull
+
 pull: clone
 	cd ProDy; git pull
 
@@ -39,7 +43,7 @@ workdir:
 		fi; \
 	done
 
-html: devel link workdir
+html: devel link drugui workdir
 	cd $(WORKDIR); $(SPHINXBUILD) -b html -d ../$(BUILDDIR)/doctrees ../ ../$(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."

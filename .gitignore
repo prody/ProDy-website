@@ -6,6 +6,7 @@ files.txt
 
 ProDy
 manual
+tutorials/drugui_tutorial/
 _build
 */*/_static
 _static/figures
