@@ -15,37 +15,36 @@
           </div>
 
             <h2><i>DruGUI</i> for Druggability Analysis</h2>
-            <p>Normal Mode Wizard (NMWiz) is a
+            <p><i>DruGUI</i> is a
             <a href="http://www.ks.uiuc.edu/Research/vmd/">VMD</a>
-            plugin designed for visual comparative
-            analysis of normal mode data, i.e. modes may come from principal component,
-            essential dynamics, normal mode analysis or may be any vector describing a
-            molecular motion.</p>
+            plugin designed for setup and analysis of simulations containing
+            small organic molecules (probes) for druggability assessment.
+            <i>DruGUI</i> can incorporate a diverse set of molecules
+            from CHARMM General Force Field
+            (<a href="http://mackerell.umaryland.edu/~kenno/cgenff/">CGenFF</a>)
+            into simulations.</p>
 
             <h4>Features</h4>
-            <p><i>NMWiz</i>, designed as a GUI for <a data-target="#carousel" data-slide-to="0" href="{{ pathto('', 1) }}"><i>ProDy</i></a>, can be used to</p>
+            <p><i>DruGUI</i> can be used to</p>
 
             <ul class="simple">
-              <li>perform ANM, GNM, and PCA/EDA calculations </li>
-              <li>draw customizable normal mode arrows</li>
-              <li>make animations (sample conformations)</li>
-              <li>make interactive square-fluctuations plots</li>
-              <li>compare two structures and draw deformation arrows</li>
+              <li>setup a simulation box that contains diverse probe molecules </li>
+              <li>calculate probe molecule occupancy grids</li>
+              <li>analyze druggability of target protein</li>
+              <li>perform druggability analysis of specific sites</li>
             </ul>
 
 
             <h4>Download</h4>
-            <p><i>NMWiz</i> is distributed with <a href="http://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD">VMD</a>
-            since v1.9.1. For updates that are not yet available in VMD latest release, check out
-            <a href="{{ pathto('tutorials/nmwiz_tutorial/intro') }}">Getting NMWiz</a>.
+            <p><i>DruGUI</i> plugin files can be obtained from
+            <a href="{{ pathto('tutorials/drugii_tutorial/intro') }}">Getting DruGUI</a>.
             </p>
-            <p>
-              <small>
-              <strong>Reference</strong><br>
-              <a href="http://bioinformatics.oxfordjournals.org/content/27/11/1575">ProDy: Protein Dynamics Inferred from Theory and Experiments</a>
-              Bakan A, Meireles LM, Bahar I <strong>2011</strong> <em>Bioinformatics</em> 27(11):1575-1577
-              </small>
-            </p>
+            <p><small>
+              Bakan A, Nevins N, Lakdawala AS, Bahar I
+              <a class="reference external" href="http://pubs.acs.org/doi/abs/10.1021/ct300117j" target="_blank">
+              Druggability Assessment of Allosteric Proteins by Dynamics Simulations in the Presence of Probe Molecules </a> <br/>
+              <em>J Chem Theory Comput</em> <strong>2012</strong> 8(7):2435-2447.
+            </small></p>
           </div>
         </div>
 

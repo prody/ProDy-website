@@ -34,11 +34,11 @@ $(document).ready(function() {
   var url = document.URL;
   var logo = document.getElementById("logo");
   if (url.search("nmwiz") > -1) {
-    logo.src = "http://www.csb.pitt.edu/ProDy/_static/nmwiz.png";
+    logo.src = "http://prody.csb.pitt.edu/_static/nmwiz.png";
   } else if (url.search("evol") > -1) {
-    logo.src = "http://www.csb.pitt.edu/ProDy/_static/evol.png";
+    logo.src = "http://prody.csb.pitt.edu/_static/evol.png";
   } else if (url.search("drugui") > -1) {
-    logo.src = "http://www.csb.pitt.edu/ProDy/_static/drugui_logo.png";
+    logo.src = "http://prody.csb.pitt.edu/_static/drugui_logo.png";
   }
   if ($('#homepagenav').length) {
     if (url.search("evol") > -1) {
