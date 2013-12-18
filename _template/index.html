@@ -79,13 +79,15 @@
       "Quick Representations in Interactive Sessions",
       "Depicting Normal Modes Couldn't Be Easier",
       "Depicting Normal Modes Couldn't Be Easier",
-      "Compare Dynamics from Experiments and Theory");
+      "Compare Dynamics from Experiments and Theory",
+      "Druggability Simulation of Kinesin Eg5");
 
       panelSlides = new Array();
       panelSlides[0] = new Array(0, 4, 1, 7);
       panelSlides[1] = new Array(4, 5, 6, 8);
       panelSlides[2] = new Array(1, 2, 3);
       panelSlides[3] = new Array(7, 9, 10, 11);
+      panelSlides[4] = new Array(12, 13);
 
       var slideIndices = [0, 0, 0, 0, 0, 0, 0];
 
@@ -262,6 +264,33 @@
         </p>
       </div>
 
+      <div class="prody-slide" id="slide-12">
+        <object width="320" height="270">
+        <param name="movie" value="http://www.youtube.com/v/4vOoueCQnx0&hl=en_US&fs=1&rel=0&loop=1&modestbranding=1&autoplay=1"></param>
+        <param name="allowFullScreen" value="true"></param>
+        <param name="allowscriptaccess" value="always"></param>
+        <embed src="http://www.youtube.com/v/4vOoueCQnx0&hl=en_US&fs=1&rel=0&loop=1&modestbranding=1&autoplay=1"
+          type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="320" height="270"></embed>
+        </object>
+        <p style="font-size: 95%; font-style: italic;">
+        The movie shows a molecular dynamics simulation
+        for assessing the druggability of kinesin eg5.
+        <a href="{{ pathto('tutorials/nmwiz_tutorial/intro') }}">NMWiz</a>
+        VMD plugin.  See
+        <a href="{{ pathto('tutorials/nmwiz_tutorial/index') }}">NMWiz tutorial</a>
+        for usage examples.
+        </p>
+      </div>
+
+      <div class="prody-slide" id="slide-12">
+        <div class="slide-image"><img src="{{ pathto('_static/gallery/eg5_druggability.png', 1) }}"/></div>
+        <p style="font-size: 95%; font-style: italic;">
+        Kinesin Eg5 druggable sites, including allosteric inhibitor binding site and
+        and tubulin binding site, identified by simulations are shown. See our
+        <a href="http://pubs.acs.org/doi/full/10.1021/ct300117j">publication</a> for details.
+        </p>
+      </div>
+
   <div class="container" id="about">
 <!-- Logo & Nav
 ================================================== -->
@@ -334,8 +363,10 @@
   <footer class="footer">
     <div class="row">
       <div class="span4 text-left">
+        <!--
         <a href="https://pypi.python.org/pypi/ProDy"><img src="https://pypip.in/v/ProDy/badge.png"></a>
         <a href="https://crate.io/packages/ProDy/"><img src="https://pypip.in/d/ProDy/badge.png"></a>
+      -->
       </div>
       <div class="span8">
         <p><small>

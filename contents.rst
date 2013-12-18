@@ -10,6 +10,7 @@ ProDy Documentation
    tutorials/prody_tutorial/index
    tutorials/evol_tutorial/index
    tutorials/nmwiz_tutorial/index
+   tutorials/drugui_tutorial/index
    tutorials/structure_analysis/index
    tutorials/enm_analysis/index
    tutorials/ensemble_analysis/index
