@@ -26,10 +26,10 @@ pull: clone
 	cd ProDy; git pull
 
 stable: pull
-	cd ProDy; git checkout `git describe --tags --abbrev=0`
+	cd ProDy; git checkout `git describe --tags --abbrev=0`; make build
 
 devel: pull
-	cd ProDy; git checkout devel
+	cd ProDy; git checkout devel; make build
 
 link:
 	ln -sf ProDy/docs manual
