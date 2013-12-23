@@ -192,10 +192,12 @@ as follows:
 If you would like to have a central folder, such as :file:`~Downloads/pdb`,
 for storing downloaded PDB files (you will need to make it), do as follows:
 
-.. ipython:: python
+.. ipython::
+   :verbatim:
 
-   mkdir /home/abakan/Downloads/pdb;
-   pathPDBFolder('/home/abakan/Downloads/pdb')
+   In [19]: mkdir /home/abakan/Downloads/pdb;
+
+   In [20]: pathPDBFolder('/home/abakan/Downloads/pdb')
 
 Note that when these functions are used, ProDy will save your settings
 in :file:`.prodyrc` file stored in your home folder.
