@@ -44,6 +44,7 @@ html_additional_pages = {
 }
 
 html_sidebars = {
+    '**': ['toolbox.html', 'releasenotes.html', 'howtocite.html'],
     'tutorials/drugui_tutorial/**': ['toolbox.html', 'citedrugui.html'],
     'tutorials/nmwiz_tutorial/**': ['toolbox.html', 'howtocite.html']
 }
