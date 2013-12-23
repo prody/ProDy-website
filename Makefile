@@ -10,7 +10,7 @@ help:
 	@echo "Please use \`make <target>' where <target> is one of"
 	@echo "  html       to make HTML files of the website"
 	@echo "  pdf	    to make PDF files of the manual and tutorials"
-	@echo "  latest	    to make HTML/PDF files for the latest version"
+	@echo "  devel	    to make HTML/PDF files for the devel version"
 
 clean:
 	-rm -rf $(BUILDDIR)/*
@@ -23,13 +23,15 @@ drugui:
 	cd tutorials/drugui_tutorial; git pull
 
 pull: clone
-	cd ProDy; git pull
+	cd ProDy; git checkout master; git pull origin master
+	cd ProDy; git checkout devel; git pull origin devel
 
-stable: pull
+latest: pull
 	cd ProDy; git checkout `git describe --tags --abbrev=0`; make build
 
 devel: pull
-	cd ProDy; git checkout devel; make build
+	cd ProDy; git checkout devel; make build; cd docs; make build
+	mv -r ProDy/docs/_build/html _build/html/devel
 
 link:
 	ln -sf ProDy/docs manual
@@ -43,7 +45,7 @@ workdir:
 		fi; \
 	done
 
-html: devel link drugui workdir
+html: latest link drugui workdir
 	cd $(WORKDIR); $(SPHINXBUILD) -b html -d ../$(BUILDDIR)/doctrees ../ ../$(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
@@ -60,11 +62,3 @@ pdf: pull link
 		 	cd $$tut; make copy; /bin/cp -rf $(WORKDIR)/* ../../$(WORKDIR); cd ..; \
 		fi; \
 	done
-
-latest: pull
-	cd ProDy; git checkout devel
-	cd ProDy; make build
-	cd ProDy/docs; make html pdf
-	mkdir -p $(LATEST)
-	rm -rf $(LATEST)/*
-	mv $(BUILD)/* $(LATEST)
