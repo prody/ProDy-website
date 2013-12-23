@@ -19,11 +19,17 @@ Now, let's read initial and refined conformations:
 
    initial = AtomGroup('p38 initial')
    refined = AtomGroup('p38 refined')
+
+.. ipython:: python
+
    for pdb in glob.glob('p38_ensemble/*pdb'):
        fn = os.path.splitext(os.path.split(pdb)[1])[0]
        opt = os.path.join('p38_optimize', fn + '.coor')
        parsePDB(pdb, ag=initial)
        parsePDB(opt, ag=refined)
+
+.. ipython:: python
+
    initial
    refined
 
