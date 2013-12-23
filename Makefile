@@ -56,9 +56,12 @@ pdf: latest link
 	cd manual; make pdf
 	mv manual/_build/latex/ProDy.pdf _build/html/manual/
 
-	cd tutorials; \
-	for tut in `find . -type d`; do \
-		if [ -d "$$tut/$$tut"_files ]; then \
-		 	cd $$tut; make copy; /bin/cp -rf $(WORKDIR)/* ../../$(WORKDIR); cd ..; \
-		fi; \
-	done
+	make -C tutorials/conformational_sampling copy
+	make -C tutorials/drugui_tutorial copy
+	make -C tutorials/enm_analysis copy
+	make -C tutorials/ensemble_analysis copy
+	make -C tutorials/evol_tutorial copy
+	make -C tutorials/nmwiz_tutorial copy
+	make -C tutorials/prody_tutorial copy
+	make -C tutorials/structure_analysis copy
+	make -C tutorials/trajectory_analysis copy
