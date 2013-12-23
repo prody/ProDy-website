@@ -31,7 +31,7 @@ latest: pull
 
 devel: pull
 	cd ProDy; git checkout devel; make build; cd docs; make build
-	mv -r ProDy/docs/_build/html _build/html/devel
+	mv -f ProDy/docs/_build/html _build/html/devel
 
 link:
 	ln -sf ProDy/docs manual
