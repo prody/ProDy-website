@@ -42,9 +42,11 @@ workdir:
 
 	mkdir -p tutorials/conformational_sampling/$(WORKDIR)
 	cp -rf tutorials/conformational_sampling/$(WORKDIR)/* $(WORKDIR)
+	cp -rf tutorials/conformational_sampling/conformational_sampling_files/* $(WORKDIR)
 
 	mkdir -p tutorials/enm_analysis/$(WORKDIR)
 	cp -rf tutorials/enm_analysis/$(WORKDIR)/* $(WORKDIR)
+	cp -rf tutorials/enm_analysis/enm_analysis_files/* $(WORKDIR)
 
 	mkdir -p tutorials/ensemble_analysis/$(WORKDIR)
 	cp -rf tutorials/ensemble_analysis/$(WORKDIR)/* $(WORKDIR)
@@ -54,12 +56,15 @@ workdir:
 
 	mkdir -p tutorials/prody_tutorial/$(WORKDIR)
 	cp -rf tutorials/prody_tutorial/$(WORKDIR)/* $(WORKDIR)
+	cp -rf tutorials/prody_tutorial/prody_tutorial_files/* $(WORKDIR)
 
 	mkdir -p tutorials/structure_analysis/$(WORKDIR)
 	cp -rf tutorials/structure_analysis/$(WORKDIR)/* $(WORKDIR)
+	cp -rf tutorials/structure_analysis/structure_analysis_files/* $(WORKDIR)
 
 	mkdir -p tutorials/trajectory_analysis/$(WORKDIR)
 	cp -rf tutorials/trajectory_analysis/$(WORKDIR)/* $(WORKDIR)
+	cp -rf tutorials/trajectory_analysis/trajectory_analysis_files/* $(WORKDIR)
 
 html: latest link drugui workdir
 	cd $(WORKDIR); $(SPHINXBUILD) -b html -d ../$(BUILDDIR)/doctrees ../ ../$(BUILDDIR)/html
