@@ -187,23 +187,27 @@ interactions. The example shows merging for the multi-domain receptor
 .. ipython::
    :verbatim:
 
-   In [1]: fetchPfamMSA('PF01094', format='fasta', timeout=120)
-   Out[1]: 'PF01094_full.fasta'
-   In [2]: fetchPfamMSA('PF00497', format='fasta', timeout=120)
-   Out[2]: 'PF00497_full.fasta'
+   In [1]: fetchPfamMSA('PF00017', alignment='seed')
+   Out[1]: 'PF00017_full.slx.gz'
+
+.. ipython::
+   :verbatim:
+
+   In [2]: fetchPfamMSA('PF07714', alignment='seed')
+   Out[2]: 'PF07714_full.slx.gz'
 
 Let's parse and merge the two files:
 
 .. ipython:: python
 
-   msa1 = parseMSA('PF01094_full.fasta')
+   msa1 = parseMSA('PF00017_seed.sth')
    msa1
-   msa2 = parseMSA('PF00497_full.fasta')
+   msa2 = parseMSA('PF07714_seed.sth')
    msa2
    merged = mergeMSA(msa1, msa2)
    merged
 
-Merged MSA contains 984 sequences.
+Merged MSA contains 14 sequences.
 
 Writing MSAs
 -------------------------------------------------------------------------------

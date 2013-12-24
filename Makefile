@@ -38,32 +38,23 @@ link:
 	ln -sf ProDy/docs/_theme _theme
 
 workdir:
+	# creates workdir (where IPython directive input and output is saved)
 	mkdir -p $(WORKDIR)
 
-	mkdir -p tutorials/conformational_sampling/$(WORKDIR)
+	# copies required files from individual tutorials
 	cp -rf tutorials/conformational_sampling/$(WORKDIR)/* $(WORKDIR)
 	cp -rf tutorials/conformational_sampling/conformational_sampling_files/* $(WORKDIR)
 
-	mkdir -p tutorials/enm_analysis/$(WORKDIR)
-	cp -rf tutorials/enm_analysis/$(WORKDIR)/* $(WORKDIR)
 	cp -rf tutorials/enm_analysis/enm_analysis_files/* $(WORKDIR)
 
-	mkdir -p tutorials/ensemble_analysis/$(WORKDIR)
 	cp -rf tutorials/ensemble_analysis/$(WORKDIR)/* $(WORKDIR)
 
-	mkdir -p tutorials/evol_tutorial/$(WORKDIR)
 	cp -rf tutorials/evol_tutorial/$(WORKDIR)/* $(WORKDIR)
 
-	mkdir -p tutorials/prody_tutorial/$(WORKDIR)
-	cp -rf tutorials/prody_tutorial/$(WORKDIR)/* $(WORKDIR)
 	cp -rf tutorials/prody_tutorial/prody_tutorial_files/* $(WORKDIR)
 
-	mkdir -p tutorials/structure_analysis/$(WORKDIR)
 	cp -rf tutorials/structure_analysis/$(WORKDIR)/* $(WORKDIR)
-	cp -rf tutorials/structure_analysis/structure_analysis_files/* $(WORKDIR)
 
-	mkdir -p tutorials/trajectory_analysis/$(WORKDIR)
-	cp -rf tutorials/trajectory_analysis/$(WORKDIR)/* $(WORKDIR)
 	cp -rf tutorials/trajectory_analysis/trajectory_analysis_files/* $(WORKDIR)
 
 html: latest link drugui workdir
@@ -77,12 +68,12 @@ pdf: latest link
 	cd manual; make pdf
 	mv manual/_build/latex/ProDy.pdf _build/html/manual/
 
-	make -C tutorials/conformational_sampling copy
-	make -C tutorials/drugui_tutorial copy
-	make -C tutorials/enm_analysis copy
-	make -C tutorials/ensemble_analysis copy
-	make -C tutorials/evol_tutorial copy
-	make -C tutorials/nmwiz_tutorial copy
-	make -C tutorials/prody_tutorial copy
-	make -C tutorials/structure_analysis copy
-	make -C tutorials/trajectory_analysis copy
+	make -C tutorials/conformational_sampling clean copy
+	make -C tutorials/drugui_tutorial clean copy
+	make -C tutorials/enm_analysis clean copy
+	make -C tutorials/ensemble_analysis clean copy
+	make -C tutorials/evol_tutorial clean copy
+	make -C tutorials/nmwiz_tutorial clean copy
+	make -C tutorials/prody_tutorial clean copy
+	make -C tutorials/structure_analysis clean copy
+	make -C tutorials/trajectory_analysis clean copy

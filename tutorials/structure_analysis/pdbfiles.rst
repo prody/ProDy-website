@@ -91,7 +91,7 @@ information):
 .. ipython:: python
 
    fetchPDB('1p38')
-   atoms = parsePDB('1p38.pdb.gz')
+   atoms = parsePDB('1p38')
    atoms
 
 Parser returns an :class:`.AtomGroup` instance.

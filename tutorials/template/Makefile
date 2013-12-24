@@ -23,7 +23,8 @@ clean:
 
 setup:
 	mkdir -p $(WORKDIR)
-	if [-d $(BASENAME)_files/]; then cp -f $(BASENAME)_files/* $(WORKDIR)/; fi
+	echo $(BASENAME)
+	cp -f $(BASENAME)_files/* $(WORKDIR)/ 2>/dev/null || :
 	ln -fs ../../_theme
 	ln -fs ../../_static
 	mkdir -p _static/figures
