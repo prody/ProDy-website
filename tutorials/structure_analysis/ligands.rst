@@ -34,6 +34,15 @@ structure:
   blast_record = blastPDB(seq)
 
 
+.. ipython:: python
+   :suppress:
+
+   import pickle
+   if blast_record is None:
+       blast_record = pickle.load(open)('p38_blast_record.pkl'))
+   else:
+       pickle.dump(blast_record, open('p38_blast_record.pkl', 'w'))
+
 Align structures and extract ligands
 -------------------------------------------------------------------------------
 

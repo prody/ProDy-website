@@ -37,17 +37,17 @@ Let's search for structures similar to that of MKP-3, using its sequence:
    ASFPVEILPFLYLGCAKDSTNLDVLEEFGIKYILNVTPNLPNLFENAGEFKYKQIPISDHWSQNLSQFFPEA
    ISFIDEARGKNCGVLVHSLAGISRSVTVTVAYLMQKLNLSMNDAYDIVKMKKSNISPNFNFMGQLLDFERTL''')
 
-:func:`.blastPDB` function returns a :class:`.PDBBlastRecord`. This object
-can be picked and reladed at another session as follows:
+:func:`.blastPDB` function returns a :class:`.PDBBlastRecord`.
 
 .. ipython:: python
-   
+   :suppress:
+
    import pickle
-   pickle.dump(blast_record, open('blast_record.pkl', 'w'))
-   blast_record = pickle.load(open('blast_record.pkl'))
+   if blast_record is None:
+       blast_record = pickle.load(open)('mkp3_blast_record.pkl'))
+   else:
+       pickle.dump(blast_record, open('mkp3_blast_record.pkl', 'w'))
 
-
-Let's now retrieve hits from this record.
 
 Best match
 -------------------------------------------------------------------------------
