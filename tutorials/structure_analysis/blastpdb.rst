@@ -31,22 +31,37 @@ We start by importing everything from the ProDy package:
 
 Let's search for structures similar to that of MKP-3, using its sequence:
 
+.. ipython::
+   :verbatim:
+
+   In [1]: blast_record = blastPDB('''ASFPVEILPFLYLGCAKDSTNLDVLEEFGIKYILNVTPNL
+      ...: PNLFENAGEFKYKQIPISDHWSQNLSQFFPEAISFIDEAR
+      ...: GKNCGVLVHSLAGISRSVTVTVAYLMQKLNLSMNDAYDIV
+      ...: KMKKSNISPNFNFMGQLLDFERTL''')
+      ...:
+
+:func:`.blastPDB` function returns a :class:`.PDBBlastRecord`. It is a good
+practice to save this record on disk, as NCBI may not respond to repeated
+searches for the same sequence. We can do this using Python standard library
+:mod:`pickle` as follows:
+
 .. ipython:: python
-
-   blast_record = blastPDB('''
-   ASFPVEILPFLYLGCAKDSTNLDVLEEFGIKYILNVTPNLPNLFENAGEFKYKQIPISDHWSQNLSQFFPEA
-   ISFIDEARGKNCGVLVHSLAGISRSVTVTVAYLMQKLNLSMNDAYDIVKMKKSNISPNFNFMGQLLDFERTL''')
-
-:func:`.blastPDB` function returns a :class:`.PDBBlastRecord`.
-
-.. ipython:: python
-   :suppress:
 
    import pickle
-   if blast_record is None:
-       blast_record = pickle.load(open('mkp3_blast_record.pkl'))
-   else:
-       pickle.dump(blast_record, open('mkp3_blast_record.pkl', 'w'))
+
+Record is save using :func:`~pickle.dump` function into an open file:
+
+.. ipython::
+   :verbatim:
+
+   In [10]: pickle.dump(blast_record, open('mkp3_blast_record.pkl', 'w'))
+
+
+Then, it can be loaded using :func:`~pickle.load` function:
+
+.. ipython:: python
+
+   blast_record = pickle.load(open('mkp3_blast_record.pkl'))
 
 
 Best match

@@ -70,19 +70,32 @@ Blast and download
 List of PDB structures can be obtained using :func:`.blastPDB`
 as follows:
 
-.. ipython:: python
+.. ipython::
+   :verbatim:
 
-   blast_record = blastPDB(sequence, timeout=240)
+   In [10]: blast_record = blastPDB(sequence)
+
+It is a good practice to save this record on disk, as NCBI may not respond to
+repeated searches for the same sequence. We can do this using Python standard
+library :mod:`pickle` as follows:
 
 .. ipython:: python
-   :suppress:
 
    import pickle
-   if blast_record is None:
-       blast_record = pickle.load(open('cytc_blast_record.pkl'))
-   else:
-       pickle.dump(blast_record, open('cytc_blast_record.pkl', 'w'))
-   
+
+Record is save using :func:`~pickle.dump` function into an open file:
+
+.. ipython::
+   :verbatim:
+
+   In [10]: pickle.dump(blast_record, open('cytc_blast_record.pkl', 'w'))
+
+
+Then, it can be loaded using :func:`~pickle.load` function:
+
+.. ipython:: python
+
+   blast_record = pickle.load(open('cytc_blast_record.pkl'))
 
 
 .. ipython:: python
