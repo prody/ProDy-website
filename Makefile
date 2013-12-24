@@ -39,19 +39,26 @@ link:
 
 workdir:
 	mkdir -p $(WORKDIR)
+
 	mkdir -p tutorials/conformational_sampling/$(WORKDIR)
 	cp -rf tutorials/conformational_sampling/$(WORKDIR)/* $(WORKDIR)
-	mkdir -p tutorials/enm_analysis/$(WORKDIR)/*
+
+	mkdir -p tutorials/enm_analysis/$(WORKDIR)
 	cp -rf tutorials/enm_analysis/$(WORKDIR)/* $(WORKDIR)
-	mkdir -p tutorials/ensemble_analysis/$(WORKDIR)/*
+
+	mkdir -p tutorials/ensemble_analysis/$(WORKDIR)
 	cp -rf tutorials/ensemble_analysis/$(WORKDIR)/* $(WORKDIR)
-	mkdir -p tutorials/evol_tutorial/$(WORKDIR)/*
+
+	mkdir -p tutorials/evol_tutorial/$(WORKDIR)
 	cp -rf tutorials/evol_tutorial/$(WORKDIR)/* $(WORKDIR)
-	mkdir -p tutorials/prody_tutorial/$(WORKDIR)/*
+
+	mkdir -p tutorials/prody_tutorial/$(WORKDIR)
 	cp -rf tutorials/prody_tutorial/$(WORKDIR)/* $(WORKDIR)
-	mkdir -p tutorials/structure_analysis/$(WORKDIR)/*
+
+	mkdir -p tutorials/structure_analysis/$(WORKDIR)
 	cp -rf tutorials/structure_analysis/$(WORKDIR)/* $(WORKDIR)
-	mkdir -p tutorials/trajectory_analysis/$(WORKDIR)/*
+
+	mkdir -p tutorials/trajectory_analysis/$(WORKDIR)
 	cp -rf tutorials/trajectory_analysis/$(WORKDIR)/* $(WORKDIR)
 
 html: latest link drugui workdir
