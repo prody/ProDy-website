@@ -13,7 +13,7 @@ help:
 	@echo "  devel	    to make HTML/PDF files for the devel version"
 
 clean:
-	-rm -rf $(BUILDDIR)/*
+	-rm -rf $(BUILDDIR)/doctrees/*
 
 clone:
 	if [ ! -d "ProDy/.git" ]; then git clone https://github.com/prody/ProDy.git; fi
