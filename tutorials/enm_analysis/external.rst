@@ -18,7 +18,7 @@ We start by importing everything from the ProDy package:
    ion()  # turn interactive mode on
 
 The input file that contains the Hessian matrix has the following format
-(:download:`oanm_hes.txt <enm_analysis_files/oanm_hes.txt>`)::
+(:file:`oanm_hes.txt`)::
 
        1       1    9.958948135375977e+00
        1       2   -3.788214445114136e+00
@@ -36,8 +36,7 @@ The input file that contains the Hessian matrix has the following format
 
 .. ipython:: python
 
-   hessian = parseSparseMatrix('enm_analysis_files/oanm_hes.txt',
-                               symmetric=True)
+   hessian = parseSparseMatrix('oanm_hes.txt', symmetric=True)
    hessian.shape
 
 
@@ -59,7 +58,7 @@ Parse Kirchhoff
 -------------------------------------------------------------------------------
 
 The input file that contains the Kirchhoff matrix has the following format
-(:download:`enm_analysis_files/ognm_kirchhoff.txt`)::
+(:file:`ognm_kirchhoff.txt`)::
 
         3316
        1       1       5.00
@@ -75,7 +74,7 @@ The input file that contains the Kirchhoff matrix has the following format
 
 .. ipython:: python
 
-   kirchhoff = parseSparseMatrix('enm_analysis_files/ognm_kirchhoff.txt',
+   kirchhoff = parseSparseMatrix('ognm_kirchhoff.txt',
                                  symmetric=True, skiprows=1)
    kirchhoff.shape
 

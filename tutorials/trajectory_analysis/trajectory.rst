@@ -37,7 +37,7 @@ be useful in a number of places, so let's start with parsing this file first:
 
 .. ipython:: python
 
-   structure = parsePDB('trajectory_analysis_files/mdm2.pdb')
+   structure = parsePDB('mdm2.pdb')
    repr(structure)
 
 This function returned a :class:`.AtomGroup` instance that
@@ -51,7 +51,7 @@ be parsed at once. This function returns an :class:`.Ensemble` instance:
 
 .. ipython:: python
 
-   ensemble = parseDCD('trajectory_analysis_files/mdm2.dcd')
+   ensemble = parseDCD('mdm2.dcd')
    repr(ensemble)
 
 .. note:: When parsing large DCD files at once, memory may become an issue.
@@ -111,12 +111,12 @@ Parse frames one-by-one
 
 .. ipython:: python
 
-   dcd = DCDFile('trajectory_analysis_files/mdm2.dcd')
+   dcd = DCDFile('mdm2.dcd')
    repr(dcd)
 
 .. ipython:: python
 
-   structure = parsePDB('trajectory_analysis_files/mdm2.pdb')
+   structure = parsePDB('mdm2.pdb')
    dcd.setCoords(structure)
    dcd.link(structure)
 
@@ -155,16 +155,16 @@ Handling multiple files
 
 .. ipython:: python
 
-   traj = Trajectory('trajectory_analysis_files/mdm2.dcd')
+   traj = Trajectory('mdm2.dcd')
    repr(traj)
-   traj.addFile('trajectory_analysis_files/mdm2sim2.dcd')
+   traj.addFile('mdm2sim2.dcd')
    repr(traj)
 
 Instances of this class are also suitable for previous calculations:
 
 .. ipython:: python
 
-   structure = parsePDB('trajectory_analysis_files/mdm2.pdb')
+   structure = parsePDB('mdm2.pdb')
    traj.link(structure)
    traj.setCoords(structure)
    rgyr = zeros(len(traj))

@@ -15,7 +15,7 @@ For each frame data, you will a different frame instance:
 .. ipython:: python
 
    from prody import *
-   dcd = Trajectory('trajectory_analysis_files/mdm2.dcd')
+   dcd = Trajectory('mdm2.dcd')
    dcd
    frame0 = dcd.next()
    frame0
@@ -45,7 +45,7 @@ work differently:
 
 .. ipython:: python
 
-   pdb = parsePDB('trajectory_analysis_files/mdm2.pdb')
+   pdb = parsePDB('mdm2.pdb')
    pdb
    dcd.link(pdb)
    dcd.reset()

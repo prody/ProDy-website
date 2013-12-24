@@ -35,7 +35,7 @@ The PDB file provided with this example contains an X-ray structure:
 
 .. ipython:: python
 
-   mdm2 = parsePDB('trajectory_analysis_files/mdm2.pdb')
+   mdm2 = parsePDB('mdm2.pdb')
    repr(mdm2)
 
 This function returned a :class:`.AtomGroup` instance that stores all atomic
@@ -49,9 +49,9 @@ Open trajectories
 
 .. ipython:: python
 
-   traj = Trajectory('trajectory_analysis_files/mdm2.dcd')
+   traj = Trajectory('mdm2.dcd')
    traj
-   traj.addFile('trajectory_analysis_files/mdm2sim2.dcd')
+   traj.addFile('mdm2sim2.dcd')
    traj
 
 Now we link the trajectory (*traj*) with the atom group (*mdm2*):

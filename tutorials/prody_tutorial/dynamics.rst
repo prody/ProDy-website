@@ -159,8 +159,7 @@ Normal mode data from other NMA, EDA, or PCA programs can be parsed using
 
 In this case, we will parse ANM modes for p38 MAP Kinase calculated using
 `ANM server`_  as the external software.
-We use :download:`oanm.eigvals <prody_tutorial_files/oanm_eigvals.txt>`
-and :download:`oanm.slwevs <prody_tutorial_files/oanm_slwevs.txt>` files from
+We use :file:`oanm_eigvals.txt` and :file:`oanm_slwevs.txt` files from
 the ANM server.
 
 .. _ANM server: http://ignmtest.ccbb.pitt.edu/cgi-bin/anm/anm1.cgi
@@ -170,8 +169,8 @@ or obtain them for another protein from the ANM server.
 
 .. ipython:: python
 
-   nma = parseModes(normalmodes='prody_tutorial_files/oanm_slwevs.txt',
-    eigenvalues='prody_tutorial_files/oanm_eigvals.txt',
+   nma = parseModes(normalmodes='oanm_slwevs.txt',
+    eigenvalues='oanm_eigvals.txt',
     nm_usecols=range(1,21), ev_usecols=[1], ev_usevalues=range(6,26))
    nma
    nma.setTitle('1p38 ANM')

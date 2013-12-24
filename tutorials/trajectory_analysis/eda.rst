@@ -43,7 +43,7 @@ be useful in a number of places, so let's start with parsing this file first:
 
 .. ipython:: python
 
-   structure = parsePDB('trajectory_analysis_files/mdm2.pdb')
+   structure = parsePDB('mdm2.pdb')
    structure
 
 This function returned a :class:`.AtomGroup` instance that
@@ -63,7 +63,7 @@ instance obtained by parsing the trajectory at once using :func:`.parseDCD`:
 
 .. ipython:: python
 
-   ensemble = parseDCD('trajectory_analysis_files/mdm2.dcd')
+   ensemble = parseDCD('mdm2.dcd')
    ensemble.setCoords(structure)
    ensemble.setAtoms(structure.calpha)
    ensemble
@@ -81,7 +81,7 @@ to the :meth:`.PCA.buildCovariance` method as follows:
 
 .. ipython:: python
 
-   dcd = DCDFile('trajectory_analysis_files/mdm2.dcd')
+   dcd = DCDFile('mdm2.dcd')
    dcd.link(structure)
    dcd.setAtoms(structure.calpha)
    dcd
@@ -109,8 +109,8 @@ them. In this case we will use data from two independent simulations
 
 .. ipython:: python
 
-   trajectory = Trajectory('trajectory_analysis_files/mdm2.dcd')
-   trajectory.addFile('trajectory_analysis_files/mdm2sim2.dcd')
+   trajectory = Trajectory('mdm2.dcd')
+   trajectory.addFile('mdm2sim2.dcd')
    trajectory
 
    trajectory.link(structure)

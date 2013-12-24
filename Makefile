@@ -39,11 +39,13 @@ link:
 
 workdir:
 	mkdir -p $(WORKDIR)
-	for tut in `find tutorials/ -type d -name "*_files"` ; do \
-		if [ -d "$$tut" ]; then \
-		 	ln -fs ../$$tut $(WORKDIR)/;\
-		fi; \
-	done
+	cp -rf tutorials/conformational_sampling/$(WORKDIR)/* $(WORKDIR)
+	cp -rf tutorials/enm_analysis/$(WORKDIR)/* $(WORKDIR)
+	cp -rf tutorials/ensemble_analysis/$(WORKDIR)/* $(WORKDIR)
+	cp -rf tutorials/evol_tutorial/$(WORKDIR)/* $(WORKDIR)
+	cp -rf tutorials/prody_tutorial/$(WORKDIR)/* $(WORKDIR)
+	cp -rf tutorials/structure_analysis/$(WORKDIR)/* $(WORKDIR)
+	cp -rf tutorials/trajectory_analysis/$(WORKDIR)/* $(WORKDIR)
 
 html: latest link drugui workdir
 	cd $(WORKDIR); $(SPHINXBUILD) -b html -d ../$(BUILDDIR)/doctrees ../ ../$(BUILDDIR)/html

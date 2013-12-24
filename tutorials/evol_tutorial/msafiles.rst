@@ -19,6 +19,11 @@ Let's get Pfam MSA file for protein family that contains :uniprot:`PIWI_ARCFU`:
 
    In [1]: searchPfam('PIWI_ARCFU').keys()
    Out[1]: ['PF02171']
+
+
+.. ipython::
+   :verbatim:
+
    In [2]: fetchPfamMSA('PF02171', alignment='seed')
    Out[2]: 'PF02171_seed.sth'
 

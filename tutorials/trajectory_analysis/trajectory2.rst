@@ -37,7 +37,7 @@ be useful in a number of places, so let's start with parsing this file first:
 
 .. ipython:: python
 
-   structure = parsePDB('trajectory_analysis_files/mdm2.pdb')
+   structure = parsePDB('mdm2.pdb')
    structure
 
 This function returned a :class:`.AtomGroup` instance that stores all atomic
@@ -51,9 +51,9 @@ Handling multiple files
 
 .. ipython:: python
 
-   traj = Trajectory('trajectory_analysis_files/mdm2.dcd')
+   traj = Trajectory('mdm2.dcd')
    traj
-   traj.addFile('trajectory_analysis_files/mdm2sim2.dcd')
+   traj.addFile('mdm2sim2.dcd')
    traj
 
 

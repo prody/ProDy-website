@@ -32,19 +32,30 @@ We query Pfam using the :func:`.searchPfam`. with a UniProt ID.
 
    In [1]: matches = searchPfam('PIWI_ARCFU')
 
-   In [2]: matches
-   Out[2]:
-   {'PF02171': {'accession': 'PF02171',
-     'id': 'Piwi',
-     'locations': [{'ali_end': '405',
-       'ali_start': '111',
-       'bitscore': '228.70',
-       'end': '406',
-       'evalue': '1.1e-64',
-       'hmm_end': '301',
-       'hmm_start': '2',
-       'start': '110'}],
-     'type': 'Pfam-A'}}
+
+It is a good practice to save this record on disk, as NCBI may not respond to
+repeated searches for the same sequence. We can do this using Python standard
+library :mod:`pickle` as follows:
+
+.. ipython:: python
+
+   import pickle
+
+Record is save using :func:`~pickle.dump` function into an open file:
+
+.. ipython::
+   :verbatim:
+
+   In [10]: pickle.dump(matches, open('pfam_search_PIWI_ARCFU.pkl', 'w'))
+
+
+Then, it can be loaded using :func:`~pickle.load` function:
+
+.. ipython:: python
+
+   matches = pickle.load(open('pfam_search_PIWI_ARCFU.pkl'))
+   matches
+
 
 Input can also be a protein sequence or a file containing the sequence:
 
@@ -55,25 +66,15 @@ Input can also be a protein sequence or a file containing the sequence:
       ...: 'PCALCSLHSIGKIGGAQNRSYSKLLCGLLAERLRISPDRVYINYYDMNAANVGWNNSTFA')
 
 
-
    In [2]: matches = searchPfam(sequence)
 
-   In [3]: matches
-   Out[3]:
-   {'PF01187': {'accession': 'PF01187.13',
-     'class': 'Domain',
-     'id': 'MIF',
-     'locations': [{'ali_end': '114',
-       'ali_start': '1',
-       'bitscore': '174.2',
-       'end': '114',
-       'evalue': '7.7e-52',
-       'evidence': 'hmmer v3.0',
-       'hmm_end': '114',
-       'hmm_start': '1',
-       'significant': '1',
-       'start': '1'}],
-     'type': 'Pfam-A'}}
+
+   In [10]: pickle.dump(matches, open('pfam_search_sequence.pkl', 'w'))
+
+.. ipython:: python
+
+   matches = pickle.load(open('pfam_search_sequence.pkl'))
+   matches
 
 Input sequence cannot have gaps and should be at least 12 characters long.
 
@@ -93,11 +94,13 @@ sequences, default is ``timeout=60`` seconds.
 Retrieve MSA files
 -------------------------------------------------------------------------------
 
-This example demonstrates how to search Pfam database with a given query using
-:func:`.fetchPfamMSA`. Valid inputs are Pfam ID, e.g. :pfam:`Piwi`, or Pfam
-accession, e.g. :pfam:`PF02171` obtained from :func:`.searchPfam`.  Alignment
-type can be ``"full'`` (default), ``"seed"``, ``"ncbi"`` or ``"metagenomics"``
-or ``"rp15"`` or ``"rp35"`` or ``"rp55"`` or ``"rp75"``.
+Data from Pfam database can be fetched using :func:`.fetchPfamMSA`.
+
+Valid inputs are Pfam ID, e.g. :pfam:`Piwi`, or Pfam accession, e.g.
+:pfam:`PF02171` obtained from :func:`.searchPfam`.
+
+Alignment type can be ``"full'`` (default), ``"seed"``, ``"ncbi"`` or
+``"metagenomics"`` or ``"rp15"`` or ``"rp35"`` or ``"rp55"`` or ``"rp75"``.
 
 .. ipython::
    :verbatim:

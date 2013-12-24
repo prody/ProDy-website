@@ -53,12 +53,12 @@ Let's make a folder for writing optimization input and output files:
    In [1]: mkdir -p p38_optimize
 
 We will write an NAMD configuration file for each conformation based
-on :download:`min.conf <conformational_sampling_files/min.conf>` file:
+on :file:`min.conf` file:
 
 .. ipython:: python
 
    import glob
-   conf = open('conformational_sampling_files/min.conf').read()
+   conf = open('min.conf').read()
    for pdb in glob.glob(os.path.join('p38_ensemble', '*.pdb')):
        fn = os.path.splitext(os.path.split(pdb)[1])[0]
        pdb = os.path.join('..', pdb)

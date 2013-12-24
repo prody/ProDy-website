@@ -27,6 +27,10 @@ We can do this by specifying the PDB ID of a protein in this family.
 
    In [1]: searchPfam('1K2A').keys()
    Out[1]: ['PF00074']
+
+
+.. ipython::
+   :verbatim:
    In [2]: fetchPfamMSA('PF00074')
    Out[2]: 'PF00074_full.sth'
 
