@@ -67,16 +67,26 @@ Parameters
 Blast and download
 -------------------------------------------------------------------------------
 
-The results are displayed for following list of structures:
-
-
-
-List of PDB structures can be updated using :func:`.blastPDB`
+List of PDB structures can be obtained using :func:`.blastPDB`
 as follows:
 
 .. ipython:: python
 
    blast_record = blastPDB(sequence, timeout=240)
+
+.. ipython:: python
+   :suppress:
+
+   import pickle
+   if blast_record is None:
+       blast_record = pickle.load(open('cytc_blast_record.pkl'))
+   else:
+       pickle.dump(blast_record, open('cytc_blast_record.pkl', 'w'))
+   
+
+
+.. ipython:: python
+
    pdb_hits = []
    for key, item in blast_record.getHits(seqid).iteritems():
        pdb_hits.append((key, item['chain_id']))
