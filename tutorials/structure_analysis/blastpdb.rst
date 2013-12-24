@@ -44,7 +44,7 @@ Let's search for structures similar to that of MKP-3, using its sequence:
 
    import pickle
    if blast_record is None:
-       blast_record = pickle.load(open)('mkp3_blast_record.pkl'))
+       blast_record = pickle.load(open('mkp3_blast_record.pkl'))
    else:
        pickle.dump(blast_record, open('mkp3_blast_record.pkl', 'w'))
 
