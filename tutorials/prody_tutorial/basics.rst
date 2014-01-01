@@ -66,15 +66,12 @@ them to get information on the structure:
 
 .. ipython::
 
-   @doctest
    In [2]: p38.numAtoms()
    Out[2]: 2962
 
-   @doctest
    In [2]: p38.numCoordsets()  # returns number of models
    Out[2]: 1
 
-   @doctest
    In [2]: p38.numResidues()  # water molecules also count as residues
    Out[2]: 480
 
