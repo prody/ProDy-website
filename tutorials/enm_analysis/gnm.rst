@@ -57,7 +57,7 @@ Note that, flexible design of classes allows users to select atoms other than
 alpha carbons to be used in GNM calculations.
 
 
-Build Kirchoff matrix
+Build Kirchhoff matrix
 -------------------------------------------------------------------------------
 
 

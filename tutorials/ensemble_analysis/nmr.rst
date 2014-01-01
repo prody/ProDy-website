@@ -6,8 +6,8 @@ NMR Models
 
 This example shows how to perform principal component analysis (PCA) of an
 ensemble of NMR models.  The protein of interest is :wiki:`ubiquitin`, and
-for illustration puposes, we will repeat the calculations for ubiquitin that
-was published in [AB09]_.
+for illustration puposes, we will repeat the calculations for the ensemble
+of ubiquitin models that were analyzed in [AB09]_.
 
 A :class:`.PCA` object that stores covariance matrix and principal modes that
 describe the dominant changes in the dataset will be obtained. :class:`.PCA`

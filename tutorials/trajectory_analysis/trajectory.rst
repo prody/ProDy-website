@@ -11,7 +11,7 @@ Input files
 -------------------------------------------------------------------------------
 
 Currently, ProDy supports only DCD format files. Two DCD trajectory files and
-corresponding PDB structure file is needed for this example:
+corresponding PDB structure file are needed for this example:
 
   * `MDM2 files (ZIP) <trajectory_analysis_files.zip>`_
   * `MDM2 files (TGZ) <trajectory_analysis_files.tgz>`_
@@ -74,7 +74,7 @@ the *ensemble* onto the coordinates of the *structure*.
 
    ensemble.superpose()
 
-Now, we can get calculate RMSDs and RMSFs as follows:
+Now, we can calculate RMSDs and RMSFs as follows:
 
 .. ipython:: python
 

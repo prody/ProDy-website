@@ -43,7 +43,7 @@ include in our analysis.
 
 
 Note that we used a list of identifiers that are different from what was listed
-in the supporting material of [AB09]_.  Some structure has been refined and
+in the supporting material of [AB09]_.  Some structures have been refined and
 their identifier have been changed by the Protein Data Bank.
 These changes are reflected in the above list.
 
@@ -110,7 +110,7 @@ See :ref:`selections` for making selections.
 Prepare ensemble
 -------------------------------------------------------------------------------
 
-X-ray structural ensembles are heterogenous, i.e. different structures
+X-ray structural ensembles are heterogenenous, i.e. different structures
 have different sets of unresolved residues. Hence, it is not straightforward
 to analyzed them as it would be for NMR models (see :ref:`pca-nmr`).
 

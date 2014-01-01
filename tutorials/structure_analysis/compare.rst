@@ -4,7 +4,7 @@ Structure Comparison
 ===============================================================================
 
 This section shows how to find identical or similar protein chains in two
-structures files and align them.
+PDB files and align them.
 
 :mod:`.proteins` module contains functions for matching and mapping
 chains. Results can be used for RMSD fitting and PCA analysis.
@@ -133,8 +133,8 @@ Mapping is different from matching. When chains are matched, all matching
 atoms are returned as :class:`.AtomMap` instances. When atoms
 are mapped onto a *chain*, missing atoms are replaced by dummy atoms. The
 length of the mapping is equal to the length of *chain*. Mapping is used
-particularly useful in assembling coordinate data in analysis of heterogeneous
-datasets (see :ref:`pca`).
+particularly useful in assembling coordinate data for the analysis of 
+heterogeneous datasets (see :ref:`pca`).
 
 Let's map bound structure onto unbound chain A (subunit p66):
 
