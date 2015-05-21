@@ -35,9 +35,25 @@ Name of the protein (a name without a white space is preferred)
 .. ipython:: python
 
    name = 'cyt_c'
+   ref_pdb = '1hrc'
+
+In order to perform a BLAST search of the PDB, we will need the amino acid 
+sequence of our reference protein.  We could get the FASTA format from the PDB, 
+or we could get the sequence from the PDB file itself.  A more attractive 
+method (to us) is to get the sequence using ProDy.
+
+.. ipython:: python
+
+   ref_prot = parsePDB(ref_pdb)
+   ref_hv = ref_prot.getHierView()['A']
+   sequence = ref_hv.getSequence()
+
+This is the same as simply using
+
+.. ipython:: python
+
    sequence = '''GDVEKGKKIFVQKCAQCHTVEKGGKHKTGPNLHGLFGRKTGQAPGFTYTDANKNKGITWKEE
    TLMEYLENPKKYIPGTKMIFAGIKKKTEREDLIAYLKKATNE'''
-   ref_pdb = '1hrc'
 
 Optionally, a list of PDB files to be excluded from analysis can be provided.
 In this case dimeric Cyt c structures are excluded from the analysis. To use
