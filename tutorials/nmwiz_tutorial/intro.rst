@@ -13,28 +13,7 @@ NMWiz can be used to depict any vector that describes a molecular motion.
 Required Programs
 -------------------------------------------------------------------------------
 
-Latest version of ProDy_ and VMD_ are required.
-
-
-Manual Updates
--------------------------------------------------------------------------------
-
-There has been several improvements in NMWiz with ProDy release v1.4.
-Improved version of NMWiz and other related plotting plugins can be
-found in the following files:
-
-1. Download plugin files:
-
-  * :download:`nmwiz_multiplot_heatmapper.zip`
-  * :download:`nmwiz_multiplot_heatmapper.tgz`
-
-2. Update files in VMD plugins directory :file:`$VMDDIR/plugins/noarch/tcl/`.
-
-If you are not sure where VMD directory is located, run :program:`vmd`, and
-type the following command line in the VMD console::
-
-    global env; puts $env(VMDDIR)
-
+The latest versions of ProDy_ (1.4 or later) and VMD_ (1.9.2 or later) are required.
 
 Getting Started
 -------------------------------------------------------------------------------
