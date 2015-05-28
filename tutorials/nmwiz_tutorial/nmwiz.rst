@@ -26,18 +26,19 @@ window shown below:
 :guilabel:`NMWiz 1.2 - Main` window offers options to load precalculated
 data or to generate data for molecules loaded in VMD:
 
-  * :guilabel:`Load NMD File` let's you load precalculated data (:file:`.nmd`
+  * :guilabel:`Load NMD File` lets you load precalculated data (:file:`.nmd`
     files) for analysis.
 
-  * :guilabel:`From Molecule` let's you load precalculated data stored in
+  * :guilabel:`From Molecule` lets you load precalculated data stored in
     molecular data formats recognized by VMD.
 
-  * :guilabel:`ProDy interface` allows for performing ANM, GNM, and PCA/EDA
-    calculations.  This functionality is illustrated in the following chapters.
+  * :guilabel:`ProDy interface` facilitates ANM, GNM, and PCA/EDA
+    calculations from VMD.  This functionality is illustrated in the 
+    following chapters.
 
-  * :guilabel:`Structure Comparison` allows for calculating, depicting, and
-    animating deformation between two frames of the same molecule or two
-    separate structures.
+  * :guilabel:`Structure Comparison` facilitates calculating, visualizing, and
+    animating deformations between two frames of the same molecule or between 
+    two separate structures.
 
 
 NMD Format
@@ -45,22 +46,22 @@ NMD Format
 
 NMD files (extension :file:`.nmd`) are plain text files that contain at least
 normal mode and coordinate data. In addition to PCA, EDA, NMA, ANM, or GNM
-data, arbitrary vectors can be stored in NMD files.  Following data fields
+data, arbitrary vectors can be stored in NMD files.  The following data fields
 are recognized:
 
   * **coordinates**: Coordinates must be provided in one line as a list of
-    decimal numbers. Number of atoms in the system is deduced from size of
+    decimal numbers. The number of atoms in the system is deduced from size of
     this data line.
   * **mode**: Normal mode array. Each normal mode array must be provided in
     one line as a list of decimal numbers. Mode array may be preceded by mode
     index and mode length (square root of variance or inverse frequency).
-  * *title*: A title for the dataset.
-  * *names*: Atom names. Default is "CA" for all atoms.
-  * *resnames*: Residue names. Default value is "GLY".
-  * *chainids*: Chain identifiers. Default value is "A".
-  * *resids*: Residue numbers. If this data line if not found, residue numbers
-    are started from 1 and incremented by one for each atom.
-  * *betas*: Beta factors. Default value is 0 (zero). B-factors are used to
+  * **title**: A title for the dataset.
+  * **names**: Atom names. Default is "CA" for all atoms.
+  * **resnames**: Residue names. Default value is "GLY".
+  * **chainids**: Chain identifiers. Default value is "A".
+  * **resids**: Residue numbers. If this data line if not found, residue numbers
+    are assigned starting from 1 and incremented by one for each atom.
+  * **betas**: Beta factors. Default value is 0 (zero). B-factors are used to
     color the protein representation.
 
 .. note::
@@ -112,18 +113,34 @@ window:
 Changing and Editing Modes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+The active mode is represented by arrows starting at the atom locations and 
+pointing in the direction of motion.  The top pane of the NMWiz window 
+contains tools for changing some of the basic features of the displayed mode.
+
 Active mode and color
 """""""""""""""""""""
 
-Active mode can be changed using the drop down menu or :guilabel:`<=` and
-:guilabel:`=>` buttons. Changing the active mode will hide previously
-generated depiction.  Newly depicted mode will have a distinct color.
+The active mode can be changed using the drop down menu or incremented using
+the :guilabel:`<=` and :guilabel:`=>` buttons. Changing the active mode will 
+hide previously generated depictions, and the newly depicted mode will be 
+assigned a distinct color.
 
-Mode direction
-""""""""""""""
+Mode scale and direction
+""""""""""""""""""""""""
 
-NMWiz depicts normal modes as they are read from the input file, but
-:guilabel:`+/-`
+Mathematically, each mode's sign is arbitrary.  NMWiz depicts normal modes 
+as they are read from the input file, but the :guilabel:`+/-` button changes
+the mode's sign, inverting its direction.  The size of the arrows can be 
+adjusted using the :guilabel:`Scale by` or :guilabel:`RMSD` controls.  
+  * **Scale by**: The first number is the inverse of the mode frequency, and the second is a real-valued scaling factor that may be incremented or decremented using the adjacent buttons.  The :guilabel:`+/-` button controls the sign of the scale factor.  By default, NMWiz scales all modes to 2 Angstroms RMSD.
+    * **RMSD**: Arrow length can be adjusted to show a specified displacement along the active mode.  The sum of squares of the arrow lengths will be the square of the specified RMSD.  
+
+
+Atom selections
+"""""""""""""""
+
+Arrows are drawn for selected atoms. You can enter any valid atom selection
+string to display arrows for a specific part of the molecule.
 
 
 Mode options
@@ -144,29 +161,14 @@ and also select to use porcupine quills instead of arrows.
    When this is the case click one of :guilabel:`Draw` or :guilabel:`Redraw`
    buttons.
 
-
-Scaling and RMSD
-""""""""""""""""
-
-Remember that normal modes are unit vectors, so when they are drawn as they are
-arrows will not be visible, especially for large structures. Hence, modes are
-automatically scaled to depict a given RMSD.  RMSD value and the corresponding
-scaling factor is displayed in the top panel.
-
-Atom selections
-"""""""""""""""
-
-Arrows are drawn for selected atoms. You can enter any valid atom selection
-string to display arrows for a specific part of the molecule.
-
 Representations
 ^^^^^^^^^^^^^^^
 
-You can change molecule representations through NMWiz.
-:guilabel:`Molecule` number in :guilabel:`Actions` panel shows the index
+You can change molecule representations through NMWiz.  The
+:guilabel:`Molecule` number in the :guilabel:`Actions` panel shows the index
 of the molecule that the changes will affect.  If you would like NMWiz
-not to interfere with your customized visualization on this molecule,
-you can turn this off in molecule :guilabel:`Options` panel.  Alternatively,
+not to interfere with your customized visualization of this molecule,
+you can turn this off in the molecule :guilabel:`Options` panel.  Alternatively,
 you can :guilabel:`Hide` this molecule, and make custom representations for
 a molecule that you load into VMD manually.
 
@@ -195,10 +197,10 @@ Main Controls
 
 Use the following controls for:
 
-  * :guilabel:`Main` - open NMWiz main window, useful when it's closed
-  * :guilabel:`Save` - save current dataset in NMWiz format
-  * :guilabel:`Remove` - remove current dataset and free memory
-  * :guilabel:`Help` - get some help
+  * :guilabel:`Main` - Open the NMWiz main window, useful when it's closed
+  * :guilabel:`Save` - Save current dataset in NMWiz format
+  * :guilabel:`Remove` - Remove current dataset and free memory
+  * :guilabel:`Help` - Get some help
 
 
 Efficiency Tips
@@ -208,20 +210,20 @@ Displaying large number of primitive graphics for large molecules may make
 your system unresponsive.  You can try some of the following tricks to
 speed up drawing arrows and manipulating the view.
 
-Show some of modes
-""""""""""""""""""
+Show Fewer Arrows
+"""""""""""""""""
 
-  * Show subset of arrows evenly distributed in the molecular system
-    by making a selection using ``%``:
+  * Mode visualizations for large molecules may become cluttered with arrows. 
+    You can show a subset of arrows evenly distributed over the molecular system
+    by making a selection using ``%`` and entering it into the 
+    :guilabel:`Selection` box:
 
-    * ``index % 2 == 0`` - shows every other mode
+    * ``index % 2 == 0`` - shows every other arrow
 
-    * ``resid % 4 == 0`` - shows every mode for every forth residue
+    * ``resid % 4 == 0`` - shows arrow for every fourth residue
 
-    You need to enter these strings to :guilabel:`Selection` box.
-
-  * Draw modes that are longer than a threshold length using the options
-    in :guilabel:`Mode Graphics Options` in Figure 2.4.
+  * To only draw arrows that are longer than a user-specified threshold length,
+    use the options in :guilabel:`Mode Graphics Options`, shown in Figure 2.4.
 
 Depending on the molecule one or both of these tricks can provide a more
 responsive experience and a better (less crowded) depiction of motions.
