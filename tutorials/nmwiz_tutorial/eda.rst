@@ -37,21 +37,23 @@ ANM Calculation
 -------------------------------------------------------------------------------
 
 We will perform ANM calculations for all Cα atoms and keep the rest of the
-parameters unchanged.  Click :guilabel:`Submit Job` and results obtained from
-:ref:`prody-anm` command will load automatically.
+parameters unchanged.  To properly align the structures used for EDA and ANM,
+set :guilabel:`First frame` to 100 for the ANM calculation.  Click 
+:guilabel:`Submit Job` and results obtained from :ref:`prody-anm` command 
+will load automatically.
 
 .. figure:: /_static/nmwiz_p38_EDA1vsANM1.png
    :align: right
    :scale: 50 %
 
-   EDA 1 (orange) vs. ANM mode 2 (lime green)
+   EDA 1 (orange) vs. ANM mode 1 (lime green)
 
 Comparison
 -------------------------------------------------------------------------------
 
 For each dataset you load into or generate via NMWiz, a GUI will pop up with
 independent controls for normal mode display, animation, and plotting. Select
-PC 2 and ANM mode 2 and try to get the view in the image in VMD display.
+PC 1 and ANM mode 1 and try to get the view in the image in VMD display.
 
 
 Suggestions
