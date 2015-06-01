@@ -1,12 +1,11 @@
 Extending a Model
 ===============================================================================
 
-In previous calculations, we used Cα atoms and the results retrieved from
-ProDy contained only a trace of the structure.  VMD requires more information
-(at least a complete backbone) for displaying cartoon and ribbon 
-representation of proteins which are suitable for publications.  In this
-part, we will use :guilabel:`Extend model to` option for extending the
-model to backbone atoms of the protein.
+In the previous calculations, we used only Cα atoms for calculating normal 
+modes.  Publication-quality graphics that use VMD's cartoon or ribbon 
+representations require a least the full protein backbone. In this
+part, we will use NMWiz's :guilabel:`Extend model to` capabilities to 
+extend NMA results to all backbone atoms of the protein.
 
 .. figure:: /_static/nmwiz_1dlo_ANM1.png
    :align: right
@@ -34,15 +33,16 @@ Visualization
 
 When the results are loaded, you will see four arrows per residue (or node).
 Change the :guilabel:`Selection` string to read ``name CA`` and click 
-:guilabel:`Redraw`.  This will draw only one arrow per mode.
+:guilabel:`Redraw`.  This will draw only one arrow per residue.
 
 RT is a large structure and updating the display with every little change you
 make might be time consuming.  You can uncheck :guilabel:`auto update graphics`
-option in :guilabel:`Mode Graphics Options` panel.  
+option in :guilabel:`Mode Graphics Options` panel to speed up rendering.
 
 To get the view displayed in the figure, you will need to hide arrows that
 are shorter than a given length using :guilabel:`Draw if longer than` option
-and draw an arrow for every forth residue using the selection
+in the :guilabel:`Model->Options` menu.  Draw an arrow for every forth 
+residue using the selection
 ``name CA and resid % 4 == 0``. The protein representation is *NewCartoon*.
 
 Animation
