@@ -14,7 +14,9 @@ sys.path.append(os.path.abspath('manual/sphinxext'))
               #'sphinxcontrib.googleanalytics',
               #'ipython_console_highlighting',
               #'ipython_directive']
-extensions = [ 'IPython.sphinxext.ipython_directive' ]
+extensions = [ 'IPython.sphinxext.ipython_directive' ,
+	       'IPython.sphinxext.ipython_console_highlighting',
+	       'sphinxcontrib.googleanalytics']
 
 exclude_patterns.append('ProDy')
 exclude_patterns.append('DruGUI')
