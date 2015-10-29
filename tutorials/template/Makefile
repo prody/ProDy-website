@@ -31,7 +31,7 @@ setup:
 	rm -f files.txt;
 	files=`ls $(BASENAME)_files`; \
 	if [ -z "$$files" ]; then echo "There are no required files." > files.txt; else \
-	ls -hgoL --time-style=+ $(BASENAME)_files/ | tail -n +2 | cut -b 14-128 > files.txt; fi
+	ls -hgoL $(BASENAME)_files/ | tail -n +2 | cut -b 14-128 > files.txt; fi
 
 html: setup
 	cd $(WORKDIR); $(SPHINXBUILD) -b html -d ../$(BUILDDIR)/doctrees ../ ../$(BUILDDIR)/html
