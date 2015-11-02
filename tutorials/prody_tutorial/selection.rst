@@ -82,7 +82,7 @@ Composite selections
 Let's try a more sophisticated selection.  We first calculate the geometric
 center of the protein atoms using :func:`.calcCenter` function.  Then, we
 select the Cα and Cβ atoms of residues that have at least one atom within
-10 Å away from the geometric center.
+10 A away from the geometric center.
 
 .. ipython:: python
 

@@ -70,3 +70,4 @@ latex_logo = 'manual/_static/logo.png'
 lines = (line for line in rst_epilog.split('\n')
          if ('_Tut' not in line and '_NMW' not in line))
 rst_epilog = '\n'.join(lines)
+

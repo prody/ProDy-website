@@ -19,7 +19,8 @@ Membrane ANM
    :maxdepth: 2
 
    intro
-
+   imanm
+   exanm
 
 .. only:: html
 
