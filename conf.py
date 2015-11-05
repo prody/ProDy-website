@@ -53,6 +53,7 @@ html_additional_pages = {
     'nmwiz/index': 'nmwiz.html',
     'evol/index': 'evol.html',
     'drugui/index': 'drugui.html',
+    'comd/index' : 'comd.html',
     'downloads/index': 'downloads.html',
     'tutorials/index': 'tutorials.html',
     'statistics/index': 'statistics.html',

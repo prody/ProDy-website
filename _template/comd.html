@@ -1,0 +1,53 @@
+{% extends "index.html" %}
+{% block body %}
+
+
+      <div class="row">
+        <div class="span12">
+          <div class="span5 pull-right" style="padding-top: 20px">
+            <div class="well">
+              <div id="panel-5-title" class="slide-title"></div>
+              <i class="icon-circle-arrow-right slide-arrow" onclick="nextSlide(5);" title="Next slide"></i>
+              <i class="icon-circle-arrow-left slide-arrow" onclick="prevSlide(5);" title="Previous slide"></i>
+               <div id="panel-5-slide" class="slide-content"></div>
+              <script>showSlide(5, -1);</script>
+            </div>
+          </div>
+
+            <h2><b>coMD</b> for Collective MD Analysis</h2>
+            <p><b>coMD</b> is a
+            <a href="http://www.ks.uiuc.edu/Research/vmd/">VMD</a>
+            plugin designed for setup collective molecular dynamics simulations with elastic network models for conformational 
+            sampling. <b>coMD</b> can incorporate a diverse set of molecules
+            from CHARMM protein and lipid force field
+            (<a href="http://mackerell.umaryland.edu/charmm_ff.shtml">C22 and C27 lipids</a>)
+            into simulations.</p>
+
+            <h4>Features</h4>
+            <p><b>coMD</b> utilizes various softwares in following order:</p>
+
+            <ol class="simple">
+              <li>Using VMD’s psfgen and solvate packages, solvate and ionize protein structures.</li>
+              <li>Run a short minimization on both structures (initial endpoints) (50 steps) using NAMD. </li>
+              <li>Using ProDy ANM class to sample a series of collective motions to generate a new target conformation at both ends based on Monte-Carlo Metropolis algorithm with ANM modes.</li>
+              <li>Run a TMD simulation to target conformation using NAMD (10 ps).</li>
+              <li>Run a short minimization on final structures (50 steps) using NAMD.</li>
+              <li>Check whether the RMSD between the two instantaneous endpoints  is less than 1.5A or whether the change in the RMSD is less than 0.15 A using VMD. If true, write trajectory files, else, back to step 3.</li>
+            </ol>
+
+
+            <h4>Download</h4>
+            <p><b>coMD</b> plugin files can be obtained from
+            <a href="{{ pathto('tutorials/comd_tutorial/intro') }}">Getting coMD</a>.
+            </p>
+            <p><small>
+              <strong>Reference</strong><br>
+              Gur M, Madura DJ, Bahar I
+              <a class="reference external" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3791301/" target="_blank">
+              Global Transitions of Proteins Explored by a Multiscale Hybrid Methodology: Application to Adenylate Kinase </a>
+              <em>Biophys J</em> <strong>2013</strong> 105(7):1643-1652.
+            </small></p>
+          </div>
+        </div>
+
+{% endblock %}
