@@ -42,7 +42,7 @@ master_doc = 'contents'
 intersphinx_mapping.pop('prodywebsite')
 
 project = u'ProDy'
-copyright = u'2010-2014, University of Pittsburgh'
+copyright = u'2010-2015, University of Pittsburgh'
 
 # -- Options for HTML output ---------------------------------------------------
 

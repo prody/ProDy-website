@@ -28,10 +28,10 @@
 
             <ol class="simple">
               <li>Using VMD’s psfgen and solvate packages, solvate and ionize protein structures.</li>
-              <li>Run a short minimization on both structures (initial endpoints) (50 steps) using NAMD. </li>
+              <li>Run a short minimization on both structures (initial endpoints) using NAMD. </li>
               <li>Using ProDy ANM class to sample a series of collective motions to generate a new target conformation at both ends based on Monte-Carlo Metropolis algorithm with ANM modes.</li>
-              <li>Run a TMD simulation to target conformation using NAMD (10 ps).</li>
-              <li>Run a short minimization on final structures (50 steps) using NAMD.</li>
+              <li>Run a TMD simulation to target conformation using NAMD.</li>
+              <li>Run a short minimization on final structures using NAMD.</li>
               <li>Check whether the RMSD between the two instantaneous endpoints  is less than 1.5A or whether the change in the RMSD is less than 0.15 A using VMD. If true, write trajectory files, else, back to step 3.</li>
             </ol>
 
