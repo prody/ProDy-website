@@ -40,6 +40,9 @@ $(document).ready(function() {
   } else if (url.search("drugui") > -1) {
     logo.src = "http://prody.csb.pitt.edu/_static/drugui_logo.png";
   }
+  else if (url.search("comd") > -1) {
+    logo.src = "http://prody.csb.pitt.edu/_static/comdlogo.png";
+  }
   if ($('#homepagenav').length) {
     if (url.search("evol") > -1) {
       $('.nav-pills > li:nth-child(2)').addClass('active');

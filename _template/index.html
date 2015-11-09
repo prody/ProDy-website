@@ -82,8 +82,9 @@
       "Compare Dynamics from Experiments and Theory",
       "Druggability Simulation of Kinesin Eg5",
       "Kinesin Eg5 Druggable Binding Sites",
-      "Collective Molecular Dynamics of Adelynate Kinase", 
-      "Collective Molecular Dynamics of Adelynate Kinase");
+      "Collective Molecular Dynamics of Adenylate Kinase", 
+      "Collective Molecular Dynamics of Adenylate Kinase",
+      "Visalization of Collective Molecular Dynamics");
 
       panelSlides = new Array();
       panelSlides[0] = new Array(0, 4, 1, 7);
@@ -91,7 +92,7 @@
       panelSlides[2] = new Array(1, 2, 3);
       panelSlides[3] = new Array(7, 9, 10, 11);
       panelSlides[4] = new Array(12, 13);
-      panelSlides[5] = new Array(14, 15);
+      panelSlides[5] = new Array(14, 15, 16);
 
       var slideIndices = [0, 0, 0, 0, 0, 0, 0];
 
@@ -298,7 +299,7 @@
       <div class="prody-slide" id="slide-14">
         <div class="slide-image"><img src="{{ pathto('_static/gallery/comd_ake.png', 1) }}"/></div>
         <p style="font-size: 95%; font-style: italic;">
-        The collective molecular dynamics trajectory for Adelynate Kinase from open to closed conformation. <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3791301/">publication</a> for details.
+        The collective molecular dynamics trajectory for Adenylate Kinase from open to closed conformation. <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3791301/">publication</a> for details.
         </p>
       </div>
 
@@ -312,11 +313,21 @@
         </object>
         <p style="font-size: 95%; font-style: italic;">
         The movie shows a collective molecular dynamics simulation
-        for adelynate kinase.
+        for adenylate kinase.
         <a href="{{ pathto('tutorials/nmwiz_tutorial/intro') }}">NMWiz</a>
         VMD plugin.  See
         <a href="{{ pathto('tutorials/nmwiz_tutorial/index') }}">NMWiz tutorial</a>
         for usage examples.
+        </p>
+      </div>
+
+      <div class="prody-slide" id="slide-16">
+        <div class="slide-image"><img src="{{ pathto('_static/gallery/comd_pca_path_slide.png', 1) }}"/></div>
+        <p style="font-size: 95%; font-style: italic;">
+        The conformational sampling visualized on principal components of the trajectory. <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3791301/">publication</a> for details.
+        <!--
+        Will be 2015 reference after it is published.  
+      -->
         </p>
       </div>
 

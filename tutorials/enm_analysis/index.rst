@@ -17,7 +17,6 @@ Elastic Network Models
    intro
    gnm
    anm
-   bbenm
    external
    gamma
    edit

@@ -15,24 +15,21 @@
           </div>
 
             <h2><b>coMD</b> for Collective MD Analysis</h2>
-            <p><b>coMD</b> is a
+            <p><b>coMD</b> is a hybrid method with a 
             <a href="http://www.ks.uiuc.edu/Research/vmd/">VMD</a>
-            plugin designed for setup collective molecular dynamics simulations with elastic network models for conformational 
-            sampling. <b>coMD</b> can incorporate a diverse set of molecules
-            from CHARMM protein and lipid force field
-            (<a href="http://mackerell.umaryland.edu/charmm_ff.shtml">C22 and C27 lipids</a>)
-            into simulations.</p>
+            plugin designed for collective molecular dynamics (MD) simulations using elastic network models for conformational 
+            sampling. The basic idea is to take advantage of the global modes of motions predicted by the ANM and guide the MD trajectories in favor of these modes. The modes are selected according to a  Monte Carlo/Metropolis algorithm, as described in (<a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3791301/">Gur et. al, 2013</a>) Two major recent utilities are (i) accelerated sampling of broad range of conformations including the transition regions between substates that are structurally known, (ii) simulation of the functional dynamics of large systems (or supramolecular structures) at full atomic resolution, and (iii) efficient sampling of the conformational energy landscape for molecules that visit multile substates during their biological function. The latter feature is clearly illustrated by a recent application to LeuT, a neurotransmitter:sodium symporter (NSS) family member (Gur et al, 2015).</p>
 
             <h4>Features</h4>
-            <p><b>coMD</b> utilizes various softwares in following order:</p>
+            <p><b>coMD</b> uses as input two structures (e.g. open and closed forms of adenylate kinase, aslso called initial endpoints) and generates an ensemble of intermediate conformers or permits to sample the vicinity of these substates. It consists of multiple steps that use various softwares in the following order:</p>
 
             <ol class="simple">
               <li>Using VMD’s psfgen and solvate packages, solvate and ionize protein structures.</li>
-              <li>Run a short minimization on both structures (initial endpoints) using NAMD. </li>
-              <li>Using ProDy ANM class to sample a series of collective motions to generate a new target conformation at both ends based on Monte-Carlo Metropolis algorithm with ANM modes.</li>
+              <li>Run a short energy minimization on both structures (initial endpoints) using NAMD. </li>
+              <li>Using ProDy ANM class attributes to sample a series of collective motions to generate a new target conformation at both ends based on a Monte-Carlo Metropolis algorithm.</li>
               <li>Run a TMD simulation to target conformation using NAMD.</li>
-              <li>Run a short minimization on final structures using NAMD.</li>
-              <li>Check whether the RMSD between the two instantaneous endpoints  is less than 1.5A or whether the change in the RMSD is less than 0.15 A using VMD. If true, write trajectory files, else, back to step 3.</li>
+              <li>Run a short energy minimization on the final structures using NAMD.</li>
+              <li>Check whether the RMSD between the two instantaneous endpoints  is less than 1.5 &Aring; or whether the change in the RMSD is less than 0.15 &Aring; using VMD. If true, record trajectory files, else, redefine endpoints as those obtained in step 5 and go back to step 3.</li>
             </ol>
 
 
@@ -45,7 +42,11 @@
               Gur M, Madura DJ, Bahar I
               <a class="reference external" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3791301/" target="_blank">
               Global Transitions of Proteins Explored by a Multiscale Hybrid Methodology: Application to Adenylate Kinase </a>
-              <em>Biophys J</em> <strong>2013</strong> 105(7):1643-1652.
+              <em>Biophys J</em> <strong>2013</strong> 105(7):1643-1652.<br>
+              Gur M, Zomot E, Cheng MH, Bahar I. 
+              <a class="reference external" href="#" target="_blank">
+              Energy Landscape of LeuT from Molecular Simulations. </a>
+              <em>J Chem Phys</em> <strong>2015</strong> in press.
             </small></p>
           </div>
         </div>

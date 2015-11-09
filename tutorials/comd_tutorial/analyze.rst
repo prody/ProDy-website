@@ -12,7 +12,7 @@ from that folder:
 3. :file:`initial_trajectory.pdb`
 4. :file:`final_trajectory.pdb`
 
-Preparing trajectory files
+Preparing Trajectory Files
 --------------------------
 
 We recommend that you will follow this tutorial by typing commands in an
@@ -73,7 +73,7 @@ for ProDy command line application). Therefore, we prepare two trajectory files 
 	writeDCD('initial_filtered.dcd', dcd1)
 	writeDCD('final_filtered.dcd', dcd2)
 
-Concatanating trajectory files
+Concatenating Trajectory Files
 ------------------------------
 
 After having two trajectory files, we can start analyzing multiple :files:`.dcd` files. First, the trajectory files will be concatanated. 
