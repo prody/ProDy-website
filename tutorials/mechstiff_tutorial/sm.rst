@@ -32,11 +32,12 @@ We start by importing everything from the ProDy package:
 
 We start with parsing a PDB file by passing an identifier (**1gfl**).
 Note that if a file is not found in the current working directory, it will 
-be downloaded directly from Protein Data Bank database.
+be downloaded directly from Protein Data Bank database. We will include
+a header of PDB file which will be used in the next function.
 
 .. ipython:: python
 
-   gfp = parsePDB('1gfl')
+   gfp, header = parsePDB('1gfl', header=True)
    gfp
 
 We want to use only Cα atoms from chain A, so we select them:
@@ -78,6 +79,7 @@ We can get a copy of the Hessian matrix using :meth:`.ANM.getHessian` method:
    anm.getHessian().round(4)
 
 
+
 Stiffness Matrix Calculations
 -------------------------------------------------------------------------------
 
@@ -86,36 +88,36 @@ performed using :meth:`.ANM.buildSM` method:
 
 .. ipython:: python
 
-   anm.buildSM(calphas)
+   anm.buildMechStiff(calphas)
    anm.getStiffness()
 
-Mechanical stiffness matrix is avaliable by using :meth:`ANM.getStiffness` 
-method. To save stiffness matrix as a image map :file:`1gfl_stiffmatrix.png` 
-(``saveMap=True``) or as a text file :file:`1gfl_stiffmatrix.txt` 
-(``saveMatrix=True``) use following options:
+Mechanical stiffness matrix is avaliable using :meth:`.ANM.getStiffness` 
+method. To save stiffness matrix as an image map use following function:
 
 .. ipython:: python
    :verbatim:
 	
-   anm.buildSM(calphas, saveMap=True, saveMatrix=True, 
-					filename='1gfl_stiffmatrix')
-
-
-Note that ``saveMatrix=True`` will give an additional file with mean value 
-of mechanical stiffness for each residue. It will be saved to a file 
-:file:`1gfl_stiffmatrix_mean.txt`.
+   showMechStiff(anm, calphas, 'jet_r'))
 
 .. figure:: images/1gfl_stiffmatrix.png
    :scale: 65 %
 
-.. figure:: images/gfp_meanK.png
-   :scale: 45 %
+Note that 'jet_r' will reverse the colormap of image map which will be 
+similar to coloring method of VMD_ program. 
+
+Mean value of mechanical stiffness matrix can be calculated using 
+:meth:`showMeanStiff` function where the secoundary structure of protein 
+is drawing using header information.
+
+.. ipython:: python
+   :verbatim:
+
+   showMeanMechStiff(anm, calphas, header, 'A', 'jet_r')
+
+.. figure:: images/1gfl_meanStiffMatrix.png
+   :scale: 60 %
 
  
-Mechanical Striffness Matrix and mean value of effective spring constant of 
-GFP protein.
-
-
 Mechanical Stiffness in VMD
 -------------------------------------------------------------------------------
 
@@ -181,25 +183,43 @@ The range of spring constant for *k_range* can be check:
 
    anm.getStiffnessRange()
 
+See also :meth:`.ANM.getMechStiffStatistic` and :meth:`.ANM.getStiffnessRangeSel`
+function for detailed analysis of stiffness matrix.
+
+The results of mean value of mechanical stiffness calculation can be seen 
+in VMD_ program using:
+
+.. ipython:: python
+   :verbatim:
+	
+   writeDeformProfile(anm, pdb, selstr='chain A and name CA',\
+                                  pdb_selstr='protein')
+
+
+.. figure:: images/1gfl_defprofile_vmd.png
+   :scale: 90 %
+
+
 
 Calculate Distribution of Deformation 
 -------------------------------------------------------------------------------
 
 Distribution of the deformation in the distance contributed by each mode 
 for selected pair of residues has been described in [EB08]_, see *Eq. (10)*
-and plots are shown on *Fig. (2)*.
+and plots are shown on *Fig. (2)*. 
+The results can be received using :meth:`.plotting.showPairDeformationDist`
+to obtain a plot or :meth:`.analysis.calcPairDeformationDist` to receive a list
+with data that can be modified.
 
 .. ipython:: python
    :verbatim:
 
-   calcPairDeformationDist(anm, calphas, 3, 132, saveFile=True, 
-				savePlot=True, filename='1gfl_3_132')
+   calcPairDeformationDist(anm, calphas, 3, 132)
 
+   showPairDeformationDist(anm, calphas, 3, 132)
 
 .. figure:: images/1gfl_3_132.png
    :scale: 60 %
-
-
 
 Distribution of the deformation plot between 3-132 residue in each mode *k*.
 
