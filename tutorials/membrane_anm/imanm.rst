@@ -8,6 +8,11 @@ Here we will make use of ProDy's implicit membrane ANM (imANM) capabilities to i
   * `Outward-facing block definition file <2nwl_blocks.txt>`_
   * `Inward-facing block definition file <3kbc_blocks.txt>`_
 
+Files in the following archives can be used to follow this tutorial:
+
+  * `membrane ANM Tutorial Files (TGZ) <membanm_tutorial_files.tgz>`_
+  * `membrane ANM Tutorial Files (ZIP) <membanm_tutorial_files.zip>`_
+
 The first file contains the outward-facing structure of the glutamate transporter after insertion into the plasma membrane.  It is obtained from the `Orientations of Proteins in Membranes <http://opm.phar.umich.edu/>`_ database.
 
 .. [TL12] Lezon TR, Bahar I. Constraints Imposed by the Membrane Selectively Guide the Alternating Access Dynamics of the Glutamate Transporter GltPh. *Biophys J* **2012** 102 1331-1340.
@@ -145,12 +150,12 @@ Now we calculate the modes and write them to a pair of .nmd files for viewing.
    writeNMD('3kbc_im.nmd',if_rtb,if_ca.select('protein and name CA'))
 
 
-.. figure:: /images/membrane_anm-imanm_of3.png
+.. figure:: _static/figures/membrane_anm-imanm_of3.png
    :scale: 100%
 
 The third mode of the outward-facing structure moves all three transport domains simultaneously through the membrane in a 'lift-like' motion.
 
-.. figure:: /images/membrane_anm-imanm_if6.png
+.. figure:: _static/figures/membrane_anm-imanm_if6.png
    :scale: 100%
 
 A similar motion is shown in mode 6 of the inward-facing structure.

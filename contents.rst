@@ -16,6 +16,9 @@ ProDy Documentation
    tutorials/ensemble_analysis/index
    tutorials/trajectory_analysis/index
    tutorials/conformational_sampling/index
+   tutorials/comd_tutorial/index
+   tutorials/membrane_anm/index
+   tutorials/mechstiff_tutorial/index
 
 
 * :ref:`genindex`
