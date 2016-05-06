@@ -1,0 +1,54 @@
+{% extends "index.html" %}
+{% block body %}
+
+
+      <div class="row">
+        <div class="span12">
+          <div class="span5 pull-right" style="padding-top: 20px">
+            <div class="well">
+              <div id="panel-5-title" class="slide-title"></div>
+              <i class="icon-circle-arrow-right slide-arrow" onclick="nextSlide(5);" title="Next slide"></i>
+              <i class="icon-circle-arrow-left slide-arrow" onclick="prevSlide(5);" title="Previous slide"></i>
+               <div id="panel-5-slide" class="slide-content"></div>
+              <script>showSlide(5, -1);</script>
+            </div>
+          </div>
+
+            <h2><b>MechStiff</b> for Mechanical Stiffness Calculations</h2>
+            <p><b>MechStiff</b> is a method that calculate the mechanical resistance of protein
+            to external force applied at specific positions of 3D structure. 
+
+            <h4>Features</h4>
+            <p><b>MechStiff</b> use as an input ANM instance and protein coordinates.
+            With this tool multiple features may be exhibited, a.o.: 
+            Mechanical Stiffness Map, Mean value of stiffness: as plot with secondary
+            structure or as a color coding 3D structure (TCL script directly
+            uploaded to <a
+            href="http://www.ks.uiuc.edu/Research/vmd/">VMD</a>).
+            All plots and vizualization are automatically provided.
+
+            It can be used for:</p>
+
+            <ol class="simple">
+              <li>Localization of the weakest/strongest elements of the structure
+              architecture provided together with 3D vizualization and statistics
+              analysis. </li>
+              <li>Determing the value of effective spring constant for selected
+              pair of residues - useful for Single Molecule Force Spectroscopy
+              (SMFS, AFM) and Steered Molecular Dynamics simulations. </li>
+              <li>Studing distributions of the deformation in the distance
+              contributed by each mode in the presence of extensional forces
+              applied to the pair of residues. </li>
+            </ol>
+
+
+              <strong>Reference</strong><br>
+              Eyal E, Bahar I
+              <a class="reference external" href="http://www.ncbi.nlm.nih.gov/pubmed/18223005" target="_blank">
+              Toward a Molecular Understanding of the Anisotropic Response of Proteins to External Forces: Insights from Elastic Network Models </a>
+              <em>Biophys J</em> <strong>2008</strong> 94(9):3424-3435.<br>
+            </small></p>
+          </div>
+        </div>
+
+{% endblock %}
