@@ -1,5 +1,5 @@
-tutorial_title = u'TITLE'
-tutorial_author = u'cihan kaya'
+tutorial_title = u'coMD Tutorial'
+tutorial_author = u'Cihan Kaya'
 tutorial_logo = u''           # default is ProDy logo
 tutorial_version = u''        # default is latest ProDy version
 

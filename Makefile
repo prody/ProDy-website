@@ -68,7 +68,7 @@ html: link drugui workdir
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
-pdf: latest link
+pdf: link
 	rm -f reference/*pdf tutorials/*/*pdf tutorials/*/*files.zip tutorials/*/*files.tgz
 
 	cd manual; make pdf

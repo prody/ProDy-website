@@ -17,11 +17,11 @@ or from the current working directory::
 
 or::
 
-  $ python prody -h
+  $ prody -h
 
 or on Windows::
 
-  $ C:\Python27\python.exe C:\Python27\Scripts\prody -h
+  $ C:\Python27\Scripts\prody -h
 
 These lines will print available ProDy applications.  You can get more help
 on a specific commands as follows::

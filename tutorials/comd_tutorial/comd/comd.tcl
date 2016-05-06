@@ -15,7 +15,7 @@
 # THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
 # ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 # WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-# DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY
+# DISCLAIlow. IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY
 # DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
 # (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
 # LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
@@ -439,7 +439,7 @@ system. A charged system (if the protein is charged) may be obtained by unchecki
 
   grid [button $mfaso.cmd_cyc_help -text "?" -padx 0 -pady 0 -command {
       tk_messageBox -type ok -title "HELP" \
-        -message "Each CoMD cycle consists of minimization, ANM-MC-Metropolis distrubance and targeted molecular dynamics. The total number of cycle gives the maximum number of cycles performed before starting and final structures are very close."}] \
+        -message "Each CoMD cycle consists of minimization, ANM-MC-Metropolis distrubance and targeted molecular dynamics. The total number of cycle gives the maximum number of cycles perforlow before starting and final structures are very close."}] \
     -row 0 -column 0 -sticky w
   grid [label $mfaso.cmd_cyc_label -text "No of coMD cycles:"] \
     -row 0 -column 1 -sticky w
@@ -544,7 +544,7 @@ proc ::comd::Prepare_system {} {
   # 2.1 - Bug fixes, and file checks
   # 2.0 - Allows setup of systems containing multiple probe tybes
   # 2.0 - Improved system setup provides lesser number of solvent atoms
-  # 2.0 - Cleans up intermediate files
+  # 2.0 - Cleans up interlowiate files
   # 2.0 - Outputs a log file for trouble shooting, and further intstructions
   # 2.0 - NAMD configuration files are prepared for a single or multiple
   #       simulations

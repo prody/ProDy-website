@@ -12,7 +12,7 @@ BASENAME      = $${PWD\#\#*/}
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
 PAPEROPT_letter = -D latex_paper_size=letter
-ALLSPHINXOPTS   =  $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
+ALLSPHINXOPTS   =  $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) ..
 # the i18n builder cannot share the environment and doctrees with the others
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
@@ -44,7 +44,8 @@ help:
 clean:
 	-rm -rf $(BUILDDIR)/*
 
-copy: archive
+copy: archive latexpdf
+	/bin/mv -f _build/latex/$(BASENAME).pdf ../../_build/html/tutorials/$(BASENAME)/
 	/bin/mv -f comd_plugin_files.* ../../_build/html/tutorials/$(BASENAME)/
 	/bin/mv -f comd_tutorial_files.* ../../_build/html/tutorials/$(BASENAME)/
 
@@ -118,7 +119,7 @@ latex:
 	      "(use \`make latexpdf' here to do that automatically)."
 
 latexpdf:
-	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
+	cd $(WORKDIR); $(SPHINXBUILD) -b latex -d ../_build/doctrees .. ../_build/latex
 	@echo "Running LaTeX files through pdflatex..."
 	$(MAKE) -C $(BUILDDIR)/latex all-pdf
 	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."

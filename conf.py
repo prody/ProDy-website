@@ -8,7 +8,7 @@ import time
 try:
     exec(open('ProDy/docs/conf.py').read())
 except IOError:
-    exec(open('../../manual/conf.py').read())
+    exec(open('manual/conf.py').read())
 
 sys.path.append(os.path.abspath('manual/sphinxext'))
               #'sphinxcontrib.googleanalytics',

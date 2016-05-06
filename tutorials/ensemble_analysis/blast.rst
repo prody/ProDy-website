@@ -208,8 +208,8 @@ software.  In this case, we will align only select PDB files:
 
 .. ipython:: python
 
-   conf1_alinged = alignPDBEnsemble(ensemble[0])
-   conf2_alinged = alignPDBEnsemble(ensemble[1])
+   conf1_aligned = alignPDBEnsemble(ensemble[0])
+   conf2_aligned = alignPDBEnsemble(ensemble[1])
 
 
 Let's take a quick look at the aligned structures:
