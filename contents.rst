@@ -18,7 +18,7 @@ ProDy Documentation
    tutorials/conformational_sampling/index
    tutorials/comd_tutorial/index
    tutorials/membrane_anm/index
-   tutorials/mechstiff_tutorial/index
+   tutorials/stiffmech/index
 
 
 * :ref:`genindex`
