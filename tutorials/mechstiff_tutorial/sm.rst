@@ -145,12 +145,11 @@ selection will be used:
 Results will be loaded automatically to VMD_. Use ``loadToVMD=False`` to 
 change it. TCL file will be saved automatically and can be used later by using 
 linux command line: 
-::
-     vmd -e 1gfl_3aa.tcl
+
+::  vmd -e 1gfl_3aa.tcl
 
 or in VMD_ *TKConsole* (*VMD Main*) for Linux, Windows and Mac users: 
-::  
-     play 1gfl_3aa.tcl
+::  play 1gfl_3aa.tcl
 
 
 Tcl file contains drawing line method between selected pairs of residues 
