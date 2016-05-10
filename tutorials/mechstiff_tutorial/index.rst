@@ -1,6 +1,6 @@
 .. use "mechstiff_tutorial" to refer to this file
 
-.. _mechstiff_tutorial:
+.. _mechstiff-tutorial:
 
 *******************************************************************************
 Stiffness Matrix Calculations
@@ -16,7 +16,7 @@ Stiffness Matrix Calculations
 
 .. toctree::
    :glob:
-   :maxdepth: 2
+   :maxdepth: 1
 
    intro
    sm

@@ -49,6 +49,9 @@ $(document).ready(function() {
   else if (url.search("mechstiff") > -1) {
     logo.src = "http://prody.csb.pitt.edu/_static/mechstifflogo.png";
   }
+  else {
+    logo.src = "http://prody.csb.pitt.edu/_static/logo.png";
+  }
   
   if ($('#homepagenav').length) {
     if (url.search("evol") > -1) {
