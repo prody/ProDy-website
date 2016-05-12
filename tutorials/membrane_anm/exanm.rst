@@ -68,13 +68,14 @@ and we build a couple of Hessians using the coordinates of the crystal structure
 
 .. ipython:: python
 
-   exanm.buildHessian(of_ca, cutoff=15.0, membrane_low=-13, membrane_high=13.)
+   exanm.buildHessian(of_ca, cutoff=15.0, membrane_low=-13, membrane_high=13.)   
 
 Now we calculate the modes and write them to a pair of .nmd files for viewing.
 
 .. ipython:: python
 
    exanm.calcModes()
+
    writeNMD('2nwl_im.nmd',exanm,of_ca.select('protein and name CA'))
 
 .. figure:: _static/figures/membrane_anm-exanm_of3.png

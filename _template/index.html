@@ -10,7 +10,10 @@
     <link href="{{ pathto('_static/css/prodydocs.css', 1) }}" rel="stylesheet">
 
     <script type="text/javascript" src="{{ pathto('_static/js/jquery-2.0.0.min.js', 1) }}"></script>
-    <script type="text/javascript" src="{{ pathto('_static/js/bootstrap.min.js', 1) }}"></script>
+    <!--<script type="text/javascript" src="{{ pathto('_static/js/bootstrap.min.js', 1) }}"></script> -->
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{{ pathto('_static/js/prodydocs.js', 1) }}"></script>
     <script type="text/javascript">
 
@@ -62,6 +65,12 @@
         display: none;
         visibility: hidden;
       }
+
+      body {
+        margin-left: 40px;
+        margin-right: 40px;
+      }
+
     </style>
 
     <!-- Figures
@@ -126,6 +135,7 @@
         document.getElementById("slide-" + index).innerHTML;
       }
 
+
       $(document).ready(function() {
         var down = $("#download");
         if (navigator.appVersion.indexOf("Win") >= 0) {
@@ -138,6 +148,8 @@
         down.html('<i class="icon-download-alt icon-white"></i> ' + sel.html())
 
       });
+
+
 
     </script>
 
@@ -227,13 +239,7 @@
       </div>
 
       <div class="prody-slide" id="slide-7">
-        <object width="320" height="270">
-        <param name="movie" value="http://www.youtube.com/v/1OUzdzm68YY&hl=en_US&fs=1&rel=0&loop=1&modestbranding=1&autoplay=1"></param>
-        <param name="allowFullScreen" value="true"></param>
-        <param name="allowscriptaccess" value="always"></param>
-        <embed src="http://www.youtube.com/v/1OUzdzm68YY&hl=en_US&fs=1&rel=0&loop=1&modestbranding=1&autoplay=1"
-          type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="320" height="270"></embed>
-        </object>
+        <div class="slide-image"><img src="{{ pathto('_static/gallery/nmwiz_youtube.gif', 1) }}"/></div>
         <p style="font-size: 95%; font-style: italic;">
         Animation shows HIV-1 reverse transcriptase functional motions calculated
         using anisotropic network model.
@@ -278,13 +284,7 @@
       </div>
 
       <div class="prody-slide" id="slide-12">
-        <object width="320" height="270">
-        <param name="movie" value="http://www.youtube.com/v/4vOoueCQnx0&hl=en_US&fs=1&rel=0&loop=1&modestbranding=1&autoplay=1"></param>
-        <param name="allowFullScreen" value="true"></param>
-        <param name="allowscriptaccess" value="always"></param>
-        <embed src="http://www.youtube.com/v/4vOoueCQnx0&hl=en_US&fs=1&rel=0&loop=1&modestbranding=1&autoplay=1"
-          type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="320" height="270"></embed>
-        </object>
+        <div class="slide-image"><img src="{{ pathto('_static/gallery/drugui_youtube.gif', 1) }}"/></div>
         <p style="font-size: 95%; font-style: italic;">
         The movie shows a molecular dynamics simulation
         for assessing the druggability of kinesin eg5.
@@ -312,13 +312,7 @@
       </div>
 
       <div class="prody-slide" id="slide-15">
-        <object width="320" height="270">
-        <param name="movie" value="http://www.youtube.com/v/pmUUG9dPsIY&hl=en_US&fs=1&rel=0&loop=1&modestbranding=1&autoplay=1"></param>
-        <param name="allowFullScreen" value="true"></param>
-        <param name="allowscriptaccess" value="always"></param>
-        <embed src="http://www.youtube.com/v/pmUUG9dPsIY&hl=en_US&fs=1&rel=0&loop=1&modestbranding=1&autoplay=1"
-          type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="320" height="270"></embed>
-        </object>
+        <div class="slide-image"><img src="../_static/gallery/comd_youtube2.gif"/></div>
         <p style="font-size: 95%; font-style: italic;">
         The movie illustrates a coMD trajectory for adenylate kinase. <a href="../tutorials/nmwiz_tutorial/intro.html">NMWiz</a> VMD plugin. See <a href="../tutorials/nmwiz_tutorial/index.html">NMWiz tutorial</a> for usage examples.
         </p>
@@ -361,14 +355,14 @@
       <div class="prody-slide" id="slide-20">
         <div class="slide-image"><img src="../_static/gallery/1ubi_meanSM.png"/></div>
         <p style="font-size: 95%; font-style: italic;">
-        Deformability profile of ubiquitin (PDB code: 1UBI). Structure is automatically uploaded to VMD program where blue color shows regions which are mechanically more resistant on the external force.  
+        Deformability profile of ubiquitin (PDB code: 1UBI). Structure is automatically uploaded to VMD program where blue color shows regions which are mechanically more resistant to the external force.  
         </p>
       </div>
 
       <div class="prody-slide" id="slide-21">
         <div class="slide-image"><img src="../_static/gallery/meanPlot_1ubi.png"/></div>
         <p style="font-size: 95%; font-style: italic;">
-        Mean value of effective spring constant (calculated from mechanical stiffness matrix) with secondary structure of ubiquitin. Blue color indicate mechanically strong regions. 
+        Mean value of effective spring constant (calculated from mechanical stiffness matrix) with secondary structure of ubiquitin. Blue color indicates mechanically strong regions. 
         </p>
       </div>
 
@@ -394,9 +388,9 @@
           <li title="Evol"><a href="{{ pathto('evol', 1) }}">Evol</a></li>
           <li title="NMWiz" ><a href="{{ pathto('nmwiz', 1) }}">NMWiz</a></li>
           <li title="membrANM" ><a href="{{ pathto('memanm', 1) }}">membrANM</a></li>
-          <li title="stiffMech" ><a href="{{ pathto('mechstiff', 1) }}">stiffMech</a></li>
+          <li title="stiffMech" ><a href="{{ pathto('mechstiff', 1) }}">MechStiff</a></li>
           <li title="DruGUI" ><a href="{{ pathto('drugui', 1) }}">DruGUI</a></li>
-          <li title="coMD" ><a href="../comd">coMD</a></li>
+          <li title="coMD" ><a href="{{ pathto('comd', 1) }}">coMD</a></li>
           <li title="Downloads"><a href="{{ pathto('downloads', 1) }}">Downloads</a></li>
           <li title="Tutorials"><a href="{{ pathto('tutorials', 1) }}">Tutorials</a></li>
           <li title="Statistics"><a href="{{ pathto('statistics', 1) }}">Statistics</a></li>
