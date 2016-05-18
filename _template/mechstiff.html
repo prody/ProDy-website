@@ -15,30 +15,24 @@
           </div>
 
             <h2><b>MechStiff</b> for Mechanical Stiffness Calculations</h2>
-            <p><b>MechStiff</b> is a method that calculate the mechanical resistance of protein
-            to external force applied at specific positions of 3D structure. 
+            <p><b>MechStiff</b> calculates the mechanical resistance 
+            to external force (uniaxial tension) applied at specific pairs of residues on the 3D structure. 
 
             <h4>Features</h4>
-            <p><b>MechStiff</b> use as an input ANM instance and protein coordinates.
-            With this tool multiple features may be exhibited, a.o.: 
-            Mechanical Stiffness Map, Mean value of stiffness: as plot with secondary
-            structure or as a color coding 3D structure (TCL script directly
+            <p><b>MechStiff</b> uses as an input the known structure modeled as ANM. It may be used to evaluate the 
+            Mechanical Stiffness/Strength Map as a function of residue indices and effective stiffness (or force constant)
+            for each residue averaged over all pairs it forms, plotted as 2D (map) or 1D (profile) respectively,
+            along with the ribbon diagrams color-coded by residue strength (TCL script directly
             uploaded to <a
-            href="http://www.ks.uiuc.edu/Research/vmd/">VMD</a>).
-            All plots and vizualization are automatically provided.
-
-            It can be used for:</p>
+            href="http://www.ks.uiuc.edu/Research/vmd/">VMD</a>). The plots and vizualization can be used for:</p>
 
             <ol class="simple">
-              <li>Localization of the weakest/strongest elements of the structure
+              <li>Identification of the weakest/strongest elements of the structure
               architecture provided together with 3D vizualization and statistics
               analysis. </li>
-              <li>Determing the value of effective spring constant for selected
-              pair of residues - useful for Single Molecule Force Spectroscopy
-              (SMFS, AFM) and Steered Molecular Dynamics simulations. </li>
-              <li>Studing distributions of the deformation in the distance
-              contributed by each mode in the presence of extensional forces
-              applied to the pair of residues. </li>
+              <li>Determination of the effective spring constant for selected pair of residues - useful for Single 
+               Molecule Force Spectroscopy (SMFS, AFM) and Steered Molecular Dynamics simulations. </li>
+              <li>Evaluating the contributions of each mode to selected deformations </li>
             </ol>
 
 

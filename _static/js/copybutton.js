@@ -40,7 +40,7 @@ $(document).ready(function() {
                 } else {
                     jthis.find('.go').remove();
                 }
-                jthis.find('.gr, .gp').remove();
+                jthis.find('.gr, .gp, .gh').remove();
                 var lines = jthis.text().split('\n');
                 $.each(lines, function(l) {
                     var line = lines[l];
@@ -99,12 +99,12 @@ $(document).ready(function() {
             var button = $(this);
             clicks = button.data('clicks');
             if (clicks) {
-                button.parent().find('.go, .gp, .gt, .gr').hide();
+                button.parent().find('.go, .gp, .gt, .gr, .gh').hide();
                 button.next('pre').find('.gt, .gr').nextUntil('.gp, .go').css('visibility', 'hidden');
                 button.css('text-decoration', 'line-through');
                 button.attr('title', show_text);
             } else {
-                button.parent().find('.go, .gp, .gt, .gr').show();
+                button.parent().find('.go, .gp, .gt, .gr, .gh').show();
                 button.next('pre').find('.gt, .gr').nextUntil('.gp, .go').css('visibility', 'visible');
                 button.css('text-decoration', 'none');
                 button.attr('title', hide_text);
@@ -112,4 +112,5 @@ $(document).ready(function() {
             $(this).data("clicks", !clicks);
         });
 });
+
 
