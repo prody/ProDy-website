@@ -44,7 +44,7 @@ $(document).ready(function() {
                 var lines = jthis.text().split('\n');
                 $.each(lines, function(l) {
                     var line = lines[l];
-                    if (line.length) {
+                    if (line.length and alert(line.substring(0,4)) != "[Out" ) {
                         //codesnippets += line.replace(/\</g,"&lt;").replace(/\>/g,"&gt;").replace(/\&/g,"&amp;").replace(/\'/g,"&apos;").replace(/\"/g,"&quot;") + '\n';
                         codesnippets += line + '\n';
                     }
