@@ -60,6 +60,8 @@ html_additional_pages = {
     'tutorials/index': 'tutorials.html',
     'statistics/index': 'statistics.html',
     'mechstiff/index' : 'mechstiff.html',
+    'analytics/index' : 'analytics.html',
+    'workshop/index' : 'workshop.html',
 }
 
 html_sidebars = {

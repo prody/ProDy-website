@@ -13,7 +13,7 @@
     <!--<script type="text/javascript" src="{{ pathto('_static/js/bootstrap.min.js', 1) }}"></script> -->
 
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{{ pathto('_static/js/prodydocs.js', 1) }}"></script>
     <script type="text/javascript">
 
@@ -28,6 +28,146 @@
       })();
 
     </script>
+
+<!-- Statistics scripts for webpage --> 
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+    google.charts.load('current', {'packages':['geochart','table','corechart']});
+    google.charts.setOnLoadCallback(drawRegionsMap);
+    function drawRegionsMap() {
+        var quere = new google.visualization.Query('https://prody-users.appspot.com/query?id=ag1zfnByb2R5LXVzZXJzchULEghBcGlRdWVyeRiAgICA3pCBCgw&format=data-table-response'
+        );
+
+        quere.send(function (response) {
+           var datae = response.getDataTable();
+
+        datae.setColumnLabel(0, 'Country');
+        datae.setColumnLabel(1, 'Sessions');
+
+        var options = {};
+        options['dataMode'] = 'regions';
+
+        var container = document.getElementById('regions_div');
+        var geomap = new google.visualization.GeoChart(container);
+
+        geomap.draw(datae, options);
+        });
+   };
+    google.charts.setOnLoadCallback(drawTable);
+    function drawTable() {
+        var querf = new google.visualization.Query('https://prody-users.appspot.com/query?id=ag1zfnByb2R5LXVzZXJzchULEghBcGlRdWVyeRiAgICA2reXCgw&format=data-table-response'
+        );
+
+        querf.send(function (response) {
+           var dataf = response.getDataTable();
+
+        dataf.setColumnLabel(0, 'Country');
+        dataf.setColumnLabel(1, 'Sessions');
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+
+        table.draw(dataf, {showRowNumber: true, width: '100%', height: '100%'});
+        });
+    };
+    google.charts.setOnLoadCallback(drawTable2);
+    function drawTable2() {
+        var querd = new google.visualization.Query('https://prody-users.appspot.com/query?id=ag1zfnByb2R5LXVzZXJzchULEghBcGlRdWVyeRiAgICAgICACgw&format=data-table-response'
+        );
+        querd.send(function (response) {
+           var datad = response.getDataTable();
+
+        datad.setColumnLabel(0, 'Unique Visitors');
+        datad.setColumnLabel(1, 'Visits');
+        datad.setColumnLabel(2, 'Unique Visitors/Visits');
+        datad.setColumnLabel(3, 'Avg. Pages/Visit');
+        datad.setColumnLabel(4, 'Avg. Duration/Visit');
+
+        for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
+            myVal = parseFloat(datad.getValue(c, 1)).toFixed(1);
+            datad.setFormattedValue(c, 2, myVal + '%');
+          }
+for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
+            myVal = parseFloat(datad.getValue(c, 2)).toFixed(0);
+            datad.setFormattedValue(c, 1, '       ' + myVal );
+          }
+for (var i = 0, length = datad.getNumberOfRows(), value, minutes, 
+ seconds; i < length; i++) {
+     value = datad.getValue(i, 3);
+     minutes = Math.floor(value / 60);
+     seconds = Math.round(value % 60);
+     // prepend 0's if necessary
+     minutes = (minutes < 10) ? '0' + minutes : minutes;
+     seconds = (seconds < 10) ? '0' + seconds : seconds;
+     datad.setFormattedValue(i, 4,      minutes + ':' + seconds + ' (min:sec)');
+}
+for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
+            myVal = parseFloat(datad.getValue(c, 4)).toFixed(1);
+            datad.setFormattedValue(c, 3, myVal + ' (number of pages)');
+          }
+
+        var table2 = new google.visualization.Table(document.getElementById('table_div2'));
+
+        table2.draw(datad, { width: '100%', height: '100%' });
+        });
+    };
+
+    google.charts.setOnLoadCallback(drawChart)
+    function drawChart() {
+        var querf = new google.visualization.Query('https://prody-users.appspot.com/query?id=ag1zfnByb2R5LXVzZXJzchULEghBcGlRdWVyeRiAgICAmdKFCgw&format=data-table-response'
+        );
+
+        querf.send(function (response) {
+           var dataf = response.getDataTable();
+
+        dataf.setColumnLabel(0, 'Country');
+        dataf.setColumnLabel(1, 'Sessions');
+
+        var options = {
+          title: 'Visitor distribution across the world (top 20 countries)',
+          titleTextStyle: {
+                fontSize: 12
+        },
+          is3D: true,
+          height: '264', 
+          chartArea: {'width':'100%', 'height':'80%'}
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart1'));
+
+        chart.draw(dataf, options);
+        });
+      };
+    google.charts.setOnLoadCallback(drawChart2)
+    function drawChart2() {
+
+        var querg = new google.visualization.Query('https://prody-users.appspot.com/query?id=ag1zfnByb2R5LXVzZXJzchULEghBcGlRdWVyeRiAgICA7bGDCgw&format=data-table-response'
+        );
+
+        querg.send(function (response) {
+           var datag = response.getDataTable();
+
+        datag.setColumnLabel(0, 'Country');
+        datag.setColumnLabel(1, 'Unique Visitors');
+
+         var options = {
+          title: 'Unique visitors across the world (top 20 countries)',
+          titleTextStyle: {
+                fontSize: 12
+        },
+          is3D: true,
+          height: '264', 
+          chartArea: {'width':'100%', 'height':'80%'}
+        };
+
+        var chartg = new google.visualization.PieChart(document.getElementById('piechart2'));
+
+        chartg.draw(datag, options);
+        });
+      };
+    </script>
+
     <link rel="shortcut icon" href="_static/favicon.ico"/>
 
     <style type="text/css">
@@ -70,7 +210,7 @@
         margin-left: 40px;
         margin-right: 40px;
       }
-      
+
     </style>
 
     <!-- Figures

@@ -1,0 +1,88 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "
+ http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd";>
+ <html xmlns="http://www.w3.org/1999/xhtml";>
+   <head>
+     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+     <title>
+       ProDy Visitors
+     </title>
+     <!-- One script tag loads all the required libraries! Do not 
+ specify any chart types in the autoload statement. -->
+     <script type="text/javascript"
+         src='https://www.google.com/jsapi?autoload={
+ "modules":[{"name":"visualization","version":"1"}]}'>
+     </script>
+     <script type="text/javascript">
+       google.setOnLoadCallback(drawVisualization);
+
+       function drawVisualization() {
+          var querd = new google.visualization.Query('https://prody-users.appspot.com/query?id=ag1zfnByb2R5LXVzZXJzchULEghBcGlRdWVyeRiAgICAgICACgw&format=data-table-response'
+          );
+        
+         querd.send(function (response) {
+           var datad = response.getDataTable();
+
+           datad.setColumnLabel(0, 'Unique Visitors');
+           datad.setColumnLabel(1, 'Visits');
+           datad.setColumnLabel(2, 'Unique Visitors/Visits');
+           datad.setColumnLabel(3, 'Avg. Pages/Visit');
+           datad.setColumnLabel(4, 'Avg. Duration/Visit');
+
+for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
+            myVal = parseFloat(datad.getValue(c, 1)).toFixed(1);
+            datad.setFormattedValue(c, 2, myVal + '%');
+          }
+for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
+            myVal = parseFloat(datad.getValue(c, 2)).toFixed(0);
+            datad.setFormattedValue(c, 1, '       ' + myVal );
+          }
+for (var i = 0, length = datad.getNumberOfRows(), value, minutes, 
+ seconds; i < length; i++) {
+     value = datad.getValue(i, 3);
+     minutes = Math.floor(value / 60);
+     seconds = Math.round(value % 60);
+     // prepend 0's if necessary
+     minutes = (minutes < 10) ? '0' + minutes : minutes;
+     seconds = (seconds < 10) ? '0' + seconds : seconds;
+     datad.setFormattedValue(i, 4,      minutes + ':' + seconds + ' (min:sec)');
+}
+for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
+            myVal = parseFloat(datad.getValue(c, 4)).toFixed(1);
+            datad.setFormattedValue(c, 3, myVal + ' (number of pages)');
+          }
+           var Wrapperrd = new google.visualization.ChartWrapper({
+             'containerId': 'd2dtable',
+             'dataTable': datad,
+             'chartType': 'Table',
+             'options': {'width': '630px'},
+             'view': {'column': [{'format': '#\'%\''}, 2]
+             }
+           });
+           Wrapperrd.draw();
+         });
+      var countryWrapper = new google.visualization.ChartWrapper({
+        // Example Country Share Query
+         "containerId": "country",
+         "dataSourceUrl": "https://prody-users.appspot.com/query?id=ag1zfnByb2R5LXVzZXJzchULEghBcGlRdWVyeRiAgICAvKGCCgw&format=data-table-response",
+         "chartType": "PieChart",
+         "options": {
+            "showRowNumber" : true,
+            "width": 730,
+            "height": 500,
+            "is3D": true,
+            "title": "Visitor distribution across the world (top 20 countries)"
+         }
+       });
+   countryWrapper.draw();
+      }
+ </script>
+   </head>
+   <body>
+  <h1><FONT FACE="modern">ProDy Visitors since 2011</FONT></h1>
+  <h3><FONT FACE="modern">Currently updating from Google Analytics</FONT></h3>
+  &nbsp;
+     <div id="d2dtable" style="height:  50px; width: 650px;" align='top'></div>
+     <div id="country" style="margin:5px 10px 20px 5px;width:730px;" align='top'></div>
+     </body>
+ </html>
+
