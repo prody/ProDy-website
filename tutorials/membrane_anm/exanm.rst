@@ -8,8 +8,8 @@ Tutorial Files
 
 Files in the following archives can be used to follow this tutorial:
 
-  * `membrane ANM Tutorial Files (TGZ) <membrane_anm_tutorial_files.tgz>`_
-  * `membrane ANM Tutorial Files (ZIP) <membrane_anm_tutorial_files.zip>`_
+  * `membrane ANM Tutorial Files (TGZ) <membrane_anm_files.tgz>`_
+  * `membrane ANM Tutorial Files (ZIP) <membrane_anm_files.zip>`_
 
 Here is a list of these files:
 
