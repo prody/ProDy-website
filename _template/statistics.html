@@ -3,6 +3,29 @@
           <div class="row">
             <div class="span12">
               <h2>Statistics</h2>
+	      <h3>Prody has been downloaded
+	      <script>
+		function readTextFile(file){
+            	var rawFile = new XMLHttpRequest();
+	    	var txt = "";
+            	rawFile.open("GET", file, false);
+            	rawFile.onreadystatechange = function ()
+            	{
+                	if(rawFile.readyState === 4)
+                	{
+                    		if(rawFile.status === 200 || rawFile.status == 0)
+                    		{
+                        		var allText = rawFile.responseText;
+                        		txt += allText;
+                    		}
+                	}
+            	}
+            	rawFile.send(null);
+	    	document.write(txt);
+        	}
+		readTextFile("file:///data/ProDy-website/_build/html/statistics/statistics.txt");
+	     </script>
+		times. </h3>
               <p>
                 The table and map below displays the data from <a href="http://www.google.com/analytics/">
                 Google Analytics</a> on the total number of visitors to ProDy API since Jan 2011. More detailed 
