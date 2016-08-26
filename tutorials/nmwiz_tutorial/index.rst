@@ -20,6 +20,7 @@ NMWiz Tutorial
    eda
    extend
    commands
+   chimera
 
 .. only:: html
 
