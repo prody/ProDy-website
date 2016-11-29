@@ -1,5 +1,5 @@
 tutorial_title = u'Evol Tutorial'
-tutorial_author = u'Anindita Dutta, Ahmet Bakan'
+tutorial_author = u'Anindita Dutta, Ahmet Bakan, Cihan Kaya'
 tutorial_logo = u''           # default is ProDy logo
 tutorial_version = u''        # default is latest ProDy version
 

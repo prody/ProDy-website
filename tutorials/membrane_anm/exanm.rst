@@ -8,8 +8,8 @@ Tutorial Files
 
 Files in the following archives can be used to follow this tutorial:
 
-  * `membrane ANM Tutorial Files (TGZ) <membanm_tutorial_files.tgz>`_
-  * `membrane ANM Tutorial Files (ZIP) <membanm_tutorial_files.zip>`_
+  * `membrane ANM Tutorial Files (TGZ) <membrane_anm_files.tgz>`_
+  * `membrane ANM Tutorial Files (ZIP) <membrane_anm_files.zip>`_
 
 Here is a list of these files:
 
@@ -75,9 +75,10 @@ Now we calculate the modes and write them to a pair of .nmd files for viewing.
 .. ipython:: python
 
    exanm.calcModes()
+
    writeNMD('2nwl_im.nmd',exanm,of_ca.select('protein and name CA'))
 
-.. figure:: _static/figures/membrane_anm-exanm_of3.png
+.. figure:: ../../_static/figures/membrane_anm-exanm_of3.png
    :scale: 100%
 
 

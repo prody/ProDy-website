@@ -30,11 +30,9 @@
                       <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
                       <ul class="dropdown-menu">
                         <li><a href="{{ pathto('manual/ProDy.pdf', 1) }}"><i class="icon-book"></i> Download PDF</a></li>
-                        <!--
                         <li class="divider"></li>
                         <li><a href="{{ pathto('devel', 1) }}"><i class="icon-book"></i> Devel version HTML</a></li>
                         <li><a href="{{ pathto('devel/ProDy.pdf', 1) }}"><i class="icon-book"></i> Devel version PDF</a></li>
-                      -->
                       </ul>
                     </div>
                   </div>
@@ -173,26 +171,22 @@
                   </div>
                 </li>
 
-                <!--
-              -->
-
-              <li class="span4">
+                <li class="span4">
                   <div class="thumbnail text-center" style="height: 310px">
-                    <img src="{{ pathto('_static/gallery/comd_image.jpg', 1) }}" style="max-height: 160px">
-                    <h5>Collective Molecular Dynamics</h5>
-                    <p class="text-center" style="padding: 0 10 0 10">Learn global transition pathways with multiscale hybrid methodology, 
-                      collective molecular dynamics. </p>
+                    <img src="../_static/gallery/comd_image.jpg" style="max-height: 160px">
+                    <h5>Collective Molecular Dynamics (coMD)</h5>
+                    <p class="text-center" style="padding: 0 10 0 10">Learn how to sample transition pathways between known conformers using a multiscale hybrid methodology.</p>
                     <div class="btn-group">
-                      <a class="btn btn-primary" href="{{ pathto('tutorials/comd_tutorial', 1) }}">Go to Tutorial</a>
+                      <a class="btn btn-primary" href="comd_tutorial">Go to Tutorial</a>
                       <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
                       <ul class="dropdown-menu">
-                        <li><a href="{{ pathto('tutorials/comd_tutorial/comd_tutorial.pdf', 1) }}"><i class="icon-book"></i> Download PDF</a></li>
+                        <li><a href="comd_tutorial/comd_tutorial.pdf"><i class="icon-book"></i> Download PDF</a></li>
                         <li class="divider"></li>
-                        <li><a href="{{ pathto('tutorials/comd_tutorial/comd_tutorial.tgz', 1) }}"><i class="icon-download-alt"></i> Tutorial files <code>.tgz</code></a></li>
-                        <li><a href="{{ pathto('tutorials/comd_tutorial/comd_tutorial.zip', 1) }}"><i class="icon-download-alt"></i> Tutorial files <code>.zip</code></a></li>
+                        <li><a href="comd_tutorial/comd_tutorial_files.tgz"><i class="icon-download-alt"></i> Tutorial files <code>.tgz</code></a></li>
+                        <li><a href="comd_tutorial/comd_tutorial_files.zip"><i class="icon-download-alt"></i> Tutorial files <code>.zip</code></a></li>
                         <li class="divider"></li>
-                        <li><a href="{{ pathto('tutorials/comd_tutorial/comd_plugin.tgz', 1) }}"><i class="icon-download-alt"></i> Plugin files <code>.tgz</code></a></li>
-                        <li><a href="{{ pathto('tutorials/comd_tutorial/comd_plugin.zip', 1) }}"><i class="icon-download-alt"></i> Plugin files <code>.zip</code></a></li>
+                        <li><a href="comd_tutorial/comd_plugin_files.tgz"><i class="icon-download-alt"></i> Plugin files <code>.tgz</code></a></li>
+                        <li><a href="comd_tutorial/comd_plugin_files.zip"><i class="icon-download-alt"></i> Plugin files <code>.zip</code></a></li>
                       </ul>
                     </div>
                   
@@ -202,39 +196,15 @@
                 <!-- 3ND ROW -->
                 <li class="span4">
                   <div class="thumbnail text-center" style="height: 310px">
-                    <img src="{{ pathto('_static/gallery/membranepro.gif', 1) }}" style="max-height: 160px">
-                    <h5>Membrane ANM</h5>
-                    <p class="text-center" style="padding: 0 10 0 10">Learn how the presence of a membrane lipid structure will effect the elastic network model results. </p>
+                    <img src="../_static/gallery/MEmbraneProtein_web.jpg" style="max-height: 160px">
+                    <h5>Membrane ANM (membrANM)</h5>
+                    <p class="text-center" style="padding: 0 10 0 10">Learn how to include the effect of lipid bilayer in ENM study of membrane proteins dynamics.</p>
                     <div class="btn-group dropup">
-                      <a class="btn btn-primary" href="{{ pathto('tutorials/membrane_anm', 1) }}">Go to Tutorial</a>
+                      <a class="btn btn-primary" href="membrane_anm">Go to Tutorial</a>
                       <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
                       <ul class="dropdown-menu">
-                        <li><a href="{{ pathto('tutorials/membrane_anm/membrane_anm.pdf', 1) }}"><i class="icon-book"></i> Download PDF</a></li>
-                        <li class="divider"></li>
-                        <li><a href="{{ pathto('tutorials/membrane_anm/membrane_anm.tgz', 1) }}"><i class="icon-download-alt"></i> Tutorial files <code>.tgz</code></a></li>
-                        <li><a href="{{ pathto('tutorials/membrane_anm/membrane_anm.zip', 1) }}"><i class="icon-download-alt"></i> Tutorial files <code>.zip</code></a></li>
+                        <li><a href="membrane_anm/membrane_anm.pdf"><i class="icon-book"></i> Download PDF</a></li>
                       </ul>
-                    </div>
-                  </div>
-                </li>
-                <!-- 2ND ROW -->
-                <li class="span4">
-                  <div class="thumbnail text-center" style="height: 310px">
-                    
-                    <img src="{{ pathto('_static/gallery/prism_logo2.png', 1) }}" style="max-height: 160px">
-                    <h5>ProDy-Prism Interface for PPIs</h5>
-                    <p class="text-center" style="padding: 0 10 0 10">How structural and sequence information will be used to predict interfaces by mining known interface types and their compositions. </p>
-                    <div class="btn-group dropup">
-                      <a class="btn btn-primary disabled" href="#">Working Progress</a>
-                      <!--
-                      <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="{{ pathto('tutorials/conformational_sampling/conformational_sampling.pdf', 1) }}"><i class="icon-book"></i> Download PDF</a></li>
-                        <li class="divider"></li>
-                        <li><a href="{{ pathto('tutorials/conformational_sampling/conformational_sampling_files.tgz', 1) }}"><i class="icon-download-alt"></i> Tutorial files <code>.tgz</code></a></li>
-                        <li><a href="{{ pathto('tutorials/conformational_sampling/conformational_sampling_files.zip', 1) }}"><i class="icon-download-alt"></i> Tutorial files <code>.zip</code></a></li>
-                      </ul>
-                      -->  
                     </div>
                   </div>
                 </li>
@@ -244,28 +214,44 @@
                     <img src="{{ pathto('_static/gallery/mechstiff.png', 1) }}" style="max-height: 160px">
                     <h5>MechStiff</h5>
                     <p class="text-center" style="padding: 0 10 0
-                    10">How to obtain a mechanical stiffness calculations of proteins.</p>
+                    10">Learn how to evaluate the effective resistance of residues to deformation in the particular 3D structure </p>
                     <div class="btn-group">
-                      <a class="btn btn-primary" href="{{pathto('tutorials/mechstiff_tutorial', 1) }}">Go to Tutorial</a>
+                      <a class="btn btn-primary" href="{{pathto('tutorials/stiffmech', 1) }}">Go to Tutorial</a>
                       <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
                       <ul class="dropdown-menu">
-                        <li><a href="{{ pathto('tutorials/mechstiff_tutorial/mechstiff.pdf', 1) }}"><i class="icon-book"></i> Download PDF</a></li>
+                        <li><a href="{{ pathto('tutorials/stiffmech/mechstiff.pdf', 1) }}"><i class="icon-book"></i> Download PDF</a></li>
                         <li class="divider"></li>
-                        <li><a href="{{ pathto('tutorials/mechstiff_tutorial/mechstiff.tgz', 1) }}"><i class="icon-download-alt"></i> Tutorial files <code>.tgz</code></a></li>
-                        <li><a href="{{ pathto('tutorials/mechstiff_tutorial/mechstiff.zip', 1) }}"><i class="icon-download-alt"></i> Tutorial files <code>.zip</code></a></li>
+                        <li><a href="{{ pathto('tutorials/stiffmech/mechstiff.tgz', 1) }}"><i class="icon-download-alt"></i> Tutorial files <code>.tgz</code></a></li>
+                        <li><a href="{{ pathto('tutorials/stiffmech/mechstiff.zip', 1) }}"><i class="icon-download-alt"></i> Tutorial files <code>.zip</code></a></li>
                       </ul>
                     </div>
                   </div>
                 </li>
-
-
-
-
-
-              <!--
-              -->
+                <!-- 2ND ROW -->
+    <!-- Work in Progress
+                <li class="span4">
+                  <div class="thumbnail text-center" style="height: 310px">
+                    
+                    <img src="../_static/gallery/prism_logo2.png" style="max-height: 160px">
+                    <h5>ProDy-Prism Interface for PPIs</h5>
+                    <p class="text-center" style="padding: 0 10 0 10">How structural and sequence information will be used to predict interfaces by mining known interface types and their compositions. </p>
+                    <div class="btn-group dropup">
+                      <a class="btn btn-primary disabled" href="#">Working Progress</a>
+                      <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="conformational_sampling/conformational_sampling.pdf"><i class="icon-book"></i> Download PDF</a></li>
+                        <li class="divider"></li>
+                        <li><a href="conformational_sampling/conformational_sampling_files.tgz"><i class="icon-download-alt"></i> Tutorial files <code>.tgz</code></a></li>
+                        <li><a href="conformational_sampling/conformational_sampling_files.zip"><i class="icon-download-alt"></i> Tutorial files <code>.zip</code></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+    -->
               </ul>
             </div>
           </div>
+
+
 
 {% endblock %}

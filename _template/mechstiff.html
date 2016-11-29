@@ -1,0 +1,47 @@
+{% extends "index.html" %}
+{% block body %}
+
+
+      <div class="row">
+        <div class="span12">
+          <div class="span5 pull-right" style="padding-top: 20px">
+            <div class="well">
+              <div id="panel-5-title" class="slide-title"></div>
+              <i class="icon-circle-arrow-right slide-arrow" onclick="nextSlide(5);" title="Next slide"></i>
+              <i class="icon-circle-arrow-left slide-arrow" onclick="prevSlide(5);" title="Previous slide"></i>
+               <div id="panel-5-slide" class="slide-content"></div>
+              <script>showSlide(5, -1);</script>
+            </div>
+          </div>
+
+            <h2><b>MechStiff</b> for Mechanical Stiffness Calculations</h2>
+            <p><b>MechStiff</b> calculates the mechanical resistance 
+            to external force (uniaxial tension) applied at specific pairs of residues on the 3D structure. 
+
+            <h4>Features</h4>
+            <p><b>MechStiff</b> uses as an input the known structure modeled as ANM. It may be used to evaluate the 
+            Mechanical Stiffness/Strength Map as a function of residue indices and effective stiffness (or force constant)
+            for each residue averaged over all pairs it forms, plotted as 2D (map) or 1D (profile) respectively,
+            along with the ribbon diagrams color-coded by residue strength (TCL script directly
+            uploaded to <a
+            href="http://www.ks.uiuc.edu/Research/vmd/">VMD</a>). The plots and vizualization can be used for:</p>
+
+            <ol class="simple">
+              <li>Identification of the anisotropic response of the structure to external perturbations.</li>
+              <li>Determination of weak/strong pairs of interactions depending on the direction of the external force and the sites that are subjected to perturbation (uniaxial tension) </li>
+              <li>Determination of the effective spring constant observed macroscopically, to be compared with 
+               data from for Single Molecule Force Spectroscopy (SMFS) or atomic force microscopy (AFM)</li>
+              <li>Evaluating the contributions of each mode to deformation aling selected deformations </li>
+            </ol>
+
+
+              <strong>Reference</strong><br>
+              Eyal E, Bahar I
+              <a class="reference external" href="http://www.ncbi.nlm.nih.gov/pubmed/18223005" target="_blank">
+              Toward a Molecular Understanding of the Anisotropic Response of Proteins to External Forces: Insights from Elastic Network Models </a>
+              <em>Biophys J</em> <strong>2008</strong> 94(9):3424-3435.<br>
+            </small></p>
+          </div>
+        </div>
+
+{% endblock %}

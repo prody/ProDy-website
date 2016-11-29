@@ -1,0 +1,35 @@
+{% extends "index.html" %}
+{% block body %}
+          <div class="row">
+            <div class="span12">
+              <h2>Workshops</h2>
+              <h3>Hands-on Workshop on Computational Biophysics</h3>
+              <p>
+                You can find basic information about the use and functionality of Prody in our <a href="http://bioinformatics.oxfordjournals.org/content/27/11/1575" target="_blank">2011</a> and <a href="http://bioinformatics.oxfordjournals.org/content/30/18/2681" target="_blank">2014</a> papers. 
+              </p>
+
+              <p>
+                The machines in the workshop computing lab will be set up for use during the workshop. However, those wishing to bring their own laptop for use in the workshop can follow the instructions on <a href="http://prody.csb.pitt.edu/downloads">
+                Downloads</a> page. 
+
+                For the convenience, we prepared IPython notebooks for each tutorial, linked below:
+
+                <li> <a href="{{ pathto('_static/ipynb/prody_basic.ipynb', 1) }}" download>Prody Basics</a></li>
+                <li> <a href="{{ pathto('_static/ipynb/prody_ensemble.ipynb', 1) }}" download>Ensemble Analysis and Comparison with Dynamics</a></li>
+                <li> <a href="{{ pathto('_static/ipynb/prody_mechstiff.ipynb', 1) }}" download>Mechanical Stiffness Calculations</a></li>
+                <li> <a href="{{ pathto('_static/ipynb/prody_evol.ipynb', 1) }}" download>Sequence evolution vs structural dynamics</a></li>
+              </p>
+
+              <p>
+                In these tutorials, we will reproduce some figures from the following papers: 
+                <li> ANM and Ensemble Analyses - <a href="http://www.pnas.org/content/106/34/14349" target="_blank">Bakan and Bahar, <i>PNAS</i> 2009</a> </li>
+                <li> Mechanical Stiffness - <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2292382/" target="_blank">Eyal and Bahar, <i>Bioinformatics</i> 2008</a> </li>
+                <li> Structure-Sequence Comparison - <a href="http://mbe.oxfordjournals.org/content/29/9/2253.full" target="_blank">Liu and Bahar, <i>Mol Biol Evol </i>2012</a> </li>
+
+              </p>
+
+              <p>
+                You can find more information on our <a href="http://prody.csb.pitt.edu/tutorials">Downloads</a> page. 
+            </div>
+        </div>
+{% endblock %}

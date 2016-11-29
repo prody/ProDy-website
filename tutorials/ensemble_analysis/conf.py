@@ -1,5 +1,5 @@
 tutorial_title = u'Ensemble Analysis'
-tutorial_author = u'Ahmet Bakan'
+tutorial_author = u'Ahmet Bakan, Cihan Kaya'
 tutorial_logo = u''           # default is ProDy logo
 tutorial_version = u''        # default is latest ProDy version
 

@@ -86,7 +86,7 @@ Let's add another coordinate set to the atom group:
 
 
 Note that number of coordinate sets is now 2, but active coordinate set index
-is still 0. Active coordinate set incex can be changed for :class:`.AtomGroup`
+is still 0. Active coordinate set index can be changed for :class:`.AtomGroup`
 
 .. ipython:: python
 

@@ -56,7 +56,7 @@ above family. We will use chain B of :pdb:`2W5I`.
 .. ipython:: python
 
    pdb = parsePDB('2W5I', chain='B')
-   chB_ca = pdb.select('protein and name CA and resid 1 to 121')
+   chB_ca = pdb.select('protein and name CA and resid 1 to 119')
 
 We perform GNM as follows:
 
@@ -99,7 +99,7 @@ Plotting
 
 .. ipython:: python
 
-   indices = range(1,122)
+   indices = range(1,120)
    bar(indices, entropy, width=1.2, color='grey', hold='True');
    xlim(min(indices)-1, max(indices)+1);
    @savefig entropy_mobility.png width=4in

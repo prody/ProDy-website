@@ -52,11 +52,16 @@ html_additional_pages = {
     'index': 'prody.html',
     'nmwiz/index': 'nmwiz.html',
     'evol/index': 'evol.html',
+    'memanm/index': 'memanm.html',
+    'mechstiff/index':'mechstiff.html',
     'drugui/index': 'drugui.html',
     'comd/index' : 'comd.html',
     'downloads/index': 'downloads.html',
     'tutorials/index': 'tutorials.html',
     'statistics/index': 'statistics.html',
+    'mechstiff/index' : 'mechstiff.html',
+    'analytics/index' : 'analytics.html',
+    'workshop/index' : 'workshop.html',
 }
 
 html_sidebars = {
