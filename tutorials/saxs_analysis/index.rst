@@ -19,7 +19,7 @@ Small Angle X-ray Scattering Analysis
    :maxdepth: 2
 
    intro
-
+   saxs
 
 .. only:: html
 
