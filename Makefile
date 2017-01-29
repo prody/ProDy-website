@@ -61,6 +61,7 @@ workdir:
 	
 	cp -rf tutorials/membrane_anm/membrane_anm_files/* $(WORKDIR)
 
+	cp -rf tutorials/saxs_analysis/saxs_analysis_files/* $(WORKDIR)
 
 	
 
