@@ -70,7 +70,7 @@ Please note that the SAXS data file should only contain data. It should not
 contain comment lines. Now, lets start parsing SAXS data:
 
 .. ipython:: python
-   from saxs import *
+   from prody.dynamics.saxs import *
    Q_exp, I_q_exp, sigma_q=parseSaxsData('1ake_chainA_saxs_w_yerrorbars.dat', isLogScale=True)
 
 Sometimes, experimental intensities are saved in log scale as in our case.
