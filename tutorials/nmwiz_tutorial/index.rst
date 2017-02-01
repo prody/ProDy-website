@@ -20,7 +20,8 @@ NMWiz Tutorial
    eda
    extend
    commands
-   chimera
+   chimera-install
+   chimera-use
 
 .. only:: html
 
