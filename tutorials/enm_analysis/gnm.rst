@@ -157,7 +157,8 @@ can be obtain by using following command.
 
 .. ipython:: python
 
-    gnm.getHinges()
+    hinges = gnm.getHinges()
+    hinges[:5]
 
 Hinge sites in the slowest mode can be obtained by:
 
