@@ -19,6 +19,7 @@ ProDy Documentation
    tutorials/comd_tutorial/index
    tutorials/membrane_anm/index
    tutorials/stiffmech/index
+   tutorials/saxs_tutorial/index
 
 
 * :ref:`genindex`
