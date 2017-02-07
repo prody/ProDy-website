@@ -223,3 +223,14 @@ Square fluctuations
 
    @savefig enm_analysis_gnm_sqflucts.png width=4in
    showSqFlucts(gnm[0], hinge=True);
+
+Protein structure bipartition
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Given a GNM mode, protein structure can be partitioned into two parts that move 
+with respect to each other. The function ``showProtein()`` can take a GNM mode 
+as input and visualize the bipartition. 
+
+.. ipython:: python
+
+   @savefig enm_analysis_gnm_show_protein.png width=6in
+   showProtein(calphas, mode=gnm[0]);
