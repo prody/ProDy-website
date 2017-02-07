@@ -76,7 +76,7 @@ Now we calculate the modes and write them to a pair of .nmd files for viewing.
 
    exanm.calcModes()
 
-   writeNMD('2nwl_im.nmd',exanm,of_ca.select('protein and name CA'))
+   writeNMD('2nwl_ex.nmd',exanm,of_ca.select('protein and name CA'))
 
 .. figure:: ../../_static/figures/membrane_anm-exanm_of3.png
    :scale: 100%

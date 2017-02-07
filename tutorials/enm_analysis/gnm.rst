@@ -150,6 +150,35 @@ By default, modes with 0 eigenvalue are excluded. If they were retained,
 slowest non-trivial mode would have index 6.
 
 
+Access hinge sites
+-------------------------------------------------------------------------------
+Hinge sites identified from all calculated modes (defined when calling ``gnm.calcModes()``) 
+can be obtain by using following command. 
+
+.. ipython:: python
+
+    hinges = gnm.getHinges()
+    hinges[:5]
+
+Hinge sites in the slowest mode can be obtained by:
+
+.. ipython:: python
+
+    gnm.getHinges(0)
+
+Equivalently, the hinge sites can be accessed from ``Mode`` object:
+
+.. ipython:: python
+    
+    gnm[0].getHinges()
+
+Hinge sites identified from multiple modes (e.g. 2 modes) can be accessed by:
+
+.. ipython:: python
+    
+    gnm[:2].getHinges()
+
+
 Plot results
 -------------------------------------------------------------------------------
 
@@ -177,10 +206,12 @@ Cross-correlations
 
 Slow mode shape
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+By default, hinge sites will be shown in mode shape plot indicated by red stars, 
+and it can be turned off by setting ``hinge`` to ``False``. 
+Option ``zero`` is to turn on the indicator of zero.
 .. ipython:: python
 
-   showMode(gnm[0]);
+   showMode(gnm[0], hinge=True, zero=True);
    @savefig enm_analysis_gnm_mode.png width=4in
    plt.grid();
 
