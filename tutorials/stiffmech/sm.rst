@@ -231,8 +231,5 @@ To obtain results without saving any file typed:
    d2 = calcPairDeformationDist(anm, calphas, 132, 212)
    print d1[0], d1[1]
 
-   import matplotlib
-   import matplotlib.pylab as plt
-   plt.plot(d1[0], d1[1], 'k-', d2[0], d2[1], 'r-')
-   plt.show()
+   plot(d1[0], d1[1], 'k-', d2[0], d2[1], 'r-')
 

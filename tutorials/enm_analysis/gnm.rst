@@ -152,7 +152,7 @@ slowest non-trivial mode would have index 6.
 
 Access hinge sites
 -------------------------------------------------------------------------------
-Hinge sites identified from all calculated modes (defined when calling ``gnm.calcModes()``) 
+Hinge sites identified from all calculated modes (``n_modes`` defined when calling ``gnm.calcModes()``) 
 can be obtain by using following command. 
 
 .. ipython:: python
@@ -207,13 +207,14 @@ Cross-correlations
 Slow mode shape
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 By default, hinge sites will be shown in mode shape plot indicated by red stars, 
-and it can be turned off by setting ``hinge`` to ``False``. 
-Option ``zero`` is to turn on the indicator of zero.
+and it can be turned off by setting ``hinge=False``. 
+The option ``zero=True`` is to turn on the reference line of zero.
+
 .. ipython:: python
 
    showMode(gnm[0], hinge=True, zero=True);
    @savefig enm_analysis_gnm_mode.png width=4in
-   plt.grid();
+   grid();
 
 Square fluctuations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -221,4 +222,15 @@ Square fluctuations
 .. ipython:: python
 
    @savefig enm_analysis_gnm_sqflucts.png width=4in
-   showSqFlucts(gnm[0]);
+   showSqFlucts(gnm[0], hinge=True);
+
+Protein structure bipartition
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Given a GNM mode, protein structure can be partitioned into two parts that move 
+with respect to each other. The function ``showProtein()`` can take a GNM mode 
+as input and visualize the bipartition. 
+
+.. ipython:: python
+
+   @savefig enm_analysis_gnm_show_protein.png width=6in
+   showProtein(calphas, mode=gnm[0]);
