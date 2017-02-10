@@ -9,8 +9,8 @@ motions of protein along collective modes.
 
 We will use a structure of mitogen-activated protein kinase 14
 (:wiki:`MAPK14`), which is also known as p38 MAPK.  The structure
-identifier is :pdb:`1p38`.  PDB and PSF files are provided in documentation
-files.
+identifier is :pdb:`1p38`.  PDB and PSF files are provided in `documentation
+files <conformational_sampling_files.zip>`_.
 
 
 Required Programs
