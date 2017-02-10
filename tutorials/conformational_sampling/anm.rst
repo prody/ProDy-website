@@ -17,7 +17,7 @@ First, we parse p38 structure :file:`p38.pdb`:
 
 .. ipython:: python
 
-   p38 = parsePDB('1p38.pdb')
+   p38 = parsePDB('p38.pdb')
    p38
 
 Let's take a look at the structure:
