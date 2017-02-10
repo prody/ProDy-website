@@ -17,7 +17,7 @@ First, we parse p38 structure :file:`p38.pdb`:
 
 .. ipython:: python
 
-   p38 = parsePDB('1p38')
+   p38 = parsePDB('1p38.pdb')
    p38
 
 Let's take a look at the structure:
@@ -84,7 +84,7 @@ Let's plot mobility of residues along ANM modes:
 .. ipython:: python
 
    @savefig conformational_sampling_sqflucts.png width=4in
-   figure(); showSqFlucts(p38_anm);
+   showSqFlucts(p38_anm);
 
 We can also calculate collectivity of these modes as follows:
 
@@ -146,7 +146,7 @@ Now let's save the original and extended model, and atoms:
 
 .. ipython:: python
 
-   saveAtoms(p38_all)
+   saveAtoms(p38)
    saveModel(p38_anm)
    saveModel(p38_anm_ext, 'p38_ext')
 

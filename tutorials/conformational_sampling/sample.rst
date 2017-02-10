@@ -18,7 +18,7 @@ same Python session, you don't need to do this.
 
 .. ipython:: python
 
-   p38 = loadAtoms('1p38.ag.npz')
+   p38 = loadAtoms('p38.ag.npz')
    p38_anm = loadModel('p38_ca.anm.npz')
    p38_anm_ext = loadModel('p38_ext.nma.npz')
 
@@ -30,7 +30,7 @@ We will use :func:`.sampleModes` function:
 
 .. ipython:: python
 
-   ens = sampleModes(p38_anm_ext, atoms=p38, n_confs=40, rmsd=1.0)
+   ens = sampleModes(p38_anm_ext, atoms=p38.protein, n_confs=40, rmsd=1.0)
    ens
 
 We passed extended model, p38 structure, and two other parameters.
@@ -40,7 +40,6 @@ will have an average 1.0 Å RMSD from the input structure.
 We can write this ensemble in :file:`.dcd` for visualization in VMD:
 
 .. ipython:: python
-   :verbatim:
 
    writeDCD('p38all.dcd', ens)
 
