@@ -40,7 +40,8 @@ will have an average 1.0 Å RMSD from the input structure.
 We can write this ensemble in :file:`.dcd` for visualization in VMD:
 
 .. ipython:: python
-
+   :verbatim:
+   
    writeDCD('p38all.dcd', ens)
 
 
