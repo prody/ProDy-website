@@ -218,6 +218,7 @@ After trimming, another round of iterative superposition may be useful:
 .. ipython:: python
 
    ensemble.iterpose()
+   ensemble
    saveEnsemble(ensemble)
 
 
