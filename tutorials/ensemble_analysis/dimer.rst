@@ -3,8 +3,12 @@
 Multimeric Structures
 ===============================================================================
 
-In this part, we perform PCA of HIV :wiki:`Reverse Transcriptase` (RT), which
-is a heterodimer.
+In this part, first we will build an ensemble of 
+HIV :wiki:`Reverse Transcriptase` (RT), which is a heterodimer. The ensemble 
+can be conveniently built by :func:`.buildPDBEnsemble` automatically, but we 
+will build it step by step first for a better understanding of the process. 
+Then we will show how to use :func:`.buildPDBEnsemble` to build ensemble in 
+one line. Then we will perform PCA on the ensemble.
 
 
 Input and Parameters
@@ -214,8 +218,22 @@ After trimming, another round of iterative superposition may be useful:
 .. ipython:: python
 
    ensemble.iterpose()
+   ensemble
    saveEnsemble(ensemble)
 
+
+Use buildPDBEnsemble Function
+-------------------------------------------------------------------------------
+As mentioned at the every beginning, the ensemble can be also built by 
+:func:`.buildPDBEnsemble` in several lines of code:
+
+.. ipython:: python
+
+    prot = parsePDB('1dlo', subset='ca', model=1)
+    pdbs = [parsePDB(id, subset='ca', model=1) for id in pdb_ids]
+    ensemble = buildPDBEnsemble(prot, pdbs, title='HIV-RT', labels=pdb_ids, 
+                                seqid = 94, coverage = 85, occupancy=0.94)
+    ensemble
 
 Perform PCA
 -------------------------------------------------------------------------------
