@@ -224,7 +224,7 @@ After trimming, another round of iterative superposition may be useful:
 
 Use buildPDBEnsemble Function
 -------------------------------------------------------------------------------
-As mentioned at the every beginning, the ensemble can be also built by 
+As mentioned at the beginning, the ensemble can be also built by 
 :func:`.buildPDBEnsemble` in several lines of code:
 
 .. ipython:: python
