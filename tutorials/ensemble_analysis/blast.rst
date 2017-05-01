@@ -217,7 +217,7 @@ Let's take a quick look at the aligned structures:
 .. ipython:: python
 
 
-   showProtein(parsePDB(conf1_alinged), parsePDB(conf2_alinged));
+   showProtein(parsePDB(conf1_aligned), parsePDB(conf2_aligned));
    @savefig ensemble_analysis_blast_aligned.png width=4in
    legend();
 
