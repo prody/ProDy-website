@@ -194,5 +194,5 @@ You can visualize structures and modes determined from ANM or GNM calculations
 in jupyter notebooks using another python module, py3Dmol. It is a java-script
 library that can visualize structural elements with light weight customization. 
 
-You can find an example notebook.  
-.. _a notebook: http://nbviewer.jupyter.org/github/3dmol/3Dmol.js/blob/f827da26251817ee536838b4b7b5e9d55764606e/py3Dmol/prody.ipynb
+.. _notebook: http://nbviewer.jupyter.org/github/3dmol/3Dmol.js/blob/f827da26251817ee536838b4b7b5e9d55764606e/py3Dmol/prody.ipynb
+You can find an example _notebook.

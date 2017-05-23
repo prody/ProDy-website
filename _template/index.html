@@ -239,7 +239,10 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       "Motion of IF structure of Glt<sub>Ph</sub>",
       "Deformability Profile of Ubiquitin",
       "Mean Value of Effective Spring Constant",
-      "Mechanical Stiffness Map with Effective Force Constant");
+      "Mechanical Stiffness Map with Effective Force Constant",
+      "Applying Gaussian Network Model on Hi-C data",
+      "Normal Mode Analysis of Human Chromosomes",
+      "Spectral Clustering Aids in Identification of Structural Domains");
 
       panelSlides = new Array();
       panelSlides[0] = new Array(0, 4, 1, 7);
@@ -250,6 +253,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       panelSlides[5] = new Array(20,21,22);
       panelSlides[6] = new Array(12, 13);
       panelSlides[7] = new Array(14, 15, 16);
+      panelSlides[8] = new Array(23, 24, 25);
 
       var slideIndices = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
@@ -513,6 +517,29 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
         </p>
       </div>
 
+      <div class="prody-slide" id="slide-23">
+        <div class="slide-image"><img src="../_static/gallery/hic_workflow.png"/></div>
+        <p style="font-size: 95%; font-style: italic;">
+	Workflow for GNM analysis of chromatin dynamics. See publication for details. 
+        </p>
+      </div>
+
+      <div class="prody-slide" id="slide-24">
+        <div class="slide-image"><img src="../_static/gallery/hic_domains.png"/></div>
+        <p style="font-size: 95%; font-style: italic;">
+	Covariance matrix of chromosome 17 of human B cells. Structural domains and CCDDs are identified and outlined. See publication for details.
+        </p>
+      </div>
+
+      <div class="prody-slide" id="slide-25">
+        <div class="slide-image"><img src="../_static/gallery/embed_chromo.gif"/></div>
+        <p style="font-size: 95%; font-style: italic;">
+	3D Laplacian embedding of chromosome 17 loci using the first three principal modes. See ChromD tutorial for details.
+        </p>
+      </div>
+
+
+
   <div class="container" id="about">
 
 <!-- Logo & Nav
@@ -531,6 +558,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
           <li title="stiffMech" ><a href="{{ pathto('mechstiff', 1) }}">MechStiff</a></li>
           <li title="DruGUI" ><a href="{{ pathto('drugui', 1) }}">DruGUI</a></li>
           <li title="coMD" ><a href="{{ pathto('comd', 1) }}">coMD</a></li>
+	  <li title="chromD"><a href="{{ pathto('chromd',1) }}">chromD</a></li>
           <li title="Downloads"><a href="{{ pathto('downloads', 1) }}">Downloads</a></li>
           <li title="Tutorials"><a href="{{ pathto('tutorials', 1) }}">Tutorials</a></li>
           <li title="Statistics"><a href="{{ pathto('statistics', 1) }}">Statistics</a></li>
