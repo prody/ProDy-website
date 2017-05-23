@@ -20,6 +20,7 @@ Small Angle X-ray Scattering Analysis
 
    intro
    saxs
+   oligomericStates
 
 .. only:: html
 

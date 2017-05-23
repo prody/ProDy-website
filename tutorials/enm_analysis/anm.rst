@@ -187,3 +187,12 @@ This will show the slowest 3 modes in VMD using NMWiz. This concludes the ANM
 example. Many of the methods demonstrated here apply to other NMA models, such
 as :class:`.GNM` and :class:`.EDA`.
 
+Advanced visualization in jupyter notebooks
+-------------------------------------------------------------------------------
+
+You can visualize structures and modes determined from ANM or GNM calculations
+in jupyter notebooks using another python module, py3Dmol. It is a java-script
+library that can visualize structural elements with light weight customization. 
+
+You can find an example notebook.  
+.. _a notebook: http://nbviewer.jupyter.org/github/3dmol/3Dmol.js/blob/f827da26251817ee536838b4b7b5e9d55764606e/py3Dmol/prody.ipynb
