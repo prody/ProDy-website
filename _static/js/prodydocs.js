@@ -48,6 +48,9 @@ $(document).ready(function() {
   }
   else if (url.search("mechstiff") > -1) {
     logo.src = "http://prody.csb.pitt.edu/_static/mechstifflogo.png";
+  }
+  else if (url.search("chromd") > -1) {
+    logo.src = "http://prody.csb.pitt.edu/_static/chromdlogo.png";
   }else {
     logo.src = "http://prody.csb.pitt.edu/_static/logo.png";
   }
@@ -69,8 +72,10 @@ $(document).ready(function() {
       $('.nav-pills > li:nth-child(8)').addClass('active');
     } else if (url.search("tutorials") > -1) {
       $('.nav-pills > li:nth-child(9)').addClass('active');
-    } else if (url.search("statistics") > -1) {
+    } else if (url.search("workshop") > -1) {
       $('.nav-pills > li:nth-child(10)').addClass('active');
+    } else if (url.search("statistics") > -1) {
+      $('.nav-pills > li:nth-child(11)').addClass('active');
     } else {
       $('.nav-pills > li:nth-child(1)').addClass('active');
     }

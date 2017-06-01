@@ -61,9 +61,9 @@ workdir:
 
 	cp -rf tutorials/membrane_anm/membrane_anm_files/* $(WORKDIR)
 
-	cp -rf tutorials/saxs_tutorial/saxs_tutorial_files/* $(WORKDIR)
+#	cp -rf tutorials/saxs_tutorial/saxs_tutorial_files/* $(WORKDIR)
 
-html: link drugui workdir
+html: link drugui workdir 
 	cd $(WORKDIR); $(SPHINXBUILD) -b html -d ../$(BUILDDIR)/doctrees ../ ../$(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
