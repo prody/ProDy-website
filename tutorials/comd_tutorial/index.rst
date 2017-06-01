@@ -9,7 +9,7 @@ collective molecular dynamics.
 
     You can also read this tutorial in `PDF format <comd_tutorial.pdf>`_.
 	
-	Plug-in files: `ZIP <comd_plugin.zip>`_ `TGZ <comd_plugin.tgz>`_
+	Plug-in files: `ZIP <comd_plugin_files.zip>`_ `TGZ <comd_plugin_files.tgz>`_
 
     Tutorial files: `ZIP <comd_tutorial_files.zip>`_ `TGZ <comd_tutorial_files.tgz>`_
 
