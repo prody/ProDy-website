@@ -97,7 +97,7 @@ method. To save stiffness matrix as an image map use following function:
 .. ipython:: python
    :verbatim:
 	
-   showMechStiff(anm, calphas, 'jet_r'))
+   showMechStiff(anm, calphas, 'jet_r')
 
 .. figure:: images/1gfl_stiffmatrix.png
    :scale: 65 %

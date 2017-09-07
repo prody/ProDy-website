@@ -81,7 +81,7 @@ We can also specify indices based on the PDB.
 
 .. ipython:: python
 
-   indices = list(range(4,130))
+   indices = list(range(4,132))
    @savefig msa_analysis_occ_res_indices.png width=4in
    showMSAOccupancy(msa_refine, occ='res', indices=indices);
 
