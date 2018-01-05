@@ -89,7 +89,7 @@
             datad.setFormattedValue(c, 2, myVal + '%');
           }
 for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
-            myVal = parseFloat(datad.getValue(c, 2)).toFixed(0);
+            myVal = parseFloat(datad.getValue(c, 2)).toLocaleString('en');
             datad.setFormattedValue(c, 1, '       ' + myVal );
           }
 for (var i = 0, length = datad.getNumberOfRows(), value, minutes, 
