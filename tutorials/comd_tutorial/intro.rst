@@ -1,12 +1,12 @@
 Introduction
 ============
 
-Collective Molecular Dynamics is a `VMD`_ plugin GUI and a Python module developed for setup and analysis of simulations described in [MG13]_.
+Collective Molecular Dynamics is a VMD_ plugin GUI and a Python module developed for setup and analysis of simulations described in [MG13]_.
 
 Installation
 ------------
 
-1. VMD_ 1.9.2 or later is required for using GUI. `NAMD`_ is required for
+1. VMD_ 1.9.2 or later is required for using GUI. NAMD_ is required for
    running molecular dynamics simulations and latest version of ProDy_ is required for elastic network model calculations. Following are required for performing coMD calculations:
 
   * Python_ 2.7

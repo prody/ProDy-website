@@ -1,4 +1,4 @@
-.. _stiffmech:
+.. _mech_stiff:
 
 Mechanical Stiffness Calculations
 ===============================================================================

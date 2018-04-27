@@ -1,6 +1,6 @@
-.. use "stiffmech" to refer to this file
+.. use "mech_stiff" to refer to this file
 
-.. _stiffmech:
+.. _mech_stiff:
 
 *******************************************************************************
 Stiffness Matrix Calculations
@@ -8,7 +8,7 @@ Stiffness Matrix Calculations
 
 .. only:: html
 
-    You can also read this tutorial in `PDF format <stiffmech.pdf>`_.
+    You can also read this tutorial in `PDF format <mech_stiff.pdf>`_.
 
 .. add .rst files to `toctree` in the order that you want them
 
