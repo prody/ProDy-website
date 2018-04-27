@@ -17,7 +17,7 @@ First, we parse p38 structure :file:`p38.pdb`:
 
 .. ipython:: python
 
-   p38 = parsePDB('p38.pdb')
+   p38 = parsePDB('conformational_sampling_files/p38.pdb')
    p38
 
 Let's take a look at the structure:

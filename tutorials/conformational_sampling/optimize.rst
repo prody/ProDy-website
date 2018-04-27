@@ -17,40 +17,48 @@ Let's find the location of NAMD executable:
    namd2
 
 We will need a force field file for energy minimization. VMD ships with
-CHARMM force field files. We can find their location as follows:
+CHARMM force field files. We can write a tcl script to find and write their location 
+as follows:
 
 
 .. ipython:: python
 
    with open('where_is_charmmpar.tcl', 'w') as inp:
        inp.write('''global env;
-   puts $env(CHARMMPARDIR);
+   set outfile [open charmmdir.txt w];
+   puts $outfile "$env(CHARMMPARDIR)";
+   puts $outfile "$env(CHARMMTOPDIR)";
+   close $outfile;
    exit;''')
 
-When you run the following command, you will see more output than the
-following, but the line that you need will be at the end:
-
-.. ipython::
-   :verbatim:
-
-   In [1]: !vmd -e where_is_charmmpar.tcl
-   /home/abakan/Programs/vmd-1.9.1/plugins/noarch/tcl/readcharmmpar1.2
-   Info) VMD for LINUXAMD64, version 1.9.1 (February 1, 2012)
-   Info) Exiting normally.
+This can be run in vmd from ipython as below:
 
 .. ipython:: python
 
-   import os
-   par = os.path.join('/home/abakan/Programs/vmd-1.9.1/'
-                      'plugins/noarch/tcl/readcharmmpar1.2',
-                      'par_all27_prot_lipid_na.inp')
+   !vmd -e where_is_charmmpar.tcl
 
+We then read the output file to get the parameter directory:
+
+.. ipython:: python
+
+   inp = open('charmmdir.txt', 'r')
+   lines = inp.readlines()
+   inp.close()
+
+   import os
+   par = os.path.join(lines[0].strip(), 'par_all27_prot_lipid_na.inp')
+   top = os.path.join(lines[1].strip(), 'top_all27_prot_lipid_na.inp')
+
+   par
+   top
+
+To configure this computer
 
 Let's make a folder for writing optimization input and output files:
 
-.. ipython::
+.. ipython:: python
 
-   In [1]: mkdir -p p38_optimize
+    mkdir -p p38_optimize
 
 We will write an NAMD configuration file for each conformation based
 on :file:`min.conf` file:
@@ -58,7 +66,7 @@ on :file:`min.conf` file:
 .. ipython:: python
 
    import glob
-   conf = open('min.conf').read()
+   conf = open('conformational_sampling_files/min.conf').read()
    for pdb in glob.glob(os.path.join('p38_ensemble', '*.pdb')):
        fn = os.path.splitext(os.path.split(pdb)[1])[0]
        pdb = os.path.join('..', pdb)

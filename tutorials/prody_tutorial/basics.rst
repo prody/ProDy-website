@@ -186,15 +186,15 @@ as follows:
 
    wwPDBServer('us')
 
-If you would like to have a central folder, such as :file:`~Downloads/pdb`,
+If you would like to have a central folder, such as :file:`~/Downloads/pdb`,
 for storing downloaded PDB files (you will need to make it), do as follows:
 
 .. ipython::
    :verbatim:
 
-   In [19]: mkdir /home/abakan/Downloads/pdb;
+   In [19]: mkdir ~/Downloads/pdb;
 
-   In [20]: pathPDBFolder('/home/abakan/Downloads/pdb')
+   In [20]: pathPDBFolder('~/Downloads/pdb')
 
 Note that when these functions are used, ProDy will save your settings
 in :file:`.prodyrc` file stored in your home folder.
