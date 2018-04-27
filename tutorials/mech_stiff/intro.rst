@@ -16,8 +16,8 @@ Theory and example of usage has been described in [EB08]_.
 Required Programs
 -------------------------------------------------------------------------------
 
-Latest version of ProDy_ us required. Matplotlib_ library and VMD_ progran is 
-required for some options. IPython_ is highly recommended for interactive usage.
+Besides ProDy_, the Matplotlib_ library and VMD_ program are required for some steps 
+in this tutorial. IPython_ is highly recommended for interactive usage.
 
 
 Getting Started
@@ -55,6 +55,6 @@ How to Cite
 If you benefited from Mechanical Stiffness Calculations in your research, 
 please cite the following paper:
 
-.. [EB08] Eyal E., Bahar I. Toward a Molecular Understanding of 
+.. [EB08] Eyal E, Bahar I. Toward a Molecular Understanding of 
    the Anisotropic Response of Proteins to External Forces: Insights from 
    Elastic Network Models. *Biophys. J.* **2008** 94:3424-34355.
