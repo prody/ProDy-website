@@ -7,7 +7,7 @@ System that contains protein structures with water and counter ions in collectiv
 molecular dynamics simulations can be prepared using the following
 interface:
 
-.. figure:: _static/figures/comd_gui_setup.png
+.. figure:: ../../_static/figures/comd_setup_gui.png
    :scale: 80%
 
 Input Files
@@ -103,6 +103,7 @@ to use the following command::
 
    vmd –dispdev text –e your_output_prefix.tcl
 ￼￼
+
 If you want to run this simulation on cluster, copy this directory on cluster and put following command on file queue system.
 
 When simulations are complete, you can continue with following analysis steps.

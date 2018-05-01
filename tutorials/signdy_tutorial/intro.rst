@@ -8,7 +8,7 @@ standard deviations on various dynamic properties including mode profiles,
 mean square fluctuations and cross-correlation matrices. It also includes tools 
 for classifying family members based on their sequence, structure and dynamics.
 
-The teory and usage of this toolkit has been described in [ZB18]_.
+The theory and usage of this toolkit will be described in [ZB18]_.
 
 Required Programs
 -------------------------------------------------------------------------------
@@ -52,6 +52,6 @@ How to Cite
 If you benefited from SignDy Calculations in your research, 
 please cite the following paper:
 
-.. [EB08] Zhang S., Krieger J., Li H., Bahar I. SignDy: Discovering the 
+.. [ZB18] Zhang S., Krieger J., Li H., Bahar I. SignDy: Discovering the 
    Signature Dynamics of Protein Families with Elastic Network Model Analysis. 
    *(in preparation)* **2018**

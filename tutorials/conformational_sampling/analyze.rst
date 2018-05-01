@@ -37,14 +37,6 @@ Now, let's read initial and refined conformations:
 Calculate RMSD change
 -------------------------------------------------------------------------------
 
-In order to calculate the RMSD change, we need the same number of atoms in initial
-and refined. As the refined coordinates include added hydrogens, we make it into a selection:
-
-.. ipython:: python
-
-   refined = refined.select('not hydrogen')
-   refined
-
 We can plot RMSD change after refinement as follows:
 
 .. ipython:: python
@@ -106,5 +98,5 @@ Visualization
 When you visualize the refined ensemble, you should see something similar to
 this:
 
-.. image:: _static/p38_sampling.png
+.. image:: ../../_static/figures/p38_sampling.png
    :width: 3in

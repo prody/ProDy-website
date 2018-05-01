@@ -25,7 +25,7 @@ We need three files for this tutorial:
 * :file:`4zul.pdb`
 * :file:`ALDH7A1SAXS.dat`
 
-We should not that experimental data file :file:`ALDH7A1SAXS.dat` was obtained
+We should note that experimental data file :file:`ALDH7A1SAXS.dat` was obtained
 from [JT15]_
    
 .. [JT15] Tanner J. SAXS Fingerprints of Aldehyde Dehydrogenase Oligomers.
@@ -44,7 +44,7 @@ downloaded.
 
 .. ipython:: python
 
-   protein = parsePDB('4zul.pdb')
+   protein = parsePDB('4zul')
 
 We want to use only Cα atoms in chain A, so we select them:
 
@@ -91,7 +91,7 @@ use Fast-SAXS method for this purpose [SY09]_.
    Protein Folds and Multiple Conformational States of Large Protein Complexes.
    *Biophysical Journal*  **2009** 96:4449–4463.
 
-We will call :function:`calcSaxsPerModel` to compute SAXS profile of our initial
+We will call :func:`calcSaxsPerModel` to compute SAXS profile of our initial
 pdb file for each experimental q value. Therefore, we have to use Q_exp array
 we have just read from the experimental data file. Theoretical
 SAXS intensities will be saved to I_q_model array. We should note that the
@@ -104,7 +104,7 @@ first.
    I_q_model_dimer=np.zeros(len(Q_exp))
    calcSaxsPerModel(dimer_calphas, I_q_model_dimer, Q_exp)
 
-We can write this SAXS profile to a file using :function:`writeSaxsProfile`.
+We can write this SAXS profile to a file using :func:`writeSaxsProfile`.
 Lets write this model to a file for further investigation. 
    
 .. ipython:: python

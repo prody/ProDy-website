@@ -6,7 +6,7 @@ Collective Molecular Dynamics is a VMD_ plugin GUI and a Python module developed
 Installation
 ------------
 
-1. VMD_ 1.9.2 or later is required for using GUI. NAMD_ is required for
+1. VMD_ 1.9.2 or later is required for using GUI. `NAMD`_ is required for
    running molecular dynamics simulations and latest version of ProDy_ is required for elastic network model calculations. Following are required for performing coMD calculations:
 
   * Python_ 2.7
@@ -42,7 +42,7 @@ setup, collective molecular dynamics simulations:
 
   * :ref:`setup`
 
-.. figure:: _static/figures/comd_gui_setup.png
+.. figure:: ../../_static/figures/comd_gui_setup.png
    :scale: 80%
 
 The rest of the tutorial will show you how to use this panel, and described
@@ -69,3 +69,4 @@ following paper:
 .. [MG13] Gur M, Madura J, Bahar I `Global Transitions of Proteins Explored by a Multiscale Hybrid Methodology: Application to Adenylate Kinase <http://www.sciencedirect.com/science/article/pii/S000634951300934X>`_
    *Biophys J* **2013** 7:1643–1652
 
+.. _NAMD: http://www.ks.uiuc.edu/Research/namd/

@@ -76,7 +76,7 @@ for ProDy command line application). Therefore, we prepare two trajectory files 
 Concatenating Trajectory Files
 ------------------------------
 
-After having two trajectory files, we can start analyzing multiple :files:`.dcd` files. First, the trajectory files will be concatanated. 
+After having two trajectory files, we can start analyzing multiple :file:`.dcd` files. First, the trajectory files will be concatanated. 
 
 .. ipython:: python
 
@@ -122,7 +122,7 @@ Finally, the trajectories can be plotted by using :func:`showProjection` functio
 
 The plots will be in the following form: 
 
-.. figure:: _static/figures/comd_3d_out.png
+.. figure:: ../../_static/figures/comd_3d_out.png
 	:scale: 80%
 
 Now we calculated the modes and we can write them to a :file:`.nmd` file for viewing in normal mode wizard. 

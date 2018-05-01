@@ -54,7 +54,7 @@ to the input structure:
 .. ipython:: python
 
    rmsd = ens.getRMSDs()
-   hist(rmsd, normed=False);
+   hist(rmsd, density=False);
    @savefig conformational_sampling_ens_rmsd.png width=4in
    xlabel('RMSD');
 

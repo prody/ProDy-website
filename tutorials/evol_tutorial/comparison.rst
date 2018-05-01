@@ -36,7 +36,7 @@ Then, we refine it using :func:`.refineMSA` based on the sequence of
 
 .. ipython:: python
 
-   msa_refine = refineMSA(msa, label='RNAS1_BOVIN', rowocc=0.8, seqid=0.98)
+   msa_refine = refineMSA(msa, label='RNAS1_BOVIN', seqid=0.98)
 
 
 We calculate the entropy for the refined MSA:
