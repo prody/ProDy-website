@@ -52,6 +52,6 @@ How to Cite
 If you benefited from SignDy Calculations in your research, 
 please cite the following paper:
 
-.. [ZB18] Zhang S., Krieger J., Li H., Bahar I. SignDy: Discovering the 
-   Signature Dynamics of Protein Families with Elastic Network Model Analysis. 
-   *(in preparation)* **2018**
+.. [ZB18] Zhang S., Krieger J., Li H., Bahar I. 
+   SignDy: Discovering the Signature Dynamics of Protein Families with Elastic Network Model 
+   Analysis. *(in preparation)* **2018**
