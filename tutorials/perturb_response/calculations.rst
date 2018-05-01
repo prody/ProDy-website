@@ -55,3 +55,5 @@ We supply atoms to allow us to delineate residue numbers and chains.
 
 
 The next page illustrates some more detailed analyses.
+
+.. _NMWiz: http://prody.csb.pitt.edu/nmwiz/
