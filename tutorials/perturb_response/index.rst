@@ -17,7 +17,8 @@ Perturbation Response Scanning Calculations
    :maxdepth: 1
 
    intro
-   
+   calculations
+   analysis
 
 
 .. only:: html
