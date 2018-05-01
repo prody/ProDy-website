@@ -4,8 +4,8 @@
 Calculations
 ===============================================================================
 
-This is the first part of a lengthy example.  In this part, we perform
-the calculations using a p38 MAP kinase (MAPK) structural dataset.  This will
+This is the first part of a lengthy example. In this part, we perform
+the calculations using a p38 MAP kinase (MAPK) structural dataset. This will
 reproduce the calculations for p38 that were published in [AB09]_.
 
 We will obtain a :class:`.PCA` instance that stores the covariance matrix and

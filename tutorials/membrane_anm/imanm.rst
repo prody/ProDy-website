@@ -150,12 +150,12 @@ Now we calculate the modes and write them to a pair of .nmd files for viewing.
    writeNMD('3kbc_im.nmd',if_rtb,if_ca.select('protein and name CA'))
 
 
-.. figure:: ../../_static/figures/membrane_anm-imanm_of3.png
+.. figure:: images/membrane_anm-imanm_of3.png
    :scale: 100%
 
 The third mode of the outward-facing structure moves all three transport domains simultaneously through the membrane in a 'lift-like' motion.
 
-.. figure:: ../../_static/figures/membrane_anm-imanm_if6.png
+.. figure:: images/membrane_anm-imanm_if6.png
    :scale: 100%
 
 A similar motion is shown in mode 6 of the inward-facing structure.

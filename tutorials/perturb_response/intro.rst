@@ -54,6 +54,6 @@ please cite the following papers:
 .. [AA09] Atilgan C, Atilgan AR. Perturbation-response scanning reveals 
    ligand entry-exit mechanisms of ferric binding protein. *PLoS Comput. Biol.* 
    **2009** 5:e1000544.
-.. [GB11] General IJ, Liu Y, Blackburn ME, Mao W, Gierasch LM, Bahar I.
+.. [GB14] General IJ, Liu Y, Blackburn ME, Mao W, Gierasch LM, Bahar I.
    ATPase subdomain IA is a mediator of interdomain allostery in Hsp70 molecular 
    chaperones. *PLoS Comput. Biol.* **2014** 10:e1003624.
