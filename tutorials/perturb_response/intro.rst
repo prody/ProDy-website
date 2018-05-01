@@ -16,7 +16,7 @@ The theory was originally described in [AA09]_ and extended to include sensors i
 Required Programs
 -------------------------------------------------------------------------------
 
-The latest version of ProDy_ (v 1.10) is required along with Numpy_ and Matplotlib_. 
+The latest version of ProDy_ (v 1.10.1) is required along with Numpy_ and Matplotlib_. 
 IPython_ is highly recommended for interactive usage.
 
 
