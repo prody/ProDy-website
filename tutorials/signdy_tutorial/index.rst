@@ -18,7 +18,8 @@ Signature Dynamics Calculations
 
    intro
    data
-   
+   signatures
+   classifications
 
 
 .. only:: html

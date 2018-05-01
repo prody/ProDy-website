@@ -16,11 +16,10 @@ Loading a structure and applying the anisotropic network model
 First, we parse a structure that we want to analyse with PRS. 
 For this tutorial, we will fetch the near-intact full length AMPAR structure 3kg2 from the PDB. 
 We import a subset containing the calpha atoms, which we will use in downstream steps.
-We also choose to have an uncompressed PDB file in our directory for later analysis.
 
 .. ipython:: python
 
-    ampar_ca = parsePDB('3kg2', subset='ca', compressed=False)
+    ampar_ca = parsePDB('3kg2', subset='ca')
 
 
 Next, create an ANM instance and calculate modes from which the covariance matrix can be calculated. 

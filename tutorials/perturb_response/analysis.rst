@@ -25,7 +25,7 @@ and sensitivity profiles colored by chain:
 
 .. ipython:: python
 
-    show = showPerturbResponse(model=anm_ampar, atoms=ampar_ca, matrix=False)
+    show = showPerturbResponse(model=anm_ampar, atoms=ampar_ca, show_matrix=False)
 
 
 Plotting residue-specific effectiveness and sensitivity profiles
@@ -37,16 +37,20 @@ sensitivity of a residue to perturbations of individual residues (instead of its
 overall sensitivity), we read out rows or columns from the perturbation response matrix. 
 This can again be shown in a plot as in Figure 6D.
 
-The first step is to calculate the PRS matrix and profiles separately from showPerturbResponse. 
+.. ipython:: python
+
+    show = showPerturbResponse(model=anm_ampar, atoms=ampar_ca, show_matrix=False, selection='chain B and resnum 84')
+
+
+We can also calculate the PRS matrix and profiles separately from showPerturbResponse. 
 This gives us more flexibility with what we show and enables us to do other things with the 
 return values. For example, we could apply a cutoff to identify residues with particularly high 
-effectiveness and sensitivity as effectors and sensors, or slice out individual rows or columns as below.
-The returnData option allows us to access the data in the object B_84_profile.
+effectiveness and sensitivity as effectors and sensors, or slice out individual rows or columns 
+and write them into PDB files for visualization (see below).
 
 .. ipython:: python
 
     prs_mat, effectiveness, sensitivity = calcPerturbResponse(anm_ampar)
-    show, B_84_profile = showAtomicMatrixSliceLines(atoms=ampar_ca, selection='chain B and resnum 84', returnData=True)
 
 
 Writing effectiveness and sensitivity profiles to PDB for visualization
@@ -64,12 +68,15 @@ To do this we modify the ampar_ca object and then write a PDB from it as follows
     writePDB('3kg2_ca_effectiveness.pdb', ampar_ca)
 
 
-We could likewise do this with the sensitivity or with an extracted row or column as above.
+We can also calculate the PRS matrix and profiles separately from showPerturbResponse 
+and slice out individual rows or columns and write them into PDB files for visualization:
 
 .. ipython:: python
 
+    prs_mat, effectiveness, sensitivity = calcPerturbResponse(anm_ampar)
+    B_84_profile = sliceAtomicData(prs_mat, atoms=ampar_ca, select='chain B and resnum 84')
     ampar_ca.setBetas(B_84_profile)
     writePDB('3kg2_ca_B_84__effectiveness.pdb', ampar_ca)
 
 
-We generated our Figure 7 using this approach with the `spectrum` command from PyMOL.
+We generated our Figure 7 using this approach together with the `spectrum` command from PyMOL.
