@@ -78,7 +78,7 @@ Now we calculate the modes and write them to a pair of .nmd files for viewing.
 
    writeNMD('2nwl_ex.nmd',exanm,of_ca.select('protein and name CA'))
 
-.. figure:: images/membrane_anm-exanm_of3.png
+.. figure:: ../../_static/figures/membrane_anm-exanm_of3.png
    :scale: 100%
 
 
