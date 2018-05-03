@@ -8,7 +8,7 @@ Synopsis
 -------------------------------------------------------------------------------
 
 This example is continued from :ref:`pca-xray-analysis`. The aim of this part
-is to produce graphical comparison of experimental and theoretical data.
+is to produce graphical comparisons of experimental and theoretical data.
 We will reproduce the plots that was presented in our paper [AB09]_.
 
 Load data
@@ -29,7 +29,7 @@ First, we load data saved in :ref:`pca-xray-calculations`:
    pca = loadModel('p38_xray.pca.npz')
    anm = loadModel('1p38.anm.npz')
    ensemble = loadEnsemble('p38_X-ray.ens.npz')
-   ref_chain = parsePDB('p38_ref_chain.pdb')
+   ref_chain = parsePDB('p38_ref_selection.pdb')
 
 
 PCA - ANM overlap
@@ -41,8 +41,8 @@ case, we will use plotting functions to make similar comparisons:
 .. ipython:: python
 
    showOverlapTable(pca[:6], anm[:6]);
-   # Let's change the title of the figure
    @savefig ensemble_analysis_xray_overlap_table.png width=4in
+   # Let's change the title of the figure
    title('PCA - ANM Overlap Table');
 
 
@@ -53,10 +53,14 @@ multiple modes from another:
 
    @savefig ensemble_analysis_xray_overlap.png width=4in
    showOverlap(pca[0], anm);
-   @savefig ensemble_analysis_xray_cumulative_overlap.png width=4in
-   showCumulOverlap(pca[0], anm);
 
 Let's also plot the cumulative overlap in the same figure:
+
+.. ipython:: python
+
+   @savefig ensemble_analysis_xray_cumulative_overlap.png width=4in
+   showOverlap(pca[0], anm);
+   showCumulOverlap(pca[0], anm, 'r');
 
 
 Square fluctuations
@@ -86,12 +90,12 @@ Now let's plot square fluctuations along PCA and ANM modes in the same plot:
    legend();
 
 
-In above example, ANM modes are scaled to have the same mean as PCA modes.
+In the above example, ANM modes are scaled to have the same mean as PCA modes.
 Alternatively, we could plot normalized square fluctuations:
 
 .. ipython:: python
 
-   showNormedSqFlucts(pca[0], anm[1]);
+   showNormedSqFlucts(pca[0], anm[2]);
    @savefig ensemble_analysis_xray_pca_anm_sqflucts_3.png width=4in
    legend();
 
@@ -122,7 +126,7 @@ purple  peptide/protein bound
 
 .. ipython:: python
 
-   color_list = ['blue', 'blue', 'blue', 'blue', 'blue', 'blue', 'blue',
+   color_list = ['red', 'blue', 'blue', 'blue', 'blue', 'blue', 'blue', 'blue',
                  'blue', 'purple', 'purple', 'blue', 'blue', 'blue',
                  'blue', 'blue', 'red', 'red', 'red', 'blue', 'blue',
                  'blue', 'blue', 'blue','blue', 'blue', 'blue', 'blue',
@@ -161,9 +165,9 @@ session you can zoom in and out to make text readable.
 Cross-projections
 -------------------------------------------------------------------------------
 
-Finally, we will make a cross-projection plot using
-:func:`.showCrossProjection`. We will pass ``scale='y'`` argument, which will
-scale the width of the projection along ANM mode:
+Finally, we will make a cross-projection plot comparing PCA modes and 
+ANM modes using :func:`.showCrossProjection`. We will pass the ``scale='y'`` 
+argument, which will scale the width of the projection along the ANM mode:
 
 
 .. ipython:: python
@@ -192,7 +196,7 @@ It is also possible to find the correlation between these projections:
    print(np.corrcoef(pca_coords, anm_coords))
 
 
-This is going to print 0.95 for PC 1 and ANM mode 2 pair.
+This shows 0.95 for the PC 1 and ANM mode 2 pair.
 
 
 Finally, it is also possible to label conformations in cross projection plots

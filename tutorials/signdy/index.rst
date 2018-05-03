@@ -20,7 +20,7 @@ Signature Dynamics
 
    intro
    data
-   signatures
+   core
    classifications
 
 

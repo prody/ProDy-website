@@ -5,23 +5,20 @@ NMR Models
 
 
 This example shows how to perform principal component analysis (PCA) of an
-ensemble of NMR models.  The protein of interest is :wiki:`ubiquitin`, and
+ensemble of NMR models. The protein of interest is :wiki:`ubiquitin`, and
 for illustration puposes, we will repeat the calculations for the ensemble
 of ubiquitin models that were analyzed in [AB09]_.
 
-A :class:`.PCA` object that stores covariance matrix and principal modes that
+A :class:`.PCA` object that stores the covariance matrix and principal modes that
 describe the dominant changes in the dataset will be obtained. :class:`.PCA`
 and principal modes (:class:`.Mode`) can be used as input to functions in
 :mod:`.dynamics` module for further analysis.
 
 
 Notes
-^^^^^
+-------------------------------------------------------------------------------
 
-Note that this example is slightly different from that in the :ref:`tutorial`.
-This example uses :class:`.Ensemble` which has a method for performing
-iterative superposition.
-
+Note that this example is only slightly different from that in the :ref:`tutorial`. 
 Also, note that this example applies to any PDB file that contains multiple
 models.
 
@@ -42,7 +39,7 @@ repeat this calculation for all atoms):
 
 .. ipython:: python
 
-   ubi = parsePDB('2k39', subset='calpha')
+   ubi = parsePDB('2k39', subset='ca')
 
 We use residues 1 to 70, as residues 71 to 76 are very mobile and including
 them skews the results.
