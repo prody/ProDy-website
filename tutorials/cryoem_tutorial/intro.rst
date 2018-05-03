@@ -1,9 +1,9 @@
 Introduction
 ===============================================================================
 
-This tutorial shows how to use a cryo-em electron density data to produce 
+This tutorial shows how to use cryo-em electron density data to perform 
 elastic network model analysis. The electron density maps could be gathered 
-from electron density map database from _EMDDatabank. 
+from the electron density map database EMDDatabank. 
 
 
 Required Programs
@@ -14,9 +14,7 @@ Latest version of ProDy_ is required.
 Recommended Programs
 -------------------------------------------------------------------------------
 
-List any recommended programs, such as NAMD_, etc.
-
-.. _NAMD: http://www.ks.uiuc.edu/Research/namd/
+We recommend a visualization program too, such as VMD_.
 
 Getting Started
 -------------------------------------------------------------------------------

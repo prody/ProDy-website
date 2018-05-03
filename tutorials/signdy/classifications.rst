@@ -1,4 +1,4 @@
-Classification using matrices and trees of sequence, structure and dynamics distances
+Classification using sequence, structure and dynamics distances
 ===============================================================================
 
 We can compare the dynamics of individual proteins using the spectral overlap, 

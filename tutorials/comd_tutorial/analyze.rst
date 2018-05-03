@@ -3,8 +3,8 @@
 Collective Molecular Dynamics Analysis
 ======================================
 
-After running coMD simulation, the results will be prepared in the same 
-folder named in setup section. You need to download the following files
+After running a coMD simulation, the results will be prepared in the same 
+folder named in the setup section. You need to download the following files
 from that folder:
 
 1. :file:`initial_ionized.pdb`
@@ -34,27 +34,27 @@ packages.
    from pylab import *
    ion()
 
-coMD simulations will create two different trajectory and we need to 
+coMD simulations will create two different trajectories and we need to 
 use those two trajectories to analyze our simulations. However, the
-simulation boxes have different number of atoms due to solvation and
-ionization procedure in the beginning of simulations. We need to load
-trajectories and related structure files. 
+simulation boxes have different number of atoms due to the solvation and
+ionization procedure in the beginning of simulations. We therefore need to 
+load trajectories with their related structure files. 
 
 .. ipython:: python
 
-	dcd1 = Trajectory('initial_trajectory.dcd')
-	dcd2 = Trajectory('final_trajectory.dcd')
+	dcd1 = Trajectory('walker1_trajectory.dcd')
+	dcd2 = Trajectory('walker2_trajectory.dcd')
 	dcd1
 	dcd2
-	structure1 = parsePDB('initial_ionized.pdb')
-	structure2 = parsePDB('final_ionized.pdb')
+	structure1 = parsePDB('walker1_ionized.pdb')
+	structure2 = parsePDB('walker2_ionized.pdb')
 	structure1
 	structure2
 
-It is required to link the structure and atoms however, the size of
-initial and final structure may be different in terms of total atoms. 
-However, the total number of C-alpha atoms must be equal. The structure 
-and trajectory is linked with following commands:
+In order to analyze the two trajectories together, we must have the 
+same number of atoms in the sets that we analyze. To do this we link 
+the trajectories to there corresponding initial structures and set 
+the C-alpha atoms as the active ones with following commands:
 
 .. ipython:: python
 
@@ -65,53 +65,76 @@ and trajectory is linked with following commands:
 	dcd2.setAtoms(structure2.calpha)
 	dcd2
 
-It is not available to concatanate trajectories inside Python (It is available 
-for ProDy command line application). Therefore, we prepare two trajectory files for only C-alpha atoms with following commands:
+Concatenating Trajectory Files
+------------------------------
+
+It is not possible to concatenate Trajectory objects inside Python but 
+must instead be done using files. We therefore write out new files 
+filtered to contain only C-alpha atoms as set in the previous step:
 
 .. ipython:: python
 
 	writeDCD('initial_filtered.dcd', dcd1)
 	writeDCD('final_filtered.dcd', dcd2)
 
-Concatenating Trajectory Files
-------------------------------
-
-After having two trajectory files, we can start analyzing multiple :file:`.dcd` files. First, the trajectory files will be concatanated. 
+One way to combined trajectories into the same object is the :meth:`addFile` method 
+of :class:`Trajectory` objects.
 
 .. ipython:: python
 
 	traj = Trajectory('initial_filtered.dcd')
 	traj.addFile('final_filtered.dcd')
 
+Alternatively we can create an :class:`Ensemble` using :func:`parseDCD`,
+which gives us the flexibility to do things like reversing the final 
+trajectory to create something we can view in VMD_ rather than having
+the trajectories both run towards the shared intermediate. 
+We do this as follows:
+
+.. ipython:: python
+
+	combined_traj = parseDCD('initial_filtered.dcd')
+	w2_traj = parseDCD('final_filtered.dcd')
+
+    for i in reversed(range(len(w2_traj))):
+        combined_traj.addCoordset(w2_traj.getConformation(i))
+
+	combined_traj.superpose()
+
+    writeDCD('combined_trajectory.dcd', combined_traj)
+
+We also write out a :file:`pdb` file containing just the C-alpha atoms, which can 
+be loaded into VMD_ together with this combined trajectory for visualization.
+
+.. ipython:: python
+
+	writePDB('initial_filtered.pdb', structure1.ca)
+
+
 Principal Component Analysis
 ----------------------------
 
-For concatanated trajectory we created a PCA object, created covariance matrix and calculated eigenvalues and eigenvectors. 
+We next perform PCA on the concatenated trajectory as follows. 
 
 .. ipython:: python
 
 	pca = PCA('Adelynate Kinase coMD')
-	pca.buildCovariance(traj)
+	pca.buildCovariance(combined_traj)
 	pca.calcModes()
 
-The first half of the trajectory is for initial structure and the second half of the trajectory is for final structure. Those two trajectories are seperated. 
+The first half of the trajectory is from the initial structure and the second half of the trajectory is from the final structure. 
+We can identify these two trajectories as follows. 
 
 .. ipython:: python
 
-	forward = traj[0:40]
-	backward = traj[40:]
+	forward = combined_traj[0:40]
+	backward = combined_traj[40:]
 
-Before visualizing the trajectories on principal components, it is required to translate those structures on top by using :func:`.superpose` function. 
-
-.. ipython:: python
-
-	forward.superpose()
-	backward.superpose()
 
 Visualization of Trajectories
 -----------------------------
 
-Finally, the trajectories can be plotted by using :func:`showProjection` function:
+Finally, the trajectories can be plotted by using the :func:`showProjection` function:
 
 .. ipython:: python
 
@@ -122,11 +145,13 @@ Finally, the trajectories can be plotted by using :func:`showProjection` functio
 
 The plots will be in the following form: 
 
-.. figure:: ../../_static/figures/comd_3d_out.png
+.. figure:: images/comd_3d_out.png
 	:scale: 80%
 
-Now we calculated the modes and we can write them to a :file:`.nmd` file for viewing in normal mode wizard. 
+Having calculated the modes, we can write them to a :file:`.nmd` file for viewing in NMWiz_. 
 
 .. ipython:: python
 	
-	writeNMD('ake_pca.nmd', pca[:3], structure1.select('calpha'))
+	writeNMD('ake_pca.nmd', pca, structure1.ca)
+
+.. _NMWiz: http://prody.csb.pitt.edu/nmwiz/

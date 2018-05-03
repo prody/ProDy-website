@@ -15,6 +15,7 @@ You can load the model again if you are starting a new session as follows:
 .. ipython:: python
 
     anm_ampar = loadModel('3kg2.anm.npz')
+    ampar_ca = parsePDB('3kg2', subset='ca')
 
 
 Plotting effectiveness and sensitivity profiles
