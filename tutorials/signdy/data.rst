@@ -4,11 +4,12 @@ Data Collection
 ===============================================================================
 
 The first step in signature dynamics analysis is to collect a set of related 
-protein structures. This can be achieved by multiple routes. In this example, belonging to three 
-main types: a query search of the PDB using BLAST or Dali, extraction of PDB IDs 
-from the Pfam or CATH database, or input of a pre-defined list. We demonstrate the 
-Dali method here. The Pfam and CATH methods are still under development and the 
-function :func:`blastPDB` is described in the `Structure Analysis Tutorial`_.
+protein structures and build a :class:`.PDBEnsemble`. This can be achieved by 
+multiple routes: a query search of the PDB using :func:`.blastPDB` or :func:`.searchDali`, 
+extraction of PDB IDs from the Pfam or CATH database, or input of a pre-defined list. 
+
+We demonstrate the Dali method here. The Pfam and CATH methods are still under development 
+and the function :func:`blastPDB` is described in the `Structure Analysis Tutorial`_.
 
 We apply these methods to the type-I periplasmic binding protein domains, 
 a group of protein structures originally found in bacteria for transport of solutes 
@@ -24,19 +25,34 @@ First, make necessary imports from ProDy and Matplotlib packages if you haven't 
     from pylab import *
     ion()
 
-Dali
+Searching the PDB with Dali and building a PDBEnsemble
 -------------------------------------------------------------------------------
 
-First we use the function searchDali to search the PDB, which returns a DaliRecord 
-that contains a list of PDBs and their corresponding alignments to the reference structure. 
-This can be used to build a PDB ensemble directly using the method associated to this class.
-
-Dali 
+First we use the function searchDali to search the PDB, which returns a :class:`.DaliRecord` 
+that contains a list of PDB IDs and their corresponding mappings to the reference structure. 
 
 .. ipython:: python
 
     dali_rec = searchDali('3H5V','A')
-    dali_ens = dali_rec.buildDaliEnsemble()
+
+Next, we get the lists of PDB IDs and mappings from *dali_rec*, parse the *pdb_ids* to get 
+a list of :class:`.AtomGroup` instances, and provide them together with mappings to 
+:func:`.buildPDBEnsemble`. We provide the keyword argument ``seqid=10`` to account for the 
+low sequence identity between some of the structures.
+
+.. ipython:: python
+
+    pdb_ids = dali_rec.getPDBs()
+    mappings = dali_rec.getMappings()
+
+.. ipython:: python
+
+    pdbs = parsePDB(*pdb_ids, subset='ca')
+
+.. ipython:: python
+
+    dali_ens = buildPDBEnsemble(pdbs, mapping=mappings, seqid=20)
+
 
 
 .. _`Structure Analysis Tutorial`: http://prody.csb.pitt.edu/tutorials/structure_analysis/blastpdb.html

@@ -30,27 +30,20 @@ We start by importing everything from the ProDy package:
    from pylab import *
    ion()   # turn interactive mode on
 
-We start with parsing a PDB file by passing an identifier (**1gfl**).
-Note that if a file is not found in the current working directory, it will 
-be downloaded directly from Protein Data Bank database. We will include
-a header of PDB file which will be used in the next function.
+We start by parsing chain A of PDB structure **1gfl**.
 
 .. ipython:: python
 
-   gfp, header = parsePDB('1gfl', header=True)
+   gfp, header = parsePDB('1gfl', header=True, chain='A')
    gfp
 
-We want to use only Cα atoms from chain A, so we select them:
+We want to use only Cα atoms for our calculations, so we select them into 
+a new object *calphas*:
 
 .. ipython:: python
 
-   calphas = gfp.select('protein and chain A and name CA')
+   calphas = gfp.ca
    calphas
-
-
-Note that, ProDy atom selector gives the flexibility to select any set of 
-atoms to be used in calculations. To obtain more information about selection
-see: :class:`.AtomGroup`.
 
 
 Build Hessian
@@ -70,80 +63,62 @@ Then, build the Hessian matrix by passing selected atoms (230 Cα's) to
    anm.buildHessian(calphas, cutoff=13.0)
 
 
-Those two actions are required to perform mechanical stiffness calculations.
-Optained ANM model will be used to mechanical striffness calculations.
-We can get a copy of the Hessian matrix using :meth:`.ANM.getHessian` method:
-
-.. ipython:: python
-
-   anm.getHessian().round(4)
-
+Those two actions are required and sufficient to perform mechanical stiffness 
+calculations without calculating modes. The Hessian defines the elastic network model, 
+which will be used to calculate mechanical striffness.
 
 
 Stiffness Matrix Calculations
 -------------------------------------------------------------------------------
 
-Mechanical stiffness calculations for selected group of atoms can be 
-performed using :meth:`.ANM.buildSM` method:
+Mechanical stiffness calculations for the selected group of atoms can be 
+performed using :meth:`.ANM.buildMechStiff` method:
 
 .. ipython:: python
 
    anm.buildMechStiff(calphas)
    anm.getStiffness()
 
-Mechanical stiffness matrix is avaliable using :meth:`.ANM.getStiffness` 
-method. To save stiffness matrix as an image map use following function:
+Mechanical stiffness matrix is available using the :meth:`.ANM.getStiffness` 
+method. To show the stiffness matrix as an image map use the following function:
 
 .. ipython:: python
-   :verbatim:
 	
    showMechStiff(anm, calphas, 'jet_r')
 
-.. figure:: images/1gfl_stiffmatrix.png
-   :scale: 65 %
 
 Note that 'jet_r' will reverse the colormap of image map which will be 
 similar to coloring method of VMD_ program. 
 
-Mean value of mechanical stiffness matrix can be calculated using 
-:meth:`showMeanStiff` function where the secoundary structure of protein 
-is drawing using header information.
+The mean values of the mechanical stiffness matrix for each residue 
+can be calculated using :meth:`showMeanMechStiff` function where 
+the secoundary structure of the protein is drawn using header information.
 
 .. ipython:: python
-   :verbatim:
 
    showMeanMechStiff(anm, calphas, header, 'A', 'jet_r')
-
-.. figure:: images/1gfl_meanStiffMatrix.png
-   :scale: 60 %
 
  
 Mechanical Stiffness in VMD
 -------------------------------------------------------------------------------
 
-To generate tcl file for VMD_ program with mechanical striffness calculations 
-use :func:`.writeVMDstiffness` method. Select one residue in *indices* (**[3]**) 
+We can generate tcl files for visualizing mechanical stiffness with VMD_ 
+using the :func:`.writeVMDstiffness` function. Select one residue in *indices* (**[3]**) 
 or series of residues (**[3, 7]**, means from 3 aa to 7 aa including) and 
 a range of effective spring constant *k_range* (**[0, 7.5]**). 
-This faunction required also *pdb* with complete protein structure which will 
-be used in VMD_ representation. If *calphas* instead of full protein structure
-will be used in this function, the representation of protein in VMD_ program 
-will not be accurate. In this example we considered *chain A* therefore suitable 
-selection will be used:
 
-.. ipython:: python
+We provide *gfp* as well as *calphas* so VMD_ has information about the complete protein structure,
+which it can use for graphical representations.
 
-   pdb = gfp.select('chain A')
 
 .. ipython:: python
    :verbatim:
 
-   writeVMDstiffness(anm, pdb, [3,7], [0,7.5], filename='1gfl_3-7aa', 
-							loadToVMD=False)
-   writeVMDstiffness(anm, pdb, [3], [0,7], filename='1gfl_3')
+   writeVMDstiffness(anm, gfp, [3,7], [0,7.5], filename='1gfl_3-7aa', loadToVMD=False)
+   writeVMDstiffness(anm, gfp, [3], [0,7], filename='1gfl_3')
 
-Results will be loaded automatically to VMD_. Use ``loadToVMD=False`` to 
-change it. TCL file will be saved automatically and can be used later by using 
+Results will be loaded automatically to VMD_ by default. Use ``loadToVMD=False`` to 
+change it. The TCL file will be saved automatically and can be used later by using 
 linux command line: 
 
 ::  vmd -e 1gfl_3aa.tcl
@@ -152,22 +127,22 @@ or in VMD_ *TKConsole* (*VMD Main*) for Linux, Windows and Mac users:
 ::  play 1gfl_3aa.tcl
 
 
-Tcl file contains drawing line method between selected pairs of residues 
-which are highlighted as a VDW spheres. Color of the line can be modified 
-by changing ``draw color red`` line in output file. Only colors from VMD_ 
-Coloring Method will worked. Other changes can be done in VMD_ program in
-*Graphical Representations* section.
+The tcl file contains a method for drawing lines between selected pairs of 
+residues, which are highlighted as spheres. The color of the line can be modified 
+by changing the ``draw color red`` line in the output file. Only colors from VMD_ 
+Coloring Method will work. Other changes can be done within VMD_ in the
+*Graphical Representations* menu.
 
 .. figure:: images/1gfl_chA.png
    :scale: 60 %
 
-GFP results from :meth:`.vmdfile.writeVMDstiffness` method opened VMD_. Pair of 
-found residues: LYS3-GLY116, LYS3-PRO211 and PRO211-ASN212 are shown as VDW 
-sphesres connected with red line.
+The figure shows GFP results from :meth:`.vmdfile.writeVMDstiffness` method opened in VMD_. 
+Pairs of found residues LYS3-GLY116, LYS3-PRO211 and PRO211-ASN212 are shown as VDW 
+spheres connected with red lines.
 
 Additionally, :file:`1gfl_3aa.txt` file is created. It contains a list 
 of residue pairs with the value of effective spring constant (in a.u. because 
-*kbT=1*) obtained from :meth:`.ANM.buildSM` method.
+*kBT=1*) obtained from :meth:`.ANM.buildMechStiff` method.
 ::
 
      LYS3    GLY116  6.91650667766
@@ -176,23 +151,22 @@ of residue pairs with the value of effective spring constant (in a.u. because
      ...
 
 
-The range of spring constant for *k_range* can be check:  
+The range of spring constant for *k_range* can be checked as follows:  
 
 .. ipython:: python
 
    anm.getStiffnessRange()
 
 See also :meth:`.ANM.getMechStiffStatistic` and :meth:`.ANM.getStiffnessRangeSel`
-function for detailed analysis of stiffness matrix.
+functions for more detailed analysis of the stiffness matrix.
 
-The results of mean value of mechanical stiffness calculation can be seen 
-in VMD_ program using:
+The results of the mean value of mechanical stiffness calculation can be seen 
+in VMD_ using:
 
 .. ipython:: python
    :verbatim:
 	
-   writeDeformProfile(anm, pdb, selstr='chain A and name CA',\
-                                  pdb_selstr='protein')
+   writeDeformProfile(anm, gfp, selstr='chain A and name CA', pdb_selstr='protein')
 
 
 .. figure:: images/1gfl_defprofile_vmd.png
@@ -203,29 +177,25 @@ in VMD_ program using:
 Calculate Distribution of Deformation 
 -------------------------------------------------------------------------------
 
-Distribution of the deformation in the distance contributed by each mode 
-for selected pair of residues has been described in [EB08]_, see *Eq. (10)*
+The distribution of the deformation in the distance contributed by each mode 
+for a selected pair of residues has been described in [EB08]_, see *Eq. (10)*
 and plots are shown on *Fig. (2)*. 
-The results can be received using :meth:`.plotting.showPairDeformationDist`
-to obtain a plot or :meth:`.analysis.calcPairDeformationDist` to receive a list
-with data that can be modified.
+
+These results can be plotted using :meth:`.plotting.showPairDeformationDist` 
+or a list can be obtained using :meth:`.analysis.calcPairDeformationDist`.
 
 .. ipython:: python
-   :verbatim:
 
    calcPairDeformationDist(anm, calphas, 3, 132)
 
    showPairDeformationDist(anm, calphas, 3, 132)
 
-.. figure:: images/1gfl_3_132.png
-   :scale: 60 %
 
-Distribution of the deformation plot between 3-132 residue in each mode *k*.
+Figure shows the plotted distribution for deformations between 3-132 residue in each mode *k*.
 
-To obtain results without saving any file typed:
+To obtain results without saving any file type:
 
 .. ipython:: python
-   :verbatim:
 
    d1 = calcPairDeformationDist(anm, calphas, 3, 212)
    d2 = calcPairDeformationDist(anm, calphas, 132, 212)

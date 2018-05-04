@@ -100,7 +100,7 @@ Plotting
 .. ipython:: python
 
    indices = range(1,122)
-   bar(indices, entropy, width=1.2, color='grey', hold='True');
+   bar(indices, entropy, width=1.2, color='grey');
    xlim(min(indices)-1, max(indices)+1);
    @savefig entropy_mobility.png width=4in
    plot(indices, mobility_all*(max(entropy)/max(mobility_all)), color='b',

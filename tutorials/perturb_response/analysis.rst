@@ -40,7 +40,7 @@ This can again be shown in a plot as in Figure 6D.
 
 .. ipython:: python
 
-    show = showPerturbResponse(model=anm_ampar, atoms=ampar_ca, show_matrix=False, selection='chain B and resnum 84')
+    show = showPerturbResponse(model=anm_ampar, atoms=ampar_ca, show_matrix=False, select='chain B and resnum 84')
 
 
 We can also calculate the PRS matrix and profiles separately from showPerturbResponse. 
@@ -75,7 +75,7 @@ and slice out individual rows or columns and write them into PDB files for visua
 .. ipython:: python
 
     prs_mat, effectiveness, sensitivity = calcPerturbResponse(anm_ampar)
-    B_84_profile = sliceAtomicData(prs_mat, atoms=ampar_ca, select='chain B and resnum 84')
+    B_84_profile = sliceAtomicData(prs_mat, atoms=ampar_ca, selection='chain B and resnum 84')
     ampar_ca.setBetas(B_84_profile)
     writePDB('3kg2_ca_B_84__effectiveness.pdb', ampar_ca)
 

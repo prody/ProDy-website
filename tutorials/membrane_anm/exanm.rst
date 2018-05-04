@@ -68,7 +68,7 @@ and we build a couple of Hessians using the coordinates of the crystal structure
 
 .. ipython:: python
 
-   exanm.buildHessian(of_ca, cutoff=15.0, membrane_low=-13, membrane_high=13.)
+   exanm.buildHessian(of_ca, membrane_low=-13, membrane_high=13.)
 
 Now we calculate the modes and write them to a pair of .nmd files for viewing.
 
