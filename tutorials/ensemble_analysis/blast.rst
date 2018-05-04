@@ -3,12 +3,12 @@
 Homologous Proteins
 ===============================================================================
 
-This example shows how to perform PCA of a structural dataset obtained by blast
-searching PDB. The protein of interest is :wiki:`cytochrome c` (cyt *c*).
-Dataset will contain structures sharing 44% or more sequence identity with
-human *cyt c*, i.e. its homologs and/or orthologs.
+This example shows how to perform PCA of a structural dataset obtained by BLAST
+searching the PDB. The protein of interest is :wiki:`cytochrome c` (cyt *c*).
+This dataset will contain structures sharing 44% or more sequence identity with
+human *cyt c*, i.e. its paralogs and/or orthologs.
 
-A :class:`.PCA` instance that stores covariance matrix and principal modes that
+A :class:`.PCA` instance that stores the covariance matrix and principal modes that
 describe the dominant changes in the dataset will be obtained. :class:`.PCA`
 instance and principal modes (:class:`.Mode`) can be used as input to functions
 in :mod:`.dynamics` module for further analysis.
@@ -39,7 +39,7 @@ Name of the protein (a name without a white space is preferred)
 
 In order to perform a BLAST search of the PDB, we will need the amino acid 
 sequence of our reference protein.  We could get the FASTA format from the PDB, 
-or we could get the sequence from the PDB file itself.  A more attractive 
+or we could get the sequence from the PDB file itself. A more attractive 
 method (to us) is to get the sequence using ProDy.
 
 .. ipython:: python
@@ -74,45 +74,42 @@ Parameters
    seqid = 44
    # Reference chain identifier
    ref_chid = 'A'
-
-.. ipython:: python
-
    # Selection string ("all" can be used if all of the chain is to be analyzed)
    selstr = 'resnum 1 to 103'
 
 Blast and download
 -------------------------------------------------------------------------------
 
-List of PDB structures can be obtained using :func:`.blastPDB`
+A list of PDB structures can be obtained using :func:`.blastPDB`
 as follows:
 
 .. ipython::
-   :verbatim:
 
-   In [10]: blast_record = blastPDB(sequence)
+   blast_record = blastPDB(sequence)
 
 It is a good practice to save this record on disk, as NCBI may not respond to
-repeated searches for the same sequence. We can do this using Python standard
+repeated searches for the same sequence. We can do this using the Python standard
 library :mod:`pickle` as follows:
 
 .. ipython:: python
 
    import pickle
 
-Record is save using :func:`~pickle.dump` function into an open file:
+The record is saved using the :func:`~pickle.dump` function:
 
 .. ipython::
-   :verbatim:
 
-   In [10]: pickle.dump(blast_record, open('cytc_blast_record.pkl', 'w'))
+   pickle.dump(blast_record, open('cytc_blast_record.pkl', 'w'))
 
 
-Then, it can be loaded using :func:`~pickle.load` function:
+Then, it can be loaded using the :func:`~pickle.load` function:
 
 .. ipython:: python
 
    blast_record = pickle.load(open('cytc_blast_record.pkl'))
 
+We then read information from the record to extract a list of 
+PDB IDs and chain IDs.
 
 .. ipython:: python
 
@@ -120,12 +117,16 @@ Then, it can be loaded using :func:`~pickle.load` function:
    for key, item in blast_record.getHits(seqid).iteritems():
        pdb_hits.append((key, item['chain_id']))
 
-Let's fetch PDB files and see how many there are:
+Let's parse the PDB files and see how many there are:
 
 .. ipython:: python
 
-   pdb_files = fetchPDB(*[pdb for pdb, ch in pdb_hits], compressed=False)
-   len(pdb_files)
+   pdbs = parsePDB(*[pdb for pdb, ch in pdb_hits], subset='ca', compressed=False)
+
+
+.. ipython:: python
+
+   len(pdbs)
 
 
 Set reference
@@ -145,6 +146,21 @@ For analysis of a dimeric protein see :ref:`pca-dimer`
 Prepare ensemble
 -------------------------------------------------------------------------------
 
+X-ray structural ensembles are heterogenenous, i.e. different structures
+have different sets of unresolved residues. Hence, it is not straightforward
+to analyzed them as it would be for NMR models (see :ref:`pca-nmr`).
+
+ProDy has special functions and classes for facilitating efficient analysis
+of the PDB X-ray data. In this example we use :func:`.mapOntoChain`
+function which returns an :class:`.AtomMap` instance. See :ref:`atommaps` for more details.
+
+The resulting :class:`.AtomMap` instances are used to  prepare a :class:`.PDBEnsemble` 
+by mapping each structure against the reference chain and adding a coordinates set 
+corresponding to the mapped atoms. The overall procedure is shown in detail below 
+so you can understand the process and think about case specific changes such as those in 
+the `Multimeric Structures tutorial`_. This process can also be automated using 
+:func:`.buildPDBEnsemble` as shown in the `Heterogeneous X-ray Structures tutorial`_.
+
 .. ipython:: python
 
    # Start a log file
@@ -158,16 +174,15 @@ Prepare ensemble
 
 .. ipython:: python
 
-   for (pdb_id, chain_id), pdb_file in zip(pdb_hits, pdb_files):
-       if pdb_id in exclude:
+   for structure in pdbs:
+       if structure.getTitle()[:4] in exclude:
            continue
-       structure = parsePDB(pdb_file, subset='calpha', chain=chain_id)
        if structure is None:
            plog('Failed to parse ' + pdb_file)
            continue
        mappings = mapOntoChain(structure, reference_chain, seqid=seqid)
        if len(mappings) == 0:
-           plog('Failed to map', pdb_id)
+           plog('Failed to map', structure.getTitle()[:4])
            continue
        atommap = mappings[0][0]
        ensemble.addCoordset(atommap, weights=atommap.getFlags('mapped'))
@@ -181,7 +196,7 @@ Let's check how many conformations are extracted from PDB files:
 
    len(ensemble)
 
-Note that number of conformations is larger than the number of PDB structures
+Note that the number of conformations is larger than the number of PDB structures
 we retrieved. This is because some of the PDB files contained NMR structures
 with multiple models. Each model in NMR structures are added to the ensemble
 as individual conformations.
@@ -201,10 +216,10 @@ software.
 Align PDB files
 -------------------------------------------------------------------------------
 
-:func:`.alignPDBEnsemble` function can be used to align all PDB structures used
-in the analysis, e.g. ``alignPDBEnsemble(ensemble)``.  Outputted files will
-contain intact structures and can be used for visualization purposes in other
-software.  In this case, we will align only select PDB files:
+:func:`.alignPDBEnsemble` function can be used to align PDB structures used
+in the analysis and write new PDB files, e.g. ``alignPDBEnsemble(ensemble)``. 
+The resulting files will contain intact structures and can be used for 
+visualization purposes. In this case, we will align only select PDB files:
 
 .. ipython:: python
 
@@ -266,3 +281,6 @@ Let's show a projection of the ensemble onto PC1 and PC2:
 
    @savefig ensemble_analysis_blast_projection.png width=4in
    showProjection(ensemble, pca[:2]);
+
+.. _`Multimeric Structures tutorial`: http://prody.csb.pitt.edu/tutorials/ensemble_analysis/dimer.html
+.. _`Heterogeneous X-ray Structures tutorial`: http://prody.csb.pitt.edu/tutorials/ensemble_analysis/xray_calculations.html

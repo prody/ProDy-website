@@ -40,10 +40,11 @@ link:
 workdir:
 	# creates workdir (where IPython directive input and output is saved)
 	mkdir -p $(WORKDIR)
+	mkdir -p $(WORKDIR)/conformational_sampling_files/
 
 	# copies required files from individual tutorials
 	cp -rf tutorials/conformational_sampling/$(WORKDIR)/* $(WORKDIR)
-	cp -rf tutorials/conformational_sampling/conformational_sampling_files/* $(WORKDIR)
+	cp -rf tutorials/conformational_sampling/conformational_sampling_files/* $(WORKDIR)/conformational_sampling_files/
 
 	cp -rf tutorials/enm_analysis/enm_analysis_files/* $(WORKDIR)
 

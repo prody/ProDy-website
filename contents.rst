@@ -9,16 +9,21 @@ ProDy Documentation
    manual/index
    tutorials/prody_tutorial/index
    tutorials/evol_tutorial/index
-   tutorials/nmwiz_tutorial/index
-   tutorials/drugui_tutorial/index
-   tutorials/structure_analysis/index
+   tutorials/signdy_tutorial/index
    tutorials/enm_analysis/index
+   tutorials/conformational_sampling/index
+
+   tutorials/structure_analysis/index
    tutorials/ensemble_analysis/index
    tutorials/trajectory_analysis/index
-   tutorials/conformational_sampling/index
-   tutorials/comd_tutorial/index
+
    tutorials/membrane_anm/index
-   tutorials/stiffmech/index
+   tutorials/mech_stiff/index
+   tutorials/perturb_response/index
+
+   tutorials/nmwiz_tutorial/index
+   tutorials/drugui_tutorial/index
+   tutorials/comd_tutorial/index
 
 
 * :ref:`genindex`

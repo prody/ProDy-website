@@ -1,0 +1,46 @@
+{% extends "index.html" %}
+{% block body %}
+
+
+      <div class="row">
+        <div class="span12">
+          <div class="span5 pull-right" style="padding-top: 20px">
+            <div class="well">
+              <div id="panel-5-title" class="slide-title"></div>
+              <i class="icon-circle-arrow-right slide-arrow" onclick="nextSlide(5);" title="Next slide"></i>
+              <i class="icon-circle-arrow-left slide-arrow" onclick="prevSlide(5);" title="Previous slide"></i>
+               <div id="panel-5-slide" class="slide-content"></div>
+              <script>showSlide(5, -1);</script>
+            </div>
+          </div>
+
+            <h2><b>PRS</b> for Perturbation Response Scanning</h2>
+            <p><b>PRS</b> calculates the effectiveness and sensitivity of residues in propagation of allosteric signals 
+            through a protein.</p>
+
+            <h4>Features</h4>
+            <p><b>PRS</b> uses as an input the known structure modeled as an elastic network (ANM). It may be used to evaluate 
+              a map of how perturbations each residue i affect the dynamics of each other residue j, , as well as average effectiveness 
+              and sensitivity profiles for individual residues. The output can be used for:</p>
+
+            <ol class="simple">
+              <li>Identification of effector residues that propagate signals into a protein in response to external perturbations</li>
+              <li>Sensor residues that sense allosteric signals coming from other residues and respond with altered dynamics</li>
+              <li>An idea of the most important connections for signalling within a protein</li>
+            </ol>
+
+
+              <strong>Reference</strong><br>
+              General IJ, Liu Y, Blackburn ME, Mao W, Gierasch LM, Bahar I.
+              <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pubmed/24831085" target="_blank">
+              ATPase subdomain IA is a mediator of interdomain allostery in Hsp70 molecular chaperones. </a>
+              <em>PLoS Comput Biol</em> <strong>2014</strong> 10(5):e1003624.<br>
+              Atilgan C, Atilgan AR. 
+              <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pubmed/19851447" target="_blank">
+              Perturbation-response scanning reveals ligand entry-exit mechanisms of ferric binding protein. </a>
+              <em>PLoS Comput Biol</em> <strong>2009</strong> 5(10):e1000544. <br>
+            </small></p>
+          </div>
+        </div>
+
+{% endblock %}

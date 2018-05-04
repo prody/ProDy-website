@@ -17,7 +17,7 @@ First, we parse p38 structure :file:`p38.pdb`:
 
 .. ipython:: python
 
-   p38 = parsePDB('p38.pdb')
+   p38 = parsePDB('conformational_sampling_files/p38.pdb')
    p38
 
 Let's take a look at the structure:
@@ -28,7 +28,7 @@ Let's take a look at the structure:
    @savefig conformational_sampling_p38.png width=4in
    legend();
 
-Note that this structure has hydrogen atoms which are added using PSFGEN that
+Note that this structure has hydrogen atoms which were added using PSFGEN that
 comes with NAMD:
 
 .. ipython:: python
@@ -110,7 +110,7 @@ For visualization, you can use :func:`viewNMDinVMD`, i.e.
 Extend Model
 -------------------------------------------------------------------------------
 
-We want to use ANM model to sample all atoms conformations of p38 MAPK, but
+We want to use the ANM model to sample all atoms conformations of p38 MAPK, but
 we have a coarse-grained model. We will use :func:`.extendModel` function
 for this purpose:
 
@@ -122,8 +122,8 @@ for this purpose:
    p38_all
 
 
-Note ``p38_anm_ext`` is an :class:`.NMA` model, which has similar features as
-an :class:`.ANM` object. Extended model has 3 modes, but 5668 atoms as opposed
+Note ``p38_anm_ext`` is an :class:`.NMA` model, which has similar features to
+an :class:`.ANM` object. This extended model still has 3 modes, but 5668 atoms as opposed
 to 351 nodes in the original :class:`.ANM` model.
 
 Let's plot mobility of residues again to help understand what extending a
@@ -134,8 +134,8 @@ model does:
    @savefig conformational_sampling_sqflucts_ext.png width=4in
    showSqFlucts(p38_anm_ext);
 
-As you see, shape of the mobility plot is identical.  In the extended model,
-each in the same direction as the Cα atoms of the residues that they belong to.
+As you see, the shape of the mobility plot is identical.  In the extended model,
+each atom moves in the same direction as the Cα atoms of the residue to which they belong.
 The mobility profile is scaled down, however, due to renormalization of
 the mode vectors.
 

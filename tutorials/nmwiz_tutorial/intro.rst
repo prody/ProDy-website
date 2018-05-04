@@ -13,7 +13,7 @@ NMWiz can be used to depict any vector that describes a molecular motion.
 Required Programs
 -------------------------------------------------------------------------------
 
-The latest versions of ProDy_ (1.4 or later) and VMD_ (1.9.2 or later) or Chimera (1.11 or later) are required.
+The latest versions of ProDy_ (1.4 or later) and VMD_ (1.9.2 or later) or `Chimera`__ (1.11 or later) are required.
 
 Getting Started
 -------------------------------------------------------------------------------
@@ -21,3 +21,5 @@ Getting Started
 To follow this tutorial, you will need the following files:\
 
 .. literalinclude:: files.txt
+
+__ http://www.cgl.ucsf.edu/chimera/

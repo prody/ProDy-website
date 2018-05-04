@@ -1,7 +1,7 @@
 Introduction
 ============
 
-Collective Molecular Dynamics is a `VMD`_ plugin GUI and a Python module developed for setup and analysis of simulations described in [MG13]_.
+Collective Molecular Dynamics is a VMD_ plugin GUI and a Python module developed for setup and analysis of simulations described in [MG13]_.
 
 Installation
 ------------
@@ -25,7 +25,7 @@ Installation
    Then, insert following line into :file:`$VMDDIR/scripts/vmd/loadplugins.tcl`
    at line 200::
 
-     vmd_install_extension comd comd_tk "Modeling/DruGUI"
+     vmd_install_extension comd comd_tk "Simulations/Collective Molecular Dynamics (CoMD)"
 
 
    If you are not sure where VMD directory is located, run :program:`vmd`, and
@@ -42,7 +42,7 @@ setup, collective molecular dynamics simulations:
 
   * :ref:`setup`
 
-.. figure:: _static/figures/comd_gui_setup.png
+.. figure:: ../../_static/figures/comd_setup_gui.png
    :scale: 80%
 
 The rest of the tutorial will show you how to use this panel, and described
@@ -58,6 +58,8 @@ Files in the following archives can be used to follow this tutorial:
 
 Here is a list of these files:
 
+.. files.txt will be automatically generated
+
 .. literalinclude:: files.txt
 
 
@@ -69,3 +71,4 @@ following paper:
 .. [MG13] Gur M, Madura J, Bahar I `Global Transitions of Proteins Explored by a Multiscale Hybrid Methodology: Application to Adenylate Kinase <http://www.sciencedirect.com/science/article/pii/S000634951300934X>`_
    *Biophys J* **2013** 7:1643–1652
 
+.. _NAMD: http://www.ks.uiuc.edu/Research/namd/

@@ -26,7 +26,7 @@ First, let's fetch an MSA file from `Pfam`_ database:
 
 We downloaded the seed alignment for Protein Kinase (:pfam:`Pkinase`) family.
 
-.. _Pfam: http://pfam.sanger.ac.uk/
+.. _Pfam: http://pfam.xfam.org
 
 
 Parse MSA

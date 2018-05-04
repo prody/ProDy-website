@@ -75,7 +75,7 @@ Let's find the minimum:
 
 .. ipython:: python
 
-   calcMSAOccupancy(msa_refine, occ='res').min();
+   calcMSAOccupancy(msa_refine, occ='res').min()
 
 We can also specify indices based on the PDB.
 

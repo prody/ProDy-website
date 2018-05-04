@@ -40,8 +40,8 @@ preferred) and also reference structure id and chain identifiers:
 Parameters
 ^^^^^^^^^^
 
-Following parameters are for comparing two structures to determine matching
-chain.
+The following parameters are for comparing two structures to determine 
+matching chains.
 
 .. ipython:: python
 
@@ -132,7 +132,7 @@ ensemble onto which other conformations will be superposed.
 
 
 We can also start a log file using :func:`.startLogfile`.
-Screen output will be save in this file, and can be
+Screen output will be saved in this file, and can be
 used to check if structures are added to the ensemble as expected.
 
 .. ipython:: python
@@ -191,14 +191,14 @@ We can write the aligned conformations into a PDB file as follows:
 
    writePDB(name + '.pdb', ensemble)
 
-This file can be used to visualize the aligned conformations in modeling
-software.
+This file can be used to visualize the aligned conformations in molecular
+graphics software.
 
-This is a heterogeneous dataset, i.e. many structures had missing residues.
+This is a heterogeneous dataset, i.e. many structures have missing residues.
 We want to make sure that we include residues in PCA analysis if they
-are resolved in more than 94% of the time.
+are resolved more than 94% of the time.
 
-We can find out this using :func:`.calcOccupancies` function:
+We can check this using the :func:`.calcOccupancies` function:
 
 .. ipython:: python
 
@@ -230,9 +230,9 @@ As mentioned at the beginning, the ensemble can be also built by
 .. ipython:: python
 
     prot = parsePDB('1dlo', subset='ca', model=1)
-    pdbs = [parsePDB(id, subset='ca', model=1) for id in pdb_ids]
-    ensemble = buildPDBEnsemble(prot, pdbs, title='HIV-RT', labels=pdb_ids, 
-                                seqid = 94, coverage = 85, occupancy=0.94)
+    pdbs = parsePDB(*pdb_ids, subset='ca', model=1)
+    ensemble = buildPDBEnsemble(pdbs, ref=prot, title='HIV-RT', labels=pdb_ids, 
+                                seqid=94, coverage=85, occupancy=0.94)
     ensemble
 
 Perform PCA

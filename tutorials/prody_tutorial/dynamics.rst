@@ -19,7 +19,10 @@ PCA Calculations
 -------------------------------------------------------------------------------
 
 Let's perform principal component analysis (:class:`.PCA`) of an ensemble
-of NMR models, such as :pdb:`2k39`.  First, we prepare the ensemble:
+of NMR models, such as :pdb:`2k39`. The same example is presented in the 
+:ref:`ensemble-analysis` where more details are provided.
+
+First, we prepare the ensemble:
 
 .. ipython:: python
 
@@ -196,6 +199,6 @@ to plot data:
 More Examples
 -------------------------------------------------------------------------------
 
-For more examples see :ref:`enm-analysis` and :ref:`ensemble-analysis`
+For more examples and details see :ref:`enm-analysis` and :ref:`ensemble-analysis`
 tutorials.
 
