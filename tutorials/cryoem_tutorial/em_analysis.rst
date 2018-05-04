@@ -24,7 +24,7 @@ This file format is a binary format also known as CCP4 or MRC2015.
    emd = parseEMD('emd_1960.map', cutoff=1.2, n_nodes=8000, num_iter=30)
 
 This function returns an atom group from the electron density
-map. Cutoff parameter discards the electron density lower than
+map. The cutoff parameter discards any electron density lower than
 the given number, n_nodes is the parameter that describes the
 total number of beads that initialize the system. The method to
 build coordinates is also called the "Topology Representing

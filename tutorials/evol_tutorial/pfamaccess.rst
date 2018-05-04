@@ -28,9 +28,8 @@ accession and id.
 We query Pfam using the :func:`.searchPfam`. with a UniProt ID.
 
 .. ipython::
-   :verbatim:
 
-   In [1]: matches = searchPfam('PIWI_ARCFU')
+   matches = searchPfam('PIWI_ARCFU')
 
 
 It is a good practice to save this record on disk, as NCBI may not respond to
@@ -44,9 +43,8 @@ library :mod:`pickle` as follows:
 Record is save using :func:`~pickle.dump` function into an open file:
 
 .. ipython::
-   :verbatim:
 
-   In [10]: pickle.dump(matches, open('pfam_search_PIWI_ARCFU.pkl', 'w'))
+   pickle.dump(matches, open('pfam_search_PIWI_ARCFU.pkl', 'w'))
 
 
 Then, it can be loaded using :func:`~pickle.load` function:
@@ -57,38 +55,38 @@ Then, it can be loaded using :func:`~pickle.load` function:
    matches
 
 
-Input can also be a protein sequence or a file containing the sequence:
+.. Input can also be a protein sequence or a file containing the sequence:
 
-.. ipython::
+.. .. ipython::
    :verbatim:
 
-   In [1]: sequence = ('PMFIVNTNVPRASVPDGFLSELTQQLAQATGKPPQYIAVHVVPDQLMAFGGSSE'
+..   In [1]: sequence = ('PMFIVNTNVPRASVPDGFLSELTQQLAQATGKPPQYIAVHVVPDQLMAFGGSSE'
       ...: 'PCALCSLHSIGKIGGAQNRSYSKLLCGLLAERLRISPDRVYINYYDMNAANVGWNNSTFA')
 
 
-   In [2]: matches = searchPfam(sequence)
+..   In [2]: matches = searchPfam(sequence)
 
 
-   In [10]: pickle.dump(matches, open('pfam_search_sequence.pkl', 'w'))
+..   In [10]: pickle.dump(matches, open('pfam_search_sequence.pkl', 'w'))
 
-.. ipython:: python
+.. .. ipython:: python
 
-   matches = pickle.load(open('pfam_search_sequence.pkl'))
+..   matches = pickle.load(open('pfam_search_sequence.pkl'))
    matches
 
-Input sequence cannot have gaps and should be at least 12 characters long.
+.. Input sequence cannot have gaps and should be at least 16 characters long.
 
-For sequence searches, we can pass additional parameters to :func:`.searchPfam`
+.. For sequence searches, we can pass additional parameters to :func:`.searchPfam`
 like *search_b* which will search pfam B and *skip_a* that will not search
 pfamA database. Additional parameters include *ga* that uses gathering
 threshold instead of e-value, *evalue* cutoff can also be specified and
 *timeout* that can be set higher especially when searching larger
 sequences, default is ``timeout=60`` seconds.
 
-.. ipython::
+.. .. ipython::
    :verbatim:
 
-   In [1]: matches = searchPfam(sequence, search_b=True, evalue=2.0)
+..   In [1]: matches = searchPfam(sequence, search_b=True, evalue=2.0)
 
 
 Retrieve MSA files
@@ -103,10 +101,8 @@ Alignment type can be ``"full'`` (default), ``"seed"``, ``"ncbi"`` or
 ``"metagenomics"`` or ``"rp15"`` or ``"rp35"`` or ``"rp55"`` or ``"rp75"``.
 
 .. ipython::
-   :verbatim:
 
-   In [1]: fetchPfamMSA('piwi', alignment='seed')
-   Out[1]: 'piwi_seed.sth'
+   fetchPfamMSA('piwi', alignment='seed')
 
 A compressed file can be downloaded by setting ``compressed=True``.
 The ``format`` of the MSA can be of ``"selex"`` (default), ``"stockholm"`` or
@@ -120,8 +116,6 @@ are necessary for larger families. Some other parameters like ``gap``,
 ``order`` or ``inserts`` can be set, as shown in the following example.
 
 .. ipython::
-   :verbatim:
 
-   In [1]: fetchPfamMSA('PF02171', compressed=True, gaps='mixed',
+   fetchPfamMSA('PF02171', compressed=True, gaps='mixed',
       ...: inserts='lower', order='alphabetical', format='fasta')
-   Out[1]: 'PF02171_full.fasta.gz'

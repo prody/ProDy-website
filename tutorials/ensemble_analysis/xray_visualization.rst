@@ -15,7 +15,7 @@ Notes
 ^^^^^
 
 To make a comparative visual analysis of PCA and ANM modes that were calculated
-in the previous parts, NMWiz needs to be installed.  NMWiz is a VMD_ plugin
+in the previous parts, NMWiz needs to be installed. NMWiz is a VMD_ plugin
 designed to complement ProDy.
 
 
@@ -38,7 +38,7 @@ Then we load data saved in :ref:`pca-xray-calculations`:
    pca = loadModel('p38_xray.pca.npz')
    anm = loadModel('1p38.anm.npz')
    ensemble = loadEnsemble('p38_X-ray.ens.npz')
-   ref_chain = parsePDB('p38_ref_chain.pdb')
+   ref_selection = parsePDB('p38_ref_selection.pdb')
 
 Write NMD files
 -------------------------------------------------------------------------------
@@ -50,8 +50,8 @@ are saved as follows using :func:`.writeNMD` functions:
 
 .. ipython:: python
 
-   writeNMD('p38_pca.nmd', pca[:3], ref_chain)
-   writeNMD('p38_anm.nmd', anm[:3], ref_chain)
+   writeNMD('p38_pca.nmd', pca[:3], ref_selection)
+   writeNMD('p38_anm.nmd', anm[:3], ref_selection)
 
 
 It is also possible to load VMD to visualize normal mode data
@@ -69,5 +69,5 @@ using the same function.
 .. ipython:: python
    :verbatim:
 
-   viewNMDinVMD('1p38_pca.nmd')
+   viewNMDinVMD('p38_pca.nmd')
 

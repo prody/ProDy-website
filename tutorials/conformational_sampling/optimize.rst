@@ -17,8 +17,8 @@ Let's find the location of NAMD executable:
    namd2
 
 We will need a force field file for energy minimization. VMD ships with
-CHARMM force field files. We can write a tcl script to find and write their location 
-as follows:
+CHARMM force field files. We can write a tcl script to find and write 
+their location as follows:
 
 
 .. ipython:: python
@@ -61,7 +61,7 @@ Let's make a folder for writing optimization input and output files:
     mkdir -p p38_optimize
 
 We will write an NAMD configuration file for each conformation based
-on :file:`min.conf` file:
+on :file:`min.conf`:
 
 .. ipython:: python
 

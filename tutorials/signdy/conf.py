@@ -1,5 +1,5 @@
 tutorial_title = u'Signature Dynamics'
-tutorial_author = u'Krieger, James'
+tutorial_author = u'She Zhang, James Krieger'
 tutorial_logo = u''           # default is ProDy logo
 tutorial_version = u''        # default is latest ProDy version
 

@@ -25,7 +25,7 @@ Installation
    Then, insert following line into :file:`$VMDDIR/scripts/vmd/loadplugins.tcl`
    at line 200::
 
-     vmd_install_extension comd comd_tk "Modeling/DruGUI"
+     vmd_install_extension comd comd_tk "Simulations/Collective Molecular Dynamics (CoMD)"
 
 
    If you are not sure where VMD directory is located, run :program:`vmd`, and
@@ -42,7 +42,7 @@ setup, collective molecular dynamics simulations:
 
   * :ref:`setup`
 
-.. figure:: ../../_static/figures/comd_gui_setup.png
+.. figure:: ../../_static/figures/comd_setup_gui.png
    :scale: 80%
 
 The rest of the tutorial will show you how to use this panel, and described
@@ -57,6 +57,8 @@ Files in the following archives can be used to follow this tutorial:
   * `coMD Tutorial Files (ZIP) <comd_tutorial_files.zip>`_
 
 Here is a list of these files:
+
+.. files.txt will be automatically generated
 
 .. literalinclude:: files.txt
 
