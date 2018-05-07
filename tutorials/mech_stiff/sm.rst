@@ -14,10 +14,6 @@ an input (*model*) as well as cooridinates of protein structure (*coords*, *pdb*
 See [EB08]_ for more information about the theory of mechanical resistance 
 calculations and more examples.
 
-.. [EB08] Eyal E., Bahar I. Toward a Molecular Understanding of 
-   the Anisotropic Response of Proteins to External Forces: Insights from 
-   Elastic Network Models. *Biophys. J.* **2008** 94:3424-34355.
-
 
 Parse structure
 -------------------------------------------------------------------------------

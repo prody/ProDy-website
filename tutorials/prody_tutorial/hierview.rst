@@ -123,7 +123,7 @@ Indexing a :class:`.Chain` instance with a scalar returns an :class:`.Atom` like
    chA[1000]
 
 Indexing a :class:`.Chain` instance with a tuple returns an :class:`.Residue`. This can also be achieved with the 
-:meth:`.getResidue` method.
+:meth:`prody.atomic.chain.Chain.getResidue` method.
 
 .. ipython:: python
 
