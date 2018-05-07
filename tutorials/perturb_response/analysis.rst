@@ -75,7 +75,7 @@ and slice out individual rows or columns and write them into PDB files for visua
 .. ipython:: python
 
     prs_mat, effectiveness, sensitivity = calcPerturbResponse(anm_ampar)
-    B_84_profile = sliceAtomicData(prs_mat, atoms=ampar_ca, selection='chain B and resnum 84')
+    B_84_profile = sliceAtomicData(prs_mat, atoms=ampar_ca, select='chain B and resnum 84')
     ampar_ca.setBetas(B_84_profile)
     writePDB('3kg2_ca_B_84__effectiveness.pdb', ampar_ca)
 

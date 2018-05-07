@@ -86,11 +86,6 @@ Compare SAXS profiles of known structure and experimental data
 We have to produce theoretical SAXS profile of the open conformation. We will
 use Fast-SAXS method for this purpose [SY09]_.
 
-.. [SY09] Yang S, Park S, Makowski L, and Roux B. A Rapid Coarse Residue-Based
-   Computational Method for X-Ray Solution Scattering Characterization of
-   Protein Folds and Multiple Conformational States of Large Protein Complexes.
-   *Biophysical Journal*  **2009** 96:4449–4463.
-
 We will call :func:`calcSaxsPerModel` to compute SAXS profile of our initial
 pdb file for each experimental q value. Therefore, we have to use Q_exp array
 we have just read from the experimental data file. Theoretical

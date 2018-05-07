@@ -20,6 +20,7 @@ ProDy Documentation
    tutorials/membrane_anm/index
    tutorials/mech_stiff/index
    tutorials/perturb_response/index
+   tutorials/cryoem_tutorial/index
 
    tutorials/nmwiz_tutorial/index
    tutorials/drugui_tutorial/index

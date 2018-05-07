@@ -6,6 +6,7 @@ First, necessary imports:
 .. ipython:: python
 
    from prody import *
+   from numpy import *
    from pylab import *
    ion()
    import os, glob
@@ -86,7 +87,7 @@ Let's select conformations that are 1.2 Å away from other on average:
 
 .. ipython:: python
 
-    selected = (rmsd_mean >= 1.2).nonzero()[0]
+    selected = (array(rmsd_mean) >= 1.2).nonzero()[0]
     selected
     selection = refined[selected]
     selection
