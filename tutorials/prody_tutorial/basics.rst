@@ -30,9 +30,11 @@ in ``parse``:
 
    @verbatim
    In [2]: parse<TAB>
-               parseArray        parseCIFStream    parseEMD          parseHiC          parseMSA          parsePDBHeader    parsePQR          parseSTAR                  
-               parseChainsList   parseDCD          parseEMDStream    parseHiCStream    parseNMD          parsePDBStream    parsePSF          parseSTRIDE                
-               parseCIF          parseDSSP         parseHeatmap      parseModes        parsePDB          parsePfamPDBs     parseSparseMatrix  
+      parseArray        parseCIFStream    parseEMD          parseHiC          parseMSA          
+      parsePDBHeader    parsePQR          parseSTAR         parseChainsList   parseDCD          
+      parseEMDStream    parseHiCStream    parseNMD          parsePDBStream    parsePSF          
+      parseSTRIDE       parseCIF          parseDSSP         parseHeatmap      parseModes        
+      parsePDB          parsePfamPDBs     giparseSparseMatrix  
 
 When using :func:`.parsePDB`, usually an identifier will be sufficient,
 If corresponding file is found in the current working directory, it will be
@@ -83,18 +85,24 @@ Similar to parsers, analysis function names start with ``calc``:
 
    @verbatim
    In [2]: calc<TAB>
-              calcADPAxes                   calcChainsNormDistFluct       calcCrossProjection           calcDistFlucts                calcFractVariance                 
-              calcADPs                      calcCollectivity              calcCumulOverlap              calcENM                       calcGNM                           
-              calcAngle                     calcCovariance                calcDeformVector              calcEnsembleENMs              calcGyradius                     
-              calcANM                       calcCovOverlap                calcDihedral                  calcEnsembleSpectralOverlaps  calcMeff                          
-              calcCenter                    calcCrossCorr                 calcDistance                  calcEntropyTransfer           calcMSAOccupancy                  
-              calcMSF                       calcPairDeformationDist       calcPsi                       calcSignatureCollectivity     calcSpecDimension                
-              calcOccupancies               calcPercentIdentities         calcRankorder                 calcSignatureCrossCorr        calcSpectralOverlap              
-              calcOmega                     calcPerturbResponse           calcRMSD                      calcSignatureFractVariance    calcSqFlucts                    
-              calcOverallNetEntropyTransfer calcPhi                       calcRMSF                      calcSignatureOverlaps         calcSubspaceOverlap              
-              calcOverlap                   calcProjection                calcShannonEntropy            calcSignatureSqFlucts         calcTempFactors
-              calcTransformation
-              calcTree                  
+      calcADPAxes                   calcChainsNormDistFluct       calcCrossProjection           
+      calcDistFlucts                calcFractVariance             calcADPs                      
+      calcCollectivity              calcCumulOverlap              calcENM                       
+      calcGNM                       calcAngle                     calcCovariance                
+      calcDeformVector              calcEnsembleENMs              calcGyradius                     
+      calcANM                       calcCovOverlap                calcDihedral                  
+      calcEnsembleSpectralOverlaps  calcMeff                      calcCenter                    
+      calcCrossCorr                 calcDistance                  calcEntropyTransfer           
+      calcMSAOccupancy              calcMSF                       calcPairDeformationDist       
+      calcPsi                       calcSignatureCollectivity     calcSpecDimension                
+      calcOccupancies               calcPercentIdentities         calcRankorder                 
+      calcSignatureCrossCorr        calcSpectralOverlap           calcOmega                     
+      calcPerturbResponse           calcRMSD                      calcSignatureFractVariance    
+      calcSqFlucts                  calcOverallNetEntropyTransfer calcPhi                       
+      calcRMSF                      calcSignatureOverlaps         calcSubspaceOverlap              
+      calcOverlap                   calcProjection                calcShannonEntropy            
+      calcSignatureSqFlucts         calcTempFactors               calcTransformation
+      calcTree                  
 
 Let's read documentation of :func:`.calcGyradius` function and use it to
 calculate the radius of gyration of p38 MAPK structure:
@@ -115,16 +123,23 @@ Likewise, plotting function names have ``show`` prefix and here is a list of the
 
    @verbatim
    In [2]: show<TAB>
-          showAlignment             showCrossProjection       showDomainBar             showHeatmap               showMeanMechStiff         showNormDistFunct          
-          showAtomicLines           showCumulFractVars        showDomains               showLines                 showMechStiff             showNormedSqFlucts         
-          showAtomicMatrix          showCumulOverlap          showEllipsoid             showLinkage               showMode                  showOccupancies           
-          showContactMap            showDiffMatrix            showEmbedding             showMap                   showMSAOccupancy          showOverlap                
-          showCrossCorr             showDirectInfoMatrix      showFractVars             showMatrix                showMutinfoMatrix         showOverlaps 
-          showOverlapTable          showScaledSqFlucts        showSignatureCollectivity showSignatureSqFlucts     showVarianceBar            
-          showPairDeformationDist   showSCAMatrix             showSignatureCrossCorr    showSignatureVariances                               
-          showPerturbResponse       showShannonEntropy        showSignatureDistribution showSqFlucts                                         
-          showProjection            showSignature1D           showSignatureMode         showTree                                             
-          showProtein               showSignatureAtomicLines  showSignatureOverlaps     showTree_networkx                                                            
+      showAlignment             showCrossProjection       showDomainBar             
+      showHeatmap               showMeanMechStiff         showNormDistFunct          
+      showAtomicLines           showCumulFractVars        showDomains               
+      showLines                 showMechStiff             showNormedSqFlucts         
+      showAtomicMatrix          showCumulOverlap          showEllipsoid             
+      showLinkage               showMode                  showOccupancies           
+      showContactMap            showDiffMatrix            showEmbedding             
+      showMap                   showMSAOccupancy          showOverlap                
+      showCrossCorr             showDirectInfoMatrix      showFractVars             
+      showMatrix                showMutinfoMatrix         showOverlaps 
+      showOverlapTable          showScaledSqFlucts        showSignatureCollectivity 
+      showSignatureSqFlucts     showVarianceBar           showPairDeformationDist   
+      showSCAMatrix             showSignatureCrossCorr    showSignatureVariances                               
+      showPerturbResponse       showShannonEntropy        showSignatureDistribution 
+      showSqFlucts              showProjection            showSignature1D           
+      showSignatureMode         showTree                  showProtein               
+      showSignatureAtomicLines  showSignatureOverlaps     showTree_networkx                                                            
 
 
 We can use :func:`.showProtein` function to make a quick plot of p38 structure:
