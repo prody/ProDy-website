@@ -61,7 +61,7 @@ Insertion codes can also be passed:
 
    hv['A', 100, 'B']
 
-But this does not return anything, since residue 100B does not exist.
+This does not return anything, since residue 100B does not exist.
 
 
 Iterations
@@ -72,7 +72,7 @@ One can iterate over :class:`.HierView` instances to get chains:
 .. ipython:: python
 
    for chain in hv:
-       chain
+       print(chain)
 
 It is also possible to get a :func:`list` of chains simply as follows:
 
@@ -97,13 +97,14 @@ In addition, one can also iterate over all residues:
 Chains
 -------------------------------------------------------------------------------
 
+We obtain a :class:`.Chain` object for chain A by indexing the :class:`.HierView` object.
 
 .. ipython:: python
 
    chA = hv['A']
    chA
 
-Length of the chain equals to the number of residues in it:
+The length of the chain is equal to the number of residues in it:
 
 .. ipython:: python
 
@@ -114,26 +115,32 @@ Length of the chain equals to the number of residues in it:
 Indexing
 ^^^^^^^^
 
-Indexing a :class:`.Chain` instance returns a :class:`.Residue` instance.
+Indexing a :class:`.Chain` instance with a scalar returns an :class:`.Atom` like indexing an :class:`.Atomgroup`:
 
 .. ipython:: python
 
    chA[1]
+   chA[1000]
 
-If a residue does not exist, ``None`` is returned:
+Indexing a :class:`.Chain` instance with a tuple returns an :class:`.Residue`. This can also be achieved with the 
+:meth:`prody.atomic.chain.Chain.getResidue` method.
 
 .. ipython:: python
 
-   chA[1000]
-   chA[1, 'A'] # Residue 1 with insertion code A also does not exist
+   chA[(1,)]
+   chA.getResidue(1)
 
-If residue with given integer number does not exist, ``None`` is returned.
+The use of a tuple is necessary to allow inclusion of insertion codes. In this case there aren't any so ``None`` is returned.
+
+.. ipython:: python
+
+   chA[1, 'A'] # Residue 1 with insertion code A also does not exist
 
 
 Iterations
 ^^^^^^^^^^
 
-Iterating over a chain yields residues:
+Iterating over a chain also yields residues:
 
 .. ipython:: python
 
@@ -189,7 +196,7 @@ Residues
 
 .. ipython:: python
 
-   chA_res1 = chA[1]
+   chA_res1 = chA.getResidue(1)
    chA_res1
 
 

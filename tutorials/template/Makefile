@@ -56,8 +56,9 @@ archive:
 	tar -chzf $(BASENAME)_files.tgz $(BASENAME)_files/*; \
 	zip $(BASENAME)_files.zip $(BASENAME)_files/*; \
 	echo "$(BASENAME)_files.zip and $(BASENAME)_files.tgz are created."; \
+	ls -hgoL comd_tutorial_files/ | tail -n +2 | cut -b 14-128 > files.txt; \
 	else \
-	echo "There are no tutorial files."; \
+	echo "There are no tutorial files." > files.txt; \
 	fi
 
 build: archive pdf

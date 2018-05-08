@@ -30,11 +30,11 @@ in ``parse``:
 
    @verbatim
    In [2]: parse<TAB>
-   parseArray         parseHeatmap       parseNMD           parsePDBStream
-   parseSTRIDE        parseDCD           parseMSA           parsePDB
-   parsePQR           parseSparseMatrix  parseDSSP          parseModes
-   parsePDBHeader     parsePSF
-
+      parseArray        parseCIFStream    parseEMD          parseHiC          parseMSA          
+      parsePDBHeader    parsePQR          parseSTAR         parseChainsList   parseDCD          
+      parseEMDStream    parseHiCStream    parseNMD          parsePDBStream    parsePSF          
+      parseSTRIDE       parseCIF          parseDSSP         parseHeatmap      parseModes        
+      parsePDB          parsePfamPDBs     giparseSparseMatrix  
 
 When using :func:`.parsePDB`, usually an identifier will be sufficient,
 If corresponding file is found in the current working directory, it will be
@@ -50,7 +50,7 @@ Let's parse structure :pdb:`1p38` of p38 MAP kinase (MAPK):
 We see that this structure contains 2962 atoms.
 
 Now, similar to listing parser function names, we can use tab completion to
-introspect ``p38`` object:
+inspect the ``p38`` object:
 
 .. ipython::
 
@@ -85,43 +85,62 @@ Similar to parsers, analysis function names start with ``calc``:
 
    @verbatim
    In [2]: calc<TAB>
-   calcADPAxes          calcCrossProjection  calcMSF              calcRMSF
-   calcADPs             calcCumulOverlap     calcOccupancies      calcRankorder
-   calcANM              calcDeformVector     calcOmega            calcShannonEntropy
-   calcAngle            calcDihedral         calcOverlap          calcSqFlucts
-   calcCenter           calcDistance         calcPerturbResponse  calcSubspaceOverlap
-   calcCollectivity     calcFractVariance    calcPhi              calcTempFactors
-   calcCovOverlap       calcGNM              calcProjection       calcTransformation
-   calcCovariance       calcGyradius         calcPsi
-   calcCrossCorr        calcMSAOccupancy     calcRMSD
-
+      calcADPAxes                   calcChainsNormDistFluct       calcCrossProjection           
+      calcDistFlucts                calcFractVariance             calcADPs                      
+      calcCollectivity              calcCumulOverlap              calcENM                       
+      calcGNM                       calcAngle                     calcCovariance                
+      calcDeformVector              calcEnsembleENMs              calcGyradius                     
+      calcANM                       calcCovOverlap                calcDihedral                  
+      calcEnsembleSpectralOverlaps  calcMeff                      calcCenter                    
+      calcCrossCorr                 calcDistance                  calcEntropyTransfer           
+      calcMSAOccupancy              calcMSF                       calcPairDeformationDist       
+      calcPsi                       calcSignatureCollectivity     calcSpecDimension                
+      calcOccupancies               calcPercentIdentities         calcRankorder                 
+      calcSignatureCrossCorr        calcSpectralOverlap           calcOmega                     
+      calcPerturbResponse           calcRMSD                      calcSignatureFractVariance    
+      calcSqFlucts                  calcOverallNetEntropyTransfer calcPhi                       
+      calcRMSF                      calcSignatureOverlaps         calcSubspaceOverlap              
+      calcOverlap                   calcProjection                calcShannonEntropy            
+      calcSignatureSqFlucts         calcTempFactors               calcTransformation
+      calcTree                  
 
 Let's read documentation of :func:`.calcGyradius` function and use it to
 calculate the radius of gyration of p38 MAPK structure:
 
 .. ipython::
 
-   In [1]: ? calcGyradius
+   ? calcGyradius
 
-   In [1]: calcGyradius(p38)
+   calcGyradius(p38)
 
 
 Plotting Functions
 -------------------------------------------------------------------------------
 
-Likewise, plotting function names have ``plot`` prefix and here is a list
-of them:
+Likewise, plotting function names have ``show`` prefix and here is a list of them:
 
 .. ipython::
 
    @verbatim
    In [2]: show<TAB>
-   showContactMap       showEllipsoid        showNormedSqFlucts   showScaledSqFlucts
-   showCrossCorr        showFractVars        showOccupancies      showShannonEntropy
-   showCrossProjection  showHeatmap          showOverlap          showSqFlucts
-   showCumulFractVars   showMSAOccupancy     showOverlapTable
-   showCumulOverlap     showMode             showProjection
-   showDiffMatrix       showMutinfoMatrix    showProtein
+      showAlignment             showCrossProjection       showDomainBar             
+      showHeatmap               showMeanMechStiff         showNormDistFunct          
+      showAtomicLines           showCumulFractVars        showDomains               
+      showLines                 showMechStiff             showNormedSqFlucts         
+      showAtomicMatrix          showCumulOverlap          showEllipsoid             
+      showLinkage               showMode                  showOccupancies           
+      showContactMap            showDiffMatrix            showEmbedding             
+      showMap                   showMSAOccupancy          showOverlap                
+      showCrossCorr             showDirectInfoMatrix      showFractVars             
+      showMatrix                showMutinfoMatrix         showOverlaps 
+      showOverlapTable          showScaledSqFlucts        showSignatureCollectivity 
+      showSignatureSqFlucts     showVarianceBar           showPairDeformationDist   
+      showSCAMatrix             showSignatureCrossCorr    showSignatureVariances                               
+      showPerturbResponse       showShannonEntropy        showSignatureDistribution 
+      showSqFlucts              showProjection            showSignature1D           
+      showSignatureMode         showTree                  showProtein               
+      showSignatureAtomicLines  showSignatureOverlaps     showTree_networkx                                                            
+
 
 We can use :func:`.showProtein` function to make a quick plot of p38 structure:
 
@@ -138,15 +157,15 @@ might be familiar with, but it comes handy to see what you are dealing with.
 Protein Structures
 -------------------------------------------------------------------------------
 
-Protein structures (:file:`.pdb` files) will be the standard input for most
+Protein structures (:file:`.pdb` or :file:`.cif` files) will be the standard input for most
 *ProDy* calculations, so it is good to familiarize with ways to access and
 manage PDB file resources.
 
 Fetching PDB files
 ^^^^^^^^^^^^^^^^^^
 
-First of all, *ProDy* downloads compressed PDB files when needed.  If you
-prefer saving decompressed files, you can use :func:`.fetchPDB` function as
+First of all, *ProDy* downloads PDB files when needed (these are compressed on the PDB webserver). 
+If you prefer saving decompressed files, you can use :func:`.fetchPDB` function as
 follows:
 
 .. ipython:: python
@@ -166,7 +185,7 @@ We downloaded and save an uncompressed PDB file, and parsed it immediately.
 PDB file resources
 ^^^^^^^^^^^^^^^^^^
 
-Secondly, ProDy can manage local mirror of PDB server or a local PDB folders,
+Secondly, ProDy can manage local mirrors of the PDB server or a local PDB folder,
 as well as using a server close to your physical location for downloads:
 
   * One of the `wwPDB`_ FTP servers in US, Europe or Japan can be picked for
@@ -218,14 +237,31 @@ Atom Groups
 -------------------------------------------------------------------------------
 
 As you might have noticed, :func:`.parsePDB` function returns structure data
-as an :class:`.AtomGroup` object.  Let's see for ``p38`` variable from above:
+as an :class:`.AtomGroup` object. Let's see for ``p38`` variable from above:
 
 .. ipython:: python
 
    p38
 
+You can also parse a list of :file:`.pdb` files into a list of :class:`.AtomGroup`
+objects:
 
-Data from this object can be retrieved using ``get`` methods.  For example:
+.. ipython:: python
+
+   ags = parsePDB('1p38', '3h5v')
+   ags
+
+If you want to provide a list object you need to provide an asterisk (``*``) to 
+let Python know this is a set of input arguments:
+
+.. ipython:: python
+
+   pdb_ids = ['1p38', '3h5v']
+   ags = parsePDB(*pdb_ids)
+   ags 
+
+
+Data from this object can be retrieved using ``get`` methods. For example:
 
 .. ipython:: python
 

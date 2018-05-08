@@ -3,12 +3,13 @@
 Atom Groups
 ===============================================================================
 
-Below example shows how to build an :class:`.AtomGroup` from scratch.  We start
+The example below shows how to build an :class:`.AtomGroup` from scratch. We start
 by importing everything from the ProDy package and the NumPy package:
 
 .. ipython:: python
 
    from prody import *
+   from numpy import *
    from pylab import *
    ion()
 
@@ -41,7 +42,14 @@ as the number of atoms.
    wtr1.setResnums([1, 1, 1])
    wtr1.setResnames(['WAT', 'WAT', 'WAT'])
 
-Accessing data will return a copy of the data:
+Accessing data will return a copy of the data. This means you can manipulate 
+the return values safely without affecting the original values. For example:
+
+.. ipython:: python
+
+   names = wtr1.getNames()
+   names[0] = names[0] + '1'
+   names
 
 .. ipython:: python
 
@@ -59,7 +67,9 @@ Atoms in an :class:`.AtomGroup` can be iterated over
 
 .. ipython:: python
 
-   for a in wtr1: a
+   for a in wtr1: 
+       print(a)
+
 
 
 Indexing
@@ -71,6 +81,9 @@ Atoms in an atom group can be accessed via indexing:
 
    a = wtr1[0]
    a
+
+.. ipython:: python
+
    a.getCoords()
 
 
@@ -81,12 +94,12 @@ Let's add another coordinate set to the atom group:
 
 .. ipython:: python
 
-   wtr1.addCoordset(array([[0, 1, 0], [0, 0, 0], [0, 0, 1]], dtype=float))
+   wtr1.addCoordset(array([[0, 1, 0], [0, 0, 0], [0, 0, 1.1]], dtype=float))
    wtr1
 
 
-Note that number of coordinate sets is now 2, but active coordinate set index
-is still 0. Active coordinate set index can be changed for :class:`.AtomGroup`
+Note that the number of coordinate sets is now 2, but the active coordinate set index
+is still 0. Active coordinate set index can be changed for :class:`.AtomGroup` as follows:
 
 .. ipython:: python
 
@@ -106,6 +119,11 @@ Coordinates for the atom group will be returned from the active coordinate set
 
    a.getCoords()
 
+.. ipython:: python
+
+   a.setACSIndex(0)
+   a.getCoords()
+
 Iterations
 """"""""""
 
@@ -114,7 +132,8 @@ Coordinate sets can also be iterated over for :class:`.Atom` and
 
 .. ipython:: python
 
-   for xyz in a.iterCoordsets(): xyz
+   for xyz in a.iterCoordsets(): 
+       print(xyz)
 
 Copying and Merging
 ^^^^^^^^^^^^^^^^^^^
@@ -161,17 +180,10 @@ We can do this in an alternate way too:
    wtr2.select('all').setResnums(2)
    wtr2.getResnums()
 
-
-Note that the following won't work:
-
-.. ipython:: python
-
-   wtr2.setResnums(2)
-
 Merge two copies
 """"""""""""""""
 
-Let's merge two water atom groups:
+Let's merge the two water atom groups:
 
 .. ipython:: python
 
@@ -190,7 +202,8 @@ Residues (and also chains) in an atom group can also be iterated over
 
 .. ipython:: python
 
-   for res in wtrs.getHierView().iterResidues(): res
+   for res in wtrs.getHierView().iterResidues(): 
+       print(res)
 
 Renaming an atom group
 ^^^^^^^^^^^^^^^^^^^^^^

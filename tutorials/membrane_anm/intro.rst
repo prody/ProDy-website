@@ -20,7 +20,7 @@ To follow this tutorial, you will need the following files:
 
 
 We recommend that you will follow this tutorial by typing commands in an
-IPython session, e.g.::
+iPython session, e.g.::
 
   $ ipython
 
