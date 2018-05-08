@@ -28,7 +28,7 @@ Then we load the :class:`.ModeEnsemble`:
 
 .. ipython:: python
 
-   ens_gnms = loadEnsemble('gnm_ensemble.modeens.npz')
+   ens_gnms = loadModeEnsemble('gnm_ensemble.modeens.npz')
 
 Spectral overlap and distance
 -------------------------------------------------------------------------------

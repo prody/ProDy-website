@@ -71,31 +71,26 @@ like [KB15]_.
 
  .. ipython:: python
 
-    highlights= ['3H5V_AB', '3O21_CD', '4MS3_AB', '1ISR_AA', '5CNM_AA', '1EWT_AB', '3QEM_CD']
-    protnames = {'3H5V_AB': 'GluA2','3O21_CD': 'GluA3', 
-                '4MS3_AB': 'GABAB:A', '1ISR_AA': 'mGlu1:A',
-                '5CNM_AA': 'mGlu3:R', '1EWT_AB': 'mGlu1:R',
-                '3QEM_CD': 'NMDAR'}
+    highlights= ['3h5vA_ca', '3o21C_ca', '3h6gA_ca', '3olzA_ca']
+    protnames = {'3h5vA_ca': 'GluA2','3o21C_ca': 'GluA3', '3h6gA_ca': 'GluK2'}
 
+    @savefig ens_gnms_signature_variance_mode1-5.png width=4in
     plt.figure()
     shape = (10, 1)
     gs = plt.GridSpec(ncols=1, nrows=2, height_ratios=[1, 10], hspace=0.15)
 
-    ### cumulative modes variance bar ###
-    @savefig ens_gnms_signature_variance_bar_mode1.png width=4in
     plt.subplot(gs[0])
-    bar, annotations = showVarianceBar(ens_gnms[:, 0], fraction=True, highlights=highlights)
+    bar, annotations = showVarianceBar(ens_gnms[:, :5], fraction=True, highlights=highlights)
     for ann in annotations:
         text = ann.get_text()
         if text in protnames:
             ann.set_text(protnames[text])
     plt.xlabel('')
 
-### mode variance distributions ###
-@savefig ens_gnms_signature_variance_dist_mode1.png width=4in
-plt.subplot(gs[1])
-showSignatureVariances(ens_gnms[:, :5], fraction=True, bins=80, alpha=0.7)
-plt.xlabel('Fraction of inverse eigenvalue')
+    plt.subplot(gs[1])
+    show = showSignatureVariances(ens_gnms[:, :5], fraction=True, bins=80, alpha=0.7)
+    plt.xlabel('Fraction of inverse eigenvalue')
+
 
 Saving the ModeEnsemble
 -------------------------------------------------------------------------------
