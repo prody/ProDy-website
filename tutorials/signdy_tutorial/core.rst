@@ -21,6 +21,14 @@ There are also options to select the model (by default it uses the GNM) and
 the way of considering non-aligned residues (default is to use :func:`.reduceModel`, 
 which treats them as environment). 
 
+We first load the ensemble:
+
+.. ipython:: python
+
+   dali_ens = loadEnsemble('dali_ensemble.ens.npz')
+
+Then we calculated GNM modes for each member of the ensemble:
+
 .. ipython:: python
 
    ens_gnms = calcEnsembleENMs(dali_ens)
@@ -38,6 +46,7 @@ mode (second index 0). The first index of the mode ensemble is over conformation
 
  .. ipython:: python
 
+   @savefig ens_gnms_signature_mode1.png width=4in
    show = showSignatureMode(ens_gnms[:,0])
 
 
@@ -46,8 +55,13 @@ square fluctuations from the first 5 modes or the cross-correlations from the fi
 
  .. ipython:: python
 
+   @savefig ens_gnms_signature_sqflucts_mode1-5.png width=4in
    show = showSignatureSqFlucts(ens_gnms[:,:5]
-   plt.figure()
+
+
+ .. ipython:: python
+
+   @savefig ens_gnms_signature_cross-corr.png width=4in
    show = showSignatureCrossCorr(ens_gnms[:,:20]
 
 
@@ -68,6 +82,7 @@ like [KB15]_.
     gs = plt.GridSpec(ncols=1, nrows=2, height_ratios=[1, 10], hspace=0.15)
 
     ### cumulative modes variance bar ###
+    @savefig ens_gnms_signature_variance_bar_mode1.png width=4in
     plt.subplot(gs[0])
     bar, annotations = showVarianceBar(ens_gnms[:, 0], fraction=True, highlights=highlights)
     for ann in annotations:
@@ -77,6 +92,7 @@ like [KB15]_.
     plt.xlabel('')
 
 ### mode variance distributions ###
+@savefig ens_gnms_signature_variance_dist_mode1.png width=4in
 plt.subplot(gs[1])
 showSignatureVariances(ens_gnms[:, :5], fraction=True, bins=80, alpha=0.7)
 plt.xlabel('Fraction of inverse eigenvalue')

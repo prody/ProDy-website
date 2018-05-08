@@ -34,6 +34,7 @@ that contains a list of PDB IDs and their corresponding mappings to the referenc
 .. ipython:: python
 
     dali_rec = searchDali('3H5V','A')
+    dali_rec
 
 Next, we get the lists of PDB IDs and mappings from *dali_rec*, parse the *pdb_ids* to get 
 a list of :class:`.AtomGroup` instances, and provide them together with mappings to 
@@ -48,10 +49,18 @@ low sequence identity between some of the structures.
 .. ipython:: python
 
     pdbs = parsePDB(*pdb_ids, subset='ca')
+    len(pdbs)
 
 .. ipython:: python
 
     dali_ens = buildPDBEnsemble(pdbs, mapping=mappings, seqid=20)
+    dali_ens
+
+Finally we save the ensemble for later processing:
+
+.. ipython:: python
+
+   saveEnsemble(dali_ens, 'dali_ensemble')
 
 
 
