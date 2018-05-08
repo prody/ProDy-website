@@ -2,8 +2,8 @@
 
 Small Angle X-ray Scattering (SAXS) Analysis
 ===============================================================================
-SAXS is an experimental technique, which gives information about structure of
-biological macromolecules in solution. SAXS data is a 1-Dimensional data made up
+SAXS is an experimental technique, which gives information about the structure of
+biological macromolecules in solution. SAXS data is 1-Dimensional data made up
 of Scattering Angle (q) vs Scattering Intesity (I). In this tutorial, we will see
 how to combine SAXS data with a known protein structure to obtain information
 about an unknown conformation of a protein. Basically, we are trying to obtain a
@@ -12,12 +12,12 @@ by utilizing normal modes obtained with anisotropic network model. We will use
 a widely known test case, adenylate kinase (ADK). ADK has two conformations: open
 (PDB ID: 4ake) and closed conformation (PDB ID: 1ake) and it has three domains:
 Lid domain, NMP binding domain, and core domain. The core domain of adenylate
-kinase is almost same in the open and the closed conformations. The major
-differences between them are positions of LID and NMP domains. 
+kinase is almost the same in the open and the closed conformations. The major
+differences between them are the positions of LID and NMP domains. 
 
-We assume that we have pdb file for the open conformation (4ake) and SAXS profile of the
-closed conformation (1ake). We are trying to recover a model similar to the
-closed conformation by combining initial pdb file with SAXS data. 
+Let's assume that we have a :file:`pdb` file for the open conformation (4ake) and 
+a SAXS profile of the closed conformation (1ake). We are trying to recover a model 
+similar to the closed conformation by combining initial pdb file with SAXS data. 
 
 Lets start with essential import statements:
 

@@ -40,7 +40,7 @@ This can again be shown in a plot as in Figure 6D.
 
 .. ipython:: python
 
-    show = showPerturbResponse(model=anm_ampar, atoms=ampar_ca, show_matrix=False, selection='chain B and resnum 84')
+    show = showPerturbResponse(model=anm_ampar, atoms=ampar_ca, show_matrix=False, select='chain B and resnum 84')
 
 
 We can also calculate the PRS matrix and profiles separately from showPerturbResponse. 
