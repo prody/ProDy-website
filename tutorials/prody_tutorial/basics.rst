@@ -30,9 +30,11 @@ in ``parse``:
 
    @verbatim
    In [2]: parse<TAB>
-               parseArray        parseCIFStream    parseEMD          parseHiC          parseMSA          parsePDBHeader    parsePQR          parseSTAR                  
-               parseChainsList   parseDCD          parseEMDStream    parseHiCStream    parseNMD          parsePDBStream    parsePSF          parseSTRIDE                
-               parseCIF          parseDSSP         parseHeatmap      parseModes        parsePDB          parsePfamPDBs     parseSparseMatrix  
+    parseArray        parseCIFStream    parseEMD          parseHiC          parseMSA          
+    parsePDBHeader    parsePQR          parseSTAR         parseChainsList   parseDCD          
+    parseEMDStream    parseHiCStream    parseNMD          parsePDBStream    parsePSF          
+    parseSTRIDE       parseCIF          parseDSSP         parseHeatmap      parseModes        
+    parsePDB          parsePfamPDBs     parseSparseMatrix  
 
 When using :func:`.parsePDB`, usually an identifier will be sufficient,
 If corresponding file is found in the current working directory, it will be
@@ -83,8 +85,9 @@ Similar to parsers, analysis function names start with ``calc``:
 
    @verbatim
    In [2]: calc<TAB>
-              calcADPAxes                   calcChainsNormDistFluct       calcCrossProjection           calcDistFlucts                calcFractVariance                 
-              calcADPs                      calcCollectivity              calcCumulOverlap              calcENM                       calcGNM                           
+      calcADPAxes                   calcChainsNormDistFluct       calcCrossProjection           
+      calcDistFlucts                calcFractVariance                 
+      calcADPs                      calcCollectivity              calcCumulOverlap              calcENM                       calcGNM                           
               calcAngle                     calcCovariance                calcDeformVector              calcEnsembleENMs              calcGyradius                     
               calcANM                       calcCovOverlap                calcDihedral                  calcEnsembleSpectralOverlaps  calcMeff                          
               calcCenter                    calcCrossCorr                 calcDistance                  calcEntropyTransfer           calcMSAOccupancy                  
