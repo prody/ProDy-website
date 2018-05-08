@@ -56,13 +56,13 @@ square fluctuations from the first 5 modes or the cross-correlations from the fi
  .. ipython:: python
 
    @savefig ens_gnms_signature_sqflucts_mode1-5.png width=4in
-   show = showSignatureSqFlucts(ens_gnms[:,:5]
+   show = showSignatureSqFlucts(ens_gnms[:,:5])
 
 
  .. ipython:: python
 
    @savefig ens_gnms_signature_cross-corr.png width=4in
-   show = showSignatureCrossCorr(ens_gnms[:,:20]
+   show = showSignatureCrossCorr(ens_gnms[:,:20])
 
 
 We can also look at distributions over values across different members of the ensemble 
