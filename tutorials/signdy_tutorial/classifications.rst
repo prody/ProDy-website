@@ -15,6 +15,20 @@ Again here are the imports if you need them.
     from pylab import *
     ion()
 
+Load PDBEnsemble and ModeEnsemble
+-------------------------------------------------------------------------------
+
+We first load the :class:`.PDBEnsemble` from Dali:
+
+.. ipython:: python
+
+   dali_ens = loadEnsemble('dali_ensemble.ens.npz')
+
+Then we load the :class:`.ModeEnsemble`:
+
+.. ipython:: python
+
+   ens_gnms = loadModeEnsemble('gnm_ensemble.modeens.npz')
 
 Spectral overlap and distance
 -------------------------------------------------------------------------------
@@ -24,19 +38,24 @@ reorder the spectral overlap matrix using the tree as follows:
 
 .. ipython:: python
 
-    so_matrix = calcEnsembleSpectralOverlaps(mode_ens[:,1)
+    so_matrix = calcEnsembleSpectralOverlaps(mode_ens[:,1])
+
     so_tree = calcTree(names=mode_ens.getLabels(), distance_matrix=arccos(so_matrix), method='upgma')
-    reordered_so, new_so_indices = reorderMatrix(so_matrix, so_tree, names=new_ens.getLabels())
+
+    reordered_so, new_so_indices = reorderMatrix(so_matrix, so_tree, names=dali_ens.getLabels())
 
 
 We can show the original and reordered spectral distance matrices and the tree as follows.
 
 .. ipython:: python
 
+    @savefig ens_gnms_so_matrix.png width=4in
     show = showMatrix(arccos(so_matrix))
     plt.figure()
+    @savefig ens_gnms_so_tree.png width=4in
     showTree(so_tree, format='networkx', label_colors=colors_dict)
     plt.figure()
+    @savefig ens_gnms_so_reordered_so_matrix.png width=4in
     show = showMatrix(arccos(reordered_so))
 
 
@@ -64,9 +83,11 @@ We can reorder all these matrices by the RMSD tree to compare them:
 
 .. ipython:: python
 
-    reordered_seqd, new_seqd_indices = reorderMatrix(seqd_matrix, rmsd_tree, names=new_ens.getLabels())
-    reordered_rmsd, new_rmsd_indices = reorderMatrix(rmsd_matrix, rmsd_tree, names=new_ens.getLabels())
-    reordered_sod, new_sod_indices = reorderMatrix(so_matrix, rmsd_tree, names=new_ens.getLabels())
+    reordered_seqd, new_seqd_indices = reorderMatrix(seqd_matrix, rmsd_tree, names=dali_ens.getLabels())
+    reordered_rmsd, new_rmsd_indices = reorderMatrix(rmsd_matrix, rmsd_tree, names=dali_ens.getLabels())
+    reordered_sod, new_sod_indices = reorderMatrix(so_matrix, rmsd_tree, names=dali_ens.getLabels())
+
+.. ipython:: python
 
     show = showMatrix(arccos(reordered_seqd))
     plt.figure()

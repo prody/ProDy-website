@@ -49,7 +49,7 @@ constructed structure as usual.
 
 anm = ANM('TRiC EMDMAP ANM Analysis')
 anm.buildHessian(emd)
-anm.calcModes()
+anm.calcModes(n_modes=5)
 writeNMD('tric_anm_3_modes_8000nodes.nmd', anm[:3], emd)
 
 
