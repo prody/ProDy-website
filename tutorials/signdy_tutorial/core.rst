@@ -97,6 +97,14 @@ plt.subplot(gs[1])
 showSignatureVariances(ens_gnms[:, :5], fraction=True, bins=80, alpha=0.7)
 plt.xlabel('Fraction of inverse eigenvalue')
 
+Saving the ModeEnsemble
+-------------------------------------------------------------------------------
+
+Finally we save the mode ensemble for later processing:
+
+.. ipython:: python
+
+   saveModeEnsemble(ens_gnms, 'gnm_ensemble')
 
 .. [KB15] Krieger J, Bahar I, Greger IH
     Structure, Dynamics, and Allosteric Potential of Ionotropic Glutamate Receptor N-Terminal Domains.
