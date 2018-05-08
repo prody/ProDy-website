@@ -127,7 +127,7 @@ Indexing a :class:`.Chain` instance with a tuple returns an :class:`.Residue`. T
 
 .. ipython:: python
 
-   chA[(1)]
+   chA[(1,)]
    chA.getResidue(1)
 
 The use of a tuple is necessary to allow inclusion of insertion codes. In this case there aren't any so ``None`` is returned.
@@ -196,7 +196,7 @@ Residues
 
 .. ipython:: python
 
-   chA_res1 = chA[(1)]
+   chA_res1 = chA.getResidue(1)
    chA_res1
 
 
