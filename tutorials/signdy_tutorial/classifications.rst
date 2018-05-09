@@ -38,25 +38,32 @@ reorder the spectral overlap matrix using the tree as follows:
 
 .. ipython:: python
 
-    so_matrix = calcEnsembleSpectralOverlaps(mode_ens[:,1])
+    so_matrix = calcEnsembleSpectralOverlaps(ens_gnms[:,:1])
+    dali_labels = dali_ens.getLabels()
+    so_tree = calcTree(names=dali_labels, 
+                       distance_matrix=arccos(so_matrix), 
+                       method='upgma')
 
-    so_tree = calcTree(names=mode_ens.getLabels(), distance_matrix=arccos(so_matrix), method='upgma')
-
-    reordered_so, new_so_indices = reorderMatrix(so_matrix, so_tree, names=dali_ens.getLabels())
+    reordered_so, new_so_indices = reorderMatrix(so_matrix, 
+                                                 so_tree, 
+                                                 names=dali_labels)
 
 
 We can show the original and reordered spectral distance matrices and the tree as follows.
+:func:`.showTree` has multiple *format* options. Here we show the output of using *plt*.
+This layout allows us to directly compare against the output from :func:`.showMatrix`
+using the option *origin='upper'*.
 
 .. ipython:: python
 
     @savefig ens_gnms_so_matrix.png width=4in
-    show = showMatrix(arccos(so_matrix))
-    plt.figure()
+    show = showMatrix(arccos(so_matrix), origin='upper')
+    plt.figure();
     @savefig ens_gnms_so_tree.png width=4in
-    showTree(so_tree, format='networkx', label_colors=colors_dict)
-    plt.figure()
+    showTree(so_tree, format='plt')
+    plt.figure();
     @savefig ens_gnms_so_reordered_so_matrix.png width=4in
-    show = showMatrix(arccos(reordered_so))
+    show = showMatrix(arccos(reordered_so), origin='upper')
 
 
 Sequence and structural distances
@@ -69,31 +76,66 @@ the PDB ensemble.
 
 .. ipython:: python
 
-    rmsd_matrix = dali_ens.getRMSDs(pairwise=True)
-    rmsd_tree = calcTree(names=dali_ens.getLabels(), distance_matrix=rmsd_matrix, method='upgma')
-
-    seqid_matrix = buildSeqidMatrix(dali_ens.getMSA)
+    seqid_matrix = buildSeqidMatrix(dali_ens.getMSA())
     seqd_matrix = 1. - seqid_matrix
-    seqd_tree = calcTree(names=dali_ens.getLabels(), distance_matrix=seqd_matrix, method='upgma')
+    @savefig ens_gnms_seqd_matrix.png width=4in
+    show = showMatrix(seqd_matrix, origin='upper')
+
+    plt.figure();
+    seqd_tree = calcTree(names=dali_labels, 
+                         distance_matrix=seqd_matrix, 
+                         method='upgma')
+    @savefig ens_gnms_seqd_tree.png width=4in
+    show = showTree(seqd_tree, format='plt')
+
+    reordered_seqd, indices = reorderMatrix(seqd_matrix, seqd_tree, 
+                                            names=dali_labels)
+    plt.figure();
+    @savefig ens_gnms_seqd_reordered_seqd_matrix.png width=4in
+    show = showMatrix(reordered_seqd, origin='upper')
+
+.. ipython:: python
+
+    rmsd_matrix = dali_ens.getRMSDs(pairwise=True)
+    @savefig ens_gnms_rmsd_matrix.png width=4in
+    show = showMatrix(rmsd_matrix, origin='upper')
+
+    plt.figure();
+    rmsd_tree = calcTree(names=dali_labels, 
+                         distance_matrix=rmsd_matrix, 
+                         method='upgma')
+    @savefig ens_gnms_rmsd_tree.png width=4in
+    show = showTree(rmsd_tree, format='plt')
+
+    plt.figure();
+    reordered_rmsd, indices = reorderMatrix(rmsd_matrix, rmsd_tree, 
+                                            names=dali_labels)
+    @savefig ens_gnms_rmsd_reordered_rmsd_matrix.png width=4in
+    show = showMatrix(reordered_rmsd, origin='upper')
+
 
 Comparing sequence, structural and dynamic classifications
 -------------------------------------------------------------------------------
 
-We can reorder all these matrices by the RMSD tree to compare them:
+We can reorder the seqd and sod matrices by the RMSD tree too to compare them:
 
 .. ipython:: python
 
-    reordered_seqd, new_seqd_indices = reorderMatrix(seqd_matrix, rmsd_tree, names=dali_ens.getLabels())
-    reordered_rmsd, new_rmsd_indices = reorderMatrix(rmsd_matrix, rmsd_tree, names=dali_ens.getLabels())
-    reordered_sod, new_sod_indices = reorderMatrix(so_matrix, rmsd_tree, names=dali_ens.getLabels())
+    reordered_seqd, indices = reorderMatrix(seqd_matrix, rmsd_tree, 
+                                            names=dali_labels)
+    reordered_sod, indices = reorderMatrix(so_matrix, rmsd_tree, 
+                                           names=dali_labels)
 
 .. ipython:: python
 
-    show = showMatrix(arccos(reordered_seqd))
-    plt.figure()
-    show = showMatrix(arccos(reordered_rmsd))
-    plt.figure()
-    show = showMatrix(arccos(reordered_sod))
+    @savefig ens_gnms_rmsd_reordered_seqd_matrix.png width=4in
+    show = showMatrix(reordered_seqd, origin='upper')
+    plt.figure();
+    @savefig ens_gnms_rmsd_reordered_rmsd_matrix.png width=4in
+    show = showMatrix(reordered_rmsd, origin='upper')
+    plt.figure();
+    @savefig ens_gnms_rmsd_reordered_sod_matrix.png width=4in
+    show = showMatrix(arccos(reordered_sod), origin='upper')
 
 
 This analysis is quite sensitive to how many modes are used. As the number of modes approaches the full number, 

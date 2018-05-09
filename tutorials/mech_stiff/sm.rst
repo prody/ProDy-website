@@ -30,7 +30,7 @@ We start by parsing chain A of PDB structure **1gfl**.
 
 .. ipython:: python
 
-   gfp, header = parsePDB('1gfl', header=True, chain='A')
+   gfp, header = parsePDB('1gflA', header=True)
    gfp
 
 We want to use only Cα atoms for our calculations, so we select them into 
@@ -80,7 +80,8 @@ method. To show the stiffness matrix as an image map use the following function:
 
 .. ipython:: python
 	
-   showMechStiff(anm, calphas, 'jet_r')
+   from matplotlib import cm
+   showMechStiff(anm, calphas, cmap=cm.jet_r)
 
 
 Note that 'jet_r' will reverse the colormap of image map which will be 
@@ -92,7 +93,7 @@ the secoundary structure of the protein is drawn using header information.
 
 .. ipython:: python
 
-   showMeanMechStiff(anm, calphas, header, 'A', 'jet_r')
+   showMeanMechStiff(anm, calphas, header, 'A', cmap=cm.jet_r)
 
  
 Mechanical Stiffness in VMD
@@ -100,7 +101,7 @@ Mechanical Stiffness in VMD
 
 We can generate tcl files for visualizing mechanical stiffness with VMD_ 
 using the :func:`.writeVMDstiffness` function. Select one residue in *indices* (**[3]**) 
-or series of residues (**[3, 7]**, means from 3 aa to 7 aa including) and 
+or series of residues (**[3, 7]**, means from 3 aa to 7 aa inclusive) and 
 a range of effective spring constant *k_range* (**[0, 7.5]**). 
 
 We provide *gfp* as well as *calphas* so VMD_ has information about the complete protein structure,
@@ -182,9 +183,10 @@ or a list can be obtained using :meth:`.analysis.calcPairDeformationDist`.
 
 .. ipython:: python
 
-   calcPairDeformationDist(anm, calphas, 3, 132)
+   d0 = calcPairDeformationDist(anm, calphas, 3, 132)
 
-   showPairDeformationDist(anm, calphas, 3, 132)
+   @savefig mechstiff_pair_deformation_dist_3-132.png width=4in
+   show = showPairDeformationDist(anm, calphas, 3, 132)
 
 
 Figure shows the plotted distribution for deformations between 3-132 residue in each mode *k*.
@@ -195,7 +197,6 @@ To obtain results without saving any file type:
 
    d1 = calcPairDeformationDist(anm, calphas, 3, 212)
    d2 = calcPairDeformationDist(anm, calphas, 132, 212)
-   print d1[0], d1[1]
 
    plot(d1[0], d1[1], 'k-', d2[0], d2[1], 'r-')
 
