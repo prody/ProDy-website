@@ -34,7 +34,7 @@ in ``parse``:
       parsePDBHeader    parsePQR          parseSTAR         parseChainsList   parseDCD          
       parseEMDStream    parseHiCStream    parseNMD          parsePDBStream    parsePSF          
       parseSTRIDE       parseCIF          parseDSSP         parseHeatmap      parseModes        
-      parsePDB          parsePfamPDBs     giparseSparseMatrix  
+      parsePDB          parsePfamPDBs     parseSparseMatrix  
 
 When using :func:`.parsePDB`, usually an identifier will be sufficient,
 If corresponding file is found in the current working directory, it will be
@@ -241,7 +241,7 @@ as an :class:`.AtomGroup` object. Let's see for ``p38`` variable from above:
 
 .. ipython:: python
 
-   p38
+   p38calcPerturbResponse
 
 You can also parse a list of :file:`.pdb` files into a list of :class:`.AtomGroup`
 objects:

@@ -75,12 +75,24 @@ pdf: link
 	cd manual; make pdf
 	mv manual/_build/latex/ProDy.pdf _build/html/manual/
 
-	make -C tutorials/conformational_sampling clean copy
+	make -C tutorials/prody_tutorial clean copy
+	make -C tutorials/nmwiz_tutorial clean copy
+	make -C tutorials/evol_tutorial clean copy
 	make -C tutorials/drugui_tutorial clean copy
 	make -C tutorials/enm_analysis clean copy
 	make -C tutorials/ensemble_analysis clean copy
-	make -C tutorials/evol_tutorial clean copy
-	make -C tutorials/nmwiz_tutorial clean copy
-	make -C tutorials/prody_tutorial clean copy
 	make -C tutorials/structure_analysis clean copy
 	make -C tutorials/trajectory_analysis clean copy
+	make -C tutorials/conformational_sampling clean copy
+	make -C tutorials/comd_tutorial clean copy
+	make -C tutorials/membrane_anm clean copy
+	make -C tutorials/mech_stiff clean copy
+	make -C tutorials/perturb_response clean copy
+	make -C tutorials/signdy_tutorial clean copy
+	make -C tutorials/cryoem_tutorial clean copy
+	
+	
+	
+	
+	
+	

@@ -41,7 +41,8 @@ This can again be shown in a plot as in Figure 6D.
 .. ipython:: python
 
     show = showPerturbResponse(model=anm_ampar, atoms=ampar_ca, show_matrix=False, select='chain B and resnum 84')
-
+    @savefig 3kg2_prs_chB_T84_effectiveness.png width=4in
+    plt.show()
 
 We can also calculate the PRS matrix and profiles separately from showPerturbResponse. 
 This gives us more flexibility with what we show and enables us to do other things with the 
@@ -78,6 +79,8 @@ and slice out individual rows or columns and write them into PDB files for visua
     B_84_profile = sliceAtomicData(prs_mat, atoms=ampar_ca, select='chain B and resnum 84')
     ampar_ca.setBetas(B_84_profile)
     writePDB('3kg2_ca_B_84__effectiveness.pdb', ampar_ca)
+
+.. figure:: ../../_static/figures/PRS_Dutta_2015_Structure.figure7_highres_panelB.png
 
 
 We generated our Figure 7 using this approach together with the `spectrum` command from PyMOL.

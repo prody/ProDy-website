@@ -71,25 +71,31 @@ like [KB15]_.
 
  .. ipython:: python
 
-    highlights= ['3h5vA_ca', '3o21C_ca', '3h6gA_ca', '3olzA_ca']
-    protnames = {'3h5vA_ca': 'GluA2','3o21C_ca': 'GluA3', '3h6gA_ca': 'GluK2'}
+    highlights= ['3h5vA_ca', '3o21C_ca',
+                 '3h6gA_ca', '3olzA_ca', 
+                 '5kc8A_ca']
+    protnames = {'3h5vA_ca': 'GluA2','3o21C_ca': 'GluA3',
+                 '3h6gA_ca': 'GluK2', '3olzA_ca': 'GluK3', 
+                 '5kc8A_ca': 'GluD2'}
 
-    @savefig ens_gnms_signature_variance_mode1-5.png width=4in
-    plt.figure()
+    plt.figure();
     shape = (10, 1)
     gs = plt.GridSpec(ncols=1, nrows=2, height_ratios=[1, 10], hspace=0.15)
 
-    plt.subplot(gs[0])
+    plt.subplot(gs[0]);
     bar, annotations = showVarianceBar(ens_gnms[:, :5], fraction=True, highlights=highlights)
     for ann in annotations:
         text = ann.get_text()
         if text in protnames:
             ann.set_text(protnames[text])
-    plt.xlabel('')
+    plt.xlabel('');
 
-    plt.subplot(gs[1])
+    plt.subplot(gs[1]);
     show = showSignatureVariances(ens_gnms[:, :5], fraction=True, bins=80, alpha=0.7)
-    plt.xlabel('Fraction of inverse eigenvalue')
+    plt.xlabel('Fraction of inverse eigenvalue');
+
+    @savefig ens_gnms_signature_variance_mode1-5.png width=4in
+    plt.show()
 
 
 Saving the ModeEnsemble
