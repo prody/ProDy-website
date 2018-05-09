@@ -51,7 +51,8 @@ We supply atoms to allow us to delineate residue numbers and chains.
 .. ipython:: python
 
     show = showPerturbResponse(model=anm_ampar, atoms=ampar_ca)
-
+    @savefig 3kg2_prs.png width=4in
+    plt.show()
 
 The next page illustrates some more detailed analyses.
 
