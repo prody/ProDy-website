@@ -9,7 +9,7 @@ multiple routes: a query search of the PDB using :func:`.blastPDB` or :func:`.se
 extraction of PDB IDs from the Pfam or CATH database, or input of a pre-defined list. 
 
 We demonstrate the Dali method here. The Pfam and CATH methods are still under development 
-and the function :func:`blastPDB` is described in the `Structure Analysis Tutorial`_.
+and the function :func:`.blastPDB` is described in the `Structure Analysis Tutorial`_.
 
 We apply these methods to the type-I periplasmic binding protein domains, 
 a group of protein structures originally found in bacteria for transport of solutes 

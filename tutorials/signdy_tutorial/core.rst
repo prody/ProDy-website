@@ -16,10 +16,10 @@ First, make necessary imports from ProDy and Matplotlib packages if you haven't 
 Mode Ensemble
 -------------------------------------------------------------------------------
 
-For this analysis we'll use the :class:`.PDBEnsemble` object we built with Dali. 
-There are also options to select the model (by default it uses the GNM) and 
-the way of considering non-aligned residues (default is to use :func:`.reduceModel`, 
-which treats them as environment). 
+For this analysis we'll use the :class:`.PDBEnsemble` object we built with Dali 
+to build a :class:`.ModeEnsemble`. There are options to select the model (GNM by 
+default) and the way of considering non-aligned residues (default is 
+:func:`.reduceModel`, which treats them as environment). 
 
 We first load the ensemble:
 
