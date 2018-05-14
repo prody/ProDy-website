@@ -246,10 +246,10 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       "Interdomain allostery in Hsp70",
       "Sensors and effectors in AMPARs",
       "Interdomain signaling in AMPARs",
-      "Signature global GNM mode shapes and cross-correlations of the LeuT fold family",
-      "Comparing signature GNM square fluctuations across LeuT fold family members",
-      "Signature ANM modes of type-I PBPs describe known structural variations",
-      "Signature eigenvalues as well as eigenvectors for TIM barrel fold family members");
+      "Signature global modes and cross-correlations for the LeuT fold family",
+      "Comparing signature square fluctuations across LeuT family members",
+      "Projection of PBP-1 family members onto the subspace of 2 global modes",
+      "Frequency distribution of global modes among family members");
 
       panelSlides = new Array();
       panelSlides[0] = new Array(0, 4, 1, 7);
@@ -577,11 +577,9 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       <div class="prody-slide" id="slide-29">
         <div class="slide-image"><img src="../_static/figures/SignDy_LeuT_main_fig.png"/></div>
         <p></p><p style="font-size: 95%; font-style: italic;">
-        The first 3 signature GNM mode shapes and cross-correlations are shown for the LeuT fold transporters. 
-        The panels on the left show average mode shapes as strong blue lines and their standard deviations as faint
-        blue bands. The average mode shapes are shown as colors on the representative LeuT structure with red and 
-        blue regions moving in opposite directions. The right panel has the average cross-correlation matrix from 
-        the first 20 global modes at the top and the matrix of standard deviations underneath.
+          The left panels show the three softest GNM modes (blue lines) and their standard deviations (faint blue bands). 
+          Red and blue regions in the corresponding ribbon diagrams show regions moving in opposite directions. 
+          The right panel has the average cross-correlation matrix from the first 20 global modes (b) and its standard deviation (bottom).
         </p>
       </div>
 
@@ -596,19 +594,18 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       <div class="prody-slide" id="slide-31">
         <div class="slide-image"><img src="../_static/figures/SignDy_PBP-1_anm_projection_2_modes_annotated.png"/></div>
         <p></p><p style="font-size: 95%; font-style: italic;">
-        The ensemble of type-I periplasmic binding protein domains is mapped onto the first two signature ANM modes,
-        which describe their variation very well. These domains, which are found in a range of proteins including 
-        bacterial solute carriers and eukaryotic receptors, have two lobes that undergo well-characterised conserved motions 
-        that are evident from comparison of structures. This figure shows that SignDy analysis reveals such conserved dynamics. 
+          Type-I periplasmic binding protein domains are mapped onto the first two signature ANM modes. 
+          These domains, found in a range of proteins including bacterial solute carriers and eukaryotic receptors, 
+          have two lobes that undergo well-characterised conserved motions that are evident from comparison of structures. 
+          SignDy reveals such conserved dynamics.
         </p>
       </div>
 
       <div class="prody-slide" id="slide-32">
         <div class="slide-image"><img src="../_static/figures/SignDy_TIM_variance_distributions.png"/></div>
         <p></p><p style="font-size: 95%; font-style: italic;">
-        SignDy analysis also allows a comparison of eigenvalues from different family members. The distribution 
-        of inverse eigenvalues is shown for the top 5 global modes for TIM barrel fold family along with a color 
-        bar highlighting the overall size of motion from the weighted sum of inverse eigenvalues. 
+          SignDy analysis allows a comparison of the frequency dispersion of family members. 
+          The distribution of inverse eigenvalues is shown for the softest five modes for TIM barrel fold family.
         </p>
       </div>
 
