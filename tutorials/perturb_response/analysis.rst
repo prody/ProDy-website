@@ -26,8 +26,10 @@ and sensitivity profiles colored by chain:
 
 .. ipython:: python
 
-    show = showPerturbResponse(model=anm_ampar, atoms=ampar_ca, show_matrix=False)
-
+    show = showPerturbResponse(model=anm_ampar, atoms=ampar_ca, 
+                               show_matrix=False)
+    @savefig 3kg2_prs_eff_and_sens.png width=4in
+    plt.show()
 
 Plotting residue-specific effectiveness and sensitivity profiles
 -------------------------------------------------------------------------------
@@ -41,7 +43,7 @@ This can again be shown in a plot as in Figure 6D.
 .. ipython:: python
 
     show = showPerturbResponse(model=anm_ampar, atoms=ampar_ca, 
-                               show_matrix=False, 
+                               show_matrix=False,
                                select='chain B and resnum 84')
     @savefig 3kg2_prs_chB_T84_eff_and_sens.png width=4in
     plt.show()
@@ -73,18 +75,29 @@ To do this we modify the ampar_ca object and then write a PDB from it as follows
 
 
 We can also calculate the PRS matrix and profiles separately from showPerturbResponse 
-and slice out individual rows or columns and write them into PDB files for visualization:
-
+and slice out individual rows or columns and write them into PDB files for visualization.
+We slice rows by default (*axis=0*) and slice columns using *axis=1* 
 
 .. ipython:: python
 
     prs_mat, effectiveness, sensitivity = calcPerturbResponse(anm_ampar)
-    B_84_profile = sliceAtomicData(prs_mat, atoms=ampar_ca, 
-                                   select='chain B and resnum 84')
-    ampar_ca.setBetas(B_84_profile)
-    writePDB('3kg2_ca_B_84__effectiveness.pdb', ampar_ca)
+    B_84_effectiveness = sliceAtomicData(prs_mat, atoms=ampar_ca, 
+                                         select='chain B and resnum 84')
 
-.. figure:: ../../_static/figures/PRS_Dutta_2015_Structure.figure7_highres_panelB.png
-   :scale: 50%
+    writePDB('3kg2_ca_B_84_effectiveness.pdb', ampar_ca, 
+             betas=B_84_effectiveness)
+
+.. ipython:: python
+
+    prs_mat, effectiveness, sensitivity = calcPerturbResponse(anm_ampar)
+    B_84_sensitivity = sliceAtomicData(prs_mat, atoms=ampar_ca, axis=1,
+                                       select='chain B and resnum 84')
+
+    writePDB('3kg2_ca_B_84_sensitivity.pdb', ampar_ca, 
+             betas=B_84_sensitivity)
+
+
+.. figure:: ../../_static/figures/PRS_Dutta_2015_Structure.figure7_highres.png
+   :scale: 20%
 
 We generated our Figure 7 using this approach together with the `spectrum` command from PyMOL.

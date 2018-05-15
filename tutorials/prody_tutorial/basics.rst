@@ -241,7 +241,7 @@ as an :class:`.AtomGroup` object. Let's see for ``p38`` variable from above:
 
 .. ipython:: python
 
-   p38calcPerturbResponse
+   p38
 
 You can also parse a list of :file:`.pdb` files into a list of :class:`.AtomGroup`
 objects:
