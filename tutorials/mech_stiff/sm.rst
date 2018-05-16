@@ -58,30 +58,31 @@ Then, build the Hessian matrix by passing selected atoms (230 Cα's) to
 
    anm.buildHessian(calphas, cutoff=13.0)
 
+And calculate all anm modes as they will be needed for later: 
 
-Those two actions are required and sufficient to perform mechanical stiffness 
-calculations without calculating modes. The Hessian defines the elastic network model, 
-which will be used to calculate mechanical striffness.
+.. ipython:: python
 
+   anm.calcModes(n_modes='all')
+
+Those actions are required and sufficient to perform mechanical stiffness 
+calculations. 
 
 Stiffness Matrix Calculations
 -------------------------------------------------------------------------------
 
 Mechanical stiffness calculations for the selected group of atoms can be 
-performed using :meth:`.ANM.buildMechStiff` method:
+performed using :func:`.calcMechStiff` method:
 
 .. ipython:: python
 
-   anm.buildMechStiff(calphas)
-   anm.getStiffness()
+   stiffness = calcMechStiff(anm, calphas)
+   stiffness
 
-Mechanical stiffness matrix is available using the :meth:`.ANM.getStiffness` 
-method. To show the stiffness matrix as an image map use the following function:
+To show the stiffness matrix as an image map use the following function:
 
 .. ipython:: python
 	
-   from matplotlib import cm
-   showMechStiff(anm, calphas, cmap=cm.jet_r)
+   showMechStiff(stiffness, calphas, cmap='jet_r')
 
 
 Note that 'jet_r' will reverse the colormap of image map which will be 
@@ -93,7 +94,7 @@ the secoundary structure of the protein is drawn using header information.
 
 .. ipython:: python
 
-   showMeanMechStiff(anm, calphas, header, 'A', cmap=cm.jet_r)
+   showMeanMechStiff(stiffness, calphas, header, 'A', cmap='jet_r')
 
  
 Mechanical Stiffness in VMD
@@ -111,8 +112,8 @@ which it can use for graphical representations.
 .. ipython:: python
    :verbatim:
 
-   writeVMDstiffness(anm, gfp, [3,7], [0,7.5], filename='1gfl_3-7aa', loadToVMD=False)
-   writeVMDstiffness(anm, gfp, [3], [0,7], filename='1gfl_3')
+   writeVMDstiffness(stiffness, gfp, [3,7], [0,7.5], filename='1gfl_3-7aa', loadToVMD=False)
+   writeVMDstiffness(stiffness, gfp, [3], [0,7], filename='1gfl_3')
 
 Results will be loaded automatically to VMD_ by default. Use ``loadToVMD=False`` to 
 change it. The TCL file will be saved automatically and can be used later by using 
@@ -152,9 +153,9 @@ The range of spring constant for *k_range* can be checked as follows:
 
 .. ipython:: python
 
-   anm.getStiffnessRange()
+   calcStiffnessRange(stiffness)
 
-See also :meth:`.ANM.getMechStiffStatistic` and :meth:`.ANM.getStiffnessRangeSel`
+See also :func:`.calcMechStiffStatistic` and :func:`.calcStiffnessRangeSel`
 functions for more detailed analysis of the stiffness matrix.
 
 The results of the mean value of mechanical stiffness calculation can be seen 
