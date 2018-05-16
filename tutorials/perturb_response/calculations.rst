@@ -33,14 +33,6 @@ apply the PRS to another model from which a covariance matrix could be derived s
     anm_ampar.calcModes(n_modes='all')
 
 
-You can also save the model in a .npz file for loading again and write an .nmd for visualizing in the NMWiz_.
-
-.. ipython:: python
-
-    saveModel(anm_ampar,'3kg2',matrices=True)
-    writeNMD('anm_3kg2.nmd',anm_ampar,ampar_ca)
-
-
 Showing the PRS matrix with effectiveness and sensitivity profiles
 -------------------------------------------------------------------------------
 
@@ -53,6 +45,19 @@ We supply atoms to allow us to delineate residue numbers and chains.
     show = showPerturbResponse(model=anm_ampar, atoms=ampar_ca)
     @savefig 3kg2_prs.png width=4in
     plt.show()
+
+Saving the model
+-------------------------------------------------------------------------------
+
+You can also save the ANM model in a .npz file for loading again and 
+write an .nmd for visualizing in the NMWiz_. 
+Adding *matrices=True* allows us to save the covariance matrix so we 
+can calculate the PRS faster in future analyses.
+
+.. ipython:: python
+
+    saveModel(anm_ampar,'3kg2',matrices=True)
+    writeNMD('anm_3kg2.nmd',anm_ampar,ampar_ca)
 
 The next page illustrates some more detailed analyses.
 
