@@ -14,6 +14,7 @@ Lets start with essential import statements:
 
    import numpy as np
    import matplotlib
+   from prody import *
 
 
 Tutorial files
