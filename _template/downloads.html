@@ -6,7 +6,7 @@
               <h3>Release Notes</h3>
               <p>{%- include "release.html" %}</p>
               <h3>Installation</h3>
-              <h5><span class="badge badge-warning">0</span> Using a Package Manager</h5>
+              <h5><span class="badge badge-warning">*</span> Using a Package Manager</h5>
               <p>You can install <i>ProDy</i> and <i>Evol</i> using
                 <a href="http://www.pip-installer.org/">pip</a>,
                 <code>pip install -U ProDy</code></a>, or by following these steps:</p>
@@ -18,16 +18,19 @@
               <dl>
                 <dt><a href="http://www.python.org/download/" target="_blank">Python</a></dt>
                 <dd>We recommend that you use 2.7, 3.4 or later.
-                    For Windows, you can choose <strong>32-bit</strong> or <strong>64-bit</strong>  Python installer.
+                    For Windows, you can choose <strong>32-bit</strong> or <strong>64-bit</strong> Python installer.
                 </dd>
                 <dt><a href="http://sourceforge.net/projects/numpy/files/NumPy/" target="_blank">NumPy</a></dt>
                 <dd>We recommend that you use the latest version of NumPy, but v1.10 and later are supported.
                     For Windows, make sure that you choose compatible versions of NumPy and <i>ProDy</i>. 
                     Make sure that the version is compatible with your <i>ProDy</i> and <i>Python</i> version.
                 </dd>
+                <dt><a href="http://biopython.org/wiki/Download/" target="_blank">Biopython</a></dt>
+                <dd>We recommend that you use the latest version of biopython, but all versions should be supported.
+                </dd>
               </dl>
               <h5><span class="badge badge-warning">2</span> Download</h5>
-              You can download appropriate version of ProDy from <a target="_blank" href="https://pypi.org/project/ProDy/#files">PyPI website.</a> 
+              You can download an appropriate version of ProDy from <a target="_blank" href="https://pypi.org/project/ProDy/#files">PyPI website.</a> 
               <!-- <span class="help-inline">
                 Select a file:
                 <div class="btn-group dropup">
@@ -68,7 +71,7 @@ $ sudo python setup.py install</pre>
 
                 </div>
                 <div class="tab-pane" id="windows">
-                  <p>Execute <code>ProDy-{{ version }}.win32-pyX.Y.exe</code> or <code>ProDy-{{ version }}.win-amd64-pyX.Y.exe</code> file and follow installation steps.</p>
+                  <!-- <p>Execute <code>ProDy-{{ version }}.win32-pyX.Y.exe</code> or <code>ProDy-{{ version }}.win-amd64-pyX.Y.exe</code> file and follow installation steps.</p> -->
 
                   <p>To be able use ProDy Applications and Evol Applications in command prompt (<code>cmd.exe</code>), append Python and scripts folders
                     (e.g. <code>C:\Python27</code> and <code>C:\Python27\Scripts</code>) to <code>PATH</code> environment variable.</p>

@@ -26,7 +26,8 @@ We start by importing everything from the ProDy package:
    from pylab import *
    ion()   # turn interactive mode on
 
-We start by parsing chain A of PDB structure **1gfl**.
+We start by parsing chain A of PDB structure **1gfl** together with the 
+header, which will be used later for visualizing the secoundary structure.
 
 .. ipython:: python
 
@@ -42,7 +43,7 @@ a new object *calphas*:
    calphas
 
 
-Build Hessian
+Build Hessian and calculate ANM modes
 -------------------------------------------------------------------------------
 
 In the next step we instantiate an :class:`.ANM` instance:
@@ -51,7 +52,7 @@ In the next step we instantiate an :class:`.ANM` instance:
 
    anm = ANM('GFP ANM analysis')
 
-Then, build the Hessian matrix by passing selected atoms (230 Cα's) to
+Then, build the Hessian matrix by passing selected atoms (230 Cα atoms) to
 :meth:`.ANM.buildHessian` method:
 
 .. ipython:: python
@@ -64,8 +65,7 @@ And calculate all anm modes as they will be needed for later:
 
    anm.calcModes(n_modes='all')
 
-Those actions are required and sufficient to perform mechanical stiffness 
-calculations. 
+All modes are required to perform accurate mechanical stiffness calculations. 
 
 Stiffness Matrix Calculations
 -------------------------------------------------------------------------------
@@ -85,11 +85,11 @@ To show the stiffness matrix as an image map use the following function:
    showMechStiff(stiffness, calphas, cmap='jet_r')
 
 
-Note that 'jet_r' will reverse the colormap of image map which will be 
-similar to coloring method of VMD_ program. 
+Note that 'jet_r' is the reverse of the jet colormap and is 
+similar to the default coloring method of the VMD_ program. 
 
 The mean values of the mechanical stiffness matrix for each residue 
-can be calculated using :meth:`showMeanMechStiff` function where 
+can be calculated using the :meth:`showMeanMechStiff` function where 
 the secoundary structure of the protein is drawn using header information.
 
 .. ipython:: python
