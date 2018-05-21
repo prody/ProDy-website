@@ -71,7 +71,7 @@ Stiffness Matrix Calculations
 -------------------------------------------------------------------------------
 
 Mechanical stiffness calculations for the selected group of atoms can be 
-performed using :func:`.calcMechStiff` method:
+performed using the :func:`.calcMechStiff` function:
 
 .. ipython:: python
 
@@ -82,27 +82,27 @@ To show the stiffness matrix as an image map use the following function:
 
 .. ipython:: python
 	
-   showMechStiff(stiffness, calphas, cmap='jet_r')
+   @savefig gfp_showMechStiff.png width=4in
+   show = showMechStiff(stiffness, calphas, cmap='jet_r')
 
-
-Note that 'jet_r' is the reverse of the jet colormap and is 
+Note that `'jet_r'` is the reverse of the jet colormap and is 
 similar to the default coloring method of the VMD_ program. 
 
 The mean values of the mechanical stiffness matrix for each residue 
-can be calculated using the :meth:`showMeanMechStiff` function where 
+can be calculated using the :func:`.showMeanMechStiff` function where 
 the secoundary structure of the protein is drawn using header information.
 
 .. ipython:: python
 
-   showMeanMechStiff(stiffness, calphas, header, 'A', cmap='jet_r')
-
+   @savefig gfp_showMeanMechStiff.png width=8in
+   show = showMeanMechStiff(stiffness, calphas, header, 'A', cmap='jet_r')
  
 Mechanical Stiffness in VMD
 -------------------------------------------------------------------------------
 
 We can generate tcl files for visualizing mechanical stiffness with VMD_ 
 using the :func:`.writeVMDstiffness` function. Select one residue in *indices* (**[3]**) 
-or series of residues (**[3, 7]**, means from 3 aa to 7 aa inclusive) and 
+or series of residues (**[3, 7]** means from 3 aa to 7 aa inclusive) and 
 a range of effective spring constant *k_range* (**[0, 7.5]**). 
 
 We provide *gfp* as well as *calphas* so VMD_ has information about the complete protein structure,
@@ -112,18 +112,18 @@ which it can use for graphical representations.
 .. ipython:: python
    :verbatim:
 
-   writeVMDstiffness(stiffness, gfp, [3,7], [0,7.5], filename='1gfl_3-7aa', loadToVMD=False)
+   writeVMDstiffness(stiffness, gfp, [3,7], [0,7.5], filename='1gfl_3-7aa')
    writeVMDstiffness(stiffness, gfp, [3], [0,7], filename='1gfl_3')
 
-Results will be loaded automatically to VMD_ by default. Use ``loadToVMD=False`` to 
-change it. The TCL file will be saved automatically and can be used later by using 
-linux command line: 
+A TCL file will be saved automatically and can be used later in VMD_ by running 
+the following command line instruction. Results can be loaded automatically to VMD_ 
+by setting keyword ``loadToVMD=True``.
 
 ::  vmd -e 1gfl_3aa.tcl
 
-or in VMD_ *TKConsole* (*VMD Main*) for Linux, Windows and Mac users: 
-::  play 1gfl_3aa.tcl
+or typing the following in the VMD_ *TKConsole* (*VMD Main*) for Linux, Windows and Mac users: 
 
+::  play 1gfl_3aa.tcl
 
 The tcl file contains a method for drawing lines between selected pairs of 
 residues, which are highlighted as spheres. The color of the line can be modified 
@@ -134,13 +134,13 @@ Coloring Method will work. Other changes can be done within VMD_ in the
 .. figure:: images/1gfl_chA.png
    :scale: 60 %
 
-The figure shows GFP results from :meth:`.vmdfile.writeVMDstiffness` method opened in VMD_. 
+The figure shows GFP results from :func:`.writeVMDstiffness` function opened in VMD_. 
 Pairs of found residues LYS3-GLY116, LYS3-PRO211 and PRO211-ASN212 are shown as VDW 
 spheres connected with red lines.
 
 Additionally, :file:`1gfl_3aa.txt` file is created. It contains a list 
 of residue pairs with the value of effective spring constant (in a.u. because 
-*kBT=1*) obtained from :meth:`.ANM.buildMechStiff` method.
+*kBT=1*) obtained from :func:`.calcMechStiff`.
 ::
 
      LYS3    GLY116  6.91650667766
