@@ -6,47 +6,32 @@
               <h3>Release Notes</h3>
               <p>{%- include "release.html" %}</p>
               <h3>Installation</h3>
-              <h5><span class="badge badge-warning">0</span> Using a Package Manager</h5>
+              <h5><span class="badge badge-warning">*</span> Using a Package Manager</h5>
               <p>You can install <i>ProDy</i> and <i>Evol</i> using
                 <a href="http://www.pip-installer.org/">pip</a>,
-                <code>pip install -U ProDy</code></a>, or by following these steps:</p>
+                <code>pip install -U ProDy</code></a>.
+                Please note that you may have to manually remove previous versions of 
+                Prody first.
+              </p>
             </div>
             <div class="span6">
-              <h5><span class="badge badge-warning">1</span> Requirements</h5>
+              <h5><span class="badge badge-warning">*</span> Requirements</h5>
               You need to install the following software before installing <i>ProDy:</i>
 
               <dl>
                 <dt><a href="http://www.python.org/download/" target="_blank">Python</a></dt>
                 <dd>We recommend that you use 2.7, 3.4 or later.
-                    For Windows, you can choose <strong>32-bit</strong> or <strong>64-bit</strong>  Python installer.
+                    For Windows, you can choose <strong>32-bit</strong> or <strong>64-bit</strong> Python installer.
                 </dd>
                 <dt><a href="http://sourceforge.net/projects/numpy/files/NumPy/" target="_blank">NumPy</a></dt>
                 <dd>We recommend that you use the latest version of NumPy, but v1.10 and later are supported.
                     For Windows, make sure that you choose compatible versions of NumPy and <i>ProDy</i>. 
                     Make sure that the version is compatible with your <i>ProDy</i> and <i>Python</i> version.
                 </dd>
+                <dt><a href="http://biopython.org/wiki/Download/" target="_blank">Biopython</a></dt>
+                <dd>We recommend that you use the latest version of biopython, but all versions should be supported.
+                </dd>
               </dl>
-              <h5><span class="badge badge-warning">2</span> Download</h5>
-              You can download appropriate version of ProDy from <a target="_blank" href="https://pypi.org/project/ProDy/#files">PyPI website.</a> 
-              <!-- <span class="help-inline">
-                Select a file:
-                <div class="btn-group dropup">
-                  <a class="btn btn-primary" id="download"><i class="icon-download-alt icon-white"></i> Select a ProDy download</a>
-                  <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-                  <ul class="dropdown-menu" id="downloads">
-                    <li class="nav-header">Source Distributions</li>
-                    <li><a href="http://pypi.python.org/packages/source/P/ProDy/ProDy-{{ version }}.tar.gz">ProDy-{{ version }}.tar.gz</a></li>
-                    <li><a href="http://pypi.python.org/packages/source/P/ProDy/ProDy-{{ version }}.zip">ProDy-{{ version }}.zip</a></li>
-                    <li class="nav-header">Recommended for Windows</li>
-                    <li><a href="http://pypi.python.org/packages/2.7/P/ProDy/ProDy-{{ version }}.win-amd64-py2.7.exe">ProDy-{{ version }}.win-amd64-py2.7.exe</a></li>
-                    <li><a href="http://pypi.python.org/packages/3.4/P/ProDy/ProDy-{{ version }}.win-amd64-py3.4.exe">ProDy-{{ version }}.win-amd64-py3.4.exe</a></li>
-                    <li class="nav-header">Other Options for Windows</li>
-                    <li><a href="http://pypi.python.org/packages/2.7/P/ProDy/ProDy-{{ version }}.win32-py2.7.exe">ProDy-{{ version }}.win32-py2.7.exe</a></li>
-                    <li><a href="http://pypi.python.org/packages/3.4/P/ProDy/ProDy-{{ version }}.win32-py3.4.exe">ProDy-{{ version }}.win32-py3.4.exe</a></li>
-                  </ul>
-                </div>
-              </span>
-              -->
             </div>
             <div class="span6">
               <h5><span class="badge badge-warning">3</span> Installation</h5>

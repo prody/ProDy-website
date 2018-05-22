@@ -47,7 +47,13 @@ $(document).ready(function() {
     logo.src = "http://prody.csb.pitt.edu/_static/membranm.png";
   }
   else if (url.search("mechstiff") > -1) {
-    logo.src = "http://prody.csb.pitt.edu/_static/mechstifflogo.png";
+    logo.src = "http://prody.csb.pitt.edu/_static/mechstiff.png";
+  }
+  else if (url.search("signdy") > -1) {
+    logo.src = "http://prody.csb.pitt.edu/_static/signdylogo.png";
+  }
+  else if (url.search("prs") > -1) {
+    logo.src = "http://prody.csb.pitt.edu/_static/prslogo.png";
   }
   else if (url.search("chromd") > -1) {
     logo.src = "http://prody.csb.pitt.edu/_static/chromdlogo.png";

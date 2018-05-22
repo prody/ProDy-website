@@ -14,6 +14,7 @@ Lets start with essential import statements:
 
    import numpy as np
    import matplotlib
+   from prody import *
 
 
 Tutorial files
@@ -133,9 +134,8 @@ profile.
 .. ipython:: python
 
    showSaxsProfiles('ALDH7A1SAXS_logscale.dat', 'dimerSAXS.dat')
-   
-.. image:: images/dimerVsExperiment.png 
-   :width: 4in
+   @savefig dimerVsExperiment.png width=4in
+   plt.show()
    
 Obviously, the theoretical SAXS profile do not agree well with the
 experiment. Lets plot the theoretical profile for the tetrameric form vs
