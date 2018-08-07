@@ -32,7 +32,7 @@ or with pylab environment::
   $ ipython --pylab
 
 
-First, we will make necessary imports from ProDy_ and Matplotlib_
+First, we will make necessary imports from ProDy and Matplotlib
 packages.
 
 .. ipython:: python
