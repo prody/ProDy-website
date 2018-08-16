@@ -9,10 +9,12 @@ multiple routes: a query search of the PDB using :func:`.blastPDB` or :func:`.se
 extraction of PDB IDs from the Pfam or CATH database, or input of a pre-defined list. 
 
 We demonstrate the usage of SignDy with a pre-defined list of transporter proteins sharing 
-the common LeuT fold [Y13]_. These proteins cycle through four typical states to transport 
+the common LeuT fold [YS13]_. These proteins cycle through four typical states to transport 
 a substrate molecule: outward-facing open (OFo), outward-facing closed (OFc), inward-facing 
 open (IFo), inward-facing closed (IFc), but only the first three states have PDB structures 
-available. 
+available. If you know how to prepare an ensemble of structural homologs and wish to skip 
+this part, you can download the ensemble file used in [SZ18]_ from here and proceed to the 
+next tutorial.
 
 First, make necessary imports from ProDy_ and Matplotlib_ packages if you haven't already.
 
@@ -45,14 +47,14 @@ chain A in each structure:
 
     LeuTs = [leut + 'A' for leut in LeuTs]
 
-In the above line, we use list comprehension to add a letter 'A' to each PDB identifier in the 
-list. We define other LeuT folds similarily:
+Note that in the above line, we use `list comprehension`_ to add a letter 'A' to each PDB 
+identifier in the list. We define other LeuT folds similarily:
 
 .. ipython:: python
 
-    MhsTs = ['4US4', '4US3']
     DATs = ['4M48', '4XNU', '4XNX', '4XP1', '4XP4', '4XP5', '4XP6', 
             '4XP9', '4XPA', '4XPB', '4XPF', '4XPG', '4XPH', '4XPT']
+    MhsTs = ['4US4', '4US3']
     vSGLTs = ['2XQ2']
     Mhp1s = ['2JLN', '2X79', '4D1A', '4D1B', '4D1C', '4D1D']
     BetPs = ['2WITA', '2WITB', '2WITC', '3P03A', '3P03B', '3P03C', 
@@ -61,27 +63,47 @@ list. We define other LeuT folds similarily:
     AdiCs = ['3L1L', '3LRB', '3LRC', '3NCY', '3OB6', '5J4I', '5J4N']
     CaiTs = ['4M8JA', '2WSXA', '2WSXB', '2WSXC', '2WSWA', '3HFXA']
 
+:func:`.parsePDB` allows us to parse multiple structures all at once, and we can use it to 
+load all the PDB structures into ProDy_ in one line. We only need the alpha carbon for our 
+purpose, so we set ``subset='ca'``:
+
 .. ipython:: python
 
+    pdb_ids = LeuTs + DATs + MhsTs + vSGLTs + Mhp1s + BetPs + AdiCs + CaiTs
     pdbs = parsePDB(*pdb_ids, subset='ca')
     len(pdbs)
 
+Any element in the list ``pdbs`` should be an :class:`.AtomGroup` instance. We can conveniently 
+feed this list to :func:`.buildPDBEnsemble` and let it build an :class:`.PDBEnsemble` for downstream 
+analyses. We use set ``mapping=ce`` to tell the function to use a structure alignment algorithm, 
+CEalign [IS98]_, for building the ensemble. We also set ``seqid=0`` to make sure we apply no 
+threshold of sequence identity to the building process.
+
 .. ipython:: python
 
-    dali_ens = buildPDBEnsemble(pdbs, mapping=mappings, seqid=20)
-    dali_ens
+    ens = buildPDBEnsemble(pdbs, mapping='ce', seqid=0, title='LeuT')
+    ens
 
 Finally we save the ensemble for later processing:
 
 .. ipython:: python
 
-   saveEnsemble(dali_ens, 'dali_ensemble')
+   saveEnsemble(ens, 'LeuT')
 
-
+A refiner alignment procedure was adopted in the [SZ18]_ paper. A representative structure is chosen 
+from each subtype of the proteins, e.g. LeuT, DAT, etc., and they are aligned to the LeuT representative 
+using CEalign [IS98]_. Then the rest are aligned to the representative structure of their own kind using 
+the pairwise alignment algorithm because they are sequentially the same despite small differences. The 
+ensemble used in the [SZ18]_ paper is provided in the download files and will be used in the next tutorial, 
+but you are also welcome to use the ensemble we created using above code.
 
 .. _`Structure Analysis Tutorial`: http://prody.csb.pitt.edu/tutorials/structure_analysis/blastpdb.html
-.. _`list_comprehensions`: https://docs.python.org/2/tutorial/datastructures.html#list-comprehensions
+.. _`list comprehension`: https://docs.python.org/2/tutorial/datastructures.html#list-comprehensions
 
-.. [Y13] Shi Y
+.. [YS13] Shi Y.
    Common folds and transport mechanisms of secondary active transporters.
    *Annu. Rev. Biophys.* **2013** 42:51-72
+
+.. [IS98] Shindyalov IN, Bourne PE.
+   Protein structure alignment by incremental combinatorial extension (CE) of the optimal path. 
+   *Protein engineering.* **1998** 11(9):739-47

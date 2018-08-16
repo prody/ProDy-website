@@ -1,6 +1,6 @@
-.. use "signdy" to refer to this file
+.. use "database" to refer to this file
 
-.. _signdy:
+.. _database:
 
 *******************************************************************************
 Signature Dynamics

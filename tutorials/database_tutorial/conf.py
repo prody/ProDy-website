@@ -1,4 +1,4 @@
-tutorial_title = u'Signature Dynamics'
+tutorial_title = u'Database'
 tutorial_author = u'She Zhang, James Krieger'
 tutorial_logo = u''           # default is ProDy logo
 tutorial_version = u''        # default is latest ProDy version
