@@ -73,7 +73,7 @@ purpose, so we set ``subset='ca'``:
     pdbs = parsePDB(*pdb_ids, subset='ca')
     len(pdbs)
 
-Any element in the list ``pdbs`` should be an :class:`.AtomGroup` instance. We can conveniently 
+Any element in the list *pdbs* should be an :class:`.AtomGroup` instance. We can conveniently 
 feed this list to :func:`.buildPDBEnsemble` and let it build an :class:`.PDBEnsemble` for downstream 
 analyses. We use set ``mapping=ce`` to tell the function to use a structure alignment algorithm, 
 CEalign [IS98]_, for building the ensemble. We also set ``seqid=0`` to make sure we apply no 
