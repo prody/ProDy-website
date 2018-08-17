@@ -132,8 +132,8 @@ Mathematically, each mode's sign is arbitrary.  NMWiz depicts normal modes
 as they are read from the input file, but the :guilabel:`+/-` button changes
 the mode's sign, inverting its direction.  The size of the arrows can be 
 adjusted using the :guilabel:`Scale by` or :guilabel:`RMSD` controls.  
-  * **Scale by**: The first number is the inverse of the mode frequency, and the second is a real-valued scaling factor that may be incremented or decremented using the adjacent buttons.  The :guilabel:`+/-` button controls the sign of the scale factor.  By default, NMWiz scales all modes to 2 Angstroms RMSD.
-    * **RMSD**: Arrow length can be adjusted to show a specified displacement along the active mode.  The sum of squares of the arrow lengths will be the square of the specified RMSD.  
+* **Scale by**: The first number is the inverse of the mode frequency, and the second is a real-valued scaling factor that may be incremented or decremented using the adjacent buttons.  The :guilabel:`+/-` button controls the sign of the scale factor.  By default, NMWiz scales all modes to 2 Angstroms RMSD.
+* **RMSD**: Arrow length can be adjusted to show a specified displacement along the active mode.  The sum of squares of the arrow lengths will be the square of the specified RMSD.  
 
 
 Atom selections

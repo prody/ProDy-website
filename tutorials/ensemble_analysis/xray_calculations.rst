@@ -4,8 +4,8 @@
 Calculations
 ===============================================================================
 
-This is the first part of a lengthy example.  In this part, we perform
-the calculations using a p38 MAP kinase (MAPK) structural dataset.  This will
+This is the first part of a lengthy example. In this part, we perform
+the calculations using a p38 MAP kinase (MAPK) structural dataset. This will
 reproduce the calculations for p38 that were published in [AB09]_.
 
 We will obtain a :class:`.PCA` instance that stores the covariance matrix and
@@ -30,7 +30,7 @@ include in our analysis.
 
 .. ipython:: python
 
-   pdbids = ['1A9U', '1BL6', '1BL7', '1BMK', '1DI9', '1IAN', '1KV1', '1KV2',
+   pdbids = ['1P38', '1A9U', '1BL6', '1BL7', '1BMK', '1DI9', '1IAN', '1KV1', '1KV2',
              '1LEW', '1LEZ', '1M7Q', '1OUK', '1OUY', '1OVE', '1OZ1', '1P38',
              '1R39', '1R3C', '1W7H', '1W82', '1W83', '1W84', '1WBN', '1WBO',
              '1WBS', '1WBT', '1WBV', '1WBW', '1WFC', '1YQJ', '1YW2', '1YWR',
@@ -43,8 +43,8 @@ include in our analysis.
 
 
 Note that we used a list of identifiers that are different from what was listed
-in the supporting material of [AB09]_.  Some structures have been refined and
-their identifier have been changed by the Protein Data Bank.
+in the supporting material of [AB09]_. Some structures have been refined and
+their identifiers have been changed by the Protein Data Bank.
 These changes are reflected in the above list.
 
 Also note that it is possible to update this list to include all of the p38
@@ -71,93 +71,30 @@ To update list of p38 MAPK PDB files, you can make a blast search as follows:
 
 We use the same set of structures to reproduce the results.
 After we listed the PDB identifiers, we obtain them using
-:func:`.fetchPDB` function as follows:
+:func:`.parsePDB` function as follows:
 
 .. ipython:: python
 
-   pdbfiles = fetchPDB(*pdbids, compressed=False)
+   structures = parsePDB(*pdbids, subset='ca', compressed=False)
 
-``pdbfiles`` variable contains a list of PDB filenames.
-
-
-Set reference chain
--------------------------------------------------------------------------------
-
-The next step is setting one of the p38 structures as the reference
-structure. We use 1p38 chain A. Note that we won't use
-all of the resolved residues in this structure. We select only those residues
-which are resolved in at least 90% of the dataset.
-
-.. ipython:: python
-
-   ref_structure = parsePDB('1p38')
-   ref_selection = ref_structure.select('resnum 5 to 31 36 to 114 122 to '
-                                        '169 185 to 351 and calpha')
-
-Retrieve protein chain A from the reference selection:
-
-.. ipython:: python
-
-   ref_chain = ref_selection.getHierView().getChain('A')
-   repr(ref_chain)
-
-We use the :func:`.parsePDB` function to parse a PDB file.
-This returns a :class:`.AtomGroup` instance. We make a copy
-of α-carbon atoms of select residues for analysis.
-
-See :ref:`selections` for making selections.
+The ``structures`` variable contains a list of :class:`AtomGroup` instances.
 
 Prepare ensemble
 -------------------------------------------------------------------------------
 
 X-ray structural ensembles are heterogenenous, i.e. different structures
 have different sets of unresolved residues. Hence, it is not straightforward
-to analyzed them as it would be for NMR models (see :ref:`pca-nmr`).
-
-ProDy has special functions and classes for facilitating efficient analysis
-of the PDB X-ray data. In this example we use :func:`.mapOntoChain`
-function which returns an :class:`.AtomMap` instance.
-
-See :ref:`atommaps` for more details.
-
-Start a logfile to save screen output:
+to analyzed them as it would be for NMR models (see :ref:`pca-nmr`). However, 
+ProDy has a function :func:`.buildPDBEnsemble` that makes this process a lot 
+easier. It depends on mapping each structure against the reference structure 
+using a function such as :func:`.mapOntoChain` demonstrated in the BLAST example.
+The reference structure is automatically the first member of list provided, which 
+in this case is 1p38.
 
 .. ipython:: python
 
-   startLogfile('p38_pca')
-
-Instantiate an :class:`.PDBEnsemble` object:
-
-.. ipython:: python
-
-   ensemble = PDBEnsemble('p38 X-ray')
-
-Set atoms and reference coordinate set of the ensemble:
-
-.. ipython:: python
-
-   ensemble.setAtoms(ref_chain)
-   ensemble.setCoords(ref_chain)
-
-For each PDB file, we find the matching chain and add it to the ensemble:
-
-.. ipython:: python
-
-   for pdbfile in pdbfiles:
-       # Parse next PDB file. (only alpha carbons, since it's faster)
-       structure = parsePDB(pdbfile, subset='calpha')
-       # Get mapping to the reference chain
-       mappings = mapOntoChain(structure, ref_chain)
-       atommap = mappings[0][0]
-       # Add the atommap (mapped coordinates) to the ensemble
-       # Note that some structures do not completely map (missing residues)
-       # so we pass weights (1 for mapped atoms, 0 for unmapped atoms)
-       ensemble.addCoordset(atommap, weights=atommap.getFlags('mapped'))
-
-.. ipython:: python
-
-   repr(ensemble)
-   len(ensemble) == len(pdbfiles)
+   ensemble = buildPDBEnsemble(structures, title='p38 X-ray')
+   ensemble
 
 Perform an iterative superimposition:
 
@@ -165,11 +102,6 @@ Perform an iterative superimposition:
 
    ensemble.iterpose()
 
-Close the logfile (file content shows how chains were paired/mapped):
-
-.. ipython:: python
-
-   closeLogfile('p38_pca')
 
 Save coordinates
 -------------------------------------------------------------------------------
@@ -207,28 +139,54 @@ and more memory efficient calculation of principal modes:
    pca_svd = PCA('p38 svd')
    pca_svd.performSVD(ensemble)
 
-The resulting eigenvalues and eigenvectors may show small differences due to
+The resulting eigenvalues and eigenvectors may show differences due to
 missing atoms in the datasets:
 
 .. ipython:: python
 
    abs(pca_svd.getEigvals()[:20] - pca.getEigvals()).max()
    abs(calcOverlap(pca, pca_svd).diagonal()[:20]).min()
+   showOverlapTable(pca, pca_svd[:20])
+
+If we remove the most variable loop from the analysis, then these results 
+become much more similar:
+
+.. ipython:: python
+
+   ref_selection = structures[0].select('resnum 5 to 31 36 to 114 122 to 169 185 to 351')
+   ensemble.setAtoms(ref_selection)
+
+.. ipython:: python
+
+   pca = PCA('p38 xray')           # Instantiate a PCA instance
+   pca.buildCovariance(ensemble)   # Build covariance for the ensemble
+   pca.calcModes()                 # Calculate modes (20 of the by default)
+
+.. ipython:: python
+
+   pca_svd = PCA('p38 svd')
+   pca_svd.performSVD(ensemble)
+
+.. ipython:: python
+
+   abs(pca_svd.getEigvals()[:20] - pca.getEigvals()).max()
+   abs(calcOverlap(pca, pca_svd).diagonal()[:20]).min()
+   showOverlapTable(pca, pca_svd[:20])
 
 Note that building and diagonalizing the covariance matrix is the preferred
-method for heterogeneous ensembles. For NMR models or MD trajectories SVD
-method may be preferred over covariance method.
+method for heterogeneous ensembles. For NMR models or MD trajectories, the SVD
+method may be preferred over the covariance method.
 
 ANM calculations
 -------------------------------------------------------------------------------
 
-To perform :class:`.ANM` calculations:
+We also calculate ANM modes for p38 in order to make comparisons later:
 
 .. ipython:: python
 
-   anm = ANM('1p38')             # Instantiate a ANM instance
-   anm.buildHessian(ref_chain)   # Build Hessian for the reference chain
-   anm.calcModes()               # Calculate slowest non-trivial 20 modes
+   anm = ANM('1p38')                 # Instantiate a ANM instance
+   anm.buildHessian(ref_selection)   # Build Hessian for the reference chain
+   anm.calcModes()                   # Calculate slowest non-trivial 20 modes
 
 Save your work
 -------------------------------------------------------------------------------
@@ -246,7 +204,7 @@ to share it with others.
    saveModel(pca)
    saveModel(anm)
    saveEnsemble(ensemble)
-   writePDB('p38_ref_chain.pdb', ref_chain)
+   writePDB('p38_ref_selection.pdb', ref_selection)
 
 We use the :func:`.saveModel` and :func:`.saveEnsemble` functions to save
 calculated data. In :ref:`pca-xray-analysis`, we will use the

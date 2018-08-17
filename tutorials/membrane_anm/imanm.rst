@@ -1,7 +1,10 @@
 Implicit Membrane ANM
 ===============================================================================
 
-Here we will make use of ProDy's implicit membrane ANM (imANM) capabilities to investigate the motions of a neurotransmitter transporter in the presence of the plasma membrane.  The procedure is based on the methods devescribed in [TL12]_ and relies on the RTB (Rotations and Translations of Blocks) method [FT00]_ of reducing complexity within ENMs. You will need following files:
+Here we will make use of ProDy's implicit membrane ANM (imANM) capabilities to investigate the motions of a 
+neurotransmitter transporter in the presence of the plasma membrane. The procedure is based on the methods 
+described in [TL12]_ and relies on the Rotations and Translations of Blocks (:class:`.RTB`) method [FT00]_ 
+of reducing complexity within ENMs. You will need the following files:
 
   * `Membrane-aligned outward-facing structure file <2NWL-opm.pdb>`_
   * `Membrane-aligned inward-facing structure file <3KBC-opm.pdb>`_
@@ -13,11 +16,14 @@ Files in the following archives can be used to follow this tutorial:
   * `membrane ANM Tutorial Files (TGZ) <membanm_tutorial_files.tgz>`_
   * `membrane ANM Tutorial Files (ZIP) <membanm_tutorial_files.zip>`_
 
-The first file contains the outward-facing structure of the glutamate transporter after insertion into the plasma membrane.  It is obtained from the `Orientations of Proteins in Membranes <http://opm.phar.umich.edu/>`_ database.
+The first file contains the outward-facing structure of the glutamate transporter after insertion into the plasma membrane.  
+It is obtained from the `Orientations of Proteins in Membranes <http://opm.phar.umich.edu/>`_ database.
 
-.. [TL12] Lezon TR, Bahar I. Constraints Imposed by the Membrane Selectively Guide the Alternating Access Dynamics of the Glutamate Transporter GltPh. *Biophys J* **2012** 102 1331-1340.
+.. [TL12] Lezon TR, Bahar I. Constraints Imposed by the Membrane Selectively Guide the Alternating Access Dynamics of the Glutamate Transporter GltPh. 
+   *Biophys J* **2012** 102 1331-1340.
 
-.. [FT00] Tama F, Gadea FJ, Marques O, Sanejouand YH. Building-block approach for determining low-frequency normal modes of macromolecules. *Proteins* **2000** 41 1-7.
+.. [FT00] Tama F, Gadea FJ, Marques O, Sanejouand YH. Building-block approach for determining low-frequency normal modes of macromolecules. 
+   *Proteins* **2000** 41 1-7.
 
 
 Preparing the structures
@@ -30,7 +36,8 @@ Begin by firing up ProDy in the usual manner:
    from pylab import *
    ion()
 
-The imANM assumes that the membrane is normal to the z-axis, so it is important to use a structure that is properly aligned.  The structure from the `OPM <http://opm.phar.umich.edu/>`_ database will work.
+The imANM assumes that the membrane is normal to the z-axis, so it is important to use a structure that is properly aligned.  
+The structure from the `OPM <http://opm.phar.umich.edu/>`_ database will work.
 
 .. ipython:: python
 
@@ -38,9 +45,12 @@ The imANM assumes that the membrane is normal to the z-axis, so it is important 
    if_all = parsePDB('3KBC-opm.pdb')  # Inward-facing structure
 
 
-There will be warnings saying that ProDy wants to read beta factors, but the coordinates should be read properly.  In addition to atoms, the OPM file contains points to indicate the boundaries of the membrane. 
+There will be warnings saying that ProDy wants to read beta factors, but the coordinates should be read properly. 
+In addition to atoms, the OPM file contains points to indicate the boundaries of the membrane. 
 
-We now make two selections, one from each structure.  The selections are chosen so that the final structures are homotrimers with an equal number (398) of atoms in each subunit.  We also want to remove the three aspartate ligands, which are indicated as chain D in the outward-facing structure and have resid 500, in the inward-facing structure.
+We now make two selections, one from each structure. The selections are chosen so that the final structures are homotrimers 
+with an equal number (398) of atoms in each subunit. We also want to remove the three aspartate ligands, which are indicated 
+as chain D in the outward-facing structure and have resid 500, in the inward-facing structure.
 
 .. ipython:: python
 
@@ -57,11 +67,22 @@ As a last step in preparation, we can align the structures so that we can calcul
 
 Assigning Blocks
 -------------------------------------------------------------------------------
-ProDy's RTB method can be used for any system, whether or not a membrane is involved.  It just happens to be attached to the imANM part of ProDy.  The RTB method allows us to decompose the protein into pre-defined rigid blocks.  Atoms within a block do not move relative to each other (hence the descriptor "rigid"), but blocks can move relative to other blocks.  There are two main benefits of using blocks:  First, the Hessian for a good blocking scheme is smaller than the Hessian for an all-residue representation, so the modes can be calculated more quickly.  This is particularly useful when one is considering very large systems (currently, those containing thousands of residues).  Second, the use of rigid blocks reduces unphysical distortions of the structure, such as stretching of backbone bonds, that may result from the harmonic approximation.  These benefits come with the price of accuracy.  Imposing rigidity reduces the amount of dynamical detail that can be uncovered from the model.
+ProDy's RTB method can be used for any system, whether or not a membrane is involved. imANM is an extension of RTB and they are in the same part of ProDy. 
+The RTB method allows us to decompose the protein into pre-defined rigid blocks. Atoms within a block do not move relative to each other (hence the descriptor "rigid"), 
+but blocks can move relative to other blocks. There are two main benefits of using blocks: First, the Hessian for a good blocking scheme is smaller 
+than the Hessian for an all-residue representation, so the modes can be calculated more quickly. This is particularly useful when one is considering very large systems 
+(in this case, containing thousands of residues). Second, the use of rigid blocks reduces unphysical distortions of the structure, such as stretching of backbone bonds 
+that may result from the harmonic approximation. These benefits come at the price of accuracy. Imposing rigidity reduces the amount of dynamical detail that can be 
+recovered from the model.
 
-In ProDy, a rigid block is defined as a set of atoms that co-move (i.e., the distances between them are fixed).  Typically the constituent atoms of a rigid block are spatially adjacent (i.e., they all belong to the same domain or secondary structure), but users are free to define blocks however they wish.  The only restriction is that a block cannot contain exactly two particles.  This restriction is in place because it is mathematically inconvenient to deal with two-particle blocks.  
+In ProDy, a rigid block is defined as a set of atoms that move together (i.e., the distances between them are fixed). Typically the constituent atoms of a rigid block 
+are spatially adjacent (i.e., they all belong to the same domain or secondary structure element), but users are free to define blocks however they wish. 
+The only restriction is that a block cannot contain exactly two particles. This restriction is in place because it is mathematically inconvenient to deal with two-particle blocks.  
 
-We can either define blocks within our python session, or define them externally in a separate file and write a little bit of code to handle the tasks of reading the file and assigning residues to blocks.  This latter approach can be useful when exploring and comparing many different blocking schemes.  We have developed one such format for a `block file`, examples of which can be found in ``2nwl_blocks.txt`` and ``3kbc_blocks.txt``.  The first ten lines of ``2nwl_blocks.txt`` are::
+We can either define blocks within our python session, or define them externally in a separate file and write a little bit of code to handle the tasks of 
+reading the file and assigning residues to blocks. This latter approach can be useful when exploring and comparing many different blocking schemes. 
+We have developed one such format for a `block file`, examples of which can be found in ``2nwl_blocks.txt`` and ``3kbc_blocks.txt``. 
+The first ten lines of ``2nwl_blocks.txt`` are::
 
     1 TYR A     10  VAL A     12
     4 LEU A     13  LYS A     15
@@ -78,14 +99,15 @@ We can either define blocks within our python session, or define them externally
 The columns, separated by whitespace, are formatted as follows:
 
       * *1.* Integer identifier of the block.
-      * *2.* Three-letter code for first residue in block.
-      * *3.* Chain ID of first residue in block.
-      * *4.* Sequential number of first residue in block.
-      * *5.* Three-letter code for last residue in block.
+      * *2.* Three-letter code for first residue in the block.
+      * *3.* Chain ID of first residue in the block.
+      * *4.* Resnum of first residue in the block.
+      * *5.* Three-letter code for last residue in the block.
       * *6.* Chain ID of last residue in block.
-      * *7.* Sequential number of last residue in block.
+      * *7.* Resnum of last residue in the block.
 
-This is just one way of storing information on how the protein is deconstructed into blocks.  You can think of others.  We can read blocks from ``2nwl_blocks.txt`` into the array ``blocks`` as follows:
+This is just one way of storing information on how the protein is deconstructed into blocks. You are welcome to use others if you have a way of reading them. 
+We can read blocks from ``2nwl_blocks.txt`` into the array ``blocks`` as follows:
 
 .. ipython:: python
 
@@ -150,12 +172,12 @@ Now we calculate the modes and write them to a pair of .nmd files for viewing.
    writeNMD('3kbc_im.nmd',if_rtb,if_ca.select('protein and name CA'))
 
 
-.. figure:: ../../_static/figures/membrane_anm-imanm_of3.png
+.. figure:: images/membrane_anm-imanm_of3.png
    :scale: 100%
 
 The third mode of the outward-facing structure moves all three transport domains simultaneously through the membrane in a 'lift-like' motion.
 
-.. figure:: ../../_static/figures/membrane_anm-imanm_if6.png
+.. figure:: images/membrane_anm-imanm_if6.png
    :scale: 100%
 
 A similar motion is shown in mode 6 of the inward-facing structure.

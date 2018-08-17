@@ -26,18 +26,16 @@ same Python session, you don't need to do this.
 Sampling
 -------------------------------------------------------------------------------
 
-We will use :func:`.sampleModes` function:
+We will use the :func:`.sampleModes` function:
 
 .. ipython:: python
 
    ens = sampleModes(p38_anm_ext, atoms=p38.protein, n_confs=40, rmsd=1.0)
    ens
 
-We passed extended model, p38 structure, and two other parameters.
-This will produce 40 (``n_confs``) conformations.  The conformations
-will have an average 1.0 Å RMSD from the input structure.
+This will produce 40 (``n_confs``) conformations with have an average RMSD of 1.0 Å from the input structure.
 
-We can write this ensemble in :file:`.dcd` for visualization in VMD:
+We can write this ensemble in a :file:`.dcd` for visualization in VMD:
 
 .. ipython:: python
    :verbatim:
@@ -48,25 +46,19 @@ We can write this ensemble in :file:`.dcd` for visualization in VMD:
 Analysis
 -------------------------------------------------------------------------------
 
-Let's analyze the :class:`.Ensemble` by plotting RMSD of conformations
-to the input structure:
+Let's analyze the :class:`.Ensemble` by plotting the RMSDs of all conformations
+relative to the input structure:
 
 .. ipython:: python
 
    rmsd = ens.getRMSDs()
-   hist(rmsd, normed=False);
+   hist(rmsd, density=False);
    @savefig conformational_sampling_ens_rmsd.png width=4in
    xlabel('RMSD');
 
 This histogram might look like a flat distribution  due to the small size
 of the ensemble. For larger numbers of conformations it will get closer to
-a normal distribution. Let's calculate average and extremum RMSD values:
-
-.. ipython:: python
-
-   rmsd.mean()
-   rmsd.max()
-   rmsd.min()
+a normal distribution.
 
 Let's see the projection of these conformations in the ANM slow mode space:
 
@@ -75,7 +67,6 @@ Let's see the projection of these conformations in the ANM slow mode space:
 
    @savefig conformational_ensemble_sampling_projection.png width=4in
    showProjection(ens, p38_anm_ext[:3], rmsd=True);
-   proj = calcProjection(ens, p38_anm_ext[:3])
 
 
 Write conformations
@@ -97,10 +88,11 @@ Let's add the conformations to the :class:`.AtomGroup` object and set
    p38.all.setBetas(0)
    p38.ca.setBetas(1)
 
-In the next step, we will place a harmonic constraint on atoms with beta
-values 1. The optimization is aims for refining covalent geometry of atoms.
-We do not want the new Cα to change much to keep the refined ensemble
-diverse. We can easily verify that only Cα atoms have beta values set to 1:
+In the next step, we will optimise the atom positions with a harmonic 
+constraint on atoms with beta values of 1. The optimization aims to 
+refine covalent geometry of atoms.We do not want the new Cα to change much 
+to keep the refined ensemble diverse. We can easily verify that only Cα atoms 
+have beta values set to 1:
 
 .. ipython:: python
 

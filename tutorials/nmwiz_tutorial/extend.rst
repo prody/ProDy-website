@@ -8,8 +8,6 @@ part, we will use NMWiz's :guilabel:`Extend model to` capabilities to
 extend NMA results to all backbone atoms of the protein.
 
 .. figure:: /_static/nmwiz_1dlo_ANM1.png
-   :align: right
-   :scale: 50 %
    
    ANM mode 1 for HIV Reverse Transcriptase
    

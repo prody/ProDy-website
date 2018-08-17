@@ -40,10 +40,11 @@ link:
 workdir:
 	# creates workdir (where IPython directive input and output is saved)
 	mkdir -p $(WORKDIR)
+	mkdir -p $(WORKDIR)/conformational_sampling_files/
 
 	# copies required files from individual tutorials
 	cp -rf tutorials/conformational_sampling/$(WORKDIR)/* $(WORKDIR)
-	cp -rf tutorials/conformational_sampling/conformational_sampling_files/* $(WORKDIR)
+	cp -rf tutorials/conformational_sampling/conformational_sampling_files/* $(WORKDIR)/conformational_sampling_files/
 
 	cp -rf tutorials/enm_analysis/enm_analysis_files/* $(WORKDIR)
 
@@ -74,12 +75,24 @@ pdf: link
 	cd manual; make pdf
 	mv manual/_build/latex/ProDy.pdf _build/html/manual/
 
-	make -C tutorials/conformational_sampling clean copy
+	make -C tutorials/prody_tutorial clean copy
+	make -C tutorials/nmwiz_tutorial clean copy
+	make -C tutorials/evol_tutorial clean copy
 	make -C tutorials/drugui_tutorial clean copy
 	make -C tutorials/enm_analysis clean copy
 	make -C tutorials/ensemble_analysis clean copy
-	make -C tutorials/evol_tutorial clean copy
-	make -C tutorials/nmwiz_tutorial clean copy
-	make -C tutorials/prody_tutorial clean copy
 	make -C tutorials/structure_analysis clean copy
 	make -C tutorials/trajectory_analysis clean copy
+	make -C tutorials/conformational_sampling clean copy
+	make -C tutorials/comd_tutorial clean copy
+	make -C tutorials/membrane_anm clean copy
+	make -C tutorials/mech_stiff clean copy
+	make -C tutorials/perturb_response clean copy
+	make -C tutorials/signdy_tutorial clean copy
+	make -C tutorials/cryoem_tutorial clean copy
+	
+	
+	
+	
+	
+	

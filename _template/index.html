@@ -242,7 +242,14 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       "Mechanical Stiffness Map with Effective Force Constant",
       "Applying Gaussian Network Model on Hi-C data",
       "Normal Mode Analysis of Human Chromosomes",
-      "Spectral Clustering Aids in Identification of Structural Domains");
+      "Spectral Clustering Aids in Identification of Structural Domains",
+      "Interdomain allostery in Hsp70",
+      "Sensors and effectors in AMPARs",
+      "Interdomain signaling in AMPARs",
+      "Signature global modes and cross-correlations for the LeuT fold family",
+      "Comparing signature square fluctuations across LeuT family members",
+      "Projection of PBP-1 family members onto the subspace of 2 global modes",
+      "Frequency distribution of global modes among family members");
 
       panelSlides = new Array();
       panelSlides[0] = new Array(0, 4, 1, 7);
@@ -250,10 +257,12 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       panelSlides[2] = new Array(1, 2, 3);
       panelSlides[3] = new Array(7, 9, 10, 11);
       panelSlides[4] = new Array(17, 18, 19);
-      panelSlides[5] = new Array(20,21,22);
+      panelSlides[5] = new Array(20, 21, 22);
       panelSlides[6] = new Array(12, 13);
       panelSlides[7] = new Array(14, 15, 16);
       panelSlides[8] = new Array(23, 24, 25);
+      panelSlides[9] = new Array(26, 27, 28);
+      panelSlides[10] = new Array(29, 30, 31, 32);
 
       var slideIndices = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
@@ -364,7 +373,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
 
       <div class="prody-slide" id="slide-5">
         <div class="slide-image"><img src="{{ pathto('_static/gallery/ProDy_ProtSci_Fig3.png', 1) }}"/></div>
-        <p style="font-size: 95%; font-style: italic;">
+        <p></p><p style="font-size: 95%; font-style: italic;">
         Comparative analysis of dynamics of drug target proteins and model systems from experiments (PCA) and theory (ANM).
         See the Protein Science
         <a target="_blank" href="http://onlinelibrary.wiley.com/doi/10.1002/pro.711/full">article</a>
@@ -429,7 +438,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
 
       <div class="prody-slide" id="slide-12">
         <div class="slide-image"><img src="{{ pathto('_static/gallery/drugui_youtube.gif', 1) }}"/></div>
-        <p style="font-size: 95%; font-style: italic;">
+        <p></p><p style="font-size: 95%; font-style: italic;">
         The movie shows a molecular dynamics simulation
         for assessing the druggability of kinesin eg5.
         <a href="{{ pathto('tutorials/nmwiz_tutorial/intro') }}">NMWiz</a>
@@ -450,7 +459,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
 
       <div class="prody-slide" id="slide-14">
         <div class="slide-image"><img src="../_static/gallery/comd_ake-new.png"/></div>
-        <p style="font-size: 95%; font-style: italic;">
+        <p></p><p style="font-size: 95%; font-style: italic;">
         Sampling of the functional substates (inward-facing (IF) or outward-facing (OF),  in closed (c) or open (o) forms) of LeuT using coMD simulations. See <a href="http://scitation.aip.org/content/aip/journal/jcp/143/24/10.1063/1.4936133">publication</a> for details.
         </p>
       </div>
@@ -474,7 +483,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
 
       <div class="prody-slide" id="slide-17">
         <div class="slide-image"><img src="../_static/gallery/memanm-ofif.png"/></div>
-        <p style="font-size: 95%; font-style: italic;">
+        <p></p><p style="font-size: 95%; font-style: italic;">
         Outward-facing (OF) and inward-facing (IF) structures of Glt<sub>Ph</sub> show a large displacement of the core domains. 
         See <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3309413/">publication</a> for details.
         </p>
@@ -520,21 +529,83 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       <div class="prody-slide" id="slide-23">
         <div class="slide-image"><img src="../_static/gallery/hic_workflow.png"/></div>
         <p style="font-size: 95%; font-style: italic;">
-	Workflow for GNM analysis of chromatin dynamics. See publication for details. 
+        Workflow for GNM analysis of chromatin dynamics. 
+        See <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC5397156/">publication</a> for details. 
         </p>
       </div>
 
       <div class="prody-slide" id="slide-24">
         <div class="slide-image"><img src="../_static/gallery/hic_domains.png"/></div>
         <p style="font-size: 95%; font-style: italic;">
-	Covariance matrix of chromosome 17 of human B cells. Structural domains and CCDDs are identified and outlined. See publication for details.
+        Covariance matrix of chromosome 17 of human B cells. Structural domains and CCDDs are identified and outlined. 
+        See <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC5397156/">publication</a> for details.
         </p>
       </div>
 
       <div class="prody-slide" id="slide-25">
         <div class="slide-image"><img src="../_static/gallery/embed_chromo.gif"/></div>
         <p style="font-size: 95%; font-style: italic;">
-	3D Laplacian embedding of chromosome 17 loci using the first three principal modes. See ChromD tutorial for details.
+          3D Laplacian embedding of chromosome 17 loci using the first three principal modes. 
+          See ChromD tutorial for details.
+        </p>
+      </div>
+
+      <div class="prody-slide" id="slide-26">
+        <div class="slide-image"><img src="../_static/figures/PRS_General_2014_pcbi.figure3.png"/></div>
+        <p></p><p style="font-size: 95%; font-style: italic;">
+        Perturbation response scanning of the Hsp70 chaperone reveals interdomain allostery. 
+        See <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4022485/">publication</a> for details.
+        </p>
+      </div>
+
+      <div class="prody-slide" id="slide-27">
+        <div class="slide-image"><img src="../_static/figures/PRS_Dutta_2015_Structure.figure6_highres.png"/></div>
+        <p></p><p style="font-size: 95%; font-style: italic;">
+        Perturbation response scanning of the AMPA-type glutamate receptor reveals sensors and effectors for allosteric signaling. 
+        See <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4558295/">publication</a> for details.
+        </p>
+      </div>
+
+      <div class="prody-slide" id="slide-28">
+        <div class="slide-image"><img src="../_static/figures/PRS_Dutta_2015_Structure.figure7_highres.png"/></div>
+        <p></p><p style="font-size: 95%; font-style: italic;">
+        A more in-depth analysis of the PRS matrix reveals interdomain signaling in the AMPA receptor.
+        See <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4558295/">publication</a> for details.
+        </p>
+      </div>
+
+      <div class="prody-slide" id="slide-29">
+        <div class="slide-image"><img src="../_static/figures/SignDy_LeuT_main_fig.png"/></div>
+        <p></p><p style="font-size: 95%; font-style: italic;">
+          The left panels show the three softest GNM modes (blue lines) and their standard deviations (faint blue bands). 
+          Red and blue regions in the corresponding ribbon diagrams show regions moving in opposite directions. 
+          The right panel has the average cross-correlation matrix from the first 20 global modes (top) and its standard deviation (bottom).
+        </p>
+      </div>
+
+      <div class="prody-slide" id="slide-30">
+        <div class="slide-image"><img src="../_static/figures/SignDy_LeuT_offset_profiles.png"/></div>
+        <p></p><p style="font-size: 95%; font-style: italic;">
+        Square fluctuations calculated from the top 5 global modes are shown for a number of LeuT fold family 
+        members, revealing similarities and subfamily- or conformation-dependent differences. 
+        </p>
+      </div>
+
+      <div class="prody-slide" id="slide-31">
+        <div class="slide-image"><img src="../_static/figures/SignDy_PBP-1_anm_projection_2_modes_annotated.png"/></div>
+        <p></p><p style="font-size: 95%; font-style: italic;">
+          Type-I periplasmic binding protein domains are mapped onto the first two signature ANM modes. 
+          These domains, found in a range of proteins including bacterial solute carriers and eukaryotic receptors, 
+          have two lobes that undergo well-characterised conserved motions that are evident from comparison of structures. 
+          SignDy reveals such conserved dynamics.
+        </p>
+      </div>
+
+      <div class="prody-slide" id="slide-32">
+        <div class="slide-image"><img src="../_static/figures/SignDy_TIM_variance_distributions.png"/></div>
+        <p></p><p style="font-size: 95%; font-style: italic;">
+          SignDy analysis allows a comparison of the frequency dispersion of family members. 
+          The distribution of inverse eigenvalues is shown for the softest five modes for TIM barrel fold family.
         </p>
       </div>
 
@@ -554,14 +625,16 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
           <li title="ProDy"><a href="{{ pathto('', 1) }}">ProDy</a></li>
           <li title="Evol"><a href="{{ pathto('evol', 1) }}">Evol</a></li>
           <li title="NMWiz" ><a href="{{ pathto('nmwiz', 1) }}">NMWiz</a></li>
+          <li title="SignDy" ><a href="{{ pathto('signdy', 1) }}">SignDy</a></li>
           <li title="membrANM" ><a href="{{ pathto('memanm', 1) }}">membrANM</a></li>
           <li title="stiffMech" ><a href="{{ pathto('mechstiff', 1) }}">MechStiff</a></li>
+          <li title="PRS" ><a href="{{ pathto('prs', 1) }}">PRS</a></li>
           <li title="DruGUI" ><a href="{{ pathto('drugui', 1) }}">DruGUI</a></li>
           <li title="coMD" ><a href="{{ pathto('comd', 1) }}">coMD</a></li>
 	  <!-- <li title="chromD"><a href="{{ pathto('chromd',1) }}">chromD</a></li> -->
           <li title="Downloads"><a href="{{ pathto('downloads', 1) }}">Downloads</a></li>
           <li title="Tutorials"><a href="{{ pathto('tutorials', 1) }}">Tutorials</a></li>
-          <li title="Workshops"><a href="{{ pathto('workshop', 1) }}">Workshops</a></li>
+     <!--     <li title="Workshops"><a href="{{ pathto('workshop', 1) }}">Workshops</a></li> -->
           <li title="Statistics"><a href="{{ pathto('statistics', 1) }}">Statistics</a></li>
           <li class="pull-right">
             <form class="navbar-search form-search pull-right" action="{{ pathto('search') }}" method="get" style="margin-right: 15px">

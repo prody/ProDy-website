@@ -52,8 +52,10 @@ html_additional_pages = {
     'index': 'prody.html',
     'nmwiz/index': 'nmwiz.html',
     'evol/index': 'evol.html',
+    'signdy/index': 'signdy.html',
     'memanm/index': 'memanm.html',
     'mechstiff/index':'mechstiff.html',
+    'prs/index': 'prs.html',
     'drugui/index': 'drugui.html',
     'comd/index' : 'comd.html',
     'downloads/index': 'downloads.html',
@@ -61,7 +63,7 @@ html_additional_pages = {
     'statistics/index': 'statistics.html',
     'mechstiff/index' : 'mechstiff.html',
     'analytics/index' : 'analytics.html',
-    'workshop/index' : 'workshop.html',
+    # 'workshop/index' : 'workshop.html',
 }
 
 html_sidebars = {

@@ -5,6 +5,15 @@
             <div class="span12">
               <div>
                 <h2>Tutorials</h2>
+                <small>
+                  <strong>Workshops</strong><br>
+                  The <i>ProDy</i> development team hosts annual workshops together with the 
+                  <i>NAMD/VMD</i> development team as part of our joined center
+                  <a href="https://www.mmbios.org/">MMBioS</a> funded by 
+                  <a href="http://www.nih.gov/" target="_blank">NIH</a> through the P41 GM103712 award.
+                  Lectures, tutorials and other materials from previous workshops are available 
+                  <a href="http://prody.csb.pitt.edu/workshop">here</a>.<br>
+                </small>
               </div>
               <ul class="thumbnails">
                 <li class="span4">
@@ -113,7 +122,7 @@
                       <a class="btn btn-primary" href="{{ pathto('tutorials/ensemble_analysis', 1) }}">Go to Tutorial</a>
                       <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
                       <ul class="dropdown-menu">
-                        <li><a href="{{ pathto('tutorials/ensemble_analysis/ensemble_analysis.pdf', 1) }}"><i class="icon-book"></i> Download PDF</a></li>
+                        az<li><a href="{{ pathto('tutorials/ensemble_analysis/ensemble_analysis.pdf', 1) }}"><i class="icon-book"></i> Download PDF</a></li>
                       </ul>
                     </div>
                   </div>
@@ -155,7 +164,7 @@
                 <!-- 2ND ROW -->
                 <li class="span4">
                   <div class="thumbnail text-center" style="height: 310px">
-                    <img src="{{ pathto('_static/p38_sampling.png', 1) }}" style="max-height: 160px">
+                    <img src="{{ pathto('_static/figures/p38_sampling.png', 1) }}" style="max-height: 160px">
                     <h5>Conformational Sampling</h5>
                     <p class="text-center" style="padding: 0 10 0 10">Learn how to generate alternate protein conformations along ANM modes and to refine them using NAMD.</p>
                     <div class="btn-group dropup">
@@ -196,7 +205,7 @@
                 <!-- 3ND ROW -->
                 <li class="span4">
                   <div class="thumbnail text-center" style="height: 310px">
-                    <img src="../_static/gallery/MEmbraneProtein_web.jpg" style="max-height: 160px">
+                    <img src="../_static/MEmbraneProtein_web.jpg" style="max-height: 160px">
                     <h5>Membrane ANM (membrANM)</h5>
                     <p class="text-center" style="padding: 0 10 0 10">Learn how to include the effect of lipid bilayer in ENM study of membrane proteins dynamics.</p>
                     <div class="btn-group dropup">
@@ -216,13 +225,66 @@
                     <p class="text-center" style="padding: 0 10 0
                     10">Learn how to evaluate the effective resistance of residues to deformation in the particular 3D structure </p>
                     <div class="btn-group">
-                      <a class="btn btn-primary" href="{{pathto('tutorials/stiffmech', 1) }}">Go to Tutorial</a>
+                      <a class="btn btn-primary" href="{{pathto('tutorials/mech_stiff', 1) }}">Go to Tutorial</a>
                       <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
                       <ul class="dropdown-menu">
-                        <li><a href="{{ pathto('tutorials/stiffmech/mechstiff.pdf', 1) }}"><i class="icon-book"></i> Download PDF</a></li>
+                        <li><a href="{{ pathto('tutorials/mech_stiff/mechstiff.pdf', 1) }}"><i class="icon-book"></i> Download PDF</a></li>
                         <li class="divider"></li>
-                        <li><a href="{{ pathto('tutorials/stiffmech/mechstiff.tgz', 1) }}"><i class="icon-download-alt"></i> Tutorial files <code>.tgz</code></a></li>
-                        <li><a href="{{ pathto('tutorials/stiffmech/mechstiff.zip', 1) }}"><i class="icon-download-alt"></i> Tutorial files <code>.zip</code></a></li>
+                        <li><a href="{{ pathto('tutorials/mech_stiff/mechstiff.tgz', 1) }}"><i class="icon-download-alt"></i> Tutorial files <code>.tgz</code></a></li>
+                        <li><a href="{{ pathto('tutorials/mech_stiff/mechstiff.zip', 1) }}"><i class="icon-download-alt"></i> Tutorial files <code>.zip</code></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="span4">
+                  <div class="thumbnail text-center" style="height: 310px">
+                    <img src="{{ pathto('_static/figures/PRS_Dutta_2015_Structure.figure7_highres_panelB.png', 1) }}" style="max-height: 160px">
+                    <h5>PRS</h5>
+                    <p class="text-center" style="padding: 0 10 0
+                    10">Learn how to evaluate the effectiveness and sensitivity of residues for allosteric signaling in the particular 3D structure </p>
+                    <div class="btn-group">
+                      <a class="btn btn-primary" href="{{pathto('tutorials/perturb_response', 1) }}">Go to Tutorial</a>
+                      <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="{{ pathto('tutorials/perturb_response/perturb_response.pdf', 1) }}"><i class="icon-book"></i> Download PDF</a></li>
+                        <li class="divider"></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="span4">
+                  <div class="thumbnail text-center" style="height: 310px">
+                    <img src="{{ pathto('_static/gallery/signdy.png', 1) }}" style="max-height: 160px">
+                    <h5>SignDy</h5>
+                    <p class="text-center" style="padding: 0 10 0
+                    10">Learn how to evaluate signature dynamics of a protein family and classify proteins based on their dynamics.</p>
+                    <div class="btn-group">
+                      <a class="btn btn-primary" href="{{pathto('tutorials/signdy_tutorial', 1) }}">Go to Tutorial</a>
+                      <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="{{ pathto('tutorials/signdy_tutorial/signdy_tutorial.pdf', 1) }}"><i class="icon-book"></i> Download PDF</a></li>
+                        <li class="divider"></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="span4">
+                  <div class="thumbnail text-center" style="height: 310px">
+                    <img src="{{ pathto('_static/figures/8000nodes_with_map.png', 1) }}" style="max-height: 160px">
+                    <h5>cryo-EM</h5>
+                    <p class="text-center" style="padding: 0 10 0
+                    10">Learn how to create elastic network models from electronic density maps and use them for normal mode analysis.</p>
+                    <div class="btn-group">
+                      <a class="btn btn-primary" href="{{pathto('tutorials/cryoem_tutorial', 1) }}">Go to Tutorial</a>
+                      <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="{{ pathto('tutorials/cryoem_tutorial/cryoem_tutorial.pdf', 1) }}"><i class="icon-book"></i> Download PDF</a></li>
+                        <li class="divider"></li>
+                        <li><a href="{{ pathto('tutorials/mech_stiff/mechstiff.tgz', 1) }}"><i class="icon-download-alt"></i> Tutorial files <code>.tgz</code></a></li>
+                        <li><a href="{{ pathto('tutorials/mech_stiff/mechstiff.zip', 1) }}"><i class="icon-download-alt"></i> Tutorial files <code>.zip</code></a></li>
                       </ul>
                     </div>
                   </div>

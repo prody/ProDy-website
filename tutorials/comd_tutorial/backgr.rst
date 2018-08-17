@@ -9,7 +9,7 @@ Methodology
 Below is a schematic description of the methodology for sampling the transition pathway between two known structures A and B. The same approach can be used for sampling the conformational space in the vicinity of both substates, simply by defining the Metropolis criteria to accept all moves, irrespective of the energy change at the last step. Thus, the method can be used for either characterizing the pathway(s) between two endpoints A and B, or mapping the conformational space in general for exploring alternative 
 substates.
 
-.. figure:: _static/figures/comd_pipeline.png
+.. figure:: ../../_static/figures/comd_pipeline.png
    :scale: 80%
 
 In a nutshell, the method consists of the following steps applied to each endpoint in parallel: (i) selecting a given ANM mode using a Monte Carlo algorithm based on the weight (inverse eigenvalue, square root) of each mode, (ii) examining if this mode allows for approaching the other endpoint, and accepting/rejecting it with the help of a Metropolis algorithm based on an energy function that penalizes the increase in RMSD from the endpoint (this condition can be removed to allow for unconstrained sampling),  (iii) generate a target conformation based on the selected mode, (iv) use this target conformation to simulate (by TMD) the transition toward this target conformation - which defines an intermediate conformer in the process of sampling the transition path (or the conformational space), (v) energy minimize, and (vi) go back to step (i) by redefining the intermediate conformation as the new endpoint, until completion of the sampling (e.g. if the two endpoints generated in parallel are sufficiently close to each other).

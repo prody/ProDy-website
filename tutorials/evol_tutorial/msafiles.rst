@@ -12,30 +12,28 @@ This part shows how to parse, refine, filter, slice, and write MSA files.
    from matplotlib.pylab import *
    ion()  # turn interactive mode on
 
-Let's get Pfam MSA file for protein family that contains :uniprot:`PIWI_ARCFU`:
+Let's get the Pfam MSA file for the protein family that contains :uniprot:`PIWI_ARCFU`:
 
 .. ipython::
-   :verbatim:
 
-   In [1]: searchPfam('PIWI_ARCFU').keys()
-   Out[1]: ['PF02171']
+
+   searchPfam('PIWI_ARCFU').keys()
 
 
 .. ipython::
-   :verbatim:
 
-   In [2]: fetchPfamMSA('PF02171', alignment='seed')
-   Out[2]: 'PF02171_seed.sth'
+   fetchPfamMSA('PF02171', alignment='seed')
 
 Parsing MSA files
 -------------------------------------------------------------------------------
 
-This shows how to use the :class:`.MSAFile` or :func:`.parseMSA` to read the
+This shows how to use :class:`.MSAFile` or :func:`.parseMSA` to read the
 MSA file.
 
 Reading using :class:`.MSAFile` yields an MSAFile object. Iterating over the
 object will yield an object of :class:`.Sequence` from which labels, sequence
-can be obtained.
+can be obtained. Like any file object, you can over iterate over a 
+:class:`.MSAFile` object once.
 
 .. ipython:: python
 
@@ -46,7 +44,7 @@ can be obtained.
    msa_seq_list[0]
 
 :func:`.parseMSA` returns an :class:`.MSA` object.  We can parse
-compressed files, but reading uncompressed files are much faster.
+compressed files, but reading uncompressed files is much faster.
 
 .. ipython::
    :verbatim:
@@ -70,8 +68,8 @@ end indices:
 .. ipython:: python
 
    msa = MSAFile('PF02171_seed.sth')
-   for seq in msa:
-       seq
+   seq_list = [seq for seq in msa]
+   seq_list
 
 Filtering and Slicing
 -------------------------------------------------------------------------------
@@ -90,8 +88,8 @@ organism *ARATH* are filtered:
 .. ipython:: python
 
    msafobj = MSAFile(msafile, filter=lambda lbl, seq: 'ARATH' in lbl)
-   for seq in msafobj:
-       seq.getLabel()
+   seq_list2 = [seq for seq in msafobj]
+   seq_list2
 
 Slicing
 ^^^^^^^
@@ -116,8 +114,8 @@ MSA objects
 Indexing
 ^^^^^^^^
 
-Retrieving a sequence at a given index, or by id will give an object of
-:class:`.Sequence`:
+Retrieving a sequence at a given index or by label will give an object of
+:class:`.Sequence`. Here's an example using an index.
 
 .. ipython:: python
 
@@ -126,7 +124,7 @@ Retrieving a sequence at a given index, or by id will give an object of
    seq
    str(seq)
 
-Retrieve a sequence by UniProt ID:
+Here we retrieve a sequence by UniProt ID:
 
 .. ipython:: python
 
@@ -158,7 +156,7 @@ Slice using a list of UniProt IDs:
 
 .. ipython:: python
 
-   msa[:2] == msa[['TAG76_CAEEL', 'O16720_CAEEL']]
+   msa[['TAG76_CAEEL', 'O16720_CAEEL']]
 
 Retrieve a character or a slice of a sequence:
 
@@ -185,29 +183,25 @@ interactions. The example shows merging for the multi-domain receptor
 :pdb:`3KG2` containing pfam domains :pfam:`PF01094` and :pfam:`PF00497`.
 
 .. ipython::
-   :verbatim:
 
-   In [1]: fetchPfamMSA('PF00017', alignment='seed')
-   Out[1]: 'PF00017_full.slx.gz'
+   fetchPfamMSA('PF01094', alignment='full')
 
 .. ipython::
-   :verbatim:
 
-   In [2]: fetchPfamMSA('PF07714', alignment='seed')
-   Out[2]: 'PF07714_full.slx.gz'
+   fetchPfamMSA('PF00497', alignment='full')
 
 Let's parse and merge the two files:
 
 .. ipython:: python
 
-   msa1 = parseMSA('PF00017_seed.sth')
+   msa1 = parseMSA('PF01094_full.sth')
    msa1
-   msa2 = parseMSA('PF07714_seed.sth')
+   msa2 = parseMSA('PF00497_full.sth')
    msa2
    merged = mergeMSA(msa1, msa2)
    merged
 
-Merged MSA contains 14 sequences.
+The merged MSA contains 4889 sequences with common labels.
 
 Writing MSAs
 -------------------------------------------------------------------------------

@@ -3,7 +3,7 @@
 Evol Application
 ===============================================================================
 
-Evol Applications have similar fuctionality as the python API. We can ``search``
+Evol applications have similar fuctionality as the python API. We can ``search``
 Pfam, ``fetch`` from Pfam and also ``refine MSA``, ``merge`` two or more MSA
 and calculate ``conservation`` and ``coevolution`` properties and also
 ``rankorder`` results from mutual information to get top-ranking pairs.

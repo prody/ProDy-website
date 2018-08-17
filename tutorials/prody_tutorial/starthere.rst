@@ -98,19 +98,19 @@ Using Documentation
 -------------------------------------------------------------------------------
 
 ProDy documentation is quite comprehensive and you can access it in a number of
-different ways.  In interactive sessions, API reference can be accessed using
+different ways. In interactive sessions, API reference can be accessed using
 the built-in Python function :func:`help`::
 
    help(select)   # help on select module
    help(fetchPDB) # help on parsePDB function
 
 This function prints documentation on screen, and you will need to type ``q``
-to exit from help view.  If you are using the interactive Python shell
-(IPython), you can also get help using ``?``:
+to exit from help view. If you are using the interactive Python shell
+(iPython), you can also get help using ``?``:
 
 .. ipython::
 
-   In [1]: ? fetchPDB
+   ?fetchPDB
 
 Searching documentation
 ^^^^^^^^^^^^^^^^^^^^^^^
