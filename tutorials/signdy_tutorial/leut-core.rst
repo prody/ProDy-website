@@ -76,7 +76,7 @@ or the cross-correlations from the first 20.
  .. ipython:: python
 
    @savefig ens_gnms_signature_cross-corr.png width=4in
-   show = showSignatureCrossCorr(ens_gnms[:, :20])
+   showSignatureCrossCorr(ens_gnms[:, :20]);
 
 
 We can also look at distributions over values across different members of the ensemble 
@@ -90,16 +90,16 @@ like [SZ18]_.
                   '3NCYA': 'AdiC:OF', '2X79A': 'Mhp1:IF', 
                   '2WITA':'BetP', '4M48A':'DAT'}
 
-    plt.figure();
+    figure();
     gs = plt.GridSpec(ncols=1, nrows=2, height_ratios=[1, 10], hspace=0.15)
 
-    plt.subplot(gs[0]);
+    subplot(gs[0]);
     showVarianceBar(gnms[:, :5], fraction=True, highlights=highlights);
-    plt.xlabel('');
+    xlabel('');
 
-    plt.subplot(gs[1]);
+    subplot(gs[1]);
     showSignatureVariances(ens_gnms[:, :5], fraction=True, bins=80, alpha=0.7);
-    plt.xlabel('Mode weight');
+    xlabel('Mode weight');
 
     @savefig ens_gnms_signature_variance_mode1-5.png width=4in
 
