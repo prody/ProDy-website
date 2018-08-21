@@ -9,7 +9,7 @@ multiple routes: a query search of the PDB using :func:`.blastPDB` or
 :func:`.searchDali`, extraction of PDB IDs from the Pfam or CATH database, or 
 input of a pre-defined list. 
 
-We demonstrate the `Dali`_ method here in the first tutorial. The usage of 
+We demonstrate the `Dali`_ method here in the first part of the tutorial. The usage of 
 `Pfam`_ and `CATH`_ methods are described in the database tutorial (under construction) 
 and the function :func:`.blastPDB` is described in the `Structure Analysis Tutorial`_.
 
@@ -139,10 +139,6 @@ like [KB15]_.
     subplot(gs[1]);
     showSignatureVariances(gnms[:, :5], fraction=True, bins=80, alpha=0.7);
     xlabel('Fraction of inverse eigenvalue');
-
-
-Saving the mode ensemble
--------------------------------------------------------------------------------
 
 Finally we save the mode ensemble for later processing:
 

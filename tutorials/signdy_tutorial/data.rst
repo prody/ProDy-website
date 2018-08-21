@@ -24,7 +24,7 @@ First, make necessary imports from ProDy_ and Matplotlib_ packages if you haven'
     from pylab import *
     ion()
 
-Define the LeuT fold PDB identifiers and building a PDBEnsemble
+Prepare ensemble
 -------------------------------------------------------------------------------
 
 For convinience and clarity, we define LeuT folds in separate lists taxonomically. For example,
