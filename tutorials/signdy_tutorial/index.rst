@@ -20,9 +20,9 @@ Signature Dynamics
 
    intro
    overview
-   leut-data
-   leut-core
-   leut-classifications
+   data
+   core
+   classifications
 
 
 .. only:: html
