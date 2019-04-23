@@ -16,11 +16,11 @@
             </div>
             <div class="span6">
               <h5><span class="badge badge-warning">*</span> Requirements</h5>
-              You need to install the following software before installing <i>ProDy:</i>
+              You need to install the following software before installing <i>ProDy</i>:
 
               <dl>
                 <dt><a href="http://www.python.org/download/" target="_blank">Python</a></dt>
-                <dd>We recommend that you use 2.7, 3.4 or later.
+                <dd>We recommend that you use 2.7, 3.5 or later.
                     For Windows, you can choose <strong>32-bit</strong> or <strong>64-bit</strong> Python installer.
                 </dd>
                 <dt><a href="http://sourceforge.net/projects/numpy/files/NumPy/" target="_blank">NumPy</a></dt>
@@ -43,20 +43,30 @@
 
               <div class="tab-content">
                 <div class="tab-pane active" id="linux">
-                  <p>Extract tarball contents and run setup.py as follows:</p>
+                  <p>If you have pip, you can simply install <i>ProDy</i> as follows:</p>
+                  <pre>
+                    $ pip install prody
+                  </pre>
+                  <p>If you don't, you can manually download and extract 
+                    <a href="https://pypi.org/project/ProDy/#files">tarball contents from PyPI website</a> 
+                    and run setup.py as follows:
+                  </p>
 
-                  <pre>$ tar -xzf ProDy-{{ version }}.tar.gz
-$ cd ProDy-{{ version }}
-$ python setup.py build
-$ sudo python setup.py install</pre>
-                If you don’t have root access, see alternate installation schemes in <a href="http://docs.python.org/2/install/">Installing Python Modules</a>.
+                  <pre>
+                    $ tar -xzf ProDy-{{ version }}.tar.gz
+                    $ cd ProDy-{{ version }}
+                    $ python setup.py build
+                    $ sudo python setup.py install
+                  </pre>
+
+                  If you don’t have root access, see alternate installation schemes in <a href="https://docs.python.org/2/installing/">Installing Python Modules</a>.
 
                 </div>
                 <div class="tab-pane" id="windows">
-                  <p>Execute <code>ProDy-{{ version }}.win32-pyX.Y.exe</code> or <code>ProDy-{{ version }}.win-amd64-pyX.Y.exe</code> file and follow installation steps.</p>
-
-                  <p>To be able use ProDy Applications and Evol Applications in command prompt (<code>cmd.exe</code>), append Python and scripts folders
-                    (e.g. <code>C:\Python27</code> and <code>C:\Python27\Scripts</code>) to <code>PATH</code> environment variable.</p>
+                  <p>You can install <i>ProDy</i> through <i>pip</i> as follows:</p>
+                  <pre>
+                    $ pip install prody
+                  </pre>
                 </div>
               </div>
 
@@ -74,9 +84,6 @@ $ sudo python setup.py install</pre>
               We recommend that you also install
               <a href="http://matplotlib.org/downloads.html" target="_blank">Matplotlib</a> for plotting, and
               <a href="https://pypi.python.org/pypi/ipython#downloads" target="_blank">IPython</a> for interactive usage.
-              On Windows, you need to install
-              <a href="https://pypi.python.org/pypi/pyreadline/2.0" target="_blank">pyreadline</a>
-              for colorful IPython sessions.
 
             </div>
           </div>
