@@ -4,17 +4,17 @@ Implicit Membrane ANM
 Here we will make use of ProDy's implicit membrane ANM (imANM) capabilities to investigate the motions of a 
 neurotransmitter transporter in the presence of the plasma membrane. The procedure is based on the methods 
 described in [TL12]_ and relies on the Rotations and Translations of Blocks (:class:`.RTB`) method [FT00]_ 
-of reducing complexity within ENMs. You will need the following files:
+of reducing complexity within ENMs. To follow this tutorial, you will need the following files:
 
-  * `Membrane-aligned outward-facing structure file <2NWL-opm.pdb>`_
-  * `Membrane-aligned inward-facing structure file <3KBC-opm.pdb>`_
-  * `Outward-facing block definition file <2nwl_blocks.txt>`_
-  * `Inward-facing block definition file <3kbc_blocks.txt>`_
+  * Membrane-aligned outward-facing structure file (2NWL-opm.pdb)
+  * Membrane-aligned inward-facing structure file (3KBC-opm.pdb)
+  * Outward-facing block definition file (2nwl_blocks.txt)
+  * Inward-facing block definition file (3kbc_blocks.txt)
 
-Files in the following archives can be used to follow this tutorial:
+These files can be downloaded from one of the following links:
 
-  * `membrane ANM Tutorial Files (TGZ) <membanm_tutorial_files.tgz>`_
-  * `membrane ANM Tutorial Files (ZIP) <membanm_tutorial_files.zip>`_
+  * `membrane ANM Tutorial Files (TGZ) <membanm_anm_files.tgz>`_
+  * `membrane ANM Tutorial Files (ZIP) <membanm_anm_files.zip>`_
 
 The first file contains the outward-facing structure of the glutamate transporter after insertion into the plasma membrane.  
 It is obtained from the `Orientations of Proteins in Membranes <http://opm.phar.umich.edu/>`_ database.

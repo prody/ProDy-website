@@ -20,7 +20,12 @@ IPython_ is highly recommended for interactive usage.
 Getting Started
 -------------------------------------------------------------------------------
 
-To follow this tutorial, you will not need any additional files.
+This tutorial contains two parts. In the first part, we will have a quick 
+walk-through on the SignDy_ calculations and functions using the example of type-I 
+periplasmic binding protein (PBP-I) domains, in which case the data is convienient 
+collected from the `Dali server`_ [LH10]_. The second part will be a more detailed 
+tutorial on building an ensemble 'manually' from scratch, and try to reproduce the 
+figures presented in [SZ18]_.
 
 We recommend that you will follow this tutorial by typing commands in an
 IPython session, e.g.::
@@ -32,7 +37,7 @@ or with pylab environment::
   $ ipython --pylab
 
 
-First, we will make necessary imports from ProDy and Matplotlib
+First, we will make necessary imports from ProDy_ and Matplotlib_
 packages.
 
 .. ipython:: python
@@ -45,6 +50,10 @@ We have included these imports in every part of the tutorial, so that
 code copied from the online pages is complete. You do not need to repeat
 imports in the same Python session.
 
+To follow this tutorial, you will need following files:
+
+`ZIP <signdy_tutorial_files.zip>`_ `TGZ <signdy_tutorial_files.tgz>`_
+
 
 How to Cite
 -------------------------------------------------------------------------------
@@ -52,6 +61,12 @@ How to Cite
 If you benefited from SignDy Calculations in your research, 
 please cite the following paper:
 
-.. [SZ18] Zhang S., Krieger J., Li H., Bahar I. 
+.. [SZ18] Zhang S, Li H, Krieger J, Bahar I. 
    SignDy: Discovering the Signature Dynamics of Protein Families with Elastic Network Model 
    Analysis. *(in preparation)* **2018**
+
+.. [LH10] Holm L, Rosenström P.
+    Dali server: conservation mapping in 3D.
+    *Nucleic Acids Res.* **2010** 10(38):W545-9
+
+.. _`Dali server`: http://ekhidna2.biocenter.helsinki.fi/dali/
