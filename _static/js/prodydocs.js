@@ -50,7 +50,7 @@ $(document).ready(function() {
     logo.src = "http://prody.csb.pitt.edu/_static/mechstiff.png";
   }
   else if (url.search("signdy") > -1) {
-    logo.src = "http://prody.csb.pitt.edu/_static/signdylogo.png";
+    logo.src = "http://prody.csb.pitt.edu/_static/signdylogo2.png";
   }
   else if (url.search("prs") > -1) {
     logo.src = "http://prody.csb.pitt.edu/_static/prslogo.png";
