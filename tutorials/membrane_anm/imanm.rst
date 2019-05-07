@@ -13,8 +13,8 @@ of reducing complexity within ENMs. To follow this tutorial, you will need the f
 
 These files can be downloaded from one of the following links:
 
-  * `membrane ANM Tutorial Files (TGZ) <membanm_anm_files.tgz>`_
-  * `membrane ANM Tutorial Files (ZIP) <membanm_anm_files.zip>`_
+  * `membrane ANM Tutorial Files (TGZ) <membrane_anm_files.tgz>`_
+  * `membrane ANM Tutorial Files (ZIP) <membrane_anm_files.zip>`_
 
 The first file contains the outward-facing structure of the glutamate transporter after insertion into the plasma membrane.  
 It is obtained from the `Orientations of Proteins in Membranes <http://opm.phar.umich.edu/>`_ database.
