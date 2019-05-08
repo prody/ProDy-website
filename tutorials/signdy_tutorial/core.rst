@@ -76,7 +76,7 @@ or the cross-correlations from the first 20.
  .. ipython:: python
 
    @savefig ens_gnms_signature_cross-corr.png width=4in
-   showSignatureCrossCorr(ens_gnms[:, :20]);
+   showSignatureCrossCorr(gnms[:, :20]);
 
 
 We can also look at distributions over values across different members of the ensemble 
@@ -98,7 +98,7 @@ like [SZ18]_.
     xlabel('');
 
     subplot(gs[1]);
-    showSignatureVariances(ens_gnms[:, :5], fraction=True, bins=80, alpha=0.7);
+    showSignatureVariances(gnms[:, :5], fraction=True, bins=80, alpha=0.7);
     xlabel('Mode weight');
 
     @savefig ens_gnms_signature_variance_mode1-5.png width=4in
@@ -111,5 +111,5 @@ Finally we save the mode ensemble for later processing:
 
 .. ipython:: python
 
-   saveModeEnsemble(nms, 'LeuT')
+   saveModeEnsemble(gnms, 'LeuT')
 
