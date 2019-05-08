@@ -103,7 +103,6 @@ like [SZ18]_.
 
     @savefig ens_gnms_signature_variance_mode1-5.png width=4in
 
-
 Saving the ModeEnsemble
 -------------------------------------------------------------------------------
 

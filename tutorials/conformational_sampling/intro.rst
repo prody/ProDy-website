@@ -16,9 +16,10 @@ files <conformational_sampling_files.zip>`_.
 Required Programs
 -------------------------------------------------------------------------------
 
-Latest version of ProDy_, Matplotlib_, and NAMD_ are required.
+Latest version of ProDy_, Matplotlib_, VMD_ and NAMD_ are required.
 
 .. _NAMD: http://www.ks.uiuc.edu/Research/namd/
+.. _VAMD: http://www.ks.uiuc.edu/Research/vmd/
 
 Recommended Programs
 -------------------------------------------------------------------------------
