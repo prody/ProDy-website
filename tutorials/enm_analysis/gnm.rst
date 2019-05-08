@@ -96,7 +96,6 @@ two of them, which by default are ``cutoff=10.0`` and ``gamma=1.0``, i.e.
    gnm.getCutoff()
    gnm.getGamma()
 
-
 Note that it is also possible to use an externally calculated Kirchhoff matrix.
 Just pass it to the GNM instance using :meth:`.GNM.setKirchhoff` method.
 
@@ -109,7 +108,6 @@ We now calculate normal modes from the Kirchhoff matrix.
 .. ipython:: python
 
    gnm.calcModes()
-
 
 Note that by default 20 non-zero (or non-trivial) modes and 1 trivial mode are
 calculated. Trivial modes are not retained. To calculate different numbers

@@ -40,7 +40,6 @@ We can write this ensemble in a :file:`.dcd` for visualization in VMD:
 
 .. ipython:: python
    :verbatim:
-
    writeDCD('p38all.dcd', ens)
 
 
