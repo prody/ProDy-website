@@ -46,7 +46,7 @@ copyright = u'2010-2015, University of Pittsburgh'
 
 # -- Options for HTML output ---------------------------------------------------
 
-html_favicon = 'manual/_static/favicon.ico'
+html_favicon = 'ProDy/docs/_static/favicon.ico'
 
 html_additional_pages = {
     'index': 'prody.html',
@@ -73,7 +73,7 @@ html_sidebars = {
 }
 
 # -- Options for LaTeX output --------------------------------------------------
-latex_logo = 'manual/_static/logo.png'
+latex_logo = 'ProDy/docs/_static/logo.png'
 
 lines = (line for line in rst_epilog.split('\n')
          if ('_Tut' not in line and '_NMW' not in line))
