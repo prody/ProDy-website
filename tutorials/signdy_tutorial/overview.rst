@@ -199,7 +199,7 @@ First we calculate the sequence distance matrix:
 
 .. ipython:: python
 
-    seqid_matrix = buildSeqidMatrix(ens.getMSA())
+    seqid_matrix = buildSeqidMatrix(dali_ens.getMSA())
     seqd_matrix = 1. - seqid_matrix
 
 We can visualize the matrix using :func:`.showMatrix`:
@@ -222,7 +222,7 @@ can calculate the structure-based tree:
 
 .. ipython:: python
 
-    rmsd_matrix = ens.getRMSDs(pairwise=True)
+    rmsd_matrix = dali_ens.getRMSDs(pairwise=True)
     @savefig signdy_dali_rmsd_matrix.png width=4in
     showMatrix(rmsd_matrix);
 
