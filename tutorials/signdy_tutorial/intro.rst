@@ -37,13 +37,14 @@ or with pylab environment::
   $ ipython --pylab
 
 
-First, we will make necessary imports from ProDy_ and Matplotlib_
+First, we will make necessary imports from the ProDy_, Numpy_ and Matplotlib_
 packages.
 
 .. ipython:: python
 
    from prody import *
-   from pylab import *
+   from numpy import *
+   from matplotlib.pyplot import *
    ion()
 
 We have included these imports in every part of the tutorial, so that
@@ -62,8 +63,8 @@ If you benefited from SignDy Calculations in your research,
 please cite the following paper:
 
 .. [SZ18] Zhang S, Li H, Krieger J, Bahar I. 
-   SignDy: Discovering the Signature Dynamics of Protein Families with Elastic Network Model 
-   Analysis. *(in preparation)* **2018**
+   Shared signature dynamics tempered by local fluctuations enables fold adaptability and specificity.
+   *Mol. Biol. Evol.* **2019** (In Press)
 
 .. [LH10] Holm L, Rosenström P.
     Dali server: conservation mapping in 3D.
