@@ -106,7 +106,3 @@ but you are also welcome to use the ensemble we created using above code.
 .. [YS13] Shi Y.
    Common folds and transport mechanisms of secondary active transporters.
    *Annu. Rev. Biophys.* **2013** 42:51-72
-
-.. [IS98] Shindyalov IN, Bourne PE.
-   Protein structure alignment by incremental combinatorial extension (CE) of the optimal path. 
-   *Protein engineering.* **1998** 11(9):739-47
