@@ -126,8 +126,8 @@ like [JK15]_.
 .. ipython:: python
 
    highlights = {'3h5vA_ca': 'GluA2','3o21C_ca': 'GluA3',
-             '3h6gA_ca': 'GluK2', '3olzA_ca': 'GluK3', 
-             '5kc8A_ca': 'GluD2'}
+                 '3h6gA_ca': 'GluK2', '3olzA_ca': 'GluK3', 
+                 '5kc8A_ca': 'GluD2'}
 
    @savefig signdy_dali_variance_mode1-5.png width=4in
    figure();
