@@ -168,8 +168,8 @@ We calculate the spectral overlap matrix, calculate a tree from its arccosine
    so_matrix = calcEnsembleSpectralOverlaps(gnms[:, :1])
    labels = gnms.getLabels()
    so_tree = calcTree(names=labels, 
-                  distance_matrix=arccos(so_matrix), 
-                  method='upgma')
+                      distance_matrix=arccos(so_matrix), 
+                      method='upgma')
 
 We can reorder the spectral overlap matrix using the tree as follows: 
 
