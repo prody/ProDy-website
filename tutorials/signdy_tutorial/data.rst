@@ -91,7 +91,7 @@ Finally we save the ensemble for later processing:
 
 .. ipython:: python
 
-   saveEnsemble(ens, 'LeuT')
+    saveEnsemble(ens, 'LeuT')
 
 A refiner alignment procedure was adopted in the [SZ18]_ paper. A representative structure is chosen 
 from each subtype of the proteins, e.g. LeuT, DAT, etc., and they are aligned to the LeuT representative 
@@ -104,5 +104,5 @@ but you are also welcome to use the ensemble we created using above code.
 .. _`list comprehension`: https://docs.python.org/2/tutorial/datastructures.html#list-comprehensions
 
 .. [YS13] Shi Y.
-   Common folds and transport mechanisms of secondary active transporters.
+    Common folds and transport mechanisms of secondary active transporters.
    *Annu. Rev. Biophys.* **2013** 42:51-72

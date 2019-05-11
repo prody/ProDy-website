@@ -42,10 +42,10 @@ packages.
 
 .. ipython:: python
 
-   from prody import *
-   from numpy import *
-   from matplotlib.pyplot import *
-   ion()
+    from prody import *
+    from numpy import *
+    from matplotlib.pyplot import *
+    ion()
 
 We have included these imports in every part of the tutorial, so that
 code copied from the online pages is complete. You do not need to repeat
@@ -63,7 +63,7 @@ If you benefited from SignDy Calculations in your research,
 please cite the following paper:
 
 .. [SZ18] Zhang S, Li H, Krieger J, Bahar I. 
-   Shared signature dynamics tempered by local fluctuations enables fold adaptability and specificity.
+    Shared signature dynamics tempered by local fluctuations enables fold adaptability and specificity.
    *Mol. Biol. Evol.* **2019** (In Press)
 
 .. [LH10] Holm L, Rosenström P.

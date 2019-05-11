@@ -12,9 +12,9 @@ already.
 
 .. ipython:: python
 
-   from prody import *
-   from pylab import *
-   ion()
+    from prody import *
+    from pylab import *
+    ion()
 
 
 Mode Ensemble
@@ -30,14 +30,14 @@ We first load the ensemble:
 
 .. ipython:: python
 
-   ens = loadEnsemble('LeuT.ens.npz')
+    ens = loadEnsemble('LeuT.ens.npz')
 
 Then we calculated first 20 GNM modes for each member of the ensemble:
 
 .. ipython:: python
 
-   gnms = calcEnsembleENMs(ens, model=GNM, trim='reduce', n_modes=20, match=True)
-   gnms
+    gnms = calcEnsembleENMs(ens, model=GNM, trim='reduce', n_modes=20, match=True)
+    gnms
 
 In this way, we will obtain one :class:`.ModeSet` for each member and 85 in total. 
 Finding a consistent order of modes across different mode sets is critical to the 
@@ -58,8 +58,8 @@ mode (second index 0). The first index of the mode ensemble is over conformation
 
  .. ipython:: python
 
-   @savefig ens_gnms_signature_mode1.png width=4in
-   showSignatureMode(gnms[:, 0]);
+    @savefig ens_gnms_signature_mode1.png width=4in
+    showSignatureMode(gnms[:, 0]);
 
 In the plot, the curve shows the mean values, the darker shade shows the standard 
 deviations, and the lighter shade shows the range (minimum and maximum values).
@@ -68,15 +68,15 @@ square fluctuations from the first 5 modes,
 
  .. ipython:: python
 
-   @savefig ens_gnms_signature_sqflucts_mode1-5.png width=4in
-   showSignatureSqFlucts(gnms[:, :5]);
+    @savefig ens_gnms_signature_sqflucts_mode1-5.png width=4in
+    showSignatureSqFlucts(gnms[:, :5]);
 
 or the cross-correlations from the first 20.
 
  .. ipython:: python
 
-   @savefig ens_gnms_signature_cross-corr.png width=4in
-   showSignatureCrossCorr(gnms[:, :20]);
+    @savefig ens_gnms_signature_cross-corr.png width=4in
+    showSignatureCrossCorr(gnms[:, :20]);
 
 
 We can also look at distributions over values across different members of the ensemble 
@@ -110,5 +110,5 @@ Finally we save the mode ensemble for later processing:
 
 .. ipython:: python
 
-   saveModeEnsemble(gnms, 'LeuT')
+    saveModeEnsemble(gnms, 'LeuT')
 
