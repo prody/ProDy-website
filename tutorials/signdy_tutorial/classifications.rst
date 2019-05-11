@@ -24,13 +24,13 @@ We first load the :class:`.PDBEnsemble`:
 
 .. ipython:: python
 
-   ens = loadEnsemble('LeuT.ens.npz')
+    ens = loadEnsemble('LeuT.ens.npz')
 
 Then we load the :class:`.ModeEnsemble`:
 
 .. ipython:: python
 
-   gnms = loadModeEnsemble('LeuT.modeens.npz')
+    gnms = loadModeEnsemble('LeuT.modeens.npz')
 
 Spectral overlap and distance
 -------------------------------------------------------------------------------
