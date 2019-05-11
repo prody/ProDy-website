@@ -71,3 +71,5 @@ please cite the following paper:
     *Nucleic Acids Res.* **2010** 10(38):W545-9
 
 .. _`Dali server`: http://ekhidna2.biocenter.helsinki.fi/dali/
+
+.. _`SignDy`: http://prody.csb.pitt.edu/test_prody/tutorials/signdy_tutorial/

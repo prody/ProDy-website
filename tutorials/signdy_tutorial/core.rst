@@ -112,3 +112,4 @@ Finally we save the mode ensemble for later processing:
 
     saveModeEnsemble(gnms, 'LeuT')
 
+.. _`SignDy`: http://prody.csb.pitt.edu/test_prody/tutorials/signdy_tutorial/
