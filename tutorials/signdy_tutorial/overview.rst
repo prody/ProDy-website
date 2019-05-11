@@ -44,7 +44,7 @@ to get a list of :class:`.AtomGroup` instances:
 
 .. ipython:: python
 
-   pdb_ids = dali_rec.getPDBs()
+   pdb_ids = dali_rec.filter(cutoff_len=0.7, cutoff_rmsd=1.0, cutoff_Z=10)
    mappings = dali_rec.getMappings()
 
 .. ipython:: python
