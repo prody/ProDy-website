@@ -79,8 +79,8 @@ contain comment lines. Now, lets start parsing SAXS data:
    Q_exp, I_q_exp, sigma_q=parseSaxsData('1ake_chainA_saxs_w_yerrorbars.dat', isLogScale=True)
 
 Sometimes, experimental intensities are saved in log scale as in our case.
-Therefore, we have to specify this information if the SAXS data is in log scale or not. 
-		
+Therefore, we have to specify this information if the SAXS data is in log scale or not.
+
 Compare SAXS profiles of known structure and experimental (or simulated) data
 -------------------------------------------------------------------------------
 We have to produce theoretical SAXS profile of the open conformation. We will
@@ -95,7 +95,7 @@ We will call :meth:`calcSaxsPerModel` to compute SAXS profile of our initial
 pdb file for each experimental q value. Therefore, we have to use Q_exp array
 we have just read from the experimental (or simulated) data file. Theoretical
 SAXS intensities will be saved to I_model array. We should note that the
-theoretical SAXS intensities are also produced in log scale. 
+theoretical SAXS intensities are also produced in log scale.
 
 .. ipython:: python
 

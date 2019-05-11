@@ -33,13 +33,13 @@ We will use the :func:`.sampleModes` function:
    ens = sampleModes(p38_anm_ext, atoms=p38.protein, n_confs=40, rmsd=1.0)
    ens
 
-This will produce 40 (``n_confs``) conformations with have an average RMSD of 1.0 Å from the input structure.
+This will produce 40 (``n_confs``) conformations with have an
+average RMSD of 1.0 Å from the input structure.
 
 We can write this ensemble in a :file:`.dcd` for visualization in VMD:
 
 .. ipython:: python
    :verbatim:
-   
    writeDCD('p38all.dcd', ens)
 
 

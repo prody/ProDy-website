@@ -23,34 +23,34 @@ First, make necessary imports from ProDy and Matplotlib packages if you haven't 
 
 .. ipython:: python
 
-    from prody import *
-    from pylab import *
-    ion()
+   from prody import *
+   from pylab import *
+   ion()
 
-Prepare ensemble (via Dali)
+Prepare ensemble (using Dali)
 -------------------------------------------------------------------------------
 
 First we use the function :func:`.searchDali` to search the PDB, which returns a 
-:class:`.DaliRecord` that contains a list of PDB IDs and their corresponding 
+:class:`.DaliRecord` object that contains a list of PDB IDs and their corresponding 
 mappings to the reference structure. 
 
 .. ipython:: python
 
-    dali_rec = searchDali('3H5V','A')
-    dali_rec
+   dali_rec = searchDali('3H5V','A')
+   dali_rec
 
 Next, we get the lists of PDB IDs and mappings from *dali_rec*, parse the *pdb_ids* 
 to get a list of :class:`.AtomGroup` instances:
 
 .. ipython:: python
 
-    pdb_ids = dali_rec.getPDBs()
-    mappings = dali_rec.getMappings()
+   pdb_ids = dali_rec.filter(cutoff_len=0.7, cutoff_rmsd=1.0, cutoff_Z=10)
+   mappings = dali_rec.getMappings()
 
 .. ipython:: python
 
-    pdbs = parsePDB(*pdb_ids, subset='ca')
-    len(pdbs)
+   pdbs = parsePDB(*pdb_ids, subset='ca')
+   len(pdbs)
 
 Then we provide *pdbs* together with *mappings* to :func:`.buildPDBEnsemble`. We 
 set the keyword argument ``seqid=20`` to account for the low sequence identity 
@@ -58,8 +58,8 @@ between some of the structures.
 
 .. ipython:: python
 
-    dali_ens = buildPDBEnsemble(pdbs, mapping=mappings, seqid=20)
-    dali_ens
+   dali_ens = buildPDBEnsemble(pdbs, mapping=mappings, seqid=20)
+   dali_ens
 
 Finally we save the ensemble for later processing:
 
@@ -71,7 +71,8 @@ Mode ensemble
 -------------------------------------------------------------------------------
 
 For this analysis we'll build a :class:`.ModeEnsemble` by calculating normal 
-modes for each member of the :class:`.PDBEnsemble`. First, we load the ensemble:
+modes for each member of the :class:`.PDBEnsemble`. You can load a PDB ensemble at this stage if you already have one. 
+We demonstrate this for the one we just saved.
 
 .. ipython:: python
 
@@ -80,7 +81,7 @@ modes for each member of the :class:`.PDBEnsemble`. First, we load the ensemble:
 Then we calculated :class:`.GNM` modes for each member of the ensemble. There 
 are options to select the *model* (:class:`.GNM` by default) and the way of 
 considering non-aligned residues by setting the *trim* option (default is 
-:func:`.reduceModel`, which treats them as environment). :
+:func:`.reduceModel`, which treats them as environment).
 
 .. ipython:: python
 
@@ -97,48 +98,48 @@ such as mode shapes and mean square fluctations.
 For example, we can show the average and standard deviation of the shape of the first 
 mode (second index 0). The first index of the mode ensemble is over conformations.
 
- .. ipython:: python
+.. ipython:: python
 
    @savefig signdy_dali_mode1.png width=4in
    showSignatureMode(gnms[:, 0]);
 
 
-We can also show such things for properties involving multiple modes such as the mean 
+We can also show such results for properties involving multiple modes such as the mean 
 square fluctuations from the first 5 modes or the cross-correlations from the first 20.
 
- .. ipython:: python
+.. ipython:: python
 
    @savefig signdy_dali_mode1-5.png width=4in
    showSignatureSqFlucts(gnms[:, :5]);
 
 
- .. ipython:: python
+.. ipython:: python
 
    @savefig signdy_dali_cross-corr.png width=4in
-   showSignatureCrossCorr(gnms[:,:20]);
+   showSignatureCrossCorr(gnms[:, :20]);
 
 
 We can also look at distributions over values across different members of the ensemble 
 such as inverse eigenvalue. We can show a bar above this with individual members labelled 
-like [KB15]_.
+like [JK15]_.
 
- .. ipython:: python
+.. ipython:: python
 
-    highlights = {'3h5vA_ca': 'GluA2','3o21C_ca': 'GluA3',
+   highlights = {'3h5vA_ca': 'GluA2','3o21C_ca': 'GluA3',
                  '3h6gA_ca': 'GluK2', '3olzA_ca': 'GluK3', 
                  '5kc8A_ca': 'GluD2'}
 
-    @savefig signdy_dali_variance_mode1-5.png width=4in
-    figure();
-    gs = GridSpec(ncols=1, nrows=2, height_ratios=[1, 10], hspace=0.15)
+   @savefig signdy_dali_variance_mode1-5.png width=4in
+   figure();
+   gs = GridSpec(ncols=1, nrows=2, height_ratios=[1, 10], hspace=0.15)
 
-    subplot(gs[0]);
-    showVarianceBar(gnms[:, :5], fraction=True, highlights=highlights);
-    xlabel('');
+   subplot(gs[0]);
+   showVarianceBar(gnms[:, :5], fraction=True, highlights=highlights);
+   xlabel('');
 
-    subplot(gs[1]);
-    showSignatureVariances(gnms[:, :5], fraction=True, bins=80, alpha=0.7);
-    xlabel('Fraction of inverse eigenvalue');
+   subplot(gs[1]);
+   showSignatureVariances(gnms[:, :5], fraction=True, bins=80, alpha=0.7);
+   xlabel('Fraction of inverse eigenvalue');
 
 Finally we save the mode ensemble for later processing:
 
@@ -164,27 +165,27 @@ We calculate the spectral overlap matrix, calculate a tree from its arccosine
 
 .. ipython:: python
 
-    so_matrix = calcEnsembleSpectralOverlaps(gnms[:, :1])
-    labels = gnms.getLabels()
-    so_tree = calcTree(names=labels, 
-                       distance_matrix=arccos(so_matrix), 
-                       method='upgma')
+   so_matrix = calcEnsembleSpectralOverlaps(gnms[:, :1])
+   labels = gnms.getLabels()
+   so_tree = calcTree(names=labels, 
+                      distance_matrix=arccos(so_matrix), 
+                      method='upgma')
 
 We can reorder the spectral overlap matrix using the tree as follows: 
 
 .. ipython:: python
 
-    reordered_so, new_so_indices = reorderMatrix(so_matrix, 
-                                                 so_tree, 
-                                                 names=labels)
+   reordered_so, new_so_indices = reorderMatrix(so_matrix, 
+                                     so_tree, 
+                                     names=labels)
 
 Both :class:`.PDBEnsemble` and :class:`.ModeEnsemble` objects can be reordered 
 based on the new indices:
 
 .. ipython:: python
 
-    reordered_ens = dali_ens[new_so_indices]
-    reordered_gnms = gnms[new_so_indices, :]
+   reordered_ens = dali_ens[new_so_indices]
+   reordered_gnms = gnms[new_so_indices, :]
 
 
 Compare with sequence and structural distances
@@ -199,61 +200,61 @@ First we calculate the sequence distance matrix:
 
 .. ipython:: python
 
-    seqid_matrix = buildSeqidMatrix(ens.getMSA())
-    seqd_matrix = 1. - seqid_matrix
+   seqid_matrix = buildSeqidMatrix(dali_ens.getMSA())
+   seqd_matrix = 1. - seqid_matrix
 
 We can visualize the matrix using :func:`.showMatrix`:
 
 .. ipython:: python
 
-    @savefig signdy_dali_seqd_matrix.png width=4in
-    showMatrix(seqd_matrix);
+   @savefig signdy_dali_seqd_matrix.png width=4in
+   showMatrix(seqd_matrix);
 
 We can also construct a tree based on the distance matrix:
 
 .. ipython:: python
 
-    seqd_tree = calcTree(names=labels, 
-                         distance_matrix=seqd_matrix, 
-                         method='upgma')
+   seqd_tree = calcTree(names=labels, 
+                        distance_matrix=seqd_matrix, 
+                        method='upgma')
 
 Similarily, once we obtain the RMSD matrix using :meth:`.PDBEnsemble.getRMSD`, we 
 can calculate the structure-based tree:
 
 .. ipython:: python
 
-    rmsd_matrix = ens.getRMSDs(pairwise=True)
-    @savefig signdy_dali_rmsd_matrix.png width=4in
-    showMatrix(rmsd_matrix);
+   rmsd_matrix = dali_ens.getRMSDs(pairwise=True)
+   @savefig signdy_dali_rmsd_matrix.png width=4in
+   showMatrix(rmsd_matrix);
 
-    rmsd_tree = calcTree(names=labels, 
-                         distance_matrix=rmsd_matrix, 
-                         method='upgma')
+   rmsd_tree = calcTree(names=labels, 
+                        distance_matrix=rmsd_matrix, 
+                        method='upgma')
 
 It could be of interest to put all three trees constructed based on different 
 distance metrics side by side and compare them:
 
 .. ipython:: python
 
-    @savefig signdy_trees.png width=4in
-    figure();
-    subplot(1, 3, 1);
-    showTree(seqd_tree, format='plt');
-    title('Sequence');
-    subplot(1, 3, 2);
-    showTree(rmsd_tree, format='plt');
-    title('Structure');
-    subplot(1, 3, 3);
-    showTree(so_tree, format='plt');
-    title('Dynamics');
+   @savefig signdy_trees.png width=4in
+   figure();
+   subplot(1, 3, 1);
+   showTree(seqd_tree, format='plt');
+   title('Sequence');
+   subplot(1, 3, 2);
+   showTree(rmsd_tree, format='plt');
+   title('Structure');
+   subplot(1, 3, 3);
+   showTree(so_tree, format='plt');
+   title('Dynamics');
 
 This analysis is quite sensitive to how many modes are used. As the number of modes approaches the full number, 
 the dynamic distance order approaches the RMSD order. With smaller numbers, we see finer distinctions. This is 
 particularly clear in the current case where we used just one mode.
 
-.. [KB15] Krieger J, Bahar I, Greger IH.
-    Structure, Dynamics, and Allosteric Potential of Ionotropic Glutamate Receptor N-Terminal Domains.
-    *Biophys. J.* **2015** 109(6):1136-48
+.. [JK15] Krieger J, Bahar I, Greger IH.
+   Structure, Dynamics, and Allosteric Potential of Ionotropic Glutamate Receptor N-Terminal Domains.
+   *Biophys. J.* **2015** 109(6):1136-48
 
 .. _`Structure Analysis Tutorial`: http://prody.csb.pitt.edu/tutorials/structure_analysis/blastpdb.html
 .. _`list_comprehensions`: https://docs.python.org/2/tutorial/datastructures.html#list-comprehensions

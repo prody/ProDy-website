@@ -45,7 +45,7 @@ chain A in each structure:
 
 .. ipython:: python
 
-    LeuTs = [leut + 'A' for leut in LeuTs]
+    LeuTs = [protID + 'A' for protID in LeuTs]
 
 Note that in the above line, we use `list comprehension`_ to add a letter 'A' to each PDB 
 identifier in the list. We define other LeuT folds similarily:
@@ -54,13 +54,16 @@ identifier in the list. We define other LeuT folds similarily:
 
     DATs = ['4M48', '4XNU', '4XNX', '4XP1', '4XP4', '4XP5', '4XP6', 
             '4XP9', '4XPA', '4XPB', '4XPF', '4XPG', '4XPH', '4XPT']
-    MhsTs = ['4US4', '4US3']
-    vSGLTs = ['2XQ2']
+    DATs = [protID + 'A' for protID in DATs]
+    MhsTs = ['4US4A', '4US3A']
+    vSGLTs = ['2XQ2A']
     Mhp1s = ['2JLN', '2X79', '4D1A', '4D1B', '4D1C', '4D1D']
+    Mhp1s = [protID + 'A' for protID in Mhp1s]
     BetPs = ['2WITA', '2WITB', '2WITC', '3P03A', '3P03B', '3P03C', 
              '4AINA', '4AINB', '4AINC', '4C7RA', '4C7RB', '4C7RC', 
              '4DOJA', '4DOJB', '4DOJC', '4LLHA', '4LLHB', '4LLHC']
     AdiCs = ['3L1L', '3LRB', '3LRC', '3NCY', '3OB6', '5J4I', '5J4N']
+    AdiCs = [protID + 'A' for protID in AdiCs]
     CaiTs = ['4M8JA', '2WSXA', '2WSXB', '2WSXC', '2WSWA', '3HFXA']
 
 :func:`.parsePDB` allows us to parse multiple structures all at once, and we can use it to 
@@ -70,25 +73,25 @@ purpose, so we set ``subset='ca'``:
 .. ipython:: python
 
     pdb_ids = LeuTs + DATs + MhsTs + vSGLTs + Mhp1s + BetPs + AdiCs + CaiTs
-    pdbs = parsePDB(*pdb_ids, subset='ca')
+    pdbs = parsePDB(*pdb_ids)
     len(pdbs)
 
 Any element in the list *pdbs* should be an :class:`.AtomGroup` instance. We can conveniently 
 feed this list to :func:`.buildPDBEnsemble` and let it build an :class:`.PDBEnsemble` for downstream 
 analyses. We use set ``mapping=ce`` to tell the function to use a structure alignment algorithm, 
-CEalign [IS98]_, for building the ensemble. We also set ``seqid=0`` to make sure we apply no 
-threshold of sequence identity to the building process.
+CEalign [IS98]_, for building the ensemble. We also set ``seqid=0`` and ``overlap=0`` to make sure 
+we apply no threshold of sequence identity or coverage/overlap to the building process. 
 
 .. ipython:: python
 
-    ens = buildPDBEnsemble(pdbs, mapping='ce', seqid=0, title='LeuT')
+    ens = buildPDBEnsemble(pdbs, mapping='ce', seqid=0, overlap=0, title='LeuT', subset='ca')
     ens
 
 Finally we save the ensemble for later processing:
 
 .. ipython:: python
 
-   saveEnsemble(ens, 'LeuT')
+    saveEnsemble(ens, 'LeuT')
 
 A refiner alignment procedure was adopted in the [SZ18]_ paper. A representative structure is chosen 
 from each subtype of the proteins, e.g. LeuT, DAT, etc., and they are aligned to the LeuT representative 
@@ -101,9 +104,5 @@ but you are also welcome to use the ensemble we created using above code.
 .. _`list comprehension`: https://docs.python.org/2/tutorial/datastructures.html#list-comprehensions
 
 .. [YS13] Shi Y.
-   Common folds and transport mechanisms of secondary active transporters.
-   *Annu. Rev. Biophys.* **2013** 42:51-72
-
-.. [IS98] Shindyalov IN, Bourne PE.
-   Protein structure alignment by incremental combinatorial extension (CE) of the optimal path. 
-   *Protein engineering.* **1998** 11(9):739-47
+    Common folds and transport mechanisms of secondary active transporters.
+    *Annu. Rev. Biophys.* **2013** 42:51-72
