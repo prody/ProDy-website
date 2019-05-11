@@ -50,7 +50,7 @@ the reference :class:`.ModeSet`, which is the first :class:`.ModeSet` in the
 Signature Dynamics
 -------------------------------------------------------------------------------
 
-:class:`.Signature`s are calculated as the mean and standard deviation of various 
+Signature dynamics are calculated as the mean and standard deviation of various 
 properties such as mode shapes and mean square fluctations.
 
 For example, we can show the average and standard deviation of the shape of the first 
