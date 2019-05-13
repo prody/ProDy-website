@@ -1,5 +1,5 @@
-exec(open('../../conf.py').read())
-sys.path.append(os.path.abspath('../../manual/sphinxext'))
+exec(open('../conf.py').read())
+sys.path.append(os.path.abspath('../manual/sphinxext'))
 
 # needed when building PDF files for tutorials separately
 intersphinx_mapping['prodywebsite'] = ('http://prody.csb.pitt.edu', None)
