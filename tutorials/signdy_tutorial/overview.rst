@@ -88,6 +88,17 @@ considering non-aligned residues by setting the *trim* option (default is
    gnms = calcEnsembleENMs(dali_ens, model='GNM', trim='reduce')
    gnms
 
+We can also save the mode ensemble as follows:
+
+.. ipython:: python
+
+   saveModeEnsemble(gnms, 'PBP-I')
+
+We can load in a mode ensemble at this point as follows:
+
+.. ipython:: python
+
+   gnms = loadModeEnsemble('PBP-I.modeens.npz')
 
 Signature dynamics
 -------------------------------------------------------------------------------
@@ -123,11 +134,21 @@ We can also look at distributions over values across different members of the en
 such as inverse eigenvalue. We can show a bar above this with individual members labelled 
 like [JK15]_.
 
+We can select particular members to highlight with arrows 
+by putting their names and labels in a dictionary:
+
 .. ipython:: python
 
    highlights = {'3h5vA_ca': 'GluA2','3o21C_ca': 'GluA3',
                  '3h6gA_ca': 'GluK2', '3olzA_ca': 'GluK3', 
                  '5kc8A_ca': 'GluD2'}
+
+We plot the variance bar for the first five modes (showing a function of the inverse 
+eigenvalues related to the resultant relative size of motion) above the inverse eigenvalue 
+distributions for each of those modes. To arrange the plots like this, we use the 
+`~matplotlib.pyplot.GridSpec` method of Matplotlib.
+
+.. ipython:: python
 
    @savefig signdy_dali_variance_mode1-5.png width=4in
    figure();
@@ -141,43 +162,49 @@ like [JK15]_.
    showSignatureVariances(gnms[:, :5], fraction=True, bins=80, alpha=0.7);
    xlabel('Fraction of inverse eigenvalue');
 
-Finally we save the mode ensemble for later processing:
-
-.. ipython:: python
-
-   saveModeEnsemble(gnms, 'PBP-I')
-
 
 Spectral overlap and distance
 -------------------------------------------------------------------------------
 
-Spectral overlap is also known as covariance overlap as defined in [BH02]_. 
-Covariance overlap measures the distance between two covariance matrices, but in 
-our case, we will generalize it to calculate the overlap of a subset of the modes 
-(or spectrum). We first load the :class:`.ModeEnsemble`:
-
-.. ipython:: python
-
-   gnms = loadModeEnsemble('PBP-I.modeens.npz')
-
-We calculate the spectral overlap matrix, calculate a tree from its arccosine 
-(to convert the overlap to distance):
+Spectral overlap, also known as covariance overlap as defined in [BH02]_,
+measures the overlap between two covariance matrices,
+or the overlap of a subset of the modes (a mode spectrum).
 
 .. ipython:: python
 
    so_matrix = calcEnsembleSpectralOverlaps(gnms[:, :1])
+
+.. ipython:: python
+
+   @savefig signdy_dali_so_matrix_mode1.png width=4in
+   showMatrix(so_matrix);
+
+We can then calculate a tree from its arccosine,
+which converts the overlaps to distances:
+
+.. ipython:: python
+
    labels = gnms.getLabels()
    so_tree = calcTree(names=labels, 
                       distance_matrix=arccos(so_matrix), 
                       method='upgma')
 
-We can reorder the spectral overlap matrix using the tree as follows: 
+This tree can be displaced using the `:func:.showTree` function.
+The default format is ASCII text but we can change it to `plt`
+to get a figure:
+
+.. ipython:: python
+
+   @savefig signdy_dali_so_tree_mode1.png width=4in
+   showTree(so_tree, 'plt');
+
+We can reorder the spectral overlap matrix using the tree as follows:
 
 .. ipython:: python
 
    reordered_so, new_so_indices = reorderMatrix(so_matrix, 
-                                     so_tree, 
-                                     names=labels)
+                                                so_tree, 
+                                                names=labels)
 
 Both :class:`.PDBEnsemble` and :class:`.ModeEnsemble` objects can be reordered 
 based on the new indices:
@@ -188,7 +215,7 @@ based on the new indices:
    reordered_gnms = gnms[new_so_indices, :]
 
 
-Compare with sequence and structural distances
+Comparing with sequence and structural distances
 -------------------------------------------------------------------------------
 
 The sequence distance is given by the (normalized) Hamming distance, which is 
@@ -201,21 +228,21 @@ First we calculate the sequence distance matrix:
 .. ipython:: python
 
    seqid_matrix = buildSeqidMatrix(dali_ens.getMSA())
-   seqd_matrix = 1. - seqid_matrix
+   seqdist_matrix = 1. - seqid_matrix
 
 We can visualize the matrix using :func:`.showMatrix`:
 
 .. ipython:: python
 
-   @savefig signdy_dali_seqd_matrix.png width=4in
-   showMatrix(seqd_matrix);
+   @savefig signdy_dali_seqdist_matrix.png width=4in
+   showMatrix(seqdist_matrix);
 
-We can also construct a tree based on the distance matrix:
+We can also construct a tree based on this distance matrix:
 
 .. ipython:: python
 
-   seqd_tree = calcTree(names=labels, 
-                        distance_matrix=seqd_matrix, 
+   seqdist_tree = calcTree(names=labels, 
+                        distance_matrix=seqdist_matrix, 
                         method='upgma')
 
 Similarily, once we obtain the RMSD matrix using :meth:`.PDBEnsemble.getRMSD`, we 
@@ -239,7 +266,7 @@ distance metrics side by side and compare them:
    @savefig signdy_trees.png width=4in
    figure();
    subplot(1, 3, 1);
-   showTree(seqd_tree, format='plt');
+   showTree(seqdist_tree, format='plt');
    title('Sequence');
    subplot(1, 3, 2);
    showTree(rmsd_tree, format='plt');
