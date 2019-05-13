@@ -245,7 +245,7 @@ We can also construct a tree based on this distance matrix:
                         distance_matrix=seqdist_matrix, 
                         method='upgma')
 
-Similarily, once we obtain the RMSD matrix using :meth:`.PDBEnsemble.getRMSD`, we 
+Similarily, once we obtain the RMSD matrix using :meth:`.PDBEnsemble.getRMSDs`, we 
 can calculate the structure-based tree:
 
 .. ipython:: python
