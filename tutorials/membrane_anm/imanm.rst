@@ -113,12 +113,12 @@ We can read blocks from ``2nwl_blocks.txt`` into the array ``blocks`` as follows
 
    blk='2nwl_blocks.txt'
    with open(blk) as inp:
-       for line in inp:
-          b, n1, c1, r1, n2, c2, r2 = line.split()
-          sel = of_ca.select('chain {} and resnum {} to {}'
-                          .format(c1, r1, r2))
-          if sel != None:
-              sel.setBetas(b)
+      for line in inp:
+         b, n1, c1, r1, n2, c2, r2 = line.split()
+         sel = of_ca.select('chain {} and resnum {} to {}'
+                            .format(c1, r1, r2))
+         if sel != None:
+            sel.setBetas(b)
 
 
    of_blocks = of_ca.getBetas()
@@ -127,20 +127,19 @@ We will do the same for the blocks of the inward-facing structure.  The block de
 
 .. ipython:: python
 
-   blk='3kbc_blocks.txt'
+   blk = '3kbc_blocks.txt'
    ag = of_ca.getAtomGroup()
    ag.setData('block', 0)
    with open(blk) as inp:
-       for line in inp:
-           b, n1, c1, r1, n2, c2, r2 = line.split()
-           sel = if_ca.select('chain {} and resnum {} to {}'
-                              .format(c1, r1, r2))
-           if sel != None:
-               sel.setData('block', b)
+      for line in inp:
+         b, n1, c1, r1, n2, c2, r2 = line.split()
+         sel = if_ca.select('chain {} and resnum {} to {}'
+                            .format(c1, r1, r2))
+         if sel != None:
+            sel.setData('block', b)
 
 
    if_blocks = if_ca.getData('block')
-
 
 
 
