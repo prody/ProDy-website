@@ -258,22 +258,22 @@ can calculate the structure-based tree:
                         distance_matrix=rmsd_matrix, 
                         method='upgma')
 
-It could be of interest to put all three trees constructed based on different 
+We could plot the three trees one by one. Or, it could be of interest to put all three trees constructed based on different 
 distance metrics side by side and compare them:
 
 .. ipython:: python
 
-   @savefig signdy_trees.png width=4in
-   figure();
-   subplot(1, 3, 1);
-   showTree(seqdist_tree, format='plt');
-   title('Sequence');
-   subplot(1, 3, 2);
-   showTree(rmsd_tree, format='plt');
-   title('Structure');
-   subplot(1, 3, 3);
-   showTree(so_tree, format='plt');
-   title('Dynamics');
+   @savefig signdy_seqdist_tree.png width=4in
+   showTree(seqdist_tree, format='plt')
+   title('Sequence')
+   
+   @savefig signdy_rmsd_tree.png width=4in
+   showTree(rmsd_tree, format='plt')
+   title('Structure')
+   
+   @savefig signdy_so_tree.png width=4in
+   showTree(so_tree, format='plt')
+   title('Dynamics')
 
 This analysis is quite sensitive to how many modes are used. As the number of modes approaches the full number, 
 the dynamic distance order approaches the RMSD order. With smaller numbers, we see finer distinctions. This is 
