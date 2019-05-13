@@ -40,8 +40,6 @@ coMD Plugin
 Collective Molecular Dynamics (coMD) plugin, shown below, has a panel to
 setup, collective molecular dynamics simulations:
 
-  * :ref:`setup`
-
 .. figure:: ../../_static/figures/comd_setup_gui.png
    :scale: 80%
 

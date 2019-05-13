@@ -112,23 +112,25 @@ We can read blocks from ``2nwl_blocks.txt`` into the array ``blocks`` as follows
 .. ipython:: python
 
    blk='2nwl_blocks.txt'
+   ag = of_ca.getAtomGroup()
+   ag.setData('block', 0)
    with open(blk) as inp:
       for line in inp:
          b, n1, c1, r1, n2, c2, r2 = line.split()
          sel = of_ca.select('chain {} and resnum {} to {}'
                             .format(c1, r1, r2))
          if sel != None:
-            sel.setBetas(b)
+            sel.setData('block', b)
 
 
-   of_blocks = of_ca.getBetas()
+   of_blocks = of_ca.getData('block')
 
 We will do the same for the blocks of the inward-facing structure.  The block definitions are based on secondary structures, which vary slightly between the structures.  We therefore have two separate blocking schemes.
 
 .. ipython:: python
 
    blk = '3kbc_blocks.txt'
-   ag = of_ca.getAtomGroup()
+   ag = if_ca.getAtomGroup()
    ag.setData('block', 0)
    with open(blk) as inp:
       for line in inp:
