@@ -59,11 +59,16 @@ using the option *origin='upper'*.
 .. ipython:: python
 
     @savefig ens_gnms_so_matrix.png width=4in
-    showMatrix(arccos(so_matrix), origin='upper');
+    showMatrix(arccos(so_matrix), origin='upper')
+	plt.close('all')
+	
     @savefig ens_gnms_so_tree.png width=4in
-    showTree(so_tree, format='plt');
+    showTree(so_tree, format='plt')
+	plt.close('all')
+	
     @savefig ens_gnms_so_reordered_so_matrix.png width=4in
-    showMatrix(arccos(reordered_so), origin='upper');
+    showMatrix(arccos(reordered_so), origin='upper')
+	plt.close('all')
 
 
 Sequence and structural distances
@@ -79,39 +84,45 @@ the PDB ensemble.
     seqid_matrix = buildSeqidMatrix(ens.getMSA())
     seqd_matrix = 1. - seqid_matrix
     @savefig ens_gnms_seqd_matrix.png width=4in
-    showMatrix(seqd_matrix, origin='upper');
+    showMatrix(seqd_matrix, origin='upper')
+	plt.close('all')
 
-    plt.figure();
+    plt.figure()
     seqd_tree = calcTree(names=labels, 
                          distance_matrix=seqd_matrix, 
                          method='upgma')
     @savefig ens_gnms_seqd_tree.png width=4in
-    showTree(seqd_tree, format='plt');
+    showTree(seqd_tree, format='plt')
+	plt.close('all')
 
     reordered_seqd, indices = reorderMatrix(seqd_matrix, seqd_tree, 
                                             names=labels)
     plt.figure();
     @savefig ens_gnms_seqd_reordered_seqd_matrix.png width=4in
     showMatrix(reordered_seqd, origin='upper');
+	plt.close('all')
 
 .. ipython:: python
 
     rmsd_matrix = ens.getRMSDs(pairwise=True)
     @savefig ens_gnms_rmsd_matrix.png width=4in
-    showMatrix(rmsd_matrix, origin='upper');
+    showMatrix(rmsd_matrix, origin='upper')
+	plt.close('all')
 
-    plt.figure();
+    plt.figure()
     rmsd_tree = calcTree(names=labels, 
                          distance_matrix=rmsd_matrix, 
                          method='upgma')
     @savefig ens_gnms_rmsd_tree.png width=4in
-    showTree(rmsd_tree, format='plt');
+    showTree(rmsd_tree, format='plt')
+	plt.close('all')
 
-    plt.figure();
+    plt.figure()
     reordered_rmsd, indices = reorderMatrix(rmsd_matrix, rmsd_tree, 
                                             names=labels)
     @savefig ens_gnms_rmsd_reordered_rmsd_matrix.png width=4in
-    showMatrix(reordered_rmsd, origin='upper');
+    showMatrix(reordered_rmsd, origin='upper')
+	plt.close('all')
 
 
 Comparing sequence, structural and dynamic classifications
@@ -129,11 +140,15 @@ We can reorder the seqd and sod matrices by the RMSD tree too to compare them:
 .. ipython:: python
 
     @savefig ens_gnms_rmsd_reordered_seqd_matrix.png width=4in
-    showMatrix(reordered_seqd, origin='upper');
+    showMatrix(reordered_seqd, origin='upper')
+	plt.close('all')
+
     @savefig ens_gnms_rmsd_reordered_rmsd_matrix.png width=4in
-    showMatrix(reordered_rmsd, origin='upper');
+    showMatrix(reordered_rmsd, origin='upper')
+	plt.close('all')
+
     @savefig ens_gnms_rmsd_reordered_sod_matrix.png width=4in
-    showMatrix(arccos(reordered_sod), origin='upper');
+    showMatrix(arccos(reordered_sod), origin='upper')
 
 
 This analysis is quite sensitive to how many modes are used. As the number of modes approaches the full number, 
