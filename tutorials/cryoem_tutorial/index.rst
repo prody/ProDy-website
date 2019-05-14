@@ -10,7 +10,7 @@ Cryo-EM Analysis
 
     You can also read this tutorial in `PDF format <cryoem_analysis.pdf>`_.
 
-    Tutorial files: `ZIP <cryoem_analysis.zip>`_ `TGZ <cryoem_analysis.tgz>`_
+    Tutorial files: `ZIP <cryoem_tutorial_files.zip>`_ `TGZ <cryoem_tutorial_files.tgz>`_
 
 .. add .rst files to `toctree` in the order that you want them
 
