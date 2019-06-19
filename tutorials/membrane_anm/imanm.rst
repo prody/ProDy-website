@@ -67,7 +67,7 @@ As a last step in preparation, we can align the structures so that we can calcul
 
 Assigning Blocks
 -------------------------------------------------------------------------------
-ProDy's RTB method can be used for any system, whether or not a membrane is involved. imANM is an extension of RTB and they are in the same part of ProDy. 
+imANM is an extension of ProDy's RTB method, which can be used for any system, whether or not a membrane is involved. 
 The RTB method allows us to decompose the protein into pre-defined rigid blocks. Atoms within a block do not move relative to each other (hence the descriptor "rigid"), 
 but blocks can move relative to other blocks. There are two main benefits of using blocks: First, the Hessian for a good blocking scheme is smaller 
 than the Hessian for an all-residue representation, so the modes can be calculated more quickly. This is particularly useful when one is considering very large systems 
@@ -144,12 +144,12 @@ We will do the same for the blocks of the inward-facing structure.  The block de
 
 Calculating the Modes
 -------------------------------------------------------------------------------
-To use the blocks in an RTB ANM calculation, we instantiate an RTB object for each structure:
+To use the blocks in an RTB imANM calculation, we instantiate an imANM object for each structure:
 
 .. ipython:: python
 
-   of_rtb = RTB('2nwl')
-   if_rtb = RTB('3kbc')
+   of_rtb = imANM('2nwl')
+   if_rtb = imANM('3kbc')
 
 and we build a couple of Hessians using the coordinates of the crystal structures
 
