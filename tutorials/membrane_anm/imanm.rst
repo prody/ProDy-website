@@ -157,8 +157,8 @@ and we build a couple of Hessians using the coordinates of the crystal structure
 
    of_coords = of_ca.getCoords()
    if_coords = if_ca.getCoords()
-   of_rtb.buildHessian(of_coords, of_blocks, cutoff=11.0, scale=16., membrane_low=-1000.0, membrane_high=1000.0)
-   if_rtb.buildHessian(if_coords, if_blocks, cutoff=11.0, scale=16., membrane_low=-1000.0, membrane_high=1000.0)
+   of_rtb.buildHessian(of_coords, of_blocks, cutoff=11.0, scale=16.)
+   if_rtb.buildHessian(if_coords, if_blocks, cutoff=11.0, scale=16.)
 
 The scaling factor of 16 in this example means that the restoring force for any displacement in the x- or y-direction is 16 times greater than the force associated with a displacement in the z-direction.  The constraint on motions parallel to the membrane surface implicitly incorporates the membrane's effects into ANM.  To use RTB with no membrane effects, set ``scale=1.0`` (which is also the default value).  We have here set the boundaries of the membrane to extend well beyond the protein, effectively applying the implicit membrane scaling to the entire protein.
 
