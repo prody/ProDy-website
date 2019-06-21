@@ -6,9 +6,9 @@ still in the same python session.
 
 .. ipython:: python
 
-   from prody import *
-   from pylab import *
-   ion()
+    from prody import *
+    from pylab import *
+    ion()
 
 You can load the model again if you are starting a new session as follows:
 

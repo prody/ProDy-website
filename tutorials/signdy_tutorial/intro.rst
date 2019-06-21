@@ -42,18 +42,14 @@ packages.
 
 .. ipython:: python
 
-   from prody import *
-   from numpy import *
-   from matplotlib.pyplot import *
-   ion()
+    from prody import *
+    from numpy import *
+    from matplotlib.pyplot import *
+    ion()
 
 We have included these imports in every part of the tutorial, so that
 code copied from the online pages is complete. You do not need to repeat
 imports in the same Python session.
-
-To follow this tutorial, you will need following files:
-
-`ZIP <signdy_tutorial_files.zip>`_ `TGZ <signdy_tutorial_files.tgz>`_
 
 
 How to Cite
@@ -63,11 +59,13 @@ If you benefited from SignDy Calculations in your research,
 please cite the following paper:
 
 .. [SZ18] Zhang S, Li H, Krieger J, Bahar I. 
-   Shared signature dynamics tempered by local fluctuations enables fold adaptability and specificity.
-   *Mol. Biol. Evol.* **2019** (In Press)
+    Shared signature dynamics tempered by local fluctuations enables fold adaptability and specificity.
+    *Mol. Biol. Evol.* **2019** (In Press)
 
 .. [LH10] Holm L, Rosenström P.
     Dali server: conservation mapping in 3D.
     *Nucleic Acids Res.* **2010** 10(38):W545-9
 
 .. _`Dali server`: http://ekhidna2.biocenter.helsinki.fi/dali/
+
+.. _`SignDy`: http://prody.csb.pitt.edu/test_prody/tutorials/signdy_tutorial/

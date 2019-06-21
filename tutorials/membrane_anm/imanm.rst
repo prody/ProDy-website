@@ -98,13 +98,13 @@ The first ten lines of ``2nwl_blocks.txt`` are::
 
 The columns, separated by whitespace, are formatted as follows:
 
-      * *1.* Integer identifier of the block.
-      * *2.* Three-letter code for first residue in the block.
-      * *3.* Chain ID of first residue in the block.
-      * *4.* Resnum of first residue in the block.
-      * *5.* Three-letter code for last residue in the block.
-      * *6.* Chain ID of last residue in block.
-      * *7.* Resnum of last residue in the block.
+      * Integer identifier of the block.
+      * Three-letter code for first residue in the block.
+      * Chain ID of first residue in the block.
+      * Resnum of first residue in the block.
+      * Three-letter code for last residue in the block.
+      * Chain ID of last residue in block.
+      * Resnum of last residue in the block.
 
 This is just one way of storing information on how the protein is deconstructed into blocks. You are welcome to use others if you have a way of reading them. 
 We can read blocks from ``2nwl_blocks.txt`` into the array ``blocks`` as follows:
@@ -112,33 +112,36 @@ We can read blocks from ``2nwl_blocks.txt`` into the array ``blocks`` as follows
 .. ipython:: python
 
    blk='2nwl_blocks.txt'
+   ag = of_ca.getAtomGroup()
+   ag.setData('block', 0)
    with open(blk) as inp:
-        for line in inp:
-             b, n1, c1, r1, n2, c2, r2 = line.split()
-             sel = of_ca.select('chain {} and resnum {} to {}'
-                              .format(c1, r1, r2))
-             if sel != None:
-                sel.setBetas(b)
+      for line in inp:
+         b, n1, c1, r1, n2, c2, r2 = line.split()
+         sel = of_ca.select('chain {} and resnum {} to {}'
+                            .format(c1, r1, r2))
+         if sel != None:
+            sel.setData('block', b)
 
 
-   of_blocks = of_ca.getBetas()
+   of_blocks = of_ca.getData('block')
 
 We will do the same for the blocks of the inward-facing structure.  The block definitions are based on secondary structures, which vary slightly between the structures.  We therefore have two separate blocking schemes.
 
 .. ipython:: python
 
-   blk='3kbc_blocks.txt'
+   blk = '3kbc_blocks.txt'
+   ag = if_ca.getAtomGroup()
+   ag.setData('block', 0)
    with open(blk) as inp:
-        for line in inp:
-             b, n1, c1, r1, n2, c2, r2 = line.split()
-             sel = if_ca.select('chain {} and resnum {} to {}'
-                              .format(c1, r1, r2))
-             if sel != None:
-                sel.setBetas(b)
+      for line in inp:
+         b, n1, c1, r1, n2, c2, r2 = line.split()
+         sel = if_ca.select('chain {} and resnum {} to {}'
+                            .format(c1, r1, r2))
+         if sel != None:
+            sel.setData('block', b)
 
 
-   if_blocks = if_ca.getBetas()
-
+   if_blocks = if_ca.getData('block')
 
 
 
@@ -155,6 +158,7 @@ and we build a couple of Hessians using the coordinates of the crystal structure
 Scale is the scaling factor for spring constants between the z direction and the 
 x and y directions.
 Depth is the total the depth of the membrane from top to bottom. 
+
 
 .. ipython:: python
 

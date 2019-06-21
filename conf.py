@@ -14,7 +14,7 @@ sys.path.append(os.path.abspath('manual/sphinxext'))
               #'sphinxcontrib.googleanalytics',
               #'ipython_console_highlighting',
               #'ipython_directive']
-""" extensions = [ 'sphinx.ext.todo',
+extensions = [ 'sphinx.ext.todo',
                'sphinx.ext.autodoc',
                'sphinx.ext.doctest',
                'sphinx.ext.coverage',
@@ -28,7 +28,7 @@ sys.path.append(os.path.abspath('manual/sphinxext'))
                'matplotlib.sphinxext.only_directives',
 	       'IPython.sphinxext.ipython_directive' ,
 	       'IPython.sphinxext.ipython_console_highlighting',
-	       'googleanalytics'] """
+	       'googleanalytics'] 
 
 exclude_patterns.append('ProDy')
 exclude_patterns.append('DruGUI')
@@ -63,7 +63,7 @@ html_additional_pages = {
     'statistics/index': 'statistics.html',
     'mechstiff/index' : 'mechstiff.html',
     'analytics/index' : 'analytics.html',
-    # 'workshop/index' : 'workshop.html',
+    'workshop/index' : 'workshop.html',
 }
 
 html_sidebars = {
