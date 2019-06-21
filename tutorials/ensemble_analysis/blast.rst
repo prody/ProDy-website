@@ -67,7 +67,7 @@ Parameters
 -------------------------------------------------------------------------------
 
 It is sometimes useful to set parameters in variables to use multiple times. 
-In this case, we use `seqid` for the minimum sequence identity for including 
+In this case, we use ``seqid`` for the minimum sequence identity for including 
 sequences at both selection of BLAST hits and ensemble building.
 
 .. ipython:: python
