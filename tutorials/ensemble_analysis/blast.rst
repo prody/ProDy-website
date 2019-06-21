@@ -66,16 +66,13 @@ all PDB hits, provide an empty list.
 Parameters
 -------------------------------------------------------------------------------
 
-
+It is sometimes useful to set parameters in variables to use multiple times. 
+In this case, we use ``seqid`` for the minimum sequence identity for including 
+sequences at both selection of BLAST hits and ensemble building.
 
 .. ipython:: python
 
-   # Minimum sequence identity of hits
    seqid = 44
-   # Reference chain identifier
-   ref_chid = 'A'
-   # Selection string ("all" can be used if all of the chain is to be analyzed)
-   selstr = 'resnum 1 to 103'
 
 Blast and download
 -------------------------------------------------------------------------------
@@ -83,7 +80,7 @@ Blast and download
 A list of PDB structures can be obtained using :func:`.blastPDB`
 as follows:
 
-.. ipython::
+.. ipython:: python
 
    blast_record = blastPDB(sequence)
 
@@ -97,9 +94,9 @@ library :mod:`pickle` as follows:
 
 The record is saved using the :func:`~pickle.dump` function:
 
-.. ipython::
+.. ipython:: python
 
-   pickle.dump(blast_record, open('cytc_blast_record.pkl', 'w'))
+   pickle.dump(blast_record, open('cytc_blast_record.pkl', 'wb'))
 
 
 Then, it can be loaded using the :func:`~pickle.load` function:
@@ -138,10 +135,9 @@ For analysis of a dimeric protein see :ref:`pca-dimer`
 
 .. ipython:: python
 
-   reference_structure = parsePDB(ref_pdb, subset='ca', chain=ref_chid)
-   # Get the reference chain from this structure
+   reference_structure = parsePDB(ref_pdb, subset='ca', chain='A')
    reference_hierview = reference_structure.getHierView()
-   reference_chain = reference_hierview[ref_chid]
+   reference_chain = reference_hierview['A']
 
 Prepare ensemble
 -------------------------------------------------------------------------------
@@ -163,13 +159,9 @@ the `Multimeric Structures tutorial`_. This process can also be automated using
 
 .. ipython:: python
 
-   # Start a log file
    startLogfile('pca_blast')
-   # Instantiate a PDB ensemble
    ensemble = PDBEnsemble(name)
-   # Set ensemble atoms
    ensemble.setAtoms(reference_chain)
-   # Set reference coordinates
    ensemble.setCoords(reference_chain.getCoords())
 
 .. ipython:: python
@@ -244,11 +236,8 @@ Once the ensemble is ready, performing PCA is 3 easy steps:
 
 .. ipython:: python
 
-   # Instantiate a PCA
    pca = PCA(name)
-   # Build covariance matrix
    pca.buildCovariance(ensemble)
-   # Calculate modes
    pca.calcModes()
 
 The calculated data can be saved as a compressed file using :func:`.saveModel`
