@@ -54,14 +54,14 @@ Record is save using :func:`~pickle.dump` function into an open file:
 .. ipython::
    :verbatim:
 
-   In [10]: pickle.dump(blast_record, open('mkp3_blast_record.pkl', 'w'))
+   In [10]: pickle.dump(blast_record, open('mkp3_blast_record.pkl', 'wb'))
 
 
 Then, it can be loaded using :func:`~pickle.load` function:
 
 .. ipython:: python
 
-   blast_record = pickle.load(open('mkp3_blast_record.pkl'))
+   blast_record = pickle.load(open('mkp3_blast_record.pkl', 'rb'))
 
 
 Best match
