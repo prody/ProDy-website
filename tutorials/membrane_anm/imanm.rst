@@ -148,32 +148,44 @@ To use the blocks in an RTB imANM calculation, we instantiate an imANM object fo
 
 .. ipython:: python
 
-   of_rtb = imANM('2nwl')
-   if_rtb = imANM('3kbc')
+   of_imanm = imANM('2nwl')
+   if_imanm = imANM('3kbc')
 
-and we build a couple of Hessians using the coordinates of the crystal structures
+and we build a couple of Hessians using the coordinates of the crystal structures.
+Scale is the scaling factor for spring constants between the z direction and the 
+x and y directions.
+Depth is the total the depth of the membrane from top to bottom. 
 
 .. ipython:: python
 
    of_coords = of_ca.getCoords()
    if_coords = if_ca.getCoords()
-   of_rtb.buildHessian(of_coords, of_blocks, cutoff=11.0, scale=16.)
-   if_rtb.buildHessian(if_coords, if_blocks, cutoff=11.0, scale=16.)
+   of_imanm.buildHessian(of_coords, of_blocks, scale=16., depth=27.)
+   if_imanm.buildHessian(if_coords, if_blocks, scale=16., depth=27.)
 
-The scaling factor of 16 in this example means that the restoring force for any displacement in the x- or y-direction is 16 times greater than the force associated with a displacement in the z-direction.  The constraint on motions parallel to the membrane surface implicitly incorporates the membrane's effects into ANM.  To use RTB with no membrane effects, set ``scale=1.0`` (which is also the default value).  We have here set the boundaries of the membrane to extend well beyond the protein, effectively applying the implicit membrane scaling to the entire protein.
+The scaling factor of 16 in this example means that the restoring force 
+for any displacement in the x- or y-direction is 16 times greater than the 
+force associated with a displacement in the z-direction. 
+The constraint on motions parallel to the membrane surface implicitly 
+incorporates the membrane's effects into ANM. 
 
-Now we calculate the modes and write them to a pair of .nmd files for viewing.
+The parameter ``depth`` specifies the total size of the membrane in the 
+z direction, half of which goes either side of the x-y plane. It is also 
+possible to set the positions of the upper and lower edges of the membrane 
+separately using ``high`` and ``low``.
+
+Next we calculate the modes and write them to a pair of .nmd files for viewing.
 
 .. ipython:: python
 
-   of_rtb.calcModes()
-   if_rtb.calcModes()
-   writeNMD('2nwl_im.nmd',of_rtb,of_ca.select('protein and name CA'))
-   writeNMD('3kbc_im.nmd',if_rtb,if_ca.select('protein and name CA'))
+   of_imanm.calcModes()
+   if_imanm.calcModes()
+   writeNMD('2nwl_im.nmd', of_imanm, of_ca.select('protein and name CA'))
+   writeNMD('3kbc_im.nmd', if_imanm, if_ca.select('protein and name CA'))
 
 
 .. figure:: images/membrane_anm-imanm_of3.png
-   :scale: 100%
+   :scale: 70%
 
 The third mode of the outward-facing structure moves all three transport domains simultaneously through the membrane in a 'lift-like' motion.
 
