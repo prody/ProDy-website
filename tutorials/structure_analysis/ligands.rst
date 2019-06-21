@@ -57,7 +57,7 @@ Then, it can be loaded using :func:`~pickle.load` function:
 
 .. ipython:: python
 
-   blast_record = pickle.load(open('p38_blast_record.pkl'))
+   blast_record = pickle.load(open('p38_blast_record.pkl', 'rb'))
 
 
 Align structures and extract ligands

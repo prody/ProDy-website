@@ -61,7 +61,7 @@ Then, it can be loaded using :func:`~pickle.load` function:
 
 .. ipython:: python
 
-   blast_record = pickle.load(open('mkp3_blast_record.pkl'))
+   blast_record = pickle.load(open('mkp3_blast_record.pkl', 'rb'))
 
 
 Best match
