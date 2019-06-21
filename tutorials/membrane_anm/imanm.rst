@@ -155,9 +155,6 @@ To use the blocks in an RTB imANM calculation, we instantiate an imANM object fo
    if_imanm = imANM('3kbc')
 
 and we build a couple of Hessians using the coordinates of the crystal structures.
-Scale is the scaling factor for spring constants between the z direction and the 
-x and y directions.
-Depth is the total the depth of the membrane from top to bottom. 
 
 
 .. ipython:: python
