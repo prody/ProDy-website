@@ -103,7 +103,7 @@ Then, it can be loaded using the :func:`~pickle.load` function:
 
 .. ipython:: python
 
-   blast_record = pickle.load(open('cytc_blast_record.pkl'))
+   blast_record = pickle.load(open('cytc_blast_record.pkl', 'rb'))
 
 We then read information from the record to extract a list of 
 PDB IDs and chain IDs.
