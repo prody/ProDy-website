@@ -61,6 +61,16 @@ iterative superposition:
    ensemble.addCoordset( ubi.getCoordsets() )
    ensemble.iterpose()
 
+We can also make a new atomgroup object, which has the updated coordinates 
+from the ensemble as follows:
+
+.. ipython:: python
+
+   ubi_copy = AtomGroup('new')
+   ubi_copy.addCoordset(ensemble.getCoordsets())
+   ubi_copy.setNames(ubi.getNames())
+   ubi_copy.setResnums(ubi.getResnums())
+   ubi_copy.setResnames(ubi.getResnames())
 
 PCA calculations
 -------------------------------------------------------------------------------
@@ -122,8 +132,8 @@ coordset:
 
 .. ipython:: python
 
-   ubi.setACSIndex(78)
-   anm, temp = calcANM(ubi)
+   ubi_copy.setACSIndex(78)
+   anm, temp = calcANM(ubi_copy)
    anm.setTitle('Ubiquitin')
 
 We calculate overlaps between ANM and PCA modes (presented in Table 1).
