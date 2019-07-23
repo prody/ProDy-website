@@ -123,8 +123,9 @@ Let's print fraction of variance for top ranking 4 PCs (listed in Table S3):
 Compare with ANM results
 -------------------------------------------------------------------------------
 
-We set the active coordinate set to 79, which is the one that is closest
-to the mean structure (note that indices start from 0 in Python).
+We set the active coordinate set of ubi_copy to model 79, which is the one 
+that is closest to the mean structure (note that indices start from 0 in Python 
+so we give it 78).
 Then, we perform ANM calculations using :func:`.calcANM` for the active
 coordset:
 
