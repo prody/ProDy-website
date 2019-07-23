@@ -61,16 +61,14 @@ iterative superposition:
    ensemble.addCoordset( ubi.getCoordsets() )
    ensemble.iterpose()
 
-We can also make a new atomgroup object, which has the updated coordinates 
-from the ensemble as follows:
+We can then make a new Atomgroup object where we replace the coordinates 
+with the ones from the ensemble as follows:
 
 .. ipython:: python
 
-   ubi_copy = AtomGroup('new')
+   ubi_copy = ubi.copy()
+   ubi_copy.delCoordset(range(ubi_copy.numCoordsets()))
    ubi_copy.addCoordset(ensemble.getCoordsets())
-   ubi_copy.setNames(ubi.getNames())
-   ubi_copy.setResnums(ubi.getResnums())
-   ubi_copy.setResnames(ubi.getResnames())
 
 PCA calculations
 -------------------------------------------------------------------------------
