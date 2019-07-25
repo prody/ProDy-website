@@ -164,7 +164,7 @@ in VMD_ using:
 .. ipython:: python
    :verbatim:
 	
-   writeDeformProfile(anm, gfp, selstr='chain A and name CA', pdb_selstr='protein')
+   writeDeformProfile(anm, gfp, select='chain A and name CA', pdb_selstr='protein')
 
 
 .. figure:: images/1gfl_defprofile_vmd.png
