@@ -263,6 +263,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       panelSlides[8] = new Array(23, 24, 25);
       panelSlides[9] = new Array(26, 27, 28);
       panelSlides[10] = new Array(29, 30, 31, 32);
+      panelSlides[11] = new Array(33, 34, 35);
 
       var slideIndices = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
@@ -609,7 +610,36 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
         </p>
       </div>
 
+      <div class="prody-slide" id="slide-33">
+        <div class="slide-image"><img src="../_static/figures/pharmmaker-figure1.png"/></div>
+        <p style="font-size: 95%; font-style: italic;">
+          Pharmmaker (center) includes four main programs (steps 2 to 5 of the pipeline)
+          that bridge druggability simulations from DruGUI (left) 
+          with pharmacophore-based virtual screening (right).
+          The names of the programs are given under each step in blue.
+        </p>
+      </div>
 
+      <div class="prody-slide" id="slide-34">
+        <div class="slide-image"><img src="../_static/figures/pharmmaker.png"/></div>
+        <p style="font-size: 95%; font-style: italic;">
+          (Left) A snapshot extracted from druggability simulations for an AMPAR LBD dimer
+          using Pharmmaker including probe poses and target conformation.
+          Dominant binding interactions between probe and residues are shown.
+          (Right) A pharmacophore model built based on the snapshot.
+          One hydrogen acceptor, one donor, and two hydrophobic features were used to represent the probes.
+        </p>
+      </div>
+
+      <div class="prody-slide" id="slide-35">
+        <div class="slide-image"><img src="../_static/figures/pharmmaker-figure3A-B.png"/></div>
+        <p style="font-size: 95%; font-style: italic;">
+          Each residue is given a binding value for each probe type, based on an inverse square distance potential.
+          This is shown in the two graphs for the two subunits of an AMPAR LBD dimer.
+          The dotted lines indicate a cutoff of 500, above which residues are defined as high affinity residues 
+          for a particular probe.
+        </p>
+      </div>
 
   <div class="container" id="about">
 
