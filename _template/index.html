@@ -168,7 +168,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       };
     </script>
 
-    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="shortcut icon" href="{{ pathto('_static/favicon.ico', 1) }}"/>
 
     <style type="text/css">
       .slide-title {
@@ -263,6 +263,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       panelSlides[8] = new Array(23, 24, 25);
       panelSlides[9] = new Array(26, 27, 28);
       panelSlides[10] = new Array(29, 30, 31, 32);
+      panelSlides[11] = new Array(33, 34, 35);
 
       var slideIndices = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
@@ -458,21 +459,21 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       </div>
 
       <div class="prody-slide" id="slide-14">
-        <div class="slide-image"><img src="../_static/gallery/comd_ake-new.png"/></div>
+        <div class="slide-image"><img src="{{ pathto('_static/gallery/comd_ake-new.png', 1) }}"/></div>
         <p></p><p style="font-size: 95%; font-style: italic;">
         Sampling of the functional substates (inward-facing (IF) or outward-facing (OF),  in closed (c) or open (o) forms) of LeuT using coMD simulations. See <a href="http://scitation.aip.org/content/aip/journal/jcp/143/24/10.1063/1.4936133">publication</a> for details.
         </p>
       </div>
 
       <div class="prody-slide" id="slide-15">
-        <div class="slide-image"><img src="../_static/gallery/comd_youtube2.gif"/></div>
+        <div class="slide-image"><img src="{{ pathto('_static/gallery/comd_youtube2.gif', 1) }}"/></div>
         <p style="font-size: 95%; font-style: italic;">
-        The movie illustrates a coMD trajectory for adenylate kinase. <a href="../tutorials/nmwiz_tutorial/intro.html">NMWiz</a> VMD plugin. See <a href="../tutorials/nmwiz_tutorial/index.html">NMWiz tutorial</a> for usage examples.
+        The movie illustrates a coMD trajectory for adenylate kinase. <a href="{{ pathto('tutorials/nmwiz_tutorial/intro.html', 1) }}">NMWiz</a> VMD plugin. See <a href="{{ pathto('tutorials/nmwiz_tutorial/index.html', 1) }}">NMWiz tutorial</a> for usage examples.
         </p>
       </div>
 
       <div class="prody-slide" id="slide-16">
-        <div class="slide-image"><img src="../_static/gallery/comd_pca_path_slide.png"/></div>
+        <div class="slide-image"><img src="{{ pathto('_static/gallery/comd_pca_path_slide.png', 1) }}"/></div>
         <p style="font-size: 95%; font-style: italic;">
         Energy landscape in the space of principal coordinates.
         <!--
@@ -482,7 +483,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       </div>
 
       <div class="prody-slide" id="slide-17">
-        <div class="slide-image"><img src="../_static/gallery/memanm-ofif.png"/></div>
+        <div class="slide-image"><img src="{{ pathto('_static/gallery/memanm-ofif.png', 1) }}"/></div>
         <p></p><p style="font-size: 95%; font-style: italic;">
         Outward-facing (OF) and inward-facing (IF) structures of Glt<sub>Ph</sub> show a large displacement of the core domains. 
         See <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3309413/">publication</a> for details.
@@ -490,7 +491,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       </div>
 
       <div class="prody-slide" id="slide-18">
-        <div class="slide-image"><img src="../_static/gallery/OF_imANM_mode2.gif"/></div>
+        <div class="slide-image"><img src="{{ pathto('_static/gallery/OF_imANM_mode2.gif', 1) }}"/></div>
         <p style="font-size: 95%; font-style: italic;">
         The second mode of the OF structure moves all three transport domains simultaneously through the membrane in a ‘lift-like’ motion.
         See <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3309413/">publication</a> for details.
@@ -498,7 +499,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       </div>
 
       <div class="prody-slide" id="slide-19">
-        <div class="slide-image"><img src="../_static/gallery/IF_imANM_mode2.gif"/></div>
+        <div class="slide-image"><img src="{{ pathto('_static/gallery/IF_imANM_mode2.gif', 1) }}"/></div>
         <p style="font-size: 95%; font-style: italic;">
         The second mode of the IF structure moves all three transport domains simultaneously through the membrane in a ‘lift-like’ motion.
          See <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3309413/">publication</a> for details.
@@ -506,28 +507,28 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       </div>
 
       <div class="prody-slide" id="slide-20">
-        <div class="slide-image"><img src="../_static/gallery/1ubi_meanSM.png"/></div>
+        <div class="slide-image"><img src="{{ pathto('_static/gallery/1ubi_meanSM.png', 1) }}"/></div>
         <p style="font-size: 95%; font-style: italic;">
         Deformability profile of ubiquitin (PDB code: 1UBI). Structure is automatically uploaded to VMD program where blue color shows regions which are mechanically more resistant to the external force.  
         </p>
       </div>
 
       <div class="prody-slide" id="slide-21">
-        <div class="slide-image"><img src="../_static/gallery/meanPlot_1ubi.png"/></div>
+        <div class="slide-image"><img src="{{ pathto('_static/gallery/meanPlot_1ubi.png', 1) }}"/></div>
         <p style="font-size: 95%; font-style: italic;">
         Mean value of effective spring constant (calculated from mechanical stiffness matrix) with secondary structure of ubiquitin. Blue color indicates mechanically strong regions. 
         </p>
       </div>
 
       <div class="prody-slide" id="slide-22">
-        <div class="slide-image"><img src="../_static/gallery/1ubi_map.png"/></div>
+        <div class="slide-image"><img src="{{ pathto('_static/gallery/1ubi_map.png', 1) }}"/></div>
         <p style="font-size: 95%; font-style: italic;">
         Mechanical Stiffness Map with effective force constant in a color bar (blue - strong regions, red - weak regions) for ubiquitin.
         </p>
       </div>
 
       <div class="prody-slide" id="slide-23">
-        <div class="slide-image"><img src="../_static/gallery/hic_workflow.png"/></div>
+        <div class="slide-image"><img src="{{ pathto('_static/gallery/hic_workflow.png', 1) }}"/></div>
         <p style="font-size: 95%; font-style: italic;">
         Workflow for GNM analysis of chromatin dynamics. 
         See <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC5397156/">publication</a> for details. 
@@ -535,7 +536,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       </div>
 
       <div class="prody-slide" id="slide-24">
-        <div class="slide-image"><img src="../_static/gallery/hic_domains.png"/></div>
+        <div class="slide-image"><img src="{{ pathto('_static/gallery/hic_domains.png', 1) }}"/></div>
         <p style="font-size: 95%; font-style: italic;">
         Covariance matrix of chromosome 17 of human B cells. Structural domains and CCDDs are identified and outlined. 
         See <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC5397156/">publication</a> for details.
@@ -543,7 +544,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       </div>
 
       <div class="prody-slide" id="slide-25">
-        <div class="slide-image"><img src="../_static/gallery/embed_chromo.gif"/></div>
+        <div class="slide-image"><img src="{{ pathto('_static/gallery/embed_chromo.gif', 1) }}"/></div>
         <p style="font-size: 95%; font-style: italic;">
           3D Laplacian embedding of chromosome 17 loci using the first three principal modes. 
           See ChromD tutorial for details.
@@ -551,7 +552,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       </div>
 
       <div class="prody-slide" id="slide-26">
-        <div class="slide-image"><img src="../_static/figures/PRS_General_2014_pcbi.figure3.png"/></div>
+        <div class="slide-image"><img src="{{ pathto('_static/figures/PRS_General_2014_pcbi.figure3.png', 1) }}"/></div>
         <p></p><p style="font-size: 95%; font-style: italic;">
         Perturbation response scanning of the Hsp70 chaperone reveals interdomain allostery. 
         See <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4022485/">publication</a> for details.
@@ -559,7 +560,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       </div>
 
       <div class="prody-slide" id="slide-27">
-        <div class="slide-image"><img src="../_static/figures/PRS_Dutta_2015_Structure.figure6_highres.png"/></div>
+        <div class="slide-image"><img src="{{ pathto('_static/figures/PRS_Dutta_2015_Structure.figure6_highres.png', 1) }}"/></div>
         <p></p><p style="font-size: 95%; font-style: italic;">
         Perturbation response scanning of the AMPA-type glutamate receptor reveals sensors and effectors for allosteric signaling. 
         See <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4558295/">publication</a> for details.
@@ -567,7 +568,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       </div>
 
       <div class="prody-slide" id="slide-28">
-        <div class="slide-image"><img src="../_static/figures/PRS_Dutta_2015_Structure.figure7_highres.png"/></div>
+        <div class="slide-image"><img src="{{ pathto('_static/figures/PRS_Dutta_2015_Structure.figure7_highres.png', 1) }}"/></div>
         <p></p><p style="font-size: 95%; font-style: italic;">
         A more in-depth analysis of the PRS matrix reveals interdomain signaling in the AMPA receptor.
         See <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4558295/">publication</a> for details.
@@ -575,7 +576,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       </div>
 
       <div class="prody-slide" id="slide-29">
-        <div class="slide-image"><img src="../_static/figures/SignDy_LeuT_main_fig.png"/></div>
+        <div class="slide-image"><img src="{{ pathto('_static/figures/SignDy_LeuT_main_fig.png', 1) }}"/></div>
         <p></p><p style="font-size: 95%; font-style: italic;">
           The left panels show the three softest GNM modes (blue lines) and their standard deviations (faint blue bands). 
           Red and blue regions in the corresponding ribbon diagrams show regions moving in opposite directions. 
@@ -584,7 +585,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       </div>
 
       <div class="prody-slide" id="slide-30">
-        <div class="slide-image"><img src="../_static/figures/SignDy_LeuT_offset_profiles.png"/></div>
+        <div class="slide-image"><img src="{{ pathto('_static/figures/SignDy_LeuT_offset_profiles.png', 1) }}"/></div>
         <p></p><p style="font-size: 95%; font-style: italic;">
         Square fluctuations calculated from the top 5 global modes are shown for a number of LeuT fold family 
         members, revealing similarities and subfamily- or conformation-dependent differences. 
@@ -592,7 +593,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       </div>
 
       <div class="prody-slide" id="slide-31">
-        <div class="slide-image"><img src="../_static/figures/SignDy_PBP-1_anm_projection_2_modes_annotated.png"/></div>
+        <div class="slide-image"><img src="{{ pathto('_static/figures/SignDy_PBP-1_anm_projection_2_modes_annotated.png', 1) }}"/></div>
         <p></p><p style="font-size: 95%; font-style: italic;">
           Type-I periplasmic binding protein domains are mapped onto the first two signature ANM modes. 
           These domains, found in a range of proteins including bacterial solute carriers and eukaryotic receptors, 
@@ -602,14 +603,43 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       </div>
 
       <div class="prody-slide" id="slide-32">
-        <div class="slide-image"><img src="../_static/figures/SignDy_TIM_variance_distributions.png"/></div>
+        <div class="slide-image"><img src="{{ pathto('_static/figures/SignDy_TIM_variance_distributions.png', 1) }}"/></div>
         <p></p><p style="font-size: 95%; font-style: italic;">
           SignDy analysis allows a comparison of the frequency dispersion of family members. 
           The distribution of inverse eigenvalues is shown for the softest five modes for TIM barrel fold family.
         </p>
       </div>
 
+      <div class="prody-slide" id="slide-33">
+        <div class="slide-image"><img src="../_static/figures/pharmmaker-figure1.png"/></div>
+        <p style="font-size: 95%; font-style: italic;">
+          Pharmmaker (center) includes four main programs (steps 2 to 5 of the pipeline)
+          that bridge druggability simulations from DruGUI (left) 
+          with pharmacophore-based virtual screening (right).
+          The names of the programs are given under each step in blue.
+        </p>
+      </div>
 
+      <div class="prody-slide" id="slide-34">
+        <div class="slide-image"><img src="../_static/figures/pharmmaker.png"/></div>
+        <p style="font-size: 95%; font-style: italic;">
+          (Left) A snapshot extracted from druggability simulations for an AMPAR LBD dimer
+          using Pharmmaker including probe poses and target conformation.
+          Dominant binding interactions between probe and residues are shown.
+          (Right) A pharmacophore model built based on the snapshot.
+          One hydrogen acceptor, one donor, and two hydrophobic features were used to represent the probes.
+        </p>
+      </div>
+
+      <div class="prody-slide" id="slide-35">
+        <div class="slide-image"><img src="../_static/figures/pharmmaker-figure3A-B.png"/></div>
+        <p style="font-size: 95%; font-style: italic;">
+          Each residue is given a binding value for each probe type, based on an inverse square distance potential.
+          This is shown in the two graphs for the two subunits of an AMPAR LBD dimer.
+          The dotted lines indicate a cutoff of 500, above which residues are defined as high affinity residues 
+          for a particular probe.
+        </p>
+      </div>
 
   <div class="container" id="about">
 
