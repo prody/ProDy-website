@@ -6,9 +6,9 @@ still in the same python session.
 
 .. ipython:: python
 
-   from prody import *
-   from pylab import *
-   ion()
+    from prody import *
+    from pylab import *
+    ion()
 
 
 Loading a structure and applying the anisotropic network model
@@ -24,7 +24,7 @@ atoms, which we will use in downstream steps.
 
 
 Next, create an ANM instance and calculate modes from which the covariance
-matrix can be calculated. We ask for all modes rather than the default subset
+matrix can be calculated. We could ask for all modes rather than the default subset
 of the first 20 global modes. We could alternatively apply the PRS to another
 model from which a covariance matrix could be derived such as PCA, GNM or an
 MD simulation.
@@ -33,7 +33,7 @@ MD simulation.
 
     anm_ampar = ANM('AMPAR 3kg2')
     anm_ampar.buildHessian(ampar_ca)
-    anm_ampar.calcModes(n_modes='all')
+    anm_ampar.calcModes()
 
 
 Showing the PRS matrix with effectiveness and sensitivity profiles

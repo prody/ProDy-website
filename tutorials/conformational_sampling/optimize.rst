@@ -23,19 +23,22 @@ their location as follows:
 
 .. ipython:: python
 
+   tcl_cmd = '''package require readcharmmpar
+   package require readcharmmtop
+   global env
+   set outfile [open charmmdir.txt w]
+   puts $outfile $env(CHARMMPARDIR)
+   puts $outfile $env(CHARMMTOPDIR)
+   close $outfile
+   exit'''
    with open('where_is_charmmpar.tcl', 'w') as inp:
-       inp.write('''global env;
-   set outfile [open charmmdir.txt w];
-   puts $outfile "$env(CHARMMPARDIR)";
-   puts $outfile "$env(CHARMMTOPDIR)";
-   close $outfile;
-   exit;''')
+      inp.write(tcl_cmd)
 
 This can be run in vmd from ipython as below:
 
 .. ipython:: python
 
-   !vmd -e where_is_charmmpar.tcl
+   !vmd -dispdev text -e where_is_charmmpar.tcl
 
 We then read the output file to get the parameter directory:
 
@@ -58,7 +61,7 @@ Let's make a folder for writing optimization input and output files:
 
 .. ipython:: python
 
-    mkdir -p p38_optimize
+   mkdir -p p38_optimize
 
 We will write an NAMD configuration file for each conformation based
 on :file:`min.conf`:

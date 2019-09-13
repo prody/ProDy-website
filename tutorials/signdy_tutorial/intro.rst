@@ -51,10 +51,6 @@ We have included these imports in every part of the tutorial, so that
 code copied from the online pages is complete. You do not need to repeat
 imports in the same Python session.
 
-To follow this tutorial, you will need following files:
-
-`ZIP <signdy_tutorial_files.zip>`_ `TGZ <signdy_tutorial_files.tgz>`_
-
 
 How to Cite
 -------------------------------------------------------------------------------

@@ -153,7 +153,7 @@ slowest non-trivial mode would have index 6.
 Access hinge sites
 -------------------------------------------------------------------------------
 Hinge sites identified from all calculated modes (``n_modes`` defined when
-calling ``gnm.calcModes()``) can be obtain by using following command.
+calling ``gnm.calcModes()``) can be obtain by using the following command.
 
 .. ipython:: python
 
@@ -177,6 +177,16 @@ Hinge sites identified from multiple modes (e.g. 2 modes) can be accessed by:
 .. ipython:: python
 
     gnm[:2].getHinges()
+
+These numbers correspond to node indices in the GNM object, which does not know 
+anything about the original atoms. In order to get the residue numbers corresponding 
+to these hinges, we can index the resum array with the hinges list as follows:
+
+.. ipython:: python
+
+    resnums = calphas.getResnums()
+    mode2_hinges = gnm[1].getHinges()
+    resnums[mode2_hinges]
 
 
 Plot results
