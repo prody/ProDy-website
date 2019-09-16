@@ -1,0 +1,62 @@
+{% extends "index.html" %}
+{% block body %}
+
+
+      <div class="row">
+        <div class="span12">
+          <div class="span5 pull-right" style="padding-top: 20px">
+            <div class="well">
+              <div id="panel-5-title" class="slide-title"></div>
+              <i class="icon-circle-arrow-right slide-arrow" onclick="nextSlide(11);" title="Next slide"></i>
+              <i class="icon-circle-arrow-left slide-arrow" onclick="prevSlide(11);" title="Previous slide"></i>
+              <div id="panel-5-slide" class="slide-content"></div>
+              <script>showSlide(11, -1);</script>
+            </div>
+          </div>
+
+            <h2><i>Pharmmaker</i> for Pharmacophore modeling</h2>
+            <p><i>Pharmmaker</i> is
+              designed for building pharmacophore model using outputs of
+              druggability simulations (<a href="http://prody.csb.pitt.edu/drugui/"><i>DruGUI</i></a>).
+              The pharmacophore models can be used for virtual screening of libraries of small molecules.
+              A strong aspect of the method is that <i>Pharmmaker</i> uses multiple target conformations 
+              dependent on the binding poses of probes where they interact during druggability simulations,
+              meaning that the binding score in virtual screening can be more evaluated in a more realistic manner.
+              Also, we can have multiple pharmacophore models with different target conformations and probe poses, 
+              which can be analyzed statistically.
+            </p>
+
+            <h4>Features</h4>
+
+            <p><i>Pharmmaker</i> can be used to</p>
+
+            <ul class="simple">
+              <li>identify high affinity residues on the target protein</li>
+              <li>rank the interaction pairs between residues and probe small molecules </li>
+              <li>select snapshots with the top ranking interaction pairs</li>
+              <li>build a pharmacophore model</li>
+              <li>perform virtual screening as inputs</li>
+            </ul>
+
+            <h4>Download</h4>
+
+            <p><i>Pharmmaker</i> files can be obtained from
+              <a href="http://prody.csb.pitt.edu/tutorials/pharmmaker/">Getting Pharmmaker</a>.
+            </p>
+
+            <p><i>DruGUI</i> files can be obtained from
+              <a href="http://prody.csb.pitt.edu/tutorials/drugui_tutorial/intro.html">Getting DruGUI</a>.
+            </p>
+
+	    <p><small>
+              <strong>Reference</strong><br>
+              Lee JY, Krieger JM, Li H, Bahar I
+              <a class="reference external" href="xxxxxx" target="_blank">
+              Pharmmaker: Pharmacophore modeling and hit identification based on druggability simulations </a>
+<!--           <strong>2012</strong> <em>J Chem Theory Comput</em> 8(7):2435-2447.
+-->
+	    </small></p>
+          </div>
+        </div>
+
+{% endblock %}
