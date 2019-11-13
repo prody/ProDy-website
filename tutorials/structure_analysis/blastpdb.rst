@@ -81,11 +81,11 @@ PDB hits
 
 .. ipython:: python
 
-   hits = blast_record.getHits()
+   hits = blast_record.getHits(percent_identity=90, percent_overlap=70)
    list(hits)
 
 This results in only MKP-3 itself, since percent_identity argument was set
-to 90 by default:
+to 90:
 
 .. ipython:: python
 
@@ -95,7 +95,7 @@ to 90 by default:
    list(hits)
 
 
-This resulted in 7 hits, including structures of MKP-2, MKP-4, and MKP-5
+This resulted in more hits, including structures of MKP-2, MKP-4, and MKP-5
 More information on a hit can be obtained as follows:
 
 .. ipython:: python
@@ -103,6 +103,12 @@ More information on a hit can be obtained as follows:
    hits['1zzw']['percent_identity']
    hits['1zzw']['align-len']
    hits['1zzw']['identity']
+
+To obtain all hits, simply run the function without specifying parameters:
+
+.. ipython:: python
+
+   all_hits = blast_record.getHits()
 
 Download hits
 -------------------------------------------------------------------------------
