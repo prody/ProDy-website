@@ -35,11 +35,11 @@ if __name__ == '__main__':
     crsr.execute(sql_cmd)
     
     # insert the base number 
-    sql_cmd = 'INSERT OR REPLACE INTO downloads VALUES ("{0}", {1});'.format(base_date, base_number)
+    sql_cmd = 'REPLACE INTO downloads VALUES ("{0}", {1});'.format(base_date, base_number)
     crsr.execute(sql_cmd)
 
     # insert or update the data in the table 
-    sql_cmd = 'INSERT OR REPLACE INTO downloads VALUES ("{0}", {1});'.format(str_yesterday, n_downloads)
+    sql_cmd = 'REPLACE INTO downloads VALUES ("{0}", {1});'.format(str_yesterday, n_downloads)
     crsr.execute(sql_cmd)
 
     # summation
