@@ -1,10 +1,13 @@
 import pypistats as pis
 from datetime import date, timedelta
-import sqlite3
+from mysql import connector as sql
 
 if __name__ == '__main__':
-    dbfile = 'prody_stats.db'
+    host = 'localhost'
+    user = 'prody'
+    passwd = "I'm Protein Dynamics"
     package = 'prody'
+    database = 'prody'
     mirror = False
     base_date = "2011-10-01"
     base_number = 2135029
@@ -24,23 +27,23 @@ if __name__ == '__main__':
     n_downloads = ret[0][-1]
     
     # connecting to the database  
-    connection = sqlite3.connect(dbfile) 
+    connection = sql.connect(host=host, user=user, passwd=passwd, database=database) 
     crsr = connection.cursor() 
     
     # create the main table (if not already exists) in the database 
-    sql_cmd = 'CREATE TABLE IF NOT EXISTS main (date DATE PRIMARY KEY, downloads INTEGER);'
+    sql_cmd = 'CREATE TABLE IF NOT EXISTS downloads (date DATE PRIMARY KEY, number INTEGER);'
     crsr.execute(sql_cmd)
     
     # insert the base number 
-    sql_cmd = 'INSERT OR REPLACE INTO main VALUES ("{0}", {1});'.format(base_date, base_number)
+    sql_cmd = 'INSERT OR REPLACE INTO downloads VALUES ("{0}", {1});'.format(base_date, base_number)
     crsr.execute(sql_cmd)
 
     # insert or update the data in the table 
-    sql_cmd = 'INSERT OR REPLACE INTO main VALUES ("{0}", {1});'.format(str_yesterday, n_downloads)
+    sql_cmd = 'INSERT OR REPLACE INTO downloads VALUES ("{0}", {1});'.format(str_yesterday, n_downloads)
     crsr.execute(sql_cmd)
 
     # summation
-    sql_cmd = 'SELECT SUM(downloads) FROM main;'
+    sql_cmd = 'SELECT SUM(number) FROM downloads;'
     crsr.execute(sql_cmd)
     ret = crsr.fetchone()
     print(ret[0])

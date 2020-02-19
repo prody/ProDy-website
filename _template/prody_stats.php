@@ -1,12 +1,24 @@
 <?php
-$dir = 'sqlite:prody_stats.db';
-$dbh  = new PDO($dir) or die("cannot open the database");
+$servername = "localhost";
+$username = "prody";
+$password = "I'm Protein Dynamics";
+$dbname = "prody";
 
-$stmt = $dbh->prepare("SELECT SUM(value) AS value_sum FROM codes");
-$stmt->execute();
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-$row = $stmt->fetchAll(PDO::FETCH_OBJ);
-$sum = $row->value_sum;
+$sql = "SELECT SUM(number) AS value_sum FROM downloads";
+$result = $conn->query($sql);
 
-echo $sum;
+$row = $result->fetch_assoc();
+$sum = $row["value_sum"];
+
+$result->free();
+$conn->close();
+
+echo number_format($sum);
 ?>
