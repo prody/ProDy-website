@@ -3,6 +3,7 @@
 SPHINXBUILD   = sphinx-build
 BUILDDIR      = _build
 WORKDIR       = _workdir
+TEMPLATEDIR   = _template
 
 .PHONY: help clean clone pull html pdf copy stats
 
@@ -66,6 +67,9 @@ workdir:
 
 html: link drugui workdir 
 	cd $(WORKDIR); $(SPHINXBUILD) -b html -d ../$(BUILDDIR)/doctrees ../ ../$(BUILDDIR)/html
+	cd -; mv -f $(BUILDDIR)/html/statistics/index.html $(BUILDDIR)/html/statistics/index.php
+	cp -rf $(TEMPLATEDIR)/prody_stats.* $(BUILDDIR)/html/statistics/
+
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
