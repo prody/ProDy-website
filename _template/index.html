@@ -37,7 +37,7 @@
     google.charts.load('current', {'packages':['geochart','table','corechart']});
     google.charts.setOnLoadCallback(drawRegionsMap);
     function drawRegionsMap() {
-        var quere = new google.visualization.Query('https://prody-users.appspot.com/query?id=ag1zfnByb2R5LXVzZXJzchULEghBcGlRdWVyeRiAgICA3pCBCgw&format=data-table-response'
+        var quere = new google.visualization.Query('https://cors-anywhere.herokuapp.com/https://prody-users.appspot.com/query?id=ag1zfnByb2R5LXVzZXJzchULEghBcGlRdWVyeRiAgICA3pCBCgw&format=data-table-response'
         );
 
         quere.send(function (response) {
@@ -57,7 +57,7 @@
    };
     google.charts.setOnLoadCallback(drawTable);
     function drawTable() {
-        var querf = new google.visualization.Query('https://prody-users.appspot.com/query?id=ag1zfnByb2R5LXVzZXJzchULEghBcGlRdWVyeRiAgICA2reXCgw&format=data-table-response'
+        var querf = new google.visualization.Query('https://cors-anywhere.herokuapp.com/https://prody-users.appspot.com/query?id=ag1zfnByb2R5LXVzZXJzchULEghBcGlRdWVyeRiAgICA2reXCgw&format=data-table-response'
         );
 
         querf.send(function (response) {
@@ -73,7 +73,7 @@
     };
     google.charts.setOnLoadCallback(drawTable2);
     function drawTable2() {
-        var querd = new google.visualization.Query('https://prody-users.appspot.com/query?id=ag1zfnByb2R5LXVzZXJzchULEghBcGlRdWVyeRiAgICAgICACgw&format=data-table-response'
+        var querd = new google.visualization.Query('https://cors-anywhere.herokuapp.com/https://prody-users.appspot.com/query?id=ag1zfnByb2R5LXVzZXJzchULEghBcGlRdWVyeRiAgICAgICACgw&format=data-table-response'
         );
         querd.send(function (response) {
            var datad = response.getDataTable();
@@ -115,7 +115,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
 
     google.charts.setOnLoadCallback(drawChart)
     function drawChart() {
-        var querf = new google.visualization.Query('https://prody-users.appspot.com/query?id=ag1zfnByb2R5LXVzZXJzchULEghBcGlRdWVyeRiAgICAmdKFCgw&format=data-table-response'
+        var querf = new google.visualization.Query('https://cors-anywhere.herokuapp.com/https://prody-users.appspot.com/query?id=ag1zfnByb2R5LXVzZXJzchULEghBcGlRdWVyeRiAgICAmdKFCgw&format=data-table-response'
         );
 
         querf.send(function (response) {
@@ -142,7 +142,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
     google.charts.setOnLoadCallback(drawChart2)
     function drawChart2() {
 
-        var querg = new google.visualization.Query('https://prody-users.appspot.com/query?id=ag1zfnByb2R5LXVzZXJzchULEghBcGlRdWVyeRiAgICA7bGDCgw&format=data-table-response'
+        var querg = new google.visualization.Query('https://cors-anywhere.herokuapp.com/https://prody-users.appspot.com/query?id=ag1zfnByb2R5LXVzZXJzchULEghBcGlRdWVyeRiAgICA7bGDCgw&format=data-table-response'
         );
 
         querg.send(function (response) {
