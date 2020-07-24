@@ -113,7 +113,7 @@ which it can use for graphical representations.
    :verbatim:
 
    writeVMDstiffness(stiffness, gfp, [3,7], [0,7.5], filename='1gfl_3-7aa')
-   writeVMDstiffness(stiffness, gfp, [3], [0,7], filename='1gfl_3')
+   writeVMDstiffness(stiffness, gfp, [3], [0,7], filename='1gfl_3aa')
 
 A TCL file will be saved automatically and can be used later in VMD_ by running 
 the following command line instruction. Results can be loaded automatically to VMD_ 
@@ -162,15 +162,10 @@ The results of the mean value of mechanical stiffness calculation can be seen
 in VMD_ using:
 
 .. ipython:: python
-   :verbatim:
-	
-   writeDeformProfile(anm, gfp, select='chain A and name CA', pdb_selstr='protein')
-
+   writeDeformProfile(stiffness, gfp, select='chain A and name CA', pdb_selstr='protein')
 
 .. figure:: images/1gfl_defprofile_vmd.png
    :scale: 90 %
-
-
 
 Calculate Distribution of Deformation 
 -------------------------------------------------------------------------------
