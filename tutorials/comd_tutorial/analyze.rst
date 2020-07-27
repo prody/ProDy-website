@@ -9,8 +9,8 @@ from that folder:
 
 1. :file:`initial_ionized.pdb`
 2. :file:`final_ionized.pdb`
-3. :file:`initial_trajectory.pdb`
-4. :file:`final_trajectory.pdb`
+3. :file:`initial_trajectory.dcd`
+4. :file:`final_trajectory.dcd`
 
 Preparing Trajectory Files
 --------------------------
