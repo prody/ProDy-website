@@ -55,13 +55,27 @@ above family. We will use chain B of :pdb:`2W5I`.
 .. ipython:: python
 
    pdb = parsePDB('2W5I', chain='B')
-   chB_ca = pdb.select('protein and name CA and resid 1 to 121')
+
+We can use the function :func:`alignSequenceToMSA` to identify the part of 
+the PDB file that matches with the MSA::
+
+.. ipython:: python
+
+   aln, idx_1, idx_2 = alignSequenceToMSA(pdb, msa_refine, chain='B')
+   showAlignment(aln)
+
+The second indices, idx_2, can be used to select the corresponding Calpha atoms::
+
+.. ipython:: python
+
+   chB_ca = pdb.ca[idx_2[np.nonzero(idx_2)[0]]+1]
+   chB_ca.getSequence()
 
 We write this selection to a PDB file for use later, e.g. with evol apps.
 
 .. ipython:: python
 
-   writePDB('2W5IB_1-121.pdb', chB_ca)
+   writePDB('2W5IB_3-121.pdb', chB_ca)
 
 We perform GNM as follows:
 
@@ -121,7 +135,7 @@ see the distribution of entropy and mobility on the structure.
 
 .. ipython:: python
 
-   selprot = pdb.select('protein and resid 1 to 121')
+   selprot = pdb.select('protein and resid 3 to 121')
    resindex = selprot.getResindices()
    entropy_prot = [entropy[ind] for ind in resindex]
    mobility_prot = [mobility_all[ind]*10 for ind in resindex]
