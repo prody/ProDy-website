@@ -25,7 +25,7 @@ Next we can calculate conservation using shannon entropy and coevolution using
 mutual information with correction and also save the plots.::
 
     evol conserv PF00074_full_refined.slx -S
-    evol coevol PF00074_full_refined.slx -S -F png -c apc -cmin 0.0
+    evol coevol PF00074_full_refined.slx -S -F png -c apc --cmin 0.0
 
 We can rank order the residues with highest covariance and apply filters like
 reporting only those pairs that are at a separation of at least 5 residues
