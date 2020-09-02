@@ -56,19 +56,39 @@ above family. We will use chain B of :pdb:`2W5I`.
 
    pdb = parsePDB('2W5I', chain='B')
 
-We can use the function :func:`alignSequenceToMSA` to identify the part of 
-the PDB file that matches with the MSA::
+We can use the function :func:`.alignSequenceToMSA` to identify the part of 
+the PDB file that matches with the MSA. In cases where this fails, a label 
+keyword argument can be provided to the function as well.
 
 .. ipython:: python
 
    aln, idx_1, idx_2 = alignSequenceToMSA(pdb, msa_refine, chain='B')
    showAlignment(aln)
 
-The second indices, idx_2, can be used to select the corresponding Calpha atoms::
+We can use the resulting indices to find the relevant residues. idx_1 provides 
+the residue numbers for in pdb, which correspond to the positions in aln. 
+idx_2 provides indices for the positions in the original alignment msa_refine.
+
+The gapped positions in aln are filled with repeating values in idx_2 so we can use 
+:func:`~numpy.unique` to find the non-repeating ones. We'd also skip the first one, 
+which we know is a gap too.
 
 .. ipython:: python
 
-   chB_ca = pdb.ca[idx_2[np.nonzero(idx_2)[0]]+1]
+   u, i = np.unique(idx_2, return_index=True)
+   rel_i = i[1:]
+
+We can then use these new indices rel_i to get the relevant residue numbers from 
+idx_1 and join them into a string for selection::
+
+.. ipython:: python
+
+   resnums_str = ' '.join([str(x) for x in idx_1[rel_i]])
+   resnums_str
+
+.. ipython:: python
+
+   chB_ca = pdb.select('chain B and ca and resnum ' + resnums_str)
    chB_ca.getSequence()
 
 We write this selection to a PDB file for use later, e.g. with evol apps.
