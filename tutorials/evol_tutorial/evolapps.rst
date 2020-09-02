@@ -33,6 +33,6 @@ sequentially or are 15 Ang apart in structure. The residues may be numbered
 based on a PDB file, such as the one we made earlier::
 
     evol rankorder -h
-    evol rankorder PF00074_full_refined_mutinfo_corr_apc.txt -q 5 -p 2W5IBI_1-121.pdb
+    evol rankorder PF00074_full_refined_mutinfo_corr_apc.txt -q 5 -p 2W5IB_1-121.pdb
     evol rankorder PF00074_full_refined_mutinfo_corr_apc.txt -u -t 15 -p 2W5IB_1-121.pdb
 
