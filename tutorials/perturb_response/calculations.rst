@@ -35,6 +35,10 @@ MD simulation.
     anm_ampar.buildHessian(ampar_ca)
     anm_ampar.calcModes()
 
+PRS can also be performed with any other model from which a covariance matrix 
+can be calculated including GNM and PCA. A PCA model can also be used with an 
+external covariance matrix using its :meth:`.PCA.setCovariance` method. ANM is 
+used here to reproduce the published data.
 
 Showing the PRS matrix with effectiveness and sensitivity profiles
 -------------------------------------------------------------------------------
