@@ -52,11 +52,16 @@ Mobility Calculation
 Next, we obtain residue fluctuations or mobility for protein member of the
 above family. We will use chain B of :pdb:`2W5I`.
 
-
 .. ipython:: python
 
    pdb = parsePDB('2W5I', chain='B')
    chB_ca = pdb.select('protein and name CA and resid 1 to 121')
+
+We write this selection to a PDB file for use later, e.g. with evol apps.
+
+.. ipython:: python
+
+   writePDB('2W5IB_1-121.pdb', chB_ca)
 
 We perform GNM as follows:
 
