@@ -49,28 +49,31 @@ The exANM assumes that the membrane is normal to the z-axis, so it is important 
 
 There will be warnings saying that ProDy wants to read beta factors, but the coordinates should be read properly.  In addition to atoms, the OPM file contains points to indicate the boundaries of the membrane. 
 
-.. ipython:: python
-
-   of_ca = of_all.select('protein and name CA and not (chain A and resid 119 to 122) and not (chain C and resid 119 to 123) and not chain D')
 
 Building Hessian and Calculating Modes
 --------------------------------------
 
 ProDy's exANM method can be used for any system. This method will create a membrane with given highest and lowest coordinate on the Z-axis. The main advantage of this method is that the protein can interact with lipid molecules on the membrane. The elastic network model based on the interaction between aminoacids on protein and the interaction between aminoacids with the lipids on membrane. The addition of physical membrane will avoid the unphysical distortion of the structure. This will not reduce accuracy as in the case of implicit membrane ANM model. 
 
-To use the explicit membrane for ANM calculation, we instantiate an exANM object for each structure:
+To use the explicit membrane for ANM calculation, we first select the protein part of the structure:
+
+.. ipython:: python
+
+   of_ca = of_all.select('protein and name CA and not (chain A and resid 119 to 122) and not (chain C and resid 119 to 123) and not chain D')
+
+and then instantiate an exANM object:
 
 .. ipython:: python
 
    exanm = exANM('2nwl')
 
-and we build a couple of Hessians using the coordinates of the crystal structures
+and we build a couple of Hessians using the coordinates of the crystal structures,
 
 .. ipython:: python
 
-   exanm.buildHessian(of_ca, membrane_low=-13, membrane_high=13.)
+   exanm.buildHessian(of_ca, h=13.)
 
-Now we calculate the modes and write them to a pair of .nmd files for viewing.
+`h=13.` specifies the thickness of the membrane to be 26 Angstrom. Now we calculate the modes and write them to a pair of .nmd files for viewing.
 
 .. ipython:: python
 

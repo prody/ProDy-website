@@ -4,17 +4,17 @@ Implicit Membrane ANM
 Here we will make use of ProDy's implicit membrane ANM (imANM) capabilities to investigate the motions of a 
 neurotransmitter transporter in the presence of the plasma membrane. The procedure is based on the methods 
 described in [TL12]_ and relies on the Rotations and Translations of Blocks (:class:`.RTB`) method [FT00]_ 
-of reducing complexity within ENMs. You will need the following files:
+of reducing complexity within ENMs. To follow this tutorial, you will need the following files:
 
-  * `Membrane-aligned outward-facing structure file <2NWL-opm.pdb>`_
-  * `Membrane-aligned inward-facing structure file <3KBC-opm.pdb>`_
-  * `Outward-facing block definition file <2nwl_blocks.txt>`_
-  * `Inward-facing block definition file <3kbc_blocks.txt>`_
+  * Membrane-aligned outward-facing structure file (2NWL-opm.pdb)
+  * Membrane-aligned inward-facing structure file (3KBC-opm.pdb)
+  * Outward-facing block definition file (2nwl_blocks.txt)
+  * Inward-facing block definition file (3kbc_blocks.txt)
 
-Files in the following archives can be used to follow this tutorial:
+These files can be downloaded from one of the following links:
 
-  * `membrane ANM Tutorial Files (TGZ) <membanm_tutorial_files.tgz>`_
-  * `membrane ANM Tutorial Files (ZIP) <membanm_tutorial_files.zip>`_
+  * `membrane ANM Tutorial Files (TGZ) <membrane_anm_files.tgz>`_
+  * `membrane ANM Tutorial Files (ZIP) <membrane_anm_files.zip>`_
 
 The first file contains the outward-facing structure of the glutamate transporter after insertion into the plasma membrane.  
 It is obtained from the `Orientations of Proteins in Membranes <http://opm.phar.umich.edu/>`_ database.
@@ -67,7 +67,7 @@ As a last step in preparation, we can align the structures so that we can calcul
 
 Assigning Blocks
 -------------------------------------------------------------------------------
-ProDy's RTB method can be used for any system, whether or not a membrane is involved. imANM is an extension of RTB and they are in the same part of ProDy. 
+imANM is an extension of ProDy's RTB method, which can be used for any system, whether or not a membrane is involved. 
 The RTB method allows us to decompose the protein into pre-defined rigid blocks. Atoms within a block do not move relative to each other (hence the descriptor "rigid"), 
 but blocks can move relative to other blocks. There are two main benefits of using blocks: First, the Hessian for a good blocking scheme is smaller 
 than the Hessian for an all-residue representation, so the modes can be calculated more quickly. This is particularly useful when one is considering very large systems 
@@ -98,13 +98,13 @@ The first ten lines of ``2nwl_blocks.txt`` are::
 
 The columns, separated by whitespace, are formatted as follows:
 
-      * *1.* Integer identifier of the block.
-      * *2.* Three-letter code for first residue in the block.
-      * *3.* Chain ID of first residue in the block.
-      * *4.* Resnum of first residue in the block.
-      * *5.* Three-letter code for last residue in the block.
-      * *6.* Chain ID of last residue in block.
-      * *7.* Resnum of last residue in the block.
+      * Integer identifier of the block.
+      * Three-letter code for first residue in the block.
+      * Chain ID of first residue in the block.
+      * Resnum of first residue in the block.
+      * Three-letter code for last residue in the block.
+      * Chain ID of last residue in block.
+      * Resnum of last residue in the block.
 
 This is just one way of storing information on how the protein is deconstructed into blocks. You are welcome to use others if you have a way of reading them. 
 We can read blocks from ``2nwl_blocks.txt`` into the array ``blocks`` as follows:
@@ -112,68 +112,81 @@ We can read blocks from ``2nwl_blocks.txt`` into the array ``blocks`` as follows
 .. ipython:: python
 
    blk='2nwl_blocks.txt'
+   ag = of_ca.getAtomGroup()
+   ag.setData('block', 0)
    with open(blk) as inp:
-        for line in inp:
-             b, n1, c1, r1, n2, c2, r2 = line.split()
-             sel = of_ca.select('chain {} and resnum {} to {}'
-                              .format(c1, r1, r2))
-             if sel != None:
-                sel.setBetas(b)
+      for line in inp:
+         b, n1, c1, r1, n2, c2, r2 = line.split()
+         sel = of_ca.select('chain {} and resnum {} to {}'
+                            .format(c1, r1, r2))
+         if sel != None:
+            sel.setData('block', b)
 
 
-   of_blocks = of_ca.getBetas()
+   of_blocks = of_ca.getData('block')
 
 We will do the same for the blocks of the inward-facing structure.  The block definitions are based on secondary structures, which vary slightly between the structures.  We therefore have two separate blocking schemes.
 
 .. ipython:: python
 
-   blk='3kbc_blocks.txt'
+   blk = '3kbc_blocks.txt'
+   ag = if_ca.getAtomGroup()
+   ag.setData('block', 0)
    with open(blk) as inp:
-        for line in inp:
-             b, n1, c1, r1, n2, c2, r2 = line.split()
-             sel = if_ca.select('chain {} and resnum {} to {}'
-                              .format(c1, r1, r2))
-             if sel != None:
-                sel.setBetas(b)
+      for line in inp:
+         b, n1, c1, r1, n2, c2, r2 = line.split()
+         sel = if_ca.select('chain {} and resnum {} to {}'
+                            .format(c1, r1, r2))
+         if sel != None:
+            sel.setData('block', b)
 
 
-   if_blocks = if_ca.getBetas()
-
+   if_blocks = if_ca.getData('block')
 
 
 
 Calculating the Modes
 -------------------------------------------------------------------------------
-To use the blocks in an RTB ANM calculation, we instantiate an RTB object for each structure:
+To use the blocks in an RTB imANM calculation, we instantiate an imANM object for each structure:
 
 .. ipython:: python
 
-   of_rtb = RTB('2nwl')
-   if_rtb = RTB('3kbc')
+   of_imanm = imANM('2nwl')
+   if_imanm = imANM('3kbc')
 
-and we build a couple of Hessians using the coordinates of the crystal structures
+and we build a couple of Hessians using the coordinates of the crystal structures.
+
 
 .. ipython:: python
 
    of_coords = of_ca.getCoords()
    if_coords = if_ca.getCoords()
-   of_rtb.buildHessian(of_coords, of_blocks, cutoff=11.0, scale=16., membrane_low=-1000.0, membrane_high=1000.0)
-   if_rtb.buildHessian(if_coords, if_blocks, cutoff=11.0, scale=16., membrane_low=-1000.0, membrane_high=1000.0)
+   of_imanm.buildHessian(of_coords, of_blocks, scale=16., depth=27.)
+   if_imanm.buildHessian(if_coords, if_blocks, scale=16., depth=27.)
 
-The scaling factor of 16 in this example means that the restoring force for any displacement in the x- or y-direction is 16 times greater than the force associated with a displacement in the z-direction.  The constraint on motions parallel to the membrane surface implicitly incorporates the membrane's effects into ANM.  To use RTB with no membrane effects, set ``scale=1.0`` (which is also the default value).  We have here set the boundaries of the membrane to extend well beyond the protein, effectively applying the implicit membrane scaling to the entire protein.
+The scaling factor of 16 in this example means that the restoring force 
+for any displacement in the x- or y-direction is 16 times greater than the 
+force associated with a displacement in the z-direction. 
+The constraint on motions parallel to the membrane surface implicitly 
+incorporates the membrane's effects into ANM. 
 
-Now we calculate the modes and write them to a pair of .nmd files for viewing.
+The parameter ``depth`` specifies the total size of the membrane in the 
+z direction, half of which goes either side of the x-y plane. It is also 
+possible to set the positions of the upper and lower edges of the membrane 
+separately using ``high`` and ``low``.
+
+Next we calculate the modes and write them to a pair of .nmd files for viewing.
 
 .. ipython:: python
 
-   of_rtb.calcModes()
-   if_rtb.calcModes()
-   writeNMD('2nwl_im.nmd',of_rtb,of_ca.select('protein and name CA'))
-   writeNMD('3kbc_im.nmd',if_rtb,if_ca.select('protein and name CA'))
+   of_imanm.calcModes()
+   if_imanm.calcModes()
+   writeNMD('2nwl_im.nmd', of_imanm, of_ca.select('protein and name CA'))
+   writeNMD('3kbc_im.nmd', if_imanm, if_ca.select('protein and name CA'))
 
 
 .. figure:: images/membrane_anm-imanm_of3.png
-   :scale: 100%
+   :scale: 70%
 
 The third mode of the outward-facing structure moves all three transport domains simultaneously through the membrane in a 'lift-like' motion.
 

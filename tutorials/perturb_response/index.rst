@@ -20,7 +20,6 @@ Perturbation Response Scanning Calculations
    calculations
    analysis
 
-
 .. only:: html
 
    .. include:: acknowledgments.rst

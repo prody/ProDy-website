@@ -20,7 +20,12 @@ IPython_ is highly recommended for interactive usage.
 Getting Started
 -------------------------------------------------------------------------------
 
-To follow this tutorial, you will not need any additional files.
+This tutorial contains two parts. In the first part, we will have a quick 
+walk-through on the SignDy_ calculations and functions using the example of type-I 
+periplasmic binding protein (PBP-I) domains, in which case the data is convienient 
+collected from the `Dali server`_ [LH10]_. The second part will be a more detailed 
+tutorial on building an ensemble 'manually' from scratch, and try to reproduce the 
+figures presented in [SZ18]_.
 
 We recommend that you will follow this tutorial by typing commands in an
 IPython session, e.g.::
@@ -32,14 +37,15 @@ or with pylab environment::
   $ ipython --pylab
 
 
-First, we will make necessary imports from ProDy and Matplotlib
+First, we will make necessary imports from the ProDy_, Numpy_ and Matplotlib_
 packages.
 
 .. ipython:: python
 
-   from prody import *
-   from pylab import *
-   ion()
+    from prody import *
+    from numpy import *
+    from matplotlib.pyplot import *
+    ion()
 
 We have included these imports in every part of the tutorial, so that
 code copied from the online pages is complete. You do not need to repeat
@@ -52,6 +58,14 @@ How to Cite
 If you benefited from SignDy Calculations in your research, 
 please cite the following paper:
 
-.. [SZ18] Zhang S., Krieger J., Li H., Bahar I. 
-   SignDy: Discovering the Signature Dynamics of Protein Families with Elastic Network Model 
-   Analysis. *(in preparation)* **2018**
+.. [SZ18] Zhang S, Li H, Krieger J, Bahar I. 
+    Shared signature dynamics tempered by local fluctuations enables fold adaptability and specificity.
+    *Mol. Biol. Evol.* **2019** (In Press)
+
+.. [LH10] Holm L, Rosenström P.
+    Dali server: conservation mapping in 3D.
+    *Nucleic Acids Res.* **2010** 10(38):W545-9
+
+.. _`Dali server`: http://ekhidna2.biocenter.helsinki.fi/dali/
+
+.. _`SignDy`: http://prody.csb.pitt.edu/test_prody/tutorials/signdy_tutorial/

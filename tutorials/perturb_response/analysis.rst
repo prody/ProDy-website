@@ -6,9 +6,9 @@ still in the same python session.
 
 .. ipython:: python
 
-   from prody import *
-   from pylab import *
-   ion()
+    from prody import *
+    from pylab import *
+    ion()
 
 You can load the model again if you are starting a new session as follows:
 
@@ -26,7 +26,7 @@ and sensitivity profiles colored by chain:
 
 .. ipython:: python
 
-    show = showPerturbResponse(model=anm_ampar, atoms=ampar_ca, 
+    show = showPerturbResponse(anm_ampar, atoms=ampar_ca, 
                                show_matrix=False)
     @savefig 3kg2_prs_eff_and_sens.png width=4in
     plt.show()
@@ -42,7 +42,7 @@ This can again be shown in a plot as in Figure 6D.
 
 .. ipython:: python
 
-    show = showPerturbResponse(model=anm_ampar, atoms=ampar_ca, 
+    show = showPerturbResponse(anm_ampar, atoms=ampar_ca, 
                                show_matrix=False,
                                select='chain B and resnum 84')
     @savefig 3kg2_prs_chB_T84_eff_and_sens.png width=4in

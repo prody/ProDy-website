@@ -60,15 +60,15 @@ using the option *origin='upper'*.
 
     @savefig ens_gnms_so_matrix.png width=4in
     showMatrix(arccos(so_matrix), origin='upper')
-	close()
+	plt.close('all')
 	
     @savefig ens_gnms_so_tree.png width=4in
     showTree(so_tree, format='plt')
-	close()
+	plt.close('all')
 	
     @savefig ens_gnms_so_reordered_so_matrix.png width=4in
     showMatrix(arccos(reordered_so), origin='upper')
-	close()
+	plt.close('all')
 
 
 Sequence and structural distances
@@ -93,13 +93,14 @@ the PDB ensemble.
                          method='upgma')
     @savefig ens_gnms_seqd_tree.png width=4in
     showTree(seqd_tree, format='plt')
-	close()
+	plt.close('all')
 
     reordered_seqd, indices = reorderMatrix(seqd_matrix, seqd_tree, 
                                             names=labels)
-    #plt.figure();
+    plt.figure();
     @savefig ens_gnms_seqd_reordered_seqd_matrix.png width=4in
     showMatrix(reordered_seqd, origin='upper');
+	plt.close('all')
 
 .. ipython:: python
 
@@ -121,7 +122,7 @@ the PDB ensemble.
                                             names=labels)
     @savefig ens_gnms_rmsd_reordered_rmsd_matrix.png width=4in
     showMatrix(reordered_rmsd, origin='upper')
-	close()
+	plt.close('all')
 
 
 Comparing sequence, structural and dynamic classifications
@@ -140,15 +141,14 @@ We can reorder the seqd and sod matrices by the RMSD tree too to compare them:
 
     @savefig ens_gnms_rmsd_reordered_seqd_matrix.png width=4in
     showMatrix(reordered_seqd, origin='upper')
-	close()
-	
+	plt.close('all')
+
     @savefig ens_gnms_rmsd_reordered_rmsd_matrix.png width=4in
     showMatrix(reordered_rmsd, origin='upper')
-	close()
-	
+	plt.close('all')
+
     @savefig ens_gnms_rmsd_reordered_sod_matrix.png width=4in
     showMatrix(arccos(reordered_sod), origin='upper')
-	close()
 
 
 This analysis is quite sensitive to how many modes are used. As the number of modes approaches the full number, 

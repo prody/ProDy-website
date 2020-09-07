@@ -96,14 +96,14 @@ two of them, which by default are ``cutoff=10.0`` and ``gamma=1.0``, i.e.
    gnm.getCutoff()
    gnm.getGamma()
 
-Note that it is also possible to use an externally calculated Kirchhoff
-matrix. Just pass it to the GNM instance using :meth:`.GNM.setKirchhoff` method.
+Note that it is also possible to use an externally calculated Kirchhoff matrix.
+Just pass it to the GNM instance using :meth:`.GNM.setKirchhoff` method.
 
 
 Calculate normal modes
 -------------------------------------------------------------------------------
 
-We now calculate normal modes from the Kirchhoff matrix. 
+We now calculate normal modes from the Kirchhoff matrix.
 
 .. ipython:: python
 
@@ -131,7 +131,7 @@ Get covariance matrix:
    gnm.getCovariance().round(2)
 
 Note that covariance matrices are calculated using the available modes in the
-model, which is the slowest 20 modes in this case.  If the user calculates M 
+model, which is the slowest 20 modes in this case. If the user calculates M
 modes, these M modes will be used in calculating the covariance matrix.
 
 
@@ -152,8 +152,8 @@ slowest non-trivial mode would have index 6.
 
 Access hinge sites
 -------------------------------------------------------------------------------
-Hinge sites identified from all calculated modes (``n_modes`` defined when calling ``gnm.calcModes()``) 
-can be obtain by using following command. 
+Hinge sites identified from all calculated modes (``n_modes`` defined when
+calling ``gnm.calcModes()``) can be obtain by using the following command.
 
 .. ipython:: python
 
@@ -169,14 +169,24 @@ Hinge sites in the slowest mode can be obtained by:
 Equivalently, the hinge sites can be accessed from ``Mode`` object:
 
 .. ipython:: python
-    
+
     gnm[0].getHinges()
 
 Hinge sites identified from multiple modes (e.g. 2 modes) can be accessed by:
 
 .. ipython:: python
-    
+
     gnm[:2].getHinges()
+
+These numbers correspond to node indices in the GNM object, which does not know 
+anything about the original atoms. In order to get the residue numbers corresponding 
+to these hinges, we can index the resum array with the hinges list as follows:
+
+.. ipython:: python
+
+    resnums = calphas.getResnums()
+    mode2_hinges = gnm[1].getHinges()
+    resnums[mode2_hinges]
 
 
 Plot results
@@ -206,13 +216,13 @@ Cross-correlations
 
 Slow mode shape
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-By default, hinge sites will be shown in mode shape plot indicated by red stars, 
-and it can be turned off by setting ``hinge=False``. 
+By default, hinge sites will be shown in mode shape plot indicated by
+red stars, and it can be turned off by setting ``hinges=False``.
 The option ``zero=True`` is to turn on the reference line of zero.
 
 .. ipython:: python
 
-   showMode(gnm[0], hinge=True, zero=True);
+   showMode(gnm[0], hinges=True, zero=True);
    @savefig enm_analysis_gnm_mode.png width=4in
    grid();
 
@@ -222,7 +232,7 @@ Square fluctuations
 .. ipython:: python
 
    @savefig enm_analysis_gnm_sqflucts.png width=4in
-   showSqFlucts(gnm[0], hinge=True);
+   showSqFlucts(gnm[0], hinges=True);
 
 Protein structure bipartition
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

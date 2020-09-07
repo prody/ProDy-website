@@ -61,6 +61,14 @@ iterative superposition:
    ensemble.addCoordset( ubi.getCoordsets() )
    ensemble.iterpose()
 
+We can then make a new Atomgroup object where we replace the coordinates 
+with the ones from the ensemble as follows:
+
+.. ipython:: python
+
+   ubi_copy = ubi.copy()
+   ubi_copy.delCoordset(range(ubi_copy.numCoordsets()))
+   ubi_copy.addCoordset(ensemble.getCoordsets())
 
 PCA calculations
 -------------------------------------------------------------------------------
@@ -115,15 +123,16 @@ Let's print fraction of variance for top ranking 4 PCs (listed in Table S3):
 Compare with ANM results
 -------------------------------------------------------------------------------
 
-We set the active coordinate set to 79, which is the one that is closest
-to the mean structure (note that indices start from 0 in Python).
+We set the active coordinate set of ubi_copy to model 79, which is the one 
+that is closest to the mean structure (note that indices start from 0 in Python 
+so we give it 78).
 Then, we perform ANM calculations using :func:`.calcANM` for the active
 coordset:
 
 .. ipython:: python
 
-   ubi.setACSIndex(78)
-   anm, temp = calcANM(ubi)
+   ubi_copy.setACSIndex(78)
+   anm, temp = calcANM(ubi_copy)
    anm.setTitle('Ubiquitin')
 
 We calculate overlaps between ANM and PCA modes (presented in Table 1).

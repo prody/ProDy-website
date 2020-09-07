@@ -10,8 +10,6 @@ Signature Dynamics
 
     You can also read this tutorial in `PDF format <signdy.pdf>`_.
 
-    Tutorial files: `ZIP <signdy.zip>`_ `TGZ <signdy.tgz>`_
-
 .. add .rst files to `toctree` in the order that you want them
 
 .. toctree::
@@ -19,6 +17,7 @@ Signature Dynamics
    :maxdepth: 2
 
    intro
+   overview
    data
    core
    classifications
