@@ -64,6 +64,7 @@ html_additional_pages = {
     'mechstiff/index' : 'mechstiff.html',
     'analytics/index' : 'analytics.html',
     'workshop/index' : 'workshop.html',
+    'pharmmaker/index' : 'pharmmaker.html'
 }
 
 html_sidebars = {

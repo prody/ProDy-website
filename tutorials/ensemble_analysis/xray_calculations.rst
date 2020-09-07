@@ -67,7 +67,7 @@ To update list of p38 MAPK PDB files, you can make a blast search as follows:
    :verbatim:
 
    blast_record = blastPDB(p38_sequence)
-   pdbids = blast_record.getHits()
+   pdbids = blast_record.getHits(90, 70)
 
 We use the same set of structures to reproduce the results.
 After we listed the PDB identifiers, we obtain them using

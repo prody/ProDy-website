@@ -68,7 +68,7 @@ structure, and extract ligands:
 
 .. ipython:: python
 
-   for pdb_id in blast_record.getHits():
+   for pdb_id in blast_record.getHits(90, 70):
        # blast search may return PDB identifiers of deprecated structures,
        # so we parse structures within a try statement
        try:
