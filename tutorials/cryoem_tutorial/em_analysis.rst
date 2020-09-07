@@ -47,9 +47,12 @@ The 144x144x144 density grid is converted into an :class:`.AtomGroup`
 class and elastic network model analysis can be applied to the 
 constructed structure as usual. 
 
-anm = ANM('TRiC EMDMAP ANM Analysis')
-anm.buildHessian(emd)
-anm.calcModes(n_modes=5)
-writeNMD('tric_anm_3_modes_8000nodes.nmd', anm[:3], emd)
+.. ipython:: python
+   :verbatim:
+   
+   anm = ANM('TRiC EMDMAP ANM Analysis')
+   anm.buildHessian(emd)
+   anm.calcModes(n_modes=5)
+   writeNMD('tric_anm_3_modes_8000nodes.nmd', anm[:3], emd)
 
 
