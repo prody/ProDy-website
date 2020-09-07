@@ -52,18 +52,38 @@ Mobility Calculation
 Next, we obtain residue fluctuations or mobility for protein member of the
 above family. We will use chain B of :pdb:`2W5I`.
 
-
 .. ipython:: python
 
    pdb = parsePDB('2W5I', chain='B')
-   chB_ca = pdb.select('protein and name CA and resid 1 to 121')
+
+We can use the function :func:`.alignSequenceToMSA` to identify the part of 
+the PDB file that matches with the MSA. In cases where this fails, a label 
+keyword argument can be provided to the function as well.
+
+.. ipython:: python
+
+   aln, idx_1, idx_2 = alignSequenceToMSA(pdb, msa_refine, chain='B')
+   showAlignment(aln, indices=[idx_1, idx_2])
+
+We can also trim the PDB structure using the function :func:`.trimAtomsUsingMSA`::
+
+.. ipython:: python
+
+   chB = trimAtomsUsingMSA(pdb, msa_refine, chain='B')
+   chB.ca.getSequence()
+
+We write this selection to a PDB file for use later, e.g. with evol apps.
+
+.. ipython:: python
+
+   writePDB('2W5IB_3-121.pdb', chB)
 
 We perform GNM as follows:
 
 .. ipython:: python
 
    gnm = GNM('2W5I')
-   gnm.buildKirchhoff(chB_ca)
+   gnm.buildKirchhoff(chB.ca)
    gnm.calcModes(n_modes=None)  # calculate all modes
 
 Now, let's obtain residue mobility using the slowest mode, the slowest 8 modes,
@@ -116,7 +136,7 @@ see the distribution of entropy and mobility on the structure.
 
 .. ipython:: python
 
-   selprot = pdb.select('protein and resid 1 to 121')
+   selprot = chB.copy()
    resindex = selprot.getResindices()
    entropy_prot = [entropy[ind] for ind in resindex]
    mobility_prot = [mobility_all[ind]*10 for ind in resindex]
