@@ -107,6 +107,7 @@ Let's take a quick look at that:
    showProtein(reference_structure);
    @savefig ensemble_analysis_dimer_protein.png width=4in
    legend();
+   plt.close()
 
 Prepare Ensemble
 -------------------------------------------------------------------------------
@@ -160,7 +161,7 @@ Now, we parse the PDB files one by one and add them to the ensemble:
                                    seqid=sequence_identity,
                                    coverage=sequence_coverage)
            if len(mappings) == 0:
-               print 'Failed to map', pdb
+               print('Failed to map', pdb)
                break
            atommaps.append(mappings[0][0])
            # Make sure all chains are mapped
@@ -242,7 +243,7 @@ ensemble. For example, to add the first 5 structures in ``pdbs`` to ``ensemble``
 .. ipython:: python
 
     ensemble2 = buildPDBEnsemble(pdbs[:5], ref=ensemble, title='HIV-RT', 
-                                seqid=94, coverage=85, occupancy=0.94)
+                                 seqid=94, coverage=85, occupancy=0.94)
     ensemble2
 
 
