@@ -18,6 +18,7 @@ Signature Dynamics
 
    intro
    overview
+   cath
    data
    core
    classifications
