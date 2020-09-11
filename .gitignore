@@ -2,6 +2,7 @@
 *.pdf
 *.zip
 *.tgz
+*.nmd
 files.txt
 
 ProDy
