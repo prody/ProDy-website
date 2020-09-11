@@ -203,7 +203,6 @@ Contact Map
 
    @savefig enm_analysis_gnm_contact_map.png width=4in
    showContactMap(gnm);
-   plt.close('all')
 
 Cross-correlations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -212,7 +211,6 @@ Cross-correlations
 
    @savefig enm_analysis_gnm_cross_corr.png width=4in
    showCrossCorr(gnm);
-   plt.close('all')
 
 Slow mode shape
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -225,7 +223,6 @@ The option ``zero=True`` is to turn on the reference line of zero.
    showMode(gnm[0], hinges=True, zero=True);
    @savefig enm_analysis_gnm_mode.png width=4in
    grid();
-   plt.close('all')
 
 Square fluctuations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -234,7 +231,6 @@ Square fluctuations
 
    @savefig enm_analysis_gnm_sqflucts.png width=4in
    showSqFlucts(gnm[0], hinges=True);
-   plt.close('all')
 
 Protein structure bipartition
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
