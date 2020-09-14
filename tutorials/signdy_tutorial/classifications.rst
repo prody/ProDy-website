@@ -46,9 +46,9 @@ reorder the spectral overlap matrix using the tree as follows:
                        distance_matrix=arccos(so_matrix), 
                        method='upgma')
 
-    reordered_so, new_so_indices = reorderMatrix(so_matrix, 
-                                                 so_tree, 
-                                                 names=labels)
+    reordered_so, new_so_indices = reorderMatrix(labels,
+                                                 so_matrix, 
+                                                 so_tree)
 
 
 We can show the original and reordered spectral distance matrices and the tree as follows.
@@ -60,16 +60,14 @@ using the option *origin='upper'*.
 
     @savefig ens_gnms_so_matrix.png width=4in
     showMatrix(arccos(so_matrix), origin='upper')
-	plt.close('all')
 	
     @savefig ens_gnms_so_tree.png width=4in
     showTree(so_tree, format='plt')
-	plt.close('all')
 	
     @savefig ens_gnms_so_reordered_so_matrix.png width=4in
     showMatrix(arccos(reordered_so), origin='upper')
-	plt.close('all')
 
+    plt.close('all')
 
 Sequence and structural distances
 -------------------------------------------------------------------------------
@@ -85,7 +83,6 @@ the PDB ensemble.
     seqd_matrix = 1. - seqid_matrix
     @savefig ens_gnms_seqd_matrix.png width=4in
     showMatrix(seqd_matrix, origin='upper')
-	plt.close('all')
 
     plt.figure()
     seqd_tree = calcTree(names=labels, 
@@ -93,21 +90,19 @@ the PDB ensemble.
                          method='upgma')
     @savefig ens_gnms_seqd_tree.png width=4in
     showTree(seqd_tree, format='plt')
-	plt.close('all')
 
-    reordered_seqd, indices = reorderMatrix(seqd_matrix, seqd_tree, 
-                                            names=labels)
+    reordered_seqd, indices = reorderMatrix(labels, seqd_matrix, seqd_tree)
     plt.figure();
     @savefig ens_gnms_seqd_reordered_seqd_matrix.png width=4in
     showMatrix(reordered_seqd, origin='upper');
-	plt.close('all')
+
+    plt.close('all')
 
 .. ipython:: python
 
     rmsd_matrix = ens.getRMSDs(pairwise=True)
     @savefig ens_gnms_rmsd_matrix.png width=4in
     showMatrix(rmsd_matrix, origin='upper')
-	plt.close('all')
 
     plt.figure()
     rmsd_tree = calcTree(names=labels, 
@@ -115,15 +110,13 @@ the PDB ensemble.
                          method='upgma')
     @savefig ens_gnms_rmsd_tree.png width=4in
     showTree(rmsd_tree, format='plt')
-	plt.close('all')
 
     plt.figure()
-    reordered_rmsd, indices = reorderMatrix(rmsd_matrix, rmsd_tree, 
-                                            names=labels)
+    reordered_rmsd, indices = reorderMatrix(labels, rmsd_matrix, rmsd_tree)
     @savefig ens_gnms_rmsd_reordered_rmsd_matrix.png width=4in
     showMatrix(reordered_rmsd, origin='upper')
-	plt.close('all')
 
+    plt.close('all')
 
 Comparing sequence, structural and dynamic classifications
 -------------------------------------------------------------------------------
@@ -132,24 +125,21 @@ We can reorder the seqd and sod matrices by the RMSD tree too to compare them:
 
 .. ipython:: python
 
-    reordered_seqd, indices = reorderMatrix(seqd_matrix, rmsd_tree, 
-                                            names=labels)
-    reordered_sod, indices = reorderMatrix(so_matrix, rmsd_tree, 
-                                           names=labels)
+    reordered_seqd, indices = reorderMatrix(labels, seqd_matrix, rmsd_tree)
+    reordered_sod, indices = reorderMatrix(labels, so_matrix, rmsd_tree)
 
 .. ipython:: python
 
     @savefig ens_gnms_rmsd_reordered_seqd_matrix.png width=4in
     showMatrix(reordered_seqd, origin='upper')
-	plt.close('all')
 
     @savefig ens_gnms_rmsd_reordered_rmsd_matrix.png width=4in
     showMatrix(reordered_rmsd, origin='upper')
-	plt.close('all')
 
     @savefig ens_gnms_rmsd_reordered_sod_matrix.png width=4in
     showMatrix(arccos(reordered_sod), origin='upper')
 
+    plt.close('all')
 
 This analysis is quite sensitive to how many modes are used. As the number of modes approaches the full number, 
 the dynamic distance order approaches the RMSD order. With smaller numbers, we see finer distinctions. This is 

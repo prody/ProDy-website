@@ -51,7 +51,8 @@ method (to us) is to get the sequence using ProDy.
 This is the same as simply using
 
 .. ipython:: python
-
+   :verbatim:
+   
    sequence = '''GDVEKGKKIFVQKCAQCHTVEKGGKHKTGPNLHGLFGRKTGQAPGFTYTDANKNKGITWKEE
    TLMEYLENPKKYIPGTKMIFAGIKKKTEREDLIAYLKKATNE'''
 
@@ -81,8 +82,18 @@ A list of PDB structures can be obtained using :func:`.blastPDB`
 as follows:
 
 .. ipython:: python
+   :verbatim:
 
    blast_record = blastPDB(sequence)
+
+If this function times out, then you can ask the blast_record to try again 
+using the :meth:`.fetch`. We can even do this in a loop to be sure::
+
+.. ipython:: python
+   :verbatim:
+
+   while not blast_record.isSuccess:
+      blast_record.fetch()
 
 It is a good practice to save this record on disk, as NCBI may not respond to
 repeated searches for the same sequence. We can do this using the Python standard
@@ -95,6 +106,7 @@ library :mod:`pickle` as follows:
 The record is saved using the :func:`~pickle.dump` function:
 
 .. ipython:: python
+   :verbatim:
 
    pickle.dump(blast_record, open('cytc_blast_record.pkl', 'wb'))
 

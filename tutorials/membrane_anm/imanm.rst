@@ -54,16 +54,14 @@ as chain D in the outward-facing structure and have resid 500, in the inward-fac
 
 .. ipython:: python
 
-   of_ca = of_all.select('protein and name CA and not (chain A and resid 119 to 122) and not (chain C and resid 119 to 123) and not chain D')
-   if_ca = if_all.select('protein and name CA and not (resid 6 to 9) and not (resid 119 to 127) and resid < 500')
+   of_ca = of_all.select('protein and name CA and not ((chain A and resid 119 to 122) or (chain C and resid 119 to 123) or chain D)')
+   if_ca = if_all.select('protein and name CA and not (resid 6 to 9 119 to 127) and resid < 500')
 
 As a last step in preparation, we can align the structures so that we can calculate a deformation vector and compare the modes to it, as shown in the `ENM Tutorial`.
 
 .. ipython:: python
 
    superpose(if_ca, of_ca)
-
-
 
 Assigning Blocks
 -------------------------------------------------------------------------------
@@ -107,7 +105,7 @@ The columns, separated by whitespace, are formatted as follows:
       * Resnum of last residue in the block.
 
 This is just one way of storing information on how the protein is deconstructed into blocks. You are welcome to use others if you have a way of reading them. 
-We can read blocks from ``2nwl_blocks.txt`` into the array ``blocks`` as follows:
+We can read blocks from ``2nwl_blocks.txt`` into ``of_ca`` and the array ``of_blocks`` as follows:
 
 .. ipython:: python
 
@@ -122,10 +120,10 @@ We can read blocks from ``2nwl_blocks.txt`` into the array ``blocks`` as follows
          if sel != None:
             sel.setData('block', b)
 
-
    of_blocks = of_ca.getData('block')
 
-We will do the same for the blocks of the inward-facing structure.  The block definitions are based on secondary structures, which vary slightly between the structures.  We therefore have two separate blocking schemes.
+We will do the same for the blocks of the inward-facing structure.  The block definitions are based on secondary structures, which vary slightly between the structures.  
+We therefore have two separate blocking schemes.
 
 .. ipython:: python
 
@@ -140,10 +138,7 @@ We will do the same for the blocks of the inward-facing structure.  The block de
          if sel != None:
             sel.setData('block', b)
 
-
    if_blocks = if_ca.getData('block')
-
-
 
 Calculating the Modes
 -------------------------------------------------------------------------------
@@ -183,7 +178,6 @@ Next we calculate the modes and write them to a pair of .nmd files for viewing.
    if_imanm.calcModes()
    writeNMD('2nwl_im.nmd', of_imanm, of_ca.select('protein and name CA'))
    writeNMD('3kbc_im.nmd', if_imanm, if_ca.select('protein and name CA'))
-
 
 .. figure:: images/membrane_anm-imanm_of3.png
    :scale: 70%

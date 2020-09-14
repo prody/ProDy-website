@@ -81,7 +81,7 @@ We can also specify indices based on the PDB.
 
 .. ipython:: python
 
-   indices = list(range(4,132))
+   indices = list(range(5,131))
    @savefig msa_analysis_occ_res_indices.png width=4in
    showMSAOccupancy(msa_refine, occ='res', indices=indices);
 
@@ -110,8 +110,7 @@ a 1D numpy array.
 .. ipython:: python
 
    @savefig msa_analysis_entropy.png width=6in
-   showShannonEntropy(entropy, indices);
-
+   showShannonEntropy(msa_refine, indices);
 
 Mutual Information
 -------------------------------------------------------------------------------

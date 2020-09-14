@@ -143,7 +143,7 @@ Let's print fraction of variance for top raking 4 essential modes:
 .. ipython:: python
 
    for mode in eda_trajectory[:4]:
-       print calcFractVariance(mode).round(2)
+       print(calcFractVariance(mode).round(2))
 
 You can find more analysis functions in :ref:`dynamics`.
 

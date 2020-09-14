@@ -204,7 +204,6 @@ Contact Map
    @savefig enm_analysis_gnm_contact_map.png width=4in
    showContactMap(gnm);
 
-
 Cross-correlations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -212,7 +211,6 @@ Cross-correlations
 
    @savefig enm_analysis_gnm_cross_corr.png width=4in
    showCrossCorr(gnm);
-
 
 Slow mode shape
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -244,3 +242,5 @@ as input and visualize the bipartition.
 
    @savefig enm_analysis_gnm_show_protein.png width=6in
    showProtein(calphas, mode=gnm[0]);
+   plt.close('all')
+   

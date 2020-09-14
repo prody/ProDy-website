@@ -160,7 +160,7 @@ Now, we parse the PDB files one by one and add them to the ensemble:
                                    seqid=sequence_identity,
                                    coverage=sequence_coverage)
            if len(mappings) == 0:
-               print 'Failed to map', pdb
+               print('Failed to map', pdb)
                break
            atommaps.append(mappings[0][0])
            # Make sure all chains are mapped
@@ -229,11 +229,12 @@ As mentioned at the beginning, the ensemble can be also built by
 
 .. ipython:: python
 
-    prot = parsePDB('1dlo', subset='ca', model=1)
-    pdbs = parsePDB(*pdb_ids, subset='ca', model=1)
-    ensemble = buildPDBEnsemble(pdbs, ref=prot, title='HIV-RT', labels=pdb_ids, 
-                                seqid=94, coverage=85, occupancy=0.94)
-    ensemble
+   unmapped = []
+   prot = parsePDB('1dlo', subset='ca', model=1)
+   pdbs = parsePDB(*pdb_ids, subset='ca', model=1)
+   ensemble = buildPDBEnsemble(pdbs, ref=prot, title='HIV-RT', labels=pdb_ids, 
+                               seqid=94, coverage=85, occupancy=0.94, unmapped=unmapped)
+   ensemble
 
 In the case where some structures need to be added to an existing ensemble, you 
 can also use :func:`.buildPDBEnsemble` to do that by replacing ``ref`` with the 
@@ -241,9 +242,9 @@ ensemble. For example, to add the first 5 structures in ``pdbs`` to ``ensemble``
 
 .. ipython:: python
 
-    ensemble2 = buildPDBEnsemble(pdbs[:5], ref=ensemble, title='HIV-RT', 
+   ensemble2 = buildPDBEnsemble(pdbs[:5], ref=ensemble, title='HIV-RT', 
                                 seqid=94, coverage=85, occupancy=0.94)
-    ensemble2
+   ensemble2
 
 
 Perform PCA
