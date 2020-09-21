@@ -46,9 +46,9 @@ reorder the spectral overlap matrix using the tree as follows:
                        distance_matrix=arccos(so_matrix), 
                        method='upgma')
 
-    reordered_so, new_so_indices = reorderMatrix(labels,
-                                                 so_matrix, 
-                                                 so_tree)
+    reordered_so, new_so_indices = reorderMatrix(names=labels,
+                                                 matrix=so_matrix, 
+                                                 tree=so_tree)
 
 
 We can show the original and reordered spectral distance matrices and the tree as follows.
@@ -125,8 +125,8 @@ We can reorder the seqd and sod matrices by the RMSD tree too to compare them:
 
 .. ipython:: python
 
-    reordered_seqd, indices = reorderMatrix(labels, seqd_matrix, rmsd_tree)
-    reordered_sod, indices = reorderMatrix(labels, so_matrix, rmsd_tree)
+    reordered_seqd, indices = reorderMatrix(names=labels, matrix=seqd_matrix, tree=rmsd_tree)
+    reordered_sod, indices = reorderMatrix(names=labels, matrix=so_matrix, tree=rmsd_tree)
 
 .. ipython:: python
 
