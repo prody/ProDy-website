@@ -71,13 +71,6 @@ sequence at residue 121. Hence, we make a selection accordingly::
 
    chB = pdb.select('resnum 3 to 121')
 
-In the development version of ProDy (v 1.11), we can also do this using :func:`.trimAtomsUsingMSA`::
-
-.. ipython:: python
-   :verbatim:
-
-   chB = trimAtomsUsingMSA(pdb, msa_refine, chain='B')
-
 
 We can see from the sequence that this gives us the right portion:
 
