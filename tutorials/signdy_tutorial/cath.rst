@@ -1,6 +1,6 @@
 .. _signdy-cath:
 
-Data Collection
+Data Collection with CATH
 ===============================================================================
 
 The first step in signature dynamics analysis is to collect a set of related 
