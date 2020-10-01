@@ -21,7 +21,7 @@ This file format is a binary format also known as CCP4 or MRC2015.
 
 .. ipython:: python
 
-   emd = parseEMD('emd_1960.map', cutoff=1.2, n_nodes=8000, num_iter=30)
+   emd = parseEMD('emd_1960.map', cutoff=1.2, n_nodes=3000, num_iter=30)
    emd
 
 This function returns an atom group from the electron density
