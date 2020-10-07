@@ -1,6 +1,6 @@
 .. _signdy-data:
 
-Data Collection
+Data Collection with PDB IDs
 ===============================================================================
 
 The first step in signature dynamics analysis is to collect a set of related 
