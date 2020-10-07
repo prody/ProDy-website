@@ -211,9 +211,9 @@ We can reorder the spectral overlap matrix using the tree as follows:
 
 .. ipython:: python
 
-   reordered_so, new_so_indices = reorderMatrix(labels,
-                                                so_matrix, 
-                                                so_tree)
+    reordered_so, new_so_indices = reorderMatrix(names=labels,
+                                                 matrix=so_matrix, 
+                                                 tree=so_tree)
 
 Both :class:`.PDBEnsemble` and :class:`.ModeEnsemble` objects can be reordered 
 based on the new indices:

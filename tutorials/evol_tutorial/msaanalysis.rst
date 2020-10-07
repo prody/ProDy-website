@@ -104,7 +104,7 @@ a 1D numpy array.
    entropy
 
 
-*entropy* is a 1D Numpy array. Plotting is done using
+*entropy* is a 1D NumPy array. Plotting is done using
 :func:`.showShannonEntropy`.
 
 .. ipython:: python
@@ -124,7 +124,7 @@ or a numpy 2D array containing MSA as input.
    mutinfo = buildMutinfoMatrix(msa_refine)
    mutinfo
 
-Result is a 2D Numpy array.
+Result is a 2D NumPy array.
 
 We can also apply normalization using :func:`.applyMutinfoNorm` and
 correction using :func:`.applyMutinfoCorr` to the mutual information matrix
@@ -165,7 +165,7 @@ Output Results
 -------------------------------------------------------------------------------
 
 Here we show how to write the mutual information and entropy arrays to file.
-We use the :func:`.writeArray` to write Numpy array data.
+We use the :func:`.writeArray` to write NumPy array data.
 
 .. ipython:: python
 

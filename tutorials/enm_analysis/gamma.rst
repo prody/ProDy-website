@@ -22,7 +22,7 @@ module.
 Parse structure
 -------------------------------------------------------------------------------
 
-We start by importing everything from ProDy, Numpy, and Matplotlib packages:
+We start by importing everything from ProDy, NumPy, and Matplotlib packages:
 
 .. ipython:: python
 

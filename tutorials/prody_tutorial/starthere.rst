@@ -44,7 +44,7 @@ Start Python shell
 For best interactive usage experience, we strongly recommend that you use
 IPython_ instead of the standard Python shell. IPython shell provides many
 user-friendly features, such as dynamic introspection and help, and also
-convenient integration of Numpy_ and Matplotlib_.
+convenient integration of NumPy_ and Matplotlib_.
 
 
 If you have installed IPython, type in::
@@ -55,7 +55,7 @@ If you also installed Matplotlib, use::
 
   $ ipython --pylab
 
-``--pylab`` option will import Matplotlib and Numpy automatically, and is
+``--pylab`` option will import Matplotlib and NumPy automatically, and is
 equivalent to the following:
 
 .. ipython:: python
