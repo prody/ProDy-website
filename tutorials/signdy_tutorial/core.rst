@@ -5,7 +5,7 @@ Core Calculations
 
 In order to infer signature dynamics features we create mode ensembles from the 
 PDB ensembles by calculating normal modes for each member of the 
-:class:`.PDBEnsemble`. For details, please refer to [SZ18]_.
+:class:`.PDBEnsemble` as in the previous page or [SZ18]_.
 
 First, make necessary imports from ProDy and Matplotlib packages if you haven't 
 already.
@@ -20,13 +20,13 @@ already.
 Mode Ensemble
 -------------------------------------------------------------------------------
 
-For this analysis we'll use the provided :class:`.PDBEnsemble` object (link), 
-which we built and refined in [SZ18]_, to build a :class:`.ModeEnsemble`. 
+For this analysis we'll use the :class:`.PDBEnsemble` object, 
+which we just created, to build a :class:`.ModeEnsemble`. 
 There are options to select the model (:class:`.GNM` by default) and the way of 
 considering non-aligned residues (default is :func:`.reduceModel`, which treats 
 them as environment). 
 
-We first load the ensemble:
+If necessary, we first load the ensemble:
 
 .. ipython:: python
 

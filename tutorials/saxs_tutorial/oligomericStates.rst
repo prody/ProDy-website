@@ -51,11 +51,11 @@ We want to use only Cα atoms in chain A, so we select them:
 
 .. ipython:: python
 
-   dimer_calphas = protein.select('protein and name CA and (chain A or chain B)')
+   dimer_calphas = protein.select('protein and name CA and (chain A B)')
 
 .. ipython:: python
 
-   tetramer_calphas = protein.select('protein and name CA and (chain A or chain B or chain C or chain D)')
+   tetramer_calphas = protein.select('protein and name CA and (chain A B C D)')
 
 
 Parse SAXS data
@@ -73,6 +73,7 @@ Please note that the SAXS data file should only contain data. It should not
 contain any comment or other text lines. Now, lets start parsing SAXS data:
 
 .. ipython:: python
+   :verbatim:
 
    from prody.dynamics.saxs import *
    Q_exp, I_q_exp, sigma_q=parseSaxsData('ALDH7A1SAXS.dat', isLogScale=False)
@@ -96,6 +97,7 @@ profile for dimeric form of ALDH7A1 and compare it to the experimental SAXS data
 first.
 
 .. ipython:: python
+   :verbatim:
 
    I_q_model_dimer=np.zeros(len(Q_exp))
    calcSaxsPerModel(dimer_calphas, I_q_model_dimer, Q_exp)
@@ -104,12 +106,14 @@ We can write this SAXS profile to a file using :func:`writeSaxsProfile`.
 Lets write this model to a file for further investigation. 
    
 .. ipython:: python
+   :verbatim:
 
    writeSaxsProfile(I_q_model_dimer, Q_exp, sigma_q, 'dimerSAXS.dat')
 
 Now, lets calculate the SAXS profile for the tetrameric form of ALDH7A1:
 
 .. ipython:: python
+   :verbatim:
 
    I_q_model_tetramer=np.zeros(len(Q_exp))
    calcSaxsPerModel(tetramer_calphas, I_q_model_tetramer, Q_exp)
@@ -118,6 +122,7 @@ Now, lets calculate the SAXS profile for the tetrameric form of ALDH7A1:
 Lets write this model as well to a file for further investigation. 
    
 .. ipython:: python
+   :verbatim:
 
    writeSaxsProfile(I_q_model_tetramer, Q_exp, sigma_q, 'tetramerSAXS.dat')
 
@@ -125,6 +130,7 @@ Finally, we have to write experimental SAXS data to a file in log scale to
 make a comparison.
 
 .. ipython:: python
+   :verbatim:
 
    writeSaxsProfile(I_q_exp, Q_exp, sigma_q, 'ALDH7A1SAXS_logscale.dat')
 
@@ -132,6 +138,7 @@ Initially, we can plot SAXS profile of the dimer vs the experimental SAXS
 profile. 
 
 .. ipython:: python
+   :verbatim:
 
    showSaxsProfiles('ALDH7A1SAXS_logscale.dat', 'dimerSAXS.dat')
    @savefig dimerVsExperiment.png width=4in
@@ -142,7 +149,8 @@ experiment. Lets plot the theoretical profile for the tetrameric form vs
 experimental SAXS profile.  
    
 .. ipython:: python
-
+   :verbatim:
+   
    showSaxsProfiles('ALDH7A1SAXS_logscale.dat', 'tetramerSAXS.dat')
    @savefig images/tetramerVsExperiment.png width=4in
 

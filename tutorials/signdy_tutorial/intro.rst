@@ -20,10 +20,13 @@ IPython_ is highly recommended for interactive usage.
 Getting Started
 -------------------------------------------------------------------------------
 
-This tutorial contains two parts. In the first part, we will have a quick 
+This tutorial contains three parts. In the first part, we will have a quick 
 walk-through on the SignDy_ calculations and functions using the example of type-I 
 periplasmic binding protein (PBP-I) domains, in which case the data is convienient 
 collected from the `Dali server`_ [LH10]_. The second part will be a more detailed 
++periplasmic binding protein (PBP-I) domains, in which case the data is convieniently 
++collected from the `Dali server`_ [LH10]_. The second part will be review how to use 
++the CATH database to build the ensemble. The third part will be a more detailed 
 tutorial on building an ensemble 'manually' from scratch, and try to reproduce the 
 figures presented in [SZ18]_.
 

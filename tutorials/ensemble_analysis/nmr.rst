@@ -117,7 +117,7 @@ Let's print fraction of variance for top ranking 4 PCs (listed in Table S3):
 .. ipython:: python
 
    for mode in pca[:4]:
-       print calcFractVariance(mode).round(3)
+       print(calcFractVariance(mode).round(3))
 
 
 Compare with ANM results
