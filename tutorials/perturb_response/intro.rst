@@ -19,8 +19,8 @@ extended to include sensors in [IG14]_.
 Required Programs
 -------------------------------------------------------------------------------
 
-The latest version of ProDy_ (v 1.10.9) is required along with
-Numpy_ and Matplotlib_.
+The latest version of ProDy_ is recommended along with
+NumPy_ and Matplotlib_.
 IPython_ is highly recommended for interactive usage.
 
 

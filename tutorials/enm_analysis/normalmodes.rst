@@ -62,7 +62,7 @@ This is how they print now:
 Calculate overlap
 -------------------------------------------------------------------------------
 
-We need Numpy in this part:
+We need NumPy in this part:
 
 .. ipython:: python
 

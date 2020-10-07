@@ -21,7 +21,6 @@ First, we retrieve MSA for protein for protein family :pfam:`PF00074`:
 .. ipython::
    :verbatim:
 
-
    In [1]: fetchPfamMSA('PF00074')
    Out[1]: 'PF00074_full.sth'
 
@@ -62,14 +61,21 @@ keyword argument can be provided to the function as well.
 
 .. ipython:: python
 
-   aln, idx_1, idx_2 = alignSequenceToMSA(pdb, msa_refine, chain='B')
+   aln, idx_1, idx_2 = alignSequenceToMSA(pdb, msa_refine, label='RNAS1_BOVIN')
    showAlignment(aln, indices=[idx_1, idx_2])
 
-We can also trim the PDB structure using the function :func:`.trimAtomsUsingMSA`::
+This tells us that the first two residues are missing as are the last three, ending the 
+sequence at residue 121. Hence, we make a selection accordingly::
 
 .. ipython:: python
 
-   chB = trimAtomsUsingMSA(pdb, msa_refine, chain='B')
+   chB = pdb.select('resnum 3 to 121')
+
+
+We can see from the sequence that this gives us the right portion:
+
+.. ipython:: python
+
    chB.ca.getSequence()
 
 We write this selection to a PDB file for use later, e.g. with evol apps.

@@ -13,7 +13,7 @@ The theory and usage of this toolkit will be described in [SZ18]_.
 Required Programs
 -------------------------------------------------------------------------------
 
-The latest version of ProDy_ (v 1.10) is required along with Numpy_ and Matplotlib_. 
+The latest version of ProDy_ is recommended along with NumPy_ and Matplotlib_. 
 IPython_ is highly recommended for interactive usage.
 
 
@@ -40,7 +40,7 @@ or with pylab environment::
   $ ipython --pylab
 
 
-First, we will make necessary imports from the ProDy_, Numpy_ and Matplotlib_
+First, we will make necessary imports from the ProDy_, NumPy_ and Matplotlib_
 packages.
 
 .. ipython:: python
