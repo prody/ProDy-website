@@ -130,7 +130,7 @@ Let's parse the PDB files and see how many there are:
 
 .. ipython:: python
 
-   pdbs = parsePDB(*[pdb for pdb, ch in pdb_hits], subset='ca', compressed=False)
+   pdbs = parsePDB([pdb for pdb, ch in pdb_hits], subset='ca', compressed=False)
 
 
 .. ipython:: python
@@ -220,8 +220,8 @@ software.
 Align PDB files
 -------------------------------------------------------------------------------
 
-:func:`.alignPDBEnsemble` function can be used to align PDB structures used
-in the analysis and write new PDB files, e.g. ``alignPDBEnsemble(ensemble)``. 
+:func:`.alignByEnsemble` function can be used to align PDB structures used
+in the analysis from which you can write new PDB files, e.g. ``alignByEnsemble(ensemble)``. 
 The resulting files will contain intact structures and can be used for 
 visualization purposes. In this case, we will align only select PDB files:
 
@@ -236,7 +236,7 @@ Let's take a quick look at the aligned structures:
 .. ipython:: python
 
 
-   showProtein(parsePDB(conf1_aligned), parsePDB(conf2_aligned));
+   showProtein(conf1_aligned, conf2_aligned);
    @savefig ensemble_analysis_blast_aligned.png width=4in
    legend();
 

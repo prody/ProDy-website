@@ -157,26 +157,20 @@ calling ``gnm.calcModes()``) can be obtain by using the following command.
 
 .. ipython:: python
 
-    hinges = gnm.getHinges()
-    hinges[:5]
+   hinges = calcHinges(gnm)
+   hinges[:5]
 
 Hinge sites in the slowest mode can be obtained by:
 
 .. ipython:: python
 
-    gnm.getHinges(0)
-
-Equivalently, the hinge sites can be accessed from ``Mode`` object:
-
-.. ipython:: python
-
-    gnm[0].getHinges()
+   calcHinges(gnm[0])
 
 Hinge sites identified from multiple modes (e.g. 2 modes) can be accessed by:
 
 .. ipython:: python
 
-    gnm[:2].getHinges()
+   calcHinges(gnm[:2])
 
 These numbers correspond to node indices in the GNM object, which does not know 
 anything about the original atoms. In order to get the residue numbers corresponding 
@@ -184,9 +178,9 @@ to these hinges, we can index the resum array with the hinges list as follows:
 
 .. ipython:: python
 
-    resnums = calphas.getResnums()
-    mode2_hinges = gnm[1].getHinges()
-    resnums[mode2_hinges]
+   resnums = calphas.getResnums()
+   mode2_hinges = calcHinges(gnm[1])
+   resnums[mode2_hinges]
 
 
 Plot results
