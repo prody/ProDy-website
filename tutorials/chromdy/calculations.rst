@@ -21,7 +21,7 @@ for constructing an elastic network model. The output is a :class:`.HiC` class i
 
     hic = parseHiC(hic_file)
 
-Then, we can normalize the data as follows::
+Then, we can normalize the data as follows:
 
 .. ipython:: python
    :verbatim:
@@ -33,14 +33,14 @@ If the normalization scheme that you desired is not supported yet, you can imple
 your own normalization function and supply it to hic.normalize.
 
 Since Hi-C data contains regions that don't have data (e.g. telomere, centromere), 
-these regions are "masked" by the "HiC" class. You can access the mask as follows::
+these regions are "masked" by the "HiC" class. You can access the mask as follows:
 
 .. ipython:: python
    :verbatim:
 
     print(hic.mask)
 
-You can also turn the mask on and off::
+You can also turn the mask on and off:
 
 .. ipython:: python
    :verbatim:
@@ -51,7 +51,7 @@ You can also turn the mask on and off::
 Gaussian Network Model (GNM) Analysis
 -------------------------------------------------------------------------------
 
-To apply the GNM to the HiC, it is a best practice to turn the mask on::
+To apply the GNM to the HiC, it is a best practice to turn the mask on:
 
 .. ipython:: python
    :verbatim:
@@ -66,7 +66,7 @@ just like the HiC class.
 It also has a special :meth:`fixTail` function that is implemented specifically for Hi-C 
 in case the tail is missing. For example, if your gnm has only 890 loci, whereas your 
 ATAC-seq data has 900 loci (and you know it is the tail that is missing, not the head), 
-then you can do the following::
+then you can do the following:
 
 .. ipython:: python
    :verbatim:

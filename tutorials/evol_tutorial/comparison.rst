@@ -65,7 +65,7 @@ keyword argument can be provided to the function as well.
    showAlignment(aln, indices=[idx_1, idx_2])
 
 This tells us that the first two residues are missing as are the last three, ending the 
-sequence at residue 121. Hence, we make a selection accordingly::
+sequence at residue 121. Hence, we make a selection accordingly:
 
 .. ipython:: python
 
