@@ -257,7 +257,7 @@ let Python know this is a set of input arguments:
 .. ipython:: python
 
    pdb_ids = ['1p38', '3h5v']
-   ags = parsePDB(*pdb_ids)
+   ags = parsePDB(pdb_ids)
    ags 
 
 

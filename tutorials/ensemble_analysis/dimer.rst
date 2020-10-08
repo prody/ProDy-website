@@ -231,7 +231,7 @@ As mentioned at the beginning, the ensemble can be also built by
 
    unmapped = []
    prot = parsePDB('1dlo', subset='ca', model=1)
-   pdbs = parsePDB(*pdb_ids, subset='ca', model=1)
+   pdbs = parsePDB(pdb_ids, subset='ca', model=1)
    ensemble = buildPDBEnsemble(pdbs, ref=prot, title='HIV-RT', labels=pdb_ids, 
                                seqid=94, coverage=85, occupancy=0.94, unmapped=unmapped)
    ensemble
