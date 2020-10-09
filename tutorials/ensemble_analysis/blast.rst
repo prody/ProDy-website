@@ -221,14 +221,14 @@ Align PDB files
 -------------------------------------------------------------------------------
 
 :func:`.alignByEnsemble` function can be used to align PDB structures used
-in the analysis from which you can write new PDB files, e.g. ``alignByEnsemble(ensemble)``. 
+in the analysis from which you can write new PDB files. 
 The resulting files will contain intact structures and can be used for 
 visualization purposes. In this case, we will align only select PDB files:
 
 .. ipython:: python
 
-   conf1_aligned = alignByEnsemble(ensemble[0])
-   conf2_aligned = alignByEnsemble(ensemble[1])
+   conf1_aligned = alignByEnsemble(pdbs[0], ensemble)
+   conf2_aligned = alignByEnsemble(pdbs[1], ensemble)
 
 
 Let's take a quick look at the aligned structures:
