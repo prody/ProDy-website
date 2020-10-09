@@ -1,0 +1,46 @@
+{% extends "index.html" %}
+{% block body %}
+          <div class="row">
+            <div class="span12">
+              <h2>Workshops</h2>
+	      Workshops are offered within the scope of <a href="http://www.mmbios.org" target="_blank">MMBioS</a> activities. A complete list of workshops an be found <a href="http://www.mmbios.org/outreach/workshops" target="_blank">here</a>
+              <h3>Hands-on Workshop on Computational Biophysics</h3>
+              <p>
+                You can find basic information about the use and functionality of <i>ProDy</i> in our <a href="http://bioinformatics.oxfordjournals.org/content/27/11/1575" target="_blank">2011</a> and <a href="http://bioinformatics.oxfordjournals.org/content/30/18/2681" target="_blank">2014</a> papers. 
+              </p>
+
+              <p> You can find the lectures from 2018 workshop in the following: 
+                <li> <a href="{{ pathto('_static/ipynb/workshop2018/Lectures/welcome-2018.pdf', 1) }}" target="_blank">Lecture - Welcome</a> </li>
+                <li> <a href="{{ pathto('_static/ipynb/workshop2018/Lectures/Day 1 - 2018.pdf', 1) }}" target="_blank">Lecture - Day 1</a> </li> 
+                <li> <a href="{{ pathto('_static/ipynb/workshop2018/Lectures/Day 2 - 2018.pdf', 1) }}" target="_blank">Lecture - Day 2</a> </li>
+                <li> <a href="{{ pathto('_static/ipynb/workshop2018/Lectures/DynOmics and ENM server.pdf', 1) }}" target="_blank">Tutorial - DynOmics and ENM server</a> </li>
+              </p>
+
+
+              <p>
+                The machines in the workshop computing lab will be set up for use during the workshop. However, those wishing to bring their own laptop for use in the workshop can follow the instructions on <a href="http://prody.csb.pitt.edu/downloads">
+                Downloads</a> page. 
+
+                For the convenience, we prepared IPython notebooks for each tutorial, linked below:
+
+                <li> <a href="{{ pathto('_static/ipynb/workshop2018/prody_basic.ipynb', 1) }}" download>Prody Basics</a> <a href="../_static/ipynb/workshop2018/prody_basic.html">HTML</a></li> </li>
+                <li> <a href="{{ pathto('_static/ipynb/workshop2018/prody_gnm.ipynb', 1) }}" download>Gaussian network model analysis</a> <a href="../_static/workshop2018/ipynb/prody_gnm.html">HTML</a></li> </li>
+                <li> <a href="{{ pathto('_static/ipynb/workshop2018/prody_anm.ipynb', 1) }}" download>Anisotropic network model analysis</a> <a href="../_static/workshop2018/ipynb/prody_anm.html">HTML</a></li> </li>
+                <li> <a href="{{ pathto('_static/ipynb/workshop2018/prody_ensemble.ipynb', 1) }}" download>Ensemble Analysis and Comparison with Dynamics</a> <a href="../_static/ipynb/workshop2018/prody_ensemble.html">HTML</a></li>
+                <li> <a href="{{ pathto('_static/ipynb/workshop2018/prody_mechstiff.ipynb', 1) }}" download>Mechanical Stiffness Calculations</a> <a href="../_static/ipynb/workshop2018/prody_mechstiff.html">HTML</a></li>
+                <li> <a href="{{ pathto('_static/ipynb/workshop2018/prody_prs.ipynb', 1) }}" download>Perturbation Response Scanning</a> <a href="{{ pathto('_static/ipynb/workshop2018/prody_prs.html', 1) }}">HTML</a>
+                <li> <a href="{{ pathto('_static/ipynb/workshop2018/prody_evol.ipynb', 1) }}" download>Sequence evolution vs structural dynamics</a> <a href="../_static/ipynb/workshop2018/prody_evol.html">HTML</a></li>
+              </p>
+
+              <p>
+                In these tutorials, we will reproduce some figures from the following papers: 
+                <li> ANM and Ensemble Analyses - <a href="http://www.pnas.org/content/106/34/14349" target="_blank">Bakan and Bahar, <i>PNAS</i> 2009</a> </li>
+                <li> Perturbation Response Scanning - <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4558295/" target="_blank">Dutta et al, <i>Structure </i>2015</a> </li>
+		<li> Mechanical Stiffness - <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2292382/" target="_blank">Eyal and Bahar, <i>Bioinformatics</i> 2008</a> </li>
+                <li> Structure-Sequence Comparison - <a href="http://mbe.oxfordjournals.org/content/29/9/2253.full" target="_blank">Liu and Bahar, <i>Mol Biol Evol </i>2012</a> </li>
+
+              </p>
+
+            </div>
+        </div>
+{% endblock %}
