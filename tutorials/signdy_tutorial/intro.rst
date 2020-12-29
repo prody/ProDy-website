@@ -63,7 +63,7 @@ please cite the following paper:
 
 .. [SZ18] Zhang S, Li H, Krieger J, Bahar I. 
     Shared signature dynamics tempered by local fluctuations enables fold adaptability and specificity.
-    *Mol. Biol. Evol.* **2019** (In Press)
+    *Mol. Biol. Evol.* **2019** 36(9):2053–2068
 
 .. [LH10] Holm L, Rosenström P.
     Dali server: conservation mapping in 3D.
