@@ -17,7 +17,7 @@ Parse Density Map
 
 The first step is to parse a .map file, which contains information
 about a density map as the electron density at points on a grid.
-This file format is a binary format also known as CCP4 or MRC2015. 
+This file format is a binary format also known as CCP4 or MRC2014. 
 
 .. ipython:: python
 

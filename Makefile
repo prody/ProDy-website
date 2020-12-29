@@ -25,7 +25,7 @@ drugui:
 
 pull: clone
 	cd ProDy; git checkout master; git pull origin master
-	cd ProDy; git checkout devel; git pull origin devel
+	#cd ProDy; git checkout devel; git pull origin devel
 
 latest: pull
 	cd ProDy; git checkout `git describe --tags --abbrev=0`; make build

@@ -56,18 +56,6 @@ Then we provide *ags* together with *mappings* to :func:`.buildPDBEnsemble`. We
 set the keyword argument ``seqid=20`` to account for the low sequence identity 
 between some of the structures. 
 
-To enable :func:`.buildPDBEnsemble` to match the entries in the dictionary 
-*mappings* to the entries in *ags*, we first update the titles of the entries 
-in *ags* and the keys in the dictionary *mappings*::
-
-.. ipython:: python
-
-   for ag in ags:
-      ag.setTitle(ag.getTitle()[:4])
-
-   for key in mappings.keys():
-      mappings[key[:4] + '_' + key[-1]] = mappings.pop(key)
-
 .. ipython:: python
 
    dali_ens = buildPDBEnsemble(ags, mapping=mappings, seqid=20)
@@ -160,7 +148,7 @@ distributions for each of those modes. To arrange the plots like this, we use th
 .. ipython:: python
 
    @savefig signdy_dali_variance_mode1-5.png width=4in
-   plt.figure();
+   #plt.figure();
    gs = GridSpec(ncols=1, nrows=2, height_ratios=[1, 10], hspace=0.15);
 
    subplot(gs[0]);
