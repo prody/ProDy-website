@@ -215,6 +215,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
 
     <!-- Figures
     ================================================== -->
+    
     <script type="text/javascript">
       slideTitles = new Array(
       "Compare Dynamics from Experiments and Theory",
@@ -252,7 +253,10 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       "Frequency distribution of global modes among family members",
       "Pharmmaker pipeline showing steps for virtual screening from druggability simulations",
       "Pharmmaker uses snapshots from druggability simulations to guide pharmacophore model making",
-      "High affinity residue analysis example for an AMPAR LBD dimer simulation");
+      "High affinity residue analysis example for an AMPAR LBD dimer simulation",
+      "Essential sites of glutameta racemase",
+      "Identification of alternative ligand-binding sites on GPCRs",
+      "Prediction of allosteric pocket in beta-lactamase");
 
       panelSlides = new Array();
       panelSlides[0] = new Array(0, 4, 1, 7);
@@ -267,6 +271,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       panelSlides[9] = new Array(26, 27, 28);
       panelSlides[10] = new Array(29, 30, 31, 32);
       panelSlides[11] = new Array(33, 34, 35);
+      panelSlides[12] = new Array(36, 37, 38);
 
       var slideIndices = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
@@ -641,6 +646,33 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
         </p>
       </div>
 
+      <div class="prody-slide" id="slide-36">
+        <div class="slide-image"><img src="../_static/figures/essa_1.png"/></div>
+        <p></p><p style="font-size: 95%; font-style: italic;">
+          ESSA profile (A)  gives a measure of the extent of frequency shift in the global modes induced by each residue. 
+          Residues (red circles) interacting with the allosteric ligand (PDB id: 2jfn) correspond to essential sites. 
+          Two differentperspectives (B-C) display color-coded by z-scores from red (highest) to blue (lowest) together with bound ligands.
+        </p>
+      </div>
+
+      <div class="prody-slide" id="slide-37">
+        <div class="slide-image"><img src="../_static/figures/essa_2.png"/></div>
+        <p></p><p style="font-size: 95%; font-style: italic;">
+          ESSA results for (A,D) muscarinic acetylcholine receptor and (B,C) free fatty acid receptor 1 GPR40. 
+          GPCRs are color-coded by the ESSA profile. Various allosteric ligand binding sites, 
+          as well as the G-protein (pink) binding site, correspond to essential or hot regions.
+        </p>
+      </div>
+
+      <div class="prody-slide" id="slide-38">
+        <div class="slide-image"><img src="../_static/figures/essa_3.png"/></div>
+        <p></p><p style="font-size: 95%; font-style: italic;">
+          Complex structure (PDB id: 1pzo) resolved in the presence of two allosteric ligands 
+          (spatially neighboring, both shown in magenta sticks) and the orthosteric ligand
+          (yellow sticks). The meshed surface displays the predicted allosteric pocket enclosing all ligands.
+        </p>
+      </div>
+
   <div class="container" id="about">
 
 <!-- Logo & Nav
@@ -662,6 +694,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
           <li title="DruGUI" ><a href="{{ pathto('drugui', 1) }}">DruGUI</a></li>
           <li title="Pharmmaker" ><a href="{{ pathto('pharmmaker', 1) }}">Pharmmaker</a></li>
           <li title="coMD" ><a href="{{ pathto('comd', 1) }}">coMD</a></li>
+          <li title="ESSA" ><a href="{{ pathto('essa', 1) }}">ESSA</a></li>  
 	  <!-- <li title="chromD"><a href="{{ pathto('chromd',1) }}">chromD</a></li> -->
           <li title="Downloads"><a href="{{ pathto('downloads', 1) }}">Downloads</a></li>
           <li title="Tutorials"><a href="{{ pathto('tutorials', 1) }}">Tutorials</a></li>
