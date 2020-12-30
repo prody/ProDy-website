@@ -40,19 +40,20 @@ directly in PDB format (emd_1960.pdb).
 .. figure:: ../../_static/figures/8000nodes_with_map.png
    :scale: 80%
 
-Elastic Network Model Analysis
------------------------------------------------------------------
 
 The 144x144x144 density grid is converted into an :class:`.AtomGroup`
 class and elastic network model analysis can be applied to the 
 constructed structure as usual. 
 
+Elastic Network Model Analysis
+-----------------------------------------------------------------
+
 .. ipython:: python
    :verbatim:
    
    anm = ANM('TRiC EMDMAP ANM Analysis')
-   anm.buildHessian(emd)
+   anm.buildHessian(emd, cutoff=20)
    anm.calcModes(n_modes=5)
-   writeNMD('tric_anm_3_modes_8000nodes.nmd', anm[:3], emd)
+   writeNMD('tric_anm_3_modes_3000nodes.nmd', anm[:3], emd)
 
 
