@@ -1,0 +1,39 @@
+{% extends "index.html" %}
+{% block body %}
+
+
+      <div class="row">
+        <div class="span12">
+          <div class="span5 pull-right" style="padding-top: 20px">
+            <div class="well">
+              <div id="panel-10-title" class="slide-title"></div>
+              <i class="icon-circle-arrow-right slide-arrow" onclick="nextSlide(10);" title="Next slide"></i>
+              <i class="icon-circle-arrow-left slide-arrow" onclick="prevSlide(10);" title="Previous slide"></i>
+               <div id="panel-10-slide" class="slide-content"></div>
+              <script>showSlide(10, -1);</script>
+            </div>
+          </div>
+
+            <h2>Dynamics of Protein Complexes from Cryo-EM Maps</h2>
+            <p><b>CryoDy</b> calculates the dynamics of protein complexes resolved by cryo-EM by approximating the density maps with pseudoatoms.</p>
+ 
+
+              <h4>API Features</h4>
+              <p>You can use CryoDy to
+                <ul>
+                  <li>parse <a href="{{ pathto('manual/reference/proteins/emdfile.html#parseEMD') }}">electron density map files</a> from the EMDataBank<a href="{{ pathto('tutorials/cryoem_tutorial/searches.html') }}"></a></li>
+                  <li>apply the <a href="{{ pathto('manual/reference/proteins/emdfile.html#TRNET', 1) }}">topology representing network algorithm</a> to fit pseudoatom beads to cryo-EM maps for use in ENM NMA</li>
+                  <li>compare pseudoatom models to other structures and perform <a href="{{ pathto('tutorials/ensemble_analysis/blast.html#perform-pca', 1) }}">PCA</a> to analyse energy landscapes</li>
+                  <li>sample conformational transitions using <a href="{{ pathto('manual/reference/dynamics/adaptive.html') }}">adaptive ANM</a>, which does not not atomic details</li>
+                  <li>apply other ENM-based methods such as <a href="{{ pathto('manual/reference/dynamics/analysis.html#calcHitTime') }}">hitting time analysis</a></li>
+                </ul>
+
+              <p><small>
+              <strong>Reference</strong><br>
+              Yan Zhang, James Krieger, Karolina Mikulska-Ruminska, Burak Kaynak, Carlos Oscar S. Sorzano, José-María Carazo, Jianhua Xing, Ivet Bahar
+              <a href="https://www.sciencedirect.com/science/article/pii/S0079610720300821?via%3Dihub">State-dependent sequential allostery exhibited by chaperonin TRiC/CCT revealed by network analysis of Cryo-EM maps</a>
+              <em>Prog Biophys Mol Biol</em> <strong>In Press</strong> doi: 10.1016/j.pbiomolbio.2020.08.006. <br>
+          </div>
+        </div>
+
+{% endblock %}
