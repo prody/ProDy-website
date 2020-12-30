@@ -13,17 +13,20 @@ The theory and usage of this toolkit will be described in [SZ18]_.
 Required Programs
 -------------------------------------------------------------------------------
 
-The latest version of ProDy_ (v 1.10) is required along with Numpy_ and Matplotlib_. 
+The latest version of ProDy_ is recommended along with NumPy_ and Matplotlib_. 
 IPython_ is highly recommended for interactive usage.
 
 
 Getting Started
 -------------------------------------------------------------------------------
 
-This tutorial contains two parts. In the first part, we will have a quick 
+This tutorial contains three parts. In the first part, we will have a quick 
 walk-through on the SignDy_ calculations and functions using the example of type-I 
 periplasmic binding protein (PBP-I) domains, in which case the data is convienient 
 collected from the `Dali server`_ [LH10]_. The second part will be a more detailed 
++periplasmic binding protein (PBP-I) domains, in which case the data is convieniently 
++collected from the `Dali server`_ [LH10]_. The second part will be review how to use 
++the CATH database to build the ensemble. The third part will be a more detailed 
 tutorial on building an ensemble 'manually' from scratch, and try to reproduce the 
 figures presented in [SZ18]_.
 
@@ -37,7 +40,7 @@ or with pylab environment::
   $ ipython --pylab
 
 
-First, we will make necessary imports from the ProDy_, Numpy_ and Matplotlib_
+First, we will make necessary imports from the ProDy_, NumPy_ and Matplotlib_
 packages.
 
 .. ipython:: python
@@ -60,7 +63,7 @@ please cite the following paper:
 
 .. [SZ18] Zhang S, Li H, Krieger J, Bahar I. 
     Shared signature dynamics tempered by local fluctuations enables fold adaptability and specificity.
-    *Mol. Biol. Evol.* **2019** (In Press)
+    *Mol. Biol. Evol.* **2019** 36(9):2053–2068
 
 .. [LH10] Holm L, Rosenström P.
     Dali server: conservation mapping in 3D.

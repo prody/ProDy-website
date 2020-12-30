@@ -137,7 +137,7 @@ purple  peptide/protein bound
                  'blue', 'yellow', 'yellow', 'yellow', 'blue', 'yellow',
                  'yellow', 'blue', 'blue', 'blue', 'blue', 'blue', 'blue',
                  'blue', 'blue', 'blue', 'blue', 'blue', 'blue', 'blue',
-                 'blue', 'purple']
+                 'blue', 'blue', 'blue', 'purple']
    color2label = {'red': 'Unbound', 'blue': 'Inhibitor bound',
                   'yellow': 'Glucoside bound',
                   'purple': 'Peptide/protein bound'}

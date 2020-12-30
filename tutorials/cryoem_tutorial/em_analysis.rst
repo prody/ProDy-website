@@ -17,11 +17,11 @@ Parse Density Map
 
 The first step is to parse a .map file, which contains information
 about a density map as the electron density at points on a grid.
-This file format is a binary format also known as CCP4 or MRC2015. 
+This file format is a binary format also known as CCP4 or MRC2014. 
 
 .. ipython:: python
 
-   emd = parseEMD('emd_1960.map', cutoff=1.2, n_nodes=8000, num_iter=30)
+   emd = parseEMD('emd_1960.map', cutoff=1.2, n_nodes=3000, num_iter=30)
    emd
 
 This function returns an atom group from the electron density
@@ -40,16 +40,20 @@ directly in PDB format (emd_1960.pdb).
 .. figure:: ../../_static/figures/8000nodes_with_map.png
    :scale: 80%
 
-Elastic Network Model Analysis
------------------------------------------------------------------
 
 The 144x144x144 density grid is converted into an :class:`.AtomGroup`
 class and elastic network model analysis can be applied to the 
 constructed structure as usual. 
 
-anm = ANM('TRiC EMDMAP ANM Analysis')
-anm.buildHessian(emd)
-anm.calcModes(n_modes=5)
-writeNMD('tric_anm_3_modes_8000nodes.nmd', anm[:3], emd)
+Elastic Network Model Analysis
+-----------------------------------------------------------------
+
+.. ipython:: python
+   :verbatim:
+   
+   anm = ANM('TRiC EMDMAP ANM Analysis')
+   anm.buildHessian(emd, cutoff=20)
+   anm.calcModes(n_modes=5)
+   writeNMD('tric_anm_3_modes_3000nodes.nmd', anm[:3], emd)
 
 

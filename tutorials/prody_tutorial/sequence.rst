@@ -19,6 +19,7 @@ Access Pfam
 First, let's fetch an MSA file from `Pfam`_ database:
 
 .. ipython:: python
+   :verbatim:
 
    filename = fetchPfamMSA('pkinase', alignment='seed')
    filename
@@ -36,7 +37,7 @@ As you might guess, we will parse this file using :func:`.parseMSA` function:
 
 .. ipython:: python
 
-   msa = parseMSA(filename)
+   msa = parseMSA('pkinase_seed.sth')
    msa
 
 
@@ -57,8 +58,7 @@ You can also slice :class:`.MSA` objects and iterate over sequences:
 .. ipython:: python
 
    for seq in msa[:4]:
-       repr(seq)
-
+      print(repr(seq))
 
 
 Analysis
@@ -82,7 +82,6 @@ MSA.
 
    @savefig prody_tutorial_sequence_occ.png width=6in
    showMSAOccupancy(msa, count=True);
-
 
 You see that many residues are not present in all sequences. You will see
 how to refine such MSA instances in :ref:`evol-tutorial`.

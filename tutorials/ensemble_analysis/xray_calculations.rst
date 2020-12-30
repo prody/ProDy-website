@@ -75,7 +75,7 @@ After we listed the PDB identifiers, we obtain them using
 
 .. ipython:: python
 
-   structures = parsePDB(*pdbids, subset='ca', compressed=False)
+   structures = parsePDB(pdbids, subset='ca', compressed=False)
 
 The ``structures`` variable contains a list of :class:`AtomGroup` instances.
 

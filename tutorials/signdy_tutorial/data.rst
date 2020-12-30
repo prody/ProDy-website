@@ -1,6 +1,6 @@
 .. _signdy-data:
 
-Data Collection
+Data Collection with PDB IDs
 ===============================================================================
 
 The first step in signature dynamics analysis is to collect a set of related 
@@ -48,13 +48,13 @@ chain A in each structure:
     LeuTs = [protID + 'A' for protID in LeuTs]
 
 Note that in the above line, we use `list comprehension`_ to add a letter 'A' to each PDB 
-identifier in the list. We define other LeuT folds similarily:
+identifier in the list to select chain A. We define other LeuT folds similarily:
 
 .. ipython:: python
 
     DATs = ['4M48', '4XNU', '4XNX', '4XP1', '4XP4', '4XP5', '4XP6', 
-            '4XP9', '4XPA', '4XPB', '4XPF', '4XPG', '4XPH', '4XPT']
-    DATs = [protID + 'A' for protID in DATs]
+            '4XP9C', '4XPA', '4XPB', '4XPF', '4XPG', '4XPH', '4XPT']
+    DATs = [protID + 'A' for protID in DATs if protID is not '4XP9C']
     MhsTs = ['4US4A', '4US3A']
     vSGLTs = ['2XQ2A']
     Mhp1s = ['2JLN', '2X79', '4D1A', '4D1B', '4D1C', '4D1D']
@@ -73,18 +73,18 @@ purpose, so we set ``subset='ca'``:
 .. ipython:: python
 
     pdb_ids = LeuTs + DATs + MhsTs + vSGLTs + Mhp1s + BetPs + AdiCs + CaiTs
-    pdbs = parsePDB(*pdb_ids)
-    len(pdbs)
+    ags = parsePDB(pdb_ids)
+    len(ags)
 
-Any element in the list *pdbs* should be an :class:`.AtomGroup` instance. We can conveniently 
+Any element in the list *ags* should be an :class:`.AtomGroup` instance. We can conveniently 
 feed this list to :func:`.buildPDBEnsemble` and let it build an :class:`.PDBEnsemble` for downstream 
-analyses. We use set ``mapping=ce`` to tell the function to use a structure alignment algorithm, 
+analyses. We set ``mapping=ce`` to tell the function to use a structure alignment algorithm, 
 CEalign [IS98]_, for building the ensemble. We also set ``seqid=0`` and ``overlap=0`` to make sure 
 we apply no threshold of sequence identity or coverage/overlap to the building process. 
 
 .. ipython:: python
 
-    ens = buildPDBEnsemble(pdbs, mapping='ce', seqid=0, overlap=0, title='LeuT', subset='ca')
+    ens = buildPDBEnsemble(ags, mapping='ce', seqid=0, overlap=0, title='LeuT', subset='ca')
     ens
 
 Finally we save the ensemble for later processing:
@@ -93,12 +93,10 @@ Finally we save the ensemble for later processing:
 
     saveEnsemble(ens, 'LeuT')
 
-A refiner alignment procedure was adopted in the [SZ18]_ paper. A representative structure is chosen 
+A more refined alignment procedure was adopted in the [SZ18]_ paper. A representative structure is chosen 
 from each subtype of the proteins, e.g. LeuT, DAT, etc., and they are aligned to the LeuT representative 
 using CEalign [IS98]_. Then the rest are aligned to the representative structure of their own kind using 
-the pairwise alignment algorithm because they are sequentially the same despite small differences. The 
-ensemble used in the [SZ18]_ paper is provided in the download files and will be used in the next tutorial, 
-but you are also welcome to use the ensemble we created using above code.
+the pairwise alignment algorithm because they are sequentially the same despite small differences.
 
 .. _`Structure Analysis Tutorial`: http://prody.csb.pitt.edu/tutorials/structure_analysis/blastpdb.html
 .. _`list comprehension`: https://docs.python.org/2/tutorial/datastructures.html#list-comprehensions

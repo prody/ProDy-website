@@ -11,7 +11,7 @@ then
 	SHORT="$TITLE";
 fi
 
-read -p "Enter author name (seperate multiple names with comma): " AUTHOR;
+read -p "Enter author name (separate multiple names with comma): " AUTHOR;
 while [ -z "$AUTHOR" ]
 do
 	read -p "Enter author name: " AUTHOR;

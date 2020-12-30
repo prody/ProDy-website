@@ -49,16 +49,16 @@ to get a list of :class:`.AtomGroup` instances:
 
 .. ipython:: python
 
-   pdbs = parsePDB(*pdb_ids, subset='ca')
-   len(pdbs)
+   ags = parsePDB(pdb_ids, subset='ca')
+   len(ags)
 
-Then we provide *pdbs* together with *mappings* to :func:`.buildPDBEnsemble`. We 
+Then we provide *ags* together with *mappings* to :func:`.buildPDBEnsemble`. We 
 set the keyword argument ``seqid=20`` to account for the low sequence identity 
-between some of the structures.
+between some of the structures. 
 
 .. ipython:: python
 
-   dali_ens = buildPDBEnsemble(pdbs, mapping=mappings, seqid=20)
+   dali_ens = buildPDBEnsemble(ags, mapping=mappings, seqid=20)
    dali_ens
 
 Finally we save the ensemble for later processing:
@@ -114,7 +114,6 @@ mode (second index 0). The first index of the mode ensemble is over conformation
    @savefig signdy_dali_mode1.png width=4in
    showSignatureMode(gnms[:, 0]);
 
-
 We can also show such results for properties involving multiple modes such as the mean 
 square fluctuations from the first 5 modes or the cross-correlations from the first 20.
 
@@ -123,12 +122,10 @@ square fluctuations from the first 5 modes or the cross-correlations from the fi
    @savefig signdy_dali_mode1-5.png width=4in
    showSignatureSqFlucts(gnms[:, :5]);
 
-
 .. ipython:: python
 
    @savefig signdy_dali_cross-corr.png width=4in
    showSignatureCrossCorr(gnms[:, :20]);
-
 
 We can also look at distributions over values across different members of the ensemble 
 such as inverse eigenvalue. We can show a bar above this with individual members labelled 
@@ -151,16 +148,16 @@ distributions for each of those modes. To arrange the plots like this, we use th
 .. ipython:: python
 
    @savefig signdy_dali_variance_mode1-5.png width=4in
-   plt.figure()
-   gs = GridSpec(ncols=1, nrows=2, height_ratios=[1, 10], hspace=0.15)
+   #plt.figure();
+   gs = GridSpec(ncols=1, nrows=2, height_ratios=[1, 10], hspace=0.15);
 
-   subplot(gs[0])
-   showVarianceBar(gnms[:, :5], fraction=True, highlights=highlights)
-   xlabel('')
+   subplot(gs[0]);
+   showVarianceBar(gnms[:, :5], fraction=True, highlights=highlights);
+   xlabel('');
 
-   subplot(gs[1])
-   showSignatureVariances(gnms[:, :5], fraction=True, bins=80, alpha=0.7)
-   xlabel('Fraction of inverse eigenvalue')
+   subplot(gs[1]);
+   showSignatureVariances(gnms[:, :5], fraction=True, bins=80, alpha=0.7);
+   xlabel('Fraction of inverse eigenvalue');
 
 
 Spectral overlap and distance
@@ -202,9 +199,9 @@ We can reorder the spectral overlap matrix using the tree as follows:
 
 .. ipython:: python
 
-   reordered_so, new_so_indices = reorderMatrix(so_matrix, 
-                                                so_tree, 
-                                                names=labels)
+    reordered_so, new_so_indices = reorderMatrix(names=labels,
+                                                 matrix=so_matrix, 
+                                                 tree=so_tree)
 
 Both :class:`.PDBEnsemble` and :class:`.ModeEnsemble` objects can be reordered 
 based on the new indices:
@@ -242,8 +239,8 @@ We can also construct a tree based on this distance matrix:
 .. ipython:: python
 
    seqdist_tree = calcTree(names=labels, 
-                        distance_matrix=seqdist_matrix, 
-                        method='upgma')
+                           distance_matrix=seqdist_matrix, 
+                           method='upgma')
 
 Similarily, once we obtain the RMSD matrix using :meth:`.PDBEnsemble.getRMSDs`, we 
 can calculate the structure-based tree:
