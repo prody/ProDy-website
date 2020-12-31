@@ -87,7 +87,7 @@ as follows:
    blast_record = blastPDB(sequence)
 
 If this function times out, then you can ask the blast_record to try again 
-using the :meth:`.fetch`. We can even do this in a loop to be sure:
+using the :meth:`.PDBBlastRecord.fetch`. We can even do this in a loop to be sure:
 
 .. ipython:: python
    :verbatim:
@@ -227,8 +227,7 @@ visualization purposes. In this case, we will align only select PDB files:
 
 .. ipython:: python
 
-   conf1_aligned = alignByEnsemble(pdbs[0], ensemble)
-   conf2_aligned = alignByEnsemble(pdbs[1], ensemble)
+   conf1_aligned, conf2_aligned = alignByEnsemble(pdbs[:2], ensemble[:2])
 
 
 Let's take a quick look at the aligned structures:
