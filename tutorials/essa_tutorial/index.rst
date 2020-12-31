@@ -1,16 +1,16 @@
-.. use "chromdy" to refer to this file
+.. use "REFERENCE" to refer to this file
 
-.. _chromdy:
+.. _REFERENCE:
 
 *******************************************************************************
-Chromatin Dynamics
+TITLE
 *******************************************************************************
 
 .. only:: html
 
-    You can also read this tutorial in `PDF format <chromdy.pdf>`_.
+    You can also read this tutorial in `PDF format <TUTORIAL.pdf>`_.
 
-    Tutorial files: `ZIP <chromdy.zip>`_ `TGZ <chromdy.tgz>`_
+    Tutorial files: `ZIP <TUTORIAL.zip>`_ `TGZ <TUTORIAL.tgz>`_
 
 .. add .rst files to `toctree` in the order that you want them
 
@@ -19,8 +19,8 @@ Chromatin Dynamics
    :maxdepth: 2
 
    intro
-   calculations
-
+   essa_profile
+   essa_prediction
 
 .. only:: html
 
