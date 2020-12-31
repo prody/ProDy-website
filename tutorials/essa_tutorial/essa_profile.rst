@@ -31,7 +31,7 @@ object.
 Before starting residue scanning, we first need to set the system. Even though 
 the ligand(s) are not included in the scanning, they can be specified for further 
 analysis. For this purpose, users can simply give the chain ids and residue numbers 
-as a string shown below, and the protein residues interacting with each ligand 
+as a string shown in the following. The protein residues interacting with each ligand 
 can be determined within a specific cutoff distance (default ``dist=4.0``). 
 ESSA will use the title of the atomic object provided to it in the names of the 
 output files.
@@ -69,7 +69,7 @@ customize the properties of the plot using the matplotlib context manager as sho
 
 .. ipython:: python
 
-    with plt.style.context({'figure.figsize': (10, 5), 'figure.dpi': 300}):
+    with style.context({'figure.figsize': (10, 5), 'figure.dpi': 300}):
         essa.showESSAProfile()
 
 ESSA z-scores can be obtained as a NumPy array using :func:`.getESSAZscores`, and saved with 

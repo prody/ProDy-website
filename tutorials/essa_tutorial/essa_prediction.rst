@@ -11,6 +11,7 @@ packages if you haven't already done it:
     from prody import *
     from numpy import *
     from matplotlib.pyplot import *
+    from pandas import *
     ion()
 
 
@@ -19,7 +20,8 @@ system. The first step is the pocket hunting, which is automatically carried out
 in the background, by calling :func:`.scanPockets`. This method parses the pocket 
 features provided by Fpocket, and all identified pockets are stored in a folder 
 ending with *_out* in the current working directory. Additionally, maximum/median 
-ESSA z-scores are assigned to each pocket based on the residues forming it.
+ESSA scores are assigned to each pocket based on the ESSA scores of the residues 
+forming it.
 
 .. ipython:: python
 
@@ -37,8 +39,8 @@ hydrophobic density (LHD) z-scores, can be listed by :func:`.getPocketZscores`.
     essa.getPocketZscores()
 
 The prediction protocol ranks the pockets with respect to their ESSA and LHD 
-z-scores. At the same time, the pockets with negative LHD z-scores are also 
-filtered out as allosteric sites are known to have relatively higher LHD. For 
+z-scores. Concurrently, the pockets with negative LHD z-scores are filtered 
+out as allosteric sites are known to have relatively higher LHD. For 
 the details of this protocol, please refer to the original ESSA article ([KB20]_).
 
 Ranking of the pockets can be performed and obtained by :func:`.rankPockets` and 
@@ -49,11 +51,11 @@ Ranking of the pockets can be performed and obtained by :func:`.rankPockets` and
     essa.rankPockets()
     essa.getPocketRanks()
 
-Pocket 6 with the highest ESSA_max score has been identified as the only allosteric 
+Pocket 6 with the top ESSA_max score has been identified as the only allosteric 
 pocket in this structure. Interestingly, other pockets have been filtered 
-out due to their negative LHD z-scores. This is a large pocket that includes CBT 
+out due to their negative LHD z-scores. Pocket 6 is a large pocket that includes CBT 
 allosteric ligands at A300 and A301, as well as a part of the orthosteric ligand 
-(shown as image three on the ESSA webpage).
+(see Figure S2 and Table S2 of [KB20]_).
 
 In order to visualize the pockets, the `.pqr` file, an output of Fpocket needs 
 to be opened by PyMOL or VMD together with the original pdb file. 
@@ -65,3 +67,4 @@ Pocket z-scores and ranks can be saved by :func:`.savePocketZscores` and
 
     essa.savePocketZscores()
     essa.writePocketRankstoCSV()
+    

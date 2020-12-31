@@ -15,24 +15,30 @@
           </div>
 
             <h2>Essential Site Scanning Analysis (ESSA)</h2>
-            <p><b>ESSA</b> identifies sites that modify the global/functional dynamics of a protein by perturbing each residue via crowding of its local environment in the elastic netwrok. 
-              Essentiality of a residue in response to a perturbation is measured by the mean shift in the frequency of the softest modes.</p>
+            <p><b>ESSA</b> identifies the residues whose perturbation upon ligand binding would cause a significant change in the frequency dispersion of global modes 
+              (<a href="https://www.sciencedirect.com/science/article/pii/S2001037020303093">Kaynak et al., 2020</a>).
+              These residues are called essential residues, as they play a dominant role in controlling the proteins’ essential dynamics.
+              Perturbations are serially made on each residue via insertion of new nodes located at the heavy atoms of their sidechains for mimicking the crowding/constraints in their local environment
+              imparted by ligand binding. The mean shift (usually increase) induced in the frequency of the softest modes is used as a measure of essentiality.
+              Essential residues may include those participating in allosteric and orthosteric sites, as well as those modulating global hinge bending movements.
+            </p>
  
 
               <h4>API Features</h4>
-              <p>You can use <b>ESSA</b> for
+              <p>You can use <b>ESSA</b> to
                 <ul>
-                  <li>Detection of essential residues that are located at ligand binding, e.g. allosteric or orthosteric, sites or mechanical hinges</li>
-                  <li>Generation of an ESSA profile, namely the z-score of mean frequency shift for each residue</li>
-                  <li>Prediction of allosteric pockets for apo and holo structures via integration with Fpocket algorithm</li>
+                  <li> Detect essential residues that significantly affect the frequency of global modes if bound to a ligand</li>
+                  <li> Generate an ESSA profile, namely the z-scores associated with the mean frequency shifts induced by residue perturbations</li>
+                  <li> Prediction of allosteric pockets via integration with Fpocket algorithm 
+                    (<a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-10-168">Le Guilloux et al., 2009</a>)</li>
                 </ul>
 
               <p><small>
               <strong>Reference</strong><br>
-              Kaynak BT, Bahar I, Doruker P,
+              Kaynak B.T., Bahar I., Doruker P.,
               <a href="https://www.sciencedirect.com/science/article/pii/S2001037020303093">Essantial site scanning analysis: A new approach for detecting sites that modulate the dispersion of protein global motions,</a>
               <em>Comput Struct Biotechnol J</em> <strong>2020</strong> 18:1577–1586.<br>
-              Le Guilloux V, Schmidtke P, Tuffery P,
+              Le Guilloux V., Schmidtke P., Tuffery P.,
               <a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-10-168">Fpocket: An open source platform for ligand pocket detection</a>
               <em>BMC Bioinformatics</em> <strong>2009</strong> 16:168.<br>
               </small></p>
