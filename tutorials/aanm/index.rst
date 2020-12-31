@@ -1,16 +1,16 @@
-.. use "REFERENCE" to refer to this file
+.. use "aanm" to refer to this file
 
-.. _REFERENCE:
+.. _aanm:
 
 *******************************************************************************
-Essential Site Scanning Analysis (ESSA)
+Adaptive ANM
 *******************************************************************************
 
 .. only:: html
 
-    You can also read this tutorial in `PDF format <TUTORIAL.pdf>`_.
+    You can also read this tutorial in `PDF format <aanm.pdf>`_.
 
-    Tutorial files: `ZIP <TUTORIAL.zip>`_ `TGZ <TUTORIAL.tgz>`_
+    Tutorial files: `ZIP <aanm.zip>`_ `TGZ <aanm.tgz>`_
 
 .. add .rst files to `toctree` in the order that you want them
 
@@ -19,8 +19,8 @@ Essential Site Scanning Analysis (ESSA)
    :maxdepth: 2
 
    intro
-   essa_profile
-   essa_prediction
+   calculations
+
 
 .. only:: html
 
