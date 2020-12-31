@@ -3,6 +3,17 @@
 Prediction of allosteric pockets
 ===============================================================================
 
+First, we will make necessary imports from ProDy_, NumPy_ and Matplotlib_
+packages if you haven't already done it:
+
+.. ipython:: python
+
+    from prody import *
+    from numpy import *
+    from matplotlib.pyplot import *
+    ion()
+
+
 Allosteric pocket prediction requires Fpocket 3.0 and Pandas installed in your 
 system. The first step is the pocket hunting, which is automatically carried out 
 in the background, by calling :func:`.scanPockets`. This method parses the pocket 

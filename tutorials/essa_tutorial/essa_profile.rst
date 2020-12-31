@@ -3,6 +3,17 @@
 Generation of ESSA profile 
 ===============================================================================
 
+First, we will make necessary imports from ProDy_, NumPy_ and Matplotlib_
+packages if you haven't already done it:
+
+.. ipython:: python
+
+    from prody import *
+    from numpy import *
+    from matplotlib.pyplot import *
+    ion()
+
+
 First, we parse a structure on which we want to perform ESSA. 
 For this tutorial, we will fetch the TEM-1 beta-lactamase (1pzo) from the PDB.
 
