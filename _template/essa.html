@@ -14,26 +14,28 @@
             </div>
           </div>
 
-            <h2>Essential Site Scanning Analysis</h2>
-            <p><b>ESSA</b> calculates the essentiality of residues within a protein in terms of their ability to modulate its dynamics upon perturbation.</p>
+            <h2>Essential Site Scanning Analysis (ESSA)</h2>
+            <p><b>ESSA</b> identifies sites that modify the global/functional dynamics of a protein by perturbing each residue via crowding its local environmet in the elastic netwrok. 
+              Essentiality of a residue in response to a perturbation is measured ny the mean shift in the frequency of the softest modes.</p>
  
 
               <h4>API Features</h4>
-              <p>You can use ESSA to
+              <p>You can use <b>ESSA</b> to
                 <ul>
-                  <li>create <a href="{{ pathto('manual/reference/ensemble/pdbensemble') }}">PDB ensembles</a> of protein families from database searches<a href="{{ pathto('tutorials/signdy_tutorial/searches.html') }}"></a></li>
-                  <li>evaluate <a href="{{ pathto('tutorials/signdy_tutorial/core.html#signature-dynamics', 1) }}">signature dynamics</a> profiles and cross-correlations</li>
-                  <li>calculate <a href="{{ pathto('tutorials/signdy_tutorial/core.html#signature-dynamics', 1) }}">shared global mode profiles</a> for assessing conserved motions among family members</li>
-                  <li>assess departures from shared mode profiles and other protein-specific features</li>
-                  <li>examine the <a href="{{ pathto('tutorials/signdy_tutorial/classifications.html#spectral-overlap-and-distance') }}">spectral overlaps</a> between family members</li>
-                  <li>generate <a href="{{ pathto('tutorials/signdy_tutorial/classifications.html#comparing-sequence-structural-and-dynamic-classifications', 1) }}">sequence-, structure- and dynamics-based trees</a> for analyzing their evolution</li>
+                  <li>Detection of essential residues that are located at ligand binding, e.g. allosteric or orthosteric, sites or mechanical hinges</li>
+                  <li>Generation of ESSA profile, namely the z-score of mean frequency shift for each resiude</li>
+                  <li>Prediction of allosteric pockets for apo and holo structures via integration with Fpocket algorithm</li>
                 </ul>
 
               <p><small>
               <strong>Reference</strong><br>
-              Burak T Kaynak, Ivet Bahar, Pemra Doruker
-              <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7330491/">Essential site scanning analysis: A new approach for detecting sites that modulate the dispersion of protein global motions.</a>
-              <em>Comput Struct Biotechnol J</em> <strong>2020</strong> 18:1577-1586<br>
+              Kaynak BT, Bahar I, Doruker P,
+              <a href="https://www.sciencedirect.com/science/article/pii/S2001037020303093">Essantial site scanning analysis: A new approach for detecting sites that modulate the dispersion of protein global motions,</a>
+              <em>Comput Struct Biotechnol J</em> <strong>2020</strong> 18:1577–1586.<br>
+              Le Guilloux V, Schmidtke P, Tuffery P,
+              <a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-10-168">Fpocket: An open source platform for ligand pocket detection</a>
+              <em>BMC Bioinformatics</em> <strong>2009</strong> 16:168.<br>
+              </small></p>
           </div>
         </div>
 
