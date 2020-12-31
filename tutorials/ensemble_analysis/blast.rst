@@ -87,7 +87,7 @@ as follows:
    blast_record = blastPDB(sequence)
 
 If this function times out, then you can ask the blast_record to try again 
-using the :meth:`.fetch`. We can even do this in a loop to be sure:
+using the :meth:`.PDBBlastRecord.fetch`. We can even do this in a loop to be sure:
 
 .. ipython:: python
    :verbatim:
