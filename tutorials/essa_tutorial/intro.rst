@@ -63,15 +63,15 @@ How to Cite
 -------------------------------------------------------------------------------
 If you benefited from ESSA in your research, please cite the following paper:
 
-    .. [KB20] Kaynak B.T., Bahar I., Doruker P.,
-        Essential site scanning analysis: A new approach for detecting sites that 
-        modulate the dispersion of protein global motions,
-        *Comput. Struct. Biotechnol. J.* **2020** 18:1577-1586.
+.. [KB20] Kaynak B.T., Bahar I., Doruker P.,
+    Essential site scanning analysis: A new approach for detecting sites that 
+    modulate the dispersion of protein global motions,
+    *Comput. Struct. Biotechnol. J.* **2020** 18:1577-1586.
 
 
 Additionally, if you performed ESSA-based allosteric site prediction in your 
 research, please also cite the following paper for Fpocket:
 
-    .. [LGV09] Le Guilloux, V., Schmidtke P., Tuffery P.,
-        Fpocket: An open source platform for ligand pocket detection,
-        *BMC Bioinformatics* **2009** 10:168.
+.. [LGV09] Le Guilloux, V., Schmidtke P., Tuffery P.,
+    Fpocket: An open source platform for ligand pocket detection,
+    *BMC Bioinformatics* **2009** 10:168.
