@@ -22,6 +22,7 @@ ProDy Documentation
    tutorials/perturb_response/index
    tutorials/signdy_tutorial/index
    tutorials/cryoem_tutorial/index
+   tutorials/essa_tutorial/index
 
 
 * :ref:`genindex`

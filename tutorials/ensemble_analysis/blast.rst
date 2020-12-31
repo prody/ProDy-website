@@ -227,8 +227,7 @@ visualization purposes. In this case, we will align only select PDB files:
 
 .. ipython:: python
 
-   conf1_aligned = alignByEnsemble(pdbs[0], ensemble)
-   conf2_aligned = alignByEnsemble(pdbs[1], ensemble)
+   conf1_aligned, conf2_aligned = alignByEnsemble(pdbs[:2], ensemble[:2])
 
 
 Let's take a quick look at the aligned structures:
