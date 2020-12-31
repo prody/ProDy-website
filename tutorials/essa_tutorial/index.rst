@@ -19,8 +19,7 @@ Essential Site Scanning Analysis (ESSA)
    :maxdepth: 2
 
    intro
-   essa_profile
-   essa_prediction
+   essa
 
 .. only:: html
 
