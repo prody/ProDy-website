@@ -61,7 +61,7 @@ Unique one-to-one mapping of pseudo-atoms to an atomic model is nontrivial,
 since there is no correspondence between the beads and the residues of the 
 protein. For simplicity, here we use the k-nearest neighbors algorithm to 
 find 20 closest residues in the atomic model to a given pseudo-atom. Then 
-we create an one-to-one mapping by assigning the closest residue, or the 
+we create a one-to-one mapping by assigning the closest residue, or the 
 next closest if it is already assigned, to a pseudo-atom. Note that this 
 is by no means the optimal one-to-one mapping, and for more complicated methods 
 which guarantees the optimal mapping, see for example "stable marriage problem".
@@ -80,9 +80,9 @@ which guarantees the optimal mapping, see for example "stable marriage problem".
    indices = np.array(mapping)
 
 Now the i-th element of the indices array is the index of the residue in the atomic model 
-that should be assigned to the i-th pseudo-atom. With the mapping, we can calculate the 
-RMSD by first creating a atomMap that extract residues that are assigned, and then perform 
-the calculation between the pseudo-atoms and the atomMap.
+that should be assigned to the j-th pseudo-atom. With the mapping, we can calculate the 
+RMSD by first creating an :class:`.AtomMap` that extracts residues that are assigned, and 
+then perform the calculation between the pseudo-atoms and the AtomMap.
 
 .. ipython:: python
 
