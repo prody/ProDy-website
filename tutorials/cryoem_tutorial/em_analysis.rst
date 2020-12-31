@@ -88,7 +88,7 @@ which guarantees the optimal mapping, see for example the "stable marriage probl
    I = np.argsort(indices)
 
 Note that ``indices`` returned from :class:`~sklearn.NearestNeighbors` is a 2-D array with 
-rows corresponding to pseudo-atoms and columns their k-neighbors. After processed by the 
+rows corresponding to pseudo-atoms and columns their k-neighbors. After being processed by the 
 for-loop above, each element of ``indices`` is the index of the residue in the atomic model 
 that should be assigned to the pseudo-atom. Then, :func:`~numpy.argsort` is applied to obtain 
 indices for reordering the pseudo-atoms following the order of the atoms (residues) in the 
@@ -107,7 +107,8 @@ they are ordered according to the sequence of residues they are assigned to:
 .. ipython:: python
 
    emd2 = AtomMap(emd, I).toAtomGroup()
-   emd2.setResnums(np.arange(emd2.numAtoms()))
+   resnums = pmap.getResnums()
+   emd2.setResnums(resnums)
 
    chids = pmap.getChids()
    emd2.setChids(chids)
@@ -139,9 +140,9 @@ with or without the reordering discussed above:
    :verbatim:
    
    anm_emd = ANM('TRiC EMDMAP ANM Analysis')
-   anm_emd.buildHessian(emd, cutoff=20)
+   anm_emd.buildHessian(emd2, cutoff=20)
    anm_emd.calcModes(n_modes=5)
-   writeNMD('tric_anm_3_modes_3000nodes.nmd', anm_emd[:3], emd)
+   writeNMD('tric_anm_3_modes_3000nodes.nmd', anm_emd[:3], emd2)
 
 
 Compare results with atomic models
