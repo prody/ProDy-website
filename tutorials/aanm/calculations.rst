@@ -27,7 +27,7 @@ Next, we create an :class:`.AdaptiveANM` object, which will be used for the calc
 
 .. ipython:: python
 
-    aanm = AdaptiveANM(r_pp, t)
+    aanm = AdaptiveANM([r_pp, t])
 
 This new implementation of Adaptive ANM increases the number of modes calculated 
 each cycle depending on which ones were used in the previous cycles and their 
