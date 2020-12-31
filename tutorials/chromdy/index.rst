@@ -19,6 +19,7 @@ Chromatin Dynamics
    :maxdepth: 2
 
    intro
+   calculations
 
 
 .. only:: html
