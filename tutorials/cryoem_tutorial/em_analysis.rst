@@ -165,5 +165,5 @@ Now we compare modes of the pseudo-atomic model to the atomic model:
 
 .. ipython:: python
 
-   @savefig cyrody_anm_overlap.png width=4in
+   @savefig cryody_anm_overlap.png width=4in
    showOverlapTable(anm_emd, anm_pdb_reduced)
