@@ -137,12 +137,11 @@ Elastic network model analysis can be applied to the pseudo-atomic model as usua
 with or without the reordering discussed above:
 
 .. ipython:: python
-   :verbatim:
    
    anm_emd = ANM('TRiC EMDMAP ANM Analysis')
-   anm_emd.buildHessian(emd2, cutoff=20)
+   anm_emd.buildHessian(emd, cutoff=20)
    anm_emd.calcModes(n_modes=5)
-   writeNMD('tric_anm_3_modes_3000nodes.nmd', anm_emd[:3], emd2)
+   writeNMD('tric_anm_3_modes_3000nodes.nmd', anm_emd[:3], emd)
 
 
 Compare results with atomic models
