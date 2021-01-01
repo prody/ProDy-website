@@ -151,4 +151,4 @@ Pocket z-scores and ranks can be saved by :func:`.savePocketZscores` and
 .. ipython:: python
 
     essa.savePocketZscores()
-    essa.writePocketRankstoCSV()
+    essa.writePocketRanksToCSV()
