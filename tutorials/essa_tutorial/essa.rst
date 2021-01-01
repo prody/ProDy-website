@@ -73,6 +73,7 @@ customize the properties of the plot using the matplotlib context manager as sho
 .. ipython:: python
 
     with style.context({'figure.figsize': (10, 5), 'figure.dpi': 300}):
+        @savefig essa_profile.png width=4in
         essa.showESSAProfile()
 
 ESSA z-scores can be obtained as a NumPy array using :func:`.getESSAZscores`, and saved with 
