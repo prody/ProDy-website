@@ -1,3 +1,5 @@
+.. _exanm
+
 Explicit Membrane ANM
 =====================
 
