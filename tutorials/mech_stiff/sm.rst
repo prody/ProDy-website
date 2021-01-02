@@ -162,6 +162,7 @@ The results of the mean value of mechanical stiffness calculation can be seen
 in VMD_ using:
 
 .. ipython:: python
+
    writeDeformProfile(stiffness, gfp, select='chain A and name CA', pdb_selstr='protein')
 
 .. figure:: images/1gfl_defprofile_vmd.png
