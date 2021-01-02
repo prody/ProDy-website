@@ -35,7 +35,7 @@ Before starting residue scanning, we first need to set the system. Even though
 the ligand(s) are not included in the scanning, they can be specified for further 
 analysis. For this purpose, users can simply give the chain ids and residue numbers 
 as a string shown in the following. The protein residues interacting with each ligand 
-can be determined within a specific cutoff distance (default ``dist=4.0``). 
+can be determined within a specific cutoff distance (default ``dist=4.5``). 
 ESSA will use the title of the atomic object provided to it in the names of the 
 output files.
 
@@ -72,7 +72,7 @@ customize the properties of the plot using the matplotlib context manager as sho
 
 .. ipython:: python
 
-   @savefig essa_profile.png width=6in
+   @savefig essa_profile.png width=8in
    with style.context({'figure.dpi': 100}):
        essa.showESSAProfile()
 
@@ -147,7 +147,7 @@ In order to visualize the pockets, the `.pqr` file, an output of Fpocket needs
 to be opened by PyMOL or VMD together with the original pdb file. 
 
 Pocket z-scores and ranks can be saved by :func:`.savePocketZscores` and 
-:func:`.writePocketRankstoCSV`, respectively.
+:func:`.writePocketRanksToCSV`, respectively.
 
 .. ipython:: python
 
