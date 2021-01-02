@@ -195,5 +195,6 @@ To obtain results without saving any file type:
    d1 = calcPairDeformationDist(anm, calphas, 3, 212)
    d2 = calcPairDeformationDist(anm, calphas, 132, 212)
 
+   @savefig mechstiff_pair_deformation_dist_3-132_212.png width=4in
    plot(d1[0], d1[1], 'k-', d2[0], d2[1], 'r-')
 
