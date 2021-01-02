@@ -19,7 +19,6 @@ Cryo-EM Dynamics (CryoDy)
    :maxdepth: 2
 
    intro
-   background
    em_analysis
 
 

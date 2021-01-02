@@ -3,7 +3,7 @@
 Processing Cryo-EM Electron Density Map
 ==================================================================
 
-Lets start with essential import statements:
+Let's start with essential import statements:
 
 .. ipython:: python
 

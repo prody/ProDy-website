@@ -69,6 +69,7 @@ If you benefited from ESSA in your research, please cite the following paper:
     modulate the dispersion of protein global motions,
     *Comput. Struct. Biotechnol. J.* **2020** 18:1577-1586.
 
+
 Additionally, if you performed ESSA-based allosteric site prediction in your 
 research, please also cite the following paper for Fpocket:
 
