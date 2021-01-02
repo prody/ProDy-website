@@ -41,9 +41,9 @@ $(document).ready(function() {
     logo.src = "http://prody.csb.pitt.edu/_static/drugui_logo.png";
   } else if (url.search("comd") > -1) {
     logo.src = "http://prody.csb.pitt.edu/_static/comdlogo.png";
-  } else if (url.search("memanm") > -1) {
+  } else if (url.search("membran") > -1) {
     logo.src = "http://prody.csb.pitt.edu/_static/membranm.png";
-  } else if (url.search("mechstiff") > -1) {
+  } else if (url.search("stiff") > -1) {
     logo.src = "http://prody.csb.pitt.edu/_static/mechstiff.png";
   } else if (url.search("signdy") > -1) {
     logo.src = "http://prody.csb.pitt.edu/_static/signdylogo.png";
@@ -51,8 +51,8 @@ $(document).ready(function() {
     logo.src = "http://prody.csb.pitt.edu/_static/prslogo.png";
   } else if (url.search("essa") > -1) {
     logo.src = "http://prody.csb.pitt.edu/_static/essa_logo.png";
-  } else if (url.search("cryody") > -1) {
-    logo.src = "http://prody.csb.pitt.edu/_static/crydy_logo.png";
+  } else if (url.search("cryo") > -1) {
+    logo.src = "http://prody.csb.pitt.edu/_static/cryody_logo.png";
   } else if (url.search("chromd") > -1) {
     logo.src = "http://prody.csb.pitt.edu/_static/chromdlogo.png";
   } else {

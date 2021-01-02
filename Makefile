@@ -68,7 +68,8 @@ workdir:
 
 html: link drugui workdir 
 	cd $(WORKDIR); $(SPHINXBUILD) -b html -d ../$(BUILDDIR)/doctrees ../ ../$(BUILDDIR)/html
-	cd -; mv -f $(BUILDDIR)/html/statistics/index.html $(BUILDDIR)/html/statistics/index.php
+	#cd -; 
+	mv -f $(BUILDDIR)/html/statistics/index.html $(BUILDDIR)/html/statistics/index.php
 	cp -rf $(TEMPLATEDIR)/prody_stats.* $(BUILDDIR)/html/statistics/
 
 	@echo
