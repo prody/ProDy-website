@@ -3,7 +3,7 @@
 Processing Cryo-EM Electron Density Map
 ==================================================================
 
-Lets start with essential import statements:
+Let's start with essential import statements:
 
 .. ipython:: python
 
@@ -24,7 +24,7 @@ This file format is a binary format also known as CCP4 or MRC2014.
    emd = parseEMD('EMD-1961.map', cutoff=1.2, n_nodes=3000, num_iter=30)
    emd
 
-This function returns an atom group from the electron density
+This function returns an :class:`.AtomGroup` from the electron density
 map. The cutoff parameter discards any electron density lower than
 the given number, n_nodes is the parameter that describes the
 total number of beads that initialize the system. The method to
