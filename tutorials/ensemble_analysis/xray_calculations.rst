@@ -171,7 +171,8 @@ become much more similar:
 
    abs(pca_svd.getEigvals()[:20] - pca.getEigvals()).max()
    abs(calcOverlap(pca, pca_svd).diagonal()[:20]).min()
-   showOverlapTable(pca, pca_svd[:20])
+   @savefig ensemble_analysis_xray_overlap_table_svd.png width=4in
+   showOverlapTable(pca, pca_svd[:20]);
 
 Note that building and diagonalizing the covariance matrix is the preferred
 method for heterogeneous ensembles. For NMR models or MD trajectories, the SVD
