@@ -39,6 +39,13 @@ mappings to the reference structure.
    dali_rec = searchDali('3H5V','A')
    dali_rec
 
+If DALI times out then, you can use the following code to fetch the data afterwards.
+
+.. ipython:: python
+
+   while not dali_rec.isSuccess:
+      dali_rec.fetch()
+
 Next, we get the lists of PDB IDs and mappings from *dali_rec*, parse the *pdb_ids* 
 to get a list of :class:`.AtomGroup` instances:
 

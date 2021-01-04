@@ -11,7 +11,7 @@ molecule manipulation techniques results such as Single Molecule Force Spectrosc
 (AFM) or optical tweezers. It may also be used for predicting the response to 
 tension without performing expensive steered molecular dynamics simulations. 
 
-Theory and example of usage has been described in [EB08]_.
+Theory and example of usage has been described in [EB08]_ and [MRK17]_.
 
 Required Programs
 -------------------------------------------------------------------------------
@@ -58,3 +58,8 @@ please cite the following paper:
 .. [EB08] Eyal E, Bahar I. Toward a Molecular Understanding of 
    the Anisotropic Response of Proteins to External Forces: Insights from 
    Elastic Network Models. *Biophys. J.* **2008** 94:3424-34355.
+
+.. [MRK17] Mikulska-Ruminska K, Kulik A, Benadiba C, Bahar I, Dietler G, Nowak W. 
+   Nanomechanics of multidomain neuronal cell adhesion protein contactin revealed 
+   by single molecule AFM and SMD. *Sci. Rep.* **2017** 7:8852.
+   

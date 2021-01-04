@@ -22,7 +22,7 @@ following tutorials:
   * `The Python Tutorial <http://docs.python.org/tutorial/>`_
   * `Python Scientific Lecture Notes <http://scipy-lectures.github.com/>`_
   * `A Primer on Python for Life Science Researchers
-    <http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.0030199>`_
+    <https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.0030199>`_
 
 
 
