@@ -39,6 +39,13 @@ mappings to the reference structure.
    dali_rec = searchDali('3H5V','A')
    dali_rec
 
+If DALI times out then, you can use the following code to fetch the data afterwards.
+
+.. ipython:: python
+
+   while not dali_rec.isSuccess:
+      dali_rec.fetch()
+
 Next, we get the lists of PDB IDs and mappings from *dali_rec*, parse the *pdb_ids* 
 to get a list of :class:`.AtomGroup` instances:
 
@@ -148,16 +155,15 @@ distributions for each of those modes. To arrange the plots like this, we use th
 .. ipython:: python
 
    @savefig signdy_dali_variance_mode1-5.png width=4in
-   #plt.figure();
-   gs = GridSpec(ncols=1, nrows=2, height_ratios=[1, 10], hspace=0.15);
+   gs = GridSpec(ncols=1, nrows=2, height_ratios=[1, 10], hspace=0.15)
 
-   subplot(gs[0]);
-   showVarianceBar(gnms[:, :5], fraction=True, highlights=highlights);
-   xlabel('');
+   subplot(gs[0])
+   showVarianceBar(gnms[:, :5], fraction=True, highlights=highlights)
+   xlabel('')
 
-   subplot(gs[1]);
-   showSignatureVariances(gnms[:, :5], fraction=True, bins=80, alpha=0.7);
-   xlabel('Fraction of inverse eigenvalue');
+   subplot(gs[1])
+   showSignatureVariances(gnms[:, :5], fraction=True, bins=80, alpha=0.7)
+   xlabel('Fraction of inverse eigenvalue')
 
 
 Spectral overlap and distance

@@ -19,9 +19,10 @@ ProDy Documentation
    tutorials/comd_tutorial/index
    tutorials/membrane_anm/index
    tutorials/mech_stiff/index
-   tutorials/perturb_response/index
+   tutorials/prs_tutorial/index
    tutorials/signdy_tutorial/index
    tutorials/cryoem_tutorial/index
+   tutorials/aanm/index
    tutorials/essa_tutorial/index
 
 

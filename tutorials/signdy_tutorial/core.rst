@@ -81,7 +81,7 @@ or the cross-correlations from the first 20.
 
 We can also look at distributions over values across different members of the ensemble 
 such as inverse eigenvalue. We can show a bar above this with individual members labelled 
-like [SZ18]_.
+like [JK15]_.
 
  .. ipython:: python
 
@@ -90,18 +90,16 @@ like [SZ18]_.
                   '3NCYA': 'AdiC:OF', '2X79A': 'Mhp1:IF', 
                   '2WITA':'BetP', '4M48A':'DAT'}
 
-    figure();
+    @savefig ens_gnms_signature_variance_mode1-5.png width=4in
     gs = plt.GridSpec(ncols=1, nrows=2, height_ratios=[1, 10], hspace=0.15)
 
-    subplot(gs[0]);
-    showVarianceBar(gnms[:, :5], fraction=True, highlights=highlights);
-    xlabel('');
+    subplot(gs[0])
+    showVarianceBar(gnms[:, :5], fraction=True, highlights=highlights)
+    xlabel('')
 
-    subplot(gs[1]);
-    showSignatureVariances(gnms[:, :5], fraction=True, bins=80, alpha=0.7);
-    xlabel('Mode weight');
-
-    @savefig ens_gnms_signature_variance_mode1-5.png width=4in
+    subplot(gs[1])
+    showSignatureVariances(gnms[:, :5], fraction=True, bins=80, alpha=0.7)
+    xlabel('Mode weight')
 
 Saving the ModeEnsemble
 -------------------------------------------------------------------------------

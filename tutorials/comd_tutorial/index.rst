@@ -22,3 +22,7 @@ collective molecular dynamics.
    setup
    analyze
    license
+
+.. only:: html
+
+   .. include:: acknowledgments.rst

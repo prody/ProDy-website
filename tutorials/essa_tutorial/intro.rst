@@ -3,7 +3,7 @@ Introduction
 
 This tutorial demonstrates how to use ESSA for determining the essential sites
 that would significantly alter the global/functional dynamics of a protein upon
-ligand binding ([KB20]_). ESSA emulates ligand binding by increasing the node
+ligand binding [KB20]_. ESSA emulates ligand binding by increasing the node
 density around each scanned residue. This is achieved by adding extra nodes at
 the positions of the specific residue’s heavy atoms (other than the C-alpha atoms
 that define the reference network in GNM or ANM). Changes in the global mode
@@ -14,12 +14,12 @@ we convert the mean shifts to z-scores. Essential residues correspond to hot
 regions in terms of ligand binding and/or allostery.
 
 Integration of ESSA with pocket information has been successful in predicting
-the allosteric pockets for apo and holo structures of proteins ([KB20]_).
-The pockets obtained from the Fpocket algorithm ([LGV09]_) are rank-ordered using 
+the allosteric pockets for apo and holo structures of proteins [KB20]_.
+The pockets obtained from the Fpocket algorithm [LGV09]_ are rank-ordered using 
 the ESSA score calculated based on the residues lining each pocket.
 Further screening using local hydrophobic density (LHD, a pocket feature of Fpocket)
 improves the predictions. In the second part of this tutorial, we will demonstrate
-how to use our automated protocol ([KB20]_) that combines ESSA scores,
+how to use our automated protocol [KB20]_ that combines ESSA scores,
 pocket geometry and LHD for detecting allosteric pockets.
 
 The example used in this tutorial for ESSA profile generation and the prediction
@@ -45,7 +45,7 @@ or with pylab environment::
 
   $ ipython --pylab
 
-First, we will make necessary imports from ProDy_, NumPy_ and Matplotlib_
+First, we will make necessary imports from ProDy_, NumPy_, Matplotlib_, and Pandas_
 packages.
 
 .. ipython:: python
@@ -53,6 +53,7 @@ packages.
     from prody import *
     from numpy import *
     from matplotlib.pyplot import *
+    from pandas import *
     ion()
 
 We have included these imports in every part of the tutorial, so that
@@ -63,7 +64,7 @@ How to Cite
 -------------------------------------------------------------------------------
 If you benefited from ESSA in your research, please cite the following paper:
 
-.. [KB20] Kaynak B.T., Bahar I., Doruker P.,
+.. [KB20] Kaynak B.T., Bahar I., Doruker P., 
     Essential site scanning analysis: A new approach for detecting sites that 
     modulate the dispersion of protein global motions,
     *Comput. Struct. Biotechnol. J.* **2020** 18:1577-1586.
