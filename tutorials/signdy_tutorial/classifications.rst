@@ -61,9 +61,11 @@ using the option *origin='upper'*.
     @savefig ens_gnms_so_matrix.png width=4in
     showMatrix(sd_matrix), origin='upper');
 	
+    plt.figure()
     @savefig ens_gnms_so_tree.png width=4in
     showTree(so_tree, format='plt');
 	
+    plt.figure()
     @savefig ens_gnms_so_reordered_so_matrix.png width=4in
     showMatrix(reordered_sd, origin='upper');
 
@@ -80,17 +82,17 @@ the PDB ensemble.
     seqid_matrix = buildSeqidMatrix(ens.getMSA())
     seqd_matrix = 1. - seqid_matrix
     @savefig ens_gnms_seqd_matrix.png width=4in
-    showMatrix(seqd_matrix, origin='upper')
+    showMatrix(seqd_matrix, origin='upper');
 
     plt.figure()
     seqd_tree = calcTree(names=labels, 
                          distance_matrix=seqd_matrix, 
                          method='upgma')
     @savefig ens_gnms_seqd_tree.png width=4in
-    showTree(seqd_tree, format='plt')
+    showTree(seqd_tree, format='plt');
 
     reordered_seqd, indices = reorderMatrix(labels, seqd_matrix, seqd_tree)
-    plt.figure();
+    plt.figure()
     @savefig ens_gnms_seqd_reordered_seqd_matrix.png width=4in
     showMatrix(reordered_seqd, origin='upper');
 
@@ -100,19 +102,19 @@ the PDB ensemble.
 
     rmsd_matrix = ens.getRMSDs(pairwise=True)
     @savefig ens_gnms_rmsd_matrix.png width=4in
-    showMatrix(rmsd_matrix, origin='upper')
+    showMatrix(rmsd_matrix, origin='upper');
 
     plt.figure()
     rmsd_tree = calcTree(names=labels, 
                          distance_matrix=rmsd_matrix, 
                          method='upgma')
     @savefig ens_gnms_rmsd_tree.png width=4in
-    showTree(rmsd_tree, format='plt')
+    showTree(rmsd_tree, format='plt');
 
     plt.figure()
     reordered_rmsd, indices = reorderMatrix(labels, rmsd_matrix, rmsd_tree)
     @savefig ens_gnms_rmsd_reordered_rmsd_matrix.png width=4in
-    showMatrix(reordered_rmsd, origin='upper')
+    showMatrix(reordered_rmsd, origin='upper');
 
     plt.close('all')
 
@@ -131,9 +133,11 @@ We can reorder the seqd and sod matrices by the RMSD tree too to compare them:
     @savefig ens_gnms_rmsd_reordered_seqd_matrix.png width=4in
     showMatrix(reordered_seqd, origin='upper')
 
+    plt.figure()
     @savefig ens_gnms_rmsd_reordered_rmsd_matrix.png width=4in
     showMatrix(reordered_rmsd, origin='upper')
 
+    plt.figure()
     @savefig ens_gnms_rmsd_reordered_sod_matrix.png width=4in
     showMatrix(arccos(reordered_sod), origin='upper')
 
