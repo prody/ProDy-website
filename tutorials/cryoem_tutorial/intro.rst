@@ -2,8 +2,8 @@ Introduction
 ===============================================================================
 
 This tutorial shows how to use cryo-EM electron density data to perform 
-elastic network model analysis as in [YZ20]_. 
-Electron density maps can be provided by the user or retrieved from the EMDB_. 
+elastic network model analysis as in [YZ20]_. Electron density maps can 
+be provided by the user or retrieved from the EMDB_. 
 
 Cryo-electron microscopy (cryo-EM) is a type of transmission 
 electron microscopy where the studied sample, e.g. protein 
@@ -26,9 +26,6 @@ machines beyond the atomic level.
 
 ProDy can be used for constructing a bead-and-spring model from cryo-EM data 
 using a previously published algorithm ([TM94]_), which can be used for ANM.
-
-We demonstrate this method for an AMPA-type iGluR rather than the chaperonin CCT 
-to speed up calculations as it is smaller.
 
 
 Required Programs
