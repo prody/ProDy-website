@@ -54,9 +54,9 @@ Next, we create an :class:`.AdaptiveANM` object, which will be used for the calc
 
 .. ipython:: python
 
-    aanm_1 = runAdaptiveANM(r_amap, t_amap, 20)
+    aanm_1 = calcAdaptiveANM(r_amap, t_amap, 20, mode=AANM_DEFAULT)
 
-2. One way Adaptive ANM
+2. One-way Adaptive ANM
 -------------------------------------------------------------------------------
 
 If one structure is very compact and unlikely to undergo much conformational change 
@@ -65,15 +65,15 @@ the class method :meth:`.runManySteps`.
 
 .. ipython:: python
 
-    aanm_2 = runOneWayAdaptiveANM(r_amap, t_amap, 20)
+    aanm_2 = calcAdaptiveANM(r_amap, t_amap, 20, mode=AANM_ONEWAY)
 
-3. One way at a time Adaptive ANM
+3. One-way-at-a-time Adaptive ANM
 -------------------------------------------------------------------------------
 
 Alternatively, we can run one structure as far it can go and then run the rest of the steps 
-with the other structure with the class method :meth:`.runManySteps`. In this case, it helps 
-to provide the maximum number of modes to control how far it goes with each structure.
+with the other structure. In this case, it helps to provide the maximum number of modes to 
+control how far it goes with each structure.
 
 .. ipython:: python
 
-    aanm_3 = runBothWaysAdaptiveANM(r_amap, t_amap, 20, maxModes=3)
+    aanm_3 = calcAdaptiveANM(r_amap, t_amap, 20, mode=AANM_BOTHWAYS, maxModes=3)
