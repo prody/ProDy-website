@@ -34,7 +34,7 @@ PDB format (EMD-1961.pdb; see below).
 This function returns an :class:`.AtomGroup` from the electron density
 map. The *cutoff* parameter discards any electron density lower than
 the given number and we select this based on the suggestion on the 
-EMDDatabank_ website. In this case, we raise it slightly to remove 
+EMDB_ website. In this case, we raise it slightly to remove 
 unassigned density inside the CCT rings.
 
 The parameter *n_nodes* describes the total number of beads in the system, 
@@ -46,7 +46,7 @@ number of them (the default value is 20).
 
 The resultant structure will look something like the following figure. 
 
-.. figure:: ../../_static/figures/8000nodes_with_map.png.png
+.. figure:: ../../_static/figures/8000nodes_with_map.png
    :scale: 80%
 
 
