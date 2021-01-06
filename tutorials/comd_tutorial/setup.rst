@@ -111,7 +111,6 @@ Now you need to run coMD simulations. To perform those simulations it is possibl
 to use the following command::
 
    vmd –dispdev text –e your_output_prefix.tcl
-￼￼
 
 If you want to run this simulation on a cluster, copy this directory on cluster and put the command on the queue system.
 

@@ -58,7 +58,7 @@ or with pylab environment::
   $ ipython --pylab
 
 
-First, we will make necessary imports from ProDy and Matplotlib
+First, we will make necessary imports from ProDy_ and Matplotlib_
 packages.
 
 .. ipython:: python

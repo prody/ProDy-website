@@ -52,7 +52,6 @@ numbers and chains.
 
     show = showPerturbResponse(anm_ampar, atoms=ampar_ca)
     @savefig 3kg2_prs.png width=4in
-    plt.show()
 
 Saving the model
 -------------------------------------------------------------------------------

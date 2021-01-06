@@ -54,22 +54,19 @@ calculate a tree from it and reorder the matrix using the tree as follows:
 We can show the original and reordered spectral distance matrices and the tree as follows.
 :func:`.showTree` has multiple *format* options. Here we show the output of using *plt*.
 This layout allows us to directly compare against the output from :func:`.showMatrix`
-using the option *origin='upper'*.
+using the option `origin='upper'`.
 
 .. ipython:: python
 
    @savefig ens_gnms_so_matrix.png width=4in
-   showMatrix(sd_matrix), origin='upper');
+   showMatrix(sd_matrix, origin='upper');
 
-   plt.figure()
    @savefig ens_gnms_so_tree.png width=4in
    showTree(so_tree, format='plt');
 
-   plt.figure()
    @savefig ens_gnms_so_reordered_so_matrix.png width=4in
    showMatrix(reordered_sd, origin='upper');
 
-   plt.close('all')
 
 Sequence and structural distances
 -------------------------------------------------------------------------------
@@ -86,7 +83,6 @@ the PDB ensemble.
    @savefig ens_gnms_seqd_matrix.png width=4in
    showMatrix(seqd_matrix, origin='upper');
 
-   plt.figure()
    seqd_tree = calcTree(names=labels, 
                         distance_matrix=seqd_matrix, 
                         method='upgma')
@@ -94,11 +90,9 @@ the PDB ensemble.
    showTree(seqd_tree, format='plt');
 
    reordered_seqd, indices = reorderMatrix(labels, seqd_matrix, seqd_tree)
-   plt.figure()
    @savefig ens_gnms_seqd_reordered_seqd_matrix.png width=4in
    showMatrix(reordered_seqd, origin='upper');
 
-   plt.close('all')
 
 .. ipython:: python
 
@@ -106,19 +100,16 @@ the PDB ensemble.
    @savefig ens_gnms_rmsd_matrix.png width=4in
    showMatrix(rmsd_matrix, origin='upper');
 
-   plt.figure()
    rmsd_tree = calcTree(names=labels, 
                         distance_matrix=rmsd_matrix, 
                         method='upgma')
    @savefig ens_gnms_rmsd_tree.png width=4in
    showTree(rmsd_tree, format='plt');
 
-   plt.figure()
    reordered_rmsd, indices = reorderMatrix(labels, rmsd_matrix, rmsd_tree)
    @savefig ens_gnms_rmsd_reordered_rmsd_matrix.png width=4in
    showMatrix(reordered_rmsd, origin='upper');
 
-   plt.close('all')
 
 Comparing sequence, structural and dynamic classifications
 -------------------------------------------------------------------------------
@@ -135,15 +126,12 @@ We can reorder the seqd and sod matrices by the RMSD tree too to compare them:
    @savefig ens_gnms_rmsd_reordered_seqd_matrix.png width=4in
    showMatrix(reordered_seqd, origin='upper')
 
-   plt.figure()
    @savefig ens_gnms_rmsd_reordered_rmsd_matrix.png width=4in
    showMatrix(reordered_rmsd, origin='upper')
 
-   plt.figure()
    @savefig ens_gnms_rmsd_reordered_sod_matrix.png width=4in
    showMatrix(reordered_sd, origin='upper')
 
-   plt.close('all')
 
 This analysis is quite sensitive to how many modes are used. As the number of modes approaches the full number, 
 the dynamic distance order approaches the RMSD order. With smaller numbers, we see finer distinctions. This is 

@@ -236,5 +236,4 @@ as input and visualize the bipartition.
 
    @savefig enm_analysis_gnm_show_protein.png width=6in
    showProtein(calphas, mode=gnm[0]);
-   plt.close('all')
    

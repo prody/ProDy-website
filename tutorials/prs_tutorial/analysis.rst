@@ -29,7 +29,6 @@ and sensitivity profiles colored by chain:
     show = showPerturbResponse(anm_ampar, atoms=ampar_ca, 
                                show_matrix=False)
     @savefig 3kg2_prs_eff_and_sens.png width=4in
-    plt.show()
 
 Plotting residue-specific effectiveness and sensitivity profiles
 -------------------------------------------------------------------------------
@@ -46,7 +45,6 @@ This can again be shown in a plot as in Figure 6D.
                                show_matrix=False,
                                select='chain B and resnum 84')
     @savefig 3kg2_prs_chB_T84_eff_and_sens.png width=4in
-    plt.show()
 
 We can also calculate the PRS matrix and profiles separately from showPerturbResponse. 
 This gives us more flexibility with what we show and enables us to do other things with the 
