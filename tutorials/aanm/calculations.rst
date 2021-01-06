@@ -11,7 +11,7 @@ still in the same python session.
     ion()
 
 
-Loading the structure and initialising adaptive ANM
+Loading the structure and running adaptive ANM
 -------------------------------------------------------------------------------
 First, we parse the structures that we want to analyse with Adaptive ANM.
 For this tutorial, we will use chain A of PDB structures 1GRU and 1GR5, 
@@ -47,22 +47,13 @@ Next, we can run AdaptiveANM calculations simply by
     ens = calcAdaptiveANM(r, tmap, 20)
     ens
 
-:func:`.calcAdaptiveANM` create an :class:`Ensemble` object that has all the generated, 
-intermediate conformations that bridges `r` and `tmap`. The reference coordinates of `ens` 
-is set to those of `tmap`, so that we can verify the result by checking the RMSDs of the 
-conformations:
-
-.. ipython:: python
-
-   @savefig aanm_rmsds_alter.png width=4in
-   plot(ens.getRMSDs())
-
 
 The implementation in ProDy_ also provides 3 ways of running calculations, namely, 
 `AANM_ALTERNATING`, `AANM_ONEWAY`, and `AANM_BOTHWAYS`. `AANM_ALTERNATING` updates 
 `r` and `tmap` simultaneously as in the original Adaptive ANM ([ZY09]_) with minor 
 variations, whereas `AANM_ONEWAY` and `AANM_BOTHWAYS` carry out the calculations 
-from either just one or both directions. This behavior is controlled by the `mode` 
+from either just one or both directions (starting with A and going until convergence 
+then continuing from B). This behavior is controlled by the `mode` 
 argument:
 
 .. ipython:: python
@@ -70,3 +61,18 @@ argument:
 
    ens_1w = calcAdaptiveANM(r, tmap, 20, mode=AANM_ONEWAY)
 
+
+Analysis
+-------------------------------------------------------------------------------
+
+:func:`.calcAdaptiveANM` creates an :class:`Ensemble` object that has all the generated, 
+intermediate conformations that bridges `r` and `tmap`. The reference coordinates of `ens` 
+are set to those of `tmap`, so that we can verify the result by checking the RMSDs of the 
+conformations:
+
+.. ipython:: python
+
+   @savefig aanm_rmsds_alter.png width=4in
+   plot(ens.getRMSDs())
+
+We can also perform any other analysis that is applicable to a :class:`Ensemble`: object.
