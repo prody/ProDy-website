@@ -150,11 +150,12 @@ by putting their names and labels in a dictionary:
 We plot the variance bar for the first five modes (showing a function of the inverse 
 eigenvalues related to the resultant relative size of motion) above the inverse eigenvalue 
 distributions for each of those modes. To arrange the plots like this, we use the 
-`~matplotlib.pyplot.GridSpec` method of Matplotlib.
+`:class:~matplotlib.gridspec.GridSpec` method of Matplotlib.
 
 .. ipython:: python
 
    @savefig signdy_dali_variance_mode1-5.png width=4in
+   from matplotlib.gridspec import GridSpec
    gs = GridSpec(ncols=1, nrows=2, height_ratios=[1, 10], hspace=0.15)
 
    subplot(gs[0]);

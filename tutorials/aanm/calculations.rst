@@ -74,5 +74,7 @@ conformations:
 
    @savefig aanm_rmsds_alter.png width=4in
    plot(ens.getRMSDs())
+   xlabel('R -> T')
+   ylabel('RMSD')
 
 We can also perform any other analysis that is applicable to a :class:`Ensemble`: object.
