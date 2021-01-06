@@ -19,7 +19,7 @@ Required Programs
 Latest version of ProDy_, Matplotlib_, VMD_ and NAMD_ are required.
 
 .. _NAMD: http://www.ks.uiuc.edu/Research/namd/
-.. _VAMD: http://www.ks.uiuc.edu/Research/vmd/
+.. _VMD: http://www.ks.uiuc.edu/Research/vmd/
 
 Recommended Programs
 -------------------------------------------------------------------------------

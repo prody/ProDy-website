@@ -10,7 +10,7 @@ Adaptive ANM
 
     You can also read this tutorial in `PDF format <aanm.pdf>`_.
 
-    Tutorial files: `ZIP <aanm.zip>`_ `TGZ <aanm.tgz>`_
+    Tutorial files: `ZIP <aanm_files.zip>`_ `TGZ <aanm_files.tgz>`_
 
 .. add .rst files to `toctree` in the order that you want them
 

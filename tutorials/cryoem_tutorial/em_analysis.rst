@@ -9,7 +9,6 @@ Let's start with essential import statements:
 
    from prody import *
    import numpy as np
-   import matplotlib
 
 
 Parse Density Map
@@ -27,21 +26,21 @@ To skip this step, you can load the structure file for the beads directly in
 PDB format (EMD-1961.pdb; see below).
 
 .. ipython:: python
+   :verbatim:
 
-   emd = parseEMD('1961', cutoff=1.2, n_nodes=3000)
+   emd = parseEMD('EMD-1961.map', cutoff=1.2, n_nodes=3000)
    emd
 
 This function returns an :class:`.AtomGroup` from the electron density
-map. The *cutoff* parameter discards any electron density lower than
-the given number and we select this based on the suggestion on the 
-EMDB_ website. In this case, we raise it slightly to remove 
-unassigned density inside the CCT rings.
+map. The **cutoff** parameter discards any electron density lower than
+the given number and we select this based on the suggestion on the `EMDB`_ website. 
+In this case, we raise it slightly to remove unassigned density inside the CCT rings.
 
-The parameter *n_nodes* describes the total number of beads in the system, 
+The parameter **n_nodes** describes the total number of beads in the system, 
 which we choose to be a few times smaller than the number of residues to 
 increase efficiency and account for the low resolution. 
 
-This procedure is an iterative one and *num_iter* can be used to set the 
+This procedure is an iterative one and **num_iter** can be used to set the 
 number of them (the default value is 20).
 
 The resultant structure will look something like the following figure. 
@@ -145,6 +144,10 @@ Elastic Network Model Analysis
 Elastic network model analysis can be applied to the pseudo-atomic model as usual. 
 We use ``cutoff=20`` to account for the level of coarse-graining (see [PD02]_).
 
+.. [PD02] P. Doruker, R.L. Jernigan, I. Bahar,
+    Dynamics of large proteins through hierarchical levels of coarse-grained structures,
+    *J. Comput. Chem.* **2002** 23:119-127.
+
 .. ipython:: python
    
    anm_emd = ANM('TRiC EMDMAP ANM Analysis')
@@ -176,6 +179,4 @@ Now we compare modes of the pseudo-atomic model to the atomic model:
    @savefig cryody_anm_overlap.png width=4in
    showOverlapTable(anm_emd, anm_pdb_reduced)
 
-.. [PD02] P. Doruker, R.L. Jernigan, I. Bahar,
-    Dynamics of large proteins through hierarchical levels of coarse-grained structures,
-    *J. Comput. Chem.* **2002** 23:119-127.
+
