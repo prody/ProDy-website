@@ -19,8 +19,9 @@ Chromatin Dynamics
    :maxdepth: 2
 
    intro
+   calculations
 
 
 .. only:: html
 
-   .. include:: acknowledgments.rst
+   .. include:: ../template/acknowledgments.rst

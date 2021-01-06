@@ -28,4 +28,4 @@ Conformational Sampling
 
 .. only:: html
 
-   .. include:: acknowledgments.rst
+   .. include:: ../template/acknowledgments.rst

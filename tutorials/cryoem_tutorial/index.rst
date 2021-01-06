@@ -3,7 +3,7 @@
 .. _cryoem_analysis:
 
 *******************************************************************************
-Cryo-EM Analysis
+Cryo-EM Dynamics (CryoDy)
 *******************************************************************************
 
 .. only:: html
@@ -19,10 +19,9 @@ Cryo-EM Analysis
    :maxdepth: 2
 
    intro
-   background
    em_analysis
 
 
 .. only:: html
 
-   .. include:: acknowledgments.rst
+   .. include:: ../template/acknowledgments.rst

@@ -23,4 +23,4 @@ TITLE
 
 .. only:: html
 
-   .. include:: acknowledgments.rst
+   .. include:: ../template/acknowledgments.rst
