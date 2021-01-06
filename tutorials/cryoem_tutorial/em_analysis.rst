@@ -28,7 +28,7 @@ PDB format (EMD-1961.pdb; see below).
 .. ipython:: python
    :verbatim:
 
-   emd = parseEMD('EMD-1961.map', cutoff=1.2, n_nodes=3000)
+   emd = parseEMD('1961', cutoff=1.2, n_nodes=3000)
    emd
 
 This function returns an :class:`.AtomGroup` from the electron density
