@@ -62,7 +62,8 @@ The implementation in ProDy_ also provides 3 ways of running calculations, namel
 `AANM_ALTERNATING`, `AANM_ONEWAY`, and `AANM_BOTHWAYS`. `AANM_ALTERNATING` updates 
 `r` and `tmap` simultaneously as in the original Adaptive ANM ([ZY09]_) with minor 
 variations, whereas `AANM_ONEWAY` and `AANM_BOTHWAYS` carry out the calculations 
-from either just one or both directions. This behavior is controlled by the `mode` 
+from either just one or both directions (starting with A and going until convergence 
+then continuing from B). This behavior is controlled by the `mode` 
 argument:
 
 .. ipython:: python

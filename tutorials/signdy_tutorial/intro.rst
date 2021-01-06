@@ -24,9 +24,9 @@ This tutorial contains three parts. In the first part, we will have a quick
 walk-through on the SignDy_ calculations and functions using the example of type-I 
 periplasmic binding protein (PBP-I) domains, in which case the data is convienient 
 collected from the `Dali server`_ [LH10]_. The second part will be a more detailed 
-+periplasmic binding protein (PBP-I) domains, in which case the data is convieniently 
-+collected from the `Dali server`_ [LH10]_. The second part will be review how to use 
-+the CATH database to build the ensemble. The third part will be a more detailed 
+periplasmic binding protein (PBP-I) domains, in which case the data is convieniently 
+collected from the `Dali server`_ [LH10]_. The second part will be review how to use 
+the `CATH database`_ [IS21]_ to build the ensemble. The third part will be a more detailed 
 tutorial on building an ensemble 'manually' from scratch, and try to reproduce the 
 figures presented in [SZ18]_.
 
@@ -69,6 +69,13 @@ please cite the following paper:
     Dali server: conservation mapping in 3D.
     *Nucleic Acids Res.* **2010** 10(38):W545-9
 
+.. [IS21] Sillitoe I, Bordin N, Dawson N, Waman VP, Ashford P, Scholes HM, Pang CSM, Woodridge L, Rauer C, 
+   Sen N, Abbasian M, Le Cornu S, Lam SD, Berka K, Varekova IH, Svobodova R, Lees J, Orengo CA.
+   CATH: increased structural coverage of functional space.
+   *Nucleic Acids Res.* **2021** 49(D1):D266-D273
+
+
 .. _`Dali server`: http://ekhidna2.biocenter.helsinki.fi/dali/
+.. _`CATH database`: https://www.cathdb.info/
 
 .. _`SignDy`: http://prody.csb.pitt.edu/test_prody/tutorials/signdy_tutorial/
