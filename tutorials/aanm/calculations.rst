@@ -78,4 +78,36 @@ conformations:
    xlabel('R -> T')
    ylabel('RMSD')
 
-We can also perform any other analysis that is applicable to a :class:`Ensemble`: object.
+We can also perform any other analysis that is applicable to a :class:`Ensemble`: object. 
+Other quantities that may be useful for debugging or validation purposes can be obtained 
+through assigning a callback function. For example, to extract the number of modes used 
+in each iteration, we can write the following function to access and store the value:
+
+.. ipython:: python
+   :suppress:
+
+   N_MODES = []
+
+   def callback(**kwargs):
+      modes = kwargs.pop('modes')
+      
+      N_MODES.append(len(modes))
+
+Note that **N_MODES** needs to be defined outside the function, at a global scope, in order 
+to save the value for each iteration. **modes** is a :class:`.ModeSet` object that give you 
+the mode selected for deform the structure in an iteration. You have the access to all the 
+properties of **modes**, and therefore the whole :class:`.ANM`, but here we are only 
+evaluating the number of selected modes using :func:`len`. Please check out the documentation 
+of :func:`.calcAdaptiveANM` for a complete list of accessible quantities. 
+
+Now, we pass the callback function to :func:`.calcAdaptiveANM` as follows:
+
+.. ipython:: python
+
+   ens_1w = calcAdaptiveANM(r, tmap, 20, mode=AANM_ONEWAY, callback_func=callback)
+
+And check the number of modes being selected in each iteration:
+
+.. ipython:: python
+
+   print(N_MODES)
