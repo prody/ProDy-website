@@ -136,16 +136,8 @@ square fluctuations from the first 5 modes or the cross-correlations from the fi
 
 We can also look at distributions over values across different members of the ensemble 
 such as inverse eigenvalue. We can show a bar above this with individual members labelled 
-like [JK15]_.
-
-We can select particular members to highlight with arrows 
-by putting their names and labels in a dictionary:
-
-.. ipython:: python
-
-   highlights = {'3h5vA_ca': 'GluA2', '3o21C_ca': 'GluA3',
-                 '3h6gA_ca': 'GluK2', '3olzA_ca': 'GluK3', 
-                 '5kc8A_ca': 'GluD2'}
+like [JK15]_. We can select particular members to highlight with arrows 
+by putting their names and labels in a dictionary.
 
 We plot the variance bar for the first five modes (showing a function of the inverse 
 eigenvalues related to the resultant relative size of motion) above the inverse eigenvalue 
@@ -153,6 +145,10 @@ distributions for each of those modes. To arrange the plots like this, we use th
 `:class:~matplotlib.gridspec.GridSpec` method of Matplotlib.
 
 .. ipython:: python
+
+   highlights = {'3h5vA_ca': 'GluA2', '3o21C_ca': 'GluA3',
+                 '3h6gA_ca': 'GluK2', '3olzA_ca': 'GluK3', 
+                 '5kc8A_ca': 'GluD2'}
 
    from matplotlib.gridspec import GridSpec
    gs = GridSpec(ncols=1, nrows=2, height_ratios=[1, 10], hspace=0.15)

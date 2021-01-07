@@ -88,7 +88,6 @@ in each iteration, we can write the following function to access and store the v
 
    def callback(**kwargs):
       modes = kwargs.pop('modes')
-      
       N_MODES.append(len(modes))
 
 Note that **N_MODES** needs to be defined outside the function, at a global scope, in order 
