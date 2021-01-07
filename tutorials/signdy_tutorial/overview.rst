@@ -159,6 +159,7 @@ distributions for each of those modes. To arrange the plots like this, we use th
 
    subplot(gs[0]);
    showVarianceBar(gnms[:, :5], fraction=True, highlights=highlights);
+   @savefig signdy_dali_variance_bar_mode1-5.png width=4in
    xlabel('');
 
    subplot(gs[1]);

@@ -94,6 +94,7 @@ like [JK15]_.
 
     subplot(gs[0]);
     showVarianceBar(gnms[:, :5], fraction=True, highlights=highlights);
+    @savefig ens_gnms_signature_variance_bar_mode1-5.png width=4in
     xlabel('');
 
     subplot(gs[1]);
