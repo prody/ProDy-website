@@ -47,7 +47,7 @@ This allows the domains to be used for selection:
 .. ipython:: python
 
    domain1 = emd.select('domain 1')
-   print(domain1)
+   print(domain1.numAtoms())
 
 
 Finally, we save a domain-labelled pseudo-atom model to a PDB file for visualization and other 
@@ -72,6 +72,6 @@ with dynamical domains for atomic models.
 
 .. ipython:: python
 
-   gnm0, domain0 = calcGNM(ag, selstr='domain 0')
+   gnm0, domain0 = calcGNM(emd, selstr='domain 0')
    domains0 = calcGNMDomains(gnm0[:3])
    writePDB('EMD-1961_domain0_subdomains4.pdb', domain0, beta=domains0)
