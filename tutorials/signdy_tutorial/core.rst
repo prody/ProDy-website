@@ -85,10 +85,7 @@ like [JK15]_.
 
  .. ipython:: python
 
-   highlights = {'2A65A': 'LeuT:OF', '3TT1A': 'LeuT:OF', 
-               '3TT3A': 'LeuT:IF', '4US4A': 'MhsT:IF', 
-               '3NCYA': 'AdiC:OF', '2X79A': 'Mhp1:IF', 
-               '2WITA': 'BetP', '4M48A': 'DAT'}
+   highlights = {'2A65A': 'LeuT:OF', '3TT3A': 'LeuT:IF'}
 
    from matplotlib.gridspec import GridSpec
    gs = GridSpec(ncols=1, nrows=2, height_ratios=[1, 10], hspace=0.15)
