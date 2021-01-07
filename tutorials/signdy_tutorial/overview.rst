@@ -154,7 +154,6 @@ distributions for each of those modes. To arrange the plots like this, we use th
 
 .. ipython:: python
 
-   @savefig signdy_dali_variance_mode1-5.png width=4in
    from matplotlib.gridspec import GridSpec
    gs = GridSpec(ncols=1, nrows=2, height_ratios=[1, 10], hspace=0.15)
 
@@ -164,6 +163,8 @@ distributions for each of those modes. To arrange the plots like this, we use th
 
    subplot(gs[1]);
    showSignatureVariances(gnms[:, :5], fraction=True, bins=80, alpha=0.7);
+
+   @savefig signdy_dali_variance_mode1-5.png width=4in
    xlabel('Fraction of inverse eigenvalue');
 
 
