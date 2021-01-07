@@ -71,7 +71,6 @@ are set to those of `tmap`, so that we can verify the result by checking the RMS
 conformations:
 
 .. ipython:: python
-   :suppress:
 
    @savefig aanm_rmsds_alter.png width=4in
    plot(ens.getRMSDs())
@@ -84,7 +83,6 @@ through assigning a callback function. For example, to extract the number of mod
 in each iteration, we can write the following function to access and store the value:
 
 .. ipython:: python
-   :suppress:
 
    N_MODES = []
 

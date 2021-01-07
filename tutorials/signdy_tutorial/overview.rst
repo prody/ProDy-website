@@ -153,7 +153,6 @@ distributions for each of those modes. To arrange the plots like this, we use th
 `:class:~matplotlib.gridspec.GridSpec` method of Matplotlib.
 
 .. ipython:: python
-   :suppress:
 
    @savefig signdy_dali_variance_mode1-5.png width=4in
    from matplotlib.gridspec import GridSpec
@@ -267,7 +266,6 @@ We could plot the three trees one by one. Or, it could be of interest to put all
 distance metrics side by side and compare them:
 
 .. ipython:: python
-   :suppress:
 
    @savefig signdy_seqdist_tree.png width=4in
    showTree(seqdist_tree, format='plt')
