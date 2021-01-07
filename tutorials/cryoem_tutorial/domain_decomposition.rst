@@ -61,7 +61,7 @@ downstream analyses, using the B-factor field for writing the domains:
 Visualisation of the resultant structure will look something like the following figure. 
 
 .. figure:: ../../_static/figures/EMD-1961_9domains.png
-   :scale: 80%
+   :scale: 40%
 
 We see 9 domains, including 7 pairs of domains and 2 individual domains. 
 
