@@ -147,7 +147,7 @@ distributions for each of those modes. To arrange the plots like this, we use th
 .. ipython:: python
 
    highlights = {'3h5vA_ca': 'GluA2', '3o21C_ca': 'GluA3',
-                 '3h6gA_ca': 'GluK2', '3olzA_ca': 'GluK3'}
+                 '3h6gA_ca': 'GluK2'}
 
    from matplotlib.gridspec import GridSpec
    gs = GridSpec(ncols=1, nrows=2, height_ratios=[1, 10], hspace=0.15)
