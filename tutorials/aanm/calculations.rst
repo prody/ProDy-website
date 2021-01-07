@@ -71,6 +71,7 @@ are set to those of `tmap`, so that we can verify the result by checking the RMS
 conformations:
 
 .. ipython:: python
+   :suppress:
 
    @savefig aanm_rmsds_alter.png width=4in
    plot(ens.getRMSDs())

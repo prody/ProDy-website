@@ -46,7 +46,7 @@ If DALI times out then, you can use the following code to fetch the data afterwa
    while not dali_rec.isSuccess:
       dali_rec.fetch()
 
-Next, we get the lists of PDB IDs and mappings from *dali_rec*, parse the *pdb_ids* 
+Next, we get the lists of PDB IDs and mappings from **dali_rec**, parse the **pdb_ids** 
 to get a list of :class:`.AtomGroup` instances:
 
 .. ipython:: python
@@ -59,7 +59,7 @@ to get a list of :class:`.AtomGroup` instances:
    ags = parsePDB(pdb_ids, subset='ca')
    len(ags)
 
-Then we provide *ags* together with *mappings* to :func:`.buildPDBEnsemble`. We 
+Then we provide **ags** together with **mappings** to :func:`.buildPDBEnsemble`. We 
 set the keyword argument ``seqid=20`` to account for the low sequence identity 
 between some of the structures. 
 
@@ -86,8 +86,8 @@ We demonstrate this for the one we just saved.
    dali_ens = loadEnsemble('PBP-I.ens.npz')
 
 Then we calculated :class:`.GNM` modes for each member of the ensemble. There 
-are options to select the *model* (:class:`.GNM` by default) and the way of 
-considering non-aligned residues by setting the *trim* option (default is 
+are options to select the **model** (:class:`.GNM` by default) and the way of 
+considering non-aligned residues by setting the **trim** option (default is 
 :func:`.reduceModel`, which treats them as environment).
 
 .. ipython:: python
@@ -153,6 +153,7 @@ distributions for each of those modes. To arrange the plots like this, we use th
 `:class:~matplotlib.gridspec.GridSpec` method of Matplotlib.
 
 .. ipython:: python
+   :suppress:
 
    @savefig signdy_dali_variance_mode1-5.png width=4in
    from matplotlib.gridspec import GridSpec
@@ -266,6 +267,7 @@ We could plot the three trees one by one. Or, it could be of interest to put all
 distance metrics side by side and compare them:
 
 .. ipython:: python
+   :suppress:
 
    @savefig signdy_seqdist_tree.png width=4in
    showTree(seqdist_tree, format='plt')
