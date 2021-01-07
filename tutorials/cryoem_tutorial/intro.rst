@@ -73,12 +73,11 @@ imports in the same Python session.
 
 .. _EMDB: https://www.ebi.ac.uk/pdbe/emdb/
 
-.. [YZ20] Yan Zhang, James Krieger, Karolina Mikulska-Ruminska, Burak Kaynak, 
-    Carlos Oscar S. Sorzano, José-María Carazo, Jianhua Xing, Ivet Bahar 
+.. [YZ20] Zhang Y, Krieger J, Mikulska-Ruminska K, Kaynak B, Sorzano COS, Carazo JM, Xing J, Bahar I
     State-dependent sequential allostery exhibited by chaperonin TRiC/CCT 
     revealed by network analysis of Cryo-EM maps,
     *Prog. Biophys. Mol. Biol.* **In Press** 10.1016/j.pbiomolbio.2020.08.006.
 
-.. _[TM94]: Martinetz and Schulten, 1994
+.. _[TM94]: Martinetz T and Schulten K
    Topology representing networks
    *Neural Networks* **1994** 7:507-552.

@@ -143,7 +143,7 @@ by putting their names and labels in a dictionary:
 
 .. ipython:: python
 
-   highlights = {'3h5vA_ca': 'GluA2','3o21C_ca': 'GluA3',
+   highlights = {'3h5vA_ca': 'GluA2', '3o21C_ca': 'GluA3',
                  '3h6gA_ca': 'GluK2', '3olzA_ca': 'GluK3', 
                  '5kc8A_ca': 'GluD2'}
 
@@ -164,7 +164,6 @@ distributions for each of those modes. To arrange the plots like this, we use th
 
    subplot(gs[1]);
    showSignatureVariances(gnms[:, :5], fraction=True, bins=80, alpha=0.7);
-
    @savefig signdy_dali_variance_mode1-5.png width=4in
    xlabel('Fraction of inverse eigenvalue');
 
