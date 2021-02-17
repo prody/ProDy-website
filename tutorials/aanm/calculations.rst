@@ -49,9 +49,9 @@ Next, we can run AdaptiveANM calculations simply by
 
 
 The implementation in ProDy_ also provides 3 ways of running calculations, namely, 
-`AANM_ALTERNATING`, `AANM_ONEWAY`, and `AANM_BOTHWAYS`. `AANM_ALTERNATING` updates 
+`ALTERNATING`, `ONEWAY`, and `BOTHWAYS`. `ALTERNATING` updates 
 `r` and `tmap` simultaneously as in the original Adaptive ANM ([ZY09]_) with minor 
-variations, whereas `AANM_ONEWAY` and `AANM_BOTHWAYS` carry out the calculations 
+variations, whereas `ONEWAY` and `BOTHWAYS` carry out the calculations 
 from either just one or both directions (starting with A and going until convergence 
 then continuing from B). This behavior is controlled by the `mode` 
 argument:
@@ -59,7 +59,7 @@ argument:
 .. ipython:: python
    :verbatim:
 
-   ens_1w = calcAdaptiveANM(r, tmap, 20, mode=AANM_ONEWAY)
+   ens_1w = calcAdaptiveANM(r, tmap, 20, mode=ONEWAY)
 
 
 Analysis
@@ -101,7 +101,7 @@ Now, we pass the callback function to :func:`.calcAdaptiveANM` as follows:
 
 .. ipython:: python
 
-   ens_1w = calcAdaptiveANM(r, tmap, 20, mode=AANM_ONEWAY, callback_func=callback)
+   ens_1w = calcAdaptiveANM(r, tmap, 20, mode=ONEWAY, callback_func=callback)
 
 And check the number of modes being selected in each iteration:
 
