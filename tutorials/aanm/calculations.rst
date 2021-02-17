@@ -49,9 +49,9 @@ Next, we can run AdaptiveANM calculations simply by
 
 
 The implementation in ProDy_ also provides 3 ways of running calculations, namely, 
-`ALTERNATING`, `ONEWAY`, and `BOTHWAYS`. `ALTERNATING` updates 
+`ALTERNATING`, `ONEWAY`, and `SERIAL`. `ALTERNATING` updates 
 `r` and `tmap` simultaneously as in the original Adaptive ANM ([ZY09]_) with minor 
-variations, whereas `ONEWAY` and `BOTHWAYS` carry out the calculations 
+variations, whereas `ONEWAY` and `SERIAL` carry out the calculations 
 from either just one or both directions (starting with A and going until convergence 
 then continuing from B). This behavior is controlled by the `mode` 
 argument:
