@@ -33,7 +33,7 @@ MD simulation.
 
     anm_ampar = ANM('AMPAR 3kg2')
     anm_ampar.buildHessian(ampar_ca)
-    anm_ampar.calcModes()
+    anm_ampar.calcModes('all')
 
 PRS can also be performed with any other model from which a covariance matrix 
 can be calculated including GNM and PCA. A PCA model can also be used with an 
