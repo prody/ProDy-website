@@ -78,7 +78,6 @@ We slice rows using *axis=0* to obtain the effectiveness profile
 
 .. ipython:: python
 
-    prs_mat, effectiveness, sensitivity = calcPerturbResponse(anm_ampar)
     B_84_effectiveness = sliceAtomicData(prs_mat, atoms=ampar_ca, axis=0,
                                          select='chain B and resnum 84')
 
