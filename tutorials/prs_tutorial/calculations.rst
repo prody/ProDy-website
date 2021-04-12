@@ -24,16 +24,14 @@ atoms, which we will use in downstream steps.
 
 
 Next, create an ANM instance and calculate modes from which the covariance
-matrix can be calculated. We could ask for all modes rather than the default subset
-of the first 20 global modes. We could alternatively apply the PRS to another
-model from which a covariance matrix could be derived such as PCA, GNM or an
-MD simulation.
+matrix can be calculated. We ask for all modes rather than the default subset
+of the first 20 global modes to reproduce the published data. 
 
 .. ipython:: python
 
     anm_ampar = ANM('AMPAR 3kg2')
     anm_ampar.buildHessian(ampar_ca)
-    anm_ampar.calcModes()
+    anm_ampar.calcModes('all')
 
 PRS can also be performed with any other model from which a covariance matrix 
 can be calculated including GNM and PCA. A PCA model can also be used with an 

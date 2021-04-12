@@ -83,7 +83,7 @@ We slice rows by default (*axis=0*) to obtain the effectiveness profile
                                          select='chain B and resnum 84')
 
     writePDB('3kg2_ca_B_84_effectiveness.pdb', ampar_ca, 
-             betas=B_84_effectiveness)
+             beta=B_84_effectiveness)
 
 
 and slice columns using *axis=1* to obtain the sensitivity profile
@@ -95,7 +95,7 @@ and slice columns using *axis=1* to obtain the sensitivity profile
                                        select='chain B and resnum 84')
 
     writePDB('3kg2_ca_B_84_sensitivity.pdb', ampar_ca, 
-             betas=B_84_sensitivity)
+             beta=B_84_sensitivity)
 
 We generated our Figure 7 using this approach together with the `spectrum` command from PyMOL.
 
