@@ -136,16 +136,8 @@ square fluctuations from the first 5 modes or the cross-correlations from the fi
 
 We can also look at distributions over values across different members of the ensemble 
 such as inverse eigenvalue. We can show a bar above this with individual members labelled 
-like [JK15]_.
-
-We can select particular members to highlight with arrows 
-by putting their names and labels in a dictionary:
-
-.. ipython:: python
-
-   highlights = {'3h5vA_ca': 'GluA2','3o21C_ca': 'GluA3',
-                 '3h6gA_ca': 'GluK2', '3olzA_ca': 'GluK3', 
-                 '5kc8A_ca': 'GluD2'}
+like [JK15]_. We can select particular members to highlight with arrows 
+by putting their names and labels in a dictionary.
 
 We plot the variance bar for the first five modes (showing a function of the inverse 
 eigenvalues related to the resultant relative size of motion) above the inverse eigenvalue 
@@ -153,18 +145,21 @@ distributions for each of those modes. To arrange the plots like this, we use th
 `:class:~matplotlib.gridspec.GridSpec` method of Matplotlib.
 
 .. ipython:: python
-   :suppress:
 
-   @savefig signdy_dali_variance_mode1-5.png width=4in
+   highlights = {'3h5vA_ca': 'GluA2', '3o21C_ca': 'GluA3',
+                 '3h6gA_ca': 'GluK2'}
+
    from matplotlib.gridspec import GridSpec
    gs = GridSpec(ncols=1, nrows=2, height_ratios=[1, 10], hspace=0.15)
 
    subplot(gs[0]);
    showVarianceBar(gnms[:, :5], fraction=True, highlights=highlights);
+   @savefig signdy_dali_variance_bar_mode1-5.png width=4in
    xlabel('');
 
    subplot(gs[1]);
    showSignatureVariances(gnms[:, :5], fraction=True, bins=80, alpha=0.7);
+   @savefig signdy_dali_variance_mode1-5.png width=4in
    xlabel('Fraction of inverse eigenvalue');
 
 
@@ -267,7 +262,6 @@ We could plot the three trees one by one. Or, it could be of interest to put all
 distance metrics side by side and compare them:
 
 .. ipython:: python
-   :suppress:
 
    @savefig signdy_seqdist_tree.png width=4in
    showTree(seqdist_tree, format='plt')

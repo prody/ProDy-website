@@ -12,9 +12,9 @@ already.
 
 .. ipython:: python
 
-    from prody import *
-    from pylab import *
-    ion()
+   from prody import *
+   from pylab import *
+   ion()
 
 
 Mode Ensemble
@@ -30,14 +30,14 @@ If necessary, we first load the ensemble:
 
 .. ipython:: python
 
-    ens = loadEnsemble('LeuT.ens.npz')
+   ens = loadEnsemble('LeuT.ens.npz')
 
 Then we calculated first 20 GNM modes for each member of the ensemble:
 
 .. ipython:: python
 
-    gnms = calcEnsembleENMs(ens, model=GNM, trim='reduce', n_modes=20, match=True)
-    gnms
+   gnms = calcEnsembleENMs(ens, model=GNM, trim='reduce', n_modes=20, match=True)
+   gnms
 
 In this way, we will obtain one :class:`.ModeSet` for each member and 85 in total. 
 Finding a consistent order of modes across different mode sets is critical to the 
@@ -58,8 +58,8 @@ mode (second index 0). The first index of the mode ensemble is over conformation
 
  .. ipython:: python
 
-    @savefig ens_gnms_signature_mode1.png width=4in
-    showSignatureMode(gnms[:, 0]);
+   @savefig ens_gnms_signature_mode1.png width=4in
+   showSignatureMode(gnms[:, 0]);
 
 In the plot, the curve shows the mean values, the darker shade shows the standard 
 deviations, and the lighter shade shows the range (minimum and maximum values).
@@ -68,15 +68,15 @@ square fluctuations from the first 5 modes,
 
  .. ipython:: python
 
-    @savefig ens_gnms_signature_sqflucts_mode1-5.png width=4in
-    showSignatureSqFlucts(gnms[:, :5]);
+   @savefig ens_gnms_signature_sqflucts_mode1-5.png width=4in
+   showSignatureSqFlucts(gnms[:, :5]);
 
 or the cross-correlations from the first 20.
 
  .. ipython:: python
 
-    @savefig ens_gnms_signature_cross-corr.png width=4in
-    showSignatureCrossCorr(gnms[:, :20]);
+   @savefig ens_gnms_signature_cross-corr.png width=4in
+   showSignatureCrossCorr(gnms[:, :20]);
 
 
 We can also look at distributions over values across different members of the ensemble 
@@ -85,21 +85,20 @@ like [JK15]_.
 
  .. ipython:: python
 
-    highlights = {'2A65A': 'LeuT:OF', '3TT1A': 'LeuT:OF', 
-                  '3TT3A': 'LeuT:IF', '4US4A': 'MhsT:IF', 
-                  '3NCYA': 'AdiC:OF', '2X79A': 'Mhp1:IF', 
-                  '2WITA':'BetP', '4M48A':'DAT'}
+   highlights = {'2A65A': 'LeuT:OF', '3TT3A': 'LeuT:IF'}
 
-    @savefig ens_gnms_signature_variance_mode1-5.png width=4in
-    gs = plt.GridSpec(ncols=1, nrows=2, height_ratios=[1, 10], hspace=0.15)
+   from matplotlib.gridspec import GridSpec
+   gs = GridSpec(ncols=1, nrows=2, height_ratios=[1, 10], hspace=0.15)
 
-    subplot(gs[0])
-    showVarianceBar(gnms[:, :5], fraction=True, highlights=highlights)
-    xlabel('')
+   subplot(gs[0]);
+   showVarianceBar(gnms[:, :5], fraction=True, highlights=highlights);
+   @savefig ens_gnms_signature_variance_bar_mode1-5.png width=4in
+   xlabel('');
 
-    subplot(gs[1])
-    showSignatureVariances(gnms[:, :5], fraction=True, bins=80, alpha=0.7)
-    xlabel('Mode weight')
+   subplot(gs[1]);
+   showSignatureVariances(gnms[:, :5], fraction=True, bins=80, alpha=0.7);
+   @savefig ens_gnms_signature_variance_mode1-5.png width=4in
+   xlabel('Mode weight');
 
 Saving the ModeEnsemble
 -------------------------------------------------------------------------------
@@ -108,6 +107,6 @@ Finally we save the mode ensemble for later processing:
 
 .. ipython:: python
 
-    saveModeEnsemble(gnms, 'LeuT')
+   saveModeEnsemble(gnms, 'LeuT')
 
 .. _`SignDy`: http://prody.csb.pitt.edu/test_prody/tutorials/signdy_tutorial/

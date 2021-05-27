@@ -74,16 +74,15 @@ To do this we modify the ampar_ca object and then write a PDB from it as follows
 
 We can also calculate the PRS matrix and profiles separately from showPerturbResponse 
 and slice out individual rows or columns and write them into PDB files for visualization.
-We slice rows by default (*axis=0*) to obtain the effectiveness profile
+We slice rows using *axis=0* to obtain the effectiveness profile
 
 .. ipython:: python
 
-    prs_mat, effectiveness, sensitivity = calcPerturbResponse(anm_ampar)
-    B_84_effectiveness = sliceAtomicData(prs_mat, atoms=ampar_ca, 
+    B_84_effectiveness = sliceAtomicData(prs_mat, atoms=ampar_ca, axis=0,
                                          select='chain B and resnum 84')
 
     writePDB('3kg2_ca_B_84_effectiveness.pdb', ampar_ca, 
-             betas=B_84_effectiveness)
+             beta=B_84_effectiveness[0])
 
 
 and slice columns using *axis=1* to obtain the sensitivity profile
@@ -95,7 +94,7 @@ and slice columns using *axis=1* to obtain the sensitivity profile
                                        select='chain B and resnum 84')
 
     writePDB('3kg2_ca_B_84_sensitivity.pdb', ampar_ca, 
-             betas=B_84_sensitivity)
+             beta=B_84_sensitivity)
 
 We generated our Figure 7 using this approach together with the `spectrum` command from PyMOL.
 

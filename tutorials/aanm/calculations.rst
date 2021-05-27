@@ -71,7 +71,6 @@ are set to those of `tmap`, so that we can verify the result by checking the RMS
 conformations:
 
 .. ipython:: python
-   :suppress:
 
    @savefig aanm_rmsds_alter.png width=4in
    plot(ens.getRMSDs())
@@ -84,18 +83,16 @@ through assigning a callback function. For example, to extract the number of mod
 in each iteration, we can write the following function to access and store the value:
 
 .. ipython:: python
-   :suppress:
 
    N_MODES = []
 
    def callback(**kwargs):
       modes = kwargs.pop('modes')
-      
       N_MODES.append(len(modes))
 
 Note that **N_MODES** needs to be defined outside the function, at a global scope, in order 
-to save the value for each iteration. **modes** is a :class:`.ModeSet` object that give you 
-the mode selected for deform the structure in an iteration. You have the access to all the 
+to save the value for each iteration. **modes** is a :class:`.ModeSet` object that gives you 
+the mode(s) selected for deform the structure in an iteration. You have the access to all the 
 properties of **modes**, and therefore the whole :class:`.ANM`, but here we are only 
 evaluating the number of selected modes using :func:`len`. Please check out the documentation 
 of :func:`.calcAdaptiveANM` for a complete list of accessible quantities. 

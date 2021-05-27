@@ -20,6 +20,7 @@ Cryo-EM Dynamics (CryoDy)
 
    intro
    em_analysis
+   domain_decomposition
 
 
 .. only:: html
