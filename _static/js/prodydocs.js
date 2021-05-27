@@ -53,8 +53,10 @@ $(document).ready(function() {
     logo.src = "http://prody.csb.pitt.edu/_static/essa_logo.png";
   } else if (url.search("cryo") > -1) {
     logo.src = "http://prody.csb.pitt.edu/_static/cryody_logo.png";
-  } else if (url.search("chromd") > -1) {
-    logo.src = "http://prody.csb.pitt.edu/_static/chromdlogo.png";
+  } else if (url.search("clustenmd") > -1) {
+    logo.src = "http://prody.csb.pitt.edu/_static/clustenmd.png";
+  // } else if (url.search("chromd") > -1) {
+  //   logo.src = "http://prody.csb.pitt.edu/_static/chromdlogo.png";
   } else {
     logo.src = "http://prody.csb.pitt.edu/_static/logo.png";
   }
@@ -82,14 +84,16 @@ $(document).ready(function() {
       $('.nav-pills > li:nth-child(11)').addClass('active');
     } else if (url.search("cryody") > -1) {
       $('.nav-pills > li:nth-child(12)').addClass('active');
-    } else if (url.search("downloads") > -1) {
+    } else if (url.search("clustenmd") > -1) {
       $('.nav-pills > li:nth-child(13)').addClass('active');
-    } else if (url.search("tutorials") > -1) {
+    } else if (url.search("downloads") > -1) {
       $('.nav-pills > li:nth-child(14)').addClass('active');
+    } else if (url.search("tutorials") > -1) {
+      $('.nav-pills > li:nth-child(15)').addClass('active');
     // } else if (url.search("workshop") > -1) {
     //   $('.nav-pills > li:nth-child(10)').addClass('active');
     } else if (url.search("statistics") > -1) {
-      $('.nav-pills > li:nth-child(15)').addClass('active');
+      $('.nav-pills > li:nth-child(16)').addClass('active');
     } else {
       $('.nav-pills > li:nth-child(1)').addClass('active');
     }

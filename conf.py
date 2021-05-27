@@ -66,7 +66,8 @@ html_additional_pages = {
     'workshop/index' : 'workshop.html',
     'pharmmaker/index' : 'pharmmaker.html',
     'cryody/index': 'cryody.html',
-    'essa/index': 'essa.html'
+    'essa/index': 'essa.html',
+    'clustenmd/index': 'clustenmd.html'
 }
 
 html_sidebars = {
