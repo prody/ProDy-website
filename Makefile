@@ -96,9 +96,4 @@ pdf: link
 	make -C tutorials/perturb_response clean copy
 	make -C tutorials/signdy_tutorial clean copy
 	make -C tutorials/cryoem_tutorial clean copy
-	
-	
-	
-	
-	
-	
+        make -C tutorials/clustenmd_tutorial clean copy

@@ -24,6 +24,7 @@ ProDy Documentation
    tutorials/cryoem_tutorial/index
    tutorials/aanm/index
    tutorials/essa_tutorial/index
+   tutorials/clustenmd_tutorial/index
 
 
 * :ref:`genindex`
