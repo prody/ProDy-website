@@ -260,7 +260,11 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       "TRiC/CCT Cryo-EM map fitted with TRN pseudoatom beads",
       "Global dynamics of CCT-ATP from TRN ENM",
       "ANM mode 7 of TRiC-ATP",
-      "Schematic description of symmetric or anti-symmetric movements of CCT-ATP");
+      "Schematic description of symmetric or anti-symmetric movements of CCT-ATP",
+      "Population distribution of ClustENMD conformers of adenylate kinase (AK)",
+      "Conformational surface of HIV-1 reverse transcriptase",
+      "Evolution of ClustENM conformers"
+      );
 
       panelSlides = new Array();
       panelSlides[0] = new Array(0, 4, 1, 7);
@@ -277,6 +281,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       panelSlides[11] = new Array(33, 34, 35);
       panelSlides[12] = new Array(36, 37, 38);
       panelSlides[13] = new Array(39, 40, 41, 42);
+      panelSlides[14] = new Array(43, 44, 45);
 
       var slideIndices = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
@@ -710,6 +715,30 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
         </p>
       </div>
 
+      <div class="prody-slide" id="slide-43">
+        <div class="slide-image"><img src="../_static/figures/clustenmd_fig_1.png"/></div>
+        <p></p><p style="font-size: 95%; font-style: italic;">
+          Population distribution of ClustENMD conformers shown on the angle space (LID-Core vs. NMP-Core angles) of adenylate kinase (AK), together with homologous experimental structures (black circles). 
+          Independent 5-generation runs starting from open (4ake) and closed (1ake) states of AK highlight the major minima and the populated transition states. 
+        </p>
+      </div>
+
+      <div class="prody-slide" id="slide-44">
+        <div class="slide-image"><img src="../_static/figures/clustenmd_fig_2.png"/></div>
+        <p></p><p style="font-size: 95%; font-style: italic;">
+          Conformational surface of HIV-1 reverse transcriptase plotted along the first two principal components (PCs) obtained from experimental structures (black circles), onto which the ClustENMD conformers 
+          (red circles, population levels in cyan) are projected. 
+        </p>
+      </div>
+
+      <div class="prody-slide" id="slide-45">
+        <div class="slide-image"><img src="../_static/figures/clustenmd_fig_3.gif"/></div>
+        <p></p><p style="font-size: 95%; font-style: italic;">
+          This movie shows the population distribution for successive generations (gen-1 to gen-10) of conformers sampled starting from the open (blue levels; initial structure/black circle: 1tw7) and the closed 
+          (red levels; initial structure/black diamond: 1bve) states of HIV-1 protease. As the distributions merge, they also cover the homologous experimental structures (gray circles). 
+        </p>
+      </div>
+
   <div class="container" id="about">
 
 <!-- Logo & Nav
@@ -733,7 +762,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
           <li title="coMD" ><a href="{{ pathto('comd', 1) }}">coMD</a></li>
           <li title="ESSA" ><a href="{{ pathto('essa', 1) }}">ESSA</a></li>  
           <li title="CryoDy" ><a href="{{ pathto('cryody', 1) }}">CryoDy</a></li>
-	  <!-- <li title="chromD"><a href="{{ pathto('chromd',1) }}">chromD</a></li> -->
+          <li title="ClustENMD" ><a href="{{ pathto('clustenmd', 1) }}">ClustENMD</a></li>
           <li title="Downloads"><a href="{{ pathto('downloads', 1) }}">Downloads</a></li>
           <li title="Tutorials"><a href="{{ pathto('tutorials', 1) }}">Tutorials</a></li>
      <!--     <li title="Workshops"><a href="{{ pathto('workshop', 1) }}">Workshops</a></li> -->
