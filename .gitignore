@@ -11,7 +11,6 @@ tutorials/drugui_tutorial/
 tutorials/saxs_tutorial/
 _build
 */*/_static
-_static/figures
 _sphinxext
 _theme
 _workdir
