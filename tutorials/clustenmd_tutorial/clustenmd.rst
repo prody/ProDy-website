@@ -3,15 +3,16 @@
 Simulation and Analysis
 ===============================================================================
 
-First, we will make the following necessary imports ProDy_, NumPy_, Matplotlib_, Seaborn_, and Pandas_ if you haven't already done it:
+First, we will make the following necessary imports ProDy_, NumPy_, and Matplotlib_ if you haven't already done it:
+
+.. _ProDy: http://prody.csb.pitt.edu/
+.. _NumPy: https://numpy.org/
+.. _Matplotlib: https://matplotlib.org/
 
 .. ipython:: python
-   :verbatim:
 
    import numpy as np
    import matplotlib.pyplot as plt
-   import seaborn
-   import pandas as pd
    import prody as pr
    plt.ion()
 
@@ -25,14 +26,8 @@ It is important to note that if the starting structure is provided by the user, 
 The pdb file (PDB id: 1tw7) is fetched by the method :func:`.parsePDB`. Please check the `ProDy Basics tutorials <http://prody.csb.pitt.edu/tutorials/prody_tutorial/basics.html>`__ for the details.
 
 .. ipython:: python
-   :verbatim:
 
    pdb = pr.parsePDB('1tw7', compressed=False)
-
-.. parsed-literal::
-
-   @> PDB file is found in working directory (1tw7.pdb).
-   @> 1890 atoms and 1 coordinate set(s) were parsed in 0.03s.
 
 ClustENMD is implemented as a ProDy class, named as :class:`ClustENM`, so we can instantiate an object of it. You can provide a title, but it is optional.
 
@@ -264,9 +259,8 @@ We also provide a method, called :func:`writePDB`, to write the conformers into 
 One can also load the previously saved ensemble by
 
 .. ipython:: python
-   :verbatim:
 
-   saved_ensemble = pr.loadEnsemble('1tw7_clustenm.ens.npz')
+   clustenm = pr.loadEnsemble('1tw7_clustenm.ens.npz')
     
 Features of ClustENM ensembles
 -------------------------------------------------------------------------------
@@ -278,84 +272,26 @@ There are alternative ways of indexing the generated conformers. User can either
 Let’s check we obtain the same coordinates by two alternative methods:
 
 .. ipython:: python
-   :verbatim:
 
    np.allclose(clustenm[3].getCoords(), clustenm[1, 2].getCoords())
-
-.. parsed-literal::
-
-   True
 
 A ClustENM object supports slicing as well. For example, if we want to select the 3rd conformer for every generation, then we only need to specify the index of the conformer in the second slot and select all in the first slot. If the desired conformers are not available in a particular generation, then they will be skipped.
 
 .. ipython:: python
-   :verbatim:
 
    clustenm[:, 3]
-
-.. parsed-literal::
-
-   <ClustENM: 1tw7_clustenm (5 conformations; 3108 atoms)>
 
 We can access the corrdinates of these conformers by the :func:`getCoordsets` method:
 
 .. ipython:: python
-   :verbatim:
 
    clustenm[:, 3].getCoordsets()
-
-.. parsed-literal::
-
-   array([[[ -3.95957387,  32.35691799,  -4.37383242],
-           [ -4.94566778,  32.35594469,  -4.59228821],
-           [ -3.63788137,  31.46009385,  -4.70897438],
-           ...,
-           [ -2.37337274,  29.5071206 ,  -3.7201629 ],
-           [ -1.39627789,  29.60381804,  -3.27034612],
-           [ -7.98974581,  31.21050202,  -4.31887029]],
-   
-          [[ -6.89570222,  32.89490785,  -5.27764023],
-           [ -7.80893237,  32.7297113 ,  -5.67617107],
-           [ -6.31021832,  32.07285054,  -5.23854147],
-           ...,
-           [ -5.32171232,  30.53324814,  -3.46080742],
-           [ -4.58778402,  30.86851485,  -2.74293152],
-           [-10.41683474,  31.15561532,  -5.46381784]],
-   
-          [[ -6.3447726 ,  34.20123262,  -5.5673921 ],
-           [ -7.22727328,  34.01664711,  -6.02260974],
-           [ -5.82362403,  33.34645491,  -5.43376411],
-           ...,
-           [ -4.07602444,  31.36764316,  -4.08790043],
-           [ -3.22430149,  31.72057964,  -3.52540378],
-           [-10.13066977,  31.95881599,  -6.06925207]],
-   
-          [[ -6.03426394,  33.17008188,  -5.2525952 ],
-           [ -6.90546384,  32.76869162,  -5.56882538],
-           [ -5.41631979,  32.40739972,  -5.01477094],
-           ...,
-           [ -4.18322255,  30.96462084,  -3.54549089],
-           [ -3.39843848,  31.42003303,  -2.95973127],
-           [-10.00982495,  30.65422159,  -6.45285668]],
-   
-          [[ -5.90545369,  33.39176383,  -5.49324755],
-           [ -6.79399411,  33.26907861,  -5.95751872],
-           [ -5.56441284,  32.44150355,  -5.52143941],
-           ...,
-           [ -2.89975089,  29.95653924,  -5.45052765],
-           [ -1.8757943 ,  30.2292032 ,  -5.24180161],
-           [ -9.38759977,  30.58004821,  -5.53001208]]])
 
 On the other hand, we may want to select all the conformers of a specific generation. It is then enough to set the index of the generation in the first slot and select all in the second slot.
 
 .. ipython:: python
-   :verbatim:
 
    clustenm[3, :]
-
-.. parsed-literal::
-
-   <ClustENM: 1tw7_clustenm (60 conformations; 3108 atoms)>
 
 Analysing the results
 -------------------------------------------------------------------------------
@@ -365,154 +301,130 @@ We would like to show how the computed conformers populate the conformational sp
 We are calculating PCs based on the C\ :math:`^\alpha`-atoms. This selection can be done directly on the ClustENM object.
 
 .. ipython:: python
-   :verbatim:
 
    clustenm.select('ca')
 
 .. ipython:: python
-   :verbatim:
 
    clustenm
 
-.. parsed-literal::
-
-   <ClustENM: 1tw7_clustenm (301 conformations; selected 198 of 3108 atoms)>
-
 .. ipython:: python
-   :verbatim:
 
    pca_clustenm = pr.PCA()
    pca_clustenm.buildCovariance(clustenm)
    pca_clustenm.calcModes()
 
-.. parsed-literal::
-
-   @> Covariance is calculated using 301 coordinate sets.
-   @> Covariance matrix calculated in 0.016746s.
-   @> 20 modes were calculated in 0.06s.
-   
 We can observe the progression of the conformers by coloring them in successive generations (from initial/zeroth to the last/fifth).
 
 .. ipython:: python
-   :verbatim:
 
-   colors = ['r', 'm', 'c', 'orange', 'blue', 'green']
-   plt.figure(dpi=300)
-   for i in range(1, clustenm.numGenerations() + 1):
-       pr.showProjection(clustenm[i, :], pca_clustenm[:2],
-                         c=colors[i], label=f'{i}')
-   pr.showProjection(clustenm[0, :], pca_clustenm[:2],
-                     c=colors[0], label='0',
-                     marker='*', markersize=10)
-   plt.xlabel('PC1')
-   plt.ylabel('PC2')
-   plt.legend()
-   plt.tight_layout()
-   plt.show()
-
-.. figure:: figures/output_37_0.png
+   @savefig clustenm_gens.png
+   with plt.style.context({'figure.dpi': 300,
+                           'axes.labelsize': 'x-large',
+                           'xtick.labelsize': 'large',
+                           'ytick.labelsize': 'large'}):
+       colors = ['r', 'm', 'c', 'orange', 'blue', 'green']
+       plt.figure()
+       for i in range(1, clustenm.numGenerations() + 1):
+           pr.showProjection(clustenm[i, :], pca_clustenm[:2],
+                             c=colors[i], label='%d'%i)
+       pr.showProjection(clustenm[0, :], pca_clustenm[:2],
+                         c=colors[0], label='0',
+                         marker='*', markersize=10)
+       plt.xlabel('PC1')
+       plt.ylabel('PC2')
+       plt.legend()
+       plt.tight_layout()
+       plt.show()
 
 The median and maximum RMSDs with respect to the initial conformer can be calculated for the whole ensemble by
 
 .. ipython:: python
-   :verbatim:
 
    rmsds = clustenm.getRMSDs()
 
 .. ipython:: python
-   :verbatim:
 
    np.median(rmsds), np.max(rmsds)
-
-.. parsed-literal::
-
-   (1.6681441595969058, 4.407775779940453)
 
 One can also check the RMSDs of the conformers in each generation with respect to the initial conformer:
 
 .. ipython:: python
-   :verbatim:
 
    rmsd_gens = []
    for i in range(1, clustenm.numGenerations()+1):
        tmp = pr.calcRMSD(clustenm.getCoords(),
                          clustenm[i, :].getCoordsets())
        rmsd_gens.append([tmp.min(), tmp.mean(), tmp.max()])
-   df = pd.DataFrame(rmsd_gens,
-                     index=range(1, clustenm.numGenerations()+1),
-                     columns=['min', 'mean', 'max'])
+   rmsd_gens = np.array(rmsd_gens)
 
 .. ipython:: python
-   :verbatim:
 
-   pb = df.plot.bar(color=['c', 'm', 'r'])
-   pb.figure.set_dpi(300)
-   pb.set_xlabel('Generation')
-   pb.set_ylabel(r'RMSD $(\AA)$')
-   plt.tight_layout()
-   plt.show()
-
-.. figure:: figures/output_43_0.png
+   @savefig clustenm_rmsd.png
+   with plt.style.context({'figure.dpi': 300,
+                           'axes.labelsize': 'x-large',
+                           'xtick.labelsize': 'large',
+                           'ytick.labelsize': 'large'}):
+       plt.figure()
+       plt.bar(np.arange(1, 6)-0.15, rmsd_gens[:, 0],
+               width=.15, color='c', label='min')
+       plt.bar(np.arange(1, 6), rmsd_gens[:, 1],
+               width=.15, color='m', label='mean')
+       plt.bar(np.arange(1, 6)+0.15, rmsd_gens[:, 2],
+               width=.15, color='r', label='max')
+       plt.xlabel('Generation')
+       plt.ylabel(r'RMSD($\AA$)')
+       plt.tight_layout()
+       plt.show()
 
 We want to also observe if our conformers approach the closed state of HIV-1 protease. For this purpose, an NMR ensemble of 28 models (PDB ID: 1bve with closed flaps) is projected onto the same subspace.
 
 Let’s first fetch these models and superpose them onto the initial/zeroth conformer. For this step, we generate a temporary ensemble of NMR models.
 
 .. ipython:: python
-   :verbatim:
 
    closed = pr.parsePDB('1bve', subset='ca', compressed=False)
-
-.. parsed-literal::
-
-   @> PDB file is found in working directory (1bve.pdb).
-   @> 198 atoms and 28 coordinate set(s) were parsed in 0.10s.
     
 .. ipython:: python
-   :verbatim:
 
    ens_cl = pr.Ensemble()
    ens_cl.setAtoms(closed)
    ens_cl.setCoords(clustenm.getCoords())
    ens_cl.addCoordset(closed.getCoordsets())
    ens_cl.superpose()
-
-.. parsed-literal::
-
-   @> Superposition completed in 0.03 seconds.
     
-At this point, we will generate the population density of the ClustENMD conformers using Seaborn implementation of kernel density estimate plot. Projected NMR conformers are also displayed as gray dots.
+   At this point, we will project both ClustENMD and NMR conformers on the subspace 
+   spanned by the first two PCs of the ClustENMD ensemble.
 
 .. ipython:: python
-   :verbatim:
 
-   proj_2d_clustenm = pr.calcProjection(clustenm,
-                                        pca_clustenm[:2])
+   @savefig clustenm_proj.png
+   with plt.style.context({'figure.dpi': 300,
+                           'axes.labelsize': 'x-large',
+                           'xtick.labelsize': 'large',
+                           'ytick.labelsize': 'large'}):
+       plt.figure()
+       pr.showProjection(clustenmd, pca_clustenmd[:2],
+                         c='orange', markersize=5, alpha=.5, label='ClustENMD')
+       pr.showProjection(clustenmd[0], pca_clustenmd[:2],
+                         c='r', marker='*', markersize=10, label='Initial')
+       pr.showProjection(ens_cl[2:], pca_clustenmd[:2],
+                         markersize=5, c='c', label='1bve', alpha=.5)
+       plt.xlabel('PC1')
+       plt.ylabel('PC2')
+       plt.legend()
+       plt.tight_layout()
+       plt.show()
 
-.. ipython:: python
-   :verbatim:
-
-   plt.figure(dpi=300)
-   sns.kdeplot(x=proj_2d_clustenm[:, 0],
-               y=proj_2d_clustenm[:, 1], shade=True)
-   pr.showProjection(clustenm[0], pca_clustenm[:2],
-                     c='r', marker='*', markersize=10,
-                     label='Initial')
-   pr.showProjection(ens_cl[2:], pca_clustenm[:2],
-                     markersize=1, c='gray', label='1bve')
-   plt.xlabel('PC1')
-   plt.ylabel('PC2')
-   plt.legend()
-   plt.tight_layout()
-   plt.show()
-
-.. figure:: figures/output_49_0.png
-
-The figure above indicates that the unbiased conformer generation starting from the open state of HIV-1 protease (red star) can successfully encompass the NMR models representing its closed state
-(gray dots). Each time you perform a ClustENMD run, you will obtain a unique ensemble due to the random sampling and MD simulations. Therefore, it is good practice to perform at least three independent runs, and combine the resulting ensembles for analysis.
-
-**Note:** In this tutorial we showed the variability of our generated conformers following the procedure in our original paper [KD16]_. 
-An alternative approach could also be followed if there are enough experimentally resolved homologous structures representing alternative states of a flexible protein. 
-In this approach, we can perform PCA on the ensemble of experimental structures and later project the ClustENMD conformers onto the subspace defined by PCs of experimental structures (see the examples in [KD21]_). 
-The movie on the ClustENMD webpage displays how the distribution of HIV-1 protease conformational ensemble progresses as more generations are included. 
-In this movie, ClustENMD conformers are projected on the experimental PC1 vs PC2. Specifically, blue surfaces/levels correspond to the progress of the runs starting from open structure.
+   The figure above indicates that the unbiased conformer generation starting from the open state of HIV-1 protease (red star) 
+   can successfully encompass the NMR models representing its closed state (cyan dots). Each time you perform a ClustENMD run, 
+   you will obtain a unique ensemble due to the random sampling and MD simulations. Therefore, it is good practice to perform at 
+   least three independent runs, and combine the resulting ensembles for analysis.
+   
+   **Note:** In this tutorial we showed the variability of our generated conformers following the procedure in our original paper [KD16]_. 
+   An alternative approach could also be followed if there are enough experimentally resolved homologous structures representing alternative 
+   states of a flexible protein. In this approach, we can perform PCA on the ensemble of experimental structures and later project the ClustENMD 
+   conformers onto the subspace defined by PCs of experimental structures (see the examples in [KD21]_). The movie on the ClustENMD webpage displays 
+   how the distribution, generated by a Gaussian kernel estimate plot, of HIV-1 protease conformational ensemble progresses as more generations are included. 
+   In that movie, ClustENMD conformers are projected on the experimental PC1 vs PC2. Specifically, blue surfaces/levels correspond to the progress of 
+   the runs starting from open structure.

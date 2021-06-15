@@ -22,6 +22,12 @@ Required Programs
 
 The latest versions of ProDy_, OpenMM_, and PDBFixer_ are required for ClustENMD.
 
+.. _ProDy: http://prody.csb.pitt.edu/
+.. _NumPy: https://numpy.org/
+.. _Matplotlib: https://matplotlib.org/
+.. _OpenMM: https://openmm.org/
+.. _PDBFixer: https://github.com/openmm/pdbfixer
+
 Getting Started
 -------------------------------------------------------------------------------
 
@@ -34,15 +40,12 @@ or with pylab environment::
 
   $ ipython --pylab
 
-First, we will make necessary imports from ProDy_, NumPy_, Matplotlib_, Pandas_, Seaborn_
-packages.
+First, we will make necessary imports from ProDy_, NumPy_, and Matplotlib_ packages.
 
 .. ipython:: python
 
     import numpy as np
     import matplotlib.pyplot as plt
-    import seaborn as sns
-    import pandas as pd
     import prody as pr
     plt.ion()
 
@@ -55,12 +58,12 @@ How to Cite
 If you benefited from ClustENMD in your research, please cite the following paper:
 
 .. [KD16] Kurkcuoglu Z., Bahar I., and Doruker P., 
-    ClustENM: ENM-Based Sampling of Essential Conformational Space at Full Atomic
-    Resolution, *J Chem Theory Comput* **2016** 12: 4549.
+   ClustENM: ENM-Based Sampling of Essential Conformational Space at Full Atomic
+   Resolution, *J Chem Theory Comput* **2016** 12: 4549.
 
-.. [KD21] Kaynak B.T., Zhang S., Bahar I., and Doruker P.,
-    ClustENMD: Efficient sampling of biomolecular conformational space at atomic resolution,
-    *Bioinformatics* **2021** (in publication). 
+.. [KD21] Kaynak B.T., Zhang S., Bahar I., and Doruker P., 
+   ClustENMD: Efficient sampling of biomolecular conformational space at atomic resolution,
+   *Bioinformatics* **2021** (in publication). 
 
 
 Additionally, please also cite the following paper for OpenMM:
