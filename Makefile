@@ -64,11 +64,8 @@ workdir:
 
 	cp -rf tutorials/membrane_anm/membrane_anm_files/* $(WORKDIR)
 
-<<<<<<< HEAD
 	cp -rf tutorials/clustenmd_tutorial/clustenmd_tutorial_files/* $(WORKDIR)
-=======
 	cp -rf tutorials/signdy_tutorial/signdy_tutorial_files/* $(WORKDIR)
->>>>>>> dev
 
 #	cp -rf tutorials/saxs_tutorial/saxs_tutorial_files/* $(WORKDIR)
 
