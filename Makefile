@@ -64,7 +64,13 @@ workdir:
 
 	cp -rf tutorials/membrane_anm/membrane_anm_files/* $(WORKDIR)
 
+	cp -rf tutorials/clustenmd_tutorial/clustenmd_tutorial_files/* $(WORKDIR)
+
 	cp -rf tutorials/signdy_tutorial/signdy_tutorial_files/* $(WORKDIR)
+
+	cp -rf tutorials/aanm/aanm_files/* $(WORKDIR)
+
+	cp -rf tutorials/cryoem_tutorial/cryoem_tutorial_files/* $(WORKDIR)
 
 #	cp -rf tutorials/saxs_tutorial/saxs_tutorial_files/* $(WORKDIR)
 
@@ -98,9 +104,4 @@ pdf: link
 	make -C tutorials/perturb_response clean copy
 	make -C tutorials/signdy_tutorial clean copy
 	make -C tutorials/cryoem_tutorial clean copy
-	
-	
-	
-	
-	
-	
+    make -C tutorials/clustenmd_tutorial clean copy
