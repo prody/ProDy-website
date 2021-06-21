@@ -14,8 +14,8 @@ Furthermore, the generated ensemble can be analyzed and utilized using the avail
 
 
 This tutorial demonstrates how to use ClustENMD to perform conformational sampling for the homo-dimeric enzyme 
-HIV-1 protease in open conformation without any ligand (PDB id: 1tw7). Furthermore, we will show the application of
-ProDy ensemble analysis tool to study the conformers and generate their population distribution.
+HIV-1 protease in an open conformation without any ligand (PDB id: 1tw7). Furthermore, we will show the application of
+ProDy ensemble analysis tools to study the conformers and generate their population distribution.
 
 Required Programs
 -------------------------------------------------------------------------------
@@ -46,7 +46,7 @@ First, we will make necessary imports from ProDy_, NumPy_, and Matplotlib_ packa
 
     import numpy as np
     import matplotlib.pyplot as plt
-    import prody as pr
+    from prody import *
     plt.ion()
 
 We have included these imports in every part of the tutorial, so that

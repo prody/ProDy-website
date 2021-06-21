@@ -3,7 +3,8 @@
 Simulation and Analysis
 ===============================================================================
 
-First, we will make the following necessary imports ProDy_, NumPy_, and Matplotlib_ if you haven't already done it:
+First, we will make the following necessary imports ProDy_, NumPy_, and Matplotlib_ 
+if you haven't already done it:
 
 .. _ProDy: http://prody.csb.pitt.edu/
 .. _NumPy: https://numpy.org/
@@ -20,16 +21,21 @@ First, we will make the following necessary imports ProDy_, NumPy_, and Matplotl
 Preparing the system and running a ClustENMD simulation
 -------------------------------------------------------------------------------
 
-We start our calculations by parsing the structure, of which we would like to sample conformations. For this tutorial, we will fetch the X-Ray structure of HIV-1 protease in open conformation in the absence of any inhibitor (PDB id: 1tw7) from the PDB server.
+We start our calculations by parsing the structure, of which we would like to sample 
+conformations. For this tutorial, we will fetch the X-Ray structure of HIV-1 protease 
+in an open conformation in the absence of any inhibitor (PDB id: 1tw7) from the PDB server.
 
-It is important to note that if the starting structure is provided by the user, it should satisfy the PDB file standards, e.g., the chain IDs need to be set properly.
+It is important to note that if the starting structure is provided by the user, it 
+should satisfy the PDB file standards, e.g., the chain IDs need to be set properly.
 
-The pdb file (PDB id: 1tw7) is fetched by the method :func:`.parsePDB`. Please check the `ProDy Basics tutorials <http://prody.csb.pitt.edu/tutorials/prody_tutorial/basics.html>`__ for the details.
+The pdb file (PDB id: 1tw7) is fetched by the method :func:`.parsePDB`. Please check the 
+`ProDy Basics tutorials <http://prody.csb.pitt.edu/tutorials/prody_tutorial/basics.html>`_ 
+for the details.
 
 .. ipython:: python
    :verbatim:
 
-   pdb = pr.parsePDB('1tw7', compressed=False)
+   pdb = parsePDB('1tw7', compressed=False)
 
 .. parsed-literal::
 
@@ -41,11 +47,17 @@ ClustENMD is implemented as a ProDy class, named as :class:`ClustENM`, so we can
 .. ipython:: python
    :verbatim:
 
-   clustenm = pr.ClustENM()
+   clustenm = ClustENM()
 
-Before running a simulation, we need to set the atom group that we would like to use. This method uses PDBFixer to add all hydrogen atoms as well as any missing heavy atoms in any partially resolved residues. Note that even though PDBFixer can add any residues/segments that are not resolved in the PDB structure, we are not using this option of PDBFixer. Instead, we leave modeling of those parts to the user. User-provided models should include chain IDs in their PDB files.
+Before running a simulation, we need to set the atom group that we would like to use. This 
+method uses PDBFixer to add all hydrogen atoms as well as any missing heavy atoms in any 
+partially resolved residues. Note that even though PDBFixer can add any residues/segments 
+that are not resolved in the PDB structure, we are not using this option of PDBFixer. Instead, 
+we leave modeling of those parts to the user. User-provided models should include chain IDs in 
+their PDB files.
 
-At this step, you can also set the pH level of the solution to select the protonation states for adding hydrogens by setting the ``pH`` parameter (default ``pH=7.0``).
+At this step, you can also set the pH level of the solution to select the protonation states 
+for adding hydrogens by setting the ``pH`` parameter (default ``pH=7.0``).
 
 .. ipython:: python
    :verbatim:
@@ -58,18 +70,21 @@ At this step, you can also set the pH level of the solution to select the proton
    @> 3108 atoms and 1 coordinate set(s) were parsed in 0.03s.
    @> The structure was fixed in 1.91s.
     
-After setting the atoms, you can write the fixed PDB file by the method :func:`writePDBFixed`.
+After setting the atoms, you can write the fixed PDB file by the method :meth:`.ClustENM.writePDBFixed`.
 
 .. ipython:: python
    :verbatim:
 
    clustenm.writePDBFixed()
 
-A ClustENMD simulation is started by the :func:`run` method. This method accepts numerous parameters, and we will only cover the essential ones to perform a simulation in this tutorial. Therefore, we would like to encourage the readers to refer to the docstring of this method for the
-description of all parameters.
+A ClustENMD simulation is started by the :meth:`.ClustENM.run` method. This method accepts numerous 
+parameters, and we will only cover the essential ones to perform a simulation in this tutorial. 
+Therefore, we would like to encourage the readers to refer to the docstring of this method for 
+the description of all parameters.
 
-As this method is iterative, the user needs to set the number of generations (default ``n_gens=5``). Depending on the system size, its flexibility, and the computational resources avaliable, the user can increase or decrease the number of generations. In this tutorial, we are
-using its default value.
+As this method is iterative, the user needs to set the number of generations (default ``n_gens=5``). 
+Depending on the system size, its flexibility, and the computational resources available, the user 
+can increase or decrease the number of generations. In this tutorial, we are using its default value.
 
 The parameters regarding the main steps of the method can be grouped as follows:
 
@@ -87,7 +102,7 @@ The parameters regarding the main steps of the method can be grouped as follows:
    respect to the parent (default is 1.0).
 
    ``v1`` : Full enumeration of ANM modes, which is used in the original
-   ClustENM method (default is False).
+   ClustENM method (default is False; see below).
 
    In the current ClustENMD version, ANM sampling is done randomly by
    the ProDy method ``sampleModes``, where the RMSD value corresponds to
@@ -95,7 +110,7 @@ The parameters regarding the main steps of the method can be grouped as follows:
    conformer. As the bigger RMSD value yields larger excursions from the
    parent, the user should be cautious on increasing its value. In
    contrast the original ClustENM [KD16]_ uses the full
-   enumeration of ANM modes with fixed maximum RMSD, which can be
+   enumeration (all possible combinations) of ANM modes with fixed maximum RMSD, which can be
    enabled by setting ``v1=True``. In both cases, we suggest using the
    first 3 to 5 global modes as they are known to facilitate the
    conformational transitions.
@@ -109,7 +124,7 @@ The parameters regarding the main steps of the method can be grouped as follows:
    (default is None).
 
    We are using `SciPy hierarchical clustering
-   library <https://docs.scipy.org/doc/scipy/reference/cluster.hierarchy.html>`__
+   library <https://docs.scipy.org/doc/scipy/reference/cluster.hierarchy.html>`_
    to cluster the conformers in each generation. Either ``maxclust`` or
    ``threshold`` parameter must be specified by the user. As a
    guideline, we suggest to use the ``maxclust`` parameter. Furthermore,
@@ -117,7 +132,7 @@ The parameters regarding the main steps of the method can be grouped as follows:
    generations, but also provided exclusive to each generation as a
    tuple, e.g., ``maxclust=(20, 40, 60)``. Increasing the number of
    maximum clusters in subsequent generations allows for maximum
-   excursion from the initial structure, thus should be prefered.
+   excursion from the initial structure, thus should be preferred.
 
 3. **Relaxation via MD simulations:**
 
@@ -130,8 +145,8 @@ The parameters regarding the main steps of the method can be grouped as follows:
    (``'amber14-all.xml'``, ``'amber14/tip3pfb.xml'``), ``solvent`` should be set
    to ``'exp'``. The user may choose other force fields available in
    OpenMM, please see the description of ``force_field`` parameter.
-   However, the default force-fields named above have only been tested
-   in ClustENMD so far. In the current implementation of ClustENMD,
+   However, only the default force-fields named above have been tested in 
+   ClustENMD so far. In the current implementation of ClustENMD,
    implicit solvent model is applicable to protein chains only. If there
    are any DNA/RNA chains in your structure, ClustENMD automatically
    uses explicit solvent.
@@ -143,7 +158,7 @@ The parameters regarding the main steps of the method can be grouped as follows:
    negative) to add. This does not include ions that are added to
    neutralize the system. Default concentration is 0.0 molar.
 
-   ``tolerance`` : Energy tolerance to be used for energy minimization
+   ``tolerance`` : Energy tolerance to be used for performing a local energy minimization on the system
    (default is 10.0 kJ/mole).
 
    ``maxIterations`` : Maximum number of iterations to perform during
@@ -171,12 +186,19 @@ The parameters regarding the main steps of the method can be grouped as follows:
    None). It can be chosen as ``'CUDA'``, ``'OpenCL'``, or ``'CPU'``. For
    efficiency, ``'CUDA'`` or ``'OpenCL'`` is highly recommended.
 
-We suggest to use implicit solvation and GPU platform for computational efficiency. Default parameters are highly efficient on GPU platform for proteins comprising several thousand residues. For larger assemblies, the user may prefer: (*i*) to decrease the number of clusters and/or generations, (*ii*) to perform only energy minimization with/out heating-up phase, or (*iii*) to carefully shrink the padding distance in explicit solvent.
+We suggest to use implicit solvation and GPU platform for computational efficiency. 
+Default parameters are highly efficient on GPU platform for proteins comprising several 
+thousand residues. For larger assemblies, the user may prefer: (*i*) to decrease the 
+number of clusters and/or generations, (*ii*) to perform only energy minimization with/out 
+heating-up phase, or (*iii*) to carefully shrink the padding distance in explicit solvent.
 
 Performing a simulation
 -------------------------------------------------------------------------------
 
-In the following, we will perform a ClustENMD simulation of 5 generations using the first 3 global modes. Relaxation of conformers is carried out in implicit solvent via energy minimization followed by a heating-up phase. We are conducting the simulation on a GPU platform. Simulation details will be printed out during execution.
+In the following, we will perform a ClustENMD simulation of 5 generations using the first 
+3 global modes. Relaxation of conformers is carried out in implicit solvent via energy 
+minimization followed by a heating-up phase. We are conducting the simulation on a GPU platform. 
+Simulation details will be printed out during execution.
 
 .. ipython:: python
    :verbatim:
@@ -234,25 +256,29 @@ In the following, we will perform a ClustENMD simulation of 5 generations using 
    @> Ensemble was created in 0.00s.
    @> All completed in 558.38s.
 
-The generated conformers are stored in a ClustENM ensemble object. For future reference, the paramters set for a simualtion can be saved into a file by the method :func:`writeParameters`:
+The generated conformers are stored in a ClustENM ensemble object. For future reference, the 
+parameters set for a simulation can be saved into a file by the method :meth:`.ClustENM.writeParameters`:
 
 .. ipython:: python
    :verbatim:
 
    clustenm.writeParameters()
 
-As ClustENM ensemble is actually a `ProDy ensemble <http://prody.csb.pitt.edu/manual/reference/ensemble/index.html>`__, we can also save it by the :func:`saveEnsemble` method:
+As ClustENM ensemble is actually a `ProDy ensemble <http://prody.csb.pitt.edu/manual/reference/ensemble/index.html>`_, 
+we can also save it by the :func:`.saveEnsemble` method:
 
 .. ipython:: python
    :verbatim:
 
-   pr.saveEnsemble(clustenm)
+   saveEnsemble(clustenm)
 
 .. parsed-literal::
 
    '1tw7_clustenm.ens.npz'
 
-We also provide a method, called :func:`writePDB`, to write the conformers into a PDB file. The boolean parameter ``single`` (default is ``True``) of this method controls whether the conformers are stored as models in a single PDB file, or each of them are saved as a separate PDB file.
+We also provide a method, called :meth:`.ClustENM.writePDB`, to write the conformers into a PDB file. The 
+boolean parameter ``single`` (default is ``True``) of this method controls whether the conformers 
+are stored as models in a single PDB file, or each of them are saved as a separate PDB file.
 
 .. ipython:: python
    :verbatim:
@@ -268,14 +294,21 @@ One can also load the previously saved ensemble by
 .. ipython:: python
    :verbatim:
 
-   saved_clustenm = pr.loadEnsemble('1tw7_clustenm.ens.npz')
+   saved_clustenm = loadEnsemble('1tw7_clustenm.ens.npz')
     
 Features of ClustENM ensembles
 -------------------------------------------------------------------------------
 
-As we mentioned above, ClustENM class is derived from ProDy ensemble class, therefore the methods defined for the latter, such as :func:`getCoordsets`, :func:`superpose` and many more can apply to ClustENM objects as well. All conformers in generations (:math:`i=1,2,3,\ldots`) are automatically superposed onto the initial/zeroth conformer based on C\ :math:`^\alpha`-atoms during a ClustENMD simulation.
+As we mentioned above, ClustENM class is derived from ProDy ensemble class, therefore the methods 
+defined for the latter, such as :meth:`.ClustENM.getCoordsets`, :meth:`.ClustENM.superpose` and 
+many more can apply to ClustENM objects as well. All conformers in generations (:math:`i=1,2,3,\ldots`) 
+are automatically superposed onto the initial/zeroth conformer based on C\ :math:`^\alpha`-atoms 
+during a ClustENMD simulation.
 
-There are alternative ways of indexing the generated conformers. User can either index ClustENM object by ``clustenm[3]``, which picks the 3rd conformer (presumably the 2nd conformer in the 1st generation) or equivalently with the generation number and an index as ``clustenm[1, 2]``. Note that indices start from 0.
+There are alternative ways of indexing the generated conformers. User can either index ClustENM 
+object by ``clustenm[3]``, which picks the 4th conformer (presumably the 2nd conformer in the 
+1st generation) or equivalently with the generation number and an index as ``clustenm[1, 2]``. 
+Note that indices start from 0.
 
 Let’s check we obtain the same coordinates by two alternative methods:
 
@@ -288,7 +321,10 @@ Let’s check we obtain the same coordinates by two alternative methods:
 
    True
 
-A ClustENM object supports slicing as well. For example, if we want to select the 3rd conformer for every generation, then we only need to specify the index of the conformer in the second slot and select all in the first slot. If the desired conformers are not available in a particular generation, then they will be skipped.
+A ClustENM object supports slicing as well. For example, if we want to select the 4th conformer 
+for every generation, then we only need to specify the index of the conformer in the second slot 
+and select all in the first slot. If the desired conformers are not available in a particular 
+generation, then they will be skipped.
 
 .. ipython:: python
    :verbatim:
@@ -299,7 +335,7 @@ A ClustENM object supports slicing as well. For example, if we want to select th
 
    <ClustENM: 1tw7_clustenm (5 conformations; 3108 atoms)>
 
-We can access the corrdinates of these conformers by the :func:`getCoordsets` method:
+We can access the coordinates of these conformers by the :meth:`.ClustENM.getCoordsets` method:
 
 .. ipython:: python
    :verbatim:
@@ -348,7 +384,8 @@ array([[[ -3.95957387,  32.35691799,  -4.37383242],
          [ -1.8757943 ,  30.2292032 ,  -5.24180161],
          [ -9.38759977,  30.58004821,  -5.53001208]]])
 
-On the other hand, we may want to select all the conformers of a specific generation. It is then enough to set the index of the generation in the first slot and select all in the second slot.
+On the other hand, we may want to select all the conformers of a specific generation. It is then 
+enough to set the index of the generation in the first slot and select all in the second slot.
 
 .. ipython:: python
    :verbatim:
@@ -362,9 +399,14 @@ On the other hand, we may want to select all the conformers of a specific genera
 Analysing the results
 -------------------------------------------------------------------------------
 
-We would like to show how the computed conformers populate the conformational space as regards the essential dynamics of the structure. For this aim, we perform a principal component analysis (PCA) on the generated ensemble. Next, we will project the conformers onto the space spanned by the first two PCs, which explain the highest variance of the ensemble. This can be done using `ProDy ensemble analysis <http://prody.csb.pitt.edu/tutorials/ensemble_analysis/>`__.
+We would like to show how the computed conformers populate the conformational space as regards 
+the essential dynamics of the structure. For this aim, we perform a principal component analysis 
+(PCA) on the generated ensemble. Next, we will project the conformers onto the space spanned by 
+the first two PCs, which explain the highest variance of the ensemble. This can be done using 
+`ProDy ensemble analysis <http://prody.csb.pitt.edu/tutorials/ensemble_analysis/>`_.
 
-We are calculating PCs based on the C\ :math:`^\alpha`-atoms. This selection can be done directly on the ClustENM object.
+We are calculating PCs based on the C\ :math:`^\alpha`-atoms. This selection can be done directly 
+on the ClustENM object.
 
 .. ipython:: python
    :verbatim:
@@ -383,7 +425,7 @@ We are calculating PCs based on the C\ :math:`^\alpha`-atoms. This selection can
 .. ipython:: python
    :verbatim:
 
-   pca_clustenm = pr.PCA()
+   pca_clustenm = PCA()
    pca_clustenm.buildCovariance(clustenm)
    pca_clustenm.calcModes()
 
@@ -405,11 +447,11 @@ We can observe the progression of the conformers by coloring them in successive 
        colors = ['r', 'm', 'c', 'orange', 'blue', 'green']
        plt.figure()
        for i in range(1, clustenm.numGenerations() + 1):
-           pr.showProjection(clustenm[i, :], pca_clustenm[:2],
-                             c=colors[i], label='%d'%i)
-       pr.showProjection(clustenm[0, :], pca_clustenm[:2],
-                         c=colors[0], label='0',
-                         marker='*', markersize=10)
+           showProjection(clustenm[i, :], pca_clustenm[:2],
+                          c=colors[i], label='%d'%i)
+       showProjection(clustenm[0, :], pca_clustenm[:2],
+                      c=colors[0], label='0',
+                      marker='*', markersize=10)
        plt.xlabel('PC1')
        plt.ylabel('PC2')
        plt.legend()
@@ -441,7 +483,7 @@ One can also check the RMSDs of the conformers in each generation with respect t
 
    rmsd_gens = []
    for i in range(1, clustenm.numGenerations()+1):
-       tmp = pr.calcRMSD(clustenm.getCoords(),
+       tmp = calcRMSD(clustenm.getCoords(),
                          clustenm[i, :].getCoordsets())
        rmsd_gens.append([tmp.min(), tmp.mean(), tmp.max()])
    rmsd_gens = np.array(rmsd_gens)
@@ -469,12 +511,13 @@ One can also check the RMSDs of the conformers in each generation with respect t
 
 We want to also observe if our conformers approach the closed state of HIV-1 protease. For this purpose, an NMR ensemble of 28 models (PDB ID: 1bve with closed flaps) is projected onto the same subspace.
 
-Let’s first fetch these models and superpose them onto the initial/zeroth conformer. For this step, we generate a temporary ensemble of NMR models.
+Let’s first fetch these models and superpose them onto the initial/zeroth conformer. For 
+this step, we generate a temporary ensemble of NMR models.
 
 .. ipython:: python
    :verbatim:
 
-   closed = pr.parsePDB('1bve', subset='ca', compressed=False)
+   closed = parsePDB('1bve', subset='ca', compressed=False)
 
 .. parsed-literal::
 
@@ -484,7 +527,7 @@ Let’s first fetch these models and superpose them onto the initial/zeroth conf
 .. ipython:: python
    :verbatim:
 
-   ens_cl = pr.Ensemble()
+   ens_cl = Ensemble()
    ens_cl.setAtoms(closed)
    ens_cl.setCoords(clustenm.getCoords())
    ens_cl.addCoordset(closed.getCoordsets())
@@ -494,8 +537,8 @@ Let’s first fetch these models and superpose them onto the initial/zeroth conf
 
    @> Superposition completed in 0.03 seconds.
     
-   At this point, we will project both ClustENMD and NMR conformers on the subspace 
-   spanned by the first two PCs of the ClustENMD ensemble.
+At this point, we will project both ClustENMD and NMR conformers on the subspace 
+spanned by the first two PCs of the ClustENMD ensemble.
 
 .. ipython:: python
    :verbatim:
@@ -505,11 +548,11 @@ Let’s first fetch these models and superpose them onto the initial/zeroth conf
                            'xtick.labelsize': 'large',
                            'ytick.labelsize': 'large'}):
        plt.figure()
-       pr.showProjection(clustenmd, pca_clustenmd[:2],
+       showProjection(clustenmd, pca_clustenmd[:2],
                          c='orange', markersize=5, alpha=.5, label='ClustENMD')
-       pr.showProjection(clustenmd[0], pca_clustenmd[:2],
+       showProjection(clustenmd[0], pca_clustenmd[:2],
                          c='r', marker='*', markersize=10, label='Initial')
-       pr.showProjection(ens_cl[2:], pca_clustenmd[:2],
+       showProjection(ens_cl[2:], pca_clustenmd[:2],
                          markersize=5, c='c', label='1bve', alpha=.5)
        plt.xlabel('PC1')
        plt.ylabel('PC2')
@@ -519,15 +562,15 @@ Let’s first fetch these models and superpose them onto the initial/zeroth conf
 
 .. figure:: images/clustenm_proj.png
 
-   The figure above indicates that the unbiased conformer generation starting from the open state of HIV-1 protease (red star) 
-   can successfully encompass the NMR models representing its closed state (cyan dots). Each time you perform a ClustENMD run, 
-   you will obtain a unique ensemble due to the random sampling and MD simulations. Therefore, it is good practice to perform at 
-   least three independent runs, and combine the resulting ensembles for analysis.
-   
-   **Note:** In this tutorial we showed the variability of our generated conformers following the procedure in our original paper [KD16]_. 
-   An alternative approach could also be followed if there are enough experimentally resolved homologous structures representing alternative 
-   states of a flexible protein. In this approach, we can perform PCA on the ensemble of experimental structures and later project the ClustENMD 
-   conformers onto the subspace defined by PCs of experimental structures (see the examples in [KD21]_). The movie on the ClustENMD webpage displays 
-   how the distribution, generated by a Gaussian kernel estimate plot, of HIV-1 protease conformational ensemble progresses as more generations are included. 
-   In that movie, ClustENMD conformers are projected on the experimental PC1 vs PC2. Specifically, blue surfaces/levels correspond to the progress of 
-   the runs starting from open structure.
+The figure above indicates that the unbiased conformer generation starting from the open state of HIV-1 protease (red star) 
+can successfully encompass the NMR models representing its closed state (cyan dots). Each time you perform a ClustENMD run, 
+you will obtain a unique ensemble due to the random sampling and MD simulations. Therefore, it is good practice to perform at 
+least three independent runs, and combine the resulting ensembles for analysis.
+
+**Note:** In this tutorial we showed the variability of our generated conformers following the procedure in our original paper [KD16]_. 
+An alternative approach could also be followed if there are enough experimentally resolved homologous structures representing alternative 
+states of a flexible protein. In this approach, we can perform PCA on the ensemble of experimental structures and later project the ClustENMD 
+conformers onto the subspace defined by PCs of experimental structures (see the examples in [KD21]_). The movie on the ClustENMD webpage displays 
+how the distribution, generated by a Gaussian kernel estimate plot, of HIV-1 protease conformational ensemble progresses as more generations are included. 
+In that movie, ClustENMD conformers are projected on the experimental PC1 vs PC2. Specifically, blue surfaces/levels correspond to the progress of 
+the runs starting from open structure.
