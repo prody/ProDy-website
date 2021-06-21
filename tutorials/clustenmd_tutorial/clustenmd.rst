@@ -22,7 +22,7 @@ Preparing the system and running a ClustENMD simulation
 
 We start our calculations by parsing the structure, of which we would like to sample 
 conformations. For this tutorial, we will fetch the X-Ray structure of HIV-1 protease 
-in open conformation in the absence of any inhibitor (PDB id: 1tw7) from the PDB server.
+in an open conformation in the absence of any inhibitor (PDB id: 1tw7) from the PDB server.
 
 It is important to note that if the starting structure is provided by the user, it 
 should satisfy the PDB file standards, e.g., the chain IDs need to be set properly.
@@ -77,7 +77,7 @@ Therefore, we would like to encourage the readers to refer to the docstring of t
 the description of all parameters.
 
 As this method is iterative, the user needs to set the number of generations (default ``n_gens=5``). 
-Depending on the system size, its flexibility, and the computational resources avaliable, the user 
+Depending on the system size, its flexibility, and the computational resources available, the user 
 can increase or decrease the number of generations. In this tutorial, we are using its default value.
 
 The parameters regarding the main steps of the method can be grouped as follows:
@@ -96,7 +96,7 @@ The parameters regarding the main steps of the method can be grouped as follows:
    respect to the parent (default is 1.0).
 
    ``v1`` : Full enumeration of ANM modes, which is used in the original
-   ClustENM method (default is False).
+   ClustENM method (default is False; see below).
 
    In the current ClustENMD version, ANM sampling is done randomly by
    the ProDy method ``sampleModes``, where the RMSD value corresponds to
@@ -126,7 +126,7 @@ The parameters regarding the main steps of the method can be grouped as follows:
    generations, but also provided exclusive to each generation as a
    tuple, e.g., ``maxclust=(20, 40, 60)``. Increasing the number of
    maximum clusters in subsequent generations allows for maximum
-   excursion from the initial structure, thus should be prefered.
+   excursion from the initial structure, thus should be preferred.
 
 3. **Relaxation via MD simulations:**
 
@@ -139,8 +139,8 @@ The parameters regarding the main steps of the method can be grouped as follows:
    (``'amber14-all.xml'``, ``'amber14/tip3pfb.xml'``), ``solvent`` should be set
    to ``'exp'``. The user may choose other force fields available in
    OpenMM, please see the description of ``force_field`` parameter.
-   However, the default force-fields named above have only been tested
-   in ClustENMD so far. In the current implementation of ClustENMD,
+   However, only the default force-fields named above have been tested in 
+   ClustENMD so far. In the current implementation of ClustENMD,
    implicit solvent model is applicable to protein chains only. If there
    are any DNA/RNA chains in your structure, ClustENMD automatically
    uses explicit solvent.
@@ -251,7 +251,7 @@ Simulation details will be printed out during execution.
    @> All completed in 558.38s.
 
 The generated conformers are stored in a ClustENM ensemble object. For future reference, the 
-paramters set for a simualtion can be saved into a file by the method :meth:`.ClustENM.writeParameters`:
+paramters set for a simulation can be saved into a file by the method :meth:`.ClustENM.writeParameters`:
 
 .. ipython:: python
    :verbatim:
@@ -299,7 +299,7 @@ are automatically superposed onto the initial/zeroth conformer based on C\ :math
 during a ClustENMD simulation.
 
 There are alternative ways of indexing the generated conformers. User can either index ClustENM 
-object by ``clustenm[3]``, which picks the 3rd conformer (presumably the 2nd conformer in the 
+object by ``clustenm[3]``, which picks the 4th conformer (presumably the 2nd conformer in the 
 1st generation) or equivalently with the generation number and an index as ``clustenm[1, 2]``. 
 Note that indices start from 0.
 
@@ -309,7 +309,7 @@ Let’s check we obtain the same coordinates by two alternative methods:
 
    np.allclose(clustenm[3].getCoords(), clustenm[1, 2].getCoords())
 
-A ClustENM object supports slicing as well. For example, if we want to select the 3rd conformer 
+A ClustENM object supports slicing as well. For example, if we want to select the 4th conformer 
 for every generation, then we only need to specify the index of the conformer in the second slot 
 and select all in the first slot. If the desired conformers are not available in a particular 
 generation, then they will be skipped.
@@ -318,7 +318,7 @@ generation, then they will be skipped.
 
    clustenm[:, 3]
 
-We can access the corrdinates of these conformers by the :meth:`.ClustENM.getCoordsets` method:
+We can access the coordinates of these conformers by the :meth:`.ClustENM.getCoordsets` method:
 
 .. ipython:: python
 
@@ -331,7 +331,7 @@ enough to set the index of the generation in the first slot and select all in th
 
    clustenm[3, :]
 
-Analysing the results
+Analyzing the results
 -------------------------------------------------------------------------------
 
 We would like to show how the computed conformers populate the conformational space as regards 
@@ -371,10 +371,10 @@ We can observe the progression of the conformers by coloring them in successive 
        plt.figure()
        for i in range(1, clustenm.numGenerations() + 1):
            showProjection(clustenm[i, :], pca_clustenm[:2],
-                             c=colors[i], label='%d'%i)
+                          c=colors[i], label='%d'%i)
        showProjection(clustenm[0, :], pca_clustenm[:2],
-                         c=colors[0], label='0',
-                         marker='*', markersize=10)
+                      c=colors[0], label='0',
+                      marker='*', markersize=10)
        plt.xlabel('PC1')
        plt.ylabel('PC2')
        plt.legend()
@@ -442,8 +442,8 @@ this step, we generate a temporary ensemble of NMR models.
    ens_cl.addCoordset(closed.getCoordsets())
    ens_cl.superpose()
     
-   At this point, we will project both ClustENMD and NMR conformers on the subspace 
-   spanned by the first two PCs of the ClustENMD ensemble.
+At this point, we will project both ClustENMD and NMR conformers on the subspace 
+spanned by the first two PCs of the ClustENMD ensemble.
 
 .. ipython:: python
 

@@ -68,6 +68,8 @@ workdir:
 
 	cp -rf tutorials/signdy_tutorial/signdy_tutorial_files/* $(WORKDIR)
 
+	cp -rf tutorials/aanm/aanm_files/* $(WORKDIR)
+
 #	cp -rf tutorials/saxs_tutorial/saxs_tutorial_files/* $(WORKDIR)
 
 html: link drugui workdir 
