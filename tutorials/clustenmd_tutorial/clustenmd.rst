@@ -10,6 +10,7 @@ First, we will make the following necessary imports ProDy_, NumPy_, and Matplotl
 .. _Matplotlib: https://matplotlib.org/
 
 .. ipython:: python
+   :verbatim:
 
    import numpy as np
    import matplotlib.pyplot as plt
@@ -26,6 +27,7 @@ It is important to note that if the starting structure is provided by the user, 
 The pdb file (PDB id: 1tw7) is fetched by the method :func:`.parsePDB`. Please check the `ProDy Basics tutorials <http://prody.csb.pitt.edu/tutorials/prody_tutorial/basics.html>`__ for the details.
 
 .. ipython:: python
+   :verbatim:
 
    pdb = pr.parsePDB('1tw7', compressed=False)
 
@@ -259,6 +261,7 @@ We also provide a method, called :func:`writePDB`, to write the conformers into 
 One can also load the previously saved ensemble by
 
 .. ipython:: python
+   :verbatim:
 
    clustenm = pr.loadEnsemble('1tw7_clustenm.ens.npz')
     
@@ -272,24 +275,28 @@ There are alternative ways of indexing the generated conformers. User can either
 Let’s check we obtain the same coordinates by two alternative methods:
 
 .. ipython:: python
+   :verbatim:
 
    np.allclose(clustenm[3].getCoords(), clustenm[1, 2].getCoords())
 
 A ClustENM object supports slicing as well. For example, if we want to select the 3rd conformer for every generation, then we only need to specify the index of the conformer in the second slot and select all in the first slot. If the desired conformers are not available in a particular generation, then they will be skipped.
 
 .. ipython:: python
+   :verbatim:
 
    clustenm[:, 3]
 
 We can access the corrdinates of these conformers by the :func:`getCoordsets` method:
 
 .. ipython:: python
+   :verbatim:
 
    clustenm[:, 3].getCoordsets()
 
 On the other hand, we may want to select all the conformers of a specific generation. It is then enough to set the index of the generation in the first slot and select all in the second slot.
 
 .. ipython:: python
+   :verbatim:
 
    clustenm[3, :]
 
@@ -301,14 +308,17 @@ We would like to show how the computed conformers populate the conformational sp
 We are calculating PCs based on the C\ :math:`^\alpha`-atoms. This selection can be done directly on the ClustENM object.
 
 .. ipython:: python
+   :verbatim:
 
    clustenm.select('ca')
 
 .. ipython:: python
+   :verbatim:
 
    clustenm
 
 .. ipython:: python
+   :verbatim:
 
    pca_clustenm = pr.PCA()
    pca_clustenm.buildCovariance(clustenm)
@@ -317,8 +327,8 @@ We are calculating PCs based on the C\ :math:`^\alpha`-atoms. This selection can
 We can observe the progression of the conformers by coloring them in successive generations (from initial/zeroth to the last/fifth).
 
 .. ipython:: python
+   :verbatim:
 
-   @savefig clustenm_gens.png
    with plt.style.context({'figure.dpi': 300,
                            'axes.labelsize': 'x-large',
                            'xtick.labelsize': 'large',
@@ -337,19 +347,24 @@ We can observe the progression of the conformers by coloring them in successive 
        plt.tight_layout()
        plt.show()
 
+.. figure:: images/clustenm_gens.png
+
 The median and maximum RMSDs with respect to the initial conformer can be calculated for the whole ensemble by
 
 .. ipython:: python
+   :verbatim:
 
    rmsds = clustenm.getRMSDs()
 
 .. ipython:: python
+   :verbatim:
 
    np.median(rmsds), np.max(rmsds)
 
 One can also check the RMSDs of the conformers in each generation with respect to the initial conformer:
 
 .. ipython:: python
+   :verbatim:
 
    rmsd_gens = []
    for i in range(1, clustenm.numGenerations()+1):
@@ -359,8 +374,8 @@ One can also check the RMSDs of the conformers in each generation with respect t
    rmsd_gens = np.array(rmsd_gens)
 
 .. ipython:: python
+   :verbatim:
 
-   @savefig clustenm_rmsd.png
    with plt.style.context({'figure.dpi': 300,
                            'axes.labelsize': 'x-large',
                            'xtick.labelsize': 'large',
@@ -377,15 +392,19 @@ One can also check the RMSDs of the conformers in each generation with respect t
        plt.tight_layout()
        plt.show()
 
+.. figure:: images/clustenm_rmsd.png
+
 We want to also observe if our conformers approach the closed state of HIV-1 protease. For this purpose, an NMR ensemble of 28 models (PDB ID: 1bve with closed flaps) is projected onto the same subspace.
 
 Let’s first fetch these models and superpose them onto the initial/zeroth conformer. For this step, we generate a temporary ensemble of NMR models.
 
 .. ipython:: python
+   :verbatim:
 
    closed = pr.parsePDB('1bve', subset='ca', compressed=False)
     
 .. ipython:: python
+   :verbatim:
 
    ens_cl = pr.Ensemble()
    ens_cl.setAtoms(closed)
@@ -397,8 +416,8 @@ Let’s first fetch these models and superpose them onto the initial/zeroth conf
    spanned by the first two PCs of the ClustENMD ensemble.
 
 .. ipython:: python
+   :verbatim:
 
-   @savefig clustenm_proj.png
    with plt.style.context({'figure.dpi': 300,
                            'axes.labelsize': 'x-large',
                            'xtick.labelsize': 'large',
@@ -415,6 +434,8 @@ Let’s first fetch these models and superpose them onto the initial/zeroth conf
        plt.legend()
        plt.tight_layout()
        plt.show()
+
+.. figure:: images/clustenm_proj.png
 
    The figure above indicates that the unbiased conformer generation starting from the open state of HIV-1 protease (red star) 
    can successfully encompass the NMR models representing its closed state (cyan dots). Each time you perform a ClustENMD run, 
