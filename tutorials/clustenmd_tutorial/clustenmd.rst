@@ -104,7 +104,7 @@ The parameters regarding the main steps of the method can be grouped as follows:
    conformer. As the bigger RMSD value yields larger excursions from the
    parent, the user should be cautious on increasing its value. In
    contrast the original ClustENM [KD16]_ uses the full
-   enumeration of ANM modes with fixed maximum RMSD, which can be
+   enumeration (all possible combinations) of ANM modes with fixed maximum RMSD, which can be
    enabled by setting ``v1=True``. In both cases, we suggest using the
    first 3 to 5 global modes as they are known to facilitate the
    conformational transitions.
@@ -152,7 +152,7 @@ The parameters regarding the main steps of the method can be grouped as follows:
    negative) to add. This does not include ions that are added to
    neutralize the system. Default concentration is 0.0 molar.
 
-   ``tolerance`` : Energy tolerance to be used for energy minimization
+   ``tolerance`` : Energy tolerance to be used for performing a local energy minimization on the system
    (default is 10.0 kJ/mole).
 
    ``maxIterations`` : Maximum number of iterations to perform during
@@ -251,7 +251,7 @@ Simulation details will be printed out during execution.
    @> All completed in 558.38s.
 
 The generated conformers are stored in a ClustENM ensemble object. For future reference, the 
-paramters set for a simulation can be saved into a file by the method :meth:`.ClustENM.writeParameters`:
+parameters set for a simulation can be saved into a file by the method :meth:`.ClustENM.writeParameters`:
 
 .. ipython:: python
    :verbatim:
