@@ -70,6 +70,8 @@ workdir:
 
 	cp -rf tutorials/aanm/aanm_files/* $(WORKDIR)
 
+	cp -rf tutorials/cryoem_tutorial/cryoem_tutorial_files/* $(WORKDIR)
+
 #	cp -rf tutorials/saxs_tutorial/saxs_tutorial_files/* $(WORKDIR)
 
 html: link drugui workdir 
