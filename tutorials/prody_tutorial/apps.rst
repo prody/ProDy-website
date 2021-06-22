@@ -55,7 +55,7 @@ ANM calculations
 PCA calculations
 -------------------------------------------------------------------------------
 
-:ref:`prody-anm` can be used to perform PCA calculations.  The following
+:ref:`prody-pca` can be used to perform PCA calculations.  The following
 example will perform PCA calculations for Cα atoms of the p38 MAP kinase
 using files:
 
