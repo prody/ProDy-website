@@ -90,10 +90,10 @@ $(document).ready(function() {
       $('.nav-pills > li:nth-child(14)').addClass('active');
     } else if (url.search("tutorials") > -1) {
       $('.nav-pills > li:nth-child(15)').addClass('active');
-    // } else if (url.search("workshop") > -1) {
-    //   $('.nav-pills > li:nth-child(10)').addClass('active');
+    } else if (url.search("workshop") > -1) {
+       $('.nav-pills > li:nth-child(16)').addClass('active');
     } else if (url.search("statistics") > -1) {
-      $('.nav-pills > li:nth-child(16)').addClass('active');
+      $('.nav-pills > li:nth-child(17)').addClass('active');
     } else {
       $('.nav-pills > li:nth-child(1)').addClass('active');
     }
