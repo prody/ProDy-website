@@ -52,7 +52,7 @@ ESSA can be informed about them when setting the system as follows:
 
    essa.setSystem(ag, lig='A 300 A 301')
 
-Scanning can be done using :func:`.scanResidues`. Here one can specify the number 
+Scanning can be done using :meth:`.ESSA.scanResidues`. Here one can specify the number 
 of softest modes, the type of ENM (GNM or ANM), and the cutoff, which by default 
 are ``n_modes=10``, ``enm='gnm'``, ``cutoff=None``, respectively. If ``cutoff`` 
 is not specified, its value is adopted from the default value of the specified ENM. 
@@ -62,7 +62,7 @@ During the scanning, the progress will also be displayed.
 
    essa.scanResidues()
 
-The generated ESSA profile can be shown by :func:`.showESSAProfile`. On this profile, 
+The generated ESSA profile can be shown by :meth:`.ESSA.showESSAProfile`. On this profile, 
 the residues interacting with the previously specified ligand(s) are automatically 
 highlighted. The blue dashed baseline shows the q-th quantile of the profile, which is by 
 default ``q=0.75``, representing the top quartile. Other residues of interest 

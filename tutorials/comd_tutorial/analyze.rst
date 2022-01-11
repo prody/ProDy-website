@@ -77,15 +77,15 @@ filtered to contain only C-alpha atoms as set in the previous step:
 	writeDCD('initial_filtered.dcd', dcd1)
 	writeDCD('final_filtered.dcd', dcd2)
 
-One way to combined trajectories into the same object is the :meth:`addFile` method 
-of :class:`Trajectory` objects.
+One way to combined trajectories into the same object is the :meth:`.Trajectory.addFile` method 
+of :class:`.Trajectory` objects.
 
 .. ipython:: python
 
 	traj = Trajectory('initial_filtered.dcd')
 	traj.addFile('final_filtered.dcd')
 
-Alternatively we can create an :class:`Ensemble` using :func:`parseDCD`,
+Alternatively we can create an :class:`.Ensemble` using :func:`.parseDCD`,
 which gives us the flexibility to do things like reversing the final 
 trajectory to create something we can view in VMD_ rather than having
 the trajectories both run towards the shared intermediate. 
