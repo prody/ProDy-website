@@ -52,7 +52,7 @@ ESSA can be informed about them when setting the system as follows:
 
    essa.setSystem(ag, lig='A 300 A 301')
 
-Scanning can be done using :func:`.scanResidue`. Here one can specify the number 
+Scanning can be done using :func:`.scanResidues`. Here one can specify the number 
 of softest modes, the type of ENM (GNM or ANM), and the cutoff, which by default 
 are ``n_modes=10``, ``enm='gnm'``, ``cutoff=None``, respectively. If ``cutoff`` 
 is not specified, its value is adopted from the default value of the specified ENM. 
