@@ -146,6 +146,7 @@ missing atoms in the datasets:
 
    abs(pca_svd.getEigvals()[:20] - pca.getEigvals()).max()
    abs(calcOverlap(pca, pca_svd).diagonal()[:20]).min()
+   @savefig ensemble_analysis_xray_overlap_table_svd_1.png width=4in
    showOverlapTable(pca, pca_svd[:20])
 
 If we remove the most variable loop from the analysis, then these results 
