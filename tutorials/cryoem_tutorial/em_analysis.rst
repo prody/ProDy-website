@@ -26,7 +26,6 @@ To skip this step, you can load the structure file for the beads directly in
 PDB format (EMD-1961.pdb; see below).
 
 .. ipython:: python
-   :verbatim:
 
    emd = parseEMD('1961', cutoff=1.2, n_nodes=3000)
    emd
@@ -49,9 +48,15 @@ The resultant structure will look something like the following figure.
    :scale: 80%
 
 
-Now that the 144x144x144  density grid is converted into an 
-:class:`.AtomGroup` object, elastic network model analysis can 
-be applied to the constructed structure as usual. 
+Now that the 144x144x144 density grid is converted into an 
+:class:`.AtomGroup` object, elastic network model analysis 
+can be applied to the constructed structure as usual. 
+
+First, let's save the structure so we can use it later:
+
+.. ipython:: python
+
+   writePDB('EMD-1961.pdb', emd)
 
 
 Map pseudo-atoms to PDB atomic model
