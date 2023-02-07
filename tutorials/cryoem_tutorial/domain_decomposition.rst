@@ -24,13 +24,13 @@ residues in an atomic model do. Nor do they have no chain identifiers.
 As an alternative to reordering the pseudo-atoms and assigning residue and chain identifers 
 to the pseudo-atoms based on the PDB structure in the previous section, we demonstrate here 
 the use of dynamical domain decomposition using GNM modes with the function :func:`.calcGNMDomains`.
-The number of dynamical domains obtained is approximately equal to the number of modes use so 
-we use 8 modes to get about 8 domains as in our recent paper ([YZ20]_). 
+The number of dynamical domains obtained is approximately equal to the number of modes used so 
+we use 9 modes to get a similar set of domains to our paper ([YZ20]_) including the zero mode.
 
 .. ipython:: python
 
-   gnm, _ = calcGNM(emd, selstr='all')
-   domains = calcGNMDomains(gnm[:8])
+   gnm, _ = calcGNM(emd, selstr='all', zeros=True)
+   domains = calcGNMDomains(gnm[:9])
    print(np.unique(domains))
 
 We actually get 9 in this case as you will see in the figure at the end.
@@ -67,11 +67,11 @@ We see 9 domains, including 7 pairs of domains and 2 individual domains.
 
 Another round of decomposition with each of the resulting domains can be used to divide them 
 further. For example, we can decompose the first domain (index 0) into 4 dynamical domains
-using the first 3 modes, which can be combined to create subunits or used as they are for comparison 
+using the first 4 modes, which can be combined to create subunits or used as they are for comparison 
 with dynamical domains for atomic models.
 
 .. ipython:: python
 
-   gnm0, domain0 = calcGNM(emd, selstr='domain 0')
-   domains0 = calcGNMDomains(gnm0[:3])
+   gnm0, domain0 = calcGNM(emd, selstr='domain 0', zeros=True)
+   domains0 = calcGNMDomains(gnm0[:4])
    writePDB('EMD-1961_domain0_subdomains4.pdb', domain0, beta=domains0)
