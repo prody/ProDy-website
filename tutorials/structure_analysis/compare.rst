@@ -45,19 +45,26 @@ Now let's parse bound RT structure :pdb:`1vrt` and unbound structure
 
 .. ipython:: python
 
-   bound = parsePDB('1vrt')
-   unbound = parsePDB('1dlo')
+   bound_all = parsePDB('1vrt')
+   unbound_all = parsePDB('1dlo')
 
 Let's verify that these structures are not aligned:
 
 .. ipython:: python
 
-   showProtein(unbound, bound);
+   showProtein(unbound_all, bound_all);
    @savefig structure_analysis_compare_before.png width=4in
    legend();
 
 
 We find matching chains as follows:
+
+We first select just the protein for matching:
+
+.. ipython:: python
+
+   bound = bound_all.protein
+   unbound = unbound_all.protein
 
 .. ipython:: python
 
@@ -66,7 +73,7 @@ We find matching chains as follows:
        printMatch(match)
 
 This resulted in two matches. Chains A and B of two structures are paired.
-These chains contain only Cα atoms:
+The chains in the matches contain only Cα atoms:
 
 .. ipython:: python
 
@@ -158,8 +165,8 @@ Let's map bound structure onto unbound chain A (subunit p66):
    for mapping in mappings:
        printMapping(mapping)
 
-:func:`.mapOntoChain` mapped only Cα atoms. *subset* argument allows for
-matching larger numbers of atoms. We can map backbone atoms as follows:
+:func:`.mapOntoChain` mapped all atoms. *subset* argument allows for
+matching other sets of atoms. We can map backbone atoms as follows:
 
 .. ipython:: python
 
