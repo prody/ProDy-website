@@ -25,6 +25,16 @@ We start by parsing PDB file with LMW-PTP **5kqm_all_sci.pdb** which is avalable
 as the tutorial files. PDB file contains protein structures with water and 
 counter ions prepared using VMD_ program.
 
+Before that import everything from the ProDy packages unless you already did that.
+
+.. ipython:: python
+
+   from prody import *
+   from pylab import *
+   import matplotlib
+   ion()   # turn interactive mode on
+
+
 .. ipython:: python
 
    PDBfile = '5kqm_all_sci.pdb'

@@ -22,6 +22,16 @@ file is a binary file that contains a short simulation computed in NAMD_
 package (20 frames). The commands shown below are explained in *Trajectory
 Analysis* tutorial.
 
+Before that import everything from the ProDy packages unless you already did that.
+
+.. ipython:: python
+
+   from prody import *
+   from pylab import *
+   import matplotlib
+   ion()   # turn interactive mode on
+
+
 .. ipython:: python
 
    PDBfile = '5kqm_all_sci.pdb'

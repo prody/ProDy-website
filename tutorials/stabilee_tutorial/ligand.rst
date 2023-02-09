@@ -11,7 +11,7 @@ Example installation of PLIP (for Anaconda users) is the following:
 :: conda install -c conda-forge plip
 
 
-We start as usual by importing everything from the ProDy packages unless you
+Start by importing everything from the ProDy packages unless you
 already did that.
 
 .. ipython:: python

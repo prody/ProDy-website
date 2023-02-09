@@ -28,6 +28,16 @@ downloaded and saved to successfully perform the operation with adding
 missing hydrogens. A new file will be saved with the same name with the
 additional prefix 'addH_'.
 
+Before that import everything from the ProDy packages unless you already did that.
+
+.. ipython:: python
+
+   from prody import *
+   from pylab import *
+   import matplotlib
+   ion()   # turn interactive mode on
+
+
 .. ipython:: python
 
    PDBname2 = '5kqm.pdb'
