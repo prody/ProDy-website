@@ -1,4 +1,8 @@
+<<<<<<< HEAD:tutorials/insty_tutorial/singePDB_withoutH.rst
 .. _insty_tutorial:
+=======
+.. _esty_tutorial:
+>>>>>>> 808bf0122eac0c85aa7179d5eaf18b85b7638e3f:tutorials/esty_tutorial/singePDB_withoutH.rst
 
 PDB structure without hydrogens
 ===============================================================================
