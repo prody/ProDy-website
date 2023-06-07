@@ -1,6 +1,6 @@
-.. use "esty_tutorial" to refer to this file
+.. use "insty_tutorial" to refer to this file
 
-.. _esty_tutorial:
+.. _insty_tutorial:
 
 *******************************************************************************
 Energetics and Stability analysis
@@ -8,9 +8,9 @@ Energetics and Stability analysis
 
 .. only:: html
 
-    You can also read this tutorial in `PDF format <esty_tutorial.pdf>`_.
+    You can also read this tutorial in `PDF format <insty_tutorial.pdf>`_.
 
-    Tutorial files: `ZIP <esty.zip>`_ `TGZ <esty.tgz>`_
+    Tutorial files: `ZIP <insty.zip>`_ `TGZ <insty.tgz>`_
 
 .. add .rst files to `toctree` in the order that you want them
 
@@ -20,9 +20,8 @@ Energetics and Stability analysis
 
    intro
    singePDB
-   singePDB_withoutH
+   ensemblePDB
    trajectory
-   ligand   
 
 
 .. only:: html

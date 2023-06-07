@@ -1,19 +1,19 @@
-.. _esty_tutorial:
+.. _insty_tutorial:
 
-Stability/Energetic Evaluation
+Interactions/Stability Evaluation
 ===============================================================================
 
-This example shows how to perform Stability/Energetic Evaluation (StabilEE)
-analysis for a small protein (<200 residues) called tyrosine phosphatase 
-LMW-PTP (**5KQM**) and visualize the results using Matplotlib_ library and 
-VMD_ program. 
+This example shows how to perform Interactions/Stability Evaluation
+(**InSty**) analysis for a small protein (<200 residues) called tyrosine
+phosphatase LMW-PTP (**5KQM**) and visualize the results using Matplotlib_
+library and VMD_ program. 
 In the tutorial, we will use already preapared structure for
 simulation (with hydrogens added). The same structure will be later
-analyzed with the trajectory file to show the analysis of interactions 
-in the course of simulation. 
+analyzed with the trajectory file to show how the analysis of interactions 
+in the course of simulation can change. 
 
 The tutorial will also include an example of a PDB structure directly
-downloaded from Protein Data Bank which requires adding the missing hydrogen
+downloaded from Protein Data Bank (PDB) which requires adding the missing hydrogen
 atoms to the protein and ligand structure. The analysis will be performed for
 protein-ligand interactions.
 
@@ -25,7 +25,7 @@ We start by parsing PDB file with LMW-PTP **5kqm_all_sci.pdb** which is avalable
 as the tutorial files. PDB file contains protein structures with water and 
 counter ions prepared using VMD_ program.
 
-Before that import everything from the ProDy packages unless you already did that.
+Before that import everything from the ProDy packages.
 
 .. ipython:: python
 
@@ -41,7 +41,7 @@ Before that import everything from the ProDy packages unless you already did tha
    coords = parsePDB(PDBfile)
    coords
 
-For the analysis we will use only protein structure (*atoms*):
+For the analysis we will use only protein coordinates (*atoms*):
 
 .. ipython:: python
 
@@ -61,8 +61,8 @@ In the next step, we instantiate an :class:`.Interactions` instance:
 
 Now we can compute all available types of interactions (six types: hydrogen
 bonds, salt bridges, repulsive ionic bonding, Pi-cation, Pi-stacking, and
-hydrphobic) for protein structure by passing selected atoms (*atoms*) to
-:meth:`.Interactions.calcProteinInteractions` method:
+hydrphobic, disulfide bonds) for protein structure by passing selected atoms
+(*atoms*) to :meth:`.Interactions.calcProteinInteractions` method:
 
 .. ipython:: python
 
@@ -118,8 +118,15 @@ charges):
    interactions.getHydrophohic()
 
 
-To display residues with the biggest number of interactions and their type, we
-can use :meth:`.Interactions.getFrequentInteractions` method:
+:meth:`.Interactions.getHydrophohic` - hydrophobic interactions:
+
+.. ipython:: python
+
+   interactions.getDisulfideBonds()
+
+
+To display residues with the biggest number of potential interactions and their
+types, we can use :meth:`.Interactions.getFrequentInteractions` method:
 
 .. ipython:: python
 
@@ -138,12 +145,12 @@ using the :func:`.showProteinInteractions_VMD` function in the following way:
 
 .. ipython:: python
 
-   showProteinInteractions_VMD(atoms, interactions.getHydrogenBonds(), color='blue', output='HBs.tcl')
-   showProteinInteractions_VMD(atoms, interactions.getSaltBridges(), color='yellow',output='SBs.tcl')
-   showProteinInteractions_VMD(atoms, interactions.getRepulsiveIonicBonding(), color='red',output='RIB.tcl')
-   showProteinInteractions_VMD(atoms, interactions.getPiStacking(), color='green',output='PiStacking.tcl') 
-   showProteinInteractions_VMD(atoms, interactions.getPiCation(), color='orange',output='PiCation.tcl') 
-   showProteinInteractions_VMD(atoms, interactions.getHydrophohic(), color='silver',output='HPh.tcl')
+   showProteinInteractions_VMD(atoms, interactions.getHydrogenBonds(), color='blue', filename='HBs.tcl')
+   showProteinInteractions_VMD(atoms, interactions.getSaltBridges(), color='yellow',filename='SBs.tcl')
+   showProteinInteractions_VMD(atoms, interactions.getRepulsiveIonicBonding(), color='red',filename='RIB.tcl')
+   showProteinInteractions_VMD(atoms, interactions.getPiStacking(), color='green',filename='PiStacking.tcl') 
+   showProteinInteractions_VMD(atoms, interactions.getPiCation(), color='orange',filename='PiCation.tcl') 
+   showProteinInteractions_VMD(atoms, interactions.getHydrophobic(), color='silver',filename='HPh.tcl')
 
 
 A TCL file will be saved and can be used in VMD_ after uploading the PDB file
@@ -190,22 +197,133 @@ residues. Those residues are also displayed.
 
 
 
+Additional selections
+-------------------------------------------------------------------------------
+
+From the predicted interactions we can select only interactions assigned to
+a certain regions, chains or between different chains.
+
+We can compute them by adding additional parameters to the selected
+function. See examples below:
+
+.. ipython:: python
+
+   interactions.getSaltBridges(selection='chain P')
+
+
+.. ipython:: python
+
+   interactions.getRepulsiveIonicBonding(selection='resid 102')
+
+
+.. ipython:: python
+
+   interactions.getPiStacking(selection='chain P and resid 26')
+
+
+It can be done for all kinds of interactions as well. The function will
+return a list of interactions with following order:
+    (1) Hydrogen bonds
+    (2) Salt Bridges
+    (3) RepulsiveIonicBonding 
+    (4) Pi stacking interactions
+    (5) Pi-cation interactions
+    (6) Hydrophobic interactions
+    (7) Disulfide bonds
+
+.. ipython:: python
+
+   allRes_20to50 = interactions.getInteractions(selection='resid 20 to 50')
+   allRes_20to50
+
+
+The list of hydrogen bonds, salt bridges and other types of interactions can
+be displayed as follows:
+
+.. ipython:: python
+
+   allRes_20to50[0]
+
+
+.. ipython:: python
+
+   allRes_20to50[1]
+
+
+We can also select one particular residue of our interest:
+
+.. ipython:: python
+
+   interactions.getPiCation(selection='resid 85')
+
+
+.. ipython:: python
+
+   interactions.getHydrophobic(selection='resid 26 to 100')
+
+
+Change selection criteria for interaction type
+-------------------------------------------------------------------------------
+
+The :meth:`.Interactions.buildInteractionMatrix` method computes interactions 
+using default parameters for interactions. However, it can be changed
+according to our needs. To do that, we need to recalculate the selected type
+of interactions. 
+
+We can do it using the following functions: :func:`.calcHydrogenBonds`,
+:func:`.calcHydrogenBonds`, :func:`.calcSaltBridges`,
+:func:`.calcRepulsiveIonicBonding`, :func:`.calcPiStacking`,
+:func:`.calcPiCation`, :func:`.calcHydrophohic`, and use
+:meth:`.Interactions.setNewHydrogenBonds`,
+:meth:`.Interactions.setNewSaltBridges`,
+:meth:`.Interactions.setNewRepulsiveIonicBonding`,
+:meth:`.Interactions.setNewPiStacking`,
+:meth:`.Interactions.setNewPiCation`,
+:meth:`.Interactions.setNewHydrophohic`,
+:meth:`.Interactions.setNewDisulfideBonds` method to replace it in the main
+Instance. 
+
+For example:
+
+.. ipython:: python
+
+   newHydrogenBonds2 = calcHydrogenBonds(atoms, distA=2.8, angle=30, cutoff_dist=15)
+   interactions.setNewHydrogenBonds(newHydrogenBonds2)
+   
+.. ipython:: python
+
+   interactions.getHydrogenBonds()
+
+.. ipython:: python
+
+   sb2 = calcSaltBridges(atoms, distA=6)
+   interactions.setNewSaltBridges(sb2)
+
+.. ipython:: python
+
+   rib2 = calcRepulsiveIonicBonding(atoms, distA=9)
+   interactions.setNewRepulsiveIonicBonding(rib2)
+
+.. ipython:: python
+
+   picat2 = calcPiCation(atoms, distA=7)
+   interactions.setNewPiCation(picat2)
+
+
+
 Assess the functional significance of a residue
 -------------------------------------------------------------------------------
 
-As a criterion for assessing the functional significance of a residue, we 
-included weights of interaction type in the algorithm. The occurrence 
-(and relative strength) of different types of interactions might suggest 
-the importance of the region in protein structure.
+For assessing the functional significance of each residue in protein
+structure, we counted the number of possible contacts. 
 
-We will use by default the following scoring: 
-
-    (1) Hydrogen bonds (HBs) +2
-    (2) Salt Bridges (SBs) +3
-    (3) Repulsive Ionic Bonding (RIB) -1 
-    (4) Pi stacking interactions (PiStack) +3
-    (5) Pi-cation interactions (PiCat) +3
-    (6) Hydrophobic interactions (HPh) +1
+    (1) Hydrogen bonds (HBs)
+    (2) Salt Bridges (SBs)
+    (3) Repulsive Ionic Bonding (RIB)  
+    (4) Pi stacking interactions (PiStack)
+    (5) Pi-cation interactions (PiCat) 
+    (6) Hydrophobic interactions (HPh) 
+    (7) Disulfide Bonds (DiBs)
 
 
 To compute the weighted interactions use the 
@@ -222,7 +340,7 @@ The results can be displayed in the following way:
 
    import matplotlib.pylab as plt
    plt.imshow(matrix, interpolation='none', cmap='seismic')
-   plt.clim([-3,3])
+   plt.clim([0,3])
    plt.xlabel('Residue')
    plt.ylabel('Residue')
    plt.colorbar()
@@ -251,17 +369,17 @@ We can change the minimum value of score using *cutoff* option:
    interactions.showFrequenctInteractions(cutoff=3)
 
 
-Visualize weighted interactions onto 3D structure
+Visualize number of interactions onto 3D structure
 -------------------------------------------------------------------------------
 
-The mean value of the interaction map can be saved to a PDB file in the
+The number of the interaction can be saved to a PDB file in the
 *Occupancy* column by using :meth:`.Interactions.saveInteractionsPDB`
 method. Then the score would be displayed in color in any available graphical
 program, for example, in VMD_.
  
 .. ipython:: python
 
-   interactions.saveInteractionsPDB(output='5kqm_meanMatrix.pdb')
+   interactions.saveInteractionsPDB(filename='5kqm_meanMatrix.pdb')
 
 
 A file *5kqm_meanMatrix.pdb* will be saved and can be used in VMD_ by 
@@ -318,55 +436,6 @@ checked by using a score equal to 1 for each interaction type:
 .. ipython:: python
 
    interactions.showFrequenctInteractions()
-
-
-
-Change selection criteria for interaction type
--------------------------------------------------------------------------------
-
-The :meth:`.Interactions.buildInteractionMatrix` method computes interactions 
-using default parameters for interactions. However, it can be changed
-according to our needs. To do that, we need to recalculate the selected type
-of interactions. 
-
-We can do it using the following functions: :func:`.calcHydrogenBonds`,
-:func:`.calcHydrogenBonds`, :func:`.calcSaltBridges`,
-:func:`.calcRepulsiveIonicBonding`, :func:`.calcPiStacking`,
-:func:`.calcPiCation`, :func:`.calcHydrophohic`, and use
-:meth:`.Interactions.setNewHydrogenBonds`,
-:meth:`.Interactions.setNewSaltBridges`,
-:meth:`.Interactions.setNewRepulsiveIonicBonding`,
-:meth:`.Interactions.setNewPiStacking`,
-:meth:`.Interactions.setNewPiCation`,
-:meth:`.Interactions.setNewHydrophohic` method to replace it in the main
-Instance. 
-
-For example:
-
-.. ipython:: python
-
-   newHydrogenBonds2 = calcHydrogenBonds(atoms, distA=2.8, angle=30, cutoff_dist=15)
-   interactions.setNewHydrogenBonds(newHydrogenBonds2)
-   
-.. ipython:: python
-
-   interactions.getHydrogenBonds()
-
-.. ipython:: python
-
-   sb2 = calcSaltBridges(atoms, distA=6)
-   interactions.setNewSaltBridges(sb2)
-
-.. ipython:: python
-
-   rib2 = calcRepulsiveIonicBonding(atoms, distA=9)
-   interactions.setNewRepulsiveIonicBonding(rib2)
-
-.. ipython:: python
-
-   picat2 = calcPiCation(atoms, distA=7)
-   interactions.setNewPiCation(picat2)
-
 
 
 

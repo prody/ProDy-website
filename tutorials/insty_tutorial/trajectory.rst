@@ -1,4 +1,4 @@
-.. _esty_tutorial:
+.. _insty_tutorial:
 
 Trajectory analysis
 ===============================================================================
@@ -22,15 +22,6 @@ file is a binary file that contains a short simulation computed in NAMD_
 package (20 frames). The commands shown below are explained in *Trajectory
 Analysis* tutorial.
 
-Before that import everything from the ProDy packages unless you already did that.
-
-.. ipython:: python
-
-   from prody import *
-   from pylab import *
-   import matplotlib
-   ion()   # turn interactive mode on
-
 
 .. ipython:: python
 
@@ -46,15 +37,15 @@ Compute interactions
 -------------------------------------------------------------------------------
 
 To compute hydrogen bonds for each frame of the simulation use
-:func:`.calcHydrogenBondsDCD` function:
+:func:`.calcHydrogenBondsTrajectory` function:
 
 .. ipython:: python
 
-   calcHydrogenBondsDCD(atoms, dcd)
+   calcHydrogenBondsTrajectory(atoms, dcd)
 
 
 Similarly, it can be done with other interaction types. Salt bridges
-(residues with opposite changes) with :func:`.calcSaltBridgesDCD`:  
+(residues with opposite changes) with :func:`.calcSaltBridgesTrajectory`:  
 
 .. ipython:: python
 
@@ -63,55 +54,35 @@ Similarly, it can be done with other interaction types. Salt bridges
    dcd.link(atoms)
    dcd.setCoords(atoms)
    
-   calcSaltBridgesDCD(atoms, dcd)
+   calcSaltBridgesTrajectory(atoms, dcd)
 
 
-Repulsive Ionic Bonding using :func:`.calcRepulsiveIonicBondingDCD` for residues with
+Repulsive Ionic Bonding using :func:`.calcRepulsiveIonicBondingTrajectory` for residues with
 the same charges:
 
 .. ipython:: python
 
-   atoms = parsePDB(PDBfile)
-   dcd = Trajectory(DCDfile)
-   dcd.link(atoms)
-   dcd.setCoords(atoms)
-
-   calcRepulsiveIonicBondingDCD(atoms, dcd, distA=7)
+   calcRepulsiveIonicBondingTrajectory(atoms, dcd, distA=7)
 
 
-Pi-Stacking interactions using :func:`.calcPiStackingDCD`:
+Pi-Stacking interactions using :func:`.calcPiStackingTrajectory`:
 
 .. ipython:: python
 
-   atoms = parsePDB(PDBfile)
-   dcd = Trajectory(DCDfile)
-   dcd.link(atoms)
-   dcd.setCoords(atoms)
-
-   calcPiStackingDCD(atoms, dcd, distA=5)
+   calcPiStackingTrajectory(atoms, dcd, distA=5)
 
 
-Pi-Cation interactions using :func:`.calcPiCationDCD`:
+Pi-Cation interactions using :func:`.calcPiCationTrajectory`:
 
 .. ipython:: python
 
-   atoms = parsePDB(PDBfile)
-   dcd = Trajectory(DCDfile)
-   dcd.link(atoms)
-   dcd.setCoords(atoms)
+   calcPiCationTrajectory(atoms, dcd)
 
-   calcPiCationDCD(atoms, dcd)
-
-Hydrophobic interactions using :func:`.calcHydrophohicDCD`:
+Hydrophobic interactions using :func:`.calcHydrophohicTrajectory`:
 
 .. ipython:: python
 
-   atoms = parsePDB(PDBfile)
-   dcd = Trajectory(DCDfile)
-   dcd.link(atoms)
-   dcd.setCoords(atoms)
-
-   calcHydrophohicDCD(atoms, dcd)
+   calcHydrophohicTrajectory(atoms, dcd)
 
 
 
@@ -128,29 +99,29 @@ First, we need to parse PDB and DCD file:
    dcd.setCoords(atoms)
 
 
-Next, we instantiate an :class:`.InteractionsDCD` instance which stores all the
+Next, we instantiate an :class:`.InteractionsTrajectory` instance which stores all the
 information about interactions for protein structure for multiple frames.
-With :meth:`.InteractionsDCD.calcProteinInteractionsDCD`, we can compute all
+With :meth:`.InteractionsTrajectory.calcProteinInteractionsTrajectory`, we can compute all
 types of interactions such as hydrogen bonds, salt bridges, repulsive ionic bonding, 
 Pi-cation, Pi-stacking, and hydrophobic) at once. Be aware that those
 computations may take a while, depending on the size of the system and the number
 of frames that are stored by the DCD file. Therefore, we recommend saving the
 results as an *output* file. *Output* file, here
-*calcProteinInteractionsDCD.pkl*, can be reloaded and used with all availabe
+*calcProteinInteractionsTrajectory.pkl*, can be reloaded and used with all availabe
 functions and methods. 
 
 .. ipython:: python
 
-   interactionsDCD = InteractionsDCD('trajectory')
-   interactionsDCD.calcProteinInteractionsDCD(atoms, dcd, output='interactions_data_5kqm')
+   interactionsTrajectory = InteractionsTrajectory('trajectory')
+   interactionsTrajectory.calcProteinInteractionsTrajectory(atoms, dcd, output='interactions_data_5kqm')
 
 
 The results are displayed on the screen but they can display them also
-using :meth:`.InteractionsDCD.getInteractions()` method.
+using :meth:`.InteractionsTrajectory.getInteractions()` method.
 
 .. ipython:: python
 
-   interactionsDCD.getInteractions()
+   interactionsTrajectory.getInteractions()
 
 
 Moreover, we can display the evolution of each interaction type during the
@@ -160,58 +131,48 @@ salt bridges (*yellow*), hydrophobic interactions (*silver*), Pi-stacking
 
 .. ipython:: python
 
-   number_of_counts = interactionsDCD.getTimeInteractions()
+   number_of_counts = interactionsTrajectory.getTimeInteractions()
 
 
 Similar to the single PDB analysis, we have an access to each interaction
-type by using: :meth:`.InteractionsDCD.getHydrogenBonds` method, etc.
+type by using: :meth:`.InteractionsTrajectory.getHydrogenBonds` method, etc.
 
 .. ipython:: python
    
-   interactionsDCD.getHydrogenBonds()
+   interactionsTrajectory.getHydrogenBonds()
 
 
 Change selection criteria for interaction type
 -------------------------------------------------------------------------------
 
-The :meth:`.interactionsDCD.calcProteinInteractionsDCD` method computes
+The :meth:`.interactionsTrajectory.calcProteinInteractionsTrajectory` method computes
 interactions using default parameters for interactions. However, it can be
 changed according to our needs. To do that, we need to recalculate the
 selected types of interactions. 
 
-We can do it using the following functions: :func:`.calcHydrogenBondsDCD`,
-:func:`.calcHydrogenBondsDCD`, :func:`.calcSaltBridgesDCD`,
-:func:`.calcRepulsiveIonicBondingDCD`, :func:`.calcPiStackingDCD`,
-:func:`.calcPiCationDCD`, :func:`.calcHydrophohicDCD`, and use
-:meth:`.InteractionsDCD.setNewHydrogenBondsDCD`,
-:meth:`.InteractionsDCD.setNewSaltBridgesDCD`,
-:meth:`.InteractionsDCD.setNewRepulsiveIonicBondingDCD`,
-:meth:`.InteractionsDCD.setNewPiStackingDCD`,
-:meth:`.InteractionsDCD.setNewPiCationDCD`,
-:meth:`.InteractionsDCD.setNewHydrophohicDCD` method to replace it in the main
+We can do it using the following functions: :func:`.calcHydrogenBondsTrajectory`,
+:func:`.calcHydrogenBondsTrajectory`, :func:`.calcSaltBridgesTrajectory`,
+:func:`.calcRepulsiveIonicBondingTrajectory`, :func:`.calcPiStackingTrajectory`,
+:func:`.calcPiCationTrajectory`, :func:`.calcHydrophohicTrajectory`, and use
+:meth:`.InteractionsTrajectory.setNewHydrogenBondsTrajectory`,
+:meth:`.InteractionsTrajectory.setNewSaltBridgesTrajectory`,
+:meth:`.InteractionsTrajectory.setNewRepulsiveIonicBondingTrajectory`,
+:meth:`.InteractionsTrajectory.setNewPiStackingTrajectory`,
+:meth:`.InteractionsTrajectory.setNewPiCationTrajectory`,
+:meth:`.InteractionsTrajectory.setNewHydrophohicTrajectory` method to replace it in the main
 Instance. 
 
 For example:
 
 .. ipython:: python
 
-   atoms = parsePDB(PDBfile)
-   dcd = Trajectory(DCDfile)
-   dcd.link(atoms)
-   dcd.setCoords(atoms)
-   
-   newRIB = calcRepulsiveIonicBondingDCD(atoms, dcd, distA=8)
-   interactionsDCD.setNewRepulsiveIonicBondingDCD(newRIB)
+   newRIB = calcRepulsiveIonicBondingTrajectory(atoms, dcd, distA=8)
+   interactionsTrajectory.setNewRepulsiveIonicBondingTrajectory(newRIB)
    
 .. ipython:: python
 
-   atoms = parsePDB(PDBfile)
-   dcd = Trajectory(DCDfile)
-   dcd.link(atoms)
-   dcd.setCoords(atoms)
-   
-   newPiCation = calcPiCationDCD(atoms, dcd, distA=6)
-   interactionsDCD.setNewPiCationDCD(newPiCation)
+   newPiCation = calcPiCationTrajectory(atoms, dcd, distA=6)
+   interactionsTrajectory.setNewPiCationTrajectory(newPiCation)
 
 
 Statistics
@@ -226,39 +187,39 @@ standard deviation. For example:
 
 .. ipython:: python
 
-   interactions = interactionsDCD.getPiStacking()
+   interactions = interactionsTrajectory.getPiStacking()
    calcStatisticsInteractions(interactions)
 
 
 .. ipython:: python
 
-   calcStatisticsInteractions(interactionsDCD.getHydrogenBonds())
+   calcStatisticsInteractions(interactionsTrajectory.getHydrogenBonds())
 
 
 Parse previously saved data
 -------------------------------------------------------------------------------
 
 To upload and further use the interactions data use
-:meth:`.InteractionsDCD.parseInteractions` function:
+:meth:`.InteractionsTrajectory.parseInteractions` function:
 
 .. ipython:: python
 
-   interactionsDCD2 = InteractionsDCD('5kqm_import')
-   interactionsDCD2.parseInteractions('interactions_data_5kqm.pkl')
+   interactionsTrajectory2 = InteractionsTrajectory('5kqm_import')
+   interactionsTrajectory2.parseInteractions('interactions_data_5kqm.pkl')
 
 
 After uploading, we have access to all data, for example:
 
 .. ipython:: python
 
-   interactionsDCD2.getHydrophohic()
+   interactionsTrajectory2.getHydrophohic()
 
 .. ipython:: python
 
-   calcStatisticsInteractions(interactionsDCD2.getHydrogenBonds())
+   calcStatisticsInteractions(interactionsTrajectory2.getHydrogenBonds())
 
 .. ipython:: python
 
-   interactionsDCD2.getTimeInteractions()
+   interactionsTrajectory2.getTimeInteractions()
 
 

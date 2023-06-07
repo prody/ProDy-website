@@ -1,4 +1,4 @@
-.. _esty_tutorial:
+.. _insty_tutorial:
 
 PDB structure without hydrogens
 ===============================================================================
@@ -28,8 +28,6 @@ downloaded and saved to successfully perform the operation with adding
 missing hydrogens. A new file will be saved with the same name with the
 additional prefix 'addH_'.
 
-Before that import everything from the ProDy packages unless you already did that.
-
 .. ipython:: python
 
    from prody import *
@@ -37,16 +35,28 @@ Before that import everything from the ProDy packages unless you already did tha
    import matplotlib
    ion()   # turn interactive mode on
 
+Openbable or PDBFixer require PDB file saved in the direcory. Therefore
+first it needs to be downloaded.
 
 .. ipython:: python
 
-   PDBname2 = '5kqm.pdb'
-   addHydrogens(PDBname2, method='openbabel')
+   fetchPDB('5kqm', compressed=False)
 
-Instead Openbabel we can use PDBfixer:
+When PDB file is already in the local directory we can choose between
+Openbabel and PDBFixer to add missing hydrogen bonds to the protein
+structure:
+
+Openbabel:
 
 .. ipython:: python
-   addHydrogens(PDBname2, method='pdbfixer')
+
+   PDBname = '5kqm.pdb'
+   addMissingAtoms(PDBname, method='openbabel')
+
+PDBfixer:
+
+.. ipython:: python
+   addMissingAtoms(PDBname, method='pdbfixer')
 
 
 Next, we can parse the saved structure with hydrogen atoms to ProDy and analyze
@@ -54,6 +64,8 @@ it in the same way as in the previous paragraph.
 
 .. ipython:: python
 
-   pdb2 = parsePDB('addH_'+str(PDBname2)).select('protein')
+   pdb2 = parsePDB('addH_'+str(PDBname)).select('protein')
 
- 
+
+
+
