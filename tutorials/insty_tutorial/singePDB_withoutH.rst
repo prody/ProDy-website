@@ -1,17 +1,14 @@
-<<<<<<< HEAD:tutorials/insty_tutorial/singePDB_withoutH.rst
 .. _insty_tutorial:
 =======
-.. _esty_tutorial:
->>>>>>> 808bf0122eac0c85aa7179d5eaf18b85b7638e3f:tutorials/esty_tutorial/singePDB_withoutH.rst
 
 PDB structure without hydrogens
 ===============================================================================
 
 Very often PDB structures downloaded directly from the PDB database will not
 have determined hydrogen atoms that are required, for example, for predicting
-hydrogen bonds. In such case, we need can use :func:`.addHydrogens`
-function. It will allow us to use one of two available methods (*openbabel*
-or *pdbfixer*) to predict the position of hydrogen atoms in protein/ligand structure.
+hydrogen bonds. In such case, we can use :func:`.addHydrogens` function.
+It will allow us to use one of two available methods (*openbabel* or *pdbfixer*)
+to predict the position of hydrogen atoms in protein structure.
 
 To use one of those functions, we need to install additional Python package(s).
 For Anaconda users the installation will be the following:
@@ -68,7 +65,7 @@ it in the same way as in the previous paragraph.
 
 .. ipython:: python
 
-   pdb2 = parsePDB('addH_'+str(PDBname)).select('protein')
+   atoms = parsePDB('addH_'+str(PDBname)).select('protein')
 
 
 

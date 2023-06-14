@@ -2,17 +2,16 @@ Introduction
 ===============================================================================
 
 This tutorial shows how to predict and display the interactions within
-protein structure, protein-protein, and protein-ligand structure, using the
-coordinates or trajectories (dcd files).
+protein structure using the coordinates (single PDB) or ensemble of
+conformations (multi-model PDB or dcd file gerenarted by NAMD program).
 
 This module can be successfully used to study the distribution of different
 types of interactions (hydrogen bonds, salt bridges, repulsive ionic bindnig,
-pi-cation, pi-stacking, and hydrophobic) within protein structure for a
-single PDB file as well as for the trajectory. It may help to distinguish the
-difference between protein wt and mutant, stability of protein interactions
-in the course of the simulation, and to indentify regions or simply residues
-which residues that are privileged to create a larger number of potential
-interactions or energetically more stable.   
+pi-cation, pi-stacking, hydrophobic and disulfide bonds) within protein
+structure. It may help to distinguish the difference between protein wt and
+mutant, indentify regions or simply residues which are privileged to create
+a larger number of potential interactions in single PDB, ensemble PDB (NMR
+data) or during the simulation.   
 
 
 Required Programs
@@ -26,9 +25,10 @@ Recommended Programs
 
 Besides ProDy_, the Matplotlib_ library and VMD_ program are required for
 some steps in the tutorial. IPython_ is highly recommended for interactive usage.
-Moreover, in the case of predicting protein-ligand interactions or in the case of 
-the lack of hydrogen atoms in protein structure, PLIP_ and Openbabel_ or 
-PDBfixer_ are required, respectively.
+
+Moreover, in the case of the lack of hydrogen atoms in protein structure,
+additional package such as Openbabel_ or PDBfixer_ are required for
+predicting hydrogen bonds.
 
 .. _PLIP: https://github.com/pharmai/plip
 .. _Openbabel: https://github.com/openbabel

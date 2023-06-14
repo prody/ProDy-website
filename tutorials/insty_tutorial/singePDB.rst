@@ -1,6 +1,6 @@
 .. _insty_tutorial:
 
-Interactions/Stability Evaluation
+Interactions/Stability Evaluation (InSty)
 ===============================================================================
 
 This example shows how to perform Interactions/Stability Evaluation
@@ -18,7 +18,7 @@ atoms to the protein and ligand structure. The analysis will be performed for
 protein-ligand interactions.
 
 
-Parse structure
+Analysis of interactions for a single PDB structure
 -------------------------------------------------------------------------------
 
 We start by parsing PDB file with LMW-PTP **5kqm_all_sci.pdb** which is avalable
@@ -56,13 +56,13 @@ In the next step, we instantiate an :class:`.Interactions` instance:
 
 .. ipython:: python
 
-   interactions = Interactions('5kqm')
+   interactions = Interactions()
 
 
-Now we can compute all available types of interactions (six types: hydrogen
-bonds, salt bridges, repulsive ionic bonding, Pi-cation, Pi-stacking, and
-hydrphobic, disulfide bonds) for protein structure by passing selected atoms
-(*atoms*) to :meth:`.Interactions.calcProteinInteractions` method:
+Now we can compute all available types of interactions (seven types: hydrogen
+bonds, salt bridges, repulsive ionic bonding, Pi-cation, Pi-stacking,
+hydrphobic interactions, and disulfide bonds) for protein structure by passing
+selected atoms (*atoms*) to :meth:`.Interactions.calcProteinInteractions` method:
 
 .. ipython:: python
 
@@ -118,7 +118,7 @@ charges):
    interactions.getHydrophohic()
 
 
-:meth:`.Interactions.getHydrophohic` - hydrophobic interactions:
+:meth:`.Interactions.getDisulfideBonds` - disulfide bonds:
 
 .. ipython:: python
 
@@ -151,7 +151,7 @@ using the :func:`.showProteinInteractions_VMD` function in the following way:
    showProteinInteractions_VMD(atoms, interactions.getPiStacking(), color='green',filename='PiStacking.tcl') 
    showProteinInteractions_VMD(atoms, interactions.getPiCation(), color='orange',filename='PiCation.tcl') 
    showProteinInteractions_VMD(atoms, interactions.getHydrophobic(), color='silver',filename='HPh.tcl')
-
+   showProteinInteractions_VMD(atoms, interactions.getDisulfideBonds(), color='black',filename='DiBs.tcl') 
 
 A TCL file will be saved and can be used in VMD_ after uploading the PDB file
 with protein structure **5kqm_all_sci.pdb** and by running the following command 
@@ -223,6 +223,7 @@ function. See examples below:
 
 It can be done for all kinds of interactions as well. The function will
 return a list of interactions with following order:
+
     (1) Hydrogen bonds
     (2) Salt Bridges
     (3) RepulsiveIonicBonding 
@@ -244,6 +245,8 @@ be displayed as follows:
 
    allRes_20to50[0]
 
+
+Salt Bridges:
 
 .. ipython:: python
 
@@ -273,7 +276,8 @@ of interactions.
 We can do it using the following functions: :func:`.calcHydrogenBonds`,
 :func:`.calcHydrogenBonds`, :func:`.calcSaltBridges`,
 :func:`.calcRepulsiveIonicBonding`, :func:`.calcPiStacking`,
-:func:`.calcPiCation`, :func:`.calcHydrophohic`, and use
+:func:`.calcPiCation`, :func:`.calcHydrophohic`,
+:func:`.calcDisulfideBonds`, and use
 :meth:`.Interactions.setNewHydrogenBonds`,
 :meth:`.Interactions.setNewSaltBridges`,
 :meth:`.Interactions.setNewRepulsiveIonicBonding`,
@@ -315,7 +319,7 @@ Assess the functional significance of a residue
 -------------------------------------------------------------------------------
 
 For assessing the functional significance of each residue in protein
-structure, we counted the number of possible contacts. 
+structure, we counted the number of possible contacts based on:
 
     (1) Hydrogen bonds (HBs)
     (2) Salt Bridges (SBs)
@@ -338,35 +342,28 @@ The results can be displayed in the following way:
 
 .. ipython:: python
 
-   import matplotlib.pylab as plt
-   plt.imshow(matrix, interpolation='none', cmap='seismic')
-   plt.clim([0,3])
-   plt.xlabel('Residue')
-   plt.ylabel('Residue')
-   plt.colorbar()
-   plt.tight_layout()
+    import matplotlib.pylab as plt
+    showAtomicMatrix(matrix, atoms=atoms.ca, cmap='seismic', markersize=8)
+    plt.xlabel('Residue')
+    plt.ylabel('Residue')
+    plt.clim([-3,3])
 
 
-Mean value of interaction for each residue can be displayed on the plot using
-:func:`.showInteractions` function.
+The total number of interaction for each residue can be displayed on the plot using
+:func:`.showCumulativeInteractionTypes()` function.
 
 .. ipython:: python
 
-   interactions.showInteractions()
+   interactions.showCumulativeInteractionTypes()
 
 
-Residues with the higest score can be displayed using 
-:meth:`.Interactions.showFrequenctInteractions` method.
-
-.. ipython:: python
-
-   interactions.showFrequenctInteractions()
-
-We can change the minimum value of score using *cutoff* option:
+The results with the higest number of possible contacts can be saved in PDB
+file. They will be restored in Occupancy column and display in VMD_.
 
 .. ipython:: python
 
-   interactions.showFrequenctInteractions(cutoff=3)
+   interactions.saveInteractionsPDB(filename='5kqm_meanMatrix.pdb')
+
 
 
 Visualize number of interactions onto 3D structure
@@ -392,50 +389,24 @@ Scale* -> *Method* to *BWR*.
    :scale: 60 %
 
 
-Change weights for interaction types
+Exclude some interaction types from calculations
 -------------------------------------------------------------------------------
 
-The default weights for interaction types can be easily changed by using
-keywords: *HBs*, *SBs*, *RIB*, *PiStack*, *PiCat*, *HPh* in the following way: 
+For analysis we can exclude some of the interaction types by assigning zero
+to the type of interactions (HBs - hydrogen bonds, SBs - salt bridges, RIB -
+repulsive ionic bonding, PiCat - Pi-Cation, PiStack - Pi-Stacking, HPh -
+hydrophobic interactions and finally DiBs - disulfide bonds). 
 
 .. ipython:: python
 
-   matrix = interactions.buildInteractionMatrix(HBs=3, SBs=4)
+   matrix = interactions.buildInteractionMatrix(RIB=0, HBs=0, HPh=0, DiBs=0)
 
 
-In such a way, we can exclude some types of interactions:
-
-.. ipython:: python
-
-   matrix = interactions.buildInteractionMatrix(RIB=0, HBs=0, HPh=0) 
-
+The results can be displayed in a similar way:
 
 .. ipython:: python
 
-   interactions.showInteractions()
-
-
-.. ipython:: python
-
-   interactions.showFrequenctInteractions()
-
-
-The number of interactions for each residue in the protein structure can be
-checked by using a score equal to 1 for each interaction type:
-
-.. ipython:: python
-
-   matrix = interactions.buildInteractionMatrix(RIB=1, PiStack=1, PiCat=1, HBs=1, HPh=1, SBs=1)
-
-
-.. ipython:: python
-
-   interactions.showInteractions()
-
-
-.. ipython:: python
-
-   interactions.showFrequenctInteractions()
-
-
-
+    showAtomicMatrix(matrix, atoms=atoms.ca, cmap='seismic', markersize=8)
+    plt.xlabel('Residue')
+    plt.ylabel('Residue')
+    plt.clim([-3,3])
