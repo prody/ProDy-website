@@ -127,6 +127,7 @@ bonds(*black*).
 
    number_of_counts = interactionsTrajectory.getTimeInteractions()
 
+
 If the structure is stable we will not observe a lot of changes in protein
 structure.
 
@@ -169,6 +170,7 @@ and 106.
 
     interactionsTrajectory.getInteractions(selection='resid 100 to 106')
 
+
 We can apply the same selection to any type of interaction, for example:
 
 .. ipython:: python
@@ -189,6 +191,7 @@ We can apply the same selection to any type of interaction, for example:
 .. ipython:: python
 
     interactionsTrajectory.getRepulsiveIonicBonding(selection='chain P')
+
 
 
 Change selection criteria for interaction type
@@ -217,6 +220,7 @@ For example:
 
    newRIB = calcRepulsiveIonicBondingTrajectory(atoms, dcd, distA=8)
    interactionsTrajectory.setNewRepulsiveIonicBondingTrajectory(newRIB)
+
    
 .. ipython:: python
 
@@ -305,6 +309,7 @@ as *diff_fr0_vsfr18.dat* file.
     at18 = frame18.getAtoms()
     hb18 = calcHydrogenBonds(at18.select('protein'))
 
+
 .. ipython:: python
 
     compareInteractions(hb0, hb18, filename='diff_fr0_vsfr18.dat')
@@ -320,6 +325,7 @@ frame18 and display the inetractions:
     interactions0.calcProteinInteractions(at0)
     matrix0 = interactions0.buildInteractionMatrix()
 
+
 .. ipython:: python
 
     interactions0.showCumulativeInteractionTypes()
@@ -330,6 +336,7 @@ frame18 and display the inetractions:
     interactions18 = Interactions()
     interactions18.calcProteinInteractions(at18)
     matrix18 = interactions18.buildInteractionMatrix()
+
 
 .. ipython:: python
 
@@ -355,9 +362,11 @@ After uploading, we have access to all data, for example:
 
    interactionsTrajectory2.getHydrophohic()
 
+
 .. ipython:: python
 
    calcStatisticsInteractions(interactionsTrajectory2.getHydrogenBonds())
+
 
 .. ipython:: python
 

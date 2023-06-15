@@ -17,7 +17,14 @@ Openbabel.
 .. ipython:: python
 
    fetchPDB('7laf', compressed=False)
+
+::
+
    addMissingAtoms('7laf.pdb', method='openbabel')
+
+
+.. ipython:: python
+
    atoms = parsePDB('addH_7laf.pdb').select('protein')
 
 

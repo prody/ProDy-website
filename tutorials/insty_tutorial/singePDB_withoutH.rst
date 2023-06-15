@@ -49,14 +49,15 @@ structure:
 
 Openbabel:
 
-.. ipython:: python
+::
 
    PDBname = '5kqm.pdb'
    addMissingAtoms(PDBname, method='openbabel')
 
 PDBfixer:
 
-.. ipython:: python
+::
+
    addMissingAtoms(PDBname, method='pdbfixer')
 
 

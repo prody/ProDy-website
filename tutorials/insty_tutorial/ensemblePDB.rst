@@ -83,6 +83,7 @@ changed as follows:
   
    calcHydrogenBondsTrajectory(atoms, distA=2.7, angle=35, cutoff_dist=10)
 
+
 Similarly for other interactions type. Moreover, we can also select frames
 which we would like to analyze as well as the selection with the protein
 structure. Below you will find such examples:
@@ -151,10 +152,10 @@ for residue interaction, *font_size* for the residue names displayed on the
 graph and *seed* which is a random number which can help to organize the
 graph in a nicer way.
 
-
 .. ipython:: python
 
    showInteractionsGraph(statistics, code='1-letter', cutoff=0.5, font_size=8, seed=42)
+
 
 The cutoff value, which corresponds to the minimal number of interactions
 between displayed pairs, can be easly changed:
@@ -163,6 +164,32 @@ between displayed pairs, can be easly changed:
 
    showInteractionsGraph(statistics, code='1-letter', cutoff=0.3,
    font_size=16, node_distance=3, seed=1)
+
+
+We can also obtain a distribution of distance or angle for each residue by
+using func:`.calcDistribution`:
+
+.. ipython:: python
+
+    statistics_2 = interactionsTrajectoryNMR.getHydrogenBonds()
+    calcDistribution(statistics_2, 'THR55','ASP58')
+
+
+We will obtain a histogram with distances for *LYS11* residue and information
+about other contact residues for this particular residue. 
+
+We can also give residue name and number and func:`.calcDistribution` will
+display contact residues for which we can display a histogram.
+
+.. ipython:: python
+
+    calcDistribution(statistics_2, 'LYS11')
+
+
+.. ipython:: python
+
+    calcDistribution(statistics_2, 'LYS11', 'THR7', metrics='angle')
+
 
 
 Selection of protein regions and conformations
@@ -194,6 +221,7 @@ residues number between 10 and 30.
 stop_frame=10, selection='resid 10 to 30')
 
 
+
 Import previously saved file with interactions
 -------------------------------------------------------------------------------
 
@@ -213,11 +241,10 @@ After parsing the file we will have an access to the same functions as before:
 
     calcStatisticsInteractions(interactionsTrajectory2.getHydrogenBonds())
 
+
 .. ipython:: python
 
     time_interaction_import = interactionsTrajectory2.getTimeInteractions()
-
-.. ipython:: python
 
 
 
@@ -247,6 +274,7 @@ the main Instance.
 
    picat2 = calcPiCation(atoms, distA=8)
    interactionsTrajectoryNMR.setNewPiCation(picat2).setNewPiCation(picat2)
+
 
 Now, interactions are replaced:
 
