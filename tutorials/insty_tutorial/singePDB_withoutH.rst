@@ -40,8 +40,13 @@ Openbable or PDBFixer require PDB file saved in the direcory. Therefore
 first it needs to be downloaded.
 
 .. ipython:: python
+   :verbatim:
 
    fetchPDB('5kqm', compressed=False)
+
+.. parsed-literal::
+
+   '5kqm.pdb'
 
 When PDB file is already in the local directory we can choose between
 Openbabel and PDBFixer to add missing hydrogen bonds to the protein
@@ -49,25 +54,37 @@ structure:
 
 Openbabel:
 
-::
+.. ipython:: python
+   :verbatim:
 
    PDBname = '5kqm.pdb'
    addMissingAtoms(PDBname, method='openbabel')
 
+.. parsed-literal::
+
+   @> Hydrogens were added to the structure. Structure addH_5kqm.pdb is saved in the local directry.
+
 PDBfixer:
 
-::
+.. ipython:: python
+   :verbatim:
 
    addMissingAtoms(PDBname, method='pdbfixer')
 
+.. parsed-literal::
+
+   @> Hydrogens were added to the structure. New structure is saved as addH_5kqm.pdb.
 
 Next, we can parse the saved structure with hydrogen atoms to ProDy and analyze
 it in the same way as in the previous paragraph.
 
 .. ipython:: python
+   :verbatim:
 
    atoms = parsePDB('addH_'+str(PDBname)).select('protein')
 
+.. parsed-literal::
 
+   @> 2800 atoms and 1 coordinate set(s) were parsed in 0.03s.
 
 
