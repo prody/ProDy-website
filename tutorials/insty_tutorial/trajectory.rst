@@ -627,6 +627,7 @@ Similarly, it can be done with other interaction types. Salt bridges
    @>      ARG75    P   NH1_1090_1093  <--->      ASP42    P     OD1_609_610     4.7
    @>     ASP120    P   OD1_1824_1825  <--->     ARG147    P   NH1_2257_2260     4.7
    @> Number of detected salt bridges: 15.
+
    @> Frame: 4
    @> Calculating salt bridges.
    @>     LYS102    P         NZ_1540  <--->      ASP98    P   OD1_1463_1464     2.5
@@ -2342,7 +2343,6 @@ functions and methods.
    @> Number of detected hydrophobic interactions: 39.
    @> Calculating disulfide bonds.
    @> Number of detected disulfide bonds: 0.
-   @> Frame: 1
    ..
    ..
    @> Frame: 20
@@ -3013,7 +3013,6 @@ bonds(*black*).
 If the structure is stable we will not observe a lot of changes in protein
 structure.
 
-
 Similar to the single PDB analysis, we have an access to each interaction
 type by using: :meth:`.InteractionsTrajectory.getHydrogenBonds` method, etc.
 
@@ -3260,9 +3259,12 @@ type by using: :meth:`.InteractionsTrajectory.getHydrogenBonds` method, etc.
      ['ALA156', 'CB_2401', 'P', 'PHE152', 'CD1_2329', 'P', 3.6255, 24.4807],
      ['VAL11', 'CG2_114', 'P', 'ILE88', 'CG2_1300', 'P', 3.6421, 8.6093],
      ..
-..   ..                                                                                     ipython:: python
-   :verbatim:
-   
+     ..                                                                                     
+
+
+.. ipython:: python
+   :verbatim:   
+
    interactionsTrajectory.getPiCation()
 
 .. parsed-literal::
@@ -3498,7 +3500,7 @@ and 106.
 .. ipython:: python
    :verbatim:
 
-    interactionsTrajectory.getInteractions(selection='resid 100 to 106')
+   interactionsTrajectory.getInteractions(selection='resid 100 to 106')
 
 .. parsed-literal::
 
@@ -4387,7 +4389,6 @@ For example:
    @> Number of detected Repulsive Ionic Bonding interactions: 4.
 
    @> Repulsive Ionic Bonding are replaced
-
 
    
 .. ipython:: python

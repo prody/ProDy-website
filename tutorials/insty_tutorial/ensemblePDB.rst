@@ -1817,48 +1817,48 @@ residues number between 10 and 30.
    @> Number of detected disulfide bonds: 0.
                                                                                                         
 
-   Import previously saved file with interactions
-   -------------------------------------------------------------------------------
+Import previously saved file with interactions
+-------------------------------------------------------------------------------
 
-   We previously saved pkl file *interactions_data_5kqm.pkl* with interactions and now
-   we will import it for analysis. To do that we need to initiate newinstance and
-   use func:`.parseInteractions` function to parse pkl file:
+We previously saved pkl file *interactions_data_5kqm.pkl* with interactions and now
+we will import it for analysis. To do that we need to initiate newinstance and
+use func:`.parseInteractions` function to parse pkl file:
 
-   .. ipython:: python
-      :verbatim:
+.. ipython:: python
+   :verbatim:
 
-       interactionsTrajectory2 = InteractionsTrajectory('5kqm_import')
-       interactionsTrajectory2.parseInteractions('calcProteinInteractionsEnsemblePDB.pkl')
+    interactionsTrajectory2 = InteractionsTrajectory('5kqm_import')
+    interactionsTrajectory2.parseInteractions('calcProteinInteractionsEnsemblePDB.pkl')
 
-   .. parsed-literal::
+.. parsed-literal::
 
-      [[[['GLN49', 'NE2_784', 'A', 'GLU51', 'OE2_820', 'A', 2.5853, 16.2407],
-         ['LYS11', 'NZ_175', 'A', 'GLU34', 'OE1_547', 'A', 2.6141, 7.0039],
-         ['GLY10', 'N_160', 'A', 'THR7', 'O_116', 'A', 2.6801, 19.8254],
-         ['ARG72', 'N_1149', 'A', 'GLN40', 'O_624', 'A', 2.6883, 21.0779],
-         ['ARG72', 'NH1_1158', 'A', 'GLN40', 'OE1_628', 'A', 2.7336, 7.4598],
-         ['LYS6', 'N_91', 'A', 'LEU67', 'O_1062', 'A', 2.7367, 2.6222],
-         ['GLU34', 'N_540', 'A', 'ILE30', 'O_473', 'A', 2.7587, 28.1769],
-         ['THR55', 'N_870', 'A', 'ASP58', 'OD2_921', 'A', 2.7775, 19.6842],
-         ['ILE44', 'N_698', 'A', 'HIS68', 'O_1081', 'A', 2.8708, 20.2386],
-         ['THR55', 'OG1_875', 'A', 'ASP58', 'OD2_921', 'A', 2.8819, 13.1563],
-         ['LYS29', 'N_448', 'A', 'ASN25', 'O_389', 'A', 2.8866, 13.6397],
-         ['LEU73', 'N_1173', 'A', 'LEU71', 'O_1133', 'A', 2.9102, 27.7682],
-         ['HIS68', 'N_1078', 'A', 'ILE44', 'O_701', 'A', 2.9174, 21.7682],
-         ['THR14', 'OG1_227', 'A', 'ILE3', 'O_39', 'A', 2.919, 13.0791],
-         ['GLU51', 'N_812', 'A', 'TYR59', 'OH_937', 'A', 2.9532, 23.4224],
-         ['GLU64', 'N_1019', 'A', 'GLN2', 'O_22', 'A', 2.9586, 23.2217],
-         ['LEU50', 'N_793', 'A', 'LEU43', 'O_682', 'A', 2.995, 15.3383],
-         ['GLN62', 'N_980', 'A', 'SER65', 'OG_1039', 'A', 3.0046, 23.3912],
-         ['ILE13', 'N_203', 'A', 'VAL5', 'O_78', 'A', 3.0123, 12.8492],
-         ['SER65', 'N_1034', 'A', 'GLN62', 'O_983', 'A', 3.0171, 18.3009],
-         ['VAL17', 'N_270', 'A', 'MET1', 'O_3', 'A', 3.0299, 8.8346],
-         ['ASN60', 'N_947', 'A', 'SER57', 'O_906', 'A', 3.0544, 28.4747],
-         ['LYS33', 'N_518', 'A', 'LYS29', 'O_451', 'A', 3.0814, 33.0882],
-         ['VAL70', 'N_1114', 'A', 'ARG42', 'O_658', 'A', 3.1015, 17.9449],
-         ['ASP32', 'N_506', 'A', 'ALA28', 'O_441', 'A', 3.1118, 10.5675],
-         ..
-         ..
+   [[[['GLN49', 'NE2_784', 'A', 'GLU51', 'OE2_820', 'A', 2.5853, 16.2407],
+      ['LYS11', 'NZ_175', 'A', 'GLU34', 'OE1_547', 'A', 2.6141, 7.0039],
+      ['GLY10', 'N_160', 'A', 'THR7', 'O_116', 'A', 2.6801, 19.8254],
+      ['ARG72', 'N_1149', 'A', 'GLN40', 'O_624', 'A', 2.6883, 21.0779],
+      ['ARG72', 'NH1_1158', 'A', 'GLN40', 'OE1_628', 'A', 2.7336, 7.4598],
+      ['LYS6', 'N_91', 'A', 'LEU67', 'O_1062', 'A', 2.7367, 2.6222],
+      ['GLU34', 'N_540', 'A', 'ILE30', 'O_473', 'A', 2.7587, 28.1769],
+      ['THR55', 'N_870', 'A', 'ASP58', 'OD2_921', 'A', 2.7775, 19.6842],
+      ['ILE44', 'N_698', 'A', 'HIS68', 'O_1081', 'A', 2.8708, 20.2386],
+      ['THR55', 'OG1_875', 'A', 'ASP58', 'OD2_921', 'A', 2.8819, 13.1563],
+      ['LYS29', 'N_448', 'A', 'ASN25', 'O_389', 'A', 2.8866, 13.6397],
+      ['LEU73', 'N_1173', 'A', 'LEU71', 'O_1133', 'A', 2.9102, 27.7682],
+      ['HIS68', 'N_1078', 'A', 'ILE44', 'O_701', 'A', 2.9174, 21.7682],
+      ['THR14', 'OG1_227', 'A', 'ILE3', 'O_39', 'A', 2.919, 13.0791],
+      ['GLU51', 'N_812', 'A', 'TYR59', 'OH_937', 'A', 2.9532, 23.4224],
+      ['GLU64', 'N_1019', 'A', 'GLN2', 'O_22', 'A', 2.9586, 23.2217],
+      ['LEU50', 'N_793', 'A', 'LEU43', 'O_682', 'A', 2.995, 15.3383],
+      ['GLN62', 'N_980', 'A', 'SER65', 'OG_1039', 'A', 3.0046, 23.3912],
+      ['ILE13', 'N_203', 'A', 'VAL5', 'O_78', 'A', 3.0123, 12.8492],
+      ['SER65', 'N_1034', 'A', 'GLN62', 'O_983', 'A', 3.0171, 18.3009],
+      ['VAL17', 'N_270', 'A', 'MET1', 'O_3', 'A', 3.0299, 8.8346],
+      ['ASN60', 'N_947', 'A', 'SER57', 'O_906', 'A', 3.0544, 28.4747],
+      ['LYS33', 'N_518', 'A', 'LYS29', 'O_451', 'A', 3.0814, 33.0882],
+      ['VAL70', 'N_1114', 'A', 'ARG42', 'O_658', 'A', 3.1015, 17.9449],
+      ['ASP32', 'N_506', 'A', 'ALA28', 'O_441', 'A', 3.1118, 10.5675],
+      ..
+      ..
 
 
 After parsing the file we will have an access to the same functions as before:
@@ -2163,11 +2163,11 @@ the main Instance.
 .. parsed-literal::
 
    @> Calculating cation-Pi interactions.
-   @>      TYR59   A         931_932_933_934_935_936  <--->      ARG54   A                     NH1_855_856     5.7
-   @>       PHE4   A               60_61_62_63_64_65  <--->       LYS6   A                           NZ_99     5.8
-   @>      TYR59   A         931_932_933_934_935_936  <--->      LYS48   A                          NZ_762     6.4
-   @>      HIS68   A        1083_1084_1085_1086_1087  <--->       LYS6   A                           NZ_99     7.2
-   @>      PHE45   A         722_723_724_725_726_727  <--->      LYS48   A                          NZ_762     7.5
+   @>      TYR59   A         931_932_933_934_935_936  <--->      ARG54   A       NH1_855_856     5.7
+   @>       PHE4   A               60_61_62_63_64_65  <--->       LYS6   A             NZ_99     5.8
+   @>      TYR59   A         931_932_933_934_935_936  <--->      LYS48   A            NZ_762     6.4
+   @>      HIS68   A        1083_1084_1085_1086_1087  <--->       LYS6   A             NZ_99     7.2
+   @>      PHE45   A         722_723_724_725_726_727  <--->      LYS48   A            NZ_762     7.5
    @> Number of detected cation-pi interactions: 5.
    @> Pi-Cation interactions are replaced
 
@@ -2191,3 +2191,4 @@ Now, interactions are replaced:
     ['TYR59', '931_932_933_934_935_936', 'A', 'LYS48', 'NZ_762', 'A', 6.3869],
     ['HIS68', '1083_1084_1085_1086_1087', 'A', 'LYS6', 'NZ_99', 'A', 7.1937],
     ['PHE45', '722_723_724_725_726_727', 'A', 'LYS48', 'NZ_762', 'A', 7.5218]]
+

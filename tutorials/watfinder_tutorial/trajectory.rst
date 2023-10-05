@@ -906,8 +906,7 @@ residue part which was involved in water bridges, i.e. backbone or side chain
 
    calcWaterBridgesDistribution(waterBridges,  'ASP92P', 'ARG18P', trajectory=trajectory, metric='distance')
 
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ traj_distribution.png
-.. figure:: images/Fig2.tga
+.. figure:: images/traj_distribution.png
    :scale: 50 %
 
 .. parsed-literal::
