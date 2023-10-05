@@ -1,16 +1,16 @@
-.. use "wbfinder_tutorial" to refer to this file
+.. use "watfinder_tutorial" to refer to this file
 
-.. _wbfinder_tutorial:
+.. _watfinder_tutorial:
 
 *******************************************************************************
-wbFinder - water bridges within protein structure detector
+watFinder - water bridges within protein structure detector
 *******************************************************************************
 
 .. only:: html
 
-    You can also read this tutorial in `PDF format <wbfinder_tutorial.pdf>`_.
+    You can also read this tutorial in `PDF format <watfinder_tutorial.pdf>`_.
 
-    Tutorial files: `ZIP <wbfinder.zip>`_ `TGZ <wbfinder.tgz>`_
+    Tutorial files: `ZIP <watfinder.zip>`_ `TGZ <watfinder.tgz>`_
 
 .. add .rst files to `toctree` in the order that you want them
 
@@ -20,7 +20,7 @@ wbFinder - water bridges within protein structure detector
 
    intro
    proteinPrep
-   singePDB
+   singlePDB
    trajectory
    ensemblePDB
    changeParam

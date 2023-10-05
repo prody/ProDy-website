@@ -1,4 +1,4 @@
-.. _wbfinder_tutorial:
+.. _watfinder_tutorial:
 
 Protein Preparation
 ===============================================================================
@@ -20,15 +20,23 @@ and add missing atoms using :func:`.addMissingAtoms`:
 
 
 .. ipython:: python
+   :verbatim:
 
    PDB = '5kqm'
    fetchPDB(PDB, compressed=False)
 
+.. parsed-literal::
+
+   @> PDB file is found in working directory (5kqm.pdb).
 
 .. ipython:: python
+   :verbatim:
 
    addMissingAtoms(PDB+'.pdb')
 
+.. parsed-literal::
+
+   @> Hydrogens were added to the structure. Structure addH_5kqm.pdb is saved in the local directry.
 
 A new file with hydrogens is now created. It will contain *'addH_'* as 
 a prefix. For protein structures that don't contain hydrogens, 
