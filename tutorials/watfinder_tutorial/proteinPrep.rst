@@ -22,8 +22,8 @@ and add missing atoms using :func:`.addMissingAtoms`:
 .. ipython:: python
    :verbatim:
 
-   PDB = '5kqm'
-   fetchPDB(PDB, compressed=False)
+   pdb = '5kqm'
+   filename = fetchPDB(pdb, compressed=False)
 
 .. parsed-literal::
 
@@ -34,7 +34,7 @@ and add missing atoms using :func:`.addMissingAtoms`:
 .. ipython:: python
    :verbatim:
 
-   addMissingAtoms(PDB+'.pdb')
+   filename2 = addMissingAtoms(filename)
 
 .. parsed-literal::
 

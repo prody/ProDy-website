@@ -13,8 +13,7 @@ using :func:`.parsePDB`:
 .. ipython:: python
    :verbatim:
 
-   PDBfile = 'addH_'+PDB+'.pdb'
-   coords = parsePDB(PDBfile)
+   atoms = parsePDB(filename2)
 
 .. parsed-literal::
 
@@ -27,7 +26,7 @@ structure and later compare how many of them were meaningful for protein structu
 .. ipython:: python
    :verbatim:
 
-   water_molecules = coords.select('water')
+   water_molecules = atoms.select('water')
    len(water_molecules)
 
 .. parsed-literal::
@@ -45,7 +44,7 @@ hydrophilic residues:
 .. ipython:: python
    :verbatim:
 
-   waterBridges_chain = calcWaterBridges(coords)
+   waterBridges_chain = calcWaterBridges(atoms)
 
 .. parsed-literal::
 
@@ -96,13 +95,15 @@ hydrophilic residues:
    @> ARG147 NE_1140 A ARG147 NH2_1143 A 2.278232867816633 1 ['A_1304']
    @> ARG150 NH1_1165 A ARG150 NH2_1166 A 2.3112059622629917 1 ['A_1328']
 
+These results may vary slightly depending on the position of added hydrogen atoms.
+
 2. **Method 'cluster'** which will detect water molecules between multiple hydrophilic 
 residues:
 
 .. ipython:: python
    :verbatim:
 
-   waterBridges_cluster = calcWaterBridges(coords, method='cluster')
+   waterBridges_cluster = calcWaterBridges(atoms, method='cluster')
 
 .. parsed-literal::
 
@@ -168,8 +169,8 @@ structure. Residues involved in water bridges can be displayed using occupancy c
 .. ipython:: python
    :verbatim:
 
-   savePDBWaterBridges(waterBridges_cluster, coords, PDBfile[:-4]+'_wb_cluster.pdb')
-   savePDBWaterBridges(waterBridges_chain, coords, PDBfile[:-4]+'_wb_chain.pdb')
+   savePDBWaterBridges(waterBridges_cluster, atoms, filename2[:-4]+'_wb_cluster.pdb')
+   savePDBWaterBridges(waterBridges_chain, atoms, filename2[:-4]+'_wb_chain.pdb')
 
 .. parsed-literal::
 
@@ -187,14 +188,14 @@ green) method.
 Access to the raw data
 -------------------------------------------------------------------------------
 
-To have acces to the raw data, we need to include paramater 
+To have access to the raw data, we need to include an 
 additional parameter *ouput='info'* in :func:`.calcWaterBridges`.
 
 
 .. ipython:: python
    :verbatim:
 
-   waterBridges_cluster = calcWaterBridges(coords, method='cluster', output='info')
+   waterBridges_cluster = calcWaterBridges(atoms, method='cluster', output='info')
    waterBridges_cluster
 
 .. parsed-literal::
@@ -718,10 +719,13 @@ additional parameter *ouput='info'* in :func:`.calcWaterBridges`.
      1,
      ['A_1328']]]
 
+The distances are between combinations of protein atoms. 2 atoms gives 1 distance, 
+3 atoms gives 3 distances, 4 atoms gives 6 distances, etc.
+
 .. ipython:: python
    :verbatim:
 
-   waterBridges_chain = calcWaterBridges(coords, output='info')
+   waterBridges_chain = calcWaterBridges(atoms, output='info')
 
 .. parsed-literal::
 
@@ -877,5 +881,5 @@ We can also count how many times each residue was involved in water bridges
    :scale: 60 %
 
 Based on the results we can see that there is one residue, GLU23, which 
-participate often in the interactions with water molecules.
+participates often in the interactions with water molecules.
 
