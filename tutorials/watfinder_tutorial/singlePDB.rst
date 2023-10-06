@@ -191,6 +191,9 @@ Access to the raw data
 To have access to the raw data, we need to include an 
 additional parameter *ouput='info'* in :func:`.calcWaterBridges`.
 
+The atomic output can also be transformed to this 
+detailed information using :func:`.getWaterBridgesInfoOutput`.
+
 
 .. ipython:: python
    :verbatim:
@@ -883,3 +886,5 @@ We can also count how many times each residue was involved in water bridges
 Based on the results we can see that there is one residue, GLU23, which 
 participates often in the interactions with water molecules.
 
+There are also options to save the output, which is especially important 
+for trajectories and is described there.
