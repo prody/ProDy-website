@@ -23,6 +23,9 @@ Openbabel.
 
 .. parsed-literal::
 
+   @> Connecting wwPDB FTP server RCSB PDB (USA).
+   @> 7laf downloaded (7laf.pdb)
+   @> PDB download via FTP completed (1 downloaded, 0 failed).
    @> Hydrogens were added to the structure. Structure addH_7laf.pdb is saved in the local directry.
    @> 21970 atoms and 1 coordinate set(s) were parsed in 0.24s.
 

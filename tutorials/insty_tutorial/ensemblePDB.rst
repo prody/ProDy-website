@@ -21,7 +21,9 @@ ubiquitin structure.
 
 .. parsed-literal::
 
-   @> PDB file is found in working directory (2k39.pdb).
+   @> Connecting wwPDB FTP server RCSB PDB (USA).
+   @> 2k39 downloaded (2k39.pdb.gz)
+   @> PDB download via FTP completed (1 downloaded, 0 failed).
    @> 1231 atoms and 116 coordinate set(s) were parsed in 0.29s.
 
 

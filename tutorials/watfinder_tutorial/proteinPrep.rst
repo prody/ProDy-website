@@ -27,7 +27,9 @@ and add missing atoms using :func:`.addMissingAtoms`:
 
 .. parsed-literal::
 
-   @> PDB file is found in working directory (5kqm.pdb).
+   @> Connecting wwPDB FTP server RCSB PDB (USA).
+   @> 5kqm downloaded (5kqm.pdb)
+   @> PDB download via FTP completed (1 downloaded, 0 failed).
 
 .. ipython:: python
    :verbatim:
