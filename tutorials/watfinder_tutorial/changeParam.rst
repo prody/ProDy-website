@@ -52,7 +52,7 @@ residues.
 .. ipython:: python
    :verbatim:
 
-   waterBridges_2 = calcWaterBridges(coords, method='cluster', distWR=3.0, distDA=3.2, maxDepth=3)
+   waterBridges_2 = calcWaterBridges(atoms, method='cluster', distWR=3.0, distDA=3.2, maxDepth=3)
 
 .. parsed-literal::
 
