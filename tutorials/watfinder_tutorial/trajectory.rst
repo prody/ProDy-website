@@ -14,7 +14,6 @@ can be found in *5kqm_all_sci.pdb*. Trajectory, *NAMD_D2_sample.dcd*, has dcd fo
 Parse structure with trajectory
 -------------------------------------------------------------------------------
 
-
 .. ipython:: python
    :verbatim:
 
@@ -210,7 +209,6 @@ We can recover logged output using :func:`.confProDy` again with a different ver
    
    analysisAtomic = calcWaterBridgesStatistics(waterBridges, trajectory, 
                                                filename='data.txt')
-
 
 .. parsed-literal::
 

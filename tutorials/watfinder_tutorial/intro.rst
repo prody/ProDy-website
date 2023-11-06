@@ -54,7 +54,6 @@ First, we will make necessary imports from ProDy and Matplotlib packages.
    from prody import *
    from pylab import *
    import matplotlib
-   ion()
 
 We have included these imports in every part of the tutorial, so that
 code copied from the online pages is complete. You do not need to repeat
