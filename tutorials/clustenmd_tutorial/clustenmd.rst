@@ -98,22 +98,28 @@ The parameters regarding the main steps of the method can be grouped as follows:
    ``n_confs`` : Number of new conformers generated from each parent
    conformer (default is 50).
 
-   ``rmsds`` : RMSD :math:`(\mathring{A})` of new conformers with
+   ``rmsd`` : RMSD :math:`(\mathring{A})` of new conformers with
    respect to the parent (default is 1.0).
 
    ``v1`` : Full enumeration of ANM modes, which is used in the original
    ClustENM method (default is False; see below).
 
    In the current ClustENMD version, ANM sampling is done randomly by
-   the ProDy method ``sampleModes``, where the RMSD value corresponds to
+   the ProDy method ``sampleModes``, where the ``rmsd`` value corresponds to
    the average RMSD of the new conformers with respect to the parent
    conformer. As the bigger RMSD value yields larger excursions from the
-   parent, the user should be cautious on increasing its value. In
-   contrast the original ClustENM [KD16]_ uses the full
-   enumeration (all possible combinations) of ANM modes with fixed maximum RMSD, which can be
-   enabled by setting ``v1=True``. In both cases, we suggest using the
-   first 3 to 5 global modes as they are known to facilitate the
-   conformational transitions.
+   parent, the user should be cautious on increasing its value. 
+   
+   In contrast, the original ClustENM [KD16]_ uses the full enumeration 
+   (all possible combinations) of ANM modes with fixed maximum RMSD, 
+   which can be enabled by setting ``v1=True``. 
+   
+   In both cases, we suggest using the first 3 to 5 global modes as 
+   they are known to facilitate the conformational transitions.
+
+   The ``rmsd`` parameter can be not only set to a single value across the
+   generations, but also provided exclusive to each generation as a
+   tuple, e.g., ``rmsd=(1.0, 1.5, 1.5)``.
 
 2. **Clustering:**
 
