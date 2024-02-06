@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+{% block body %}
+
+
+      <div class="row">
+        <div class="span12">
+          <div class="span5 pull-right" style="padding-top: 20px">
+            <div class="well">
+              <div id="panel-15-title" class="slide-title"></div>
+              <i class="icon-circle-arrow-right slide-arrow" onclick="nextSlide(15);" title="Next slide"></i>
+              <i class="icon-circle-arrow-left slide-arrow" onclick="prevSlide(15);" title="Previous slide"></i>
+               <div id="panel-15-slide" class="slide-content"></div>
+              <script>showSlide(15, -1);</script>
+            </div>
+          </div>
+
+            <h2>Interactions and Stability</h2>
+            <p><b>InSty</b> analyses the interactions of residues within proteins and complexes and their stability.</p>
+ 
+
+              <h4>Features</h4>
+              <p>You can use InSty to
+                <ul>
+                  <li>parse <a href="{{ pathto('manual/reference/proteins/emdfile.html#parseEMD') }}">electron density map files</a> from the EMDataBank<a href="{{ pathto('tutorials/cryoem_tutorial/searches.html') }}"></a></li>
+                  <li>apply the <a href="{{ pathto('manual/reference/proteins/emdfile.html#TRNET', 1) }}">topology representing network algorithm</a> to fit pseudoatom beads to cryo-EM maps for use in ENM NMA</li>
+                  <li>compare pseudoatom models to other structures and perform <a href="{{ pathto('tutorials/ensemble_analysis/blast.html#perform-pca', 1) }}">PCA</a> to analyse energy landscapes</li>
+                  <li>sample conformational transitions using <a href="{{ pathto('manual/reference/dynamics/adaptive') }}">adaptive ANM</a>, which does not not atomic details</li>
+                  <li>apply other ENM-based methods such as <a href="{{ pathto('manual/reference/dynamics/analysis.html#calcHitTime') }}">hitting time analysis</a></li>
+                </ul>
+              <!-- 
+              <p><small>
+              <strong>Reference</strong><br>
+              Mikulska-Ruminska K, Krieger JM, Cao X, Banerjee A, Wu G, Simmerling C, Coutsias EA, Bahar I
+              InSty: a new module in ProDy for evaluating the interactions and stability of proteins
+              <strong>2024</strong> <em>Bioinformatics</em> 160:104-120.
+              -->
+          </div>
+        </div>
+
+{% endblock %}
