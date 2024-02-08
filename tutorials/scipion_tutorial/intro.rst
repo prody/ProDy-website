@@ -66,4 +66,5 @@ at https://scipion-em.github.io/docs/release-3.0.0/docs/user/scipion-gui.html.
 
 .. [KJ23] Krieger JM, Sorzano COS, Carazo JM.
    Scipion-EM-ProDy: A Graphical Interface for the ProDy Python Package within the Scipion Workflow Engine 
-   Enabling Integration of Databases, Simulations and Cryo-Electron Microscopy Image Processing. *Int. J. Mol. Sci.* **2023** 24(18):14245.
+   Enabling Integration of Databases, Simulations and Cryo-Electron Microscopy Image Processing. 
+   *Int. J. Mol. Sci.* **2023** 24(18):14245.

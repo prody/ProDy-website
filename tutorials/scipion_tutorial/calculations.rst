@@ -38,7 +38,7 @@ First workflow from 2 protocols: importing and selecting
 
 As with any ProDy pipeline, we start by parsing an atomic structure and selecting some atoms of interest.
 
-At the top of the tree, we have some optional protocols from the Scipion core for importing atomic structures.
+At the top of the tree, we have some optional protocols from the Scipion core for importing atomic structures (step 0).
 The first of these can import a single atomic structure from the PDB or a file and we will use it for illustration.
 
 The second can do the same for multiple atomic structures as we will see in the Scipion `ensemble analysis tutorial`_.
@@ -62,7 +62,7 @@ orange while running and green when done. When it is done, we also get an output
 The output is an AtomStruct object, registered in the Scipion sqlite database that stores the path 
 to the associated PDB or mmCIF file.
 
-We can then use this AtomStruct in a following protocol as we show for ProDy atom selection. 
+We can then use this AtomStruct in a following protocol as we show for ProDy atom selection (from step 1). 
 When we open up this protocol, we see that the default option is to import a structure into ProDy
 using a pointer and, below that, the form has a grey box with a magnifying glass:
 
@@ -132,8 +132,8 @@ are again not useful here:
 .. figure:: images/core/13_align_advanced.png
    :scale: 80
 
-Now we can perform ANM NMA and deformation analysis as usual. The ANM NMA protocol also has various 
-options but, as in the ProDy API and apps, we are usually fine to leave these alone. 
+Now, we can perform ANM NMA and deformation analysis as usual. The ANM NMA protocol (from protocol tree option 2a) 
+also has various advanced options (below) but, as in the ProDy API and apps, we are usually fine to leave these alone. 
 
 .. figure:: images/core/14_anm_advanced.png
    :scale: 80
@@ -146,8 +146,8 @@ There is also another tab that controls options for animations using :func:`.tra
 .. figure:: images/core/15_anm_animation.png
    :scale: 80
 
-Similar options to the previous two protocol forms are available on that for deformation analysis,
-so go ahead and run that too. We now have a tree like the following:
+Similar options to the previous two protocol forms are available on that for deformation vector 
+analysis (option 2c), so go ahead and run that too. We now have a tree like the following:
 
 .. figure:: images/core/16_boxes_sel_aln_nma_defvec.png
    :scale: 80
