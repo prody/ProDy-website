@@ -49,12 +49,12 @@ You can start Scipion from the command line as follows::
 
 This will open the Projects window. From here, you can create a new project or open and existing one.
 
-.. figure:: images/scipion_projects.png
+.. figure:: images/intro/1_scipion_projects.png
    :scale: 80%
 
 Once you create or select a project, you will get a new window for your project as you can see for TestProDyClustENMsingle::
 
-.. figure:: images/scipion_TestProDyClustENMsingle.png
+.. figure:: images/intro/2_scipion_TestProDyClustENMsingle.png
    :scale: 80%
 
 You can also open up the last project that was open or changed as follows::
