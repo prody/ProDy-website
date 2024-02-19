@@ -181,7 +181,7 @@ results obtained by 'chain' vs 'cluster' (additional molecules shown in
 green) method.
 
 
-.. figure:: images/Fig1.tga
+.. figure:: images/Fig1.png
    :scale: 60 %
 
 

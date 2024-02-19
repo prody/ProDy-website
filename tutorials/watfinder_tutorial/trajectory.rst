@@ -580,7 +580,7 @@ contributions of each residue in water bridging) and occupancy column
 Results saved in PDB file can be displayed as follows:
 
 
-.. figure:: images/Fig2.tga
+.. figure:: images/Fig2.png
    :scale: 50 %
 
 
