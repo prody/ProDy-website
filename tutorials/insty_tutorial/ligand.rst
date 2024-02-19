@@ -79,7 +79,7 @@ The tcl file contains a method for drawing lines between protein and ligand
 (hydrogen bonds - *blue*, salt bridges - *yellow*, pi-stacking - *green*, cation-pi -
 *orange*, hydrophobic - *silver*, and water bridges - *cyan*).
 
-.. figure:: images/lig1.tga
+.. figure:: images/lig1.png
 
 
 
@@ -140,5 +140,5 @@ The tcl file contains a method for drawing lines between protein and ligand
 (hydrogen bonds - *blue*, salt bridges - *yellow*, pi-stacking - *green*, cation-pi -
 *orange*, hydrophobic - *silver*, and water bridges - *cyan*).
 
-.. figure:: images/lig2.tga
+.. figure:: images/lig2.png
 
