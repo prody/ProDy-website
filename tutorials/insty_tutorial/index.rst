@@ -3,7 +3,7 @@
 .. _insty_tutorial:
 
 *******************************************************************************
-Energetics and Stability analysis
+Interactions and Stability (InSty) analysis
 *******************************************************************************
 
 .. only:: html
