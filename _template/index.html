@@ -183,7 +183,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       .slide-arrow {
         cursor: pointer;
         float: right;
-        position; absolute;
+        position: absolute;
         top: 0px;
         vertical-align: top;
       }
@@ -263,6 +263,15 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       "Schematic description of symmetric or anti-symmetric movements of CCT-ATP",
       "Population distribution of ClustENMD conformers of adenylate kinase (AK)",
       "Conformational surface of HIV-1 reverse transcriptase",
+      "Evolution of ClustENM conformers",
+      "Population distribution of ClustENMD conformers of adenylate kinase (AK)",
+      "Conformational surface of HIV-1 reverse transcriptase",
+      "Evolution of ClustENM conformers",
+      "Population distribution of ClustENMD conformers of adenylate kinase (AK)",
+      "Conformational surface of HIV-1 reverse transcriptase",
+      "Evolution of ClustENM conformers",
+      "Population distribution of ClustENMD conformers of adenylate kinase (AK)",
+      "Conformational surface of HIV-1 reverse transcriptase",
       "Evolution of ClustENM conformers"
       );
 
@@ -282,6 +291,9 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       panelSlides[12] = new Array(36, 37, 38);
       panelSlides[13] = new Array(39, 40, 41, 42);
       panelSlides[14] = new Array(43, 44, 45);
+      panelSlides[15] = new Array(46, 47, 48);
+      panelSlides[16] = new Array(49);
+      panelSlides[17] = new Array(50, 51);
 
       var slideIndices = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
@@ -739,6 +751,57 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
         </p>
       </div>
 
+      <div class="prody-slide" id="slide-46">
+        <div class="slide-image"><img src="../_static/gallery/InSty1.PNG"/></div>
+        <p></p><p style="font-size: 95%; font-style: italic;">
+          Population distribution of ClustENMD conformers shown on the angle space (LID-Core vs. NMP-Core angles) of adenylate kinase (AK), together with homologous experimental structures (black circles). 
+          Independent 5-generation runs starting from open (4ake) and closed (1ake) states of AK highlight the major minima and the populated transition states. 
+        </p>
+      </div>
+
+      <div class="prody-slide" id="slide-47">
+        <div class="slide-image"><img src="../_static/gallery/InSty2.PNG"/></div>
+        <p></p><p style="font-size: 95%; font-style: italic;">
+          Conformational surface of HIV-1 reverse transcriptase plotted along the first two principal components (PCs) obtained from experimental structures (black circles), onto which the ClustENMD conformers 
+          (red circles, population levels in cyan) are projected. 
+        </p>
+      </div>
+
+      <div class="prody-slide" id="slide-48">
+        <div class="slide-image"><img src="../_static/gallery/InSty3.PNG"/></div>
+        <p></p><p style="font-size: 95%; font-style: italic;">
+          This movie shows the population distribution for successive generations (gen-1 to gen-10) of conformers sampled starting from the open (blue levels; initial structure/black circle: 1tw7) and the closed 
+          (red levels; initial structure/black diamond: 1bve) states of HIV-1 protease. As the distributions merge, they also cover the homologous experimental structures (gray circles). 
+        </p>
+      </div>
+
+      <div class="prody-slide" id="slide-49">
+        <div class="slide-image"><img src="../_static/gallery/WatFinder4.PNG"/></div>
+        <p></p><p style="font-size: 95%; font-style: italic;">
+          Population distribution of ClustENMD conformers shown on the angle space (LID-Core vs. NMP-Core angles) of adenylate kinase (AK), together with homologous experimental structures (black circles). 
+          Independent 5-generation runs starting from open (4ake) and closed (1ake) states of AK highlight the major minima and the populated transition states. 
+        </p>
+      </div>
+
+      <div class="prody-slide" id="slide-50">
+        <div class="slide-image"><img src="../_static/figures/scipion_figure2_spike_overview.png"/></div>
+        <p></p><p style="font-size: 95%; font-style: italic;">
+          Example workflow using ProDy within Scipion showing an ensemble analysis with 3 spike structures from the 
+          Scipion-EM-ProDy paper. The panel (a) lists possible protocols and selecting one opens a form as shown in (b).
+          Executing the protocols creates boxes in the workflow with outputs of one being inputs for the next as in (c).
+          Some of them have associated viewers, such as the normal mode viewer using NMWiz (d) and the projection viewer (e).
+        </p>
+      </div>
+
+      <div class="prody-slide" id="slide-51">
+        <div class="slide-image"><img src="../_static/figures/scipion_figure5_gnm.png"/></div>
+        <p></p><p style="font-size: 95%; font-style: italic;">
+          An example GNM analysis in Scipion-EM-ProDy is shown, including visualisation of 
+          the main results (a-c), a pipeline including dynamical domain decomposition and 
+          comparison of all-atom and CA-only GNM (d), and visualisation of their results (e-g).
+        </p>
+      </div>
+
   <div class="container" id="about">
 
 <!-- Logo & Nav
@@ -763,6 +826,9 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
           <li title="ESSA" ><a href="{{ pathto('essa', 1) }}">ESSA</a></li>  
           <li title="CryoDy" ><a href="{{ pathto('cryody', 1) }}">CryoDy</a></li>
           <li title="ClustENMD" ><a href="{{ pathto('clustenmd', 1) }}">ClustENMD</a></li>
+          <li title="InSty" ><a href="{{ pathto('insty', 1) }}">InSty</a></li>
+          <li title="WatFinder" ><a href="{{ pathto('watfinder', 1) }}">WaterFinder</a></li>
+          <li title="Scipion" ><a href="{{ pathto('scipion', 1) }}">Scipion</a></li>
           <li title="Downloads"><a href="{{ pathto('downloads', 1) }}">Downloads</a></li>
           <li title="Tutorials"><a href="{{ pathto('tutorials', 1) }}">Tutorials</a></li>
           <li title="Workshops"><a href="{{ pathto('workshop', 1) }}">Workshops</a></li>
