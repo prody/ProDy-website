@@ -298,12 +298,12 @@ the center of mass will be used as a reference.
 Saved PDB files using :func:`.savePDBWaterBridgesTrajectory` in the previous
 step can be upload to VMD or other program for visualization:
 
-.. figure:: images/Fig3.tga
+.. figure:: images/Fig3.png
    :scale: 50 %
 
 
 After uploading a new PDB file with water centers we can see the results as
 follows:
 
-.. figure:: images/Fig4.tga
+.. figure:: images/Fig4.png
    :scale: 50 %
