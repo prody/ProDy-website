@@ -1,0 +1,41 @@
+{% extends "index.html" %}
+{% block body %}
+
+
+      <div class="row">
+        <div class="span12">
+          <div class="span5 pull-right" style="padding-top: 20px">
+            <div class="well">
+              <div id="panel-17-title" class="slide-title"></div>
+              <i class="icon-circle-arrow-right slide-arrow" onclick="nextSlide(17);" title="Next slide"></i>
+              <i class="icon-circle-arrow-left slide-arrow" onclick="prevSlide(17);" title="Previous slide"></i>
+               <div id="panel-17-slide" class="slide-content"></div>
+              <script>showSlide(17, -1);</script>
+            </div>
+          </div>
+
+            <h2>Scipion ProDy plugin</h2>
+            <p><b>Scipion-EM-ProDy</b> enables access to main ProDy tools within the Scipion workflow engine for Cryo-EM. 
+              The latest version is available at https://github.com/scipion-em/scipion-em-prody and stable releases 
+              are in PyPI and the Scipion plugin manager.</p>
+
+              <h4>Features</h4>
+              <p>You can use Scipion-EM-ProDy to
+                <ul>
+                  <li>parse PDB and mmCIF files from the PDB, select atoms, and perform ANM and RTB NMA</li>
+                  <li>align a pair of structures and calculate deformation vectors</li>
+                  <li>perform GNM analysis and dynamical domain decomposition</li>
+                  <li>align a set of structures into an ensemble using most ProDy options and perform <a href="{{ pathto('tutorials/ensemble_analysis/blast.html#perform-pca', 1) }}">PCA</a> to analyse energy landscapes</li>
+                  <li>sample conformational transitions using <a href="{{ pathto('manual/reference/dynamics/clustenm') }}">ClustENM(D)</a> with the option of fitting to cryo-EM maps</li>
+                </ul>
+
+              <p><small>
+              <strong>Reference</strong><br>
+              Krieger JM, Sorzano COS, Carazo JM
+              Scipion-EM-ProDy: A Graphical Interface for the ProDy Python Package within the Scipion Workflow Engine 
+              Enabling Integration of Databases, Simulations and Cryo-Electron Microscopy Image Processing
+              <strong>2023</strong> <em>Int. J. Mol. Sci.</em> 24:14245.
+          </div>
+        </div>
+
+{% endblock %}

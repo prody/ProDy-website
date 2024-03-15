@@ -42,12 +42,12 @@ load trajectories with their related structure files.
 
 .. ipython:: python
 
-	dcd1 = Trajectory('walker1_trajectory.dcd')
-	dcd2 = Trajectory('walker2_trajectory.dcd')
+	dcd1 = Trajectory('initial_trajectory.dcd')
+	dcd2 = Trajectory('final_trajectory.dcd')
 	dcd1
 	dcd2
-	structure1 = parsePDB('walker1_ionized.pdb')
-	structure2 = parsePDB('walker2_ionized.pdb')
+	structure1 = parsePDB('initial_ionized.pdb')
+	structure2 = parsePDB('final_ionized.pdb')
 	structure1
 	structure2
 

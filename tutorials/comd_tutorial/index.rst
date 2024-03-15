@@ -1,4 +1,4 @@
-Collective Molecular Dynamics Simulations 
+Collective Molecular Dynamics (CoMD) Simulations 
 =========================================
 
 Learn global transition pathways with multiscale hybrid methodology, 
