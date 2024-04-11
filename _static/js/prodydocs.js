@@ -55,6 +55,10 @@ $(document).ready(function() {
     logo.src = "http://prody.csb.pitt.edu/_static/cryody_logo.png";
   } else if (url.search("clustenmd") > -1) {
     logo.src = "http://prody.csb.pitt.edu/_static/clustenmd.png";
+  } else if (url.search("insty") > -1) {
+    logo.src = "http://prody.csb.pitt.edu/_static/insty_logo.png";
+  } else if (url.search("watfinder") > -1) {
+    logo.src = "http://prody.csb.pitt.edu/_static/watfinder_logo.png";
   // } else if (url.search("chromd") > -1) {
   //   logo.src = "http://prody.csb.pitt.edu/_static/chromdlogo.png";
   } else {
