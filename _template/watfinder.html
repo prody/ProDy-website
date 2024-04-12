@@ -15,23 +15,27 @@
           </div>
 
             <h2>Water Bridge Finder</h2>
-            <p><b>WatFinder</b> identifies protein-water interactions (water bridges) relevant to protein stability and dynamics.</p>
+            <p><b>WatFinder</b> detects protein-water interactions (water bridges or water-mediated associations) relevant to protein stability and dynamics.</p>
  
+            <p><b>WatFinder</b> can analyze single protein structures (PDB files), collections of structures (PDB ensembles), and molecular dynamics trajectories 
+              to detect water molecules that form water bridges with protein structures. It uses multiple different criteria, including distances and angles. 
+              The code is flexible and allows the user to tune the data analysis appropriately to the analyzed system.<br>
+              WatFinder provides a suite of functions for generating raw data and outputs on statistical analyses and visualization tools.</p>
 
               <h4>Features</h4>
-              <p>You can use WatFinder to
+              <p>You can use WatFinder for
                 <ul>
-                  <li>parse <a href="{{ pathto('manual/reference/proteins/emdfile.html#parseEMD') }}">electron density map files</a> from the EMDataBank<a href="{{ pathto('tutorials/cryoem_tutorial/searches.html') }}"></a></li>
-                  <li>apply the <a href="{{ pathto('manual/reference/proteins/emdfile.html#TRNET', 1) }}">topology representing network algorithm</a> to fit pseudoatom beads to cryo-EM maps for use in ENM NMA</li>
-                  <li>compare pseudoatom models to other structures and perform <a href="{{ pathto('tutorials/ensemble_analysis/blast.html#perform-pca', 1) }}">PCA</a> to analyse energy landscapes</li>
-                  <li>sample conformational transitions using <a href="{{ pathto('manual/reference/dynamics/adaptive') }}">adaptive ANM</a>, which does not not atomic details</li>
-                  <li>apply other ENM-based methods such as <a href="{{ pathto('manual/reference/dynamics/analysis.html#calcHitTime') }}">hitting time analysis</a></li>
+                  <li>Identifying water molecules in contact with the protein structure</li>
+                  <li>Detecting pairs of residues linked by water bridges</li>
+                  <li>Determining prevalent water-attracted regions within the protein structure, i.e., water clusters (based on PDB Ensemble or trajectory)</li>
+                  <li>Generating histograms displaying the frequency of water molecules involved in specific water bridges</li>
+                  <li>Analyzing the frequency or probability of water bridges occurring between residue pairs</li>
                 </ul>
               <!-- 
               <p><small>
               <strong>Reference</strong><br>
               Doljanin F, Krieger JM, Bahar I, Mikulska-Ruminska K
-              wbFinder: a new ProDy tool for detecting water bridges 
+              watFinder: a new ProDy tool for detecting water bridges 
               <strong>2024</strong> <em>Bionformatics</em> 160:104-120.
               -->
           </div>
