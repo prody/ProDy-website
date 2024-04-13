@@ -15,21 +15,22 @@
           </div>
 
             <h2>Water Bridge Finder</h2>
-            <p><b>WatFinder</b> detects protein-water interactions (water bridges or water-mediated associations) relevant to protein stability and dynamics.</p>
+            <p><i><b>WatFinder</b></i> detects protein-water interactions (water bridges or water-mediated associationsor water clusters) relevant to protein stability and dynamics.</p>
  
-            <p><b>WatFinder</b> can analyze single protein structures (PDB files), collections of structures (PDB ensembles), and molecular dynamics trajectories 
-              to detect water molecules that form water bridges with protein structures. It uses multiple different criteria, including distances and angles. 
+            <p><i>WatFinder</i> can analyze single protein structures (PDB files), collections of structures (PDB ensembles), or conformers from molecular dynamics trajectories 
+              to detect water molecules that form water bridges within protein structures. It uses multiple criteria, including geometric features (distances and angles). 
               The code is flexible and allows the user to tune the data analysis appropriately to the analyzed system.<br>
-              WatFinder provides a suite of functions for generating raw data and outputs on statistical analyses and visualization tools.</p>
+              WatFinder provides a suite of functions for generating raw data and outputs  for statistical analyses and visualization tools, and takes advantage of the ProDy 
+              framework for interpreting the observation in the context of protein dynamics.</p>
 
               <h4>Features</h4>
-              <p>You can use WatFinder for
+              <p>You can use <i>WatFinder</i> for
                 <ul>
-                  <li>Identifying water molecules in contact with the protein structure</li>
+                  <li>Identifying water molecules in contact with the protein</li>
                   <li>Detecting pairs of residues linked by water bridges</li>
-                  <li>Determining prevalent water-attracted regions within the protein structure, i.e., water clusters (based on PDB Ensemble or trajectory)</li>
-                  <li>Generating histograms displaying the frequency of water molecules involved in specific water bridges</li>
-                  <li>Analyzing the frequency or probability of water bridges occurring between residue pairs</li>
+                  <li>Identifying the location of water clusters</li>
+                  <li>Generating histograms displaying the frequency of occurrence of specific water bridges</li>
+                  <li>Identifying residues with high propensity to associate with water molecules</li>
                 </ul>
               <!-- 
               <p><small>
