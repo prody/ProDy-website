@@ -1,0 +1,45 @@
+{% extends "index.html" %}
+{% block body %}
+
+
+      <div class="row">
+        <div class="span12">
+          <div class="span5 pull-right" style="padding-top: 20px">
+            <div class="well">
+              <div id="panel-16-title" class="slide-title"></div>
+              <i class="icon-circle-arrow-right slide-arrow" onclick="nextSlide(16);" title="Next slide"></i>
+              <i class="icon-circle-arrow-left slide-arrow" onclick="prevSlide(16);" title="Previous slide"></i>
+               <div id="panel-16-slide" class="slide-content"></div>
+              <script>showSlide(16, -1);</script>
+            </div>
+          </div>
+
+            <h2>Water Bridge Finder</h2>
+            <p><i><b>WatFinder</b></i> detects protein-water interactions (water bridges or water-mediated associationsor water clusters) relevant to protein stability and dynamics.</p>
+ 
+            <p><i>WatFinder</i> can analyze single protein structures (PDB files), collections of structures (PDB ensembles), or conformers from molecular dynamics trajectories 
+              to detect water molecules that form water bridges within protein structures. It uses multiple criteria, including geometric features (distances and angles). 
+              The code is flexible and allows the user to tune the data analysis appropriately to the analyzed system.<br>
+              WatFinder provides a suite of functions for generating raw data and outputs  for statistical analyses and visualization tools, and takes advantage of the ProDy 
+              framework for interpreting the observation in the context of protein dynamics.</p>
+
+              <h4>Features</h4>
+              <p>You can use <i>WatFinder</i> for
+                <ul>
+                  <li>Identifying water molecules in contact with the protein</li>
+                  <li>Detecting pairs of residues linked by water bridges</li>
+                  <li>Identifying the location of water clusters</li>
+                  <li>Generating histograms displaying the frequency of occurrence of specific water bridges</li>
+                  <li>Identifying residues with high propensity to associate with water molecules</li>
+                </ul>
+              <!-- 
+              <p><small>
+              <strong>Reference</strong><br>
+              Doljanin F, Krieger JM, Bahar I, Mikulska-Ruminska K
+              watFinder: a new ProDy tool for detecting water bridges 
+              <strong>2024</strong> <em>Bionformatics</em> 160:104-120.
+              -->
+          </div>
+        </div>
+
+{% endblock %}

@@ -55,6 +55,12 @@ $(document).ready(function() {
     logo.src = "http://prody.csb.pitt.edu/_static/cryody_logo.png";
   } else if (url.search("clustenmd") > -1) {
     logo.src = "http://prody.csb.pitt.edu/_static/clustenmd.png";
+  } else if (url.search("insty") > -1) {
+    logo.src = "http://prody.csb.pitt.edu/_static/insty_logo.png";
+  } else if (url.search("watfinder") > -1) {
+    logo.src = "http://prody.csb.pitt.edu/_static/watfinder_logo.png";
+  } else if (url.search("watfinder") > -1) {
+    logo.src = "http://prody.csb.pitt.edu/_static/scipion_logo.png";
   // } else if (url.search("chromd") > -1) {
   //   logo.src = "http://prody.csb.pitt.edu/_static/chromdlogo.png";
   } else {
@@ -86,14 +92,20 @@ $(document).ready(function() {
       $('.nav-pills > li:nth-child(12)').addClass('active');
     } else if (url.search("clustenmd") > -1) {
       $('.nav-pills > li:nth-child(13)').addClass('active');
-    } else if (url.search("downloads") > -1) {
+    } else if (url.search("insty") > -1) {
       $('.nav-pills > li:nth-child(14)').addClass('active');
-    } else if (url.search("tutorials") > -1) {
+    } else if (url.search("watfinder") > -1) {
       $('.nav-pills > li:nth-child(15)').addClass('active');
-    } else if (url.search("workshop") > -1) {
-       $('.nav-pills > li:nth-child(16)').addClass('active');
-    } else if (url.search("statistics") > -1) {
+    } else if (url.search("scipion") > -1) {
+      $('.nav-pills > li:nth-child(16)').addClass('active');
+    } else if (url.search("downloads") > -1) {
       $('.nav-pills > li:nth-child(17)').addClass('active');
+    } else if (url.search("tutorials") > -1) {
+      $('.nav-pills > li:nth-child(18)').addClass('active');
+    } else if (url.search("workshop") > -1) {
+       $('.nav-pills > li:nth-child(19)').addClass('active');
+    } else if (url.search("statistics") > -1) {
+      $('.nav-pills > li:nth-child(20)').addClass('active');
     } else {
       $('.nav-pills > li:nth-child(1)').addClass('active');
     }
