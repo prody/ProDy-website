@@ -3,12 +3,11 @@
 Water bridges detection in Ensemble PDB
 ===============================================================================
 
-This time we will use multi-model PDB which contain 50 frames from MD 
-simulations form PE-binding protein 1 (PDB code: *1beh*). Simulation were 
-performed using NAMD and saved as multi-model PDB using VMD. Remember to align 
-the protein structure before analyzing it. Otherwise when all structures will 
-be uploaded to the visualization program they will be spread out in space.
-
+This time we will use multi-model PDB, which contains 50 frames from MD
+simulations from PE-binding protein 1 (PDB code: *1beh*). Simulations were
+performed using NAMD and saved as multi-model PDB using VMD. We need to remember
+to align the protein structure before performing the analysis. Otherwise, when all
+structures are uploaded to the visualization program they will be spread out in a space.
 
 Parse structure
 -------------------------------------------------------------------------------
@@ -80,12 +79,13 @@ Parse structure
    ..
    ..
 
-Analysis of the results is similar to the one presented in trajectory analysis. 
-Below examples showing which residues are the most frequently involved in water 
-bridges formation (:func:`.calcBridgingResiduesHistogram`), details of that 
-interactions (:func:`.calcWaterBridgesStatistics`), and results saved as PDB 
-structure for further visualization (:func:`.savePDBWaterBridgesTrajectory`). 
-Other functions can be seen in the analysis of trajectory.
+Analysis of the results is similar to that presented in trajectory analysis.
+Below are examples showing which residues are most frequently involved in water bridge
+formation (:func:`.calcBridgingResiduesHistogram`), details of those interactions
+(:func:`.calcWaterBridgesStatistics`), and results saved as a PDB structure for further
+visualization (:func:`.savePDBWaterBridgesTrajectory`). Other functions can be explored
+in the trajectory analysis.
+
 
 .. ipython:: python
    :verbatim:

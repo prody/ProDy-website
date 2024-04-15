@@ -4,11 +4,14 @@
 Water bridges detection in a trajectory
 ===============================================================================
 
-Now, we will perform calculations for a trajectory file. We will use 
-:func:`.calcWaterBridgesTrajectory` for which we need to provide PDB and DCD file.
+Now, we will perform calculations for a trajectory file that was obtained
+using the NAMD package. We will use :func:`.calcWaterBridgesTrajectory`, for which
+we need to provide PDB and DCD files. 
 
-We will use files that were prepared in NAMD. The system (protein in a water box) 
-can be found in *5kqm_all_sci.pdb*. Trajectory, *NAMD_D2_sample.dcd*, has dcd format.
+The system (protein in a water box) can be found in *5kqm_all_sci.pdb*. Trajectory,
+*NAMD_D2_sample.dcd*, has dcd format. In case we would like to analyze
+trajectories with different formats, we need to make a conversion to dcd file
+format or save the trajectory as a multi-model PDB (using VMD or other tool).
 
 
 Parse structure with trajectory
@@ -63,7 +66,7 @@ The analysis od water bridges can be performed on selected frames by using
    @> Frame: 15
    @> 105 water bridges detected.
 
-Because of the amount of data there, detailed results will not be displayed. 
+Because of the amount of data, detailed results will not be displayed. 
 We instead access the raw data from using *output='info'*.
 
 .. ipython:: python
@@ -152,12 +155,12 @@ We instead access the raw data from using *output='info'*.
 Save the results
 -------------------------------------------------------------------------------
 
-The results can be saved using :func:`.saveWaterBridges` in two formats. Txt 
-file will contain all the results for analysis and can be visualized in text 
-editor, and wb file will restore data for further analysis. It can be loaded 
-using :func:`.parseWaterBridges` as shown below.
+The results can be saved using :func:`.saveWaterBridges` in two formats.
+*Txt* file will contain all the results for analysis and can be visualized in a
+text editor, and *wb* file will restore data for further analysis. It can be
+loaded using :func:`.parseWaterBridges` as shown below.
 
-First, we have to rerun the calculation without *output='info'*. 
+First, we have to return the calculation without *output='info'*. 
 
 We can suppress the logged output using :func:`.confProDy` to set the verbosity 
 to *'none'*.
@@ -176,7 +179,7 @@ to *'none'*.
    saveWaterBridges(wb_traj,'wb_saved.txt')
    saveWaterBridges(wb_traj,'wb_saved.wb')
 
-To load wb file use :func:`.parseWaterBridges` and protein coordinates 
+To load *wb* file use :func:`.parseWaterBridges` and protein coordinates 
 as follows:
 
 .. ipython:: python
@@ -184,7 +187,7 @@ as follows:
 
    waterBridges = parseWaterBridges('wb_saved.wb', coords_traj)
 
-Loaded results from a .wb file are of type atomic and therefore can be used for 
+Loaded results from a *.wb* file are atomic type and therefore can be used for 
 analysis later. 
 
 
@@ -194,11 +197,11 @@ Analysis of the results
 Information about residues contributing to water bridges
 -------------------------------------------------------------------------------
 
-Analysis of the data can be performed using :func:`.calcWaterBridgesStatistics`.
-The analysis presented below gives information about pairs of residues involved 
-in water bridges, how often they occur, and the average distance between them. 
-Standard deviation provides information on how the distance was changing during 
-the simulation. Additionally, the analysis can be saved by using *filename* option.
+The data can be analyzed using :func:.`calcWaterBridgesStatistics`. The following
+analysis provides details about the pairs of residues engaged in water bridges,
+their frequency of occurrence, and the average distance between them. The standard
+deviation offers insights into the variation in distance throughout the simulation.
+Moreover, the analysis can be saved using the *filename* option.
 
 We can recover logged output using :func:`.confProDy` again with a different verbosity.
 
