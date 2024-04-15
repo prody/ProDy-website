@@ -3,7 +3,7 @@
 .. _watfinder_tutorial:
 
 *******************************************************************************
-watFinder - water bridges within protein structure detector
+WatFinder - water bridges within protein structure detector
 *******************************************************************************
 
 .. only:: html

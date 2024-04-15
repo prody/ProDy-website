@@ -4,7 +4,7 @@ Introduction
 This tutorial shows how to detect water molecules that might form hydrogen 
 bonds with protein structures (called water bridges). The prediction method 
 introduced here helps evaluate the significance of water molecules on the 
-stability of protein structure. 
+stability and dynamics of protein structure. 
 
 
 Required Programs
@@ -26,6 +26,7 @@ predicting hydrogen bonds.
 .. _Openbabel: https://github.com/openbabel
 .. _PDBfixer: https://github.com/openmm/pdbfixer
 
+They can be installed using a conda or pip.
 
 Getting Started
 -------------------------------------------------------------------------------
