@@ -60,7 +60,7 @@ $(document).ready(function() {
   } else if (url.search("watfinder") > -1) {
     logo.src = "http://prody.csb.pitt.edu/_static/watfinder_logo.png";
   } else if (url.search("watfinder") > -1) {
-    logo.src = "http://prody.csb.pitt.edu/_static/scipion_logo.png";
+    logo.src = "http://prody.csb.pitt.edu/_static/scipion-em-prody_logo.png";
   // } else if (url.search("chromd") > -1) {
   //   logo.src = "http://prody.csb.pitt.edu/_static/chromdlogo.png";
   } else {
