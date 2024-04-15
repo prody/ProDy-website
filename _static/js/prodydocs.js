@@ -34,37 +34,37 @@ $(document).ready(function() {
   var url = document.URL;
   var logo = document.getElementById("logo");
   if (url.search("nmwiz") > -1) {
-    logo.src = "http://prody.csb.pitt.edu/_static/nmwiz.png";
+    logo.src = "/_static/nmwiz.png";
   } else if (url.search("evol") > -1) {
-    logo.src = "http://prody.csb.pitt.edu/_static/evol.png";
+    logo.src = "/_static/evol.png";
   } else if (url.search("drugui") > -1) {
-    logo.src = "http://prody.csb.pitt.edu/_static/drugui_logo.png";
+    logo.src = "/_static/drugui_logo.png";
   } else if (url.search("comd") > -1) {
-    logo.src = "http://prody.csb.pitt.edu/_static/comdlogo.png";
+    logo.src = "/_static/comdlogo.png";
   } else if (url.search("memanm") > -1) {
-    logo.src = "http://prody.csb.pitt.edu/_static/membranm.png";
+    logo.src = "/_static/membranm.png";
   } else if (url.search("stiff") > -1) {
-    logo.src = "http://prody.csb.pitt.edu/_static/mechstiff.png";
+    logo.src = "/_static/mechstiff.png";
   } else if (url.search("signdy") > -1) {
-    logo.src = "http://prody.csb.pitt.edu/_static/signdylogo.png";
+    logo.src = "/_static/signdylogo.png";
   } else if (url.search("prs") > -1) {
-    logo.src = "http://prody.csb.pitt.edu/_static/prslogo.png";
+    logo.src = "/_static/prslogo.png";
   } else if (url.search("essa") > -1) {
-    logo.src = "http://prody.csb.pitt.edu/_static/essa_logo.png";
+    logo.src = "/_static/essa_logo.png";
   } else if (url.search("cryo") > -1) {
-    logo.src = "http://prody.csb.pitt.edu/_static/cryody_logo.png";
+    logo.src = "/_static/cryody_logo.png";
   } else if (url.search("clustenmd") > -1) {
-    logo.src = "http://prody.csb.pitt.edu/_static/clustenmd.png";
+    logo.src = "/_static/clustenmd.png";
   } else if (url.search("insty") > -1) {
-    logo.src = "http://prody.csb.pitt.edu/_static/insty_logo.png";
+    logo.src = "/_static/insty_logo.png";
   } else if (url.search("watfinder") > -1) {
-    logo.src = "http://prody.csb.pitt.edu/_static/watfinder_logo.png";
+    logo.src = "/_static/watfinder_logo.png";
   } else if (url.search("scipion") > -1) {
-    logo.src = "http://prody.csb.pitt.edu/_static/scipion-em-prody_logo.png";
+    logo.src = "/_static/scipion-em-prody_logo.png";
   // } else if (url.search("chromd") > -1) {
-  //   logo.src = "http://prody.csb.pitt.edu/_static/chromdlogo.png";
+  //   logo.src = "/_static/chromdlogo.png";
   } else {
-    logo.src = "http://prody.csb.pitt.edu/_static/logo.png";
+    logo.src = "/_static/logo.png";
   }
   
   if ($('#homepagenav').length) {
