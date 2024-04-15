@@ -15,26 +15,32 @@
           </div>
 
             <h2>Interactions and Stability</h2>
-            <p><b>InSty</b> detects seven types of non-covalent interactions (hydrogen bonds, salt bridges, hydrophobic, pi-stacking, pi-cation, repulsive ionic bonding, and disulfide bonds) within
+            <p><b>InSty</b> is a module for characterizing the interactions and/or stability of proteins and their
+            complexes/assemblies. The tool detects seven types of non-covalent interactions (hydrogen bonds, salt
+            bridges, hydrophobic, p-stacking, p- cation, ionic repulsion, and disulfide bonds) within
             a protein structure and between proteins in complexes.</p>
  
 
               <h4>Features</h4>
               
-              <i>InSty</i> can analyze single protein structures (PDB files), collections of structures (PDB ensembles), and conformers from molecular dynamics trajectories to detect contacts that are relevant to
-              protein stability and dynamics. It uses multiple criteria, including geometric features (distances and angles). The code is flexible and allows the user to tune the data analysis appropriately
-              to the analyzed system or protein region. 
-              InSty provides a suite of functions for generating raw data (including files for subsequent analysis) and outputs for statistical analyses and visualization tools. <i>InSty</i> takes advantage of
-              the ProDy framework to interpret the observation in the context of protein dynamics.
+              <i>InSty</i> is designed to automate the analyses of protein structures (single structures or collections
+              of structures from the PDB), or conformers from molecular dynamics trajectories. It detects the contacts
+              relevant to protein stability and dynamics, using multiple criteria including geometric features
+              (distances and angles). The code is flexible and allows the user to adapt the analysis to the system or
+              protein region of interest.
+              
+              <i>InSty</i> provides a suite of functions for generating raw data (including files for further analyses
+              and visualization. It takes advantage of the ProDy framework to interpret the observation in the context
+              of protein dynamics.
+
               
               <p>You can use InSty to
                 <ul>
-                  <li>Identifying seven types of non-covalent interactions within protein structure or between different proteins that are forming a complex</li>
-                  <li>Identifying residues with a high propensity to associate with other residues</li>
-                  <li>Detecting residues that are particularly important for protein dynamics and stability (in single PDB, ensemble PDB, trajectory
-                  including output from Elastic Network Models)</li>
-                  <li>Generating diagrams displaying the evolution and frequency of occurrence of specific types of interactions</li>
-                  <li>Identifying differences in interactions between particular conformations, which can be applied to study the effect of mutations</li>
+                  <li>Identifying different types of non-covalent interactions within proteins or complexes</li>
+                  <li>Identifying residues with a high propensity to associate with others</li>
+                  <li>Identifying residues critical to stability and/or dynamics </li>
+                  <li>Visualizing the probabilistic occurrence or time evolution of specific interactions</li>
+                  <li>Comparing the interactions in different conformations or mutants</li>
                 </ul>
               <!-- 
               <p><small>
