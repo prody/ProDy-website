@@ -4,15 +4,14 @@ Protein Preparation
 ===============================================================================
 
 Since PDB structures often lack hydrogen atoms in water molecules, we need to
-add them. We can use :func:`.addMissingAtoms` function. This function utilizes
-either *Openbabel* or *PDBFixer*, both of which require the PDB file to be saved
-in the local directory. Those are external packages therefore they should be
+add them. We can use the :func:`.addMissingAtoms` function. This function utilizes
+either *Openbabel* or *PDBFixer*. Those are external packages therefore they should be
 installed independently (see Recommended Programs section). 
 
 If we prefer not to install additional tools, we can alternatively provide
 a PDB structure with hydrogens already added by other software.
 
-Here we will fetch PDB structure with LMW-PTP **5kqm** from 
+Here we will fetch a structure of LMW-PTP (PDB: **5kqm**) from 
 Protein Data Bank (PDB) in incompressed form using *compressed=False* 
 and add missing atoms using :func:`.addMissingAtoms`:
 
