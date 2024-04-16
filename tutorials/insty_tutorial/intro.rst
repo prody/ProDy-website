@@ -6,7 +6,7 @@ protein structure using the coordinates (single PDB) or ensemble of
 conformations (multi-model PDB or dcd file gerenarted by NAMD program).
 
 This module can be successfully used to study the distribution of different
-types of interactions (hydrogen bonds, salt bridges, repulsive ionic bindnig,
+types of interactions (hydrogen bonds, salt bridges, repulsive ionic binding,
 pi-cation, pi-stacking, hydrophobic and disulfide bonds) within protein
 structure. It may help to distinguish the difference between protein wt and
 mutant, indentify regions or simply residues which are privileged to create
