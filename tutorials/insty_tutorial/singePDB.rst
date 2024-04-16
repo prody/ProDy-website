@@ -22,7 +22,7 @@ Analysis of interactions for a single PDB structure
 -------------------------------------------------------------------------------
 
 We start by parsing PDB file with LMW-PTP **5kqm_all_sci.pdb** which is avalable
-as the tutorial files. PDB file contains protein structures with water and 
+in the tutorial files. The PDB file contains protein structures with water and
 counter ions prepared using VMD_ program.
 
 Before that import everything from the ProDy packages.
