@@ -1,15 +1,19 @@
 .. _watfinder_tutorial:
 
-Water bridges detection in Ensemble PDB
+Water bridges detection in an Ensemble PDB
 ===============================================================================
 
-This time we will use multi-model PDB, which contains 50 frames from MD
-simulations from PE-binding protein 1 (PDB code: *1beh*). Simulations were
-performed using NAMD and saved as multi-model PDB using VMD. We need to remember
-to align the protein structure before performing the analysis. Otherwise, when all
-structures are uploaded to the visualization program they will be spread out in a space.
+This time we will use an ensemble stored in a multi-model PDB, which contains 50 frames 
+from MD simulations from PE-binding protein 1 (PDB code: *1beh*). Simulations were
+performed using NAMD and saved as a multi-model PDB using VMD. 
 
-Parse structure
+We need to remember to align the protein structure before performing the analysis. 
+Otherwise, when all structures are uploaded to the visualization program, they will 
+be spread out in space. We could do this inside ProDy by converting the :class:`.Atomic` 
+object to an :class:`.Ensemble` object and using its :meth:`.Ensemble.iterpose` method to do this,
+but here we demonstrate the process for parsing a multi-model PDB file directly.
+
+Initial analysis
 -------------------------------------------------------------------------------
 
 .. ipython:: python
@@ -56,28 +60,8 @@ Parse structure
    @> 128 water bridges detected.
    @> Frame: 16
    @> 145 water bridges detected.
-   @> Frame: 17
-   @> 157 water bridges detected.
-   @> Frame: 18
-   @> 111 water bridges detected.
-   @> Frame: 19
-   @> 122 water bridges detected.
-   @> Frame: 20
-   @> 171 water bridges detected.
-   @> Frame: 21
-   @> 144 water bridges detected.
-   @> Frame: 22
-   @> 152 water bridges detected.
-   @> Frame: 23
-   @> 155 water bridges detected.
-   @> Frame: 24
-   @> 164 water bridges detected.
-   @> Frame: 25
-   @> 138 water bridges detected.
-   @> Frame: 26
-   @> 156 water bridges detected.
-   ..
-   ..
+   ...
+   ...
 
 Analysis of the results is similar to that presented in trajectory analysis.
 Below are examples showing which residues are most frequently involved in water bridge
@@ -107,28 +91,8 @@ in the trajectory analysis.
     ('LEU14P', 3),
     ('TYR169P', 3),
     ('PHE154P', 4),
-    ('THR167P', 4),
-    ('PRO178P', 4),
-    ('LEU25P', 5),
-    ('SER104P', 6),
-    ('PRO136P', 6),
-    ('ILE53P', 7),
-    ('GLN170P', 7),
-    ('TYR29P', 8),
-    ('TYR106P', 8),
-    ('PRO50P', 8),
-    ('GLY38P', 8),
-    ('PRO71P', 9),
-    ('LEU138P', 9),
-    ('PRO24P', 10),
-    ('ASP18P', 10),
-    ('LEU103P', 10),
     .
     .
-    ('TYR120P', 49),
-    ('GLY147P', 49),
-    ('GLU126P', 49),
-    ('GLY94P', 49),
     ('ARG49P', 50),
     ('ASN48P', 50),
     ('ARG141P', 50),
@@ -177,27 +141,8 @@ in the trajectory analysis.
    @> THR28P         ILE53P         5.882     5.849     0.027
    @> TYR29P         THR51P         7.843     3.583     0.286
    @> ALA30P         ARG49P         17.647    5.206     0.304
-   @> GLY31P         ALA32P         78.431    2.875     0.278
-   @> ALA33P         LYS39P         82.353    4.668     0.469
-   @> ASP35P         LYS39P         23.529    3.191     0.719
-   @> THR42P         THR44P         52.941    4.123     0.501
-   @> GLN45P         LYS47P         3.922     3.255     0.182
-   @> GLN45P         ASN48P         7.843     4.808     0.469
-   @> LYS47P         ASN48P         64.706    3.898     1.056
-   @> LYS47P         GLN183P        37.255    4.918     1.111
-   @> ASN48P         ARG49P         58.824    5.056     1.055
-   @> ASN48P         ASP105P        9.804     8.198     0.487
-   @> ASN48P         TYR106P        9.804     7.210     0.618
-   @> ASN48P         ASN140P        25.490    6.728     0.817
-   @> ARG49P         ASP105P        45.098    4.940     1.916
-   @> ARG49P         TYR106P        7.843     6.351     0.321
-   @> ARG49P         ASN140P        41.176    6.343     0.865
-   @> SER52P         ILE53P         7.843     4.284     0.315
-   @> SER54P         ASP56P         5.882     6.349     0.389
-   @> ASP56P         GLY57P         33.333    3.059     0.594
-   @> LEU58P         ASP59P         13.725    3.697     0.345
-   ..
-   ..
+   ...
+   ...
 
 .. ipython:: python
    :verbatim:
@@ -218,11 +163,11 @@ in the trajectory analysis.
 Detecting water centers
 -------------------------------------------------------------------------------
 
-Previous function generated multiple PDB in which we would found protein and 
-water molecules for each frame that form water bridges with protein structure. 
+The previous function generated multiple PDB files in which we can find protein and 
+water molecules for each frame that form water bridges with the protein structure. 
 Now we can use another function :func:`.findClusterCenters` which will extract 
 water centers (they refer to the oxygens from water molecules that are forming 
-clusters). We need to provide a file pattern as show below. Now all the files 
+clusters). We need to provide a file pattern as show below. Now all the PDB files 
 with prefix *'pebp1_50frames_ens_'* will be analyzed.
 
 
@@ -286,12 +231,12 @@ with prefix *'pebp1_50frames_ens_'* will be analyzed.
    @> 3228 atoms and 1 coordinate set(s) were parsed in 0.03s.
    @> Results are saved in clusters_pebp1_50frames_ens_.pdb.
 
-Function generated one PDB file with water centers. We used default values, 
+This function generated one PDB file with water centers. We used default values, 
 such as distC (distance to other molecule) and numC (min number of molecules 
 in a cluster), but those values could be changed if the molecules are more 
 widely distributed or we would like to have more numerous clusters.
 Moreover, this function can be applied on different type of molecules by using 
-*selection* paramater. We can provide the whole molecule and by default 
+the *selection* parameter. We can provide the whole molecule and by default 
 the center of mass will be used as a reference.
 
 
