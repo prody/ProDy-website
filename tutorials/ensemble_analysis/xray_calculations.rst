@@ -30,8 +30,8 @@ include in our analysis.
 
 .. ipython:: python
 
-   pdbids = ['1P38', '1A9U', '1BL6', '1BL7', '1BMK', '1DI9', '1IAN', '1KV1', '1KV2',
-             '1LEW', '1LEZ', '1M7Q', '1OUK', '1OUY', '1OVE', '1OZ1', '1P38',
+   pdbids = ['5UOJ', '1A9U', '1BL6', '1BL7', '1BMK', '1DI9', '1IAN', '1KV1', 
+             '1KV2', '1LEW', '1LEZ', '1M7Q', '1OUK', '1OUY', '1OVE', '1OZ1',
              '1R39', '1R3C', '1W7H', '1W82', '1W83', '1W84', '1WBN', '1WBO',
              '1WBS', '1WBT', '1WBV', '1WBW', '1WFC', '1YQJ', '1YW2', '1YWR',
              '1ZYJ', '1ZZ2', '1ZZL', '2BAJ', '2BAK', '2BAL', '2BAQ', '2EWA',
@@ -89,7 +89,7 @@ ProDy has a function :func:`.buildPDBEnsemble` that makes this process a lot
 easier. It depends on mapping each structure against the reference structure 
 using a function such as :func:`.mapOntoChain` demonstrated in the BLAST example.
 The reference structure is automatically the first member of list provided, which 
-in this case is 1p38.
+in this case is 5uoj.
 
 .. ipython:: python
 
@@ -186,7 +186,7 @@ We also calculate ANM modes for p38 in order to make comparisons later:
 
 .. ipython:: python
 
-   anm = ANM('1p38')                 # Instantiate a ANM instance
+   anm = ANM('5uoj')                 # Instantiate a ANM instance
    anm.buildHessian(ref_selection)   # Build Hessian for the reference chain
    anm.calcModes()                   # Calculate slowest non-trivial 20 modes
 

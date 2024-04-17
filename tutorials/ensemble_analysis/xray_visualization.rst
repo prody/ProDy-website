@@ -36,7 +36,7 @@ Then we load data saved in :ref:`pca-xray-calculations`:
 .. ipython:: python
 
    pca = loadModel('p38_xray.pca.npz')
-   anm = loadModel('1p38.anm.npz')
+   anm = loadModel('5uoj.anm.npz')
    ensemble = loadEnsemble('p38_X-ray.ens.npz')
    ref_selection = parsePDB('p38_ref_selection.pdb')
 

@@ -22,11 +22,11 @@ We start by importing everything from the ProDy package:
    ion()
 
 
-Let's parse two p38 MAP Kinase structures: 1p38 and 1zz2
+Let's parse two p38 MAP Kinase structures: 5uoj and 1zz2
 
 .. ipython:: python
 
-   reference = parsePDB('1p38')
+   reference = parsePDB('5uoj')
    mobile = parsePDB('1zz2')   # this is the one we want to superimpose
 
 Match chains
@@ -84,7 +84,7 @@ The fourth item in the tuple shows the coverage of the matching:
    match[3]
 
 This is the percentage of matched residues with respect to the longer chain.
-1p38 chain A contains 351 resiudes, 96% of it is 337 residues, which
+5uoj chain A contains 351 resiudes, 96% of it is 337 residues, which
 is the number of atoms in the returned atom maps.
 
 

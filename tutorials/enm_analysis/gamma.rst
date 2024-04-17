@@ -35,7 +35,7 @@ We start with parsing a PDB file by passing an identifier.
 
 .. ipython:: python
 
-   p38 = parsePDB('1p38')
+   p38 = parsePDB('5uoj')
    p38
 
 
@@ -92,7 +92,7 @@ for ANM calculations as follows:
 
 .. ipython:: python
 
-   anm = ANM('1p38')
+   anm = ANM('5uoj')
    anm.buildHessian(calphas, cutoff=15, gamma=gammaDistanceDependent)
    anm.calcModes()
 

@@ -22,9 +22,9 @@ and generate backbone trace conformations.
 
 .. ipython:: python
 
-   p38 = parsePDB('1p38')
+   p38 = parsePDB('5uoj')
    p38_ca = p38.select('calpha')
-   anm = ANM('1p38')
+   anm = ANM('5uoj')
    anm.buildHessian(p38_ca)
    anm.calcModes()
 
