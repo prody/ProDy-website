@@ -34,7 +34,7 @@ Align PDB files
 :ref:`prody-align` command can be used to download and align structures for
 given PDB identifiers::
 
-  $ prody align 1p38 1r39 1zz2
+  $ prody align 5uoj 1r39 1zz2
 
 Structures will be automatically downloaded from wwPDB FTP servers and saved
 in the current working directory.  Additionally, you can configure ProDy
@@ -47,7 +47,7 @@ ANM calculations
 
 :ref:`prody-anm` can be used to perform ANM calculations::
 
-  $ prody anm 1p38 -a -A
+  $ prody anm 5uoj -a -A
 
 ``-a`` and ``-A`` options will make ProDy output all data and figure files.
 

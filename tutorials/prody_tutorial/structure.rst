@@ -20,7 +20,7 @@ Let's parse a structure:
 
 .. ipython:: python
 
-   p38 = parsePDB('1p38')
+   p38 = parsePDB('5uoj')
 
 Functions for analyzing structures can be found in :mod:`~prody.measure`
 module. For example, you can calculate phi (φ) and psi (ψ) for the 10th
@@ -45,7 +45,7 @@ You can also compare different structures using some of the methods in
    bound = parsePDB('1zz2')
 
 
-You can find similar chains in structure 1p38 and 1zz2 using
+You can find similar chains in structure 5uoj and 1zz2 using
 :func:`.matchChains` function:
 
 
@@ -84,7 +84,7 @@ Output selected atoms:
 
 .. ipython:: python
 
-   writePDB('1p38_calphas.pdb', p38.select('calpha'))
+   writePDB('5uoj_calphas.pdb', p38.select('calpha'))
 
 
 Output a chain:
@@ -92,7 +92,7 @@ Output a chain:
 .. ipython:: python
 
    chain_A = p38['A']
-   writePDB('1p38_chain_A.pdb', chain_A)
+   writePDB('5uoj_chain_A.pdb', chain_A)
 
 
 As you may have noticed, this function returns the file name after it is

@@ -40,11 +40,11 @@ When using :func:`.parsePDB`, usually an identifier will be sufficient,
 If corresponding file is found in the current working directory, it will be
 used, otherwise it will be downloaded from PDB servers.
 
-Let's parse structure :pdb:`1p38` of p38 MAP kinase (MAPK):
+Let's parse structure :pdb:`5uoj` of p38 MAP kinase (MAPK):
 
 .. ipython:: python
 
-   p38 = parsePDB('1p38')  # returns an AtomGroup object
+   p38 = parsePDB('5uoj')  # returns an AtomGroup object
    p38 # typing in variable name will give some information
 
 We see that this structure contains 2962 atoms.
@@ -170,7 +170,7 @@ follows:
 
 .. ipython:: python
 
-  fetchPDB('1p38', compressed=False)
+  fetchPDB('5uoj', compressed=False)
 
 Note that ProDy functions that fetch files or output files return filename
 upon successful completion of the task.  You can use this behavior to
@@ -178,7 +178,7 @@ shorten the code you need to write, e.g.:
 
 .. ipython:: python
 
-  parsePDB(fetchPDB('1p38', compressed=False)) # same as p38 parsed above
+  parsePDB(fetchPDB('5uoj', compressed=False)) # same as p38 parsed above
 
 We downloaded and save an uncompressed PDB file, and parsed it immediately.
 
@@ -248,7 +248,7 @@ objects:
 
 .. ipython:: python
 
-   ags = parsePDB('1p38', '3h5v')
+   ags = parsePDB('5uoj', '3h5v')
    ags
 
 If you want to provide a list object you need to provide an asterisk (``*``) to 
@@ -256,7 +256,7 @@ let Python know this is a set of input arguments:
 
 .. ipython:: python
 
-   pdb_ids = ['1p38', '3h5v']
+   pdb_ids = ['5uoj', '3h5v']
    ags = parsePDB(pdb_ids)
    ags 
 
@@ -339,7 +339,7 @@ Finally, you might have noticed that ProDy prints some information to the
 console after parsing a file or doing some calculations. For example, PDB
 parser will print what was parsed and how long it took to the screen::
 
-  @> 1p38 (./1p38.pdb.gz) is found in the target directory.
+  @> 5uoj (./5uoj.pdb.gz) is found in the target directory.
   @> 2962 atoms and 1 coordinate sets were parsed in 0.08s.
 
 This behavior is useful in interactive sessions, but may be problematic for

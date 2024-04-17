@@ -17,7 +17,7 @@ Let's get started by getting ANM models for two related protein structures:
 .. ipython:: python
 
    from prody import *
-   str1 = parsePDB('1p38')
+   str1 = parsePDB('5uoj')
    str2 = parsePDB('1r39')
 
 **Find and align matching chains**
@@ -48,7 +48,7 @@ Let's rename these :class:`.ANM` instances, so that they print short:
 
 .. ipython:: python
 
-   anm1.setTitle('1p38_anm')
+   anm1.setTitle('5uoj_anm')
    anm2.setTitle('1r39_anm')
 
 This is how they print now:
