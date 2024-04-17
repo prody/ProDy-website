@@ -1,0 +1,55 @@
+{% extends "index.html" %}
+{% block body %}
+
+
+      <div class="row">
+        <div class="span12">
+          <div class="span5 pull-right" style="padding-top: 20px">
+            <div class="well">
+              <div id="panel-15-title" class="slide-title"></div>
+              <i class="icon-circle-arrow-right slide-arrow" onclick="nextSlide(15);" title="Next slide"></i>
+              <i class="icon-circle-arrow-left slide-arrow" onclick="prevSlide(15);" title="Previous slide"></i>
+               <div id="panel-15-slide" class="slide-content"></div>
+              <script>showSlide(15, -1);</script>
+            </div>
+          </div>
+
+            <h2>Interactions and Stability</h2>
+            <p><b>InSty</b> is a module for characterizing the interactions and/or stability of proteins and their
+            complexes/assemblies. The tool detects seven types of non-covalent interactions (hydrogen bonds, salt
+            bridges, hydrophobic, p-stacking, p- cation, ionic repulsion, and disulfide bonds) within
+            a protein structure and between proteins in complexes.</p>
+ 
+
+              <h4>Features</h4>
+              
+              <i>InSty</i> is designed to automate the analyses of protein structures (single structures or collections
+              of structures from the PDB), or conformers from molecular dynamics trajectories. It detects the contacts
+              relevant to protein stability and dynamics, using multiple criteria including geometric features
+              (distances and angles). The code is flexible and allows the user to adapt the analysis to the system or
+              protein region of interest.
+              
+              <i>InSty</i> provides a suite of functions for generating raw data (including files for further analyses
+              and visualization. It takes advantage of the ProDy framework to interpret the observation in the context
+              of protein dynamics.
+
+              
+              <p>You can use InSty to
+                <ul>
+                  <li>Identifying different types of non-covalent interactions within proteins or complexes</li>
+                  <li>Identifying residues with a high propensity to associate with others</li>
+                  <li>Identifying residues critical to stability and/or dynamics </li>
+                  <li>Visualizing the probabilistic occurrence or time evolution of specific interactions</li>
+                  <li>Comparing the interactions in different conformations or mutants</li>
+                </ul>
+              <!-- 
+              <p><small>
+              <strong>Reference</strong><br>
+              Mikulska-Ruminska K, Krieger JM, Cao X, Banerjee A, Wu G, Simmerling C, Coutsias EA, Bahar I
+              InSty: a new module in ProDy for evaluating the interactions and stability of proteins
+              <strong>2024</strong> <em>Bioinformatics</em> 160:104-120.
+              -->
+          </div>
+        </div>
+
+{% endblock %}

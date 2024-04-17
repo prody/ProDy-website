@@ -53,8 +53,7 @@ html_additional_pages = {
     'nmwiz/index': 'nmwiz.html',
     'evol/index': 'evol.html',
     'signdy/index': 'signdy.html',
-    'membranm/index': 'memanm.html',
-    'mechstiff/index':'mechstiff.html',
+    'memanm/index': 'memanm.html',
     'prs/index': 'prs.html',
     'drugui/index': 'drugui.html',
     'comd/index' : 'comd.html',
@@ -67,7 +66,10 @@ html_additional_pages = {
     'pharmmaker/index' : 'pharmmaker.html',
     'cryody/index': 'cryody.html',
     'essa/index': 'essa.html',
-    'clustenmd/index': 'clustenmd.html'
+    'clustenmd/index': 'clustenmd.html',
+    'watfinder/index': 'watfinder.html',
+    'insty/index': 'insty.html',
+    'scipion/index': 'scipion.html'
 }
 
 html_sidebars = {

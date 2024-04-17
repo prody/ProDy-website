@@ -22,7 +22,7 @@ Analysis of interactions for a single PDB structure
 -------------------------------------------------------------------------------
 
 We start by parsing PDB file with LMW-PTP **5kqm_all_sci.pdb** which is avalable
-as the tutorial files. PDB file contains protein structures with water and 
+in the tutorial files. The PDB file contains protein structures with water and
 counter ions prepared using VMD_ program.
 
 Before that import everything from the ProDy packages.
@@ -664,37 +664,37 @@ line instruction in the VMD_ *TKConsole* (*VMD Main*) for Linux, Windows and Mac
 The tcl file contains a method for drawing lines between selected pairs of 
 residues. Those residues are also displayed.
 
-.. figure:: images/HBs.tga
+.. figure:: images/HBs.png
    :scale: 60 %
 
 
 ::  play SBs.tcl
 
-.. figure:: images/SBs.tga
+.. figure:: images/SBs.png
    :scale: 60 %
 
 
 ::  play RIB.tcl
 
-.. figure:: images/RIB.tga
+.. figure:: images/RIB.png
    :scale: 60 %
 
 
 ::  play PiStacking.tcl
 
-.. figure:: images/PiStacking.tga
+.. figure:: images/PiStacking.png
    :scale: 60 %
 
 
 ::  play PiCation.tcl
 
-.. figure:: images/PiCation.tga
+.. figure:: images/PiCation.png
    :scale: 60 %
 
 
 ::  play HPh.tcl
 
-.. figure:: images/Hydrophobic.tga
+.. figure:: images/Hydrophobic.png
    :scale: 60 %
 
 
@@ -1175,7 +1175,7 @@ uploading PDB structure and displaying it with *Coloring Method*
 can change it in *VMD Main* -> *Graphics* -> *Color Controls* -> *Color
 Scale* -> *Method* to *BWR*.
 
-.. figure:: images/fig1.tga
+.. figure:: images/fig1.png
    :scale: 60 %
 
 

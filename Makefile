@@ -24,7 +24,7 @@ drugui:
 	cd tutorials/drugui_tutorial; git pull
 
 pull: clone
-	git checkout master; git pull origin master
+	#git checkout master; git pull origin master
 	cd ProDy; git checkout master; git pull origin master
 	#cd ProDy; git checkout devel; git pull origin devel
 

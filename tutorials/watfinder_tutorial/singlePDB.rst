@@ -19,8 +19,8 @@ using :func:`.parsePDB`:
 
    @> 2815 atoms and 1 coordinate set(s) were parsed in 0.03s.
 
-Before analysis, we can check how many water molecules are present in our PDB 
-structure and later compare how many of them were meaningful for protein structure:
+Before analysis, we can verify the number of water molecules present in our PDB
+structure, and later compare how many of them contributed meaningfully to protein stability.
 
 
 .. ipython:: python
@@ -33,9 +33,8 @@ structure and later compare how many of them were meaningful for protein structu
 
    363
 
-Next, we can use :func:`.calcWaterBridges` and one out of two methods to detect 
-water bridges, *'chain'* or *'cluster'*:
-
+Subsequently, we can utilize :func:`.calcWaterBridges` along with one of two
+methods for detecting water bridges: *'chain'* or *'cluster'*.
 
 1. **Method 'chain' (default)** which will detect water molecules between pairs of 
 hydrophilic residues:
@@ -156,15 +155,16 @@ residues:
 
 *'Chain' method* detected **42** water bridges and *'Cluster' method* second **49**. 
 The total number of water molecules in the crystal structure is **363**. As we can 
-see, many of them are not meaningful for the protein stability.
+see, many of them are not significant for the protein stability.
 
 
 Save results in PDB file
 -------------------------------------------------------------------------------
 
-We can use :func:`.savePDBWaterBridges` to save the results in PDB file. File will 
-contain water molecules that are forming potential hydrogen bridges and protein 
-structure. Residues involved in water bridges can be displayed using occupancy column.
+We can use :func:`.savePDBWaterBridges` to save the results in a PDB file.
+The file will contain water molecules that are forming associations with protein
+structure. Residues involved in water bridging can be displayed using the occupancy
+column in any graphical visualization tool.
 
 .. ipython:: python
    :verbatim:
@@ -181,7 +181,7 @@ results obtained by 'chain' vs 'cluster' (additional molecules shown in
 green) method.
 
 
-.. figure:: images/Fig1.tga
+.. figure:: images/Fig1.png
    :scale: 60 %
 
 
@@ -887,4 +887,5 @@ Based on the results we can see that there is one residue, GLU23, which
 participates often in the interactions with water molecules.
 
 There are also options to save the output, which is especially important 
-for trajectories and is described there.
+for trajectories. The information on how to do it you will find in that
+particular section.
