@@ -3,14 +3,14 @@
 Changes in the default parameters
 ===============================================================================
 
-There are a lot of paramaters that can be changed in the water bridges analysis 
+There are a lot of parameters that can be changed in the water bridges analysis 
 including the distances, angles and the number of involved water molecules or 
 residues.
 
 :arg **atoms**: Atomic object from which atoms are considered
 
-:arg **method**: cluster or chain, where chain find shortest water bridging 
-    path between two protein atoms
+:arg **method**: 'cluster' or 'chain', where 'chain' will find the shortest 
+    water bridging path between two protein atoms
     default is 'chain'
 
 :arg **distDA**: maximal distance between water/protein donor and acceptor
@@ -42,13 +42,14 @@ residues.
 
 :arg **output**: return information arrays, (protein atoms, water atoms), 
     or just atom indices per bridge
-    default is 'atomic'
-:type output: 'info' | 'atomic' | 'indices'
+    Options are 'info', 'atomic' and 'indices'
+    Default is 'atomic'
 
-:arg **isInfoLog**: should log information
+:arg **isInfoLog**: whether to log information
     default is True
 
 
+Here's an example:
 
 .. ipython:: python
    :verbatim:
