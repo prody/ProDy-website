@@ -148,7 +148,7 @@ Elastic Network Model Analysis
 ==================================================================
 
 Elastic network model analysis can be applied to the pseudo-atomic model as usual. 
-We use ``cutoff=20`` to account for the level of coarse-graining (see [PD02]_).
+We use ``cutoff=60`` to account for the level of coarse-graining (see [PD02]_).
 
 .. [PD02] P. Doruker, R.L. Jernigan, I. Bahar,
     Dynamics of large proteins through hierarchical levels of coarse-grained structures,
