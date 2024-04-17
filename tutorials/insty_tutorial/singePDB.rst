@@ -1,6 +1,6 @@
 .. _insty_tutorial:
 
-Interactions/Stability Evaluation (InSty)
+Interactions/Stability Evaluation
 ===============================================================================
 
 This example shows how to perform Interactions/Stability Evaluation
@@ -665,37 +665,37 @@ The tcl file contains a method for drawing lines between selected pairs of
 residues. Those residues are also displayed.
 
 .. figure:: images/HBs.png
-   :scale: 60 %
+   :scale: 50 %
 
 
 ::  play SBs.tcl
 
 .. figure:: images/SBs.png
-   :scale: 60 %
+   :scale: 50 %
 
 
 ::  play RIB.tcl
 
 .. figure:: images/RIB.png
-   :scale: 60 %
+   :scale: 50 %
 
 
 ::  play PiStacking.tcl
 
 .. figure:: images/PiStacking.png
-   :scale: 60 %
+   :scale: 50 %
 
 
 ::  play PiCation.tcl
 
 .. figure:: images/PiCation.png
-   :scale: 60 %
+   :scale: 50 %
 
 
 ::  play HPh.tcl
 
 .. figure:: images/Hydrophobic.png
-   :scale: 60 %
+   :scale: 50 %
 
 
 Additional selections
@@ -1118,7 +1118,7 @@ The results can be displayed in the following way:
     plt.clim([-3,3])
 
 .. figure:: images/single_imshow.png
-   :scale: 60 %
+   :scale: 50 %
 
 The total number of interaction for each residue can be displayed on the plot using
 :func:`.showCumulativeInteractionTypes()` function.
@@ -1176,7 +1176,7 @@ can change it in *VMD Main* -> *Graphics* -> *Color Controls* -> *Color
 Scale* -> *Method* to *BWR*.
 
 .. figure:: images/fig1.png
-   :scale: 60 %
+   :scale: 50 %
 
 
 Exclude some interaction types from calculations
@@ -1208,4 +1208,4 @@ The results can be displayed in a similar way:
 
 
 .. figure:: images/single_imshow2.png
-   :scale: 60 %
+   :scale: 50 %
