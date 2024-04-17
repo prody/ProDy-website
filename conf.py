@@ -53,7 +53,7 @@ html_additional_pages = {
     'nmwiz/index': 'nmwiz.html',
     'evol/index': 'evol.html',
     'signdy/index': 'signdy.html',
-    'membranm/index': 'memanm.html',
+    'memanm/index': 'memanm.html',
     'prs/index': 'prs.html',
     'drugui/index': 'drugui.html',
     'comd/index' : 'comd.html',
