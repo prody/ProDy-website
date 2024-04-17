@@ -27,7 +27,7 @@ PDB format (EMD-1961.pdb; see below).
 
 .. ipython:: python
 
-   emd = parseEMD('1961', cutoff=1.2, n_nodes=3000)
+   emd = parseEMD('1961', cutoff=1.2, n_nodes=200)
    emd
 
 This function returns an :class:`.AtomGroup` from the electron density
@@ -42,7 +42,8 @@ increase efficiency and account for the low resolution.
 This procedure is an iterative one and **num_iter** can be used to set the 
 number of them (the default value is 20).
 
-The resultant structure will look something like the following figure. 
+The resultant structure will look something like the following figure,
+although with much fewer nodes.
 
 .. figure:: ../../_static/figures/8000nodes_with_map.png
    :scale: 80%
@@ -147,7 +148,7 @@ Elastic Network Model Analysis
 ==================================================================
 
 Elastic network model analysis can be applied to the pseudo-atomic model as usual. 
-We use ``cutoff=20`` to account for the level of coarse-graining (see [PD02]_).
+We use ``cutoff=60`` to account for the level of coarse-graining (see [PD02]_).
 
 .. [PD02] P. Doruker, R.L. Jernigan, I. Bahar,
     Dynamics of large proteins through hierarchical levels of coarse-grained structures,
@@ -156,9 +157,9 @@ We use ``cutoff=20`` to account for the level of coarse-graining (see [PD02]_).
 .. ipython:: python
    
    anm_emd = ANM('TRiC EMDMAP ANM Analysis')
-   anm_emd.buildHessian(emd2, cutoff=20)
+   anm_emd.buildHessian(emd2, cutoff=60)
    anm_emd.calcModes(n_modes=5)
-   writeNMD('tric_anm_3_modes_3000nodes.nmd', anm_emd[:3], emd2)
+   writeNMD('tric_anm_3_modes_200nodes.nmd', anm_emd[:3], emd2)
 
 
 Compare results with atomic models
