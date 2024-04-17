@@ -176,7 +176,7 @@ or obtain them for another protein from the ANM server.
     eigenvalues='oanm_eigvals.txt',
     nm_usecols=range(1,21), ev_usecols=[1], ev_usevalues=range(6,26))
    nma
-   nma.setTitle('1p38 ANM')
+   nma.setTitle('5uoj ANM')
    slowmode = nma[0]
    print(slowmode.getEigval().round(2))
 

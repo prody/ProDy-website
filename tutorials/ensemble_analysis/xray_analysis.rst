@@ -23,7 +23,7 @@ in the same iPython session.
    ion()
 
    pca = loadModel('p38_xray.pca.npz')
-   anm = loadModel('1p38.anm.npz')
+   anm = loadModel('5uoj.anm.npz')
 
 Variance along PCs
 -------------------------------------------------------------------------------

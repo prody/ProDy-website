@@ -31,7 +31,7 @@ well from your research, for example.
 
 .. ipython:: python
 
-   structure = parsePDB('1p38')
+   structure = parsePDB('5uoj')
    protein = structure.select('protein')
    protein
 
@@ -226,7 +226,7 @@ It is also possible to invert a selection:
    water = structure.select('water')
    water
 
-The above shows that 1p38 does not contain any non-water
+The above shows that 5uoj does not contain any non-water
 hetero atoms.
 
 Addition
@@ -237,7 +237,7 @@ Another operation defined on the :class:`.Select` object is addition
 
 This may be useful if you want to yield atoms in an :class:`.AtomGroup` in a
 specific order.
-Let's think of a simple case, where we want to output atoms in 1p38 in a
+Let's think of a simple case, where we want to output atoms in 5uoj in a
 specific order:
 
 .. ipython:: python
@@ -245,7 +245,7 @@ specific order:
    protein = structure.select('protein')
    water = structure.select('water')
    water_protein = water + protein
-   writePDB('1p38_water_protein.pdb', water_protein)
+   writePDB('5uoj_water_protein.pdb', water_protein)
 
 In the resulting file, the water atoms will precedes the
 protein atoms.

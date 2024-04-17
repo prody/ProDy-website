@@ -38,7 +38,7 @@ downloaded.
 
 .. ipython:: python
 
-   p38 = parsePDB('1p38')
+   p38 = parsePDB('5uoj')
    p38
 
 We want to use only Cα atoms, so we select them:

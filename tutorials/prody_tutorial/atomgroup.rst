@@ -226,7 +226,7 @@ Now let's get an atom group from a PDB file:
 
 .. ipython:: python
 
-   structure = parsePDB('1p38')
+   structure = parsePDB('5uoj')
 
 In addition to what's in a PDB file, you can store arbitrary atomic attributes
 in :class:`.AtomGroup` objects.
@@ -298,7 +298,7 @@ Let's load it using :func:`.loadAtoms` function:
 
 .. ipython:: python
 
-   structure = loadAtoms('1p38.ag.npz')
+   structure = loadAtoms('5uoj.ag.npz')
    structure.getData('myresnum')
 
 

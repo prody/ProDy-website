@@ -29,7 +29,7 @@ structure:
 
 .. ipython:: python
 
-   p38 = parsePDB('1p38')
+   p38 = parsePDB('5uoj')
    seq = p38['A'].getSequence()
 
 .. ipython::

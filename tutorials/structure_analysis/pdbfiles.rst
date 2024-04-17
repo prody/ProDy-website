@@ -29,7 +29,7 @@ The function will return a filename if the download is successful.
 
 .. ipython:: python
 
-   filename = fetchPDB('1p38')
+   filename = fetchPDB('5uoj')
    filename
 
 Multiple files
@@ -39,7 +39,7 @@ This function also accepts a list of PDB identifiers:
 
 .. ipython:: python
 
-   filenames = fetchPDB(['1p38', '1r39', '@!~#'])
+   filenames = fetchPDB(['5uoj', '1r39', '@!~#'])
    filenames
 
 For failed downloads, ``None`` will be returned (or the list will contain
@@ -54,7 +54,7 @@ ProDy will give you a report of download results and return a list of
 filenames. The report will be printed on the screen, which in this case would
 be::
 
-  @> 1p38 (./1p38.pdb.gz) is found in the target directory.
+  @> 5uoj (./5uoj.pdb.gz) is found in the target directory.
   @> @!~# is not a valid identifier.
   @> 1r39 downloaded (./1r39.pdb.gz)
   @> PDB download completed (1 found, 1 downloaded, 1 failed).
@@ -74,7 +74,7 @@ use the flexible parsing options.
 Three types of input are accepted from user:
 
   * PDB file path, e.g. ``"../1MKP.pdb"``
-  * compressed (gzipped) PDB file path, e.g. ``"1p38.pdb.gz"``
+  * compressed (gzipped) PDB file path, e.g. ``"5uoj.pdb.gz"``
   * PDB identifier, e.g. :pdb:`2k39`
 
 
@@ -90,8 +90,8 @@ information):
 
 .. ipython:: python
 
-   fetchPDB('1p38')
-   atoms = parsePDB('1p38')
+   fetchPDB('5uoj')
+   atoms = parsePDB('5uoj')
    atoms
 
 Parser returns an :class:`.AtomGroup` instance.
