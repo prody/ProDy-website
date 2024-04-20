@@ -170,7 +170,7 @@ doctest:
 
 archive:
 	ls -hgoL comd_tutorial_files/ | tail -n +2 | cut -b 14-128 > files.txt
-	tar -czf comd_plugin_files.tgz comd/*
-	zip comd_plugin_files.zip comd/*
+	tar -czf comd_plugin_files.tgz comd_tutorial_files/*
+	zip comd_plugin_files.zip comd_tutorial_files/*
 	tar -czf comd_tutorial_files.tgz comd_tutorial_files/*
 	zip comd_tutorial_files.zip comd_tutorial_files/*

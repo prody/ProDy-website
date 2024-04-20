@@ -101,7 +101,13 @@ pdf: link
 	make -C tutorials/comd_tutorial clean copy
 	make -C tutorials/membrane_anm clean copy
 	make -C tutorials/mech_stiff clean copy
-	make -C tutorials/perturb_response clean copy
+#	make -C tutorials/perturb_response clean copy
+	make -C tutorials/prs_tutorial clean copy
 	make -C tutorials/signdy_tutorial clean copy
 	make -C tutorials/cryoem_tutorial clean copy
 	make -C tutorials/clustenmd_tutorial clean copy
+	make -C tutorials/essa_tutorial clean copy
+	make -C tutorials/insty_tutorial clean copy
+	make -C tutorials/saxs_tutorial clean copy
+	make -C tutorials/scipion_tutorial clean copy
+	make -C tutorials/watfinder_tutorial  clean copy
