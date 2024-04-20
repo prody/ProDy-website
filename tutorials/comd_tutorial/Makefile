@@ -118,7 +118,7 @@ latex:
 	@echo "Run \`make' in that directory to run these through (pdf)latex" \
 	      "(use \`make latexpdf' here to do that automatically)."
 
-latexpdf:
+latexpdf: setup
 	cd $(WORKDIR); $(SPHINXBUILD) -b latex -d ../_build/doctrees .. ../_build/latex
 	@echo "Running LaTeX files through pdflatex..."
 	$(MAKE) -C $(BUILDDIR)/latex all-pdf
