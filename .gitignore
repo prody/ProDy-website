@@ -8,9 +8,10 @@ files.txt
 ProDy
 manual
 tutorials/drugui_tutorial/
-tutorials/saxs_tutorial/
+abctutorials/saxs_tutorial/
 _build
 */*/_static
 _sphinxext
 _theme
 _workdir
+conf.py.original
