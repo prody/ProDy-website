@@ -54,7 +54,7 @@ In this case, the default chain matching function :func:`.sameChid` works well a
 nomenclature, but there are many other options as shown in Figure 4 of [KJ23]_ below.
 
 .. image:: ../../_static/figures/scipion_figure4_ens_form.png
-   :width: 3in
+   :width: 4in
 
 We will explore the custom chain matching in the next section.
 
@@ -87,10 +87,7 @@ matching dictionary:
    :scale: 80
 
 Initially, there is a big empty box, but when we click the magic wand underneath it, then it populates with 
-the chain orders in each of the structures:
-
-.. figure:: images/ensemble/04_ensemble_custom_default.png
-   :scale: 80
+the chain orders in each of the structures.
 
 Following our previous studies ([KJ23]_ and [GT22]_), we know that chain order BCA in the first structures
 matches chain order ABC in the second set. Therefore, we can change the orders at position numbers 1,2,3
