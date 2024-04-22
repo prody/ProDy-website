@@ -84,10 +84,10 @@ html: link drugui workdir
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
 pdf: link
-	#rm -f reference/*pdf tutorials/*/*pdf tutorials/*/*files.zip tutorials/*/*files.tgz
+	rm -f reference/*pdf tutorials/*/*pdf tutorials/*/*files.zip tutorials/*/*files.tgz
 
-	#cd manual; make pdf
-	#mv manual/_build/latex/ProDy.pdf _build/html/manual/
+	cd manual; make pdf
+	mv manual/_build/latex/ProDy.pdf _build/html/manual/
 
 	make -C tutorials/prody_tutorial clean copy
 	make -C tutorials/nmwiz_tutorial clean copy
