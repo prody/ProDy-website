@@ -4,30 +4,35 @@
 PDB structure without hydrogens
 ===============================================================================
 
-Very often PDB structures downloaded directly from the PDB database will not
+Very often, PDB structures downloaded directly from the PDB database will not
 have determined hydrogen atoms that are required, for example, for predicting
-hydrogen bonds. In such case, we can use :func:`.addHydrogens` function.
+hydrogen bonds. In such a case, we can use the :func:`.addHydrogens` function.
 It will allow us to use one of two available methods (*openbabel* or *pdbfixer*)
 to predict the position of hydrogen atoms in protein structure.
 
 To use one of those functions, we need to install additional Python package(s).
-For Anaconda users the installation will be the following:
+For Anaconda users, the installation will be the following:
 
-Installation of Openbabel:
+Installation of Openbabel_:
+
 :: conda install -c conda-forge openbabel   
 
-Installation of PDBfixer:
+Installation of PDBfixer_:
+
 :: conda install -c conda-forge pdbfixer
 
+
+.. _Openbabel: https://github.com/openbabel
+.. _PDBfixer: https://github.com/openmm/pdbfixer
 
 Add missing hydrogen atoms to the structure
 -------------------------------------------------------------------------------
 
-We start by fetching the PDB file with **5KQM** code (*5kqm.pdb*). Openbabel
-requires having the PDB file in the same folder. Therefore, it needs to be 
-downloaded and saved to successfully perform the operation with adding 
-missing hydrogens. A new file will be saved with the same name with the
-additional prefix 'addH_'.
+We start by fetching the PDB file with **5KQM** code (*5kqm.pdb*).
+Openbabel_ requires having the PDB file in the same folder. Therefore, it
+needs to be downloaded and saved to successfully perform the operation with
+adding missing hydrogens. A new file will be saved with the same name with
+the additional prefix 'addH_'.
 
 .. ipython:: python
 
@@ -36,7 +41,7 @@ additional prefix 'addH_'.
    import matplotlib
    ion()   # turn interactive mode on
 
-Openbable or PDBFixer require PDB file saved in the direcory. Therefore
+Openbabel_ or PDBfixer_ require PDB file saved in the direcory. Therefore
 first it needs to be downloaded.
 
 .. ipython:: python
@@ -48,8 +53,8 @@ first it needs to be downloaded.
 
    '5kqm.pdb'
 
-When PDB file is already in the local directory we can choose between
-Openbabel and PDBFixer to add missing hydrogen bonds to the protein
+When PDB file is already in the local directory, we can choose between
+Openbabel_ and PDBfixer_ to add missing hydrogen bonds to the protein
 structure:
 
 Openbabel:
