@@ -7,22 +7,22 @@ This example shows how to perform Interactions/Stability Evaluation
 (**InSty**) analysis for a small protein (<200 residues) called tyrosine
 phosphatase LMW-PTP (**5KQM**) and visualize the results using Matplotlib_
 library and VMD_ program. 
-In the tutorial, we will use already preapared structure for
+In the tutorial, we will use an already prepared structure for
 simulation (with hydrogens added). The same structure will be later
 analyzed with the trajectory file to show how the analysis of interactions 
-in the course of simulation can change. 
+in the course of the simulation can change. The file is available in tutorial
+files.
 
 The tutorial will also include an example of a PDB structure directly
 downloaded from Protein Data Bank (PDB) which requires adding the missing hydrogen
-atoms to the protein and ligand structure. The analysis will be performed for
-protein-ligand interactions.
+atoms to the protein and ligand structure.
 
 
 Analysis of interactions for a single PDB structure
 -------------------------------------------------------------------------------
 
 We start by parsing PDB file with LMW-PTP **5kqm_all_sci.pdb** which is avalable
-in the tutorial files. The PDB file contains protein structures with water and
+in the tutorial files. The PDB file contains protein structure with water and
 counter ions prepared using VMD_ program.
 
 Before that import everything from the ProDy packages.
@@ -32,8 +32,6 @@ Before that import everything from the ProDy packages.
    from prody import *
    from pylab import *
    import matplotlib
-   ion()   # turn interactive mode on
-
 
 .. ipython:: python
    :verbatim:
@@ -71,7 +69,7 @@ In the next step, we instantiate an :class:`.Interactions` instance:
 
 Now we can compute all available types of interactions (seven types: hydrogen
 bonds, salt bridges, repulsive ionic bonding, Pi-cation, Pi-stacking,
-hydrphobic interactions, and disulfide bonds) for protein structure by passing
+hydrophobic interactions, and disulfide bonds) for protein structure by passing
 selected atoms (*atoms*) to :meth:`.Interactions.calcProteinInteractions` method:
 
 .. ipython:: python
@@ -319,112 +317,8 @@ using the following methods:
     ['ASN95', 'N_1398', 'P', 'ASP92', 'OD1_1368', 'P', 2.8148, 12.5701],
     ['LYS6', 'N_16', 'P', 'ASN38', 'O_536', 'P', 2.8178, 25.0305],
     ['ILE77', 'N_1115', 'P', 'ALA45', 'O_643', 'P', 2.8179, 12.1855],
-    ['ARG58', 'NH2_832', 'P', 'ASP56', 'OD2_789', 'P', 2.8204, 27.6617],
-    ['LEU99', 'N_1467', 'P', 'ASN95', 'O_1411', 'P', 2.8205, 15.4867],
-    ['CYS149', 'N_2276', 'P', 'CYS145', 'O_2224', 'P', 2.8247, 9.5914],
-    ['GLY52', 'N_731', 'P', 'ALA74', 'O_1073', 'P', 2.832, 6.6442],
-    ['ASP32', 'N_435', 'P', 'LYS28', 'O_385', 'P', 2.8357, 8.8318],
-    ['ILE88', 'N_1294', 'P', 'LYS112', 'O_1704', 'P', 2.8429, 17.7147],
-    ['GLN143', 'N_2180', 'P', 'GLU139', 'O_2128', 'P', 2.8445, 21.6714],
-    ['ARG27', 'N_340', 'P', 'GLU23', 'O_293', 'P', 2.8446, 15.4167],
-    ['TYR142', 'N_2159', 'P', 'PHE138', 'O_2113', 'P', 2.8515, 14.2061],
-    ['GLY133', 'N_2038', 'P', 'PRO130', 'O_1995', 'P', 2.854, 25.4301],
-    ['PHE26', 'N_320', 'P', 'ALA22', 'O_278', 'P', 2.8541, 4.8732],
-    ['ASN15', 'ND2_166', 'P', 'SER19', 'OG_232', 'P', 2.8592, 32.1244],
-    ['ARG75', 'NH1_1090', 'P', 'ASP81', 'OD2_1194', 'P', 2.8632, 19.6664],
-    ['ARG75', 'NH2_1093', 'P', 'ASP42', 'OD2_610', 'P', 2.8649, 23.5083],
-    ['ARG97', 'N_1431', 'P', 'GLU93', 'O_1386', 'P', 2.8654, 22.24],
-    ['ARG65', 'NH2_941', 'P', 'GLU139', 'OE1_2125', 'P', 2.8655, 32.3239],
-    ['VAL25', 'N_304', 'P', 'ILE21', 'O_268', 'P', 2.8666, 8.2255],
-    ['LEU153', 'N_2341', 'P', 'CYS149', 'O_2286', 'P', 2.8707, 12.4931],
-    ['SER7', 'N_38', 'P', 'ASP86', 'OD2_1270', 'P', 2.8732, 39.8838],
-    ['ASP86', 'N_1261', 'P', 'SER7', 'OG_45', 'P', 2.8753, 34.7426],
-    ['ARG58', 'NH2_832', 'P', 'TYR131', 'O_2016', 'P', 2.8815, 33.1098],
-    ['THR46', 'N_644', 'P', 'CYS12', 'O_130', 'P', 2.883, 36.1279],
-    ['GLN144', 'N_2197', 'P', 'THR140', 'O_2142', 'P', 2.8836, 23.2545],
-    ['THR78', 'N_1134', 'P', 'ASP81', 'OD2_1194', 'P', 2.8869, 12.4465],
-    ['LEU89', 'N_1313', 'P', 'LEU9', 'O_83', 'P', 2.8946, 29.5105],
-    ['THR31', 'N_421', 'P', 'ARG27', 'O_363', 'P', 2.896, 24.1287],
-    ['CYS90', 'N_1332', 'P', 'GLU114', 'O_1738', 'P', 2.8975, 24.576],
-    ['CYS148', 'N_2265', 'P', 'GLN144', 'O_2213', 'P', 2.8976, 9.3165],
-    ['GLU23', 'N_279', 'P', 'SER19', 'O_235', 'P', 2.8979, 15.4146],
-    ['ILE68', 'N_970', 'P', 'MET63', 'O_899', 'P', 2.8986, 12.9904],
-    ['PHE10', 'N_84', 'P', 'ASP42', 'O_612', 'P', 2.9026, 22.751],
-    ['LYS112', 'N_1683', 'P', 'ASP86', 'O_1272', 'P', 2.912, 10.1158],
-    ['SER61', 'N_861', 'P', 'TYR57', 'O_812', 'P', 2.9132, 35.1196],
-    ['CYS145', 'N_2214', 'P', 'VAL141', 'O_2158', 'P', 2.9144, 15.8507],
-    ['ARG27', 'NH2_359', 'P', 'GLU23', 'OE2_291', 'P', 2.9199, 31.5487],
-    ['LYS64', 'N_900', 'P', 'GLN60', 'O_860', 'P', 2.9211, 22.8782],
-    ['LEU9', 'N_65', 'P', 'TYR87', 'O_1293', 'P', 2.9229, 16.439],
-    ['ASN38', 'N_523', 'P', 'ILE35', 'O_496', 'P', 2.9255, 29.091],
-    ['VAL11', 'N_104', 'P', 'LEU89', 'O_1331', 'P', 2.9316, 29.7192],
-    ['ASN100', 'N_1486', 'P', 'LEU96', 'O_1430', 'P', 2.933, 10.3321],
-    ['GLN124', 'N_1881', 'P', 'ASP120', 'OD2_1825', 'P', 2.9333, 27.4547],
-    ['LYS102', 'N_1524', 'P', 'ASP98', 'O_1466', 'P', 2.9361, 9.2855],
-    ['GLN76', 'NE2_1110', 'P', 'THR46', 'O_657', 'P', 2.9381, 31.3836],
-    ['ARG40', 'NH1_577', 'P', 'THR84', 'OG1_1233', 'P', 2.9482, 8.3748],
-    ['ALA44', 'N_624', 'P', 'PHE10', 'O_103', 'P', 2.9499, 33.1772],
-    ['GLU154', 'N_2360', 'P', 'ARG150', 'O_2310', 'P', 2.956, 22.5898],
-    ['VAL8', 'N_49', 'P', 'ARG40', 'O_584', 'P', 2.9631, 25.0079],
-    ['MET63', 'N_883', 'P', 'GLY59', 'O_843', 'P', 2.9733, 18.2731],
-    ['GLN60', 'N_844', 'P', 'ASP56', 'O_791', 'P', 2.9795, 35.5229],
-    ['ILE35', 'N_478', 'P', 'VAL30', 'O_420', 'P', 2.9811, 23.5092],
-    ['VAL146', 'N_2225', 'P', 'TYR142', 'O_2179', 'P', 2.9914, 31.4798],
-    ['ARG58', 'NH1_829', 'P', 'TYR131', 'O_2016', 'P', 2.9942, 38.0937],
-    ['ASN53', 'N_738', 'P', 'GLU50', 'O_711', 'P', 2.995, 28.587],
-    ['ARG101', 'N_1500', 'P', 'ARG97', 'O_1454', 'P', 2.9952, 32.2712],
-    ['ARG18', 'NH1_217', 'P', 'ILE127', 'O_1954', 'P', 2.9957, 25.9507],
-    ['ARG75', 'N_1074', 'P', 'ASN15', 'OD1_165', 'P', 3.0026, 25.0853],
-    ['GLN144', 'NE2_2209', 'P', 'ILE126', 'O_1935', 'P', 3.0038, 18.2744],
-    ['ASN34', 'N_464', 'P', 'THR31', 'O_434', 'P', 3.0041, 18.2465],
-    ['ASN15', 'ND2_166', 'P', 'SER43', 'OG_620', 'P', 3.0129, 25.6996],
-    ['ARG58', 'NE_826', 'P', 'ASP56', 'OD1_788', 'P', 3.017, 22.2284],
-    ['ARG27', 'NH1_356', 'P', 'GLU23', 'OE2_291', 'P', 3.0175, 36.9343],
-    ['ILE127', 'N_1936', 'P', 'MET91', 'O_1359', 'P', 3.018, 17.5601],
-    ['TYR119', 'OH_1808', 'P', 'HSE157', 'N_2407', 'P', 3.0224, 28.0923],
-    ['HSE157', 'N_2407', 'P', 'TYR119', 'OH_1808', 'P', 3.0224, 19.1804],
-    ['GLU139', 'N_2114', 'P', 'ASP135', 'O_2070', 'P', 3.0245, 27.9246],
-    ['LEU29', 'N_386', 'P', 'VAL25', 'O_319', 'P', 3.0299, 19.109],
-    ['SER47', 'N_658', 'P', 'LEU13', 'O_149', 'P', 3.0386, 28.8029],
-    ['VAL30', 'N_405', 'P', 'PHE26', 'O_339', 'P', 3.0394, 17.6883],
-    ['GLN105', 'N_1571', 'P', 'LYS102', 'O_1545', 'P', 3.0464, 19.6806],
-    ['SER118', 'N_1784', 'P', 'LEU115', 'O_1757', 'P', 3.051, 21.4045],
-    ['LYS155', 'N_2375', 'P', 'ALA151', 'O_2320', 'P', 3.0555, 21.3245],
-    ['GLU114', 'N_1724', 'P', 'ILE88', 'O_1312', 'P', 3.059, 24.1605],
-    ['ASP120', 'N_1816', 'P', 'GLY117', 'O_1783', 'P', 3.0623, 12.6661],
-    ['CYS62', 'N_872', 'P', 'ARG58', 'O_836', 'P', 3.0651, 20.443],
-    ['ARG18', 'NH1_217', 'P', 'ASP92', 'OD2_1369', 'P', 3.0679, 4.2778],
-    ['ALA24', 'N_294', 'P', 'PRO20', 'O_249', 'P', 3.0751, 29.9487],
-    ['ARG150', 'N_2287', 'P', 'VAL146', 'O_2240', 'P', 3.078, 12.7022],
-    ['LYS28', 'N_364', 'P', 'ALA24', 'O_303', 'P', 3.0783, 19.9504],
-    ['VAL141', 'N_2143', 'P', 'ASP137', 'O_2093', 'P', 3.081, 18.4812],
-    ['ASP98', 'N_1455', 'P', 'SER94', 'O_1397', 'P', 3.0844, 19.56],
-    ['LEU96', 'N_1412', 'P', 'ASP92', 'O_1371', 'P', 3.085, 36.3254],
-    ['ALA22', 'N_269', 'P', 'ARG18', 'O_224', 'P', 3.088, 21.873],
-    ['ALA151', 'N_2311', 'P', 'ARG147', 'O_2264', 'P', 3.0991, 15.5713],
-    ['GLY67', 'N_963', 'P', 'LYS64', 'O_921', 'P', 3.122, 22.7833],
-    ['ASP42', 'N_601', 'P', 'VAL8', 'O_64', 'P', 3.1331, 35.5671],
-    ['ARG65', 'N_922', 'P', 'SER61', 'O_871', 'P', 3.1339, 23.3682],
-    ['TRP39', 'N_537', 'P', 'SER36', 'O_507', 'P', 3.1343, 15.1776],
-    ['LYS123', 'N_1859', 'P', 'ASP120', 'O_1827', 'P', 3.1375, 18.6589],
-    ['MET91', 'N_1343', 'P', 'ASN95', 'OD1_1406', 'P', 3.1581, 39.0427],
-    ['THR140', 'N_2129', 'P', 'SER136', 'O_2081', 'P', 3.1742, 30.2937],
-    ['PHE85', 'N_1241', 'P', 'ASP81', 'O_1196', 'P', 3.1845, 20.2243],
-    ['ASN15', 'N_157', 'P', 'CYS12', 'SG_127', 'P', 3.2043, 37.4576],
-    ['ALA111', 'N_1673', 'P', 'PHE82', 'O_1216', 'P', 3.2054, 20.58],
-    ['ARG147', 'N_2241', 'P', 'GLN143', 'O_2196', 'P', 3.2416, 12.0678],
-    ['ARG75', 'NH2_1093', 'P', 'ASP81', 'OD1_1193', 'P', 3.2447, 29.3403],
-    ['LYS112', 'NZ_1699', 'P', 'HSE157', 'OT2_2424', 'P', 3.2687, 28.6743],
-    ['ARG147', 'NH1_2257', 'P', 'GLN124', 'OE1_1892', 'P', 3.3008, 29.8529],
-    ['PHE138', 'N_2094', 'P', 'ASN134', 'O_2058', 'P', 3.3062, 31.0247],
-    ['SER7', 'OG_45', 'P', 'THR84', 'O_1240', 'P', 3.3227, 35.5232],
-    ['CYS12', 'N_120', 'P', 'ALA44', 'O_633', 'P', 3.3349, 36.1006],
-    ['SER19', 'N_225', 'P', 'CYS12', 'SG_127', 'P', 3.339, 8.0034],
-    ['PHE82', 'N_1197', 'P', 'LYS79', 'O_1169', 'P', 3.3527, 37.7265],
-    ['ASP81', 'N_1185', 'P', 'THR78', 'OG1_1140', 'P', 3.4526, 39.5114],
-    ['LYS102', 'NZ_1540', 'P', 'ASP98', 'OD2_1464', 'P', 3.4548, 26.1223],
-    ['ARG147', 'NH2_2260', 'P', 'GLN124', 'OE1_1892', 'P', 3.4691, 33.8944],
-    ['VAL106', 'N_1588', 'P', 'SER103', 'O_1556', 'P', 3.4974, 34.2367]]
+    ..
+    ..
 
 :meth:`.Interactions.getSaltBridges` - salt bridges (residues with oposite
 charges):
@@ -465,7 +359,8 @@ charges):
 
    [['ARG101', 'NH1_1516_1519', 'P', 'LYS102', 'NZ_1540', 'P', 4.2655]]
 
-:meth:`.Interactions.getPiStacking` - Pi-stacking interactions:
+:meth:`.Interactions.getPiStacking` - Pi-stacking interactions (HSE is a histidine
+(HIS) type in the CHARMM force field):
 
 .. ipython:: python
    :verbatim:
@@ -557,34 +452,11 @@ charges):
     ['PHE82', 'CD1_1205', 'P', 'ILE88', 'CD_1307', 'P', 3.692],
     ['LEU116', 'CD2_1771', 'P', 'ILE127', 'CD_1949', 'P', 3.7057],
     ['VAL8', 'CG1_55', 'P', 'PHE26', 'CE2_336', 'P', 3.7106],
-    ['LEU125', 'CD1_1907', 'P', 'LEU115', 'CD1_1748', 'P', 3.7115],
-    ['MET70', 'CE_1014', 'P', 'MET63', 'CG_890', 'P', 3.7262],
-    ['LEU96', 'CD1_1421', 'P', 'ILE113', 'CG2_1711', 'P', 3.7263],
-    ['LEU9', 'CD2_78', 'P', 'ILE77', 'CD_1128', 'P', 3.745],
-    ['LEU89', 'CD1_1322', 'P', 'VAL8', 'CG2_59', 'P', 3.7672],
-    ['ILE126', 'CD_1930', 'P', 'LEU125', 'CD1_1907', 'P', 3.7885],
-    ['VAL141', 'CG1_2149', 'P', 'ILE127', 'CG2_1942', 'P', 3.8659],
-    ['MET91', 'SD_1353', 'P', 'ILE127', 'CD_1949', 'P', 3.8864],
-    ['ALA44', 'CB_628', 'P', 'LEU9', 'CD1_74', 'P', 3.8992],
-    ['VAL25', 'CG2_314', 'P', 'TYR142', 'CE1_2169', 'P', 3.92],
-    ['ILE21', 'CG2_256', 'P', 'MET63', 'SD_893', 'P', 3.9614],
-    ['LEU153', 'CD1_2350', 'P', 'TRP39', 'NE1_547', 'P', 3.967],
-    ['PHE85', 'CZ_1253', 'P', 'LEU9', 'CD1_74', 'P', 4.0119],
-    ['ILE35', 'CD_491', 'P', 'TRP39', 'NE1_547', 'P', 4.0172],
-    ['LEU29', 'CD1_395', 'P', 'VAL25', 'CG1_310', 'P', 4.0642],
-    ['ALA74', 'CB_1068', 'P', 'ILE16', 'CG2_177', 'P', 4.0772],
-    ['ARG75', 'CG_1081', 'P', 'ALA44', 'CB_628', 'P', 4.0853],
-    ['ARG18', 'CG_208', 'P', 'VAL141', 'CG1_2149', 'P', 4.104],
-    ['LYS102', 'CD_1534', 'P', 'ILE77', 'CG2_1121', 'P', 4.1048],
-    ['TYR119', 'CE1_1805', 'P', 'LEU89', 'CD2_1326', 'P', 4.1435],
-    ['ARG40', 'CG_568', 'P', 'PHE85', 'CE2_1257', 'P', 4.2669],
-    ['LYS28', 'CG_371', 'P', 'ILE68', 'CD_983', 'P', 4.2707],
-    ['PHE138', 'CD2_2108', 'P', 'ILE21', 'CD_263', 'P', 4.3082],
-    ['LYS112', 'CG_1690', 'P', 'TYR87', 'CE1_1283', 'P', 4.3083],
-    ['TYR131', 'CE1_2006', 'P', 'ILE16', 'CD_184', 'P', 4.3352],
-    ['ARG58', 'CG_820', 'P', 'PHE138', 'CE1_2104', 'P', 4.4781]]
+    ..
+    ..
 
-:meth:`.Interactions.getDisulfideBonds` - disulfide bonds:
+:meth:`.Interactions.getDisulfideBonds` - disulfide bonds (none in the
+structure):
 
 .. ipython:: python
    :verbatim:
@@ -624,7 +496,7 @@ types, we can use :meth:`.Interactions.getFrequentInteractions` method:
    @> The biggest number of interactions: 4
 
 The value of *contacts_min* can be modified to display residues with smaller
-number of interactions. 
+or bigger number of interactions. 
 
 
 Visualize interactions in VMD
@@ -662,36 +534,38 @@ line instruction in the VMD_ *TKConsole* (*VMD Main*) for Linux, Windows and Mac
 ::  play HBs.tcl
 
 The tcl file contains a method for drawing lines between selected pairs of 
-residues. Those residues are also displayed.
+residues. Those residues are also displayed. Now, we uploaded hydrogen
+bonds which are displayed in blue as we defined in
+:func:`.showProteinInteractions_VMD` function.
 
 .. figure:: images/HBs.png
    :scale: 50 %
 
-
+Salt bridges in yellow:
 ::  play SBs.tcl
 
 .. figure:: images/SBs.png
    :scale: 50 %
 
-
+Repulsive ionic bonding in red:
 ::  play RIB.tcl
 
 .. figure:: images/RIB.png
    :scale: 50 %
 
-
+Pi-Pi stacking interactions in green:
 ::  play PiStacking.tcl
 
 .. figure:: images/PiStacking.png
    :scale: 50 %
 
-
+Pi-cation interactions in orange:
 ::  play PiCation.tcl
 
 .. figure:: images/PiCation.png
    :scale: 50 %
 
-
+and hydrophobic interactions in grey:
 ::  play HPh.tcl
 
 .. figure:: images/Hydrophobic.png
@@ -701,8 +575,9 @@ residues. Those residues are also displayed.
 Additional selections
 -------------------------------------------------------------------------------
 
-From the predicted interactions we can select only interactions assigned to
-a certain regions, chains or between different chains.
+From the predicted interactions, we can select only interactions assigned to
+certain regions, chains, or between different chains (binding interface
+between two chains in protein complex).
 
 We can compute them by adding additional parameters to the selected
 function. See examples below:
@@ -756,7 +631,7 @@ function. See examples below:
   4.8394,
   75.4588]]
 
-It can be done for all kinds of interactions as well. The function will
+It can be done for all kinds of interactions is a similar way. The function will
 return a list of interactions with following order:
 
     (1) Hydrogen bonds
@@ -850,6 +725,8 @@ return a list of interactions with following order:
 The list of hydrogen bonds, salt bridges and other types of interactions can
 be displayed as follows:
 
+Hydrogen bonds:
+
 .. ipython:: python
    :verbatim:
 
@@ -906,7 +783,7 @@ Salt Bridges:
     ['ARG75', 'NH1_1090_1093', 'P', 'ASP42', 'OD1_609_610', 'P', 4.5612],
     ['GLU23', 'OE1_290_291', 'P', 'HSE72', 'NE2_1042', 'P', 4.99]]
 
-We can also select one particular residue of our interest:
+We can also select one particular residue or a region of our interest:
 
 .. ipython:: python
    :verbatim:
@@ -969,7 +846,7 @@ Change selection criteria for interaction type
 The :meth:`.Interactions.buildInteractionMatrix` method computes interactions 
 using default parameters for interactions. However, it can be changed
 according to our needs. To do that, we need to recalculate the selected type
-of interactions. 
+of interactions using the preferable parameters. 
 
 We can do it using the following functions: :func:`.calcHydrogenBonds`,
 :func:`.calcHydrogenBonds`, :func:`.calcSaltBridges`,
@@ -986,6 +863,7 @@ We can do it using the following functions: :func:`.calcHydrogenBonds`,
 Instance. 
 
 For example:
+If we want to replace hydrogen bonds:
 
 .. ipython:: python
    :verbatim:
@@ -1021,6 +899,10 @@ For example:
     ['ASN53', 'ND2_747', 'P', 'GLU50', 'OE1_708', 'P', 2.7702, 18.2336],
     ['ALA74', 'N_1064', 'P', 'ASN53', 'O_751', 'P', 2.7782, 21.3375],
     ['ASP56', 'N_780', 'P', 'ILE16', 'O_189', 'P', 2.7793, 27.0481]]
+
+
+If we want to replace salt bridges, repulsive ionic bonding, or Pi-cation
+interactions:
 
 .. ipython:: python
    :verbatim:
@@ -1139,10 +1021,7 @@ The total number of interaction for each residue can be displayed on the plot us
    @> Calculating interactions
 
 The results with the higest number of possible contacts can be saved in PDB
-file. They will be restored in Occupancy column and display in VMD_.
-
-.. figure:: images/single_bar_plot.png
-   :scale: 60 %
+file. They will be restored in *Occupancy* column and display in VMD_.
 
 .. ipython:: python
    :verbatim:
@@ -1150,6 +1029,10 @@ file. They will be restored in Occupancy column and display in VMD_.
    interactions.saveInteractionsPDB(filename='5kqm_meanMatrix.pdb')
 
 .. parsed-literal::
+
+.. figure:: images/single_bar_plot.png
+   :scale: 80 %
+
 
 
 Visualize number of interactions onto 3D structure
