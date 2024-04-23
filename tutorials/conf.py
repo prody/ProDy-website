@@ -7,7 +7,33 @@ intersphinx_mapping = {
     'matplotlib': ('http://matplotlib.sourceforge.net/', None),
     'prodywebsite': ('http://prody.csb.pitt.edu/', None),
 }
+RTD = os.environ.get('READTHEDOCS', None) == 'True'
 intersphinx_mapping.pop('prodywebsite')
+if RTD:
+    html_theme = 'default'
+else:
+    templates_path = ['_theme']
+    html_theme = '_theme'
+    html_theme_path = ['.']
+    html_static_path = ['_static']
+html_theme_options = {}
+
+extensions = [ 'sphinx.ext.todo',
+               'sphinx.ext.autodoc',
+               'sphinx.ext.doctest',
+               'sphinx.ext.coverage',
+               'sphinx.ext.extlinks',
+               'sphinx.ext.graphviz',
+               'sphinx.ext.ifconfig',
+               'sphinx.ext.viewcode',
+               'sphinx.ext.intersphinx',
+               'sphinx.ext.inheritance_diagram',
+               'matplotlib.sphinxext.mathmpl',
+               'matplotlib.sphinxext.only_directives',
+               'IPython.sphinxext.ipython_directive' ,
+               'IPython.sphinxext.ipython_console_highlighting',
+               ]
+
 #exec(open('../conf.py').read())
 sys.path.append(os.path.abspath('../manual/sphinxext'))
 
