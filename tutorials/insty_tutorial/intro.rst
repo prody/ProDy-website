@@ -45,6 +45,13 @@ predicting hydrogen bonds.
 Getting Started
 -------------------------------------------------------------------------------
 
+To follow this tutorial, you will need the following files:
+
+.. files.txt will be automatically generated
+
+.. literalinclude:: files.txt
+
+
 We recommend that you will follow this tutorial by typing commands in an
 IPython session, e.g.::
 
