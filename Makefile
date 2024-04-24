@@ -79,6 +79,7 @@ html: link drugui workdir
 	#cd -; 
 	mv -f $(BUILDDIR)/html/statistics/index.html $(BUILDDIR)/html/statistics/index.php
 	cp -rf $(TEMPLATEDIR)/prody_stats.* $(BUILDDIR)/html/statistics/
+	cp -rf _static/pharmmaker_tutorial.pdf $(BUILDDIR)/html/tutorials/drugui_tutorial/
 
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
