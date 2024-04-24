@@ -529,7 +529,8 @@ using the :func:`.showProteinInteractions_VMD` function in the following way:
 
 A TCL file will be saved and can be used in VMD_ after uploading the PDB file
 with protein structure **5kqm_all_sci.pdb** and by running the following command 
-line instruction in the VMD_ *TKConsole* (*VMD Main*) for Linux, Windows and Mac users: 
+line instruction in the VMD_ :guilabel:`TK Console` (:guilabel:`VMD Main`)
+for Linux, Windows and Mac users: 
 
 ::  play HBs.tcl
 
@@ -1053,10 +1054,10 @@ program, for example, in VMD_.
    @> PDB file saved.
 
 A file *5kqm_meanMatrix.pdb* will be saved and can be used in VMD_ by 
-uploading PDB structure and displaying it with *Coloring Method*
-*Occupancy*. By default blue colors correspond to the highest values but we
-can change it in *VMD Main* -> *Graphics* -> *Color Controls* -> *Color
-Scale* -> *Method* to *BWR*.
+uploading PDB structure and displaying it with :guilabel:`Coloring Method`
+:guilabel:`Occupancy`. By default blue colors correspond to the highest
+values but we can change it in :menuselection:`*VMD Main* -> *Graphics* ->
+*Color Controls* -> *Color Scale* -> *Method* to *BWR*`.
 
 .. figure:: images/fig1.png
    :scale: 50 %
