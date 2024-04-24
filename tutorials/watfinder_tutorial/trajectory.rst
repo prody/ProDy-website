@@ -1,17 +1,16 @@
 .. _watfinder_tutorial:
-=======
 
 Water bridges detection in a trajectory
 ===============================================================================
 
 Now, we will perform calculations for a trajectory file that was obtained
-using the NAMD package. We will use :func:`.calcWaterBridgesTrajectory`, for which
+using the NAMD_ package. We will use :func:`.calcWaterBridgesTrajectory`, for which
 we need to provide PDB and DCD files. 
 
-The system (protein in a water box) can be found in *5kqm_all_sci.pdb*. The trajectory,
-*NAMD_D2_sample.dcd*, has dcd format. In case we would like to analyze
-trajectories with different formats, we need to make a conversion to dcd file
-format or save the trajectory as a multi-model PDB (using VMD or another tool).
+The system (protein in a water box) can be found in *5kqm_all_sci.pdb*. The
+trajectory, *NAMD_D2_sample.dcd*, has dcd format. If we want to analyze
+trajectories with different formats, we need to convert them to dcd file
+format or save the trajectory as a multi-model PDB (using VMD_ or another tool).
 
 
 Parse structure with trajectory
@@ -67,7 +66,7 @@ The analysis od water bridges can be performed on selected frames by using
    @> 105 water bridges detected.
 
 Because of the amount of data, detailed results will not be displayed. 
-We instead access the raw data from using *output='info'*.
+We instead access the raw data by using *output='info'*.
 
 .. ipython:: python
    :verbatim:
@@ -165,7 +164,7 @@ Loaded results from a *.wb* file are :class:`.Atomic` type and therefore can be 
 analysis later. 
 
 
-Analysis of the results
+Analysis of the results:
 -------------------------------------------------------------------------------
 
 Information about residues contributing to water bridges

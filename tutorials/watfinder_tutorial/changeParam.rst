@@ -3,9 +3,9 @@
 Changes in the default parameters
 ===============================================================================
 
-There are a lot of parameters that can be changed in the water bridges analysis 
-including the distances, angles and the number of involved water molecules or 
-residues.
+There are a lot of parameters that can be changed in the water bridge
+analysis, including the distances, angles, and the number of involved water
+molecules or residues.
 
 :arg **atoms**: Atomic object from which atoms are considered
 
@@ -49,7 +49,7 @@ residues.
     default is True
 
 
-Here's an example:
+Here's an example of how to apply changes in parameters:
 
 .. ipython:: python
    :verbatim:

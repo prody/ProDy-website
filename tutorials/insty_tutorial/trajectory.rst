@@ -6,22 +6,25 @@ Trajectory analysis
 
 This example shows how to compute interactions for a trajectory performed
 using NAMD_ software for a small protein tyrosine phosphatase LMW-PTP 
-in a complex with inhibitor MES (**5KQM**) and visualize the results using 
+in a complex with inhibitor MES (PDB: **5KQM**) and visualize the results using 
 Matplotlib_ library and VMD_ program. 
 
 In the tutorial, we will use already prepared files for
 simulation (*PDB* and *DCD* file).
 
+_NAMD: http://www.ks.uiuc.edu/Research/namd/
 
-Parse structure with trajectory
+
+Parse trajectory
 -------------------------------------------------------------------------------
 
-We start by parsing PDB and DCD files which contain LMW-PTP protein
-structure (available as the tutorial files). PDB file contains the
+We start by parsing PDB and DCD files, which contain LMW-PTP protein
+structure (available as tutorial files). PDB file contains the
 coordinates of protein structure with water and counter ions. DCD
 file is a binary file that contains a short simulation computed in NAMD_
 package (20 frames). The commands shown below are explained in *Trajectory
 Analysis* tutorial.
+
 
 .. ipython:: python
    :verbatim:
@@ -95,79 +98,12 @@ To compute hydrogen bonds for each frame of the simulation use
    @>      LEU89    P        N_1313  <--->       LEU9    P          O_83     2.9    29.5
    @>      THR31    P         N_421  <--->      ARG27    P         O_363     2.9    24.1
    @>      CYS90    P        N_1332  <--->     GLU114    P        O_1738     2.9    24.6
-   @>     CYS148    P        N_2265  <--->     GLN144    P        O_2213     2.9     9.3
-   @>      GLU23    P         N_279  <--->      SER19    P         O_235     2.9    15.4
-   @>      ILE68    P         N_970  <--->      MET63    P         O_899     2.9    13.0
-   @>      PHE10    P          N_84  <--->      ASP42    P         O_612     2.9    22.8
-   @>     LYS112    P        N_1683  <--->      ASP86    P        O_1272     2.9    10.1
-   @>      SER61    P         N_861  <--->      TYR57    P         O_812     2.9    35.1
-   @>     CYS145    P        N_2214  <--->     VAL141    P        O_2158     2.9    15.9
-   @>      ARG27    P       NH2_359  <--->      GLU23    P       OE2_291     2.9    31.5
-   @>      LYS64    P         N_900  <--->      GLN60    P         O_860     2.9    22.9
-   @>       LEU9    P          N_65  <--->      TYR87    P        O_1293     2.9    16.4
-   @>      ASN38    P         N_523  <--->      ILE35    P         O_496     2.9    29.1
-   @>      VAL11    P         N_104  <--->      LEU89    P        O_1331     2.9    29.7
-   @>     ASN100    P        N_1486  <--->      LEU96    P        O_1430     2.9    10.3
-   @>     GLN124    P        N_1881  <--->     ASP120    P      OD2_1825     2.9    27.5
-   @>     LYS102    P        N_1524  <--->      ASP98    P        O_1466     2.9     9.3
-   @>      GLN76    P      NE2_1110  <--->      THR46    P         O_657     2.9    31.4
+   ..
+   ..
    @>      ARG40    P       NH1_577  <--->      THR84    P      OG1_1233     2.9     8.4
    @>      ALA44    P         N_624  <--->      PHE10    P         O_103     2.9    33.2
    @>     GLU154    P        N_2360  <--->     ARG150    P        O_2310     3.0    22.6
    @>       VAL8    P          N_49  <--->      ARG40    P         O_584     3.0    25.0
-   @>      MET63    P         N_883  <--->      GLY59    P         O_843     3.0    18.3
-   @>      GLN60    P         N_844  <--->      ASP56    P         O_791     3.0    35.5
-   @>      ILE35    P         N_478  <--->      VAL30    P         O_420     3.0    23.5
-   @>     VAL146    P        N_2225  <--->     TYR142    P        O_2179     3.0    31.5
-   @>      ARG58    P       NH1_829  <--->     TYR131    P        O_2016     3.0    38.1
-   @>      ASN53    P         N_738  <--->      GLU50    P         O_711     3.0    28.6
-   @>     ARG101    P        N_1500  <--->      ARG97    P        O_1454     3.0    32.3
-   @>      ARG18    P       NH1_217  <--->     ILE127    P        O_1954     3.0    26.0
-   @>      ARG75    P        N_1074  <--->      ASN15    P       OD1_165     3.0    25.1
-   @>     GLN144    P      NE2_2209  <--->     ILE126    P        O_1935     3.0    18.3
-   @>      ASN34    P         N_464  <--->      THR31    P         O_434     3.0    18.2
-   @>      ASN15    P       ND2_166  <--->      SER43    P        OG_620     3.0    25.7
-   @>      ARG58    P        NE_826  <--->      ASP56    P       OD1_788     3.0    22.2
-   @>      ARG27    P       NH1_356  <--->      GLU23    P       OE2_291     3.0    36.9
-   @>     ILE127    P        N_1936  <--->      MET91    P        O_1359     3.0    17.6
-   @>     TYR119    P       OH_1808  <--->     HSE157    P        N_2407     3.0    28.1
-   @>     HSE157    P        N_2407  <--->     TYR119    P       OH_1808     3.0    19.2
-   @>     GLU139    P        N_2114  <--->     ASP135    P        O_2070     3.0    27.9
-   @>      LEU29    P         N_386  <--->      VAL25    P         O_319     3.0    19.1
-   @>      SER47    P         N_658  <--->      LEU13    P         O_149     3.0    28.8
-   @>      VAL30    P         N_405  <--->      PHE26    P         O_339     3.0    17.7
-   @>     GLN105    P        N_1571  <--->     LYS102    P        O_1545     3.0    19.7
-   @>     SER118    P        N_1784  <--->     LEU115    P        O_1757     3.1    21.4
-   @>     LYS155    P        N_2375  <--->     ALA151    P        O_2320     3.1    21.3
-   @>     GLU114    P        N_1724  <--->      ILE88    P        O_1312     3.1    24.2
-   @>     ASP120    P        N_1816  <--->     GLY117    P        O_1783     3.1    12.7
-   @>      CYS62    P         N_872  <--->      ARG58    P         O_836     3.1    20.4
-   @>      ARG18    P       NH1_217  <--->      ASP92    P      OD2_1369     3.1     4.3
-   @>      ALA24    P         N_294  <--->      PRO20    P         O_249     3.1    29.9
-   @>     ARG150    P        N_2287  <--->     VAL146    P        O_2240     3.1    12.7
-   @>      LYS28    P         N_364  <--->      ALA24    P         O_303     3.1    20.0
-   @>     VAL141    P        N_2143  <--->     ASP137    P        O_2093     3.1    18.5
-   @>      ASP98    P        N_1455  <--->      SER94    P        O_1397     3.1    19.6
-   @>      LEU96    P        N_1412  <--->      ASP92    P        O_1371     3.1    36.3
-   @>      ALA22    P         N_269  <--->      ARG18    P         O_224     3.1    21.9
-   @>     ALA151    P        N_2311  <--->     ARG147    P        O_2264     3.1    15.6
-   @>      GLY67    P         N_963  <--->      LYS64    P         O_921     3.1    22.8
-   @>      ASP42    P         N_601  <--->       VAL8    P          O_64     3.1    35.6
-   @>      ARG65    P         N_922  <--->      SER61    P         O_871     3.1    23.4
-   @>      TRP39    P         N_537  <--->      SER36    P         O_507     3.1    15.2
-   @>     LYS123    P        N_1859  <--->     ASP120    P        O_1827     3.1    18.7
-   @>      MET91    P        N_1343  <--->      ASN95    P      OD1_1406     3.2    39.0
-   @>     THR140    P        N_2129  <--->     SER136    P        O_2081     3.2    30.3
-   @>      PHE85    P        N_1241  <--->      ASP81    P        O_1196     3.2    20.2
-   @>      ASN15    P         N_157  <--->      CYS12    P        SG_127     3.2    37.5
-   @>     ALA111    P        N_1673  <--->      PHE82    P        O_1216     3.2    20.6
-   @>     ARG147    P        N_2241  <--->     GLN143    P        O_2196     3.2    12.1
-   @>      ARG75    P      NH2_1093  <--->      ASP81    P      OD1_1193     3.2    29.3
-   @>     LYS112    P       NZ_1699  <--->     HSE157    P      OT2_2424     3.3    28.7
-   @>     ARG147    P      NH1_2257  <--->     GLN124    P      OE1_1892     3.3    29.9
-   @>     PHE138    P        N_2094  <--->     ASN134    P        O_2058     3.3    31.0
-   @>       SER7    P         OG_45  <--->      THR84    P        O_1240     3.3    35.5
-   @>      CYS12    P         N_120  <--->      ALA44    P         O_633     3.3    36.1
    @>      SER19    P         N_225  <--->      CYS12    P        SG_127     3.3     8.0
    @>      PHE82    P        N_1197  <--->      LYS79    P        O_1169     3.4    37.7
    @>      ASP81    P        N_1185  <--->      THR78    P      OG1_1140     3.5    39.5
@@ -210,88 +146,8 @@ To compute hydrogen bonds for each frame of the simulation use
    @>      ARG58    P       NH1_829  <--->     GLY133    P        O_2044     2.8    31.9
    @>      ARG75    P      NH2_1093  <--->      ASP42    P       OD2_610     2.8    13.0
    @>     LYS112    P        N_1683  <--->      ASP86    P        O_1272     2.8    13.2
-   @>      GLU23    P         N_279  <--->      SER19    P         O_235     2.8    10.9
-   @>       SER7    P          N_38  <--->      ASP86    P      OD2_1270     2.8    38.9
-   @>      VAL11    P         N_104  <--->      LEU89    P        O_1331     2.8    13.8
-   @>      PHE26    P         N_320  <--->      ALA22    P         O_278     2.8    18.2
-   @>       LEU9    P          N_65  <--->      TYR87    P        O_1293     2.8    34.3
-   @>      ARG65    P       NH2_941  <--->     GLU139    P      OE1_2125     2.8    14.9
-   @>      ILE68    P         N_970  <--->      MET63    P         O_899     2.8     9.3
-   @>      ASN15    P       ND2_166  <--->      SER43    P        OG_620     2.8    21.4
-   @>      ILE77    P        N_1115  <--->      ALA45    P         O_643     2.8    26.5
-   @>      THR31    P       OG1_427  <--->      ARG27    P         O_363     2.8     9.7
-   @>      ALA44    P         N_624  <--->      PHE10    P         O_103     2.8    31.7
-   @>      ASP32    P         N_435  <--->      LYS28    P         O_385     2.9    21.9
-   @>     THR140    P        N_2129  <--->     SER136    P        O_2081     2.9    26.1
-   @>     LYS110    P        N_1651  <--->      PHE82    P        O_1216     2.9    16.0
-   @>      ASP92    P        N_1360  <--->      ASN95    P      OD1_1406     2.9     7.4
-   @>      ARG58    P         N_813  <--->      ASP56    P       OD1_788     2.9    22.3
-   @>      LYS28    P         N_364  <--->      ALA24    P         O_303     2.9    39.7
-   @>      ILE88    P        N_1294  <--->     LYS112    P        O_1704     2.9    17.9
-   @>      HSE66    P       NE2_957  <--->     GLU139    P      OE1_2125     2.9    36.9
-   @>     ARG101    P      NH2_1519  <--->      ASP98    P      OD2_1464     2.9    16.8
-   @>      GLN76    P      NE2_1110  <--->      THR46    P         O_657     2.9    20.0
-   @>     VAL146    P        N_2225  <--->     TYR142    P        O_2179     2.9    20.2
-   @>      LEU89    P        N_1313  <--->       LEU9    P          O_83     2.9    21.2
-   @>      ARG97    P        N_1431  <--->      GLU93    P        O_1386     2.9    11.2
-   @>     GLN144    P        N_2197  <--->     THR140    P        O_2142     2.9    22.6
-   @>      THR84    P        N_1227  <--->      GLU80    P        O_1184     2.9    35.6
-   @>      ARG40    P       NH1_577  <--->      THR84    P      OG1_1233     2.9    22.6
-   @>      LEU29    P         N_386  <--->      VAL25    P         O_319     2.9    32.8
-   @>      CYS90    P        N_1332  <--->     GLU114    P        O_1738     3.0    13.9
-   @>     CYS149    P        N_2276  <--->     CYS145    P        O_2224     3.0    24.1
-   @>     PHE152    P        N_2321  <--->     CYS148    P        O_2275     3.0    38.8
-   @>      GLY52    P         N_731  <--->      ALA74    P        O_1073     3.0    21.4
-   @>     VAL141    P        N_2143  <--->     ASP137    P        O_2093     3.0     9.3
-   @>      HSE66    P         N_946  <--->      CYS62    P         O_882     3.0    23.4
-   @>     GLN143    P        N_2180  <--->     GLU139    P        O_2128     3.0    10.5
-   @>      VAL25    P         N_304  <--->      ILE21    P         O_268     3.0    25.8
-   @>     LEU153    P        N_2341  <--->     CYS149    P        O_2286     3.0    12.2
-   @>     TYR142    P        N_2159  <--->     PHE138    P        O_2113     3.0    18.7
-   @>      MET63    P         N_883  <--->      GLY59    P         O_843     3.0     3.5
-   @>     ASN100    P        N_1486  <--->      LEU96    P        O_1430     3.0    16.6
-   @>      PHE10    P          N_84  <--->      ASP42    P         O_612     3.0    19.8
-   @>      THR46    P         N_644  <--->      CYS12    P         O_130     3.0    29.0
-   @>      ARG58    P       NH2_832  <--->      ASP56    P       OD2_789     3.0    19.5
-   @>     CYS145    P        N_2214  <--->     VAL141    P        O_2158     3.0    27.0
-   @>     GLU114    P        N_1724  <--->      ILE88    P        O_1312     3.0     8.8
-   @>     ALA111    P        N_1673  <--->      PHE82    P        O_1216     3.0     9.0
-   @>      ALA74    P        N_1064  <--->      ASN53    P         O_751     3.0    27.9
-   @>      CYS12    P         N_120  <--->      ALA44    P         O_633     3.0    22.2
-   @>      SER61    P         N_861  <--->      TYR57    P         O_812     3.0    29.5
-   @>      ILE35    P         N_478  <--->      VAL30    P         O_420     3.0    32.2
-   @>      LEU99    P        N_1467  <--->      ASN95    P        O_1411     3.1     8.8
-   @>      ALA22    P         N_269  <--->      ARG18    P         O_224     3.1     5.3
-   @>     CYS148    P        N_2265  <--->     GLN144    P        O_2213     3.1     5.0
-   @>     ARG101    P      NH1_1516  <--->      ASP98    P      OD1_1463     3.1    13.9
-   @>     GLU154    P        N_2360  <--->     ARG150    P        O_2310     3.1    27.2
-   @>       VAL8    P          N_49  <--->      ARG40    P         O_584     3.1    22.7
-   @>      GLN33    P         N_447  <--->      LEU29    P         O_404     3.1    10.7
-   @>      TYR87    P        N_1273  <--->       SER7    P          O_48     3.1     1.9
-   @>      GLN60    P         N_844  <--->      ASP56    P         O_791     3.1    16.3
-   @>     ARG150    P        N_2287  <--->     VAL146    P        O_2240     3.1    12.4
-   @>      ASN53    P         N_738  <--->      GLU50    P         O_711     3.1    31.6
-   @>     LYS155    P        N_2375  <--->     ALA151    P        O_2320     3.1    29.9
-   @>      ALA83    P        N_1217  <--->      GLU80    P        O_1184     3.1    37.0
-   @>      ARG75    P        N_1074  <--->      ASN15    P       OD1_165     3.1    19.3
-   @>      VAL30    P         N_405  <--->      PHE26    P         O_339     3.1    15.1
-   @>     SER103    P       OG_1553  <--->      LEU99    P        O_1485     3.2    39.3
-   @>      ALA24    P         N_294  <--->      PRO20    P         O_249     3.2    11.0
-   @>      PHE85    P        N_1241  <--->      ASP81    P        O_1196     3.2    26.7
-   @>     GLU139    P        N_2114  <--->     ASP135    P        O_2070     3.2    22.2
-   @>     CYS145    P       SG_2221  <--->     VAL141    P        O_2158     3.2    18.1
-   @>     SER118    P        N_1784  <--->     LEU115    P        O_1757     3.2    37.1
-   @>      GLN60    P       NE2_856  <--->      TYR57    P         O_812     3.2    19.9
-   @>     ARG101    P        N_1500  <--->      ARG97    P        O_1454     3.2    25.4
-   @>     ASP120    P        N_1816  <--->     GLY117    P        O_1783     3.2    15.9
-   @>      MET91    P        N_1343  <--->      ASN95    P      OD1_1406     3.2    35.7
-   @>      CYS90    P       SG_1339  <--->     GLU114    P        O_1738     3.2    23.7
-   @>      THR31    P         N_421  <--->      ARG27    P         O_363     3.2    34.7
-   @>     HSE157    P      NE2_2418  <--->     GLU114    P      OE2_1736     3.3    23.8
-   @>     ALA151    P        N_2311  <--->     ARG147    P        O_2264     3.3    12.2
-   @>     GLN143    P      NE2_2192  <--->     GLU139    P        O_2128     3.3    25.0
-   @>      ARG75    P      NH1_1090  <--->      ASP81    P      OD1_1193     3.3    38.0
-   @>     CYS148    P       SG_2272  <--->     GLN144    P        O_2213     3.3    16.3
+   ..
+   ..
    @>     ILE127    P        N_1936  <--->      MET91    P        O_1359     3.3    29.4
    @>     ASN104    P        N_1557  <--->     ASN100    P        O_1499     3.4    12.6
    @>     GLN105    P        N_1571  <--->     ARG101    P        O_1523     3.4    38.7
@@ -357,63 +213,12 @@ To compute hydrogen bonds for each frame of the simulation use
    @>      ARG58    P         N_813  <--->      ASP56    P       OD1_788     2.9    21.1
    @>      THR78    P        N_1134  <--->      ASP81    P      OD2_1194     2.9    26.3
    @>      ALA45    P         N_634  <--->      ARG75    P        O_1097     2.9    27.7
-   @>     LYS102    P        N_1524  <--->      ASP98    P        O_1466     2.9    16.8
-   @>      ARG65    P       NH2_941  <--->     GLU139    P      OE1_2125     2.9    29.5
-   @>      SER19    P        OG_232  <--->      ALA44    P         O_633     2.9    18.4
+   ..
+   ..
    @>      HSE66    P         N_946  <--->      CYS62    P         O_882     2.9    17.6
    @>      ASP32    P         N_435  <--->      LYS28    P         O_385     3.0    20.4
    @>     VAL146    P        N_2225  <--->     TYR142    P        O_2179     3.0    20.7
-   @>     VAL141    P        N_2143  <--->     ASP137    P        O_2093     3.0     5.8
-   @>      GLY52    P         N_731  <--->      ALA74    P        O_1073     3.0    38.1
-   @>     CYS149    P        N_2276  <--->     CYS145    P        O_2224     3.0    18.5
    @>     VAL106    P        N_1588  <--->     LYS102    P        O_1545     3.0    10.6
-   @>      ALA74    P        N_1064  <--->      ASN53    P         O_751     3.0    12.8
-   @>     TYR142    P        N_2159  <--->     PHE138    P        O_2113     3.0    16.7
-   @>     ASN134    P        N_2045  <--->     ASP137    P      OD2_2091     3.0    14.1
-   @>      VAL30    P         N_405  <--->      PHE26    P         O_339     3.0    24.5
-   @>     ALA111    P        N_1673  <--->      PHE82    P        O_1216     3.0    33.9
-   @>     THR140    P        N_2129  <--->     SER136    P        O_2081     3.0    23.8
-   @>     SER118    P        N_1784  <--->     LEU115    P        O_1757     3.0    27.2
-   @>     GLN143    P        N_2180  <--->     GLU139    P        O_2128     3.0    18.0
-   @>     CYS148    P        N_2265  <--->     GLN144    P        O_2213     3.1     5.9
-   @>     LEU116    P        N_1758  <--->      CYS90    P        O_1342     3.1    32.8
-   @>      ASN95    P        N_1398  <--->      ASP92    P      OD1_1368     3.1    26.5
-   @>      GLN60    P         N_844  <--->      ASP56    P         O_791     3.1    19.0
-   @>      THR84    P        N_1227  <--->      GLU80    P        O_1184     3.1    14.6
-   @>      ALA22    P         N_269  <--->      ARG18    P         O_224     3.1    11.3
-   @>      GLU23    P         N_279  <--->      SER19    P         O_235     3.1    12.1
-   @>     CYS145    P        N_2214  <--->     VAL141    P        O_2158     3.1     5.7
-   @>     ARG101    P        N_1500  <--->      ARG97    P        O_1454     3.1    38.9
-   @>     ARG147    P      NH1_2257  <--->     ASP120    P      OD1_1824     3.1    30.6
-   @>      ALA24    P         N_294  <--->      PRO20    P         O_249     3.1    15.6
-   @>     GLU139    P        N_2114  <--->     ASP135    P        O_2070     3.1    33.1
-   @>      LEU29    P         N_386  <--->      VAL25    P         O_319     3.1    30.0
-   @>      PHE10    P          N_84  <--->      ASP42    P         O_612     3.1    13.0
-   @>      ASP56    P         N_780  <--->      ILE16    P         O_189     3.1    17.9
-   @>      LYS28    P         N_364  <--->      ALA24    P         O_303     3.1    35.3
-   @>     PHE152    P        N_2321  <--->     CYS148    P        O_2275     3.1    12.6
-   @>      MET63    P         N_883  <--->      GLY59    P         O_843     3.2    11.2
-   @>     LEU153    P        N_2341  <--->     CYS149    P        O_2286     3.2    10.9
-   @>      SER61    P         N_861  <--->      TYR57    P         O_812     3.2    15.2
-   @>     ARG147    P        N_2241  <--->     GLN143    P        O_2196     3.2    39.3
-   @>      CYS62    P         N_872  <--->      ARG58    P         O_836     3.2    22.2
-   @>      ARG75    P        N_1074  <--->      ASN15    P       OD1_165     3.2    22.2
-   @>      CYS90    P        N_1332  <--->     GLU114    P        O_1738     3.2    38.7
-   @>     GLN144    P        N_2197  <--->     THR140    P        O_2142     3.2     9.7
-   @>      LEU96    P        N_1412  <--->      ASP92    P        O_1371     3.2    14.1
-   @>     ASN100    P        N_1486  <--->      LEU96    P        O_1430     3.3    38.6
-   @>      LEU99    P        N_1467  <--->      ASN95    P        O_1411     3.3    10.3
-   @>      ASN15    P         N_157  <--->      CYS12    P        SG_127     3.3    24.8
-   @>     GLN144    P      NE2_2209  <--->     ILE126    P        O_1935     3.3    20.9
-   @>      CYS12    P         N_120  <--->      ALA44    P         O_633     3.3    18.1
-   @>      ASP98    P        N_1455  <--->      SER94    P        O_1397     3.3    25.3
-   @>     GLN143    P      NE2_2192  <--->     GLU139    P        O_2128     3.3    24.9
-   @>      TYR87    P        N_1273  <--->       SER7    P          O_48     3.3    28.4
-   @>      ASP42    P         N_601  <--->       VAL8    P          O_64     3.3    39.0
-   @>     CYS148    P       SG_2272  <--->     GLN144    P        O_2213     3.3    39.7
-   @>      TRP39    P         N_537  <--->      ILE35    P         O_496     3.3    27.1
-   @>      ARG75    P      NH2_1093  <--->      ASP81    P      OD1_1193     3.4    13.2
-   @>      SER19    P         N_225  <--->      CYS12    P        SG_127     3.4    17.1
    @>      ARG40    P         N_561  <--->       LYS6    P          O_37     3.4    33.1
    @>     HSE157    P        N_2407  <--->     TYR119    P       OH_1808     3.4    27.6
    @>      ARG65    P       NH1_938  <--->     GLU139    P      OE1_2125     3.4    32.0
@@ -471,68 +276,8 @@ To compute hydrogen bonds for each frame of the simulation use
    @>     SER103    P       OG_1553  <--->      LEU99    P        O_1485     2.9    21.4
    @>      ARG18    P       NH1_217  <--->      ASP92    P      OD2_1369     2.9     6.7
    @>      CYS90    P        N_1332  <--->     GLU114    P        O_1738     2.9     7.9
-   @>      ARG18    P       NH1_217  <--->     ILE127    P        O_1954     2.9    13.0
-   @>     LYS155    P       NZ_2391  <--->     TYR119    P        O_1815     2.9    27.9
-   @>     ARG150    P        N_2287  <--->     VAL146    P        O_2240     2.9    39.3
-   @>      ARG65    P       NH1_938  <--->     ASP135    P      OD2_2068     2.9    39.2
-   @>      VAL30    P         N_405  <--->      PHE26    P         O_339     2.9     2.0
-   @>      VAL11    P         N_104  <--->      LEU89    P        O_1331     2.9    19.9
-   @>     GLN144    P        N_2197  <--->     THR140    P        O_2142     2.9    16.4
-   @>     LEU116    P        N_1758  <--->      CYS90    P        O_1342     2.9    22.2
-   @>     SER103    P        N_1546  <--->      LEU99    P        O_1485     2.9    35.6
-   @>      ASP56    P         N_780  <--->      ILE16    P         O_189     2.9     5.0
-   @>     GLU139    P        N_2114  <--->     ASP135    P        O_2070     2.9    33.1
-   @>      PHE10    P          N_84  <--->      ASP42    P         O_612     2.9    11.4
-   @>     LYS155    P        N_2375  <--->     ALA151    P        O_2320     2.9    39.0
-   @>      PHE26    P         N_320  <--->      ALA22    P         O_278     2.9    21.1
-   @>     THR140    P        N_2129  <--->     SER136    P        O_2081     3.0    36.4
-   @>      ALA74    P        N_1064  <--->      ASN53    P         O_751     3.0    20.8
-   @>       LYS6    P          N_16  <--->      ASN38    P         O_536     3.0    12.1
-   @>      ARG65    P         N_922  <--->      SER61    P         O_871     3.0    15.7
-   @>       LEU9    P          N_65  <--->      TYR87    P        O_1293     3.0     6.8
-   @>     PHE152    P        N_2321  <--->     CYS148    P        O_2275     3.0     8.8
-   @>      ALA22    P         N_269  <--->      ARG18    P         O_224     3.0    20.9
-   @>     LEU153    P        N_2341  <--->     CYS149    P        O_2286     3.0    21.0
-   @>      VAL25    P         N_304  <--->      ILE21    P         O_268     3.0    20.7
-   @>     ARG101    P        N_1500  <--->      ARG97    P        O_1454     3.0     9.4
-   @>     SER118    P        N_1784  <--->     LEU115    P        O_1757     3.0    19.7
-   @>      GLN33    P         N_447  <--->      LEU29    P         O_404     3.0    34.3
-   @>      ARG58    P         N_813  <--->      ASP56    P       OD1_788     3.0    13.9
-   @>      MET63    P         N_883  <--->      GLY59    P         O_843     3.0    29.4
-   @>      ARG27    P         N_340  <--->      GLU23    P         O_293     3.0    27.7
-   @>      ASP32    P         N_435  <--->      LYS28    P         O_385     3.0    20.7
-   @>      ASP86    P        N_1261  <--->       SER7    P          O_48     3.0    16.1
-   @>      TYR87    P        N_1273  <--->       SER7    P          O_48     3.0    23.9
-   @>     ILE127    P        N_1936  <--->      MET91    P        O_1359     3.1     5.8
-   @>      PHE85    P        N_1241  <--->      ASP81    P        O_1196     3.1    19.7
-   @>      ASN15    P       ND2_166  <--->      SER43    P        OG_620     3.1     7.2
-   @>     VAL146    P        N_2225  <--->     TYR142    P        O_2179     3.1    12.6
-   @>      LYS64    P         N_900  <--->      GLN60    P         O_860     3.1    13.0
-   @>      ALA24    P         N_294  <--->      PRO20    P         O_249     3.1    24.5
-   @>      ARG40    P         N_561  <--->       LYS6    P          O_37     3.1    27.1
-   @>     ASN134    P        N_2045  <--->     ASP137    P      OD1_2090     3.1     9.7
-   @>     CYS148    P       SG_2272  <--->     GLN144    P        O_2213     3.1    21.5
-   @>     ALA111    P        N_1673  <--->      PHE82    P        O_1216     3.1    20.5
-   @>     CYS145    P        N_2214  <--->     VAL141    P        O_2158     3.1    21.4
-   @>      HSE66    P         N_946  <--->      CYS62    P         O_882     3.1    27.2
-   @>      GLU23    P         N_279  <--->      SER19    P         O_235     3.1     8.9
-   @>      ASP42    P         N_601  <--->       VAL8    P          O_64     3.2    24.3
-   @>     CYS149    P       SG_2283  <--->     CYS145    P        O_2224     3.2    39.4
-   @>      CYS62    P         N_872  <--->      ARG58    P         O_836     3.2    36.0
-   @>      GLN60    P         N_844  <--->      ASP56    P         O_791     3.2    15.5
-   @>      CYS90    P       SG_1339  <--->      ASP92    P        O_1371     3.2    36.0
-   @>      ASN95    P      ND2_1407  <--->      THR46    P       OG1_650     3.2    20.2
-   @>      ASN53    P       ND2_747  <--->      GLU50    P         O_711     3.2    29.9
-   @>      PHE82    P        N_1197  <--->      LYS79    P        O_1169     3.2    35.5
-   @>     TYR142    P        N_2159  <--->     PHE138    P        O_2113     3.2    25.9
-   @>     ARG147    P        N_2241  <--->     GLN143    P        O_2196     3.3    10.7
-   @>     GLU114    P        N_1724  <--->      ILE88    P        O_1312     3.3    11.2
-   @>      ASN95    P        N_1398  <--->      ASP92    P      OD1_1368     3.3    18.9
-   @>     CYS148    P        N_2265  <--->     GLN144    P        O_2213     3.3    16.0
-   @>      TRP39    P         N_537  <--->      SER36    P         O_507     3.3    14.6
-   @>      LEU96    P        N_1412  <--->      ASP92    P        O_1371     3.3    36.0
-   @>      ALA83    P        N_1217  <--->      GLU80    P        O_1184     3.3    29.2
-   @>      LEU99    P        N_1467  <--->      ASN95    P        O_1411     3.3     9.7
+   ..
+   ..
    @>     ALA151    P        N_2311  <--->     ARG147    P        O_2264     3.3    28.5
    @>      ILE88    P        N_1294  <--->     LYS112    P        O_1704     3.3     8.1
    @>      CYS12    P         N_120  <--->      ALA44    P         O_633     3.4    24.0
@@ -609,278 +354,8 @@ Similarly, it can be done with other interaction types. Salt bridges
    @>      ASP86    P   OD1_1269_1270  <--->       LYS6    P           NZ_32     5.0
    @> Number of detected salt bridges: 15.
    
-   @> Frame: 3
-   @> Calculating salt bridges.
-   @>      ASP32    P     OD1_443_444  <--->      LYS28    P          NZ_380     2.5
-   @>     LYS102    P         NZ_1540  <--->      ASP98    P   OD1_1463_1464     2.9
-   @>      ASP81    P   OD1_1193_1194  <--->      ARG75    P   NH1_1090_1093     2.9
-   @>      ASP86    P   OD1_1269_1270  <--->     LYS110    P         NZ_1667     3.2
-   @>     GLU114    P   OE1_1735_1736  <--->     LYS112    P         NZ_1699     3.3
-   @>     HSE157    P        NE2_2418  <--->     GLU114    P   OE1_1735_1736     3.4
-   @>     GLU139    P   OE1_2125_2126  <--->      ARG65    P     NH1_938_941     3.5
-   @>      ARG27    P     NH1_356_359  <--->      GLU23    P     OE1_290_291     3.5
-   @>     GLU139    P   OE1_2125_2126  <--->      HSE66    P         NE2_957     3.6
-   @>      ARG18    P     NH1_217_220  <--->      ASP92    P   OD1_1368_1369     3.6
-   @>      ARG58    P     NH1_829_832  <--->      ASP56    P     OD1_788_789     3.8
-   @>      GLU23    P     OE1_290_291  <--->      HSE72    P        NE2_1042     4.2
-   @>      ASP98    P   OD1_1463_1464  <--->     ARG101    P   NH1_1516_1519     4.5
-   @>      ARG75    P   NH1_1090_1093  <--->      ASP42    P     OD1_609_610     4.7
-   @>     ASP120    P   OD1_1824_1825  <--->     ARG147    P   NH1_2257_2260     4.7
-   @> Number of detected salt bridges: 15.
-
-   @> Frame: 4
-   @> Calculating salt bridges.
-   @>     LYS102    P         NZ_1540  <--->      ASP98    P   OD1_1463_1464     2.5
-   @>     GLU114    P   OE1_1735_1736  <--->     LYS112    P         NZ_1699     2.5
-   @>      ASP81    P   OD1_1193_1194  <--->      ARG75    P   NH1_1090_1093     2.8
-   @>      ASP86    P   OD1_1269_1270  <--->     LYS110    P         NZ_1667     2.8
-   @>      ASP32    P     OD1_443_444  <--->      LYS28    P          NZ_380     2.8
-   @>      ARG27    P     NH1_356_359  <--->      GLU23    P     OE1_290_291     3.4
-   @>     GLU139    P   OE1_2125_2126  <--->      ARG65    P     NH1_938_941     3.5
-   @>      ARG58    P     NH1_829_832  <--->      ASP56    P     OD1_788_789     3.7
-   @>     GLU139    P   OE1_2125_2126  <--->      HSE66    P         NE2_957     3.7
-   @>     ASP120    P   OD1_1824_1825  <--->     ARG147    P   NH1_2257_2260     3.8
-   @>      ARG18    P     NH1_217_220  <--->      ASP92    P   OD1_1368_1369     4.0
-   @>      ARG18    P     NH1_217_220  <--->     ASP129    P   OD1_1978_1979     4.4
-   @>      ARG97    P   NH1_1447_1450  <--->      GLU93    P   OE1_1383_1384     4.6
-   @>      ARG75    P   NH1_1090_1093  <--->      ASP42    P     OD1_609_610     4.6
-   @>      ASP86    P   OD1_1269_1270  <--->       LYS6    P           NZ_32     4.6
-   @>      ASP98    P   OD1_1463_1464  <--->     ARG101    P   NH1_1516_1519     4.7
-   @>      GLU23    P     OE1_290_291  <--->      HSE72    P        NE2_1042     4.7
-   @> Number of detected salt bridges: 17.
-
-   @> Frame: 5
-   @> Calculating salt bridges.
-   @>     GLU114    P   OE1_1735_1736  <--->     LYS112    P         NZ_1699     2.5
-   @>      ASP81    P   OD1_1193_1194  <--->      ARG75    P   NH1_1090_1093     2.7
-   @>     LYS102    P         NZ_1540  <--->      ASP98    P   OD1_1463_1464     2.8
-   @>      ASP32    P     OD1_443_444  <--->      LYS28    P          NZ_380     2.9
-   @>      ASP86    P   OD1_1269_1270  <--->     LYS110    P         NZ_1667     3.0
-   @>      ARG27    P     NH1_356_359  <--->      GLU23    P     OE1_290_291     3.6
-   @>      ARG58    P     NH1_829_832  <--->      ASP56    P     OD1_788_789     3.8
-   @>      ARG18    P     NH1_217_220  <--->      ASP92    P   OD1_1368_1369     3.9
-   @>      ARG18    P     NH1_217_220  <--->     ASP129    P   OD1_1978_1979     4.0
-   @>     GLU139    P   OE1_2125_2126  <--->      ARG65    P     NH1_938_941     4.0
-   @>     ASP120    P   OD1_1824_1825  <--->     ARG147    P   NH1_2257_2260     4.4
-   @>      ARG75    P   NH1_1090_1093  <--->      ASP42    P     OD1_609_610     4.5
-   @>      GLU23    P     OE1_290_291  <--->      HSE72    P        NE2_1042     4.7
-   @>      ASP98    P   OD1_1463_1464  <--->     ARG101    P   NH1_1516_1519     4.7
-   @>      ARG97    P   NH1_1447_1450  <--->      GLU93    P   OE1_1383_1384     4.9
-   @> Number of detected salt bridges: 15.
-
-   @> Frame: 6
-   @> Calculating salt bridges.
-   @>      ASP32    P     OD1_443_444  <--->      LYS28    P          NZ_380     2.6
-   @>      ASP81    P   OD1_1193_1194  <--->      ARG75    P   NH1_1090_1093     2.6
-   @>     LYS102    P         NZ_1540  <--->      ASP98    P   OD1_1463_1464     2.8
-   @>     GLU139    P   OE1_2125_2126  <--->      HSE66    P         NE2_957     3.3
-   @>      ARG27    P     NH1_356_359  <--->      GLU23    P     OE1_290_291     3.6
-   @>     GLU139    P   OE1_2125_2126  <--->      ARG65    P     NH1_938_941     3.6
-   @>      ASP86    P   OD1_1269_1270  <--->     LYS110    P         NZ_1667     3.8
-   @>      ARG58    P     NH1_829_832  <--->      ASP56    P     OD1_788_789     3.8
-   @>     ARG150    P   NH1_2303_2306  <--->     GLU154    P   OE1_2371_2372     3.8
-   @>      ARG18    P     NH1_217_220  <--->      ASP92    P   OD1_1368_1369     3.9
-   @>      ARG75    P   NH1_1090_1093  <--->      ASP42    P     OD1_609_610     4.0
-   @>      ARG18    P     NH1_217_220  <--->     ASP129    P   OD1_1978_1979     4.1
-   @>     ASP120    P   OD1_1824_1825  <--->     ARG147    P   NH1_2257_2260     4.6
-   @>      ASP98    P   OD1_1463_1464  <--->     ARG101    P   NH1_1516_1519     4.7
-   @>      GLU23    P     OE1_290_291  <--->      HSE72    P        NE2_1042     4.9
-   @>     HSE157    P        NE2_2418  <--->     GLU114    P   OE1_1735_1736     5.0
-   @> Number of detected salt bridges: 16.
-
-   @> Frame: 7
-   @> Calculating salt bridges.
-   @>      ASP32    P     OD1_443_444  <--->      LYS28    P          NZ_380     2.6
-   @>      ASP81    P   OD1_1193_1194  <--->      ARG75    P   NH1_1090_1093     2.6
-   @>      ASP86    P   OD1_1269_1270  <--->     LYS110    P         NZ_1667     2.8
-   @>     LYS102    P         NZ_1540  <--->      ASP98    P   OD1_1463_1464     3.1
-   @>      ARG27    P     NH1_356_359  <--->      GLU23    P     OE1_290_291     3.4
-   @>     GLU139    P   OE1_2125_2126  <--->      ARG65    P     NH1_938_941     3.4
-   @>      ARG58    P     NH1_829_832  <--->      ASP56    P     OD1_788_789     3.6
-   @>      ARG18    P     NH1_217_220  <--->      ASP92    P   OD1_1368_1369     3.7
-   @>     LYS155    P         NZ_2391  <--->     GLU154    P   OE1_2371_2372     3.7
-   @>      ASP98    P   OD1_1463_1464  <--->     ARG101    P   NH1_1516_1519     3.7
-   @>      GLU23    P     OE1_290_291  <--->      HSE72    P        NE2_1042     4.2
-   @>      ARG75    P   NH1_1090_1093  <--->      ASP42    P     OD1_609_610     4.3
-   @>     ASP120    P   OD1_1824_1825  <--->     ARG147    P   NH1_2257_2260     4.4
-   @>      ARG97    P   NH1_1447_1450  <--->      GLU93    P   OE1_1383_1384     4.4
-   @>      ARG18    P     NH1_217_220  <--->     ASP129    P   OD1_1978_1979     4.4
-   @>     GLU139    P   OE1_2125_2126  <--->      HSE66    P         NE2_957     5.0
-   @> Number of detected salt bridges: 16.
-
-   @> Frame: 8
-   @> Calculating salt bridges.
-   @>      ASP81    P   OD1_1193_1194  <--->      ARG75    P   NH1_1090_1093     2.7
-   @>     LYS102    P         NZ_1540  <--->      ASP98    P   OD1_1463_1464     3.0
-   @>      ASP32    P     OD1_443_444  <--->      LYS28    P          NZ_380     3.0
-   @>      ASP86    P   OD1_1269_1270  <--->     LYS110    P         NZ_1667     3.1
-   @>      ARG27    P     NH1_356_359  <--->      GLU23    P     OE1_290_291     3.6
-   @>     GLU139    P   OE1_2125_2126  <--->      HSE66    P         NE2_957     3.6
-   @>      ARG58    P     NH1_829_832  <--->      ASP56    P     OD1_788_789     3.6
-   @>      ARG18    P     NH1_217_220  <--->      ASP92    P   OD1_1368_1369     4.0
-   @>     GLU139    P   OE1_2125_2126  <--->      ARG65    P     NH1_938_941     4.0
-   @>      ARG75    P   NH1_1090_1093  <--->      ASP42    P     OD1_609_610     4.2
-   @>      ASP98    P   OD1_1463_1464  <--->     ARG101    P   NH1_1516_1519     4.3
-   @>     ASP120    P   OD1_1824_1825  <--->     ARG147    P   NH1_2257_2260     4.5
-   @>      GLU23    P     OE1_290_291  <--->      HSE72    P        NE2_1042     4.7
-   @> Number of detected salt bridges: 13.
-
-   @> Frame: 9
-   @> Calculating salt bridges.
-   @>      ASP81    P   OD1_1193_1194  <--->      ARG75    P   NH1_1090_1093     2.6
-   @>      ASP32    P     OD1_443_444  <--->      LYS28    P          NZ_380     2.9
-   @>     LYS102    P         NZ_1540  <--->      ASP98    P   OD1_1463_1464     3.2
-   @>      ASP86    P   OD1_1269_1270  <--->     LYS110    P         NZ_1667     3.4
-   @>      ARG27    P     NH1_356_359  <--->      GLU23    P     OE1_290_291     3.6
-   @>     GLU139    P   OE1_2125_2126  <--->      ARG65    P     NH1_938_941     3.6
-   @>      ARG58    P     NH1_829_832  <--->      ASP56    P     OD1_788_789     3.7
-   @>      GLU23    P     OE1_290_291  <--->      HSE72    P        NE2_1042     3.7
-   @>      ARG18    P     NH1_217_220  <--->      ASP92    P   OD1_1368_1369     3.7
-   @>     GLU139    P   OE1_2125_2126  <--->      HSE66    P         NE2_957     3.9
-   @>      ARG18    P     NH1_217_220  <--->     ASP129    P   OD1_1978_1979     4.0
-   @>      ASP98    P   OD1_1463_1464  <--->     ARG101    P   NH1_1516_1519     4.3
-   @>      ARG75    P   NH1_1090_1093  <--->      ASP42    P     OD1_609_610     4.5
-   @>      ARG97    P   NH1_1447_1450  <--->      GLU93    P   OE1_1383_1384     4.6
-   @>     ASP120    P   OD1_1824_1825  <--->     ARG147    P   NH1_2257_2260     4.6
-   @> Number of detected salt bridges: 15.
-
-   @> Frame: 10
-   @> Calculating salt bridges.
-   @>      ASP81    P   OD1_1193_1194  <--->      ARG75    P   NH1_1090_1093     2.6
-   @>      ASP86    P   OD1_1269_1270  <--->     LYS110    P         NZ_1667     2.7
-   @>     LYS102    P         NZ_1540  <--->      ASP98    P   OD1_1463_1464     3.1
-   @>      ARG27    P     NH1_356_359  <--->      GLU23    P     OE1_290_291     3.4
-   @>      ARG58    P     NH1_829_832  <--->      ASP56    P     OD1_788_789     3.8
-   @>      GLU23    P     OE1_290_291  <--->      HSE72    P        NE2_1042     3.9
-   @>      ARG18    P     NH1_217_220  <--->      ASP92    P   OD1_1368_1369     4.0
-   @>     GLU139    P   OE1_2125_2126  <--->      ARG65    P     NH1_938_941     4.2
-   @>      ARG97    P   NH1_1447_1450  <--->      GLU93    P   OE1_1383_1384     4.3
-   @>      ARG75    P   NH1_1090_1093  <--->      ASP42    P     OD1_609_610     4.4
-   @>      ASP98    P   OD1_1463_1464  <--->     ARG101    P   NH1_1516_1519     4.4
-   @> Number of detected salt bridges: 11.
-
-   @> Frame: 11
-   @> Calculating salt bridges.
-   @>     LYS102    P         NZ_1540  <--->      ASP98    P   OD1_1463_1464     2.5
-   @>      ASP81    P   OD1_1193_1194  <--->      ARG75    P   NH1_1090_1093     2.6
-   @>      ARG27    P     NH1_356_359  <--->      GLU23    P     OE1_290_291     3.6
-   @>     ASP120    P   OD1_1824_1825  <--->     ARG150    P   NH1_2303_2306     3.7
-   @>      ARG58    P     NH1_829_832  <--->      ASP56    P     OD1_788_789     3.7
-   @>     GLU139    P   OE1_2125_2126  <--->      ARG65    P     NH1_938_941     3.9
-   @>      ASP86    P   OD1_1269_1270  <--->     LYS110    P         NZ_1667     3.9
-   @>      ARG97    P   NH1_1447_1450  <--->      GLU93    P   OE1_1383_1384     4.0
-   @>      ARG18    P     NH1_217_220  <--->      ASP92    P   OD1_1368_1369     4.0
-   @>      ASP98    P   OD1_1463_1464  <--->     ARG101    P   NH1_1516_1519     4.1
-   @>      GLU23    P     OE1_290_291  <--->      HSE72    P        NE2_1042     4.2
-   @>      ARG75    P   NH1_1090_1093  <--->      ASP42    P     OD1_609_610     4.6
-   @>      ARG18    P     NH1_217_220  <--->     ASP129    P   OD1_1978_1979     4.9
-   @> Number of detected salt bridges: 13.
-
-   @> Frame: 12
-   @> Calculating salt bridges.
-   @>      ASP81    P   OD1_1193_1194  <--->      ARG75    P   NH1_1090_1093     2.7
-   @>     GLU139    P   OE1_2125_2126  <--->      ARG65    P     NH1_938_941     2.8
-   @>     LYS102    P         NZ_1540  <--->      ASP98    P   OD1_1463_1464     2.9
-   @>      ARG27    P     NH1_356_359  <--->      GLU23    P     OE1_290_291     3.4
-   @>      GLU23    P     OE1_290_291  <--->      HSE72    P        NE2_1042     3.6
-   @>      ARG58    P     NH1_829_832  <--->      ASP56    P     OD1_788_789     3.6
-   @>      ARG18    P     NH1_217_220  <--->      ASP92    P   OD1_1368_1369     3.9
-   @>     GLU139    P   OE1_2125_2126  <--->      HSE66    P         NE2_957     4.0
-   @>      ARG97    P   NH1_1447_1450  <--->      GLU93    P   OE1_1383_1384     4.2
-   @>      ARG75    P   NH1_1090_1093  <--->      ASP42    P     OD1_609_610     4.5
-   @>      ASP98    P   OD1_1463_1464  <--->     ARG101    P   NH1_1516_1519     4.8
-   @>      ASP86    P   OD1_1269_1270  <--->     LYS110    P         NZ_1667     5.0
-   @> Number of detected salt bridges: 12.
-
-   @> Frame: 13
-   @> Calculating salt bridges.
-   @>      ASP81    P   OD1_1193_1194  <--->      ARG75    P   NH1_1090_1093     2.6
-   @>      ASP32    P     OD1_443_444  <--->      LYS28    P          NZ_380     2.6
-   @>     GLU139    P   OE1_2125_2126  <--->      ARG65    P     NH1_938_941     3.2
-   @>      ARG27    P     NH1_356_359  <--->      GLU23    P     OE1_290_291     3.3
-   @>     LYS102    P         NZ_1540  <--->      ASP98    P   OD1_1463_1464     3.5
-   @>     ASP120    P   OD1_1824_1825  <--->     ARG150    P   NH1_2303_2306     3.6
-   @>      ARG97    P   NH1_1447_1450  <--->      GLU93    P   OE1_1383_1384     3.6
-   @>      ARG58    P     NH1_829_832  <--->      ASP56    P     OD1_788_789     3.7
-   @>      ASP86    P   OD1_1269_1270  <--->     LYS110    P         NZ_1667     3.9
-   @>      ARG18    P     NH1_217_220  <--->      ASP92    P   OD1_1368_1369     3.9
-   @>      GLU23    P     OE1_290_291  <--->      HSE72    P        NE2_1042     4.1
-   @>     GLU139    P   OE1_2125_2126  <--->      HSE66    P         NE2_957     4.2
-   @>     ASP120    P   OD1_1824_1825  <--->     ARG147    P   NH1_2257_2260     4.3
-   @>      ARG75    P   NH1_1090_1093  <--->      ASP42    P     OD1_609_610     4.5
-   @>      ASP98    P   OD1_1463_1464  <--->     ARG101    P   NH1_1516_1519     4.8
-   @> Number of detected salt bridges: 15.
-
-   @> Frame: 14
-   @> Calculating salt bridges.
-   @>      ASP32    P     OD1_443_444  <--->      LYS28    P          NZ_380     2.5
-   @>      ASP81    P   OD1_1193_1194  <--->      ARG75    P   NH1_1090_1093     2.7
-   @>     LYS102    P         NZ_1540  <--->      ASP98    P   OD1_1463_1464     2.7
-   @>      ARG27    P     NH1_356_359  <--->      GLU23    P     OE1_290_291     3.2
-   @>     GLU139    P   OE1_2125_2126  <--->      ARG65    P     NH1_938_941     3.5
-   @>      ARG58    P     NH1_829_832  <--->      ASP56    P     OD1_788_789     3.6
-   @>     ASP120    P   OD1_1824_1825  <--->     ARG150    P   NH1_2303_2306     3.7
-   @>     ASP120    P   OD1_1824_1825  <--->     ARG147    P   NH1_2257_2260     3.8
-   @>      GLU23    P     OE1_290_291  <--->      HSE72    P        NE2_1042     3.8
-   @>      ARG18    P     NH1_217_220  <--->      ASP92    P   OD1_1368_1369     4.0
-   @>      ASP98    P   OD1_1463_1464  <--->     ARG101    P   NH1_1516_1519     4.2
-   @>      ARG75    P   NH1_1090_1093  <--->      ASP42    P     OD1_609_610     4.4
-   @>      ARG18    P     NH1_217_220  <--->     ASP129    P   OD1_1978_1979     4.6
-   @>      ARG97    P   NH1_1447_1450  <--->      GLU93    P   OE1_1383_1384     4.7
-   @> Number of detected salt bridges: 14.
-
-   @> Frame: 15
-   @> Calculating salt bridges.
-   @>      ASP81    P   OD1_1193_1194  <--->      ARG75    P   NH1_1090_1093     2.7
-   @>     LYS102    P         NZ_1540  <--->      ASP98    P   OD1_1463_1464     3.0
-   @>      ASP32    P     OD1_443_444  <--->      LYS28    P          NZ_380     3.1
-   @>      ASP86    P   OD1_1269_1270  <--->     LYS110    P         NZ_1667     3.4
-   @>     ASP120    P   OD1_1824_1825  <--->     ARG150    P   NH1_2303_2306     3.6
-   @>      ARG27    P     NH1_356_359  <--->      GLU23    P     OE1_290_291     3.6
-   @>     ARG150    P   NH1_2303_2306  <--->     GLU154    P   OE1_2371_2372     3.7
-   @>      ARG58    P     NH1_829_832  <--->      ASP56    P     OD1_788_789     3.8
-   @>      ARG97    P   NH1_1447_1450  <--->      GLU93    P   OE1_1383_1384     3.9
-   @>     ASP120    P   OD1_1824_1825  <--->     ARG147    P   NH1_2257_2260     3.9
-   @>      ARG18    P     NH1_217_220  <--->      ASP92    P   OD1_1368_1369     4.0
-   @>      GLU23    P     OE1_290_291  <--->      HSE72    P        NE2_1042     4.3
-   @>      ASP98    P   OD1_1463_1464  <--->     ARG101    P   NH1_1516_1519     4.3
-   @>      ARG75    P   NH1_1090_1093  <--->      ASP42    P     OD1_609_610     4.3
-   @> Number of detected salt bridges: 14.
-
-   @> Frame: 16
-   @> Calculating salt bridges.
-   @>      ASP81    P   OD1_1193_1194  <--->      ARG75    P   NH1_1090_1093     2.4
-   @>     LYS102    P         NZ_1540  <--->      ASP98    P   OD1_1463_1464     3.1
-   @>      GLU23    P     OE1_290_291  <--->      HSE72    P        NE2_1042     3.5
-   @>      ARG27    P     NH1_356_359  <--->      GLU23    P     OE1_290_291     3.6
-   @>      ARG97    P   NH1_1447_1450  <--->      GLU93    P   OE1_1383_1384     3.7
-   @>      ARG58    P     NH1_829_832  <--->      ASP56    P     OD1_788_789     3.7
-   @>     ASP120    P   OD1_1824_1825  <--->     ARG147    P   NH1_2257_2260     3.8
-   @>     ASP120    P   OD1_1824_1825  <--->     ARG150    P   NH1_2303_2306     3.8
-   @>      ARG18    P     NH1_217_220  <--->      ASP92    P   OD1_1368_1369     3.9
-   @>      ASP86    P   OD1_1269_1270  <--->     LYS110    P         NZ_1667     4.0
-   @>     ARG150    P   NH1_2303_2306  <--->     GLU154    P   OE1_2371_2372     4.1
-   @>     ASP135    P   OD1_2067_2068  <--->      ARG65    P     NH1_938_941     4.1
-   @>      ARG75    P   NH1_1090_1093  <--->      ASP42    P     OD1_609_610     4.4
-   @>      ASP98    P   OD1_1463_1464  <--->     ARG101    P   NH1_1516_1519     4.8
-   @> Number of detected salt bridges: 14.
-
-   @> Frame: 17
-   @> Calculating salt bridges.
-   @>      ASP32    P     OD1_443_444  <--->      LYS28    P          NZ_380     2.5
-   @>      ASP81    P   OD1_1193_1194  <--->      ARG75    P   NH1_1090_1093     2.6
-   @>     ASP135    P   OD1_2067_2068  <--->      ARG65    P     NH1_938_941     2.7
-   @>     LYS102    P         NZ_1540  <--->      ASP98    P   OD1_1463_1464     3.3
-   @>      ARG27    P     NH1_356_359  <--->      GLU23    P     OE1_290_291     3.6
-   @>      ASP98    P   OD1_1463_1464  <--->     ARG101    P   NH1_1516_1519     3.6
-   @>      ARG58    P     NH1_829_832  <--->      ASP56    P     OD1_788_789     3.7
-   @>      ARG18    P     NH1_217_220  <--->      ASP92    P   OD1_1368_1369     3.8
-   @>     ASP120    P   OD1_1824_1825  <--->     ARG150    P   NH1_2303_2306     3.9
-   @>      GLU23    P     OE1_290_291  <--->      HSE72    P        NE2_1042     4.1
-   @>      ARG97    P   NH1_1447_1450  <--->      GLU93    P   OE1_1383_1384     4.3
-   @>      ARG75    P   NH1_1090_1093  <--->      ASP42    P     OD1_609_610     4.6
-   @>     ARG150    P   NH1_2303_2306  <--->     GLU154    P   OE1_2371_2372     4.9
-   @> Number of detected salt bridges: 13.
+   ..
+   ..
 
    @> Frame: 18
    @> Calculating salt bridges.
@@ -979,33 +454,8 @@ the same charges:
    @> Frame: 10
    @> Calculating repulsive ionic bonding.
    @> Number of detected Repulsive Ionic Bonding interactions: 0.
-   @> Frame: 11
-   @> Calculating repulsive ionic bonding.
-   @> Number of detected Repulsive Ionic Bonding interactions: 0.
-   @> Frame: 12
-   @> Calculating repulsive ionic bonding.
-   @> Number of detected Repulsive Ionic Bonding interactions: 0.
-   @> Frame: 13
-   @> Calculating repulsive ionic bonding.
-   @> Number of detected Repulsive Ionic Bonding interactions: 0.
-   @> Frame: 14
-   @> Calculating repulsive ionic bonding.
-   @> Number of detected Repulsive Ionic Bonding interactions: 0.
-   @> Frame: 15
-   @> Calculating repulsive ionic bonding.
-   @> Number of detected Repulsive Ionic Bonding interactions: 0.
-   @> Frame: 16
-   @> Calculating repulsive ionic bonding.
-   @> Number of detected Repulsive Ionic Bonding interactions: 0.
-   @> Frame: 17
-   @> Calculating repulsive ionic bonding.
-   @> Number of detected Repulsive Ionic Bonding interactions: 0.
-   @> Frame: 18
-   @> Calculating repulsive ionic bonding.
-   @> Number of detected Repulsive Ionic Bonding interactions: 0.
-   @> Frame: 19
-   @> Calculating repulsive ionic bonding.
-   @> Number of detected Repulsive Ionic Bonding interactions: 0.
+   ..
+   ..
    @> Frame: 20
    @> Calculating repulsive ionic bonding.
    @>     ARG147    P   NH1_2257_2260  <--->     LYS123    P         NZ_1875     4.5
@@ -1045,78 +495,8 @@ Pi-Stacking interactions using :func:`.calcPiStackingTrajectory`:
    @>      HSE66       P             953_954_955_957_959  <--->     TYR142       P   2166_2167_2169_2171_2174_2176     4.3   137.5
    @>      TYR87       P   1280_1281_1283_1285_1288_1290  <--->     PHE152       P   2328_2329_2331_2333_2335_2337     5.0    73.7
    @> Number of detected Pi stacking interactions: 2.
-   @> Frame: 5
-   @> Calculating Pi stacking interactions.
-   @>      HSE66       P             953_954_955_957_959  <--->     TYR142       P   2166_2167_2169_2171_2174_2176     4.3   158.1
-   @>     HSE157       P2414_2415_2416_2418_2420_2423_2424  <--->     TYR119       P   1802_1803_1805_1807_1810_1812     4.8   152.5
-   @> Number of detected Pi stacking interactions: 2.
-   @> Frame: 6
-   @> Calculating Pi stacking interactions.
-   @>      HSE66       P             953_954_955_957_959  <--->     TYR142       P   2166_2167_2169_2171_2174_2176     4.5   143.6
-   @>      PHE26       P         327_328_330_332_334_336  <--->      TRP39       P         549_550_551_553_555_557     4.9    65.9
-   @> Number of detected Pi stacking interactions: 2.
-   @> Frame: 7
-   @> Calculating Pi stacking interactions.
-   @>      HSE66       P             953_954_955_957_959  <--->     TYR142       P   2166_2167_2169_2171_2174_2176     4.5   171.7
-   @>      PHE26       P         327_328_330_332_334_336  <--->      TRP39       P         549_550_551_553_555_557     4.9    70.3
-   @> Number of detected Pi stacking interactions: 2.
-   @> Frame: 8
-   @> Calculating Pi stacking interactions.
-   @>      HSE66       P             953_954_955_957_959  <--->     TYR142       P   2166_2167_2169_2171_2174_2176     4.7   153.2
-   @> Number of detected Pi stacking interactions: 1.
-   @> Frame: 9
-   @> Calculating Pi stacking interactions.
-   @>      HSE66       P             953_954_955_957_959  <--->     TYR142       P   2166_2167_2169_2171_2174_2176     4.5   173.2
-   @>      PHE26       P         327_328_330_332_334_336  <--->      TRP39       P         549_550_551_553_555_557     4.9    58.3
-   @> Number of detected Pi stacking interactions: 2.
-   @> Frame: 10
-   @> Calculating Pi stacking interactions.
-   @>      HSE66       P             953_954_955_957_959  <--->     TYR142       P   2166_2167_2169_2171_2174_2176     4.5   136.9
-   @>     HSE157       P2414_2415_2416_2418_2420_2423_2424  <--->     TYR119       P   1802_1803_1805_1807_1810_1812     4.7    24.7
-   @> Number of detected Pi stacking interactions: 2.
-   @> Frame: 11
-   @> Calculating Pi stacking interactions.
-   @>      HSE66       P             953_954_955_957_959  <--->     TYR142       P   2166_2167_2169_2171_2174_2176     3.7   166.3
-   @>     TYR119       P   1802_1803_1805_1807_1810_1812  <--->     PHE152       P   2328_2329_2331_2333_2335_2337     4.8   134.6
-   @>     TYR132       P   2024_2025_2027_2029_2032_2034  <--->     TYR131       P   2003_2004_2006_2008_2011_2013     4.9   117.0
-   @>      PHE26       P         327_328_330_332_334_336  <--->      TRP39       P         549_550_551_553_555_557     4.9    68.3
-   @> Number of detected Pi stacking interactions: 4.
-   @> Frame: 12
-   @> Calculating Pi stacking interactions.
-   @>      HSE66       P             953_954_955_957_959  <--->     TYR142       P   2166_2167_2169_2171_2174_2176     4.3   155.6
-   @>     TYR132       P   2024_2025_2027_2029_2032_2034  <--->     TYR131       P   2003_2004_2006_2008_2011_2013     4.7   116.5
-   @>     HSE157       P2414_2415_2416_2418_2420_2423_2424  <--->     TYR119       P   1802_1803_1805_1807_1810_1812     4.7    34.1
-   @>      PHE26       P         327_328_330_332_334_336  <--->      TRP39       P         549_550_551_553_555_557     4.8    80.0
-   @> Number of detected Pi stacking interactions: 4.
-   @> Frame: 13
-   @> Calculating Pi stacking interactions.
-   @>      HSE66       P             953_954_955_957_959  <--->     TYR142       P   2166_2167_2169_2171_2174_2176     4.1   163.4
-   @> Number of detected Pi stacking interactions: 1.
-   @> Frame: 14
-   @> Calculating Pi stacking interactions.
-   @>     TYR132       P   2024_2025_2027_2029_2032_2034  <--->     TYR131       P   2003_2004_2006_2008_2011_2013     4.8    12.2
-   @>      PHE26       P         327_328_330_332_334_336  <--->      TRP39       P         549_550_551_553_555_557     5.0    63.2
-   @> Number of detected Pi stacking interactions: 2.
-   @> Frame: 15
-   @> Calculating Pi stacking interactions.
-   @>      HSE66       P             953_954_955_957_959  <--->     TYR142       P   2166_2167_2169_2171_2174_2176     4.0   168.0
-   @>      PHE26       P         327_328_330_332_334_336  <--->      TRP39       P         549_550_551_553_555_557     4.7    79.3
-   @> Number of detected Pi stacking interactions: 2.
-   @> Frame: 16
-   @> Calculating Pi stacking interactions.
-   @>      HSE66       P             953_954_955_957_959  <--->     TYR142       P   2166_2167_2169_2171_2174_2176     4.6   141.5
-   @>      PHE26       P         327_328_330_332_334_336  <--->      TRP39       P         549_550_551_553_555_557     4.9    64.8
-   @> Number of detected Pi stacking interactions: 2.
-   @> Frame: 17
-   @> Calculating Pi stacking interactions.
-   @>      PHE26       P         327_328_330_332_334_336  <--->     PHE152       P   2328_2329_2331_2333_2335_2337     5.0    26.3
-   @> Number of detected Pi stacking interactions: 1.
-   @> Frame: 18
-   @> Calculating Pi stacking interactions.
-   @>     TYR132       P   2024_2025_2027_2029_2032_2034  <--->     TYR131       P   2003_2004_2006_2008_2011_2013     4.7    70.1
-   @>      HSE66       P             953_954_955_957_959  <--->     TYR142       P   2166_2167_2169_2171_2174_2176     4.7   167.8
-   @>     TYR119       P   1802_1803_1805_1807_1810_1812  <--->     PHE152       P   2328_2329_2331_2333_2335_2337     4.9   100.0
-   @> Number of detected Pi stacking interactions: 3.
+   ..
+   ..
    @> Frame: 19
    @> Calculating Pi stacking interactions.
    @>     TYR132       P   2024_2025_2027_2029_2032_2034  <--->     TYR131       P   2003_2004_2006_2008_2011_2013     4.6    62.2
@@ -1171,74 +551,8 @@ Pi-Cation interactions using :func:`.calcPiCationTrajectory`:
    @>     HSE157   P2414_2415_2416_2418_2420_2423_2424  <--->     LYS155   P                         NZ_2391     4.8
    @>     HSE157   P2414_2415_2416_2418_2420_2423_2424  <--->     LYS112   P                         NZ_1699     4.9
    @> Number of detected cation-pi interactions: 4.
-   @> Frame: 5
-   @> Calculating cation-Pi interactions.
-   @>      HSE66   P             953_954_955_957_959  <--->      ARG65   P                     NH1_938_941     4.3
-   @>     HSE157   P2414_2415_2416_2418_2420_2423_2424  <--->     LYS112   P                         NZ_1699     4.3
-   @> Number of detected cation-pi interactions: 2.
-   @> Frame: 6
-   @> Calculating cation-Pi interactions.
-   @>      PHE85   P   1248_1249_1251_1253_1255_1257  <--->      ARG40   P                     NH1_577_580     3.9
-   @>      HSE66   P             953_954_955_957_959  <--->      ARG65   P                     NH1_938_941     4.4
-   @>     PHE138   P   2101_2102_2104_2106_2108_2110  <--->      ARG58   P                     NH1_829_832     5.0
-   @> Number of detected cation-pi interactions: 3.
-   @> Frame: 7
-   @> Calculating cation-Pi interactions.
-   @>      PHE85   P   1248_1249_1251_1253_1255_1257  <--->      ARG40   P                     NH1_577_580     3.9
-   @>      HSE66   P             953_954_955_957_959  <--->      ARG65   P                     NH1_938_941     4.2
-   @>     HSE157   P2414_2415_2416_2418_2420_2423_2424  <--->     LYS112   P                         NZ_1699     4.9
-   @> Number of detected cation-pi interactions: 3.
-   @> Frame: 8
-   @> Calculating cation-Pi interactions.
-   @>      HSE66   P             953_954_955_957_959  <--->      ARG65   P                     NH1_938_941     3.8
-   @>      PHE85   P   1248_1249_1251_1253_1255_1257  <--->      ARG40   P                     NH1_577_580     4.5
-   @> Number of detected cation-pi interactions: 2.
-   @> Frame: 9
-   @> Calculating cation-Pi interactions.
-   @>      HSE66   P             953_954_955_957_959  <--->      ARG65   P                     NH1_938_941     4.4
-   @>      PHE85   P   1248_1249_1251_1253_1255_1257  <--->      ARG40   P                     NH1_577_580     4.8
-   @> Number of detected cation-pi interactions: 2.
-   @> Frame: 10
-   @> Calculating cation-Pi interactions.
-   @>      HSE66   P             953_954_955_957_959  <--->      ARG65   P                     NH1_938_941     4.8
-   @>     PHE138   P   2101_2102_2104_2106_2108_2110  <--->      ARG58   P                     NH1_829_832     4.9
-   @>      PHE85   P   1248_1249_1251_1253_1255_1257  <--->      ARG40   P                     NH1_577_580     5.0
-   @> Number of detected cation-pi interactions: 3.
-   @> Frame: 11
-   @> Calculating cation-Pi interactions.
-   @>      PHE85   P   1248_1249_1251_1253_1255_1257  <--->      ARG40   P                     NH1_577_580     4.1
-   @>     HSE157   P2414_2415_2416_2418_2420_2423_2424  <--->     LYS155   P                         NZ_2391     4.4
-   @>      HSE66   P             953_954_955_957_959  <--->      ARG65   P                     NH1_938_941     4.8
-   @> Number of detected cation-pi interactions: 3.
-   @> Frame: 12
-   @> Calculating cation-Pi interactions.
-   @>      PHE85   P   1248_1249_1251_1253_1255_1257  <--->      ARG40   P                     NH1_577_580     4.3
-   @>      HSE66   P             953_954_955_957_959  <--->      ARG65   P                     NH1_938_941     4.4
-   @> Number of detected cation-pi interactions: 2.
-   @> Frame: 13
-   @> Calculating cation-Pi interactions.
-   @>      HSE66   P             953_954_955_957_959  <--->      ARG65   P                     NH1_938_941     4.4
-   @>      PHE85   P   1248_1249_1251_1253_1255_1257  <--->      ARG40   P                     NH1_577_580     4.7
-   @> Number of detected cation-pi interactions: 2.
-   @> Frame: 14
-   @> Calculating cation-Pi interactions.
-   @>      PHE85   P   1248_1249_1251_1253_1255_1257  <--->      ARG40   P                     NH1_577_580     4.6
-   @> Number of detected cation-pi interactions: 1.
-   @> Frame: 15
-   @> Calculating cation-Pi interactions.
-   @>      PHE85   P   1248_1249_1251_1253_1255_1257  <--->      ARG40   P                     NH1_577_580     4.4
-   @> Number of detected cation-pi interactions: 1.
-   @> Frame: 16
-   @> Calculating cation-Pi interactions.
-   @>      PHE85   P   1248_1249_1251_1253_1255_1257  <--->      ARG40   P                     NH1_577_580     3.8
-   @> Number of detected cation-pi interactions: 1.
-   @> Frame: 17
-   @> Calculating cation-Pi interactions.
-   @> Number of detected cation-pi interactions: 0.
-   @> Frame: 18
-   @> Calculating cation-Pi interactions.
-   @>      PHE85   P   1248_1249_1251_1253_1255_1257  <--->      ARG40   P                     NH1_577_580     4.5
-   @> Number of detected cation-pi interactions: 1.
+   ..
+   ..
    @> Frame: 19
    @> Calculating cation-Pi interactions.
    @>      PHE85   P   1248_1249_1251_1253_1255_1257  <--->      ARG40   P                     NH1_577_580     4.9
@@ -1342,668 +656,8 @@ Hydrophobic interactions using :func:`.calcHydrophohicTrajectory`:
    @>      ALA74    P       CB_106814s  <--->      ILE16    P       CG2_177     4.4     4.3
    @>     ARG150    P       CG_229414s  <--->      LEU29    P       CD2_399     4.5    22.3
    @> Number of detected hydrophobic interactions: 38.
-   @> Frame: 2
-   @> Hydrophobic Overlaping Areas are computed.
-   @> Calculating hydrophobic interactions.
-   @>      PHE10    P         CG_9114s  <--->      ALA22    P        CB_273     3.4    42.9
-   @>      PHE26    P       CD2_33414s  <--->      VAL41    P       CG2_595     3.4    17.0
-   @>     ALA156    P       CB_240114s  <--->     PHE152    P      CE1_2331     3.4    18.4
-   @>      ILE68    P       CG1_98014s  <--->     TYR142    P       OH_2172     3.5    18.2
-   @>      ILE88    P      CG2_130014s  <--->      LEU99    P      CD1_1476     3.5     9.3
-   @>      VAL30    P       CG1_41114s  <--->      PHE26    P       CE2_336     3.6    35.0
-   @>      ARG75    P       CG_108114s  <--->      ALA44    P        CB_628     3.6    38.3
-   @>      MET63    P        SD_89314s  <--->     TYR142    P      CE1_2169     3.6    17.7
-   @>      LEU96    P      CD1_142114s  <--->     ILE113    P      CG2_1711     3.6    23.3
-   @>     ALA111    P       CB_167714s  <--->      ILE88    P       CD_1307     3.6    18.3
-   @>     VAL146    P      CG2_223514s  <--->     TYR142    P      CE2_2176     3.6    48.9
-   @>      LEU89    P      CD1_132214s  <--->     PHE152    P      CE2_2337     3.6    24.8
-   @>      ILE21    P       CG2_25614s  <--->      VAL25    P       CG2_314     3.6    21.4
-   @>      TRP39    P       NE1_54714s  <--->     LEU153    P      CD1_2350     3.6    21.8
-   @>      ALA24    P        CB_29814s  <--->      MET63    P        CE_894     3.6     5.8
-   @>     TYR119    P       OH_180814s  <--->     ALA156    P       CB_2401     3.6    19.0
-   @>      VAL11    P       CG2_11414s  <--->      ILE88    P      CG2_1300     3.7     4.7
-   @>     LEU116    P      CD2_177114s  <--->      MET91    P       SD_1353     3.7    17.5
-   @>      ILE35    P        CD_49114s  <--->      TRP39    P       CD1_545     3.7    29.2
-   @>       VAL8    P        CG1_5514s  <--->      PHE26    P       CE2_336     3.7    10.1
-   @>      PHE82    P       CZ_120914s  <--->      ILE77    P       CD_1128     3.7    18.4
-   @>       LEU9    P         CG_7214s  <--->      VAL11    P       CG2_114     3.7    13.1
-   @>      ARG18    P        CG_20814s  <--->     VAL141    P      CG2_2153     3.7    31.8
-   @>     ILE127    P       CD_194914s  <--->     LEU116    P      CD2_1771     3.8    13.6
-   @>     ILE126    P       CD_193014s  <--->     LEU115    P      CD1_1748     3.8     7.4
-   @>      PHE85    P      CD1_124914s  <--->       LEU9    P        CD2_78     3.9    30.4
-   @>      LYS79    P       CG_115514s  <--->     VAL106    P      CG2_1598     4.0    24.0
-   @>     LYS102    P       CD_153414s  <--->      ILE77    P      CG2_1121     4.0    11.0
-   @>      LEU29    P       CD1_39514s  <--->      VAL25    P       CG1_310     4.1    19.0
-   @>      ARG40    P        CG_56814s  <--->      PHE85    P      CE2_1257     4.1    47.5
-   @>      LYS28    P        CD_37414s  <--->      ILE68    P        CD_983     4.2    13.7
-   @>     PHE138    P      CE1_210414s  <--->      ARG58    P        CG_820     4.3    50.5
-   @>      LEU13    P       CD1_14014s  <--->      TYR49    P       CE1_686     4.4     9.0
-   @>       LYS6    P         CG_2314s  <--->      TRP39    P       CH2_557     4.4    46.7
-   @>      ALA74    P       CB_106814s  <--->      ILE51    P       CG2_718     4.5    24.8
-   @> Number of detected hydrophobic interactions: 35.
-   @> Frame: 3
-   @> Hydrophobic Overlaping Areas are computed.
-   @> Calculating hydrophobic interactions.
-   @>     ALA156    P       CB_240114s  <--->      TYR87    P       OH_1286     3.3    30.3
-   @>      PHE10    P        CD1_9214s  <--->      ALA22    P        CB_273     3.4    23.9
-   @>      PHE26    P       CE2_33614s  <--->       VAL8    P        CG1_55     3.4    15.6
-   @>      ILE88    P       CD_130714s  <--->     ALA111    P       CB_1677     3.4    20.5
-   @>     TYR142    P      CE1_216914s  <--->     VAL146    P      CG2_2235     3.5    46.5
-   @>      MET63    P        SD_89314s  <--->     TYR142    P      CD1_2167     3.5    19.3
-   @>      LEU99    P      CD1_147614s  <--->      ILE88    P      CG2_1300     3.6    10.6
-   @>     PHE152    P      CE2_233714s  <--->       VAL8    P        CG2_59     3.6    10.8
-   @>      VAL41    P       CG2_59514s  <--->      PHE26    P       CD2_334     3.6    17.7
-   @>       LEU9    P        CD2_7814s  <--->      ILE77    P       CD_1128     3.6    16.1
-   @>      LEU96    P      CD1_142114s  <--->     ILE113    P      CG2_1711     3.6    25.5
-   @>      ALA24    P        CB_29814s  <--->      MET63    P        CE_894     3.6     4.3
-   @>      PHE82    P      CE1_120714s  <--->      ILE77    P       CD_1128     3.6    19.6
-   @>      ILE21    P       CG2_25614s  <--->      MET63    P        CE_894     3.6    18.2
-   @>      VAL25    P       CG2_31414s  <--->     TYR142    P      CE1_2169     3.7     9.2
-   @>      ILE68    P        CD_98314s  <--->     TYR142    P       OH_2172     3.7    25.9
-   @>     LEU116    P      CD2_177114s  <--->      MET91    P       CE_1354     3.7    21.7
-   @>      TRP39    P       CE2_54914s  <--->     LEU153    P      CD1_2350     3.7    20.6
-   @>      LYS28    P        CG_37114s  <--->      ILE68    P        CD_983     3.7    25.2
-   @>      LEU89    P      CD1_132214s  <--->       VAL8    P        CG2_59     3.7     9.0
-   @>     ILE126    P       CD_193014s  <--->     LEU115    P      CD1_1748     3.7    11.4
-   @>     ILE127    P       CD_194914s  <--->     LEU116    P      CD2_1771     3.7    16.8
-   @>      ILE35    P        CD_49114s  <--->     LEU153    P      CD1_2350     3.8    11.9
-   @>      VAL11    P       CG2_11414s  <--->      ILE88    P      CG2_1300     3.8     8.0
-   @>      LYS79    P       CG_115514s  <--->     VAL106    P      CG1_1594     3.8    25.8
-   @>     PHE138    P      CD2_210814s  <--->      ILE21    P        CD_263     3.9    14.8
-   @>      PHE85    P      CE1_125114s  <--->       LEU9    P        CD1_74     3.9    29.7
-   @>     TYR119    P       OH_180814s  <--->     ALA156    P       CB_2401     3.9    24.6
-   @>      VAL30    P       CG1_41114s  <--->      ILE35    P       CG1_488     3.9    46.7
-   @>      ALA44    P        CB_62814s  <--->      VAL11    P       CG2_114     4.0    16.7
-   @>     ARG150    P       CG_229414s  <--->      LEU29    P       CD2_399     4.0    30.3
-   @>     VAL141    P      CG1_214914s  <--->      ILE21    P        CD_263     4.2    10.7
-   @>      ARG18    P        CG_20814s  <--->     VAL141    P      CG1_2149     4.2     9.2
-   @>     LYS102    P       CD_153414s  <--->      ILE77    P      CG2_1121     4.3     6.7
-   @>      ALA45    P        CB_63814s  <--->      ILE51    P       CG2_718     4.4     4.3
-   @>      ALA74    P       CB_106814s  <--->      ILE51    P       CG2_718     4.5    23.0
-   @>      ARG58    P        CG_82014s  <--->     PHE138    P      CE1_2104     4.5    47.4
-   @> Number of detected hydrophobic interactions: 37.
-   @> Frame: 4
-   @> Hydrophobic Overlaping Areas are computed.
-   @> Calculating hydrophobic interactions.
-   @>      TRP39    P       NE1_54714s  <--->     LEU153    P      CD1_2350     3.1    21.8
-   @>      ILE88    P       CD_130714s  <--->      PHE82    P      CD1_1205     3.4    32.0
-   @>     ALA156    P       CB_240114s  <--->      TYR87    P       OH_1286     3.4    25.6
-   @>     TYR142    P      CE1_216914s  <--->     VAL146    P      CG2_2235     3.4    48.0
-   @>      PHE26    P       CE2_33614s  <--->       VAL8    P        CG1_55     3.5    14.7
-   @>      PHE10    P         CZ_9614s  <--->       VAL8    P        CG2_59     3.5    23.5
-   @>      ILE77    P       CD_112814s  <--->      PHE82    P      CE2_1213     3.5    30.3
-   @>      ILE68    P       CG1_98014s  <--->      MET63    P        SD_893     3.5    50.5
-   @>     PHE152    P      CE1_233114s  <--->     ALA156    P       CB_2401     3.6    19.9
-   @>      ILE35    P        CD_49114s  <--->      TRP39    P       CD1_545     3.7    31.4
-   @>      VAL25    P       CG2_31414s  <--->     TYR142    P      CE1_2169     3.7     9.6
-   @>      VAL11    P       CG2_11414s  <--->      LEU99    P      CD1_1476     3.7    13.4
-   @>      VAL41    P       CG2_59514s  <--->      PHE26    P       CD2_334     3.7    19.5
-   @>      VAL30    P       CG1_41114s  <--->     LEU153    P      CD2_2354     3.7    13.3
-   @>      ILE21    P        CD_26314s  <--->     VAL141    P      CG1_2149     3.7    14.3
-   @>     ALA111    P       CB_167714s  <--->      ILE88    P       CD_1307     3.7    13.5
-   @>     VAL106    P      CG2_159814s  <--->      PHE82    P      CD2_1211     3.8    24.2
-   @>     LEU116    P      CD2_177114s  <--->      MET91    P       CE_1354     3.8    19.4
-   @>      LEU89    P      CD1_132214s  <--->       VAL8    P        CG2_59     3.8     8.7
-   @>      ALA24    P        CB_29814s  <--->      ILE68    P       CG2_976     3.8    13.5
-   @>      ARG75    P       CG_108114s  <--->      ALA44    P        CB_628     3.8    39.0
-   @>       LEU9    P        CD2_7814s  <--->      ILE88    P       CD_1307     3.9    26.3
-   @>     ILE127    P       CD_194914s  <--->      MET91    P       SD_1353     3.9    35.1
-   @>      PHE85    P      CD1_124914s  <--->       LEU9    P        CD2_78     3.9    30.7
-   @>      ALA22    P        CB_27314s  <--->     LEU116    P      CD2_1771     3.9     7.6
-   @>     PHE138    P      CD2_210814s  <--->      ILE21    P        CD_263     3.9    13.5
-   @>     ILE113    P      CG2_171114s  <--->      PHE82    P      CE1_1207     4.0     7.3
-   @>      LEU96    P      CD1_142114s  <--->     ILE113    P       CD_1718     4.0    32.6
-   @>     TYR119    P      CE1_180514s  <--->      LEU89    P      CD2_1326     4.1    11.4
-   @>      ALA74    P       CB_106814s  <--->      ILE51    P       CG2_718     4.1    24.0
-   @>     ILE126    P       CD_193014s  <--->     LEU115    P      CD1_1748     4.1    14.8
-   @>      ALA45    P        CB_63814s  <--->      ILE51    P       CG2_718     4.3     5.2
-   @>      ARG40    P        CG_56814s  <--->      PHE85    P      CE2_1257     4.4    52.1
-   @>     LYS102    P       CD_153414s  <--->      LEU99    P      CD2_1480     4.4    30.8
-   @> Number of detected hydrophobic interactions: 34.
-   @> Frame: 5
-   @> Hydrophobic Overlaping Areas are computed.
-   @> Calculating hydrophobic interactions.
-   @>      MET63    P        SD_89314s  <--->     TYR142    P      CD1_2167     3.3    20.4
-   @>      TRP39    P       CE2_54914s  <--->     LEU153    P      CD1_2350     3.4    29.0
-   @>      LEU99    P      CD2_148014s  <--->      ILE77    P       CD_1128     3.4     9.7
-   @>      PHE10    P        CD1_9214s  <--->      ALA22    P        CB_273     3.5    36.7
-   @>      ILE21    P        CD_26314s  <--->      MET63    P        CG_890     3.5    22.6
-   @>       LEU9    P        CD2_7814s  <--->      ILE77    P       CD_1128     3.6    15.7
-   @>      ILE68    P       CG2_97614s  <--->      MET63    P        CE_894     3.6    42.7
-   @>      PHE85    P      CE1_125114s  <--->       LEU9    P        CD1_74     3.6    33.5
-   @>     ILE126    P       CD_193014s  <--->     LEU115    P      CD1_1748     3.7    15.2
-   @>      PHE26    P       CE2_33614s  <--->      VAL30    P       CG1_411     3.7    25.7
-   @>      VAL11    P       CG1_11014s  <--->       LEU9    P        CD2_78     3.7    17.5
-   @>     PHE152    P      CE1_233114s  <--->      LEU89    P      CD1_1322     3.7    23.5
-   @>       VAL8    P        CG1_5514s  <--->      PHE26    P       CE2_336     3.7    13.8
-   @>      VAL41    P       CG2_59514s  <--->      PHE26    P       CD2_334     3.7    11.4
-   @>      VAL25    P       CG2_31414s  <--->      MET63    P        CE_894     3.8     7.3
-   @>      ALA24    P        CB_29814s  <--->      MET63    P        CE_894     3.8     5.4
-   @>     ILE127    P       CD_194914s  <--->      MET91    P       SD_1353     3.8    33.5
-   @>     VAL146    P      CG2_223514s  <--->     TYR142    P      CE1_2169     3.8    37.1
-   @>      ILE88    P       CD_130714s  <--->     ALA111    P       CB_1677     3.9    15.0
-   @>     LEU116    P      CD2_177114s  <--->      MET91    P       CE_1354     3.9    15.8
-   @>      PHE82    P      CD1_120514s  <--->      ILE88    P       CD_1307     3.9    24.5
-   @>      ARG75    P       CG_108114s  <--->      ALA44    P        CB_628     3.9    27.0
-   @>      LYS28    P        CG_37114s  <--->      ILE68    P        CD_983     3.9    22.2
-   @>      LYS79    P       CD_115814s  <--->     VAL106    P      CG2_1598     4.0    19.5
-   @>     ALA156    P       CB_240114s  <--->      TYR87    P       OH_1286     4.0    17.6
-   @>     TYR119    P      CE1_180514s  <--->      LEU89    P      CD2_1326     4.1     8.7
-   @>      LEU96    P      CD1_142114s  <--->     ILE113    P      CG1_1715     4.1    25.8
-   @>       LYS6    P         CG_2314s  <--->      TRP39    P       CH2_557     4.1    64.2
-   @>      MET70    P       CG_101014s  <--->      ALA24    P        CB_298     4.2    16.7
-   @>      ILE35    P        CD_49114s  <--->      TRP39    P       NE1_547     4.2    31.7
-   @>     LYS102    P       CD_153414s  <--->      ILE77    P      CG2_1121     4.2    11.1
-   @>     PHE138    P      CD2_210814s  <--->      ILE21    P        CD_263     4.3    12.8
-   @>      ARG18    P        CG_20814s  <--->     VAL141    P      CG2_2153     4.3     8.4
-   @> Number of detected hydrophobic interactions: 33.
-   @> Frame: 6
-   @> Hydrophobic Overlaping Areas are computed.
-   @> Calculating hydrophobic interactions.
-   @>      PHE10    P        CD1_9214s  <--->      ALA22    P        CB_273     3.1    42.3
-   @>      PHE82    P       CZ_120914s  <--->      ILE77    P       CD_1128     3.3    29.2
-   @>     TYR142    P      CE1_216914s  <--->     VAL146    P      CG2_2235     3.4    38.9
-   @>      MET63    P        CE_89414s  <--->     TYR142    P      CD1_2167     3.5    20.0
-   @>      TRP39    P       NE1_54714s  <--->     LEU153    P      CD1_2350     3.5    14.4
-   @>      PHE26    P       CD2_33414s  <--->      VAL41    P       CG2_595     3.5    23.5
-   @>       VAL8    P        CG2_5914s  <--->      LEU89    P      CD1_1322     3.6    15.8
-   @>     ALA156    P       CB_240114s  <--->      TYR87    P       OH_1286     3.6    18.2
-   @>      ILE21    P       CG2_25614s  <--->      MET63    P        CE_894     3.6    24.6
-   @>      VAL11    P       CG2_11414s  <--->      ILE88    P      CG2_1300     3.6    10.8
-   @>     LEU116    P      CD2_177114s  <--->     ILE127    P       CD_1949     3.6    16.0
-   @>       LEU9    P         CG_7214s  <--->      VAL11    P       CG2_114     3.7    12.4
-   @>      LEU99    P      CD2_148014s  <--->      ILE77    P       CD_1128     3.7    11.2
-   @>     PHE152    P       CZ_233314s  <--->       VAL8    P        CG2_59     3.7    19.1
-   @>      VAL30    P       CG1_41114s  <--->      PHE26    P       CE2_336     3.7    23.0
-   @>      ILE68    P       CG2_97614s  <--->      MET63    P        SD_893     3.7    52.0
-   @>     ALA111    P       CB_167714s  <--->      ILE88    P       CD_1307     3.7    16.9
-   @>      ALA24    P        CB_29814s  <--->      ILE68    P       CG2_976     3.7    14.6
-   @>     ILE126    P       CD_193014s  <--->     LEU115    P      CD1_1748     3.7    10.6
-   @>     VAL141    P      CG1_214914s  <--->      ILE21    P        CD_263     3.7    19.9
-   @>      LEU96    P      CD1_142114s  <--->     ILE113    P       CD_1718     3.7    13.9
-   @>      ILE35    P       CG1_48814s  <--->      VAL30    P       CG1_411     3.8    41.4
-   @>     TYR119    P      CE1_180514s  <--->      LEU89    P      CD2_1326     3.9    10.9
-   @>     VAL106    P      CG1_159414s  <--->      PHE82    P       CG_1204     3.9    18.0
-   @>     LEU125    P      CD2_191114s  <--->     ILE126    P       CD_1930     3.9    53.3
-   @>      LYS79    P       CG_115514s  <--->     VAL106    P      CG2_1598     4.0    20.2
-   @>      ALA45    P        CB_63814s  <--->      ILE51    P       CG2_718     4.1     6.6
-   @>      PHE85    P      CE1_125114s  <--->       LEU9    P        CD1_74     4.1    24.2
-   @>      ALA44    P        CB_62814s  <--->       LEU9    P        CD1_74     4.2    11.9
-   @>      MET91    P       CE_135414s  <--->      ALA22    P        CB_273     4.2     5.9
-   @>     PHE138    P      CD2_210814s  <--->      ILE21    P        CD_263     4.2     9.2
-   @>      ARG40    P        CG_56814s  <--->      PHE85    P      CE2_1257     4.3    52.2
-   @>      LYS28    P        CG_37114s  <--->      ILE68    P        CD_983     4.3    13.9
-   @>      ARG58    P        CG_82014s  <--->     PHE138    P      CE1_2104     4.4    73.5
-   @>      ARG75    P       CG_108114s  <--->      ALA44    P        CB_628     4.4    29.9
-   @>      ARG18    P        CG_20814s  <--->     VAL141    P      CG1_2149     4.4    14.8
-   @> Number of detected hydrophobic interactions: 36.
-   @> Frame: 7
-   @> Hydrophobic Overlaping Areas are computed.
-   @> Calculating hydrophobic interactions.
-   @>      VAL11    P       CG2_11414s  <--->      ILE88    P      CG2_1300     3.4    10.5
-   @>      PHE26    P       CE2_33614s  <--->      VAL30    P       CG1_411     3.4    25.3
-   @>      MET63    P        SD_89314s  <--->     TYR142    P      CD1_2167     3.4    14.2
-   @>       VAL8    P        CG1_5514s  <--->      PHE26    P       CE2_336     3.4    12.7
-   @>      ALA24    P        CB_29814s  <--->      MET63    P        CE_894     3.5     4.9
-   @>      ILE68    P       CG1_98014s  <--->     TYR142    P       OH_2172     3.5    21.4
-   @>      VAL41    P       CG2_59514s  <--->      PHE26    P       CD2_334     3.5    12.1
-   @>      PHE10    P       CE2_10014s  <--->       VAL8    P        CG2_59     3.5    28.3
-   @>      LEU96    P      CD1_142114s  <--->     ILE113    P      CG2_1711     3.6    21.9
-   @>      ALA22    P        CB_27314s  <--->      PHE10    P        CD1_92     3.6    37.8
-   @>      PHE82    P       CZ_120914s  <--->      ILE77    P       CD_1128     3.6    23.3
-   @>     PHE152    P      CE2_233714s  <--->       VAL8    P        CG2_59     3.7    15.4
-   @>      LEU89    P      CD2_132614s  <--->     TYR119    P      CE1_1805     3.7    16.8
-   @>      ILE21    P       CG1_26014s  <--->      MET70    P       SD_1013     3.7    17.4
-   @>      LYS28    P        CG_37114s  <--->      ILE68    P        CD_983     3.7    27.0
-   @>     LEU116    P      CD2_177114s  <--->      MET91    P       CE_1354     3.7    16.7
-   @>     ARG150    P       CG_229414s  <--->      LEU29    P       CD2_399     3.8    23.5
-   @>      TRP39    P       CZ3_55314s  <--->       VAL8    P        CG1_55     3.8    13.8
-   @>      LEU99    P      CD1_147614s  <--->      ILE77    P       CD_1128     3.8    14.0
-   @>      ILE35    P        CD_49114s  <--->     LEU153    P      CD1_2350     3.8    10.7
-   @>     ILE127    P       CD_194914s  <--->     LEU116    P      CD2_1771     3.8    15.9
-   @>     ALA156    P       CB_240114s  <--->     TYR119    P      CE2_1812     3.8    14.8
-   @>       LEU9    P        CD2_7814s  <--->      PHE85    P      CD1_1249     3.9    36.3
-   @>     VAL141    P      CG1_214914s  <--->      ILE21    P        CD_263     3.9    12.9
-   @>     VAL106    P      CG2_159814s  <--->      PHE82    P      CD2_1211     4.0    18.2
-   @>     ALA111    P       CB_167714s  <--->      ILE88    P      CG1_1304     4.0    14.3
-   @>      VAL25    P       CG2_31414s  <--->      ILE21    P       CG2_256     4.0    17.5
-   @>     LYS102    P       CD_153414s  <--->      LEU99    P      CD2_1480     4.0    24.8
-   @>     LEU125    P       CG_190514s  <--->     ILE126    P      CG1_1927     4.1    49.3
-   @>      ARG75    P       CG_108114s  <--->      ALA44    P        CB_628     4.2    30.8
-   @>      ARG40    P        CG_56814s  <--->      PHE85    P      CE2_1257     4.2    52.5
-   @>     PHE138    P      CD1_210214s  <--->      ARG58    P        CG_820     4.3    53.3
-   @>      ARG18    P        CG_20814s  <--->     ILE127    P      CG2_1942     4.3    35.6
-   @>      LYS79    P       CG_115514s  <--->     VAL106    P      CG2_1598     4.4    18.6
-   @> Number of detected hydrophobic interactions: 34.
-   @> Frame: 8
-   @> Hydrophobic Overlaping Areas are computed.
-   @> Calculating hydrophobic interactions.
-   @>     ALA156    P       CB_240114s  <--->      TYR87    P       OH_1286     3.2    27.3
-   @>       LEU9    P        CD2_7814s  <--->      ILE77    P       CD_1128     3.4    18.7
-   @>      ILE88    P       CD_130714s  <--->      PHE82    P      CE1_1207     3.4    20.6
-   @>      MET63    P        SD_89314s  <--->     TYR142    P      CD1_2167     3.4    26.2
-   @>       VAL8    P        CG1_5514s  <--->      PHE10    P       CE2_100     3.5    32.1
-   @>      VAL25    P       CG2_31414s  <--->     TYR142    P      CE1_2169     3.5    11.0
-   @>      LEU99    P      CD1_147614s  <--->      ILE88    P      CG2_1300     3.5    12.1
-   @>      ALA22    P        CB_27314s  <--->      PHE10    P        CD1_92     3.6    36.6
-   @>      ILE68    P        CD_98314s  <--->     TYR142    P       OH_2172     3.6    30.0
-   @>      VAL11    P       CG2_11414s  <--->      ILE88    P      CG2_1300     3.6    11.1
-   @>      PHE26    P       CE2_33614s  <--->      VAL30    P       CG1_411     3.6    28.1
-   @>      ALA24    P        CB_29814s  <--->      ILE68    P       CG2_976     3.7    12.6
-   @>     ALA111    P       CB_167714s  <--->      ILE88    P       CD_1307     3.7    22.0
-   @>      VAL41    P       CG2_59514s  <--->      PHE26    P       CD2_334     3.7    14.2
-   @>     PHE152    P      CE1_233114s  <--->     ALA156    P       CB_2401     3.7    17.5
-   @>      ILE21    P       CG2_25614s  <--->      MET63    P        CE_894     3.7    12.7
-   @>     TYR119    P       OH_180814s  <--->     ALA156    P       CB_2401     3.8    15.9
-   @>      LEU89    P      CD1_132214s  <--->     PHE152    P      CD2_2335     3.8    22.6
-   @>      TRP39    P       NE1_54714s  <--->     LEU153    P      CD1_2350     3.8    13.4
-   @>     LEU116    P      CD2_177114s  <--->      MET91    P       SD_1353     3.8    17.9
-   @>     ILE127    P       CD_194914s  <--->     LEU116    P      CD2_1771     3.9    14.4
-   @>      MET70    P       CG_101014s  <--->      ALA24    P        CB_298     3.9    21.5
-   @>      LEU96    P      CD1_142114s  <--->     ILE113    P      CG2_1711     3.9    13.0
-   @>      PHE85    P      CE2_125714s  <--->      ARG40    P        CG_568     4.0    45.4
-   @>      ILE35    P        CD_49114s  <--->      TRP39    P       NE1_547     4.0    40.8
-   @>     VAL141    P      CG2_215314s  <--->      ILE21    P        CD_263     4.1    17.0
-   @>      LYS28    P        CG_37114s  <--->      ILE68    P        CD_983     4.1    10.7
-   @>     LYS102    P       CD_153414s  <--->      ILE77    P      CG2_1121     4.1     9.2
-   @>      LYS79    P       CD_115814s  <--->     VAL106    P      CG2_1598     4.1    19.1
-   @>     PHE138    P      CE1_210414s  <--->      ARG58    P        CG_820     4.2    57.9
-   @>      ARG75    P       CG_108114s  <--->      ALA44    P        CB_628     4.2    32.2
-   @>      ALA45    P        CB_63814s  <--->      ILE51    P       CG2_718     4.4     4.4
-   @>      ARG18    P        CG_20814s  <--->      MET91    P       CG_1350     4.5    45.3
-   @> Number of detected hydrophobic interactions: 33.
-   @> Frame: 9
-   @> Hydrophobic Overlaping Areas are computed.
-   @> Calculating hydrophobic interactions.
-   @>      ILE88    P       CD_130714s  <--->      PHE82    P      CE1_1207     3.2    21.5
-   @>      PHE10    P        CD1_9214s  <--->      ALA22    P        CB_273     3.3    44.5
-   @>     ALA156    P       CB_240114s  <--->     PHE152    P      CE1_2331     3.4    21.2
-   @>      PHE26    P       CE2_33614s  <--->      VAL30    P       CG1_411     3.5    30.3
-   @>      TRP39    P       NE1_54714s  <--->     LEU153    P      CD1_2350     3.5    17.9
-   @>      ALA24    P        CB_29814s  <--->      MET63    P        CE_894     3.5     5.7
-   @>     ALA111    P       CB_167714s  <--->      ILE88    P       CD_1307     3.5    18.2
-   @>      ILE68    P       CG2_97614s  <--->      MET63    P        CE_894     3.5    49.2
-   @>     LEU116    P      CD2_177114s  <--->     ILE127    P       CD_1949     3.6    14.9
-   @>      LEU89    P      CD2_132614s  <--->     TYR119    P      CE1_1805     3.6    15.9
-   @>     TYR142    P      CE1_216914s  <--->      ILE68    P       CG1_980     3.6    24.2
-   @>      MET91    P       SD_135314s  <--->     ILE127    P       CD_1949     3.6    35.9
-   @>       LEU9    P        CD2_7814s  <--->      VAL11    P       CG2_114     3.6    24.8
-   @>      ILE21    P        CD_26314s  <--->     VAL141    P      CG1_2149     3.7    15.7
-   @>       VAL8    P        CG2_5914s  <--->      LEU89    P      CD1_1322     3.7    12.8
-   @>      LYS79    P       CG_115514s  <--->     VAL106    P      CG2_1598     3.7    21.6
-   @>      ILE35    P        CD_49114s  <--->      TRP39    P       CD1_545     3.8    31.7
-   @>     ALA151    P       CB_231514s  <--->     TYR119    P      CD2_1810     3.8    20.0
-   @>      ILE77    P       CD_112814s  <--->      PHE82    P       CZ_1209     3.8    22.1
-   @>      LEU99    P      CD1_147614s  <--->      VAL11    P       CG1_110     3.8    19.5
-   @>      LEU96    P      CD1_142114s  <--->     ILE113    P      CG2_1711     3.8     8.1
-   @>      ALA44    P        CB_62814s  <--->       LEU9    P        CD1_74     3.9    16.8
-   @>      TYR87    P       OH_128614s  <--->     ALA156    P       CB_2401     3.9    15.0
-   @>      LYS28    P        CG_37114s  <--->      ILE68    P        CD_983     4.0    16.6
-   @>      VAL41    P       CG2_59514s  <--->      PHE26    P       CD2_334     4.2    14.6
-   @>     PHE138    P      CD2_210814s  <--->      ILE21    P        CD_263     4.2    10.5
-   @>      PHE85    P       CZ_125314s  <--->       LEU9    P        CD1_74     4.3    25.5
-   @>      ARG40    P        CG_56814s  <--->      PHE85    P      CE2_1257     4.4    42.1
-   @>      ARG75    P       CG_108114s  <--->      ALA44    P        CB_628     4.4    23.1
-   @>     ILE126    P      CG1_192714s  <--->     LEU125    P       CG_1905     4.5    62.3
-   @>      ARG18    P        CG_20814s  <--->     VAL141    P      CG1_2149     4.5     8.0
-   @> Number of detected hydrophobic interactions: 31.
-   @> Frame: 10
-   @> Hydrophobic Overlaping Areas are computed.
-   @> Calculating hydrophobic interactions.
-   @>     TYR142    P      CE1_216914s  <--->     VAL146    P      CG2_2235     3.2    46.3
-   @>      ILE68    P       CG2_97614s  <--->      MET63    P        CE_894     3.2    47.5
-   @>      PHE26    P       CE2_33614s  <--->       VAL8    P        CG1_55     3.3    12.9
-   @>      PHE10    P        CD1_9214s  <--->      ALA22    P        CB_273     3.3    44.9
-   @>      MET70    P       SD_101314s  <--->      ILE21    P       CG1_260     3.5    18.9
-   @>     ALA156    P       CB_240114s  <--->      TYR87    P       OH_1286     3.5    26.0
-   @>      TRP39    P       NE1_54714s  <--->     LEU153    P      CD1_2350     3.5     9.9
-   @>     ILE113    P       CD_171814s  <--->      PHE82    P      CE1_1207     3.6    15.5
-   @>      ILE88    P       CD_130714s  <--->     ALA111    P       CB_1677     3.6    19.1
-   @>      LEU89    P       CG_132014s  <--->       VAL8    P        CG2_59     3.6    10.7
-   @>      VAL30    P       CG1_41114s  <--->      TRP39    P       CD1_545     3.7    10.6
-   @>     PHE152    P      CE1_233114s  <--->     ALA156    P       CB_2401     3.7    23.7
-   @>     LEU116    P      CD2_177114s  <--->      MET91    P       CE_1354     3.7    16.5
-   @>     VAL106    P      CG2_159814s  <--->      PHE82    P      CD2_1211     3.8    20.5
-   @>      VAL11    P       CG2_11414s  <--->      ILE88    P      CG2_1300     3.8    14.2
-   @>     TYR119    P      CE1_180514s  <--->      LEU89    P      CD2_1326     3.8    15.4
-   @>      ILE77    P       CD_112814s  <--->      VAL11    P       CG2_114     3.8    11.3
-   @>      LYS28    P        CG_37114s  <--->      ILE68    P        CD_983     3.8    18.7
-   @>      VAL41    P       CG2_59514s  <--->      PHE26    P       CD2_334     3.8    13.6
-   @>      ALA24    P        CB_29814s  <--->      MET63    P        CE_894     3.8     4.8
-   @>      LEU99    P      CD2_148014s  <--->      ILE77    P       CD_1128     3.8    12.9
-   @>      LEU96    P      CD1_142114s  <--->     ILE113    P      CG2_1711     3.9    20.4
-   @>       LEU9    P        CD2_7814s  <--->      ILE77    P       CD_1128     3.9    13.6
-   @>      PHE85    P       CZ_125314s  <--->       LEU9    P        CD1_74     4.0    29.3
-   @>      ILE35    P        CD_49114s  <--->     LEU153    P      CD1_2350     4.0     8.5
-   @>     ILE127    P       CD_194914s  <--->     LEU116    P      CD2_1771     4.0    15.8
-   @>     ILE126    P      CG1_192714s  <--->     LEU125    P       CG_1905     4.2    47.8
-   @>      ALA44    P        CB_62814s  <--->       LEU9    P        CD1_74     4.2    14.3
-   @>      LYS79    P       CG_115514s  <--->     VAL106    P      CG2_1598     4.2    21.2
-   @>       LYS6    P         CD_2614s  <--->      TRP39    P       CZ2_555     4.2    46.4
-   @>     PHE138    P      CD2_210814s  <--->      ILE21    P        CD_263     4.2     8.8
-   @>     VAL141    P      CG1_214914s  <--->      ILE21    P       CG2_256     4.3    10.3
-   @>      ARG18    P        CG_20814s  <--->      MET91    P       CG_1350     4.3    47.3
-   @>      ARG58    P        CG_82014s  <--->     PHE138    P      CE1_2104     4.4    63.7
-   @> Number of detected hydrophobic interactions: 34.
-   @> Frame: 11
-   @> Hydrophobic Overlaping Areas are computed.
-   @> Calculating hydrophobic interactions.
-   @>      ILE68    P        CD_98314s  <--->     TYR142    P       OH_2172     3.2    22.6
-   @>      MET63    P        SD_89314s  <--->     TYR142    P      CD1_2167     3.3    13.1
-   @>     LEU116    P      CD2_177114s  <--->      MET91    P       SD_1353     3.4    25.9
-   @>      ALA24    P        CB_29814s  <--->      MET63    P        CE_894     3.4     7.0
-   @>       LEU9    P        CD2_7814s  <--->      VAL11    P       CG2_114     3.4    11.0
-   @>      PHE82    P       CZ_120914s  <--->      ILE77    P       CD_1128     3.5    25.5
-   @>      PHE26    P       CE2_33614s  <--->      VAL30    P       CG1_411     3.5    31.8
-   @>      ILE88    P       CD_130714s  <--->      PHE82    P      CD1_1205     3.5    22.6
-   @>     LEU153    P      CD1_235014s  <--->      PHE26    P        CZ_332     3.5    25.2
-   @>      LEU89    P      CD2_132614s  <--->     TYR119    P      CE1_1805     3.6    31.4
-   @>      ILE35    P        CD_49114s  <--->      TRP39    P       NE1_547     3.6    25.4
-   @>      LEU99    P      CD2_148014s  <--->      PHE82    P       CZ_1209     3.6    17.6
-   @>     VAL146    P      CG2_223514s  <--->     TYR142    P      CE2_2176     3.6    45.0
-   @>      VAL41    P       CG1_59114s  <--->      PHE10    P       CE2_100     3.7     7.9
-   @>      VAL25    P       CG1_31014s  <--->      LEU29    P       CD1_395     3.7    23.1
-   @>       VAL8    P        CG1_5514s  <--->      PHE26    P       CE2_336     3.7    12.6
-   @>      ILE21    P       CG2_25614s  <--->      MET63    P        SD_893     3.7    17.4
-   @>     ALA156    P       CB_240114s  <--->     PHE152    P      CE1_2331     3.8    22.2
-   @>     ALA111    P       CB_167714s  <--->      ILE88    P      CG1_1304     3.8    17.9
-   @>      ALA22    P        CB_27314s  <--->     LEU116    P      CD2_1771     3.8     7.8
-   @>     ILE113    P      CG2_171114s  <--->      LEU99    P      CD1_1476     3.8    30.7
-   @>      PHE85    P      CE2_125714s  <--->      ARG40    P        CG_568     3.9    55.3
-   @>      MET70    P       SD_101314s  <--->      ILE21    P       CG1_260     4.0    19.5
-   @>      LEU96    P      CD1_142114s  <--->     ILE113    P      CG2_1711     4.0    18.0
-   @>     ILE127    P      CG2_194214s  <--->      ARG18    P        CG_208     4.1    33.6
-   @>      LYS79    P       CD_115814s  <--->     VAL106    P      CG2_1598     4.1    33.2
-   @>       LYS6    P         CD_2614s  <--->      TRP39    P       CH2_557     4.1    63.3
-   @>     ILE126    P      CG1_192714s  <--->     LEU125    P       CG_1905     4.2    62.6
-   @>     VAL141    P      CG1_214914s  <--->     ILE127    P      CG2_1942     4.2    16.1
-   @>     PHE138    P      CE1_210414s  <--->      ARG58    P        CG_820     4.2    56.2
-   @>      ALA44    P        CB_62814s  <--->       LEU9    P        CD1_74     4.2    11.3
-   @>     LYS102    P       CD_153414s  <--->      LEU99    P      CD2_1480     4.3    31.0
-   @>      LYS28    P        CG_37114s  <--->      ILE68    P        CD_983     4.3    16.2
-   @> Number of detected hydrophobic interactions: 33.
-   @> Frame: 12
-   @> Hydrophobic Overlaping Areas are computed.
-   @> Calculating hydrophobic interactions.
-   @>      PHE82    P      CE2_121314s  <--->      ILE77    P       CD_1128     3.2    33.2
-   @>      TRP39    P       NE1_54714s  <--->     LEU153    P      CD1_2350     3.4    12.8
-   @>      PHE26    P       CD2_33414s  <--->      VAL41    P       CG2_595     3.4    22.0
-   @>       VAL8    P        CG1_5514s  <--->      PHE26    P       CE2_336     3.4    16.4
-   @>     TYR142    P      CE1_216914s  <--->     VAL146    P      CG2_2235     3.5    46.0
-   @>      VAL30    P       CG1_41114s  <--->      PHE26    P        CZ_332     3.5    25.4
-   @>       LYS6    P         CD_2614s  <--->      TRP39    P       NE1_547     3.5    60.1
-   @>     PHE152    P      CD1_232914s  <--->      LEU89    P      CD1_1322     3.5    26.3
-   @>      PHE10    P        CD1_9214s  <--->      ALA22    P        CB_273     3.5    34.6
-   @>      VAL11    P       CG2_11414s  <--->      ILE88    P      CG2_1300     3.6     8.9
-   @>     LEU116    P      CD2_177114s  <--->      MET91    P       SD_1353     3.6    19.7
-   @>       LEU9    P         CG_7214s  <--->      VAL11    P       CG2_114     3.6    10.3
-   @>      PHE85    P       CZ_125314s  <--->       LEU9    P        CD1_74     3.6    30.9
-   @>      ILE21    P       CG2_25614s  <--->      MET63    P        CE_894     3.7    16.7
-   @>      ALA24    P        CB_29814s  <--->      ILE68    P       CG2_976     3.7    15.2
-   @>      ALA45    P        CB_63814s  <--->      ILE51    P       CG2_718     3.7     8.9
-   @>      ILE35    P        CD_49114s  <--->      TRP39    P       CD1_545     3.7    36.0
-   @>     TYR119    P      CE1_180514s  <--->      LEU89    P      CD2_1326     3.7     8.9
-   @>     ALA111    P       CB_167714s  <--->      ILE88    P       CD_1307     3.8    11.9
-   @>      LEU99    P      CD2_148014s  <--->      ILE88    P      CG2_1300     3.8    10.1
-   @>     ILE127    P       CD_194914s  <--->     LEU116    P      CD2_1771     3.8    13.8
-   @>     ILE113    P      CG2_171114s  <--->      LEU96    P       CG_1419     3.9    28.9
-   @>      ALA44    P        CB_62814s  <--->       LEU9    P        CD1_74     4.1    13.4
-   @>      LYS28    P        CG_37114s  <--->      ILE68    P        CD_983     4.1    13.2
-   @>     ILE126    P      CG1_192714s  <--->     LEU115    P      CD1_1748     4.2     6.1
-   @>      ARG18    P        CG_20814s  <--->     ILE127    P      CG2_1942     4.2    30.3
-   @>     VAL106    P      CG1_159414s  <--->      PHE82    P       CG_1204     4.2    22.7
-   @>     VAL141    P      CG1_214914s  <--->      ILE21    P        CD_263     4.3    13.8
-   @>     ARG150    P       CG_229414s  <--->      LEU29    P       CD2_399     4.3    19.1
-   @>     PHE138    P      CD1_210214s  <--->      ARG58    P        CG_820     4.3    66.8
-   @>      ARG40    P        CG_56814s  <--->      PHE85    P      CE2_1257     4.4    41.0
-   @>      LYS79    P       CG_115514s  <--->     VAL106    P      CG2_1598     4.4    30.9
-   @> Number of detected hydrophobic interactions: 32.
-   @> Frame: 13
-   @> Hydrophobic Overlaping Areas are computed.
-   @> Calculating hydrophobic interactions.
-   @>     ALA156    P       CB_240114s  <--->      TYR87    P       OH_1286     3.2    17.1
-   @>      LEU89    P      CD2_132614s  <--->     TYR119    P       OH_1808     3.4    17.3
-   @>      ALA24    P        CB_29814s  <--->      MET63    P        CE_894     3.4     4.8
-   @>      ILE68    P       CG2_97614s  <--->      MET63    P        CE_894     3.4    42.6
-   @>     TYR142    P       CZ_217114s  <--->     VAL146    P      CG2_2235     3.4    54.3
-   @>      PHE26    P       CD2_33414s  <--->      VAL41    P       CG2_595     3.5    15.0
-   @>      ILE88    P       CD_130714s  <--->     ALA111    P       CB_1677     3.5    13.1
-   @>      VAL11    P       CG2_11414s  <--->      LEU99    P      CD1_1476     3.6     9.6
-   @>       VAL8    P        CG1_5514s  <--->      PHE10    P       CE2_100     3.7    28.0
-   @>     PHE152    P      CD1_232914s  <--->      LEU89    P      CD1_1322     3.7    24.0
-   @>      VAL30    P       CG1_41114s  <--->      PHE26    P       CE2_336     3.7    19.8
-   @>      TRP39    P       NE1_54714s  <--->     LEU153    P      CD1_2350     3.8    15.0
-   @>      ALA45    P        CB_63814s  <--->      ILE51    P       CG2_718     3.8     9.7
-   @>      ALA44    P        CB_62814s  <--->      VAL11    P       CG1_110     3.8    31.2
-   @>      ILE35    P        CD_49114s  <--->     LEU153    P      CD1_2350     3.8    13.4
-   @>      PHE82    P      CD1_120514s  <--->      ILE88    P       CD_1307     3.8    25.0
-   @>     LEU116    P      CD2_177114s  <--->      MET91    P       SD_1353     3.8    18.0
-   @>      MET70    P       SD_101314s  <--->      ILE21    P       CG1_260     3.8    16.9
-   @>       LEU9    P        CD2_7814s  <--->      ILE77    P       CD_1128     3.9    13.0
-   @>      VAL25    P       CG2_31414s  <--->      MET63    P        CE_894     3.9     7.5
-   @>     VAL141    P      CG1_214914s  <--->      ILE21    P        CD_263     3.9    15.2
-   @>      ALA22    P        CB_27314s  <--->      PHE10    P        CD1_92     3.9    30.2
-   @>      PHE85    P       CZ_125314s  <--->       LEU9    P        CD1_74     4.0    25.3
-   @>       LYS6    P         CD_2614s  <--->      TRP39    P       CH2_557     4.0    50.7
-   @>      ARG75    P       CG_108114s  <--->      ALA44    P        CB_628     4.1    28.9
-   @>     LYS102    P       CD_153414s  <--->      PHE82    P      CE2_1213     4.1    21.7
-   @>      LYS28    P        CG_37114s  <--->      ILE68    P        CD_983     4.2    17.0
-   @>     ILE127    P       CD_194914s  <--->     LEU116    P      CD2_1771     4.3    10.3
-   @>     VAL106    P      CG2_159814s  <--->      PHE82    P      CD2_1211     4.3    14.5
-   @>      ARG18    P        CG_20814s  <--->     VAL141    P      CG1_2149     4.4    23.6
-   @>     PHE138    P      CE1_210414s  <--->      ARG58    P        CG_820     4.4    57.9
-   @> Number of detected hydrophobic interactions: 31.
-   @> Frame: 14
-   @> Hydrophobic Overlaping Areas are computed.
-   @> Calculating hydrophobic interactions.
-   @>      VAL11    P       CG2_11414s  <--->      ILE88    P      CG2_1300     3.4    14.6
-   @>      PHE26    P       CE2_33614s  <--->      VAL30    P       CG1_411     3.4    30.5
-   @>      LEU96    P      CD1_142114s  <--->     ILE113    P      CG2_1711     3.5    19.6
-   @>       LEU9    P        CD2_7814s  <--->      ILE77    P       CD_1128     3.5    17.7
-   @>       VAL8    P        CG2_5914s  <--->      PHE10    P       CE2_100     3.5    28.4
-   @>      LEU99    P      CD1_147614s  <--->      VAL11    P       CG2_114     3.6    10.7
-   @>      VAL41    P       CG2_59514s  <--->      PHE26    P       CD2_334     3.6    14.2
-   @>      ALA24    P        CB_29814s  <--->      MET63    P        CE_894     3.6    12.9
-   @>     TYR142    P      CE1_216914s  <--->      MET63    P        CE_894     3.7    22.2
-   @>     LEU116    P      CD2_177114s  <--->      ALA22    P        CB_273     3.7     7.7
-   @>      PHE82    P      CE2_121314s  <--->      ILE77    P       CD_1128     3.7    20.0
-   @>     ALA111    P       CB_167714s  <--->      ILE88    P       CD_1307     3.7    15.1
-   @>      TRP39    P       CD1_54514s  <--->      VAL30    P       CG1_411     3.8    15.4
-   @>     VAL106    P      CG1_159414s  <--->      PHE82    P      CD1_1205     3.8    29.3
-   @>      VAL25    P       CG2_31414s  <--->     TYR142    P      CE1_2169     3.8    10.2
-   @>      LEU89    P      CD1_132214s  <--->       VAL8    P        CG2_59     3.8    14.2
-   @>      PHE85    P      CD1_124914s  <--->       LEU9    P        CD2_78     3.9    32.9
-   @>     LEU153    P      CD1_235014s  <--->      TRP39    P       CZ2_555     3.9    14.5
-   @>      ILE68    P       CG2_97614s  <--->      MET63    P        SD_893     3.9    47.9
-   @>     ALA156    P       CB_240114s  <--->      TYR87    P       OH_1286     3.9    10.0
-   @>      ALA44    P        CB_62814s  <--->       LEU9    P        CD1_74     3.9    15.9
-   @>      ARG75    P       CG_108114s  <--->      ALA44    P        CB_628     3.9    42.9
-   @>     PHE152    P      CD2_233514s  <--->      LEU89    P      CD1_1322     3.9    21.9
-   @>     VAL146    P      CG2_223514s  <--->     TYR142    P       CZ_2171     3.9    40.1
-   @>      MET70    P       SD_101314s  <--->      ALA24    P        CB_298     4.0    13.0
-   @>      MET91    P       CE_135414s  <--->     LEU116    P      CD2_1771     4.0    13.6
-   @>      ILE21    P       CG1_26014s  <--->      MET70    P       CE_1014     4.0    22.7
-   @>     TYR119    P      CE1_180514s  <--->      LEU89    P      CD2_1326     4.1    14.3
-   @>      ARG18    P        CG_20814s  <--->     VAL141    P      CG1_2149     4.1    14.3
-   @>     ILE127    P       CD_194914s  <--->     LEU116    P      CD2_1771     4.2     9.6
-   @>     PHE138    P      CD2_210814s  <--->      ILE21    P        CD_263     4.2     9.0
-   @>      ILE35    P       CG1_48814s  <--->      TRP39    P       CD1_545     4.2    28.5
-   @>      ALA45    P        CB_63814s  <--->      ILE51    P       CG2_718     4.3    10.9
-   @>      ARG58    P        CG_82014s  <--->     PHE138    P      CE1_2104     4.5    57.4
-   @>      ALA74    P       CB_106814s  <--->      ILE51    P       CG2_718     4.5    20.9
-   @> Number of detected hydrophobic interactions: 35.
-   @> Frame: 15
-   @> Hydrophobic Overlaping Areas are computed.
-   @> Calculating hydrophobic interactions.
-   @>       LEU9    P        CD2_7814s  <--->      ILE77    P       CD_1128     3.3    14.8
-   @>      PHE26    P       CE2_33614s  <--->      VAL30    P       CG1_411     3.4    19.9
-   @>     TYR142    P       CZ_217114s  <--->     VAL146    P      CG2_2235     3.5    54.9
-   @>      MET70    P       CE_101414s  <--->      ILE21    P       CG1_260     3.5    21.4
-   @>      PHE10    P        CD1_9214s  <--->      ALA22    P        CB_273     3.5    31.2
-   @>      MET63    P        CE_89414s  <--->     TYR142    P      CD1_2167     3.5    14.2
-   @>      TRP39    P       CD1_54514s  <--->      VAL30    P       CG1_411     3.6    21.7
-   @>      ILE35    P        CD_49114s  <--->      TRP39    P       NE1_547     3.6    31.9
-   @>      LEU89    P      CD1_132214s  <--->      PHE10    P        CE1_94     3.6    30.5
-   @>      VAL11    P       CG2_11414s  <--->      LEU99    P      CD1_1476     3.7    13.7
-   @>       VAL8    P        CG2_5914s  <--->      PHE10    P       CE2_100     3.7    23.4
-   @>      ILE88    P      CG1_130414s  <--->     ALA111    P       CB_1677     3.7    12.8
-   @>      VAL41    P       CG1_59114s  <--->      PHE10    P        CD2_98     3.7    11.2
-   @>     PHE152    P      CD2_233514s  <--->      LEU89    P      CD1_1322     3.7    27.6
-   @>     ILE113    P      CG2_171114s  <--->      LEU96    P       CG_1419     3.7    22.5
-   @>      LYS79    P       CG_115514s  <--->     VAL106    P      CG2_1598     3.8    26.6
-   @>      PHE82    P      CD1_120514s  <--->      ILE88    P       CD_1307     3.8    16.9
-   @>      ILE68    P       CG2_97614s  <--->      MET63    P        SD_893     3.8    46.6
-   @>     LEU116    P      CD2_177114s  <--->      MET91    P       SD_1353     3.8    18.0
-   @>      ALA44    P        CB_62814s  <--->       LEU9    P        CD1_74     3.8    17.2
-   @>     ILE127    P       CD_194914s  <--->     LEU116    P      CD2_1771     3.8    10.7
-   @>      PHE85    P      CE2_125714s  <--->      ARG40    P        CG_568     3.9    46.1
-   @>      ALA24    P        CB_29814s  <--->      ILE68    P       CG2_976     3.9    15.2
-   @>      VAL25    P       CG2_31414s  <--->      MET63    P        SD_893     4.0     6.4
-   @>     LEU125    P       CG_190514s  <--->     ILE126    P      CG1_1927     4.1    58.2
-   @>      ALA45    P        CB_63814s  <--->      ILE51    P       CG2_718     4.1     7.9
-   @>      LYS28    P        CD_37414s  <--->      ILE68    P       CG1_980     4.2    19.8
-   @>     VAL141    P      CG1_214914s  <--->      ILE21    P        CD_263     4.2    10.7
-   @>      ARG18    P        CG_20814s  <--->     ILE127    P      CG2_1942     4.2    32.5
-   @>     PHE138    P      CD2_210814s  <--->      ILE21    P        CD_263     4.2     9.7
-   @>      ARG75    P       CG_108114s  <--->      ALA44    P        CB_628     4.4    22.8
-   @>      ALA74    P       CB_106814s  <--->      ILE51    P       CG2_718     4.4    21.4
-   @> Number of detected hydrophobic interactions: 32.
-   @> Frame: 16
-   @> Hydrophobic Overlaping Areas are computed.
-   @> Calculating hydrophobic interactions.
-   @>       VAL8    P        CG2_5914s  <--->      LEU89    P      CD1_1322     3.2    17.9
-   @>      TRP39    P       CZ2_55514s  <--->     LEU153    P      CD1_2350     3.3    18.8
-   @>      PHE10    P        CD1_9214s  <--->      ALA22    P        CB_273     3.4    35.3
-   @>     TYR142    P      CE1_216914s  <--->     VAL146    P      CG2_2235     3.4    57.1
-   @>      PHE26    P       CE2_33614s  <--->      VAL30    P       CG1_411     3.5    32.5
-   @>      VAL11    P       CG2_11414s  <--->      LEU99    P      CD1_1476     3.5    12.6
-   @>     PHE138    P      CD2_210814s  <--->      ILE21    P        CD_263     3.5    21.8
-   @>      ILE88    P       CD_130714s  <--->     ALA111    P       CB_1677     3.5    21.1
-   @>      MET91    P       CE_135414s  <--->      ALA22    P        CB_273     3.6     9.6
-   @>      ILE35    P        CD_49114s  <--->      TRP39    P       CD1_545     3.6    40.0
-   @>       LEU9    P        CD2_7814s  <--->      ILE77    P       CD_1128     3.6    16.8
-   @>      PHE82    P      CD1_120514s  <--->      ILE88    P       CD_1307     3.6    17.1
-   @>     PHE152    P      CE1_233114s  <--->      LEU89    P      CD1_1322     3.7    31.2
-   @>      VAL25    P       CG2_31414s  <--->     TYR142    P      CD1_2167     3.7    18.6
-   @>      VAL41    P       CG2_59514s  <--->      PHE26    P       CD2_334     3.7    17.7
-   @>      LEU96    P      CD1_142114s  <--->     ILE113    P      CG2_1711     3.7    15.3
-   @>      LYS79    P       CG_115514s  <--->     VAL106    P      CG1_1594     3.7    15.4
-   @>      ILE68    P       CG2_97614s  <--->      MET63    P        SD_893     3.9    45.2
-   @>     TYR119    P      CE1_180514s  <--->      LEU89    P      CD2_1326     4.0    13.9
-   @>     ILE126    P      CG1_192714s  <--->     LEU125    P       CG_1905     4.0    64.6
-   @>     VAL141    P      CG1_214914s  <--->      ILE21    P        CD_263     4.0    19.5
-   @>      ALA24    P        CB_29814s  <--->      ILE68    P       CG2_976     4.1    19.1
-   @>      ARG18    P        CG_20814s  <--->     VAL141    P      CG2_2153     4.1    21.4
-   @>      LYS28    P        CG_37114s  <--->      ILE68    P       CG1_980     4.2    18.4
-   @>      ALA44    P        CB_62814s  <--->       LEU9    P        CD1_74     4.2    15.5
-   @>      PHE85    P       CZ_125314s  <--->       LEU9    P        CD1_74     4.2    38.3
-   @>     ILE127    P       CD_194914s  <--->      MET91    P       SD_1353     4.3    35.7
-   @>      ARG75    P       CG_108114s  <--->      ALA44    P        CB_628     4.3    23.0
-   @>     LYS102    P       CD_153414s  <--->      PHE82    P       CZ_1209     4.4    21.0
-   @>      ARG40    P        CG_56814s  <--->      PHE85    P       CZ_1253     4.4    55.6
-   @> Number of detected hydrophobic interactions: 30.
-   @> Frame: 17
-   @> Hydrophobic Overlaping Areas are computed.
-   @> Calculating hydrophobic interactions.
-   @>      ILE88    P       CD_130714s  <--->     ALA111    P       CB_1677     3.3    15.3
-   @>       VAL8    P        CG2_5914s  <--->      PHE10    P       CE2_100     3.5    29.7
-   @>     PHE152    P      CE2_233714s  <--->       VAL8    P        CG2_59     3.5    15.8
-   @>     LEU116    P      CD2_177114s  <--->      MET91    P       SD_1353     3.6    22.8
-   @>      PHE82    P      CD1_120514s  <--->      ILE88    P       CD_1307     3.6    22.9
-   @>      ILE35    P        CD_49114s  <--->      TRP39    P       CD1_545     3.6    33.9
-   @>      ILE77    P       CD_112814s  <--->      PHE82    P       CZ_1209     3.7    23.2
-   @>      PHE26    P       CD2_33414s  <--->      VAL41    P       CG2_595     3.7    16.2
-   @>     TYR142    P      CE1_216914s  <--->     VAL146    P      CG2_2235     3.7    50.1
-   @>      MET63    P        CE_89414s  <--->      VAL25    P       CG2_314     3.7    12.9
-   @>      LEU96    P      CD1_142114s  <--->     ILE113    P      CG2_1711     3.7    12.4
-   @>     TYR119    P      CE1_180514s  <--->      LEU89    P      CD2_1326     3.8    14.6
-   @>      VAL30    P       CG1_41114s  <--->      PHE26    P       CE2_336     3.8    29.9
-   @>      ALA22    P        CB_27314s  <--->      MET91    P       CE_1354     3.8     8.4
-   @>      LYS79    P       CG_115514s  <--->     VAL106    P      CG2_1598     3.8    20.4
-   @>      LEU99    P      CD2_148014s  <--->      ILE88    P      CG2_1300     3.8     7.4
-   @>     LEU153    P      CD1_235014s  <--->      TRP39    P       NE1_547     3.8    17.0
-   @>       LYS6    P         CD_2614s  <--->      TRP39    P       CH2_557     3.9    53.8
-   @>      VAL11    P       CG1_11014s  <--->      ILE88    P      CG2_1300     3.9    10.6
-   @>       LEU9    P        CD1_7414s  <--->      PHE85    P       CZ_1253     3.9    35.8
-   @>      ALA24    P        CB_29814s  <--->      MET63    P        CE_894     3.9     7.7
-   @>      ARG75    P       CG_108114s  <--->      ALA44    P        CB_628     4.0    35.2
-   @>     ILE127    P      CG2_194214s  <--->     VAL141    P      CG2_2153     4.0     7.2
-   @>     PHE138    P      CE1_210414s  <--->      ARG58    P        CG_820     4.1    59.5
-   @>      MET70    P       CE_101414s  <--->      ILE21    P       CG1_260     4.1    21.9
-   @>      ILE68    P        CD_98314s  <--->      LYS28    P        CD_374     4.2    12.2
-   @>     LYS102    P       CD_153414s  <--->      ILE77    P      CG2_1121     4.2    12.5
-   @>      ARG18    P        CG_20814s  <--->     VAL141    P      CG2_2153     4.2     5.7
-   @> Number of detected hydrophobic interactions: 28.
-   @> Frame: 18
-   @> Hydrophobic Overlaping Areas are computed.
-   @> Calculating hydrophobic interactions.
-   @>      ALA24    P        CB_29814s  <--->      MET70    P       SD_1013     3.4    19.5
-   @>      PHE82    P       CZ_120914s  <--->      ILE77    P       CD_1128     3.4    18.1
-   @>     ILE127    P       CD_194914s  <--->      MET91    P       SD_1353     3.5    42.0
-   @>     PHE152    P       CZ_233314s  <--->      LEU89    P      CD1_1322     3.5    28.3
-   @>      TYR87    P      CD1_128114s  <--->      LEU89    P      CD2_1326     3.5    28.9
-   @>      ILE88    P       CD_130714s  <--->      PHE82    P      CD2_1211     3.5    21.7
-   @>     TYR142    P       CZ_217114s  <--->     VAL146    P      CG2_2235     3.6    56.5
-   @>      PHE10    P        CD1_9214s  <--->      ALA22    P        CB_273     3.6    28.6
-   @>      VAL11    P       CG2_11414s  <--->      ILE88    P      CG2_1300     3.6    13.5
-   @>      LEU99    P      CD1_147614s  <--->     ILE113    P      CG2_1711     3.7    33.0
-   @>      TRP39    P       CZ2_55514s  <--->     LEU153    P      CD1_2350     3.7    17.3
-   @>      VAL30    P       CG1_41114s  <--->     LEU153    P      CD2_2354     3.7    12.4
-   @>       LYS6    P         CD_2614s  <--->      TRP39    P       CH2_557     3.7    50.7
-   @>     ALA111    P       CB_167714s  <--->      ILE88    P      CG1_1304     3.7    16.0
-   @>      PHE26    P       CE2_33614s  <--->       VAL8    P        CG1_55     3.7    11.4
-   @>      LEU96    P      CD1_142114s  <--->     ILE113    P      CG2_1711     3.7    17.5
-   @>       LEU9    P        CD2_7814s  <--->      VAL11    P       CG1_110     3.8    16.1
-   @>     LEU116    P      CD2_177114s  <--->      MET91    P       CE_1354     3.8    14.0
-   @>      ILE35    P        CD_49114s  <--->      VAL30    P       CG1_411     3.8    48.0
-   @>      MET63    P        CE_89414s  <--->      ALA24    P        CB_298     3.8    12.6
-   @>      VAL41    P       CG2_59514s  <--->      PHE26    P       CD2_334     3.9    11.6
-   @>      ILE68    P        CD_98314s  <--->      LYS28    P        CD_374     4.0    16.2
-   @>      VAL25    P       CG2_31414s  <--->     TYR142    P      CE1_2169     4.0    11.5
-   @>      ARG18    P        CG_20814s  <--->     ILE127    P      CG2_1942     4.0    26.6
-   @>      PHE85    P       CZ_125314s  <--->       LEU9    P        CD1_74     4.0    28.4
-   @>      ILE21    P        CD_26314s  <--->     VAL141    P      CG1_2149     4.0    18.2
-   @>      ALA44    P        CB_62814s  <--->      VAL11    P       CG1_110     4.1    27.0
-   @>     PHE138    P      CD2_210814s  <--->      ILE21    P        CD_263     4.2    11.6
-   @>     LYS102    P       CD_153414s  <--->      PHE82    P       CZ_1209     4.3    14.7
-   @>     ILE126    P      CG1_192714s  <--->     LEU125    P      CD2_1911     4.4    51.7
-   @>      ARG58    P        CG_82014s  <--->     PHE138    P      CE1_2104     4.4    59.3
-   @> Number of detected hydrophobic interactions: 31.
-   @> Frame: 19
-   @> Hydrophobic Overlaping Areas are computed.
-   @> Calculating hydrophobic interactions.
-   @>      TRP39    P       NE1_54714s  <--->     LEU153    P      CD1_2350     3.0    15.1
-   @>     TYR142    P      CE1_216914s  <--->     VAL146    P      CG2_2235     3.3    40.9
-   @>      MET63    P        SD_89314s  <--->     TYR142    P      CD1_2167     3.3    30.9
-   @>      VAL11    P       CG2_11414s  <--->      ILE88    P      CG2_1300     3.3    12.2
-   @>      PHE10    P        CD1_9214s  <--->      ALA22    P        CB_273     3.4    37.5
-   @>     ALA111    P       CB_167714s  <--->      ILE88    P       CD_1307     3.5    18.9
-   @>      LEU99    P      CD1_147614s  <--->      VAL11    P       CG2_114     3.5    18.9
-   @>     LEU116    P      CD2_177114s  <--->      MET91    P       CE_1354     3.5    12.2
-   @>      LEU89    P      CD1_132214s  <--->      PHE10    P        CE1_94     3.6    30.4
-   @>      PHE26    P       CE2_33614s  <--->      VAL30    P       CG1_411     3.6    20.9
-   @>      ILE21    P        CD_26314s  <--->     VAL141    P      CG1_2149     3.6    12.1
-   @>      PHE82    P      CE1_120714s  <--->      ILE77    P       CD_1128     3.6    22.7
-   @>       VAL8    P        CG1_5514s  <--->      TRP39    P       CZ3_553     3.7    13.6
-   @>      VAL41    P       CG1_59114s  <--->      PHE10    P       CE2_100     3.7    11.5
-   @>      ALA24    P        CB_29814s  <--->      MET63    P        CE_894     3.7     8.3
-   @>       LEU9    P        CD2_7814s  <--->      ILE77    P       CD_1128     3.7    14.7
-   @>       LYS6    P         CD_2614s  <--->      TRP39    P       CZ2_555     3.7    66.6
-   @>      LEU96    P      CD1_142114s  <--->     ILE113    P      CG2_1711     3.7    21.0
-   @>      PHE85    P       CZ_125314s  <--->       LEU9    P        CD1_74     3.7    29.8
-   @>     PHE152    P      CE1_233114s  <--->      LEU89    P      CD2_1326     3.7    26.4
-   @>      ILE68    P       CG1_98014s  <--->      LYS28    P        CD_374     3.8    22.7
-   @>      LEU29    P       CD2_39914s  <--->     ARG150    P       CG_2294     3.9    28.7
-   @>      ARG18    P        CG_20814s  <--->     VAL141    P      CG1_2149     3.9    27.7
-   @>      ILE35    P        CD_49114s  <--->     LEU153    P      CD2_2354     4.0    11.8
-   @>     ILE127    P       CD_194914s  <--->     LEU116    P      CD2_1771     4.1    14.4
-   @>     PHE138    P      CE1_210414s  <--->      ARG58    P        CG_820     4.1    65.0
-   @>      LYS79    P       CG_115514s  <--->     VAL106    P      CG2_1598     4.2    41.9
-   @>      VAL25    P       CG2_31414s  <--->     TYR142    P      CD1_2167     4.2    10.5
-   @>      ARG75    P       CG_108114s  <--->      ALA44    P        CB_628     4.2    22.7
-   @>     TYR119    P      CE1_180514s  <--->      LEU89    P      CD2_1326     4.3     6.0
-   @>     LYS102    P       CD_153414s  <--->      ILE77    P      CG2_1121     4.3    10.5
-   @> Number of detected hydrophobic interactions: 31.
+   ..
+   ..
    @> Frame: 20
    @> Hydrophobic Overlaping Areas are computed.
    @> Calculating hydrophobic interactions.
@@ -2041,7 +695,7 @@ Hydrophobic interactions using :func:`.calcHydrophohicTrajectory`:
    @>     ILE126    P      CG1_192714s  <--->     LEU125    P       CG_1905     4.4    55.6
    @> Number of detected hydrophobic interactions: 32.
 
-In this particular example you will not have disulfide bonds but you can
+In this particular example you will not have disulfide bonds, but you can
 compute it using :func:`.calcDisulfideBondsTrajectory`:
 
 .. ipython:: python
@@ -2066,68 +720,21 @@ compute it using :func:`.calcDisulfideBondsTrajectory`:
    @> Frame: 4
    @> Calculating disulfide bonds.
    @> Number of detected disulfide bonds: 0.
-   @> Frame: 5
-   @> Calculating disulfide bonds.
-   @> Number of detected disulfide bonds: 0.
-   @> Frame: 6
-   @> Calculating disulfide bonds.
-   @> Number of detected disulfide bonds: 0.
-   @> Frame: 7
-   @> Calculating disulfide bonds.
-   @> Number of detected disulfide bonds: 0.
-   @> Frame: 8
-   @> Calculating disulfide bonds.
-   @> Number of detected disulfide bonds: 0.
-   @> Frame: 9
-   @> Calculating disulfide bonds.
-   @> Number of detected disulfide bonds: 0.
-   @> Frame: 10
-   @> Calculating disulfide bonds.
-   @> Number of detected disulfide bonds: 0.
-   @> Frame: 11
-   @> Calculating disulfide bonds.
-   @> Number of detected disulfide bonds: 0.
-   @> Frame: 12
-   @> Calculating disulfide bonds.
-   @> Number of detected disulfide bonds: 0.
-   @> Frame: 13
-   @> Calculating disulfide bonds.
-   @> Number of detected disulfide bonds: 0.
-   @> Frame: 14
-   @> Calculating disulfide bonds.
-   @> Number of detected disulfide bonds: 0.
-   @> Frame: 15
-   @> Calculating disulfide bonds.
-   @> Number of detected disulfide bonds: 0.
-   @> Frame: 16
-   @> Calculating disulfide bonds.
-   @> Number of detected disulfide bonds: 0.
-   @> Frame: 17
-   @> Calculating disulfide bonds.
-   @> Number of detected disulfide bonds: 0.
-   @> Frame: 18
-   @> Calculating disulfide bonds.
-   @> Number of detected disulfide bonds: 0.
-   @> Frame: 19
-   @> Calculating disulfide bonds.
-   @> Number of detected disulfide bonds: 0.
-   @> Frame: 20
-   @> Calculating disulfide bonds.
-   @> Number of detected disulfide bonds: 0.
-
+   ..
+   ..
 
 Compute all availabe types of interactions
 -------------------------------------------------------------------------------
 
-First, we instantiate an :class:`.InteractionsTrajectory` instance which stores all the
+First, we instantiate a :class:`.InteractionsTrajectory` instance, which stores all the
 information about interactions for protein structure for multiple frames.
 With :meth:`.InteractionsTrajectory.calcProteinInteractionsTrajectory`, we can compute all
 types of interactions such as hydrogen bonds, salt bridges, repulsive ionic bonding, 
 Pi-cation, Pi-stacking, and hydrophobic) at once. Be aware that those
 computations may take a while, depending on the size of the system and the number
 of frames that are stored by the DCD file. Therefore, we recommend saving the
-results as an *filename* file. *filename* file, here
-*calcProteinInteractionsTrajectory.pkl*, can be reloaded and used with all availabe
+results as a *filename* file. *filename* file, here
+*calcProteinInteractionsTrajectory.pkl*, can be reloaded and used with all available
 functions and methods. 
 
 .. ipython:: python
@@ -3010,7 +1617,7 @@ bonds(*black*).
    :scale: 60 %
 
 
-If the structure is stable we will not observe a lot of changes in protein
+If the structure is stable, we will not observe a lot of changes in protein
 structure.
 
 Similar to the single PDB analysis, we have an access to each interaction
@@ -3491,7 +2098,7 @@ type by using: :meth:`.InteractionsTrajectory.getHydrogenBonds` method, etc.
       ..
 
 
-Once we compute interactions we can also select two which are interested for
+Once we compute interactions, we can also select two that are interesting for
 us by using *selection* or *selection* and *selection2* if we want to
 compare two chains of protein structure.
 Here, we can display all interactions with residues with numbers between 100
@@ -4245,6 +2852,8 @@ Instance.
 
 For example:
 
+Repulsive ionic bonding:
+
 .. ipython:: python
    :verbatim:
 
@@ -4390,7 +2999,8 @@ For example:
 
    @> Repulsive Ionic Bonding are replaced
 
-   
+
+Pi-cation interactions:   
 .. ipython:: python
    :verbatim:
 
@@ -4569,8 +3179,9 @@ For example:
 
 We can check whether the interactions were replaced. The repulsive ionic
 bonding can be found by using :meth:`.getInteractions` and selecting *2*
-(0 - hydrogen bonds, 1 - salt bridges, 2 - repulsive ionic bondnig, 
-3 - Pi-Stacking, 4 - Pi-Cation, 5 - hydrophobic, 6- disulfide bonds).
+(0 - hydrogen bonds, 1 - salt bridges, 2 - repulsive ionic bonding, 
+3 - Pi-Stacking, 4 - Pi-Cation, 5 - hydrophobic, 6 - disulfide bonds).
+
 
 .. ipython:: python
    :verbatim:
@@ -4651,268 +3262,59 @@ bonding can be found by using :meth:`.getInteractions` and selecting *2*
      ['ASP129', 'OD1_1978_1979', 'P', 'ASP92', 'OD1_1368_1369', 'P', 7.0978],
      ['LYS79', 'NZ_1164', 'P', 'LYS102', 'NZ_1540', 'P', 7.9242]]]
 
-   .. ipython:: python
-      :verbatim:
 
-       interactionsTrajectory.getInteractions()[4]
 
-   .. parsed-literal::
+.. ipython:: python
+   :verbatim:
 
-      [[['PHE85',
-         '1248_1249_1251_1253_1255_1257',
-         'P',
-         'ARG40',
-         'NH1_577_580',
-         'P',
-         3.6523],
-        ['HSE66', '953_954_955_957_959', 'P', 'ARG65', 'NH1_938_941', 'P', 4.5323],
-        ['HSE157',
-         '2414_2415_2416_2418_2420_2423_2424',
-         'P',
-         'LYS112',
-         'NZ_1699',
-         'P',
-         4.828],
-        ['PHE138',
-         '2101_2102_2104_2106_2108_2110',
-         'P',
-         'ARG58',
-         'NH1_829_832',
-         'P',
-         5.0448],
-        ['TYR131',
-         '2003_2004_2006_2008_2011_2013',
-         'P',
-         'ARG58',
-         'NH1_829_832',
-         'P',
-         5.0915]],
-       [['HSE157',
-         '2414_2415_2416_2418_2420_2423_2424',
-         'P',
-         'LYS112',
-         'NZ_1699',
-         'P',
-         3.4611],
-        ['PHE85',
-         '1248_1249_1251_1253_1255_1257',
-         'P',
-         'ARG40',
-         'NH1_577_580',
-         'P',
-         3.924],
-        ['HSE66', '953_954_955_957_959', 'P', 'ARG65', 'NH1_938_941', 'P', 4.8561],
-        ['TYR87',
-         '1280_1281_1283_1285_1288_1290',
-         'P',
-         'LYS112',
-         'NZ_1699',
-         'P',
-         4.9287],
-        ['TYR131',
-         '2003_2004_2006_2008_2011_2013',
-         'P',
-         'ARG58',
-         'NH1_829_832',
-         'P',
-         4.9441],
-        ['PHE138',
-         '2101_2102_2104_2106_2108_2110',
-         'P',
-         'ARG58',
-         'NH1_829_832',
-         'P',
-         5.6921],
-        ['TRP39', '549_550_551_553_555_557', 'P', 'LYS6', 'NZ_32', 'P', 5.9997]],
-       [['HSE157',
-         '2414_2415_2416_2418_2420_2423_2424',
-         'P',
-         'LYS112',
-         'NZ_1699',
-         'P',
-         2.693],
-        ['HSE66', '953_954_955_957_959', 'P', 'ARG65', 'NH1_938_941', 'P', 4.0971],
-        ['PHE85',
-         '1248_1249_1251_1253_1255_1257',
-         'P',
-         'ARG40',
-         'NH1_577_580',
-         'P',
-         4.4856],
-        ['TYR87',
-         '1280_1281_1283_1285_1288_1290',
-         'P',
-         'LYS112',
-         'NZ_1699',
-         'P',
-         5.6493]],
-       [['HSE157',
-         '2414_2415_2416_2418_2420_2423_2424',
-         'P',
-         'LYS112',
-         'NZ_1699',
-         'P',
-         2.5938],
-        ['PHE85',
-         '1248_1249_1251_1253_1255_1257',
-         'P',
-         'ARG40',
-         'NH1_577_580',
-         'P',
-         3.5816],
-        ['HSE66', '953_954_955_957_959', 'P', 'ARG65', 'NH1_938_941', 'P', 3.8296],
-        ['PHE138',
-         '2101_2102_2104_2106_2108_2110',
-         'P',
-         'ARG58',
-         'NH1_829_832',
-         'P',
-         5.3149],
-        ['TYR87',
-         '1280_1281_1283_1285_1288_1290',
-         'P',
-         'LYS112',
-         'NZ_1699',
-         'P',
-         5.3356]],
-       [['PHE85',
-         '1248_1249_1251_1253_1255_1257',
-         'P',
-         'ARG40',
-         'NH1_577_580',
-         'P',
-         3.9363],
-        ['HSE66', '953_954_955_957_959', 'P', 'ARG65', 'NH1_938_941', 'P', 4.7618],
-        ['HSE157',
-         '2414_2415_2416_2418_2420_2423_2424',
-         'P',
-         'LYS155',
-         'NZ_2391',
-         'P',
-         4.8181],
-        ['HSE157',
-         '2414_2415_2416_2418_2420_2423_2424',
-         'P',
-         'LYS112',
-         'NZ_1699',
-         'P',
-         4.8867],
-        ['TYR87',
-         '1280_1281_1283_1285_1288_1290',
-         'P',
-         'LYS112',
-         'NZ_1699',
-         'P',
-         5.3366],
-        ['PHE138',
-         '2101_2102_2104_2106_2108_2110',
-         'P',
-         'ARG58',
-         'NH1_829_832',
-         'P',
-         5.4494],
-        ['TYR87',
-         '1280_1281_1283_1285_1288_1290',
-         'P',
-         'LYS6',
-         'NZ_32',
-         'P',
-         5.6019]],
-       [['HSE66', '953_954_955_957_959', 'P', 'ARG65', 'NH1_938_941', 'P', 4.2935],
-        ['HSE157',
-         '2414_2415_2416_2418_2420_2423_2424',
-         'P',
-         'LYS112',
-         'NZ_1699',
-         'P',
-         4.3158],
-        ['PHE85',
-         '1248_1249_1251_1253_1255_1257',
-         'P',
-         'ARG40',
-         'NH1_577_580',
-         'P',
-         5.1678],
-        ['TYR87',
-         '1280_1281_1283_1285_1288_1290',
-         'P',
-         'LYS112',
-         'NZ_1699',
-         'P',
-         5.8356]],
-       [['PHE85',
-         '1248_1249_1251_1253_1255_1257',
-         'P',
-         'ARG40',
-         'NH1_577_580',
-         'P',
-         3.8709],
-        ['HSE66', '953_954_955_957_959', 'P', 'ARG65', 'NH1_938_941', 'P', 4.4195],
-        ['PHE138',
-         '2101_2102_2104_2106_2108_2110',
-         'P',
-         'ARG58',
-         'NH1_829_832',
-         'P',
-         4.9708],
-        ['HSE157',
-         '2414_2415_2416_2418_2420_2423_2424',
-         'P',
-         'LYS112',
-         'NZ_1699',
-         'P',
-         5.0003],
-        ['TYR87',
-         '1280_1281_1283_1285_1288_1290',
-         'P',
-         'LYS6',
-         'NZ_32',
-         'P',
-         5.2551],
-        ['TYR87',
-         '1280_1281_1283_1285_1288_1290',
-         'P',
-         'LYS112',
-         'NZ_1699',
-         'P',
-         5.5008]],
-       [['PHE85',
-         '1248_1249_1251_1253_1255_1257',
-         'P',
-         'ARG40',
-         'NH1_577_580',
-         'P',
-         3.8576],
-        ['HSE66', '953_954_955_957_959', 'P', 'ARG65', 'NH1_938_941', 'P', 4.2026],
-        ['HSE157',
-         '2414_2415_2416_2418_2420_2423_2424',
-         'P',
-         'LYS112',
-         'NZ_1699',
-         'P',
-         4.9139],
-        ['PHE138',
-         '2101_2102_2104_2106_2108_2110',
-         'P',
-         'ARG58',
-         'NH1_829_832',
-         'P',
-         5.6583]],
-         ..
-         ..
+   interactionsTrajectory.getInteractions()[4]
+
+.. parsed-literal::
+
+   [[['PHE85',
+      '1248_1249_1251_1253_1255_1257',
+      'P',
+      'ARG40',
+      'NH1_577_580',
+      'P',
+      3.6523],
+     ['HSE66', '953_954_955_957_959', 'P', 'ARG65', 'NH1_938_941', 'P', 4.5323],
+     ['HSE157',
+      '2414_2415_2416_2418_2420_2423_2424',
+      'P',
+      'LYS112',
+      'NZ_1699',
+      'P',
+      4.828],
+     ['PHE138',
+      '2101_2102_2104_2106_2108_2110',
+      'P',
+      'ARG58',
+      'NH1_829_832',
+      'P',
+      5.0448],
+     ['TYR131',
+      '2003_2004_2006_2008_2011_2013',
+      'P',
+      'ARG58',
+      'NH1_829_832',
+      'P',
+      5.0915]],
+      ..
+      ..
 
 
 Statistics
 -------------------------------------------------------------------------------
 
 Using :func:`.calcStatisticsInteractions` function, we can compute the statistics 
-of interaction in the trajectory such as the average distance between residues
-(usually the center of the mass, details are described in the function which
+of interaction in the trajectory, such as the average distance between residues
+(usually the center of the mass; details are described in the function which
 computes the specific type of interactions), standard deviation for the
 distance value and weight. Weight is the number of counts for the whole
-trajectory and devided by the number of frames in dcd file. Weight equal to 1
+trajectory and is divided by the number of frames in the dcd file. Weight equal to 1
 corresponds to the contact that was main the whole time of the simulation.
-Note that weight can be >1 when the multiple contacts are present between the same
+Note that weight can be >1 when multiple contacts are present between the same
 residues. 
 
 For example:
@@ -5132,17 +3534,17 @@ For example:
    @>   Standard deviation [Ang.]: 0.213607
    @>   Weight: 0.47619
 
-For better visualization of the results we can use
-func:`.showInteractionsGraph` which displayed results as a graph with a
+For better visualization of the results, we can use
+func:`.showInteractionsGraph`, which displays results as a graph with
 residue-residue pairs of interactions. The intensity of the color of the
 lines connecting two residues corresponds to the number of counts. Darker
-lines are assigned to the most frequent appearence of interaction. The
-distance between pairs corresponds to the average distance accross
+lines are assigned to the most frequent appearance of interaction. The
+distance between pairs corresponds to the average distance across
 all the frames. Moreover, ovals with residue names are color-coded: acidic
 residues: *red*, basic: *blue*, polar: *green*, non-polar: *silver*, and
-proline: *pink*. The same function can be applied for ensemble PDB (more
-example can be found there). 
-We will also change the region of protein structure which we would like to
+proline: *pink*. The same function can be applied to ensemble PDB (more
+examples can be found there). 
+We will also change the region of protein structure, which we would like to
 analyze from residue 1 to 100.
 
 .. ipython:: python
@@ -5231,11 +3633,13 @@ analyze from residue 1 to 100.
 Compare two independent frames
 -------------------------------------------------------------------------------
 
-With this analysis we can also compare interactions between frames. Below we
-will compute hydrogen bonds for frame 0 and frame 18 and we will compare it
-using :func:`.compareInteractions` function. That function will be helpful
-is checking the difference between interactions. The results will be saved
+With this analysis, we can also compare interactions between frames. Below, we
+will compute hydrogen bonds for frame 0 and frame 18 and we will compare
+them using the :func:`.compareInteractions` function. That function will be helpful
+in checking the difference between interactions. The results will be saved
 as *diff_fr0_vsfr18.dat* file.
+
+Let's check the interactions for the initail frame in our trajectory:
 
 .. ipython:: python
    :verbatim:
@@ -5374,6 +3778,9 @@ as *diff_fr0_vsfr18.dat* file.
    @>     VAL106    P        N_1588  <--->     SER103    P        O_1556     3.5    34.2
    @> Number of detected hydrogen bonds: 124.
 
+
+Let's check the interactions for frame number 18 in our trajectory:
+
 .. ipython:: python
    :verbatim:
 
@@ -5494,6 +3901,10 @@ as *diff_fr0_vsfr18.dat* file.
    @>      SER19    P         N_225  <--->      CYS12    P        SG_127     3.5     7.6
    @> Number of detected hydrogen bonds: 107.
 
+
+And compare them using :func:`.compareInteractions`. We will obtain
+information on which interactions are newly maintained, which are stable,
+and which ones were lost.
 
 .. ipython:: python
    :verbatim:
@@ -5645,9 +4056,9 @@ as *diff_fr0_vsfr18.dat* file.
    @> ARG75P <---> ASP42P
    @> ARG18P <---> ILE127P
  
-We can also all tools which are shown for single PDB analysis in this
+We can also all the tools that are shown for single PDB analysis in this
 tutorial. For example, we can compute all interactions for frame0 and
-frame18 and display the inetractions:
+frame18 and display the interactions:
 
 .. ipython:: python
    :verbatim:
@@ -5657,26 +4068,27 @@ frame18 and display the inetractions:
     matrix0 = interactions0.buildInteractionMatrix()
 
 .. parsed-literal::
+   :verbatim:
 
-@> Calculating interations.
-@> Calculating hydrogen bonds.
-@>      DONOR (res chid atom)   <--->       ACCEPTOR (res chid atom)    Distance  Angle
-@>      ARG75    P      NH2_1093  <--->      ASP81    P      OD1_1193     2.6    18.5
-@>      ARG58    P       NH2_832  <--->      ASP56    P       OD2_789     2.6    21.5
-@>      ARG27    P       NH2_359  <--->      GLU23    P       OE2_291     2.7    18.4
-@>      LYS28    P        NZ_380  <--->      ASP32    P       OD2_444     2.7    25.9
-@>     ARG150    P       NE_2300  <--->     GLU154    P      OE1_2371     2.7    22.4
-@>      ARG18    P       NH1_217  <--->      ASP92    P      OD2_1369     2.7    25.9
-@>      ARG75    P       NE_1087  <--->      ASP42    P       OD1_609     2.7    16.1
-@>      ARG58    P        NE_826  <--->      ASP56    P       OD1_788     2.7     2.1
-@>      SER19    P        OG_232  <--->      ASN15    P       OD1_165     2.7     8.1
-@>      ILE88    P        N_1294  <--->     LYS112    P        O_1704     2.7     1.4
-@>       VAL8    P          N_49  <--->      ARG40    P         O_584     2.7    11.5
-@>      THR78    P        N_1134  <--->      ASP81    P      OD2_1194     2.7    28.1
-@>     ASN134    P        N_2045  <--->     ASP137    P      OD1_2090     2.7    12.5
-@>     LYS155    P       NZ_2391  <--->     HSE157    P      OT2_2424     2.7    38.9
-..
-..
+   @> Calculating interations.
+   @> Calculating hydrogen bonds.
+   @>      DONOR (res chid atom)   <--->       ACCEPTOR (res chid atom)    Distance  Angle
+   @>      ARG75    P      NH2_1093  <--->      ASP81    P      OD1_1193     2.6    18.5
+   @>      ARG58    P       NH2_832  <--->      ASP56    P       OD2_789     2.6    21.5
+   @>      ARG27    P       NH2_359  <--->      GLU23    P       OE2_291     2.7    18.4
+   @>      LYS28    P        NZ_380  <--->      ASP32    P       OD2_444     2.7    25.9
+   @>     ARG150    P       NE_2300  <--->     GLU154    P      OE1_2371     2.7    22.4
+   @>      ARG18    P       NH1_217  <--->      ASP92    P      OD2_1369     2.7    25.9
+   @>      ARG75    P       NE_1087  <--->      ASP42    P       OD1_609     2.7    16.1
+   @>      ARG58    P        NE_826  <--->      ASP56    P       OD1_788     2.7     2.1
+   @>      SER19    P        OG_232  <--->      ASN15    P       OD1_165     2.7     8.1
+   @>      ILE88    P        N_1294  <--->     LYS112    P        O_1704     2.7     1.4
+   @>       VAL8    P          N_49  <--->      ARG40    P         O_584     2.7    11.5
+   @>      THR78    P        N_1134  <--->      ASP81    P      OD2_1194     2.7    28.1
+   @>     ASN134    P        N_2045  <--->     ASP137    P      OD1_2090     2.7    12.5
+   @>     LYS155    P       NZ_2391  <--->     HSE157    P      OT2_2424     2.7    38.9
+   ..
+   ..
 
 
 .. ipython:: python
