@@ -845,8 +845,9 @@ all types of interactions such as hydrogen bonds, salt bridges, repulsive ionic 
 Pi-cation, Pi-stacking, hydrophobic and disulfide bonds) at once. Be aware that those
 computations may take a while, depending on the size of the system and the number
 of frames that are stored by the Ensemble PDB file. Therefore, we recommend saving the
-results as an *output* file. The *output* file, *calcProteinInteractionsEnseblePDB.pkl*
-can be reloaded and used with all available functions and methods. 
+results as an *output* file. The *output* file,
+:file:`calcProteinInteractionsEnseblePDB.pkl` can be reloaded and used with all
+available functions and methods. 
 
 .. ipython:: python
    :verbatim:
@@ -1780,7 +1781,7 @@ residues numbers between 10 and 30.
 Import previously saved file with interactions
 -------------------------------------------------------------------------------
 
-We previously saved pkl file *interactions_data_5kqm.pkl* with interactions, and now
+We previously saved pkl file :file:`interactions_data_5kqm.pkl` with interactions, and now
 we will import it for analysis. To do that we need to initiate a new instance and
 use :func:`.parseInteractions` function to parse pkl file:
 

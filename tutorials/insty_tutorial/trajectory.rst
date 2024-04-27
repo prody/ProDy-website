@@ -6,13 +6,12 @@ Trajectory analysis
 
 This example shows how to compute interactions for a trajectory performed
 using NAMD_ software for a small protein tyrosine phosphatase LMW-PTP 
-in a complex with inhibitor MES (PDB: **5KQM**) and visualize the results using 
+in a complex with inhibitor *MES* (PDB: **5KQM**) and visualize the results using 
 Matplotlib_ library and VMD_ program. 
 
 In the tutorial, we will use already prepared files for
 simulation (*PDB* and *DCD* file).
 
-_NAMD: http://www.ks.uiuc.edu/Research/namd/
 
 
 Parse trajectory
@@ -22,8 +21,8 @@ We start by parsing PDB and DCD files, which contain LMW-PTP protein
 structure (available as tutorial files). PDB file contains the
 coordinates of protein structure with water and counter ions. DCD
 file is a binary file that contains a short simulation computed in NAMD_
-package (20 frames). The commands shown below are explained in *Trajectory
-Analysis* tutorial.
+package (20 frames). The commands shown below are explained in `Trajectory
+Analysis tutorial`_.
 
 
 .. ipython:: python
@@ -4265,3 +4264,8 @@ After uploading, we have access to all data, for example:
 
 .. figure:: images/insty_traj_counts2.png
    :scale: 60 %
+
+
+
+.. _NAMD: http://www.ks.uiuc.edu/Research/namd/
+.. _Trajectory Analysis tutorial: http://www.bahargroup.org/prody/tutorials/trajectory_analysis/
