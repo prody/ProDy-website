@@ -11,19 +11,20 @@ It will allow us to use one of two available methods (*openbabel* or *pdbfixer*)
 to predict the position of hydrogen atoms in protein structure.
 
 To use one of those functions, we need to install additional Python package(s).
-For Anaconda users, the installation will be the following:
+For Anaconda_ users, the installation will be the following:
 
 Installation of Openbabel_:
 
-:: conda install -c conda-forge openbabel   
+.. parsed-literal::
+
+   conda install -c conda-forge openbabel   
 
 Installation of PDBfixer_:
 
-:: conda install -c conda-forge pdbfixer
+.. parsed-literal::
 
+   conda install -c conda-forge pdbfixer
 
-.. _Openbabel: https://github.com/openbabel
-.. _PDBfixer: https://github.com/openmm/pdbfixer
 
 Add missing hydrogen atoms to the structure
 -------------------------------------------------------------------------------
@@ -93,3 +94,7 @@ it in the same way as in the previous paragraph.
    @> 2800 atoms and 1 coordinate set(s) were parsed in 0.03s.
 
 
+
+.. _Openbabel: https://github.com/openbabel
+.. _PDBfixer: https://github.com/openmm/pdbfixer
+.. _Anaconda: https://www.anaconda.com/download

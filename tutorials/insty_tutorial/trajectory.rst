@@ -3636,7 +3636,7 @@ With this analysis, we can also compare interactions between frames. Below, we
 will compute hydrogen bonds for frame 0 and frame 18 and we will compare
 them using the :func:`.compareInteractions` function. That function will be helpful
 in checking the difference between interactions. The results will be saved
-as *diff_fr0_vsfr18.dat* file.
+as :file:`diff_fr0_vsfr18.dat` file.
 
 Let's check the interactions for the initail frame in our trajectory:
 
