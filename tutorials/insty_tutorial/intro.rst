@@ -3,7 +3,7 @@ Introduction
 
 This tutorial shows how to predict and display the interactions within
 protein structure using the coordinates (single PDB) or ensemble of
-conformations (multi-model PDB or dcd file gerenarted by NAMD program).
+conformations (multi-model PDB or dcd file gerenarted by NAMD_ program).
 
 This module can be successfully used to study the distribution of different
 types of interactions (hydrogen bonds, salt bridges, repulsive ionic binding,

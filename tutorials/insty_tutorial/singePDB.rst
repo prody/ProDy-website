@@ -5,8 +5,8 @@ Interactions/Stability Evaluation
 
 This example shows how to perform Interactions/Stability Evaluation
 (**InSty**) analysis for a small protein (<200 residues) called tyrosine
-phosphatase LMW-PTP (**5KQM**) and visualize the results using Matplotlib_
-library and VMD_ program. 
+phosphatase LMW-PTP (PDB: **5KQM**) and visualize the results using
+Matplotlib_ library and VMD_ program. 
 In the tutorial, we will use an already prepared structure for
 simulation (with hydrogens added). The same structure will be later
 analyzed with the trajectory file to show how the analysis of interactions 
@@ -21,7 +21,7 @@ atoms to the protein and ligand structure.
 Analysis of interactions for a single PDB structure
 -------------------------------------------------------------------------------
 
-We start by parsing PDB file with LMW-PTP **5kqm_all_sci.pdb** which is avalable
+We start by parsing PDB file with LMW-PTP :file:`5kqm_all_sci.pdb` which is avalable
 in the tutorial files. The PDB file contains protein structure with water and
 counter ions prepared using VMD_ program.
 
@@ -528,11 +528,13 @@ using the :func:`.showProteinInteractions_VMD` function in the following way:
    @> TCL file saved
 
 A TCL file will be saved and can be used in VMD_ after uploading the PDB file
-with protein structure **5kqm_all_sci.pdb** and by running the following command 
+with protein structure :file:`5kqm_all_sci.pdb` and by running the following command 
 line instruction in the VMD_ :guilabel:`TK Console` (:guilabel:`VMD Main`)
 for Linux, Windows and Mac users: 
 
-::  play HBs.tcl
+.. parsed-literal::
+
+   play HBs.tcl
 
 The tcl file contains a method for drawing lines between selected pairs of 
 residues. Those residues are also displayed. Now, we uploaded hydrogen
@@ -543,31 +545,46 @@ bonds which are displayed in blue as we defined in
    :scale: 50 %
 
 Salt bridges in yellow:
-::  play SBs.tcl
+
+.. parsed-literal::
+
+   play SBs.tcl
 
 .. figure:: images/SBs.png
    :scale: 50 %
 
 Repulsive ionic bonding in red:
-::  play RIB.tcl
+
+.. parsed-literal::
+
+   play RIB.tcl
 
 .. figure:: images/RIB.png
    :scale: 50 %
 
 Pi-Pi stacking interactions in green:
-::  play PiStacking.tcl
+
+.. parsed-literal::
+
+   play PiStacking.tcl
 
 .. figure:: images/PiStacking.png
    :scale: 50 %
 
 Pi-cation interactions in orange:
-::  play PiCation.tcl
+
+.. parsed-literal::
+
+   play PiCation.tcl
 
 .. figure:: images/PiCation.png
    :scale: 50 %
 
 and hydrophobic interactions in grey:
-::  play HPh.tcl
+
+.. parsed-literal::
+
+   play HPh.tcl
 
 .. figure:: images/Hydrophobic.png
    :scale: 50 %

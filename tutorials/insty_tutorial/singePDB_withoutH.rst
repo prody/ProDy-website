@@ -28,7 +28,7 @@ Installation of PDBfixer_:
 Add missing hydrogen atoms to the structure
 -------------------------------------------------------------------------------
 
-We start by fetching the PDB file with **5KQM** code (*5kqm.pdb*).
+We start by fetching the PDB file with **5KQM** code (:file:`5kqm.pdb`).
 Openbabel_ requires having the PDB file in the same folder. Therefore, it
 needs to be downloaded and saved to successfully perform the operation with
 adding missing hydrogens. A new file will be saved with the same name with
