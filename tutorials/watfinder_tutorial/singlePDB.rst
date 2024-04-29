@@ -7,7 +7,7 @@ Water bridges detection in a single PDB structure
 Water bridges prediction
 -------------------------------------------------------------------------------
 
-To analyze the structure we need to parse a structure **addH_5kqm.pdb**
+To analyze the structure we need to parse a structure :file:`addH_5kqm.pdb`
 using :func:`.parsePDB`:
 
 .. ipython:: python

@@ -4,8 +4,8 @@ Water bridges detection in an Ensemble PDB
 ===============================================================================
 
 This time we will use an ensemble stored in a multi-model PDB, which contains 50 frames 
-from MD simulations from PE-binding protein 1 (PDB: *1beh*). Simulations were
-performed using NAMD and saved as a multi-model PDB using VMD_. 
+from MD simulations from PE-binding protein 1 (PDB: *1BEH*). Simulations were
+performed using NAMD_ and saved as a multi-model PDB using VMD_. 
 
 We need to remember to align the protein structure before performing the analysis. 
 Otherwise, when all structures are uploaded to the visualization program, they will 

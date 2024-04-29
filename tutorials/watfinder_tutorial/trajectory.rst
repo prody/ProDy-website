@@ -7,8 +7,8 @@ Now, we will perform calculations for a trajectory file that was obtained
 using the NAMD_ package. We will use :func:`.calcWaterBridgesTrajectory`, for which
 we need to provide PDB and DCD files. 
 
-The system (protein in a water box) can be found in *5kqm_all_sci.pdb*. The
-trajectory, *NAMD_D2_sample.dcd*, has dcd format. If we want to analyze
+The system (protein in a water box) can be found in :file:`5kqm_all_sci.pdb`. The
+trajectory, :file:`NAMD_D2_sample.dcd`, has dcd format. If we want to analyze
 trajectories with different formats, we need to convert them to dcd file
 format or save the trajectory as a multi-model PDB (using VMD_ or another tool).
 
@@ -535,7 +535,7 @@ to save all the results (large number of frames saved each independently).
 
 
 Those results can be displayed in any program for visualization. The results 
-for the protein structure will be storage in the B-factor ("beta") column (average values of 
+for the protein structure will be storage in the B-factor (*beta*) column (average values of 
 contributions of each residue in water bridging) and occupancy column 
 (results for particular frame). Water molecules will be included in each frame.
 

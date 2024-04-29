@@ -412,6 +412,7 @@ To extract the interactions between protein's complex, specify *selection* and
 *selection2* and interaction type:
 
 For hydrogen bonds:
+
 .. ipython:: python
    :verbatim:
 
@@ -424,6 +425,7 @@ For hydrogen bonds:
     ['ASP202', 'OD2_1504', 'A', 'GLU418', 'OE2_8442', 'B', 2.744, 31.6383]]
 
 For salt bridges:
+
 .. ipython:: python
    :verbatim:
 
@@ -435,6 +437,7 @@ For salt bridges:
     ['ARG208', 'NH1_1560_1561', 'A', 'GLU111', 'OE1_5976_5977', 'B', 4.3468]]
 
 For hydrophobic interactions:
+
 .. ipython:: python
    :verbatim:
 
@@ -448,6 +451,7 @@ For hydrophobic interactions:
     ['ALA193', 'CB_6637', 'B', 'LEU186', 'CD1_1387', 'A', 4.2965, 20.2503]]
 
 For Pi-stacking interaction:
+
 .. ipython:: python
    :verbatim:
 
@@ -458,6 +462,7 @@ For Pi-stacking interaction:
    []
 
 For Pi-cation interactions:
+
 .. ipython:: python
    :verbatim:
    
@@ -468,6 +473,7 @@ For Pi-cation interactions:
    []
 
 For repulsive ionic bonding interactions:
+
 .. ipython:: python
    :verbatim:
 
