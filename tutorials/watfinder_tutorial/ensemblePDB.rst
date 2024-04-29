@@ -168,7 +168,7 @@ water molecules for each frame that form water bridges with the protein structur
 Now we can use another function :func:`.findClusterCenters` which will extract 
 water centers (they refer to the oxygens from water molecules that are forming 
 clusters). We need to provide a file pattern as show below. Now all the PDB files 
-with prefix *'pebp1_50frames_ens_'* will be analyzed.
+with prefix ``'pebp1_50frames_ens_'`` will be analyzed.
 
 
 .. ipython:: python
@@ -194,11 +194,11 @@ with prefix *'pebp1_50frames_ens_'* will be analyzed.
    @> Results are saved in clusters_pebp1_50frames_ens_.pdb.
 
 This function generated one PDB file with water centers. We used default values, 
-such as *distC* (distance to other molecule) and *numC* (min number of molecules 
+such as ``distC`` (distance to other molecule) and ``numC`` (min number of molecules 
 in a cluster), but those values could be changed if the molecules are more 
 widely distributed or we would like to have more numerous clusters.
 Moreover, this function can be applied to different types of molecules by using 
-the *selection* parameter. We can provide the whole molecule, and by
+the ``selection`` parameter. We can provide the whole molecule, and by
 default, the center of mass will be used as a reference.
 
 

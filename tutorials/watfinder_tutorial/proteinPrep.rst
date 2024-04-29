@@ -12,7 +12,7 @@ If we prefer not to install additional tools, we can alternatively provide
 a PDB structure with hydrogens already added by other software.
 
 Here, we will fetch a structure of LMW-PTP (PDB: **5KQM**) from 
-Protein Data Bank (PDB) in uncompressed form using *compressed=False* 
+Protein Data Bank (PDB) in uncompressed form using ``compressed=False`` 
 and add missing atoms using :func:`.addMissingAtoms`:
 
 .. _Openbabel: https://github.com/openbabel
@@ -40,6 +40,6 @@ and add missing atoms using :func:`.addMissingAtoms`:
 
    @> Hydrogens were added to the structure. Structure addH_5kqm.pdb is saved in the local directry.
 
-A new file containing hydrogens is now generated, prefixed with *'addH_'*. For protein structures lacking
+A new file containing hydrogens is now generated, prefixed with ``'addH_'``. For protein structures lacking
 hydrogens, results will also be computed without applying angle criteria.
 
