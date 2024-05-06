@@ -34,10 +34,10 @@ structure and later compare how many of them contributed meaningfully to protein
    363
 
 Subsequently, we can utilize :func:`.calcWaterBridges` along with one of two
-methods for detecting water bridges: *'chain'* or *'cluster'*.
+methods for detecting water bridges: ``'chain'`` or ``'cluster'``.
 
 
-1. **Method 'chain' (default)** which will detect water molecules between pairs of 
+1. ``Method 'chain' (default)`` which will detect water molecules between pairs of 
 hydrophilic residues:
 
 
@@ -98,7 +98,7 @@ hydrophilic residues:
 These results may vary slightly depending on the position of added hydrogen atoms.
 
 
-2. **Method 'cluster'** which will detect water molecules between multiple hydrophilic 
+2. ``Method 'cluster'`` which will detect water molecules between multiple hydrophilic 
 residues:
 
 .. ipython:: python
@@ -155,7 +155,7 @@ residues:
    @> CYS148 SG_1149 A GLN144 NE2_1119 A 6.149862843999044 1 ['A_1278']
    @> ARG150 NH1_1165 A ARG150 NH2_1166 A 2.3112059622629917 1 ['A_1328']
 
-The *'chain' method* detected **42** water bridges, and the *'cluster' method* second **49**. 
+The ``'chain' method`` detected **42** water bridges, and the ``'cluster' method`` second **49**. 
 The total number of water molecules in the crystal structure is **363**. As we can 
 see, many of them are not significant for protein stability.
 

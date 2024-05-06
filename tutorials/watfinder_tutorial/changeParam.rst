@@ -7,46 +7,46 @@ There are a lot of parameters that can be changed in the water bridge
 analysis, including the distances, angles, and the number of involved water
 molecules or residues.
 
-:arg **atoms**: Atomic object from which atoms are considered
+``atoms`` : Atomic object from which atoms are considered
 
-:arg **method**: 'cluster' or 'chain', where 'chain' will find the shortest 
+``method``: ``'cluster'`` or ``'chain'``, where 'chain' will find the shortest 
     water bridging path between two protein atoms
-    default is 'chain'
+    default is ``'chain'``
 
-:arg **distDA**: maximal distance between water/protein donor and acceptor
-    default is 3.5
+``distDA``: maximal distance between water/protein donor and acceptor
+    default is ``3.5``
 
-:arg **distWR**: maximal distance between considered water and any residue
-    default is 4
+``distWR``: maximal distance between considered water and any residue
+    default is ``4``
 
-:arg **anglePDWA**: angle range where protein is donor and water is acceptor
-    default is (100, 200)
+``anglePDWA``: angle range where protein is donor and water is acceptor
+    default is ``(100, 200)``
 
-:arg **anglePAWD**: angle range where protein is acceptor and water is donor
-    default is (100, 140)
+``anglePAWD``: angle range where protein is acceptor and water is donor
+    default is ``(100, 140)``
 
-:arg **angleWW**: angle between water donor/acceptor
-    default is (140, 180)
+``angleWW``: angle between water donor/acceptor
+    default is ``(140, 180)``
 
-:arg **maxDepth**: maximum number of waters in chain/depth of residues in cluster
-    default is 2
+``maxDepth``: maximum number of waters in chain/depth of residues in cluster
+    default is ``2``
 
-:arg **maxNumRes**: maximum number of water+protein residues in cluster
-    default is None
+``maxNumRes``: maximum number of water+protein residues in cluster
+    default is ``None``
 
-:arg **donors**: which atoms to count as donors 
+``donors``: which atoms to count as donors 
+    default is ``['N', 'O', 'S', 'F']``
+
+``acceptors``: which atoms to count as acceptors 
     default is ['N', 'O', 'S', 'F']
 
-:arg **acceptors**: which atoms to count as acceptors 
-    default is ['N', 'O', 'S', 'F']
-
-:arg **output**: return information arrays, (protein atoms, water atoms), 
+``output``: return information arrays, (protein atoms, water atoms), 
     or just atom indices per bridge
-    Options are 'info', 'atomic' and 'indices'
-    Default is 'atomic'
+    Options are ``'info'``, ``'atomic'`` and ``'indices'``
+    Default is ``'atomic'``
 
-:arg **isInfoLog**: whether to log information
-    default is True
+``isInfoLog``: whether to log information
+    default is ``True``
 
 
 Here's an example of how to apply changes in parameters:
