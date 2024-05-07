@@ -49,7 +49,7 @@ Now let's parse bound RT structure :pdb:`1vrt` and unbound structure
    unbound_all = parsePDB('1dlo')
 
 Let's verify that these structures are not aligned:
-
+ 
 .. ipython:: python
 
    showProtein(unbound_all, bound_all);

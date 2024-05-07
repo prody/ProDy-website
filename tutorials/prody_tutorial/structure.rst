@@ -51,7 +51,7 @@ You can find similar chains in structure 5uoj and 1zz2 using
 
 .. ipython:: python
 
-   apo_chA, bnd_chA, seqid, overlap = matchChains(p38, bound)[0]
+   apo_chA, bnd_chA, seqid, overlap = matchChains(p38.protein, bound.protein)[0]
    apo_chA
    bnd_chA
    seqid
