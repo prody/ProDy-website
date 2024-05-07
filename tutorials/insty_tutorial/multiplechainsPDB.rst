@@ -322,85 +322,85 @@ To compute all interactions:
    @> Number of detected cation-pi interactions: 15.
    @> Hydrophobic Overlaping Areas are computed.
    @> Calculating hydrophobic interactions.
-   @>     ILE433    B      CD1_855114s  <--->     PHE438    B      CD1_8583     2.2    42.8
-   @>     MET446    A       SD_344914s  <--->     LEU449    A      CD1_3475     2.8    43.8
-   @>     ALA179    B       CB_653114s  <--->      PHE14    B      CE2_5382     2.9    48.5
-   @>     ILE421    A      CD1_326214s  <--->     TYR154    A       OH_1126     2.9    21.4
-   @>      PHE92    A       CE2_61314s  <--->      VAL69    A       CG2_499     3.0    33.3
-   @>     PHE438    A      CD1_337914s  <--->     ILE433    A      CG2_3346     3.0    43.4
-   @>     MET478    A       SD_371414s  <--->     ILE460    A      CD1_3564     3.0    30.7
-   @>     ILE460    B      CG2_876714s  <--->     VAL465    B      CG2_8808     3.0    42.3
-   @>       VAL6    B      CG2_532314s  <--->      LEU94    B      CD2_5850     3.1    23.4
-   @>     ARG474    B       CG_888614s  <--->     ILE460    B      CD1_8768     3.1    37.5
-   @>     LEU210    B      CD1_677814s  <--->     ILE591    B      CG1_9794     3.1    33.1
-   @>     TRP207    B      NE1_674914s  <--->     MET567    B       CE_9623     3.1    22.5
-   @>      VAL55    B      CG1_562614s  <--->      LEU36    B      CD1_5537     3.1    20.4
-   @>     ILE515    A      CG2_402514s  <--->     TYR541    A       OH_4229     3.2    29.9
-   @>     TYR472    B       OH_886814s  <--->     LEU658    B     CD2_10322     3.2    31.2
-   @>     ALA123    B       CB_605414s  <--->     TYR495    B      CE1_9056     3.2    30.9
-   @>     ARG220    B       CG_686814s  <--->     PHE219    B      CE2_6861     3.2    81.3
-   @>     LEU594    A      CD1_461114s  <--->     MET213    A       CE_1600     3.2    14.0
-   @>     ILE515    B      CG2_922914s  <--->     TYR541    B       OH_9433     3.2    29.6
-   @>     TRP158    B      CH2_636314s  <--->     ILE442    B      CD1_8618     3.2    45.7
-   @>     PHE367    A      CE2_281314s  <--->     ILE294    A      CG2_2248     3.2    17.1
-   @>       VAL8    A        CG2_8414s  <--->      PHE92    A       CD1_610     3.2    28.0
-   @>     PHE184    B      CD2_656914s  <--->     ILE197    A      CD1_1467     3.3    29.5
-   @>     TYR664    A      CD1_516614s  <--->     ALA558    A       CB_4348     3.3    38.4
-   @>     TRP608    B      NE1_991614s  <--->     ARG220    B       CG_6868     3.3    46.3
-   @>     LEU605    B      CD1_989314s  <--->     ALA191    B       CB_6621     3.3    16.4
-   @>     TYR472    A       OH_366414s  <--->     LEU658    A      CD2_5118     3.3    33.0
-   @>     LEU594    B      CD1_981514s  <--->     MET213    B       CE_6804     3.3    16.0
-   @>     ALA188    B       CB_660614s  <--->     LEU609    B      CD1_9928     3.3    30.9
-   @>     ALA370    A       CB_283814s  <--->     PHE438    A      CD2_3380     3.3    42.4
-   @>     LEU521    A      CD1_407414s  <--->     MET446    A       CE_3450     3.3    11.8
-   @>     LEU538    A      CD2_420114s  <--->     ILE492    A      CD1_3831     3.3    25.6
-   @>     LEU401    B      CD1_829714s  <--->     PHE487    B      CE2_8996     3.3    21.3
-   @>     TYR495    A      CE1_385214s  <--->     ALA123    A        CB_850     3.3    28.2
-   @>      VAL24    B      CG1_545314s  <--->      LEU67    B      CD1_5718     3.3    11.0
-   @>     PHE104    A       CE1_70614s  <--->      LEU94    A       CD1_630     3.3    16.3
-   @>     ILE468    A      CG2_362814s  <--->     TYR471    A      CD2_3648     3.3    15.5
-   @>     TRP359    B      CZ3_794914s  <--->     MET574    B       CG_9672     3.3    43.2
-   @>     LEU201    B      CD1_669914s  <--->     PHE192    B      CE1_6630     3.3    31.1
-   @>      PHE92    B      CE2_583214s  <--->       VAL8    B      CG2_5341     3.3    31.8
-   @>     TYR318    A      CD1_242314s  <--->     LEU272    A      CD2_2090     3.4    34.9
-   @>     LEU250    B      CD2_711814s  <--->     PHE367    B       CZ_8018     3.4    47.0
-   @>     LEU317    A      CD1_241514s  <--->     ILE251    A      CD1_1922     3.4    14.3
-   @>      ARG90    A        CG_58414s  <--->      PHE88    A       CE2_571     3.4    31.2
-   @>       PHE4    A        CD2_4514s  <--->      LEU57    A       CD1_403     3.4    14.5
-   @>     LEU441    A      CD1_340514s  <--->     ILE433    A      CD1_3347     3.4    15.4
-   @>     VAL290    A      CG2_221914s  <--->     LEU317    A      CD1_2415     3.4     9.6
-   @>     PHE547    A      CE1_427514s  <--->     ALA551    A       CB_4301     3.4    31.0
-   @>     PHE219    A      CE2_165714s  <--->     ARG220    A       CG_1664     3.4    91.6
-   @>      PHE45    A        CZ_31514s  <--->      LEU38    A       CD1_295     3.4    14.4
-   @>     MET148    A       CG_106314s  <--->     TYR149    A      CE2_1075     3.4    68.6
-   @>     LEU110    A       CD2_76414s  <--->      TRP87    A       CZ3_560     3.4    54.2
-   @>     PHE192    A       CZ_142814s  <--->     LYS196    A       CG_1456     3.4    36.2
-   @>     TYR473    A      CE2_367414s  <--->     ALA555    A       CB_4330     3.4    13.4
-   @>     PHE384    B      CD2_815614s  <--->     VAL545    B      CG1_9461     3.4    38.5
-   @>     TYR496    B      CD1_906614s  <--->     VAL502    B      CG2_9114     3.4    32.3
-   @>     ARG417    A       CG_322414s  <--->     ILE421    A      CD1_3262     3.4    19.2
-   @>     LEU210    A      CD2_157514s  <--->     MET213    A       CE_1600     3.4    42.7
-   @>     LEU456    B      CD1_873514s  <--->     ILE460    B      CD1_8768     3.4    39.6
-   @>     VAL263    A      CG2_202914s  <--->     PHE261    A       CZ_2015     3.4    35.6
-   @>     VAL597    A      CG2_463314s  <--->     TRP207    A      CD2_1544     3.4    51.7
-   @>     LEU355    B      CD1_791414s  <--->     TRP359    B      NE1_7945     3.4    38.6
-   @>     TRP511    A      CE3_398814s  <--->     LEU508    A      CD1_3962     3.4    36.6
-   @>     LEU605    A      CD1_468914s  <--->     ALA191    A       CB_1417     3.4    12.4
-   @>     LEU420    B      CD1_845714s  <--->     VAL426    B      CG1_8499     3.4    20.8
-   @>      VAL69    B      CG2_573714s  <--->      PHE92    B      CE1_5831     3.4    28.2
-   @>     LEU354    B      CD2_790714s  <--->     TRP232    B      CH2_6976     3.4    36.8
-   @>     VAL542    A      CG1_423514s  <--->     LEU401    A      CD2_3094     3.4     9.3
-   @>     VAL360    A      CG2_275314s  <--->     ILE331    A      CG2_2514     3.5    14.1
-   @>     VAL125    B      CG1_606914s  <--->     TRP127    B      CE2_6086     3.5    50.8
-   @>     LYS214    A       CD_160714s  <--->     PHE229    A       CZ_1739     3.5    36.1
-   @>     LEU329    B      CD2_770614s  <--->     VAL271    B      CG1_7285     3.5    17.7
-   @>     ILE294    B      CG2_745214s  <--->     LEU295    B      CD1_7460     3.5    41.1
-   @>     LEU419    B      CD1_844914s  <--->     LYS196    A       CD_1457     3.5    34.6
-   @>     LYS518    B       CG_925314s  <--->     TRP151    B      CE2_6300     3.5    61.9
-   @>     MET574    A       CG_446814s  <--->     TRP359    A      CZ3_2745     3.5    46.6
-   @>     PHE590    B      CE2_978714s  <--->     LEU594    B      CD1_9815     3.5    37.1
-   @>     ILE343    B      CG2_780414s  <--->     ALA330    B       CB_7711     3.5     3.4
-   @>     PHE547    B      CE2_948014s  <--->     ALA551    B       CB_9505     3.5    25.8
+   @>     ILE433    B   CD1_855114s  <--->     PHE438    B   CD1_8583     2.2    42.8
+   @>     MET446    A    SD_344914s  <--->     LEU449    A   CD1_3475     2.8    43.8
+   @>     ALA179    B    CB_653114s  <--->      PHE14    B   CE2_5382     2.9    48.5
+   @>     ILE421    A   CD1_326214s  <--->     TYR154    A    OH_1126     2.9    21.4
+   @>      PHE92    A    CE2_61314s  <--->      VAL69    A    CG2_499     3.0    33.3
+   @>     PHE438    A   CD1_337914s  <--->     ILE433    A   CG2_3346     3.0    43.4
+   @>     MET478    A    SD_371414s  <--->     ILE460    A   CD1_3564     3.0    30.7
+   @>     ILE460    B   CG2_876714s  <--->     VAL465    B   CG2_8808     3.0    42.3
+   @>       VAL6    B   CG2_532314s  <--->      LEU94    B   CD2_5850     3.1    23.4
+   @>     ARG474    B    CG_888614s  <--->     ILE460    B   CD1_8768     3.1    37.5
+   @>     LEU210    B   CD1_677814s  <--->     ILE591    B   CG1_9794     3.1    33.1
+   @>     TRP207    B   NE1_674914s  <--->     MET567    B    CE_9623     3.1    22.5
+   @>      VAL55    B   CG1_562614s  <--->      LEU36    B   CD1_5537     3.1    20.4
+   @>     ILE515    A   CG2_402514s  <--->     TYR541    A    OH_4229     3.2    29.9
+   @>     TYR472    B    OH_886814s  <--->     LEU658    B  CD2_10322     3.2    31.2
+   @>     ALA123    B    CB_605414s  <--->     TYR495    B   CE1_9056     3.2    30.9
+   @>     ARG220    B    CG_686814s  <--->     PHE219    B   CE2_6861     3.2    81.3
+   @>     LEU594    A   CD1_461114s  <--->     MET213    A    CE_1600     3.2    14.0
+   @>     ILE515    B   CG2_922914s  <--->     TYR541    B    OH_9433     3.2    29.6
+   @>     TRP158    B   CH2_636314s  <--->     ILE442    B   CD1_8618     3.2    45.7
+   @>     PHE367    A   CE2_281314s  <--->     ILE294    A   CG2_2248     3.2    17.1
+   @>       VAL8    A     CG2_8414s  <--->      PHE92    A    CD1_610     3.2    28.0
+   @>     PHE184    B   CD2_656914s  <--->     ILE197    A   CD1_1467     3.3    29.5
+   @>     TYR664    A   CD1_516614s  <--->     ALA558    A    CB_4348     3.3    38.4
+   @>     TRP608    B   NE1_991614s  <--->     ARG220    B    CG_6868     3.3    46.3
+   @>     LEU605    B   CD1_989314s  <--->     ALA191    B    CB_6621     3.3    16.4
+   @>     TYR472    A    OH_366414s  <--->     LEU658    A   CD2_5118     3.3    33.0
+   @>     LEU594    B   CD1_981514s  <--->     MET213    B    CE_6804     3.3    16.0
+   @>     ALA188    B    CB_660614s  <--->     LEU609    B   CD1_9928     3.3    30.9
+   @>     ALA370    A    CB_283814s  <--->     PHE438    A   CD2_3380     3.3    42.4
+   @>     LEU521    A   CD1_407414s  <--->     MET446    A    CE_3450     3.3    11.8
+   @>     LEU538    A   CD2_420114s  <--->     ILE492    A   CD1_3831     3.3    25.6
+   @>     LEU401    B   CD1_829714s  <--->     PHE487    B   CE2_8996     3.3    21.3
+   @>     TYR495    A   CE1_385214s  <--->     ALA123    A     CB_850     3.3    28.2
+   @>      VAL24    B   CG1_545314s  <--->      LEU67    B   CD1_5718     3.3    11.0
+   @>     PHE104    A    CE1_70614s  <--->      LEU94    A    CD1_630     3.3    16.3
+   @>     ILE468    A   CG2_362814s  <--->     TYR471    A   CD2_3648     3.3    15.5
+   @>     TRP359    B   CZ3_794914s  <--->     MET574    B    CG_9672     3.3    43.2
+   @>     LEU201    B   CD1_669914s  <--->     PHE192    B   CE1_6630     3.3    31.1
+   @>      PHE92    B   CE2_583214s  <--->       VAL8    B   CG2_5341     3.3    31.8
+   @>     TYR318    A   CD1_242314s  <--->     LEU272    A   CD2_2090     3.4    34.9
+   @>     LEU250    B   CD2_711814s  <--->     PHE367    B    CZ_8018     3.4    47.0
+   @>     LEU317    A   CD1_241514s  <--->     ILE251    A   CD1_1922     3.4    14.3
+   @>      ARG90    A     CG_58414s  <--->      PHE88    A    CE2_571     3.4    31.2
+   @>       PHE4    A     CD2_4514s  <--->      LEU57    A    CD1_403     3.4    14.5
+   @>     LEU441    A   CD1_340514s  <--->     ILE433    A   CD1_3347     3.4    15.4
+   @>     VAL290    A   CG2_221914s  <--->     LEU317    A   CD1_2415     3.4     9.6
+   @>     PHE547    A   CE1_427514s  <--->     ALA551    A    CB_4301     3.4    31.0
+   @>     PHE219    A   CE2_165714s  <--->     ARG220    A    CG_1664     3.4    91.6
+   @>      PHE45    A     CZ_31514s  <--->      LEU38    A    CD1_295     3.4    14.4
+   @>     MET148    A    CG_106314s  <--->     TYR149    A   CE2_1075     3.4    68.6
+   @>     LEU110    A    CD2_76414s  <--->      TRP87    A    CZ3_560     3.4    54.2
+   @>     PHE192    A    CZ_142814s  <--->     LYS196    A    CG_1456     3.4    36.2
+   @>     TYR473    A   CE2_367414s  <--->     ALA555    A    CB_4330     3.4    13.4
+   @>     PHE384    B   CD2_815614s  <--->     VAL545    B   CG1_9461     3.4    38.5
+   @>     TYR496    B   CD1_906614s  <--->     VAL502    B   CG2_9114     3.4    32.3
+   @>     ARG417    A    CG_322414s  <--->     ILE421    A   CD1_3262     3.4    19.2
+   @>     LEU210    A   CD2_157514s  <--->     MET213    A    CE_1600     3.4    42.7
+   @>     LEU456    B   CD1_873514s  <--->     ILE460    B   CD1_8768     3.4    39.6
+   @>     VAL263    A   CG2_202914s  <--->     PHE261    A    CZ_2015     3.4    35.6
+   @>     VAL597    A   CG2_463314s  <--->     TRP207    A   CD2_1544     3.4    51.7
+   @>     LEU355    B   CD1_791414s  <--->     TRP359    B   NE1_7945     3.4    38.6
+   @>     TRP511    A   CE3_398814s  <--->     LEU508    A   CD1_3962     3.4    36.6
+   @>     LEU605    A   CD1_468914s  <--->     ALA191    A    CB_1417     3.4    12.4
+   @>     LEU420    B   CD1_845714s  <--->     VAL426    B   CG1_8499     3.4    20.8
+   @>      VAL69    B   CG2_573714s  <--->      PHE92    B   CE1_5831     3.4    28.2
+   @>     LEU354    B   CD2_790714s  <--->     TRP232    B   CH2_6976     3.4    36.8
+   @>     VAL542    A   CG1_423514s  <--->     LEU401    A   CD2_3094     3.4     9.3
+   @>     VAL360    A   CG2_275314s  <--->     ILE331    A   CG2_2514     3.5    14.1
+   @>     VAL125    B   CG1_606914s  <--->     TRP127    B   CE2_6086     3.5    50.8
+   @>     LYS214    A    CD_160714s  <--->     PHE229    A    CZ_1739     3.5    36.1
+   @>     LEU329    B   CD2_770614s  <--->     VAL271    B   CG1_7285     3.5    17.7
+   @>     ILE294    B   CG2_745214s  <--->     LEU295    B   CD1_7460     3.5    41.1
+   @>     LEU419    B   CD1_844914s  <--->     LYS196    A    CD_1457     3.5    34.6
+   @>     LYS518    B    CG_925314s  <--->     TRP151    B   CE2_6300     3.5    61.9
+   @>     MET574    A    CG_446814s  <--->     TRP359    A   CZ3_2745     3.5    46.6
+   @>     PHE590    B   CE2_978714s  <--->     LEU594    B   CD1_9815     3.5    37.1
+   @>     ILE343    B   CG2_780414s  <--->     ALA330    B    CB_7711     3.5     3.4
+   @>     PHE547    B   CE2_948014s  <--->     ALA551    B    CB_9505     3.5    25.8
 	  ..
 	  ..
 
@@ -489,9 +489,12 @@ display them:
 .. ipython:: python
    :verbatim:
 
-   showProteinInteractions_VMD(atoms, interactions.getHydrogenBonds(), color='blue', filename='HBs_7laf.tcl')
-   showProteinInteractions_VMD(atoms, interactions.getSaltBridges(), color='yellow',filename='SBs_7laf.tcl')
-   showProteinInteractions_VMD(atoms, interactions.getHydrophobic(), color='silver',filename='HPh_7laf.tcl')
+   showProteinInteractions_VMD(atoms, interactions.getHydrogenBonds(), 
+				color='blue', filename='HBs_7laf.tcl')
+   showProteinInteractions_VMD(atoms, interactions.getSaltBridges(), 
+				color='yellow',filename='SBs_7laf.tcl')
+   showProteinInteractions_VMD(atoms, interactions.getHydrophobic(), 
+				color='silver',filename='HPh_7laf.tcl')
 
 .. parsed-literal::
 

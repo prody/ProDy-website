@@ -171,8 +171,10 @@ column in any graphical visualization tool.
 .. ipython:: python
    :verbatim:
 
-   savePDBWaterBridges(waterBridges_cluster, atoms, filename2[:-4]+'_wb_cluster.pdb')
-   savePDBWaterBridges(waterBridges_chain, atoms, filename2[:-4]+'_wb_chain.pdb')
+   savePDBWaterBridges(waterBridges_cluster, atoms, filename2[:-4]+
+							'_wb_cluster.pdb')
+   savePDBWaterBridges(waterBridges_chain, atoms, filename2[:-4]+
+							'_wb_chain.pdb')
 
 .. parsed-literal::
    :verbatim:
@@ -180,7 +182,7 @@ column in any graphical visualization tool.
    addH_5kqm_wb_chain.pdb
 
 The results can be displayed in VMD_ program. Below we can see a comparison between
-results obtained by 'chain' vs. 'cluster' (additional molecules are shown in
+results obtained by ``'chain'`` vs. ``'cluster'`` (additional molecules are shown in
 green) method.
 
 
@@ -192,7 +194,7 @@ Access to the raw data
 -------------------------------------------------------------------------------
 
 To have access to the raw data, we need to include an 
-additional parameter *ouput='info'* in :func:`.calcWaterBridges`.
+additional parameter ``ouput='info'`` in :func:`.calcWaterBridges`.
 
 The atomic output can also be transformed to this 
 detailed information using :func:`.getWaterBridgesInfoOutput`.
@@ -410,20 +412,7 @@ We can also count how many times each residue was involved in water bridges
     'ARG147': 2,
     'ARG150': 2,
     'LYS110': 1,
-    'PRO20': 1,
-    'ASP42': 1,
-    'THR46': 1,
-    'ASP98': 1,
-    'ARG65': 1,
-    'ASP135': 1,
-    'ARG75': 1,
-    'GLN76': 1,
-    'SER94': 1,
-    'GLY117': 1,
-    'TYR132': 1,
-    'ASP137': 1,
-    'THR140': 1,
-    'GLN144': 1,
+    ..
     'CYS148': 1}
 
 .. ipython:: python

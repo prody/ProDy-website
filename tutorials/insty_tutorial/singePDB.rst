@@ -44,7 +44,7 @@ Before that import everything from the ProDy packages.
 
    @> 19321 atoms and 1 coordinate set(s) were parsed in 0.23s.
 
-For the analysis we will use only protein coordinates (*atoms*):
+For the analysis we will use only protein coordinates (``atoms``):
 
 .. ipython:: python
    :verbatim:
@@ -70,7 +70,7 @@ In the next step, we instantiate an :class:`.Interactions` instance:
 Now we can compute all available types of interactions (seven types: hydrogen
 bonds, salt bridges, repulsive ionic bonding, Pi-cation, Pi-stacking,
 hydrophobic interactions, and disulfide bonds) for protein structure by passing
-selected atoms (*atoms*) to :meth:`.Interactions.calcProteinInteractions` method:
+selected atoms (``atoms``) to :meth:`.Interactions.calcProteinInteractions` method:
 
 .. ipython:: python
    :verbatim:
@@ -127,85 +127,8 @@ selected atoms (*atoms*) to :meth:`.Interactions.calcProteinInteractions` method
    @>      LEU89    P        N_1313  <--->       LEU9    P          O_83     2.9    29.5
    @>      THR31    P         N_421  <--->      ARG27    P         O_363     2.9    24.1
    @>      CYS90    P        N_1332  <--->     GLU114    P        O_1738     2.9    24.6
-   @>     CYS148    P        N_2265  <--->     GLN144    P        O_2213     2.9     9.3
-   @>      GLU23    P         N_279  <--->      SER19    P         O_235     2.9    15.4
-   @>      ILE68    P         N_970  <--->      MET63    P         O_899     2.9    13.0
-   @>      PHE10    P          N_84  <--->      ASP42    P         O_612     2.9    22.8
-   @>     LYS112    P        N_1683  <--->      ASP86    P        O_1272     2.9    10.1
-   @>      SER61    P         N_861  <--->      TYR57    P         O_812     2.9    35.1
-   @>     CYS145    P        N_2214  <--->     VAL141    P        O_2158     2.9    15.9
-   @>      ARG27    P       NH2_359  <--->      GLU23    P       OE2_291     2.9    31.5
-   @>      LYS64    P         N_900  <--->      GLN60    P         O_860     2.9    22.9
-   @>       LEU9    P          N_65  <--->      TYR87    P        O_1293     2.9    16.4
-   @>      ASN38    P         N_523  <--->      ILE35    P         O_496     2.9    29.1
-   @>      VAL11    P         N_104  <--->      LEU89    P        O_1331     2.9    29.7
-   @>     ASN100    P        N_1486  <--->      LEU96    P        O_1430     2.9    10.3
-   @>     GLN124    P        N_1881  <--->     ASP120    P      OD2_1825     2.9    27.5
-   @>     LYS102    P        N_1524  <--->      ASP98    P        O_1466     2.9     9.3
-   @>      GLN76    P      NE2_1110  <--->      THR46    P         O_657     2.9    31.4
-   @>      ARG40    P       NH1_577  <--->      THR84    P      OG1_1233     2.9     8.4
-   @>      ALA44    P         N_624  <--->      PHE10    P         O_103     2.9    33.2
-   @>     GLU154    P        N_2360  <--->     ARG150    P        O_2310     3.0    22.6
-   @>       VAL8    P          N_49  <--->      ARG40    P         O_584     3.0    25.0
-   @>      MET63    P         N_883  <--->      GLY59    P         O_843     3.0    18.3
-   @>      GLN60    P         N_844  <--->      ASP56    P         O_791     3.0    35.5
-   @>      ILE35    P         N_478  <--->      VAL30    P         O_420     3.0    23.5
-   @>     VAL146    P        N_2225  <--->     TYR142    P        O_2179     3.0    31.5
-   @>      ARG58    P       NH1_829  <--->     TYR131    P        O_2016     3.0    38.1
-   @>      ASN53    P         N_738  <--->      GLU50    P         O_711     3.0    28.6
-   @>     ARG101    P        N_1500  <--->      ARG97    P        O_1454     3.0    32.3
-   @>      ARG18    P       NH1_217  <--->     ILE127    P        O_1954     3.0    26.0
-   @>      ARG75    P        N_1074  <--->      ASN15    P       OD1_165     3.0    25.1
-   @>     GLN144    P      NE2_2209  <--->     ILE126    P        O_1935     3.0    18.3
-   @>      ASN34    P         N_464  <--->      THR31    P         O_434     3.0    18.2
-   @>      ASN15    P       ND2_166  <--->      SER43    P        OG_620     3.0    25.7
-   @>      ARG58    P        NE_826  <--->      ASP56    P       OD1_788     3.0    22.2
-   @>      ARG27    P       NH1_356  <--->      GLU23    P       OE2_291     3.0    36.9
-   @>     ILE127    P        N_1936  <--->      MET91    P        O_1359     3.0    17.6
-   @>     TYR119    P       OH_1808  <--->     HSE157    P        N_2407     3.0    28.1
-   @>     HSE157    P        N_2407  <--->     TYR119    P       OH_1808     3.0    19.2
-   @>     GLU139    P        N_2114  <--->     ASP135    P        O_2070     3.0    27.9
-   @>      LEU29    P         N_386  <--->      VAL25    P         O_319     3.0    19.1
-   @>      SER47    P         N_658  <--->      LEU13    P         O_149     3.0    28.8
-   @>      VAL30    P         N_405  <--->      PHE26    P         O_339     3.0    17.7
-   @>     GLN105    P        N_1571  <--->     LYS102    P        O_1545     3.0    19.7
-   @>     SER118    P        N_1784  <--->     LEU115    P        O_1757     3.1    21.4
-   @>     LYS155    P        N_2375  <--->     ALA151    P        O_2320     3.1    21.3
-   @>     GLU114    P        N_1724  <--->      ILE88    P        O_1312     3.1    24.2
-   @>     ASP120    P        N_1816  <--->     GLY117    P        O_1783     3.1    12.7
-   @>      CYS62    P         N_872  <--->      ARG58    P         O_836     3.1    20.4
-   @>      ARG18    P       NH1_217  <--->      ASP92    P      OD2_1369     3.1     4.3
-   @>      ALA24    P         N_294  <--->      PRO20    P         O_249     3.1    29.9
-   @>     ARG150    P        N_2287  <--->     VAL146    P        O_2240     3.1    12.7
-   @>      LYS28    P         N_364  <--->      ALA24    P         O_303     3.1    20.0
-   @>     VAL141    P        N_2143  <--->     ASP137    P        O_2093     3.1    18.5
-   @>      ASP98    P        N_1455  <--->      SER94    P        O_1397     3.1    19.6
-   @>      LEU96    P        N_1412  <--->      ASP92    P        O_1371     3.1    36.3
-   @>      ALA22    P         N_269  <--->      ARG18    P         O_224     3.1    21.9
-   @>     ALA151    P        N_2311  <--->     ARG147    P        O_2264     3.1    15.6
-   @>      GLY67    P         N_963  <--->      LYS64    P         O_921     3.1    22.8
-   @>      ASP42    P         N_601  <--->       VAL8    P          O_64     3.1    35.6
-   @>      ARG65    P         N_922  <--->      SER61    P         O_871     3.1    23.4
-   @>      TRP39    P         N_537  <--->      SER36    P         O_507     3.1    15.2
-   @>     LYS123    P        N_1859  <--->     ASP120    P        O_1827     3.1    18.7
-   @>      MET91    P        N_1343  <--->      ASN95    P      OD1_1406     3.2    39.0
-   @>     THR140    P        N_2129  <--->     SER136    P        O_2081     3.2    30.3
-   @>      PHE85    P        N_1241  <--->      ASP81    P        O_1196     3.2    20.2
-   @>      ASN15    P         N_157  <--->      CYS12    P        SG_127     3.2    37.5
-   @>     ALA111    P        N_1673  <--->      PHE82    P        O_1216     3.2    20.6
-   @>     ARG147    P        N_2241  <--->     GLN143    P        O_2196     3.2    12.1
-   @>      ARG75    P      NH2_1093  <--->      ASP81    P      OD1_1193     3.2    29.3
-   @>     LYS112    P       NZ_1699  <--->     HSE157    P      OT2_2424     3.3    28.7
-   @>     ARG147    P      NH1_2257  <--->     GLN124    P      OE1_1892     3.3    29.9
-   @>     PHE138    P        N_2094  <--->     ASN134    P        O_2058     3.3    31.0
-   @>       SER7    P         OG_45  <--->      THR84    P        O_1240     3.3    35.5
-   @>      CYS12    P         N_120  <--->      ALA44    P         O_633     3.3    36.1
-   @>      SER19    P         N_225  <--->      CYS12    P        SG_127     3.3     8.0
-   @>      PHE82    P        N_1197  <--->      LYS79    P        O_1169     3.4    37.7
-   @>      ASP81    P        N_1185  <--->      THR78    P      OG1_1140     3.5    39.5
-   @>     LYS102    P       NZ_1540  <--->      ASP98    P      OD2_1464     3.5    26.1
-   @>     ARG147    P      NH2_2260  <--->     GLN124    P      OE1_1892     3.5    33.9
-   @>     VAL106    P        N_1588  <--->     SER103    P        O_1556     3.5    34.2
+   ..
+   ..
    @> Number of detected hydrogen bonds: 124.
    @> Calculating salt bridges.
    @>      HSE66    P         NE2_957  <--->     GLU139    P   OE1_2125_2126     2.8
@@ -230,7 +153,7 @@ selected atoms (*atoms*) to :meth:`.Interactions.calcProteinInteractions` method
    @> Number of detected Repulsive Ionic Bonding interactions: 1.
    @> Calculating Pi stacking interactions.
    @>      HSE66       P             953_954_955_957_959  <--->     TYR142       P   2166_2167_2169_2171_2174_2176     3.9   162.1
-   @>     HSE157       P2414_2415_2416_2418_2420_2423_2424  <--->     TYR119       P   1802_1803_1805_1807_1810_1812     4.4     3.0
+   @>     HSE157       P 2414_2415_2416_2418_2420_2423_2424  <--->     TYR119       P   1802_1803_1805_1807_1810_1812     4.4     3.0
    @>      TRP39       P         549_550_551_553_555_557  <--->      PHE26       P         327_328_330_332_334_336     4.8    75.5
    @>     TYR131       P   2003_2004_2006_2008_2011_2013  <--->     TYR132       P   2024_2025_2027_2029_2032_2034     4.9    91.4
    @> Number of detected Pi stacking interactions: 4.
@@ -241,45 +164,29 @@ selected atoms (*atoms*) to :meth:`.Interactions.calcProteinInteractions` method
    @> Number of detected cation-pi interactions: 3.
    @> Hydrophobic Overlaping Areas are computed.
    @> Calculating hydrophobic interactions.
-   @>      TYR87    P       OH_128614s  <--->     ALA156    P       CB_2401     3.0    22.0
-   @>      MET63    P        CE_89414s  <--->      ALA24    P        CB_298     3.3     5.2
-   @>      ILE68    P       CG2_97614s  <--->      MET63    P        CE_894     3.3    52.4
-   @>     TYR142    P       CZ_217114s  <--->     VAL146    P      CG2_2235     3.5    49.7
-   @>      PHE10    P        CD1_9214s  <--->      ALA22    P        CB_273     3.5    31.2
-   @>       LYS6    P         CD_2614s  <--->      TRP39    P       CZ2_555     3.5    68.7
-   @>      VAL30    P       CG1_41114s  <--->      PHE26    P       CE2_336     3.6    21.1
-   @>     ALA111    P       CB_167714s  <--->      ILE88    P       CD_1307     3.6    21.2
-   @>      VAL11    P       CG2_11414s  <--->      ILE88    P      CG2_1300     3.6     9.3
-   @>      VAL41    P       CG2_59514s  <--->      PHE26    P       CD2_334     3.6    16.6
-   @>     PHE152    P      CE1_233114s  <--->     ALA156    P       CB_2401     3.7    17.5
-   @>     VAL106    P      CG2_159814s  <--->      LYS79    P       CG_1155     3.7    25.1
-   @>      ILE77    P       CD_112814s  <--->      LEU99    P      CD2_1480     3.7    12.0
-   @>      PHE82    P      CD1_120514s  <--->      ILE88    P       CD_1307     3.7    17.6
-   @>     LEU116    P      CD2_177114s  <--->     ILE127    P       CD_1949     3.7    17.4
-   @>       VAL8    P        CG1_5514s  <--->      PHE26    P       CE2_336     3.7    12.1
-   @>      LEU96    P      CD1_142114s  <--->     ILE113    P      CG2_1711     3.7    17.0
-   @>       LEU9    P        CD2_7814s  <--->      ILE77    P       CD_1128     3.7    15.4
-   @>      LEU89    P      CD1_132214s  <--->       VAL8    P        CG2_59     3.8    15.9
-   @>     ILE126    P       CD_193014s  <--->     LEU125    P      CD1_1907     3.8    54.2
-   @>     VAL141    P      CG1_214914s  <--->     ILE127    P      CG2_1942     3.9    11.5
-   @>      MET91    P       SD_135314s  <--->     ILE127    P       CD_1949     3.9    35.9
-   @>      ALA44    P        CB_62814s  <--->       LEU9    P        CD1_74     3.9    15.1
-   @>      VAL25    P       CG2_31414s  <--->     TYR142    P      CE1_2169     3.9    12.0
-   @>      ILE21    P       CG2_25614s  <--->      MET63    P        SD_893     4.0    20.8
-   @>     LEU153    P      CD1_235014s  <--->      TRP39    P       NE1_547     4.0     9.4
-   @>      PHE85    P       CZ_125314s  <--->       LEU9    P        CD1_74     4.0    32.1
-   @>      ILE35    P        CD_49114s  <--->      TRP39    P       NE1_547     4.0    26.0
-   @>      LEU29    P       CD1_39514s  <--->      VAL25    P       CG1_310     4.1    19.7
-   @>      ALA74    P       CB_106814s  <--->      ILE16    P       CG2_177     4.1     6.7
-   @>      ARG75    P       CG_108114s  <--->      ALA44    P        CB_628     4.1    36.2
-   @>      ARG18    P        CG_20814s  <--->     VAL141    P      CG1_2149     4.1    20.3
-   @>     LYS102    P       CD_153414s  <--->      ILE77    P      CG2_1121     4.1    17.5
-   @>     TYR119    P      CE1_180514s  <--->      LEU89    P      CD2_1326     4.1    11.6
-   @>      ARG40    P        CG_56814s  <--->      PHE85    P      CE2_1257     4.3    60.9
-   @>      LYS28    P        CG_37114s  <--->      ILE68    P        CD_983     4.3    21.8
-   @>     PHE138    P      CD2_210814s  <--->      ILE21    P        CD_263     4.3     6.6
-   @>     TYR131    P      CE1_200614s  <--->      ILE16    P        CD_184     4.3     8.9
-   @>      ARG58    P        CG_82014s  <--->     PHE138    P      CE1_2104     4.5    59.4
+   @>      TYR87    P    OH_128614s  <--->     ALA156    P    CB_2401     3.0    22.0
+   @>      MET63    P     CE_89414s  <--->      ALA24    P     CB_298     3.3     5.2
+   @>      ILE68    P    CG2_97614s  <--->      MET63    P     CE_894     3.3    52.4
+   @>     TYR142    P    CZ_217114s  <--->     VAL146    P   CG2_2235     3.5    49.7
+   @>      PHE10    P     CD1_9214s  <--->      ALA22    P     CB_273     3.5    31.2
+   @>       LYS6    P      CD_2614s  <--->      TRP39    P    CZ2_555     3.5    68.7
+   @>      VAL30    P    CG1_41114s  <--->      PHE26    P    CE2_336     3.6    21.1
+   @>     ALA111    P    CB_167714s  <--->      ILE88    P    CD_1307     3.6    21.2
+   @>      VAL11    P    CG2_11414s  <--->      ILE88    P   CG2_1300     3.6     9.3
+   @>      VAL41    P    CG2_59514s  <--->      PHE26    P    CD2_334     3.6    16.6
+   @>     PHE152    P   CE1_233114s  <--->     ALA156    P    CB_2401     3.7    17.5
+   @>     VAL106    P   CG2_159814s  <--->      LYS79    P    CG_1155     3.7    25.1
+   @>      ILE77    P    CD_112814s  <--->      LEU99    P   CD2_1480     3.7    12.0
+   @>      PHE82    P   CD1_120514s  <--->      ILE88    P    CD_1307     3.7    17.6
+   @>     LEU116    P   CD2_177114s  <--->     ILE127    P    CD_1949     3.7    17.4
+   @>       VAL8    P     CG1_5514s  <--->      PHE26    P    CE2_336     3.7    12.1
+   @>      LEU96    P   CD1_142114s  <--->     ILE113    P   CG2_1711     3.7    17.0
+   @>       LEU9    P     CD2_7814s  <--->      ILE77    P    CD_1128     3.7    15.4
+   @>      LEU89    P   CD1_132214s  <--->       VAL8    P     CG2_59     3.8    15.9
+   @>     ILE126    P    CD_193014s  <--->     LEU125    P   CD1_1907     3.8    54.2
+   @>     VAL141    P   CG1_214914s  <--->     ILE127    P   CG2_1942     3.9    11.5
+   ..
+   ..
    @> Number of detected hydrophobic interactions: 39.
    @> Calculating disulfide bonds.
    @> Number of detected disulfide bonds: 0.
@@ -495,7 +402,7 @@ types, we can use :meth:`.Interactions.getFrequentInteractions` method:
    @> Legend: hb-hydrogen bond, sb-salt bridge, rb-repulsive ionic bond, ps-Pi stacking interaction,pc-Cation-Pi interaction, hp-hydrophobic interaction, dibs-disulfide bonds
    @> The biggest number of interactions: 4
 
-The value of *contacts_min* can be modified to display residues with smaller
+The value of ``contacts_min`` can be modified to display residues with smaller
 or bigger number of interactions. 
 
 
@@ -508,13 +415,20 @@ using the :func:`.showProteinInteractions_VMD` function in the following way:
 .. ipython:: python
    :verbatim:
 
-   showProteinInteractions_VMD(atoms, interactions.getHydrogenBonds(), color='blue', filename='HBs.tcl')
-   showProteinInteractions_VMD(atoms, interactions.getSaltBridges(), color='yellow',filename='SBs.tcl')
-   showProteinInteractions_VMD(atoms, interactions.getRepulsiveIonicBonding(), color='red',filename='RIB.tcl')
-   showProteinInteractions_VMD(atoms, interactions.getPiStacking(), color='green',filename='PiStacking.tcl') 
-   showProteinInteractions_VMD(atoms, interactions.getPiCation(), color='orange',filename='PiCation.tcl') 
-   showProteinInteractions_VMD(atoms, interactions.getHydrophobic(), color='silver',filename='HPh.tcl')
-   showProteinInteractions_VMD(atoms, interactions.getDisulfideBonds(), color='black',filename='DiBs.tcl') 
+   showProteinInteractions_VMD(atoms, interactions.getHydrogenBonds(), 
+					color='blue', filename='HBs.tcl')
+   showProteinInteractions_VMD(atoms, interactions.getSaltBridges(), 
+					color='yellow',filename='SBs.tcl')
+   showProteinInteractions_VMD(atoms, interactions.getRepulsiveIonicBonding(), 
+					color='red',filename='RIB.tcl')
+   showProteinInteractions_VMD(atoms, interactions.getPiStacking(), 
+					color='green',filename='PiStacking.tcl') 
+   showProteinInteractions_VMD(atoms, interactions.getPiCation(), 
+					color='orange',filename='PiCation.tcl') 
+   showProteinInteractions_VMD(atoms, interactions.getHydrophobic(), 
+					color='silver',filename='HPh.tcl')
+   showProteinInteractions_VMD(atoms, interactions.getDisulfideBonds(), 
+					color='black',filename='DiBs.tcl') 
 
 .. parsed-literal::
 
@@ -527,9 +441,9 @@ using the :func:`.showProteinInteractions_VMD` function in the following way:
    @> Lack of results
    @> TCL file saved
 
-A TCL file will be saved and can be used in VMD_ after uploading the PDB file
+A ``TCL file`` will be saved and can be used in VMD_ after uploading the PDB file
 with protein structure :file:`5kqm_all_sci.pdb` and by running the following command 
-line instruction in the VMD_ :guilabel:`TK Console` (:guilabel:`VMD Main`)
+line instruction in the VMD_ :guilabel:`TK Console` (via :guilabel:`VMD Main`)
 for Linux, Windows and Mac users: 
 
 .. parsed-literal::
@@ -544,7 +458,7 @@ bonds which are displayed in blue as we defined in
 .. figure:: images/HBs.png
    :scale: 50 %
 
-Salt bridges in yellow:
+Salt bridges in yellow (VMD_ :guilabel:`TK Console`):
 
 .. parsed-literal::
 
@@ -553,7 +467,7 @@ Salt bridges in yellow:
 .. figure:: images/SBs.png
    :scale: 50 %
 
-Repulsive ionic bonding in red:
+Repulsive ionic bonding in red (VMD_ :guilabel:`TK Console`):
 
 .. parsed-literal::
 
@@ -562,7 +476,7 @@ Repulsive ionic bonding in red:
 .. figure:: images/RIB.png
    :scale: 50 %
 
-Pi-Pi stacking interactions in green:
+Pi-Pi stacking interactions in green (VMD_ :guilabel:`TK Console`):
 
 .. parsed-literal::
 
@@ -571,7 +485,7 @@ Pi-Pi stacking interactions in green:
 .. figure:: images/PiStacking.png
    :scale: 50 %
 
-Pi-cation interactions in orange:
+Pi-cation interactions in orange (VMD_ :guilabel:`TK Console`):
 
 .. parsed-literal::
 
@@ -580,7 +494,7 @@ Pi-cation interactions in orange:
 .. figure:: images/PiCation.png
    :scale: 50 %
 
-and hydrophobic interactions in grey:
+and hydrophobic interactions in grey (VMD_ :guilabel:`TK Console`):
 
 .. parsed-literal::
 
@@ -886,7 +800,8 @@ If we want to replace hydrogen bonds:
 .. ipython:: python
    :verbatim:
 
-   newHydrogenBonds2 = calcHydrogenBonds(atoms, distA=2.8, angle=30, cutoff_dist=15)
+   newHydrogenBonds2 = calcHydrogenBonds(atoms, distA=2.8, 
+				angle=30, cutoff_dist=15)
    interactions.setNewHydrogenBonds(newHydrogenBonds2)
 
 .. parsed-literal::
@@ -985,13 +900,13 @@ Assess the functional significance of a residue
 For assessing the functional significance of each residue in protein
 structure, we counted the number of possible contacts based on:
 
-    (1) Hydrogen bonds (HBs)
-    (2) Salt Bridges (SBs)
-    (3) Repulsive Ionic Bonding (RIB)  
-    (4) Pi stacking interactions (PiStack)
-    (5) Pi-cation interactions (PiCat) 
-    (6) Hydrophobic interactions (HPh) 
-    (7) Disulfide Bonds (DiBs)
+    (1) Hydrogen bonds (``HBs``)
+    (2) Salt Bridges (``SBs``)
+    (3) Repulsive Ionic Bonding (``RIB``)  
+    (4) Pi stacking interactions (``PiStack``)
+    (5) Pi-cation interactions (``PiCat``) 
+    (6) Hydrophobic interactions (``HPh``) 
+    (7) Disulfide Bonds (``DiBs``)
 
 
 To compute the weighted interactions use the 
@@ -1039,7 +954,7 @@ The total number of interaction for each residue can be displayed on the plot us
    @> Calculating interactions
 
 The results with the higest number of possible contacts can be saved in PDB
-file. They will be restored in *Occupancy* column and display in VMD_.
+file. They will be restored in ``Occupancy`` column and display in VMD_.
 
 .. ipython:: python
    :verbatim:
@@ -1070,11 +985,11 @@ program, for example, in VMD_.
 
    @> PDB file saved.
 
-A file *5kqm_meanMatrix.pdb* will be saved and can be used in VMD_ by 
+A file ``5kqm_meanMatrix.pdb`` will be saved and can be used in VMD_ by 
 uploading PDB structure and displaying it with :guilabel:`Coloring Method`
 :guilabel:`Occupancy`. By default blue colors correspond to the highest
-values but we can change it in :menuselection:`*VMD Main* -> *Graphics* ->
-*Color Controls* -> *Color Scale* -> *Method* to *BWR*`.
+values but we can change it in :menuselection:`VMD Main -> Graphics ->
+Color Controls -> Color Scale -> Method to BWR`.
 
 .. figure:: images/fig1.png
    :scale: 50 %
@@ -1084,8 +999,8 @@ Exclude some interaction types from calculations
 -------------------------------------------------------------------------------
 
 For analysis we can exclude some of the interaction types by assigning zero
-to the type of interactions (HBs - hydrogen bonds, SBs - salt bridges, RIB -
-repulsive ionic bonding, PiCat - Pi-Cation, PiStack - Pi-Stacking, HPh -
+to the type of interactions (``HBs`` - hydrogen bonds, ``SBs`` - salt bridges, ``RIB`` -
+repulsive ionic bonding, ``PiCat`` - Pi-Cation, ``PiStack`` - Pi-Stacking, ``HPh`` -
 hydrophobic interactions and finally DiBs - disulfide bonds). 
 
 .. ipython:: python

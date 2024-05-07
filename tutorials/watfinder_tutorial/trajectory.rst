@@ -379,22 +379,6 @@ was contributing to the water bridges in the trajectory.
     ('CYS148P', 1),
     ('VAL25P', 1),
     ('ILE77P', 1),
-    ('PRO20P', 2),
-    ('ILE127P', 2),
-    ('ILE68P', 2),
-    ('GLY14P', 2),
-    ('GLY67P', 2),
-    ('ALA111P', 3),
-    ('VAL73P', 3),
-    ('ALA24P', 3),
-    ('LEU115P', 3),
-    ('PRO55P', 4),
-    ('ALA74P', 4),
-    ('PRO121P', 4),
-    ('ASN15P', 4),
-    ('LEU13P', 4),
-    ('ILE51P', 5),
-    ('THR31P', 5),
     .
     .
     ('ARG75P', 15),
@@ -423,7 +407,7 @@ The ``clip`` option can be used to include different number of results on the hi
 
 If we are interested in one particular residue, we can also use
 :func:`.calcWaterBridgesDistribution` to find their partners in water bridges. 
-Below we can see results for arginine 147 or aspartic acid 92 from chain P
+Below we can see results for arginine 147 or aspartic acid 92 from ``chain P``
 using the nomenclature for them corresponding to the keys of the dictionary.
 
 
@@ -468,7 +452,8 @@ residue part which was involved in water bridges, i.e. backbone or side chain
 .. ipython:: python
    :verbatim:
 
-   calcWaterBridgesDistribution(waterBridges,  'ASP92P', 'ARG18P', trajectory=trajectory, metric='distance')
+   calcWaterBridgesDistribution(waterBridges,  'ASP92P', 'ARG18P', 
+				trajectory=trajectory, metric='distance')
 
 .. figure:: images/traj_distribution.png
    :scale: 50 %
@@ -496,7 +481,8 @@ residue part which was involved in water bridges, i.e. backbone or side chain
 .. ipython:: python
    :verbatim:
 
-   calcWaterBridgesDistribution(waterBridges, 'ARG147P', 'GLN122P', metric='waters') 
+   calcWaterBridgesDistribution(waterBridges, 'ARG147P', 'GLN122P',
+							metric='waters') 
 
 .. figure:: images/traj_distribution2.png
    :scale: 60 %
@@ -524,19 +510,12 @@ The results can be stored as a PDB file using :func:`.savePDBWaterBridges`
 (single PDB file, single frame) or using :func:`.savePDBWaterBridgesTrajectory`
 to save all the results (large number of frames saved each independently).
 
-5kqm_all_sci_multi_0.pdb  5kqm_all_sci_multi_4.pdb  
-5kqm_all_sci_multi_1.pdb  5kqm_all_sci_multi_5.pdb  
-5kqm_all_sci_multi_2.pdb  5kqm_all_sci_multi_6.pdb  
-5kqm_all_sci_multi_3.pdb  5kqm_all_sci_multi_7.pdb  
-5kqm_all_sci_multi_8.pdb   5kqm_all_sci_multi_12.pdb
-5kqm_all_sci_multi_9.pdb   5kqm_all_sci_multi_13.pdb
-5kqm_all_sci_multi_10.pdb  5kqm_all_sci_multi_14.pdb
-5kqm_all_sci_multi_11.pdb  5kqm_all_sci_multi_15.pdb
+``5kqm_all_sci_multi_0.pdb``  ``5kqm_all_sci_multi_1.pdb`` .. ``5kqm_all_sci_multi_15.pdb``
 
 
 Those results can be displayed in any program for visualization. The results 
-for the protein structure will be storage in the B-factor (*beta*) column (average values of 
-contributions of each residue in water bridging) and occupancy column 
+for the protein structure will be storage in the ``B-factor (*beta*) column`` (average values of 
+contributions of each residue in water bridging) and ``Occupancy column`` 
 (results for particular frame). Water molecules will be included in each frame.
 
 

@@ -7,7 +7,7 @@ There are a lot of parameters that can be changed in the water bridge
 analysis, including the distances, angles, and the number of involved water
 molecules or residues.
 
-``atoms`` : Atomic object from which atoms are considered
+``atoms``: Atomic object from which atoms are considered
 
 ``method``: ``'cluster'`` or ``'chain'``, where 'chain' will find the shortest 
     water bridging path between two protein atoms
@@ -38,7 +38,7 @@ molecules or residues.
     default is ``['N', 'O', 'S', 'F']``
 
 ``acceptors``: which atoms to count as acceptors 
-    default is ['N', 'O', 'S', 'F']
+    default is ``['N', 'O', 'S', 'F']``
 
 ``output``: return information arrays, (protein atoms, water atoms), 
     or just atom indices per bridge

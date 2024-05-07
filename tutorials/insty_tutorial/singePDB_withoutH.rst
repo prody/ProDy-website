@@ -7,7 +7,7 @@ PDB structure without hydrogens
 Very often, PDB structures downloaded directly from the PDB database will not
 have determined hydrogen atoms that are required, for example, for predicting
 hydrogen bonds. In such a case, we can use the :func:`.addHydrogens` function.
-It will allow us to use one of two available methods (*openbabel* or *pdbfixer*)
+It will allow us to use one of two available methods (``openbabel`` or ``pdbfixer``)
 to predict the position of hydrogen atoms in protein structure.
 
 To use one of those functions, we need to install additional Python package(s).
