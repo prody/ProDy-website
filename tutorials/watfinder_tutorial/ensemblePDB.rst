@@ -4,7 +4,7 @@ Water bridges detection in an Ensemble PDB
 ===============================================================================
 
 This time we will use an ensemble stored in a multi-model PDB, which contains 50 frames 
-from MD simulations from PE-binding protein 1 (PDB: *1BEH*). Simulations were
+from MD simulations from PE-binding protein 1 (PDB: **1BEH**). Simulations were
 performed using NAMD_ and saved as a multi-model PDB using VMD_. 
 
 We need to remember to align the protein structure before performing the analysis. 
@@ -50,16 +50,6 @@ Initial analysis
    @> 127 water bridges detected.
    @> Frame: 11
    @> 135 water bridges detected.
-   @> Frame: 12
-   @> 162 water bridges detected.
-   @> Frame: 13
-   @> 135 water bridges detected.
-   @> Frame: 14
-   @> 178 water bridges detected.
-   @> Frame: 15
-   @> 128 water bridges detected.
-   @> Frame: 16
-   @> 145 water bridges detected.
    ...
    ...
 
@@ -108,7 +98,8 @@ in the trajectory analysis.
 .. ipython:: python
    :verbatim:
 
-   analysisAtomic_ens = calcWaterBridgesStatistics(bridgeFrames_ens, coords_ens)
+   analysisAtomic_ens = calcWaterBridgesStatistics(bridgeFrames_ens, 
+							coords_ens)
 
    for item in analysisAtomic_ens.items():
       print(item)
@@ -154,8 +145,6 @@ in the trajectory analysis.
    @> All 51 coordinate sets are copied to pebp1_50frames Selection 'protein' + pebp1_50frames Selection 'same residue as...6074 4190 14360'.
    @> All 51 coordinate sets are copied to pebp1_50frames Selection 'protein' + pebp1_50frames Selection 'same residue as...9718 17936 7184'.
    @> All 51 coordinate sets are copied to pebp1_50frames Selection 'protein' + pebp1_50frames Selection 'same residue as...947 10043 11756'.
-   @> All 51 coordinate sets are copied to pebp1_50frames Selection 'protein' + pebp1_50frames Selection 'same residue as...0099 12848 4175'.
-   @> All 51 coordinate sets are copied to pebp1_50frames Selection 'protein' + pebp1_50frames Selection 'same residue as...6031 8645 18008'.
    ..
    ..
 
