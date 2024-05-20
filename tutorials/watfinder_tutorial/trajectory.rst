@@ -1,17 +1,16 @@
 .. _watfinder_tutorial:
-=======
 
 Water bridges detection in a trajectory
 ===============================================================================
 
 Now, we will perform calculations for a trajectory file that was obtained
-using the NAMD package. We will use :func:`.calcWaterBridgesTrajectory`, for which
+using the NAMD_ package. We will use :func:`.calcWaterBridgesTrajectory`, for which
 we need to provide PDB and DCD files. 
 
-The system (protein in a water box) can be found in *5kqm_all_sci.pdb*. The trajectory,
-*NAMD_D2_sample.dcd*, has dcd format. In case we would like to analyze
-trajectories with different formats, we need to make a conversion to dcd file
-format or save the trajectory as a multi-model PDB (using VMD or another tool).
+The system (protein in a water box) can be found in :file:`5kqm_all_sci.pdb`. The
+trajectory, :file:`NAMD_D2_sample.dcd`, has dcd format. If we want to analyze
+trajectories with different formats, we need to convert them to ``dcd`` file
+format or save the trajectory as a multi-model PDB (using VMD_ or another tool).
 
 
 Parse structure with trajectory
@@ -33,7 +32,7 @@ Parse structure with trajectory
    @> 17 coordinate sets parsed at input rate 3382 frame/s.
 
 The analysis od water bridges can be performed on selected frames by using 
-*start_frame* or *stop_frame*. 
+``start_frame`` or ``stop_frame``. 
 
 .. ipython:: python
    :verbatim:
@@ -67,7 +66,7 @@ The analysis od water bridges can be performed on selected frames by using
    @> 105 water bridges detected.
 
 Because of the amount of data, detailed results will not be displayed. 
-We instead access the raw data from using *output='info'*.
+We instead access the raw data by using ``output='info'``.
 
 .. ipython:: python
    :verbatim:
@@ -130,14 +129,14 @@ Save the results
 -------------------------------------------------------------------------------
 
 The results can be saved using :func:`.saveWaterBridges` in two formats.
-The *txt* file will contain all the results for analysis and can be visualized in a
-text editor, and the *wb* file will restore data for further analysis. It can be
+The ``txt`` file will contain all the results for analysis and can be visualized in a
+text editor, and the ``wb`` file will restore data for further analysis. It can be
 loaded using :func:`.parseWaterBridges` as shown below.
 
-First, we have to return the calculation without *output='info'*. 
+First, we have to return the calculation without ``output='info'``. 
 
 We can suppress the logged output using :func:`.confProDy` to set the verbosity 
-to *'none'*.
+to ``'none'``.
 
 
 .. ipython:: python
@@ -153,7 +152,7 @@ to *'none'*.
    saveWaterBridges(wb_traj,'wb_saved.txt')
    saveWaterBridges(wb_traj,'wb_saved.wb')
 
-To load the *wb* file, use :func:`.parseWaterBridges` and protein coordinates 
+To load the ``wb`` file, use :func:`.parseWaterBridges` and protein coordinates 
 as follows:
 
 .. ipython:: python
@@ -161,11 +160,11 @@ as follows:
 
    waterBridges = parseWaterBridges('wb_saved.wb', coords_traj)
 
-Loaded results from a *.wb* file are :class:`.Atomic` type and therefore can be used for 
+Loaded results from a ``.wb`` file are :class:`.Atomic` type and therefore can be used for 
 analysis later. 
 
 
-Analysis of the results
+Analysis of the results:
 -------------------------------------------------------------------------------
 
 Information about residues contributing to water bridges
@@ -175,7 +174,7 @@ The data can be analyzed using :func:`.calcWaterBridgesStatistics`. The followin
 analysis provides details about the pairs of residues engaged in water bridges,
 their frequency of occurrence, and the average distance between them. The standard
 deviation offers insights into the variation in distance throughout the simulation.
-Moreover, the analysis can be saved using the *filename* option.
+Moreover, the analysis can be saved using the ``filename`` option.
 
 We can recover logged output using :func:`.confProDy` again with a different verbosity.
 
@@ -250,8 +249,8 @@ To have easier access to the data, we can use :func:`.getWaterBridgeStatInfo`.
 
 To obtain maps of interactions for the protein structure, we can use 
 :func:`.showWaterBridgeMatrix`, which is equipped with three paramaters: 
-*'percentage'* (how often two residues were forming water bridges), 
-*'distAvg'* (how close there were on average), and *'distStd'* (how 
+``'percentage'`` (how often two residues were forming water bridges), 
+``'distAvg'`` (how close there were on average), and ``'distStd'`` (how 
 stable that water bridge was).
 
 
@@ -281,7 +280,7 @@ stable that water bridge was).
 
 Raw data of the matrices can be obtained with :func:`.calcWaterBridgeMatrix`. 
 The type of the data in the matrix can be selected using the following 
-strings for the second argument: *'percentage'*, *'distAvg'*, *'distStd'*.
+strings for the second argument: ``'percentage'``, ``'distAvg'``, ``'distStd'``.
 
 
 .. ipython:: python
@@ -380,22 +379,6 @@ was contributing to the water bridges in the trajectory.
     ('CYS148P', 1),
     ('VAL25P', 1),
     ('ILE77P', 1),
-    ('PRO20P', 2),
-    ('ILE127P', 2),
-    ('ILE68P', 2),
-    ('GLY14P', 2),
-    ('GLY67P', 2),
-    ('ALA111P', 3),
-    ('VAL73P', 3),
-    ('ALA24P', 3),
-    ('LEU115P', 3),
-    ('PRO55P', 4),
-    ('ALA74P', 4),
-    ('PRO121P', 4),
-    ('ASN15P', 4),
-    ('LEU13P', 4),
-    ('ILE51P', 5),
-    ('THR31P', 5),
     .
     .
     ('ARG75P', 15),
@@ -411,7 +394,7 @@ was contributing to the water bridges in the trajectory.
     ('ARG150P', 16),
     ('SER36P', 16)]
 
-The *clip* option can be used to include different number of results on the histogram.
+The ``clip`` option can be used to include different number of results on the histogram.
 
 
 .. ipython:: python
@@ -424,7 +407,7 @@ The *clip* option can be used to include different number of results on the hist
 
 If we are interested in one particular residue, we can also use
 :func:`.calcWaterBridgesDistribution` to find their partners in water bridges. 
-Below we can see results for arginine 147 or aspartic acid 92 from chain P
+Below we can see results for arginine 147 or aspartic acid 92 from ``chain P``
 using the nomenclature for them corresponding to the keys of the dictionary.
 
 
@@ -461,15 +444,16 @@ using the nomenclature for them corresponding to the keys of the dictionary.
 
 Once we select a pair of residues which are supported by interactions with water 
 molecules, we can use :func:`.calcWaterBridgesDistribution` to obtain histograms 
-with results such as distances between them *(metric='distance')*, the number of 
-water molecules which were involved *(metric='waters')*, and information about 
+with results such as distances between them ``(metric='distance')``, the number of 
+water molecules which were involved ``(metric='waters')``, and information about 
 residue part which was involved in water bridges, i.e. backbone or side chain 
-*(metric='location')*. 
+``(metric='location')``. 
 
 .. ipython:: python
    :verbatim:
 
-   calcWaterBridgesDistribution(waterBridges,  'ASP92P', 'ARG18P', trajectory=trajectory, metric='distance')
+   calcWaterBridgesDistribution(waterBridges,  'ASP92P', 'ARG18P', 
+				trajectory=trajectory, metric='distance')
 
 .. figure:: images/traj_distribution.png
    :scale: 50 %
@@ -497,7 +481,8 @@ residue part which was involved in water bridges, i.e. backbone or side chain
 .. ipython:: python
    :verbatim:
 
-   calcWaterBridgesDistribution(waterBridges, 'ARG147P', 'GLN122P', metric='waters') 
+   calcWaterBridgesDistribution(waterBridges, 'ARG147P', 'GLN122P',
+							metric='waters') 
 
 .. figure:: images/traj_distribution2.png
    :scale: 60 %
@@ -525,19 +510,12 @@ The results can be stored as a PDB file using :func:`.savePDBWaterBridges`
 (single PDB file, single frame) or using :func:`.savePDBWaterBridgesTrajectory`
 to save all the results (large number of frames saved each independently).
 
-5kqm_all_sci_multi_0.pdb  5kqm_all_sci_multi_4.pdb  
-5kqm_all_sci_multi_1.pdb  5kqm_all_sci_multi_5.pdb  
-5kqm_all_sci_multi_2.pdb  5kqm_all_sci_multi_6.pdb  
-5kqm_all_sci_multi_3.pdb  5kqm_all_sci_multi_7.pdb  
-5kqm_all_sci_multi_8.pdb   5kqm_all_sci_multi_12.pdb
-5kqm_all_sci_multi_9.pdb   5kqm_all_sci_multi_13.pdb
-5kqm_all_sci_multi_10.pdb  5kqm_all_sci_multi_14.pdb
-5kqm_all_sci_multi_11.pdb  5kqm_all_sci_multi_15.pdb
+``5kqm_all_sci_multi_0.pdb``  ``5kqm_all_sci_multi_1.pdb`` .. ``5kqm_all_sci_multi_15.pdb``
 
 
 Those results can be displayed in any program for visualization. The results 
-for the protein structure will be storage in the B-factor ("beta") column (average values of 
-contributions of each residue in water bridging) and occupancy column 
+for the protein structure will be storage in the ``B-factor (*beta*) column`` (average values of 
+contributions of each residue in water bridging) and ``Occupancy column`` 
 (results for particular frame). Water molecules will be included in each frame.
 
 

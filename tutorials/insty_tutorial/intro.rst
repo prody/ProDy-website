@@ -3,15 +3,15 @@ Introduction
 
 This tutorial shows how to predict and display the interactions within
 protein structure using the coordinates (single PDB) or ensemble of
-conformations (multi-model PDB or dcd file gerenarted by NAMD program).
+conformations (multi-model PDB or dcd file gerenarted by NAMD_ program).
 
 This module can be successfully used to study the distribution of different
-types of interactions (hydrogen bonds, salt bridges, repulsive ionic binding,
-pi-cation, pi-stacking, hydrophobic and disulfide bonds) within protein
-structure. It may help to distinguish the difference between protein wt and
-mutant, indentify regions or simply residues which are privileged to create
-a larger number of potential interactions in single PDB, ensemble PDB (NMR
-data) or during the simulation.   
+types of interactions (``hydrogen bonds``, ``salt bridges``, ``repulsive ionic binding``,
+``pi-cation``, ``pi-stacking``, ``hydrophobic interactions``, and ``disulfide bonds``) within
+protein structure. It may help to distinguish the difference between wild type
+protein and its mutant, indentify regions or simply residues which are privileged
+to create a larger number of potential interactions in single PDB, ensemble PDB
+(NMR data) or during the molecular dynamics simulation.   
 
 
 Required Programs
@@ -30,7 +30,7 @@ To take full advantage of InSty's capabilities in predicting hydrophobic
 interactions, we should download an additional component written in C++ and
 Fortran. The additional component (hpb.so file) is available in the ProDy
 repository (prody/proteins/hpbmodule folder) and should be chosen and
-selected according to the version of Python that is being used.
+selected according to the version of Python that is being used by user.
 This file should be copied to the ProDy folder (prody/proteins/) or to the
 local directory.
 
@@ -62,8 +62,7 @@ or with pylab environment::
   $ ipython --pylab
 
 
-First, we will make necessary imports from ProDy and Matplotlib
-packages.
+First, we will make necessary imports from ProDy and Matplotlib_ packages.
 
 .. ipython:: python
 

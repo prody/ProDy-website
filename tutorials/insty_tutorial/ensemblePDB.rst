@@ -5,7 +5,7 @@ Ensemble PDB analysis
 
 This example shows how to compute interactions for an Ensemble PDB
 (e.g. NMR data). The example is prepared for a NMR structure of ubiquitin 
-(**2K39**) and visualize the results using Matplotlib_ library and VMD_ program. 
+(PDB: **2K39**) and visualize the results using Matplotlib_ library and VMD_ program. 
 
 
 Parse structure
@@ -548,49 +548,50 @@ Hydrophobic interactions using :func:`.calcHydrophohicTrajectory`:
    @> Model: 0
    @> Hydrophobic Overlaping Areas are computed.
    @> Calculating hydrophobic interactions.
-   @>      PHE45    A       CD1_72314s  <--->      LEU67    A      CD1_1065     3.6    25.2
-   @>      VAL17    A       CG2_27614s  <--->       ILE3    A        CG1_41     3.6    17.8
-   @>      ILE23    A       CD1_35914s  <--->      LEU56    A       CD2_891     3.6    22.8
-   @>      LEU43    A       CD1_68514s  <--->      ILE23    A       CG2_358     3.7    10.1
-   @>      LYS27    A        CG_42114s  <--->      LEU43    A       CD1_685     3.7    13.4
-   @>      ILE61    A       CD1_96814s  <--->      LEU56    A       CD2_891     3.8    40.6
-   @>      TYR59    A       CD2_93314s  <--->      ILE23    A       CD1_359     3.8    24.0
-   @>      LEU69    A      CD1_110114s  <--->      ILE30    A       CD1_477     3.8    10.5
-   @>       MET1    A          CE_714s  <--->       ILE3    A        CG2_42     3.8    28.7
-   @>       VAL5    A        CG1_8014s  <--->      LEU69    A      CD1_1101     3.9    14.6
-   @>      ILE13    A       CG2_20914s  <--->      LEU15    A       CD1_242     3.9    19.8
-   @>      ARG42    A        CG_66014s  <--->      VAL70    A      CG2_1120     4.0    42.9
-   @>      ILE44    A       CD1_70514s  <--->      VAL70    A      CG1_1119     4.0    17.7
-   @>      ALA46    A        CB_74114s  <--->      PHE45    A       CD2_724     4.1    50.7
-   @>      LYS11    A        CG_17214s  <--->      ILE13    A       CG1_208     4.1    30.5
-   @>       LEU8    A       CD1_13314s  <--->      VAL70    A      CG1_1119     4.5     8.8
+   @>      PHE45    A    CD1_72314s  <--->      LEU67    A   CD1_1065     3.6    25.2
+   @>      VAL17    A    CG2_27614s  <--->       ILE3    A     CG1_41     3.6    17.8
+   @>      ILE23    A    CD1_35914s  <--->      LEU56    A    CD2_891     3.6    22.8
+   @>      LEU43    A    CD1_68514s  <--->      ILE23    A    CG2_358     3.7    10.1
+   @>      LYS27    A     CG_42114s  <--->      LEU43    A    CD1_685     3.7    13.4
+   @>      ILE61    A    CD1_96814s  <--->      LEU56    A    CD2_891     3.8    40.6
+   @>      TYR59    A    CD2_93314s  <--->      ILE23    A    CD1_359     3.8    24.0
+   @>      LEU69    A   CD1_110114s  <--->      ILE30    A    CD1_477     3.8    10.5
+   @>       MET1    A       CE_714s  <--->       ILE3    A     CG2_42     3.8    28.7
+   @>       VAL5    A     CG1_8014s  <--->      LEU69    A   CD1_1101     3.9    14.6
+   @>      ILE13    A    CG2_20914s  <--->      LEU15    A    CD1_242     3.9    19.8
+   @>      ARG42    A     CG_66014s  <--->      VAL70    A   CG2_1120     4.0    42.9
+   @>      ILE44    A    CD1_70514s  <--->      VAL70    A   CG1_1119     4.0    17.7
+   @>      ALA46    A     CB_74114s  <--->      PHE45    A    CD2_724     4.1    50.7
+   @>      LYS11    A     CG_17214s  <--->      ILE13    A    CG1_208     4.1    30.5
+   @>       LEU8    A    CD1_13314s  <--->      VAL70    A   CG1_1119     4.5     8.8
    @> Number of detected hydrophobic interactions: 16.
    @> Model: 1
    @> Hydrophobic Overlaping Areas are computed.
    @> Calculating hydrophobic interactions.
-   @>      LEU15    A       CD1_24214s  <--->      LYS29    A        CD_454     3.5    18.8
-   @>       MET1    A          CE_714s  <--->      LEU56    A       CD2_891     3.5    12.0
-   @>      LEU43    A       CD1_68514s  <--->      LYS27    A        CG_421     3.5    17.3
-   @>      LEU67    A      CD1_106514s  <--->       ILE3    A        CD1_43     3.5    16.4
-   @>      VAL17    A       CG2_27614s  <--->      LEU56    A       CD2_891     3.6    12.5
-   @>      TYR59    A       CE2_93514s  <--->      ILE23    A       CD1_359     3.6    17.3
-   @>       VAL5    A        CG2_8114s  <--->      LEU15    A       CD2_243     3.7    24.5
-   @>      ILE30    A       CD1_47714s  <--->      LEU43    A       CD2_686     3.7    13.8
-   @>      PHE45    A       CD1_72314s  <--->      LEU67    A      CD2_1066     3.7    13.2
-   @>      LEU50    A       CD2_80014s  <--->      TYR59    A       CE1_934     3.7    41.8
-   @>      ILE13    A       CG2_20914s  <--->      LEU15    A       CD2_243     3.7    21.7
-   @>      ILE36    A       CG2_56814s  <--->      LEU73    A      CD2_1180     3.8    26.2
-   @>      LEU69    A      CD2_110214s  <--->      ILE36    A       CD1_569     3.9     7.9
-   @>      LYS11    A        CD_17314s  <--->      ILE13    A       CD1_210     3.9    29.1
-   @>      LYS33    A        CD_52414s  <--->      ILE13    A       CG2_209     3.9    11.1
-   @>      ARG42    A        CG_66014s  <--->      ILE44    A       CG2_704     4.0    15.7
-   @>      VAL26    A       CG1_40514s  <--->      LEU15    A        CG_241     4.1    15.5
-   @>      VAL70    A      CG2_112014s  <--->       LEU8    A       CD1_133     4.3    14.7
-   @>      ARG74    A       CG_119714s  <--->      LEU71    A      CD1_1136     4.5    17.2
+   @>      LEU15    A    CD1_24214s  <--->      LYS29    A     CD_454     3.5    18.8
+   @>       MET1    A       CE_714s  <--->      LEU56    A    CD2_891     3.5    12.0
+   @>      LEU43    A    CD1_68514s  <--->      LYS27    A     CG_421     3.5    17.3
+   @>      LEU67    A   CD1_106514s  <--->       ILE3    A     CD1_43     3.5    16.4
+   @>      VAL17    A    CG2_27614s  <--->      LEU56    A    CD2_891     3.6    12.5
+   @>      TYR59    A    CE2_93514s  <--->      ILE23    A    CD1_359     3.6    17.3
+   @>       VAL5    A     CG2_8114s  <--->      LEU15    A    CD2_243     3.7    24.5
+   @>      ILE30    A    CD1_47714s  <--->      LEU43    A    CD2_686     3.7    13.8
+   @>      PHE45    A    CD1_72314s  <--->      LEU67    A   CD2_1066     3.7    13.2
+   @>      LEU50    A    CD2_80014s  <--->      TYR59    A    CE1_934     3.7    41.8
+   @>      ILE13    A    CG2_20914s  <--->      LEU15    A    CD2_243     3.7    21.7
+   @>      ILE36    A    CG2_56814s  <--->      LEU73    A   CD2_1180     3.8    26.2
+   @>      LEU69    A   CD2_110214s  <--->      ILE36    A    CD1_569     3.9     7.9
+   @>      LYS11    A     CD_17314s  <--->      ILE13    A    CD1_210     3.9    29.1
+   @>      LYS33    A     CD_52414s  <--->      ILE13    A    CG2_209     3.9    11.1
+   @>      ARG42    A     CG_66014s  <--->      ILE44    A    CG2_704     4.0    15.7
+   @>      VAL26    A    CG1_40514s  <--->      LEU15    A     CG_241     4.1    15.5
+   @>      VAL70    A   CG2_112014s  <--->       LEU8    A    CD1_133     4.3    14.7
+   @>      ARG74    A    CG_119714s  <--->      LEU71    A   CD1_1136     4.5    17.2
    @> Number of detected hydrophobic interactions: 19.
    ..
    ..
 
+And disulfide bonds using :func:`.calcDisulfideBondsTrajectory`:
 
 .. ipython:: python
    :verbatim:
@@ -608,9 +609,11 @@ Hydrophobic interactions using :func:`.calcHydrophohicTrajectory`:
    @> Model: 2
    @> Lack of cysteines in the structure.
    @> Number of detected disulfide bonds: 0.
+   ..
+   ..
 
 
-Select particular frames and change default parameters of the interactions
+Select particular frames or change the default parameters of the interactions
 -------------------------------------------------------------------------------
 
 The default parameters which are assigned to the interaction types could be
@@ -769,8 +772,8 @@ changed as follows:
    @>      ASN25    A       ND2_393  <--->      ASP21    A       OD2_333     2.7    31.6
    @> Number of detected hydrogen bonds: 7.
 
-Similarly for other interactions type. Moreover, we can also select frames
-which we would like to analyze as well as the selection with the protein
+Similarly, for other interactions type. Moreover, we can also select frames
+that we would like to analyze as well as the selection with the protein
 structure. Below you will find such examples:
 
 .. ipython:: python
@@ -805,7 +808,8 @@ structure. Below you will find such examples:
 .. ipython:: python
    :verbatim:
   
-   calcHydrophobicTrajectory(atoms, start_frame=10, stop_frame=13, selection='resid 50 to 60')
+   calcHydrophobicTrajectory(atoms, start_frame=10, stop_frame=13, 
+					selection='resid 50 to 60')
 
 .. parsed-literal::
 
@@ -832,18 +836,19 @@ structure. Below you will find such examples:
    @> Number of detected hydrophobic interactions: 4.
 
 
-Compute all availabe types of interactions at once
+Compute all types of interactions at once
 -------------------------------------------------------------------------------
 
-Next, we instantiate an :class:`.InteractionsTrajectory` instance which stores all the
-information about interactions for protein structure for multiple frames.
+Next, we instantiate an :class:`.InteractionsTrajectory` instance, which stores all the
+information about interactions in protein structures for multiple frames.
 With :meth:`.InteractionsTrajectory.calcProteinInteractionsTrajectory`, we can compute
 all types of interactions such as hydrogen bonds, salt bridges, repulsive ionic bonding, 
 Pi-cation, Pi-stacking, hydrophobic and disulfide bonds) at once. Be aware that those
 computations may take a while, depending on the size of the system and the number
 of frames that are stored by the Ensemble PDB file. Therefore, we recommend saving the
-results as an *output* file. *Output* file, *calcProteinInteractionsEnseblePDB.pkl*,
-can be reloaded and used with all availabe functions and methods. 
+results as an ``output`` file. The ``output`` file,
+:file:`calcProteinInteractionsEnseblePDB.pkl` can be reloaded and used with all
+available functions and methods. 
 
 .. ipython:: python
    :verbatim:
@@ -914,22 +919,22 @@ can be reloaded and used with all availabe functions and methods.
    @> Number of detected cation-pi interactions: 0.
    @> Hydrophobic Overlaping Areas are computed.
    @> Calculating hydrophobic interactions.
-   @>      PHE45    A       CD1_72314s  <--->      LEU67    A      CD1_1065     3.6    25.2
-   @>      VAL17    A       CG2_27614s  <--->       ILE3    A        CG1_41     3.6    17.8
-   @>      ILE23    A       CD1_35914s  <--->      LEU56    A       CD2_891     3.6    22.8
-   @>      LEU43    A       CD1_68514s  <--->      ILE23    A       CG2_358     3.7    10.1
-   @>      LYS27    A        CG_42114s  <--->      LEU43    A       CD1_685     3.7    13.4
-   @>      ILE61    A       CD1_96814s  <--->      LEU56    A       CD2_891     3.8    40.6
-   @>      TYR59    A       CD2_93314s  <--->      ILE23    A       CD1_359     3.8    24.0
-   @>      LEU69    A      CD1_110114s  <--->      ILE30    A       CD1_477     3.8    10.5
-   @>       MET1    A          CE_714s  <--->       ILE3    A        CG2_42     3.8    28.7
-   @>       VAL5    A        CG1_8014s  <--->      LEU69    A      CD1_1101     3.9    14.6
-   @>      ILE13    A       CG2_20914s  <--->      LEU15    A       CD1_242     3.9    19.8
-   @>      ARG42    A        CG_66014s  <--->      VAL70    A      CG2_1120     4.0    42.9
-   @>      ILE44    A       CD1_70514s  <--->      VAL70    A      CG1_1119     4.0    17.7
-   @>      ALA46    A        CB_74114s  <--->      PHE45    A       CD2_724     4.1    50.7
-   @>      LYS11    A        CG_17214s  <--->      ILE13    A       CG1_208     4.1    30.5
-   @>       LEU8    A       CD1_13314s  <--->      VAL70    A      CG1_1119     4.5     8.8
+   @>      PHE45    A    CD1_72314s  <--->      LEU67    A   CD1_1065     3.6    25.2
+   @>      VAL17    A    CG2_27614s  <--->       ILE3    A     CG1_41     3.6    17.8
+   @>      ILE23    A    CD1_35914s  <--->      LEU56    A    CD2_891     3.6    22.8
+   @>      LEU43    A    CD1_68514s  <--->      ILE23    A    CG2_358     3.7    10.1
+   @>      LYS27    A     CG_42114s  <--->      LEU43    A    CD1_685     3.7    13.4
+   @>      ILE61    A    CD1_96814s  <--->      LEU56    A    CD2_891     3.8    40.6
+   @>      TYR59    A    CD2_93314s  <--->      ILE23    A    CD1_359     3.8    24.0
+   @>      LEU69    A   CD1_110114s  <--->      ILE30    A    CD1_477     3.8    10.5
+   @>       MET1    A       CE_714s  <--->       ILE3    A     CG2_42     3.8    28.7
+   @>       VAL5    A     CG1_8014s  <--->      LEU69    A   CD1_1101     3.9    14.6
+   @>      ILE13    A    CG2_20914s  <--->      LEU15    A    CD1_242     3.9    19.8
+   @>      ARG42    A     CG_66014s  <--->      VAL70    A   CG2_1120     4.0    42.9
+   @>      ILE44    A    CD1_70514s  <--->      VAL70    A   CG1_1119     4.0    17.7
+   @>      ALA46    A     CB_74114s  <--->      PHE45    A    CD2_724     4.1    50.7
+   @>      LYS11    A     CG_17214s  <--->      ILE13    A    CG1_208     4.1    30.5
+   @>       LEU8    A    CD1_13314s  <--->      VAL70    A   CG1_1119     4.5     8.8
    @> Number of detected hydrophobic interactions: 16.
    @> Lack of cysteines in the structure.
    @> Number of detected disulfide bonds: 0.
@@ -1005,25 +1010,25 @@ can be reloaded and used with all availabe functions and methods.
    @> Number of detected cation-pi interactions: 0.
    @> Hydrophobic Overlaping Areas are computed.
    @> Calculating hydrophobic interactions.
-   @>      LYS29    A        CD_45414s  <--->      LEU15    A       CD1_242     3.5    18.8
-   @>       MET1    A          CE_714s  <--->      LEU56    A       CD2_891     3.5    12.0
-   @>      LEU43    A       CD1_68514s  <--->      LYS27    A        CG_421     3.5    17.3
-   @>      LEU67    A      CD1_106514s  <--->       ILE3    A        CD1_43     3.5    16.4
-   @>      VAL17    A       CG2_27614s  <--->      LEU56    A       CD2_891     3.6    12.5
-   @>      TYR59    A       CE2_93514s  <--->      ILE23    A       CD1_359     3.6    17.3
-   @>       VAL5    A        CG2_8114s  <--->      LEU15    A       CD2_243     3.7    24.5
-   @>      ILE30    A       CD1_47714s  <--->      LEU43    A       CD2_686     3.7    13.8
-   @>      PHE45    A       CD1_72314s  <--->      LEU67    A      CD2_1066     3.7    13.2
-   @>      LEU50    A       CD2_80014s  <--->      TYR59    A       CE1_934     3.7    41.8
-   @>      ILE13    A       CG2_20914s  <--->      LEU15    A       CD2_243     3.7    21.7
-   @>      LEU73    A      CD2_118014s  <--->      ILE36    A       CG2_568     3.8    26.2
-   @>      LEU69    A      CD2_110214s  <--->      ILE36    A       CD1_569     3.9     7.9
-   @>      LYS11    A        CD_17314s  <--->      ILE13    A       CD1_210     3.9    29.1
-   @>      LYS33    A        CD_52414s  <--->      ILE13    A       CG2_209     3.9    11.1
-   @>      ARG42    A        CG_66014s  <--->      ILE44    A       CG2_704     4.0    15.7
-   @>      VAL26    A       CG1_40514s  <--->      LEU15    A        CG_241     4.1    15.5
-   @>      VAL70    A      CG2_112014s  <--->       LEU8    A       CD1_133     4.3    14.7
-   @>      ARG74    A       CG_119714s  <--->      LEU71    A      CD1_1136     4.5    17.2
+   @>      LYS29    A     CD_45414s  <--->      LEU15    A    CD1_242     3.5    18.8
+   @>       MET1    A       CE_714s  <--->      LEU56    A    CD2_891     3.5    12.0
+   @>      LEU43    A    CD1_68514s  <--->      LYS27    A     CG_421     3.5    17.3
+   @>      LEU67    A   CD1_106514s  <--->       ILE3    A     CD1_43     3.5    16.4
+   @>      VAL17    A    CG2_27614s  <--->      LEU56    A    CD2_891     3.6    12.5
+   @>      TYR59    A    CE2_93514s  <--->      ILE23    A    CD1_359     3.6    17.3
+   @>       VAL5    A     CG2_8114s  <--->      LEU15    A    CD2_243     3.7    24.5
+   @>      ILE30    A    CD1_47714s  <--->      LEU43    A    CD2_686     3.7    13.8
+   @>      PHE45    A    CD1_72314s  <--->      LEU67    A   CD2_1066     3.7    13.2
+   @>      LEU50    A    CD2_80014s  <--->      TYR59    A    CE1_934     3.7    41.8
+   @>      ILE13    A    CG2_20914s  <--->      LEU15    A    CD2_243     3.7    21.7
+   @>      LEU73    A   CD2_118014s  <--->      ILE36    A    CG2_568     3.8    26.2
+   @>      LEU69    A   CD2_110214s  <--->      ILE36    A    CD1_569     3.9     7.9
+   @>      LYS11    A     CD_17314s  <--->      ILE13    A    CD1_210     3.9    29.1
+   @>      LYS33    A     CD_52414s  <--->      ILE13    A    CG2_209     3.9    11.1
+   @>      ARG42    A     CG_66014s  <--->      ILE44    A    CG2_704     4.0    15.7
+   @>      VAL26    A    CG1_40514s  <--->      LEU15    A     CG_241     4.1    15.5
+   @>      VAL70    A   CG2_112014s  <--->       LEU8    A    CD1_133     4.3    14.7
+   @>      ARG74    A    CG_119714s  <--->      LEU71    A   CD1_1136     4.5    17.2
    @> Number of detected hydrophobic interactions: 19.
    @> Lack of cysteines in the structure.
    @> Number of detected disulfide bonds: 0.
@@ -1096,22 +1101,22 @@ can be reloaded and used with all availabe functions and methods.
    @> Number of detected cation-pi interactions: 0.
    @> Hydrophobic Overlaping Areas are computed.
    @> Calculating hydrophobic interactions.
-   @>      ILE30    A       CG2_47614s  <--->      LEU69    A      CD2_1102     3.4    20.7
-   @>      ILE61    A       CG1_96614s  <--->      PHE45    A       CE1_725     3.5    28.7
-   @>      VAL17    A       CG1_27514s  <--->       ILE3    A        CD1_43     3.6    23.2
-   @>      LEU56    A       CD1_89014s  <--->      VAL17    A       CG2_276     3.6    20.2
-   @>      LEU71    A      CD2_113714s  <--->      ILE36    A       CG2_568     3.7    21.0
-   @>       MET1    A          CE_714s  <--->      VAL17    A       CG2_276     3.7    46.7
-   @>      TYR59    A       CE1_93414s  <--->      LEU50    A       CD2_800     3.7    43.5
-   @>      ILE23    A       CD1_35914s  <--->      TYR59    A       CD2_933     3.8    15.1
-   @>      LYS33    A        CD_52414s  <--->      ILE13    A       CG2_209     3.9    15.8
-   @>      LEU15    A       CD1_24214s  <--->       VAL5    A        CG2_81     3.9     8.0
-   @>      VAL70    A      CG1_111914s  <--->       LEU8    A       CD2_134     3.9    11.7
-   @>      VAL26    A       CG1_40514s  <--->      LEU43    A       CD2_686     4.0    10.8
-   @>      ARG42    A        CG_66014s  <--->      ILE44    A       CD1_705     4.1    21.0
-   @>      ALA46    A        CB_74114s  <--->      PHE45    A       CD2_724     4.1    46.2
-   @>      LYS27    A        CG_42114s  <--->      LEU43    A       CD2_686     4.1    13.4
-   @>      LYS29    A        CD_45414s  <--->      LEU15    A       CD2_243     4.4    11.2
+   @>      ILE30    A    CG2_47614s  <--->      LEU69    A   CD2_1102     3.4    20.7
+   @>      ILE61    A    CG1_96614s  <--->      PHE45    A    CE1_725     3.5    28.7
+   @>      VAL17    A    CG1_27514s  <--->       ILE3    A     CD1_43     3.6    23.2
+   @>      LEU56    A    CD1_89014s  <--->      VAL17    A    CG2_276     3.6    20.2
+   @>      LEU71    A   CD2_113714s  <--->      ILE36    A    CG2_568     3.7    21.0
+   @>       MET1    A       CE_714s  <--->      VAL17    A    CG2_276     3.7    46.7
+   @>      TYR59    A    CE1_93414s  <--->      LEU50    A    CD2_800     3.7    43.5
+   @>      ILE23    A    CD1_35914s  <--->      TYR59    A    CD2_933     3.8    15.1
+   @>      LYS33    A     CD_52414s  <--->      ILE13    A    CG2_209     3.9    15.8
+   @>      LEU15    A    CD1_24214s  <--->       VAL5    A     CG2_81     3.9     8.0
+   @>      VAL70    A   CG1_111914s  <--->       LEU8    A    CD2_134     3.9    11.7
+   @>      VAL26    A    CG1_40514s  <--->      LEU43    A    CD2_686     4.0    10.8
+   @>      ARG42    A     CG_66014s  <--->      ILE44    A    CD1_705     4.1    21.0
+   @>      ALA46    A     CB_74114s  <--->      PHE45    A    CD2_724     4.1    46.2
+   @>      LYS27    A     CG_42114s  <--->      LEU43    A    CD2_686     4.1    13.4
+   @>      LYS29    A     CD_45414s  <--->      LEU15    A    CD2_243     4.4    11.2
    @> Number of detected hydrophobic interactions: 16.
    @> Lack of cysteines in the structure.
    @> Number of detected disulfide bonds: 0.
@@ -1119,9 +1124,9 @@ can be reloaded and used with all availabe functions and methods.
    ..
 
 
-The results can be displayed using :meth:`.getTimeInteractions` where all
-the interactions are displayed and could be tracked per each
-confrmation (frame in the Ensemble PDB file).
+The results can be displayed using :meth:`.getTimeInteractions`, where all
+the interactions are displayed and can be tracked per each
+conformation (frame in the Ensemble PDB file).
 
 .. ipython:: python
    :verbatim:
@@ -1131,7 +1136,7 @@ confrmation (frame in the Ensemble PDB file).
 .. figure:: images/insty_ensemble_counts.png
    :scale: 60 %
 
-Each interactions type could be further counted with some additional
+Each interaction type could be further counted with some additional
 quantitative analysis using :func:`.calcStatisticsInteractions`:
 
 .. ipython:: python
@@ -1265,108 +1270,37 @@ quantitative analysis using :func:`.calcStatisticsInteractions`:
    @>   Average [Ang.]: 3.03853
    @>   Standard deviation [Ang.]: 0.184267
    @>   Weight: 0.86087
-   @> Statistics for GLN41A-PRO38A:
-   @>   Average [Ang.]: 3.203149
-   @>   Standard deviation [Ang.]: 0.186063
-   @>   Weight: 0.6
-   @> Statistics for LEU56A-ASP21A:
-   @>   Average [Ang.]: 3.200349
-   @>   Standard deviation [Ang.]: 0.171184
-   @>   Weight: 0.66087
-   @> Statistics for ALA28A-GLU24A:
-   @>   Average [Ang.]: 3.044323
-   @>   Standard deviation [Ang.]: 0.201314
-   @>   Weight: 0.643478
-   @> Statistics for GLN41A-PRO37A:
-   @>   Average [Ang.]: 3.211332
-   @>   Standard deviation [Ang.]: 0.228772
-   @>   Weight: 0.243478
-   @> Statistics for MET1A-VAL17A:
-   @>   Average [Ang.]: 2.750209
-   @>   Standard deviation [Ang.]: 0.133402
-   @>   Weight: 0.886957
-   @> Statistics for LYS27A-ASP52A:
-   @>   Average [Ang.]: 2.683467
-   @>   Standard deviation [Ang.]: 0.112508
-   @>   Weight: 0.626087
-   @> Statistics for ARG74A-GLY76A:
-   @>   Average [Ang.]: 2.81111
-   @>   Standard deviation [Ang.]: 0.212007
-   @>   Weight: 0.434783
-   @> Statistics for LYS29A-GLU16A:
-   @>   Average [Ang.]: 2.768368
-   @>   Standard deviation [Ang.]: 0.147545
-   @>   Weight: 0.321739
-   @> Statistics for LEU69A-LYS6A:
-   @>   Average [Ang.]: 2.933599
-   @>   Standard deviation [Ang.]: 0.169268
-   @>   Weight: 0.686957
-   @> Statistics for VAL5A-ILE13A:
-   @>   Average [Ang.]: 2.895092
-   @>   Standard deviation [Ang.]: 0.141105
-   @>   Weight: 0.93913
-   @> Statistics for GLN41A-ILE36A:
-   @>   Average [Ang.]: 2.939248
-   @>   Standard deviation [Ang.]: 0.214905
-   @>   Weight: 0.417391
-   @> Statistics for ARG72A-ASP39A:
-   @>   Average [Ang.]: 2.837376
-   @>   Standard deviation [Ang.]: 0.197124
-   @>   Weight: 0.217391
-   @> Statistics for ILE30A-VAL26A:
-   @>   Average [Ang.]: 3.0535
-   @>   Standard deviation [Ang.]: 0.185896
-   @>   Weight: 0.686957
-   @> Statistics for ASN25A-THR22A:
-   @>   Average [Ang.]: 3.052567
-   @>   Standard deviation [Ang.]: 0.229106
-   @>   Weight: 0.521739
-   @> Statistics for ASP21A-GLU18A:
-   @>   Average [Ang.]: 3.115035
-   @>   Standard deviation [Ang.]: 0.196551
-   @>   Weight: 0.86087
-   @> Statistics for GLN40A-PRO37A:
-   @>   Average [Ang.]: 3.109978
-   @>   Standard deviation [Ang.]: 0.189125
-   @>   Weight: 0.695652
-   @> Statistics for LYS27A-ILE23A:
-   @>   Average [Ang.]: 3.030938
-   @>   Standard deviation [Ang.]: 0.201816
-   @>   Weight: 0.817391
-   @> Statistics for TYR59A-THR55A:
-   @>   Average [Ang.]: 3.213038
-   @>   Standard deviation [Ang.]: 0.17657
-   @>   Weight: 0.278261
    ..
    ..
 
 
-To provide a better way for visualization of those results another function
-func:`.showInteractionsGraph` could be used which provides graph with a
+To provide a better way for visualization of those results, another function,
+:func:`.showInteractionsGraph`, could be used, which provides a graph with
 residue-residue pairs of interactions. The intensity of the color of the
 lines connecting two residues corresponds to the number of counts. Darker
-lines are assigned to the most frequent appearence of interaction. The
-distance between pairs corresponds to the average distance accross
+lines are assigned to the most frequent appearance of interaction. The
+distance between pairs corresponds to the average distance across
 all the frames. Moreover, ovals with residue names are color-coded: acidic
 residues: *red*, basic: *blue*, polar: *green*, non-polar: *silver*, and
 proline: *pink*.
 
-Below an example with additional parameters: *1-letter* code of residues
-which be used instead of 3-letter code, *cutoff* = 0.5 for the number of counts
-for residue interaction, *font_size* for the residue names displayed on the
-graph and *seed* which is a random number which can help to organize the
+Below is an example with additional parameters: ``1-letter`` code of residues,
+which can be used instead of 3-letter code, ``cutoff`` = 0.5 for the number of counts
+for residue interaction, ``font_size`` for the residue names displayed on the
+graph, and ``seed``, which is a random number that can help to organize the
 graph in a nicer way.
 
 .. ipython:: python
    :verbatim:
 
-   showInteractionsGraph(statistics, code='1-letter', cutoff=0.5, font_size=8, seed=42)
+   showInteractionsGraph(statistics, code='1-letter', cutoff=0.5, 
+						font_size=8, seed=42)
 
 .. figure:: images/insty_ensemble_graph.png
    :scale: 60 %
 
 We can also obtain a distribution of distance or angle for each residue by
-using func:`.calcDistribution`:
+using :func:`.calcDistribution`:
 
 .. ipython:: python
    :verbatim:
@@ -1386,7 +1320,7 @@ using func:`.calcDistribution`:
 We will obtain a histogram with distances for *LYS11* residue and information
 about other contact residues for this particular residue. 
 
-We can also give residue name and number and func:`.calcDistribution` will
+We can also give residue name and number and :func:`.calcDistribution` will
 display contact residues for which we can display a histogram.
 
 .. ipython:: python
@@ -1421,8 +1355,8 @@ display contact residues for which we can display a histogram.
 Selection of protein regions and conformations
 -------------------------------------------------------------------------------
 
-Selection of the residue pairs can be made as needed by choosing pairs which
-higher number of counts or by changing the selection to certain region:
+Selection of the residue pairs can be made as needed by choosing pairs with
+a higher number of counts or by changing the selection to a certain region:
 
 .. ipython:: python
    :verbatim:
@@ -1531,14 +1465,14 @@ higher number of counts or by changing the selection to certain region:
    :scale: 60 %
 
 The selection can be made at different stages of analysis. The example below
-is shown how to analyse only certain frames (from 5th - 10th frame) for
-residues number between 10 and 30.
+shows how to analyze only certain frames (from 5th to 10th frame) for
+residues numbers between 10 and 30.
 
 .. ipython:: python
    :verbatim:
 
-   interactionsTrajectoryNMR.calcProteinInteractionsTrajectory(atoms, start_frame=5,
-       stop_frame=10, selection='resid 10 to 30')
+   interactionsTrajectoryNMR.calcProteinInteractionsTrajectory(atoms, 
+		start_frame=5, stop_frame=10, selection='resid 10 to 30')
 
 .. parsed-literal::
 
@@ -1586,15 +1520,15 @@ residues number between 10 and 30.
    @> Number of detected cation-pi interactions: 0.
    @> Hydrophobic Overlaping Areas are computed.
    @> Calculating hydrophobic interactions.
-   @>      VAL26    A       CG1_40514s  <--->      ILE30    A       CD1_477     3.6    25.5
-   @>      VAL17    A       CG2_27614s  <--->      LEU56    A       CD1_890     3.8    18.6
-   @>      LEU15    A       CD2_24314s  <--->      ILE30    A       CG1_475     3.8    13.1
-   @>       ILE3    A        CG1_4114s  <--->      VAL17    A       CG2_276     3.8    15.6
-   @>       VAL5    A        CG2_8114s  <--->      LEU15    A       CD2_243     3.8    20.4
-   @>      LYS33    A        CD_52414s  <--->      ILE13    A       CG2_209     3.9    14.6
-   @>      LYS11    A        CG_17214s  <--->      ILE13    A       CD1_210     4.1    25.6
-   @>      ILE23    A       CD1_35914s  <--->      LEU56    A       CD2_891     4.2    18.8
-   @>      LYS27    A        CG_42114s  <--->      LEU43    A       CD1_685     4.2    10.1
+   @>      VAL26    A    CG1_40514s  <--->      ILE30    A    CD1_477     3.6    25.5
+   @>      VAL17    A    CG2_27614s  <--->      LEU56    A    CD1_890     3.8    18.6
+   @>      LEU15    A    CD2_24314s  <--->      ILE30    A    CG1_475     3.8    13.1
+   @>       ILE3    A     CG1_4114s  <--->      VAL17    A    CG2_276     3.8    15.6
+   @>       VAL5    A     CG2_8114s  <--->      LEU15    A    CD2_243     3.8    20.4
+   @>      LYS33    A     CD_52414s  <--->      ILE13    A    CG2_209     3.9    14.6
+   @>      LYS11    A     CG_17214s  <--->      ILE13    A    CD1_210     4.1    25.6
+   @>      ILE23    A    CD1_35914s  <--->      LEU56    A    CD2_891     4.2    18.8
+   @>      LYS27    A     CG_42114s  <--->      LEU43    A    CD1_685     4.2    10.1
    @> Number of detected hydrophobic interactions: 9.
    @> Lack of cysteines in the structure.
    @> Number of detected disulfide bonds: 0.
@@ -1643,15 +1577,15 @@ residues number between 10 and 30.
    @> Number of detected cation-pi interactions: 0.
    @> Hydrophobic Overlaping Areas are computed.
    @> Calculating hydrophobic interactions.
-   @>      VAL17    A       CG2_27614s  <--->       ILE3    A        CG2_42     3.4    21.2
-   @>      ILE13    A       CG2_20914s  <--->      LEU15    A       CD1_242     3.5    32.6
-   @>      LYS11    A        CD_17314s  <--->      ILE13    A       CD1_210     3.6    32.3
-   @>      LEU43    A       CD2_68614s  <--->      LYS27    A        CG_421     3.6    13.1
-   @>      LYS33    A        CD_52414s  <--->      LEU15    A       CD1_242     3.6    20.8
-   @>      LEU56    A       CD1_89014s  <--->      VAL17    A       CG2_276     3.8    11.7
-   @>      ILE30    A       CG1_47514s  <--->      LEU15    A       CD2_243     3.9    11.2
-   @>      ILE23    A       CG2_35814s  <--->      LEU43    A       CD2_686     3.9    15.4
-   @>      LYS29    A        CD_45414s  <--->      LEU15    A       CD2_243     4.5    14.6
+   @>      VAL17    A    CG2_27614s  <--->       ILE3    A     CG2_42     3.4    21.2
+   @>      ILE13    A    CG2_20914s  <--->      LEU15    A    CD1_242     3.5    32.6
+   @>      LYS11    A     CD_17314s  <--->      ILE13    A    CD1_210     3.6    32.3
+   @>      LEU43    A    CD2_68614s  <--->      LYS27    A     CG_421     3.6    13.1
+   @>      LYS33    A     CD_52414s  <--->      LEU15    A    CD1_242     3.6    20.8
+   @>      LEU56    A    CD1_89014s  <--->      VAL17    A    CG2_276     3.8    11.7
+   @>      ILE30    A    CG1_47514s  <--->      LEU15    A    CD2_243     3.9    11.2
+   @>      ILE23    A    CG2_35814s  <--->      LEU43    A    CD2_686     3.9    15.4
+   @>      LYS29    A     CD_45414s  <--->      LEU15    A    CD2_243     4.5    14.6
    @> Number of detected hydrophobic interactions: 9.
 
    @> Lack of cysteines in the structure.
@@ -1694,20 +1628,20 @@ residues number between 10 and 30.
    @> Number of detected cation-pi interactions: 0.
    @> Hydrophobic Overlaping Areas are computed.
    @> Calculating hydrophobic interactions.
-   @>      ILE23    A       CD1_35914s  <--->      LEU56    A       CD2_891     3.5    16.7
-   @>      LEU43    A       CD1_68514s  <--->      ILE23    A       CG2_358     3.5    23.4
-   @>      ILE13    A       CG2_20914s  <--->      LEU15    A       CD1_242     3.6    27.7
-   @>      LEU50    A       CD2_80014s  <--->      ILE23    A       CD1_359     3.6    16.1
-   @>      VAL26    A       CG2_40614s  <--->      LEU56    A       CD2_891     3.7    17.6
-   @>      LYS27    A        CD_42214s  <--->      ILE23    A       CG2_358     3.7    35.4
-   @>       VAL5    A        CG2_8114s  <--->      LEU15    A       CD2_243     3.7    11.1
-   @>      VAL17    A       CG2_27614s  <--->       MET1    A          CE_7     3.8    54.3
-   @>      LYS29    A        CD_45414s  <--->      LEU15    A        CG_241     3.8    26.2
-   @>       ILE3    A        CD1_4314s  <--->      VAL26    A       CG1_405     3.9    14.1
-   @>      LYS33    A        CG_52314s  <--->      ILE13    A       CG2_209     3.9    17.6
-   @>      TYR59    A       CD2_93314s  <--->      ILE23    A       CG1_357     3.9     7.8
-   @>      ILE30    A       CD1_47714s  <--->      LEU15    A       CD1_242     4.0    10.9
-   @>      LYS11    A        CD_17314s  <--->      ILE13    A       CD1_210     4.1    30.0
+   @>      ILE23    A    CD1_35914s  <--->      LEU56    A    CD2_891     3.5    16.7
+   @>      LEU43    A    CD1_68514s  <--->      ILE23    A    CG2_358     3.5    23.4
+   @>      ILE13    A    CG2_20914s  <--->      LEU15    A    CD1_242     3.6    27.7
+   @>      LEU50    A    CD2_80014s  <--->      ILE23    A    CD1_359     3.6    16.1
+   @>      VAL26    A    CG2_40614s  <--->      LEU56    A    CD2_891     3.7    17.6
+   @>      LYS27    A     CD_42214s  <--->      ILE23    A    CG2_358     3.7    35.4
+   @>       VAL5    A     CG2_8114s  <--->      LEU15    A    CD2_243     3.7    11.1
+   @>      VAL17    A    CG2_27614s  <--->       MET1    A       CE_7     3.8    54.3
+   @>      LYS29    A     CD_45414s  <--->      LEU15    A     CG_241     3.8    26.2
+   @>       ILE3    A     CD1_4314s  <--->      VAL26    A    CG1_405     3.9    14.1
+   @>      LYS33    A     CG_52314s  <--->      ILE13    A    CG2_209     3.9    17.6
+   @>      TYR59    A    CD2_93314s  <--->      ILE23    A    CG1_357     3.9     7.8
+   @>      ILE30    A    CD1_47714s  <--->      LEU15    A    CD1_242     4.0    10.9
+   @>      LYS11    A     CD_17314s  <--->      ILE13    A    CD1_210     4.1    30.0
    @> Number of detected hydrophobic interactions: 14.
    @> Lack of cysteines in the structure.
    @> Number of detected disulfide bonds: 0.
@@ -1753,15 +1687,15 @@ residues number between 10 and 30.
    @> Number of detected cation-pi interactions: 0.
    @> Hydrophobic Overlaping Areas are computed.
    @> Calculating hydrophobic interactions.
-   @>      TYR59    A       CE2_93514s  <--->      ILE23    A       CD1_359     3.3    18.2
-   @>      ILE30    A       CD1_47714s  <--->       VAL5    A        CG2_81     3.6    17.6
-   @>      VAL26    A       CG1_40514s  <--->      ILE30    A       CD1_477     3.6    21.8
-   @>      VAL17    A       CG2_27614s  <--->       MET1    A          CG_5     3.6    48.0
-   @>      LEU56    A       CD1_89014s  <--->      VAL17    A       CG2_276     3.7    18.4
-   @>      LEU15    A       CD1_24214s  <--->      VAL26    A       CG1_405     3.7    12.1
-   @>       ILE3    A        CD1_4314s  <--->      VAL17    A       CG1_275     3.8    16.1
-   @>      LYS27    A        CG_42114s  <--->      LEU43    A       CD1_685     3.9    11.4
-   @>      LYS33    A        CG_52314s  <--->      LEU15    A       CD2_243     4.3     9.4
+   @>      TYR59    A    CE2_93514s  <--->      ILE23    A    CD1_359     3.3    18.2
+   @>      ILE30    A    CD1_47714s  <--->       VAL5    A     CG2_81     3.6    17.6
+   @>      VAL26    A    CG1_40514s  <--->      ILE30    A    CD1_477     3.6    21.8
+   @>      VAL17    A    CG2_27614s  <--->       MET1    A       CG_5     3.6    48.0
+   @>      LEU56    A    CD1_89014s  <--->      VAL17    A    CG2_276     3.7    18.4
+   @>      LEU15    A    CD1_24214s  <--->      VAL26    A    CG1_405     3.7    12.1
+   @>       ILE3    A     CD1_4314s  <--->      VAL17    A    CG1_275     3.8    16.1
+   @>      LYS27    A     CG_42114s  <--->      LEU43    A    CD1_685     3.9    11.4
+   @>      LYS33    A     CG_52314s  <--->      LEU15    A    CD2_243     4.3     9.4
    @> Number of detected hydrophobic interactions: 9.
    @> Lack of cysteines in the structure.
    @> Number of detected disulfide bonds: 0.
@@ -1803,17 +1737,17 @@ residues number between 10 and 30.
    @> Number of detected cation-pi interactions: 0.
    @> Hydrophobic Overlaping Areas are computed.
    @> Calculating hydrophobic interactions.
-   @>      LEU43    A       CD2_68614s  <--->      ILE23    A       CG2_358     3.7    13.3
-   @>      TYR59    A       CE2_93514s  <--->      ILE23    A       CD1_359     3.7    16.6
-   @>      LEU15    A       CD2_24314s  <--->       VAL5    A        CG2_81     3.7    19.2
-   @>      VAL17    A       CG2_27614s  <--->       ILE3    A        CG1_41     3.7    21.4
-   @>      LEU56    A       CD1_89014s  <--->      VAL17    A       CG2_276     3.7    17.4
-   @>      ILE30    A       CG2_47614s  <--->      LEU69    A      CD1_1101     3.8    16.9
-   @>      ILE13    A       CG2_20914s  <--->      LEU15    A       CD1_242     3.8    29.7
-   @>      VAL26    A       CG1_40514s  <--->      LEU15    A       CD2_243     3.9    16.7
-   @>      LYS33    A        CG_52314s  <--->      ILE13    A       CG2_209     4.1    13.9
-   @>      LYS27    A        CD_42214s  <--->      ILE23    A       CG2_358     4.2    35.1
-   @>      LYS29    A        CD_45414s  <--->      LEU15    A        CG_241     4.4    16.5
+   @>      LEU43    A    CD2_68614s  <--->      ILE23    A    CG2_358     3.7    13.3
+   @>      TYR59    A    CE2_93514s  <--->      ILE23    A    CD1_359     3.7    16.6
+   @>      LEU15    A    CD2_24314s  <--->       VAL5    A     CG2_81     3.7    19.2
+   @>      VAL17    A    CG2_27614s  <--->       ILE3    A     CG1_41     3.7    21.4
+   @>      LEU56    A    CD1_89014s  <--->      VAL17    A    CG2_276     3.7    17.4
+   @>      ILE30    A    CG2_47614s  <--->      LEU69    A   CD1_1101     3.8    16.9
+   @>      ILE13    A    CG2_20914s  <--->      LEU15    A    CD1_242     3.8    29.7
+   @>      VAL26    A    CG1_40514s  <--->      LEU15    A    CD2_243     3.9    16.7
+   @>      LYS33    A     CG_52314s  <--->      ILE13    A    CG2_209     4.1    13.9
+   @>      LYS27    A     CD_42214s  <--->      ILE23    A    CG2_358     4.2    35.1
+   @>      LYS29    A     CD_45414s  <--->      LEU15    A     CG_241     4.4    16.5
    @> Number of detected hydrophobic interactions: 11.
    @> Lack of cysteines in the structure.
    @> Number of detected disulfide bonds: 0.
@@ -1822,9 +1756,9 @@ residues number between 10 and 30.
 Import previously saved file with interactions
 -------------------------------------------------------------------------------
 
-We previously saved pkl file *interactions_data_5kqm.pkl* with interactions and now
-we will import it for analysis. To do that we need to initiate newinstance and
-use func:`.parseInteractions` function to parse pkl file:
+We previously saved ``pkl`` file :file:`interactions_data_5kqm.pkl` with interactions, and now
+we will import it for analysis. To do that we need to initiate a new instance and
+use :func:`.parseInteractions` function to parse ``pkl`` file:
 
 .. ipython:: python
    :verbatim:
@@ -1863,7 +1797,7 @@ use func:`.parseInteractions` function to parse pkl file:
       ..
 
 
-After parsing the file we will have an access to the same functions as before:
+After parsing the file we will have access to the same functions as before:
 
 .. ipython:: python
    :verbatim:
@@ -1924,206 +1858,9 @@ After parsing the file we will have an access to the same functions as before:
    @>   Average [Ang.]: 2.900624
    @>   Standard deviation [Ang.]: 0.149592
    @>   Weight: 0.930435
-   @> Statistics for SER65A-GLN62A:
-   @>   Average [Ang.]: 2.989405
-   @>   Standard deviation [Ang.]: 0.276179
-   @>   Weight: 0.678261
-   @> Statistics for VAL17A-MET1A:
-   @>   Average [Ang.]: 2.917662
-   @>   Standard deviation [Ang.]: 0.146237
-   @>   Weight: 0.93913
-   @> Statistics for ASN60A-SER57A:
-   @>   Average [Ang.]: 3.176033
-   @>   Standard deviation [Ang.]: 0.176174
-   @>   Weight: 0.626087
-   @> Statistics for LYS33A-LYS29A:
-   @>   Average [Ang.]: 3.124632
-   @>   Standard deviation [Ang.]: 0.203019
-   @>   Weight: 0.547826
-   @> Statistics for VAL70A-ARG42A:
-   @>   Average [Ang.]: 2.990983
-   @>   Standard deviation [Ang.]: 0.202089
-   @>   Weight: 0.921739
-   @> Statistics for ASP32A-ALA28A:
-   @>   Average [Ang.]: 3.06256
-   @>   Standard deviation [Ang.]: 0.189158
-   @>   Weight: 0.730435
-   @> Statistics for LEU67A-PHE4A:
-   @>   Average [Ang.]: 2.967632
-   @>   Standard deviation [Ang.]: 0.178013
-   @>   Weight: 0.852174
-   @> Statistics for THR7A-LYS11A:
-   @>   Average [Ang.]: 2.907541
-   @>   Standard deviation [Ang.]: 0.188693
-   @>   Weight: 1.46087
-   @> Statistics for LEU15A-ILE3A:
-   @>   Average [Ang.]: 3.006021
-   @>   Standard deviation [Ang.]: 0.198347
-   @>   Weight: 0.913043
-   @> Statistics for GLU18A-ASP21A:
-   @>   Average [Ang.]: 2.909238
-   @>   Standard deviation [Ang.]: 0.185235
-   @>   Weight: 0.6
-   @> Statistics for ILE61A-LEU56A:
-   @>   Average [Ang.]: 3.054711
-   @>   Standard deviation [Ang.]: 0.198213
-   @>   Weight: 0.878261
-   @> Statistics for GLN41A-LYS27A:
-   @>   Average [Ang.]: 2.989313
-   @>   Standard deviation [Ang.]: 0.183486
-   @>   Weight: 0.547826
-   @> Statistics for PHE4A-SER65A:
-   @>   Average [Ang.]: 2.992881
-   @>   Standard deviation [Ang.]: 0.18513
-   @>   Weight: 0.886957
-   @> Statistics for ILE3A-LEU15A:
-   @>   Average [Ang.]: 3.023158
-   @>   Standard deviation [Ang.]: 0.185656
-   @>   Weight: 0.869565
-   @> Statistics for LYS48A-PHE45A:
-   @>   Average [Ang.]: 3.081561
-   @>   Standard deviation [Ang.]: 0.189569
-   @>   Weight: 0.608696
-   @> Statistics for ARG42A-VAL70A:
-   @>   Average [Ang.]: 2.971445
-   @>   Standard deviation [Ang.]: 0.212987
-   @>   Weight: 0.834783
-   @> Statistics for SER57A-PRO19A:
-   @>   Average [Ang.]: 3.036466
-   @>   Standard deviation [Ang.]: 0.200139
-   @>   Weight: 0.713043
-   @> Statistics for PHE45A-LYS48A:
-   @>   Average [Ang.]: 3.03853
-   @>   Standard deviation [Ang.]: 0.184267
-   @>   Weight: 0.86087
-   @> Statistics for GLN41A-PRO38A:
-   @>   Average [Ang.]: 3.203149
-   @>   Standard deviation [Ang.]: 0.186063
-   @>   Weight: 0.6
-   @> Statistics for LEU56A-ASP21A:
-   @>   Average [Ang.]: 3.200349
-   @>   Standard deviation [Ang.]: 0.171184
-   @>   Weight: 0.66087
-   @> Statistics for ALA28A-GLU24A:
-   @>   Average [Ang.]: 3.044323
-   @>   Standard deviation [Ang.]: 0.201314
-   @>   Weight: 0.643478
-   @> Statistics for GLN41A-PRO37A:
-   @>   Average [Ang.]: 3.211332
-   @>   Standard deviation [Ang.]: 0.228772
-   @>   Weight: 0.243478
-   @> Statistics for MET1A-VAL17A:
-   @>   Average [Ang.]: 2.750209
-   @>   Standard deviation [Ang.]: 0.133402
-   @>   Weight: 0.886957
-   @> Statistics for LYS27A-ASP52A:
-   @>   Average [Ang.]: 2.683467
-   @>   Standard deviation [Ang.]: 0.112508
-   @>   Weight: 0.626087
-   @> Statistics for ARG74A-GLY76A:
-   @>   Average [Ang.]: 2.81111
-   @>   Standard deviation [Ang.]: 0.212007
-   @>   Weight: 0.434783
-   @> Statistics for LYS29A-GLU16A:
-   @>   Average [Ang.]: 2.768368
-   @>   Standard deviation [Ang.]: 0.147545
-   @>   Weight: 0.321739
-   @> Statistics for LEU69A-LYS6A:
-   @>   Average [Ang.]: 2.933599
-   @>   Standard deviation [Ang.]: 0.169268
-   @>   Weight: 0.686957
-   @> Statistics for VAL5A-ILE13A:
-   @>   Average [Ang.]: 2.895092
-   @>   Standard deviation [Ang.]: 0.141105
-   @>   Weight: 0.93913
-   @> Statistics for GLN41A-ILE36A:
-   @>   Average [Ang.]: 2.939248
-   @>   Standard deviation [Ang.]: 0.214905
-   @>   Weight: 0.417391
-   @> Statistics for ARG72A-ASP39A:
-   @>   Average [Ang.]: 2.837376
-   @>   Standard deviation [Ang.]: 0.197124
-   @>   Weight: 0.217391
-   @> Statistics for ILE30A-VAL26A:
-   @>   Average [Ang.]: 3.0535
-   @>   Standard deviation [Ang.]: 0.185896
-   @>   Weight: 0.686957
-   @> Statistics for ASN25A-THR22A:
-   @>   Average [Ang.]: 3.052567
-   @>   Standard deviation [Ang.]: 0.229106
-   @>   Weight: 0.521739
-   @> Statistics for ASP21A-GLU18A:
-   @>   Average [Ang.]: 3.115035
-   @>   Standard deviation [Ang.]: 0.196551
-   @>   Weight: 0.86087
-   @> Statistics for GLN40A-PRO37A:
-   @>   Average [Ang.]: 3.109978
-   @>   Standard deviation [Ang.]: 0.189125
-   @>   Weight: 0.695652
-   @> Statistics for LYS27A-ILE23A:
-   @>   Average [Ang.]: 3.030938
-   @>   Standard deviation [Ang.]: 0.201816
-   @>   Weight: 0.817391
-   @> Statistics for TYR59A-THR55A:
-   @>   Average [Ang.]: 3.213038
-   @>   Standard deviation [Ang.]: 0.17657
-   @>   Weight: 0.278261
-   @> Statistics for ARG54A-GLU51A:
-   @>   Average [Ang.]: 2.903451
-   @>   Standard deviation [Ang.]: 0.296689
-   @>   Weight: 0.686957
-   @> Statistics for VAL26A-THR22A:
-   @>   Average [Ang.]: 3.169813
-   @>   Standard deviation [Ang.]: 0.174811
-   @>   Weight: 0.530435
-   @> Statistics for ILE23A-ARG54A:
-   @>   Average [Ang.]: 3.098573
-   @>   Standard deviation [Ang.]: 0.202762
-   @>   Weight: 0.669565
-   @> Statistics for MET1A-GLU16A:
-   @>   Average [Ang.]: 2.656957
-   @>   Standard deviation [Ang.]: 0.1482
-   @>   Weight: 0.4
-   @> Statistics for THR22A-ASN25A:
-   @>   Average [Ang.]: 2.897331
-   @>   Standard deviation [Ang.]: 0.186672
-   @>   Weight: 0.252174
-   @> Statistics for LYS11A-THR7A:
-   @>   Average [Ang.]: 3.069993
-   @>   Standard deviation [Ang.]: 0.198284
-   @>   Weight: 0.26087
-   @> Statistics for GLN31A-LYS27A:
-   @>   Average [Ang.]: 3.034919
-   @>   Standard deviation [Ang.]: 0.190252
-   @>   Weight: 0.643478
-   @> Statistics for ASP58A-THR55A:
-   @>   Average [Ang.]: 3.169083
-   @>   Standard deviation [Ang.]: 0.195746
-   @>   Weight: 0.521739
-   @> Statistics for TYR59A-LEU56A:
-   @>   Average [Ang.]: 3.21815
-   @>   Standard deviation [Ang.]: 0.173276
-   @>   Weight: 0.295652
-   @> Statistics for ARG54A-ASP58A:
-   @>   Average [Ang.]: 2.791075
-   @>   Standard deviation [Ang.]: 0.221946
-   @>   Weight: 0.243478
-   @> Statistics for ARG74A-ASP39A:
-   @>   Average [Ang.]: 2.788468
-   @>   Standard deviation [Ang.]: 0.195743
-   @>   Weight: 0.217391
-   @> Statistics for LYS29A-ASP21A:
-   @>   Average [Ang.]: 2.658942
-   @>   Standard deviation [Ang.]: 0.149072
-   @>   Weight: 0.478261
-   @> Statistics for ASN25A-ASP21A:
-   @>   Average [Ang.]: 2.746326
-   @>   Standard deviation [Ang.]: 0.174366
-   @>   Weight: 0.434783
-   @> Statistics for LYS27A-GLU24A:
-   @>   Average [Ang.]: 2.817776
-   @>   Standard deviation [Ang.]: 0.244667
-   @>   Weight: 0.217391
+   ..
+   ..
+
 
 .. ipython:: python
    :verbatim:

@@ -4,8 +4,8 @@ Water bridges detection in an Ensemble PDB
 ===============================================================================
 
 This time we will use an ensemble stored in a multi-model PDB, which contains 50 frames 
-from MD simulations from PE-binding protein 1 (PDB code: *1beh*). Simulations were
-performed using NAMD and saved as a multi-model PDB using VMD. 
+from MD simulations from PE-binding protein 1 (PDB: **1BEH**). Simulations were
+performed using NAMD_ and saved as a multi-model PDB using VMD_. 
 
 We need to remember to align the protein structure before performing the analysis. 
 Otherwise, when all structures are uploaded to the visualization program, they will 
@@ -50,16 +50,6 @@ Initial analysis
    @> 127 water bridges detected.
    @> Frame: 11
    @> 135 water bridges detected.
-   @> Frame: 12
-   @> 162 water bridges detected.
-   @> Frame: 13
-   @> 135 water bridges detected.
-   @> Frame: 14
-   @> 178 water bridges detected.
-   @> Frame: 15
-   @> 128 water bridges detected.
-   @> Frame: 16
-   @> 145 water bridges detected.
    ...
    ...
 
@@ -108,7 +98,8 @@ in the trajectory analysis.
 .. ipython:: python
    :verbatim:
 
-   analysisAtomic_ens = calcWaterBridgesStatistics(bridgeFrames_ens, coords_ens)
+   analysisAtomic_ens = calcWaterBridgesStatistics(bridgeFrames_ens, 
+							coords_ens)
 
    for item in analysisAtomic_ens.items():
       print(item)
@@ -154,8 +145,6 @@ in the trajectory analysis.
    @> All 51 coordinate sets are copied to pebp1_50frames Selection 'protein' + pebp1_50frames Selection 'same residue as...6074 4190 14360'.
    @> All 51 coordinate sets are copied to pebp1_50frames Selection 'protein' + pebp1_50frames Selection 'same residue as...9718 17936 7184'.
    @> All 51 coordinate sets are copied to pebp1_50frames Selection 'protein' + pebp1_50frames Selection 'same residue as...947 10043 11756'.
-   @> All 51 coordinate sets are copied to pebp1_50frames Selection 'protein' + pebp1_50frames Selection 'same residue as...0099 12848 4175'.
-   @> All 51 coordinate sets are copied to pebp1_50frames Selection 'protein' + pebp1_50frames Selection 'same residue as...6031 8645 18008'.
    ..
    ..
 
@@ -168,7 +157,7 @@ water molecules for each frame that form water bridges with the protein structur
 Now we can use another function :func:`.findClusterCenters` which will extract 
 water centers (they refer to the oxygens from water molecules that are forming 
 clusters). We need to provide a file pattern as show below. Now all the PDB files 
-with prefix *'pebp1_50frames_ens_'* will be analyzed.
+with prefix ``'pebp1_50frames_ens_'`` will be analyzed.
 
 
 .. ipython:: python
@@ -189,59 +178,21 @@ with prefix *'pebp1_50frames_ens_'* will be analyzed.
    @> 3230 atoms and 1 coordinate set(s) were parsed in 0.04s.
    @> 3224 atoms and 1 coordinate set(s) were parsed in 0.03s.
    @> 3158 atoms and 1 coordinate set(s) were parsed in 0.03s.
-   @> 3176 atoms and 1 coordinate set(s) were parsed in 0.03s.
-   @> 3218 atoms and 1 coordinate set(s) were parsed in 0.03s.
-   @> 3284 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3227 atoms and 1 coordinate set(s) were parsed in 0.03s.
-   @> 3251 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3233 atoms and 1 coordinate set(s) were parsed in 0.03s.
-   @> 3254 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3197 atoms and 1 coordinate set(s) were parsed in 0.03s.
-   @> 3197 atoms and 1 coordinate set(s) were parsed in 0.03s.
-   @> 3209 atoms and 1 coordinate set(s) were parsed in 0.03s.
-   @> 3236 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3194 atoms and 1 coordinate set(s) were parsed in 0.03s.
-   @> 3227 atoms and 1 coordinate set(s) were parsed in 0.03s.
-   @> 3179 atoms and 1 coordinate set(s) were parsed in 0.03s.
-   @> 3215 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3284 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3188 atoms and 1 coordinate set(s) were parsed in 0.03s.
-   @> 3176 atoms and 1 coordinate set(s) were parsed in 0.03s.
-   @> 3203 atoms and 1 coordinate set(s) were parsed in 0.03s.
-   @> 3227 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3269 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3191 atoms and 1 coordinate set(s) were parsed in 0.03s.
-   @> 3245 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3225 atoms and 1 coordinate set(s) were parsed in 0.03s.
-   @> 3261 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3221 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3233 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3209 atoms and 1 coordinate set(s) were parsed in 0.03s.
-   @> 3167 atoms and 1 coordinate set(s) were parsed in 0.03s.
-   @> 3221 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3275 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3167 atoms and 1 coordinate set(s) were parsed in 0.03s.
-   @> 3218 atoms and 1 coordinate set(s) were parsed in 0.03s.
-   @> 3191 atoms and 1 coordinate set(s) were parsed in 0.03s.
-   @> 3221 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3251 atoms and 1 coordinate set(s) were parsed in 0.03s.
-   @> 3209 atoms and 1 coordinate set(s) were parsed in 0.03s.
-   @> 3278 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3239 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3228 atoms and 1 coordinate set(s) were parsed in 0.03s.
+   ..
+   ..
    @> Results are saved in clusters_pebp1_50frames_ens_.pdb.
 
 This function generated one PDB file with water centers. We used default values, 
-such as distC (distance to other molecule) and numC (min number of molecules 
+such as ``distC`` (distance to other molecule) and ``numC`` (min number of molecules 
 in a cluster), but those values could be changed if the molecules are more 
 widely distributed or we would like to have more numerous clusters.
-Moreover, this function can be applied on different type of molecules by using 
-the *selection* parameter. We can provide the whole molecule and by default 
-the center of mass will be used as a reference.
+Moreover, this function can be applied to different types of molecules by using 
+the ``selection`` parameter. We can provide the whole molecule, and by
+default, the center of mass will be used as a reference.
 
 
 Saved PDB files using :func:`.savePDBWaterBridgesTrajectory` in the previous
-step can be upload to VMD or other program for visualization:
+step can be upload to VMD_ or other program for visualization:
 
 .. figure:: images/Fig3.png
    :scale: 50 %

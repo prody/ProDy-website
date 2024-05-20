@@ -20,13 +20,13 @@ Besides ProDy_, the Matplotlib_ library and VMD_ program are required for
 some steps in the tutorial. IPython_ is highly recommended for interactive usage.
 
 Moreover, in the case of the lack of hydrogen atoms in protein structures,
-additional packages such as Openbabel_ or PDBfixer_ are required for
-predicting hydrogen bonds.
+additional packages such as Openbabel_ or PDBfixer_ are required to
+predict hydrogen bonds.
 
 .. _Openbabel: https://github.com/openbabel
 .. _PDBfixer: https://github.com/openmm/pdbfixer
 
-They can be installed using conda or pip.
+They can be installed using a conda or pip.
 
 Getting Started
 -------------------------------------------------------------------------------
@@ -56,6 +56,6 @@ First, we will make necessary imports from ProDy and Matplotlib packages.
    from pylab import *
    import matplotlib
 
-We have included these imports in every part of the tutorial, so that
+We have included these imports in every part of the tutorial so that the
 code copied from the online pages is complete. You do not need to repeat
 imports in the same Python session.
