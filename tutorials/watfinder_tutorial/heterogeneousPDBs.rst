@@ -1412,6 +1412,13 @@ which are set to 0.3 and 3, respectively.
     @> Results are saved in clusters_wb_.pdb.
 
 
+The function will create a file called ``clusters_wb_.pdb`` which will
+contain water clusters. We can upload this file to any graphical
+visualization program (in this tutorial we used VMD_) and display water clusters.
+Additionally, we should upload the protein structure we analyzed to see
+where water clusters are localized with respect to the protein structure. 
+
+
 .. figure:: images/Fig5.png
    :scale: 50 %
 
@@ -1464,12 +1471,19 @@ Angstrom from each other.
     @> Results are saved in clusters_wb_.pdb.
 
 
+After displaying in the visualization program we can see a smaller number of
+water clusters and only those which were more preoccupied if we compare it
+with the previous figure.
+
+
 .. figure:: images/Fig6.png
    :scale: 50 %
 
     
-We can increase the number of molecules to 10 to see which places are
-especially important for water bridging.
+We can increase the number of molecules ``numC`` to 10 to see which places are
+especially important for water bridging. Now, we will see only two the most
+significantly preoccupied water position across the heterogeneous stuctures
+of p38 MAP kinase.
 
 
 .. ipython:: python
