@@ -387,9 +387,11 @@ be ignored. The analyzed structure will be saved using
 
     for file in align_files:
         print (file)
-        atoms = parsePDB(file)
-        waterBridges = calcWaterBridges(atoms)
-        savePDBWaterBridges(waterBridges, atoms, 'wb_'+file)
+	try:
+            atoms = parsePDB(file)
+            waterBridges = calcWaterBridges(atoms)
+            savePDBWaterBridges(waterBridges, atoms, 'wb_'+file)
+	except: pass
 
         
 .. parsed-literal::
