@@ -13,8 +13,8 @@ present in numerous crystal structures.
 Parse multiple PDB structures
 -------------------------------------------------------------------------------
 
-First, we need to parse all PDB structures that will be used for analysis. We can
-do it by  providing directly a list with PDB IDs. In this case we are providing
+First, we need to download all PDB structures that will be used for analysis. We can
+do it by providing directly a list with PDB IDs. In this case we are providing
 76 structures storage in a list called ``pdbids``.
 
 
@@ -58,133 +58,66 @@ Protein preparation
 -------------------------------------------------------------------------------
 
 We need to prepare each PDB structure for the analysis with WatFinder. First, we
-download each PDB file directly from the Protein Data Bank. Next, we add
-hydrogens to each spatial structure, which contains water molecules, using
-:func:`addMissingAtoms` function using `'pdbfixer'` method. 
-
-If the protein structure doesn't contain water molecules, it will be excluded
-from the analysis. Analyzed files will contain the ``'addH_'`` prefix, which
-will be stored in ``new_pdbids``.
+download each PDB file directly from the Protein Data Bank. 
 
 
 .. ipython:: python
    :verbatim:
 
-    import os
-
-    new_pdbids = []
-    for i in pdbids:
-        filename = fetchPDB(i, compressed=False)
-        if os.path.exists('addH_'+filename):
-            filename2 = 'addH_'+filename
-            new_pdbids.append(filename2)
-
-        else:
-            pdb = parsePDB(filename)
-            if pdb.select('water') == None:
-                print(i, "doesn't contain water molecules")
-                pass
-            else:
-                filename2 = addMissingAtoms(filename, method='pdbfixer')
-                new_pdbids.append(filename2)
+   infiles = fetchPDB(pdbids, compressed=False)
 
 
 .. parsed-literal::
 
-    @> PDB file is found in working directory (5uoj.pdb).
     @> Connecting wwPDB FTP server RCSB PDB (USA).
+    @> 5uoj downloaded (5uoj.pdb)
     @> 1a9u downloaded (1a9u.pdb)
-    @> PDB download via FTP completed (1 downloaded, 0 failed).
-    @> Connecting wwPDB FTP server RCSB PDB (USA).
     @> 1bl6 downloaded (1bl6.pdb)
-    @> PDB download via FTP completed (1 downloaded, 0 failed).
-    @> Connecting wwPDB FTP server RCSB PDB (USA).
     @> 1bl7 downloaded (1bl7.pdb)
-    @> PDB download via FTP completed (1 downloaded, 0 failed).
-    @> Connecting wwPDB FTP server RCSB PDB (USA).
     @> 1bmk downloaded (1bmk.pdb)
-    @> PDB download via FTP completed (1 downloaded, 0 failed).
-    @> Connecting wwPDB FTP server RCSB PDB (USA).
     @> 1di9 downloaded (1di9.pdb)
-    @> PDB download via FTP completed (1 downloaded, 0 failed).
-    @> Connecting wwPDB FTP server RCSB PDB (USA).
     @> 1ian downloaded (1ian.pdb)
-    @> PDB download via FTP completed (1 downloaded, 0 failed).
-    @> 409 atoms and 1 coordinate set(s) were parsed in 0.01s.
-    @> Connecting wwPDB FTP server RCSB PDB (USA).
-
-    1IAN doesn't contain water molecules
-
     @> 1kv1 downloaded (1kv1.pdb)
-    @> PDB download via FTP completed (1 downloaded, 0 failed).
-    @> Connecting wwPDB FTP server RCSB PDB (USA).
     @> 1kv2 downloaded (1kv2.pdb)
-    @> PDB download via FTP completed (1 downloaded, 0 failed).
-    @> 2656 atoms and 1 coordinate set(s) were parsed in 0.07s.
-    @> Connecting wwPDB FTP server RCSB PDB (USA).
-
-    1KV2 doesn't contain water molecules
-
     @> 1lew downloaded (1lew.pdb)
-    @> PDB download via FTP completed (1 downloaded, 0 failed).
-    @> Connecting wwPDB FTP server RCSB PDB (USA).
     @> 1lez downloaded (1lez.pdb)
-    @> PDB download via FTP completed (1 downloaded, 0 failed).
-    @> Connecting wwPDB FTP server RCSB PDB (USA).
-    @> 1m7q downloaded (1m7q.pdb)
-    @> PDB download via FTP completed (1 downloaded, 0 failed).
-    @> Connecting wwPDB FTP server RCSB PDB (USA).
-    @> 1ouk downloaded (1ouk.pdb)
-    @> PDB download via FTP completed (1 downloaded, 0 failed).
-    @> Connecting wwPDB FTP server RCSB PDB (USA).
-    @> 1ouy downloaded (1ouy.pdb)
-    @> PDB download via FTP completed (1 downloaded, 0 failed).
-    @> Connecting wwPDB FTP server RCSB PDB (USA).
-    @> 1ove downloaded (1ove.pdb)
-    @> PDB download via FTP completed (1 downloaded, 0 failed).
-    @> Connecting wwPDB FTP server RCSB PDB (USA).
-    @> 1oz1 downloaded (1oz1.pdb)
-    @> PDB download via FTP completed (1 downloaded, 0 failed).
-    @> PDB file is found in working directory (5uoj.pdb).
-    @> Connecting wwPDB FTP server RCSB PDB (USA).
-    @> 1r39 downloaded (1r39.pdb)
-    @> PDB download via FTP completed (1 downloaded, 0 failed).
-    @> Connecting wwPDB FTP server RCSB PDB (USA).
     ..
     ..
-    @> 2zb1 downloaded (2zb1.pdb)
-    @> PDB download via FTP completed (1 downloaded, 0 failed).
-    @> Connecting wwPDB FTP server RCSB PDB (USA).
-    @> 3bv2 downloaded (3bv2.pdb)
-    @> PDB download via FTP completed (1 downloaded, 0 failed).
-    @> Connecting wwPDB FTP server RCSB PDB (USA).
-    @> 3bv3 downloaded (3bv3.pdb)
-    @> PDB download via FTP completed (1 downloaded, 0 failed).
-    @> Connecting wwPDB FTP server RCSB PDB (USA).
-    @> 3bx5 downloaded (3bx5.pdb)
-    @> PDB download via FTP completed (1 downloaded, 0 failed).
-
-    @> Connecting wwPDB FTP server RCSB PDB (USA).
-    @> 3c5u downloaded (3c5u.pdb)
-    @> PDB download via FTP completed (1 downloaded, 0 failed).
-    @> Connecting wwPDB FTP server RCSB PDB (USA).
-    @> 3l8x downloaded (3l8x.pdb)
-    @> PDB download via FTP completed (1 downloaded, 0 failed).
-    @> Connecting wwPDB FTP server RCSB PDB (USA).
     @> 3ctq downloaded (3ctq.pdb)
-    @> PDB download via FTP completed (1 downloaded, 0 failed).
-    @> Connecting wwPDB FTP server RCSB PDB (USA).
     @> 3d7z downloaded (3d7z.pdb)
-    @> PDB download via FTP completed (1 downloaded, 0 failed).
-    @> Connecting wwPDB FTP server RCSB PDB (USA).
     @> 3d83 downloaded (3d83.pdb)
-    @> PDB download via FTP completed (1 downloaded, 0 failed).
-    @> Connecting wwPDB FTP server RCSB PDB (USA).
     @> 2onl downloaded (2onl.pdb)
-    @> PDB download via FTP completed (1 downloaded, 0 failed).
-    @> 10466 atoms and 1 coordinate set(s) were parsed in 0.16s.
+    @> PDB download via FTP completed (76 downloaded, 0 failed).
 
-    2ONL doesn't contain water molecules
+
+Next, we parse all PDB files and exclude those structures that don't contain
+water molecules using the :func:`filterStructuresWithoutWater` function. PDB
+files need to contain at least ``1`` water molecule. Structures that will be
+analyzed are provided using ``filenames``. 
+
+
+.. ipython:: python
+   :verbatim:
+
+   structures = parsePDB(infiles)
+
+
+.. parsed-literal::
+
+   @> 76 PDBs were parsed in 2.65s. 
+
+
+.. ipython:: python
+   :verbatim:
+
+   new_structures = filterStructuresWithoutWater(structures, 1, filenames=infiles)
+
+
+.. parsed-literal::
+
+   @> WARNING 2onl doesn't contain water molecules
+   @> WARNING 1kv2 doesn't contain water molecules
+   @> WARNING 1ian doesn't contain water molecules
 
 
 We can now check how many structures are left that contain water molecules, and
@@ -194,12 +127,68 @@ those will be further taken into analysis with WatFinder.
 .. ipython:: python
    :verbatim:
 
-   len(new_pdbids)
+   len(new_structures)
 
 
 .. parsed-literal::
 
    73
+
+
+.. ipython:: python
+   :verbatim:
+
+   infiles
+
+
+.. parsed-literal::
+
+    ['5uoj.pdb',
+    '1a9u.pdb',
+    '1bl6.pdb',
+    '1bl7.pdb',
+    '1bmk.pdb',
+    '1di9.pdb',
+    '1kv1.pdb',
+    '1lew.pdb',
+    '1lez.pdb',
+    '1m7q.pdb',
+    '1ouk.pdb',
+    ..
+    ..
+    '3ctq.pdb',
+    '3d7z.pdb',
+    '3d83.pdb']
+
+
+Finally, we will add missing hydrogen atoms, which are typically missing
+in the PDB files, using :func:`fixStructuresMissingAtoms` function using
+`'pdbfixer'` method. The new files will contain the ``'addH_'`` prefix and
+will be stored in ``new_pdbids``.
+
+
+.. ipython:: python
+   :verbatim:
+
+   new_pdbids = fixStructuresMissingAtoms(infiles, method='pdbfixer')
+
+
+.. parsed-literal::
+
+    @> Hydrogens were added to the structure. New structure is saved as addH_5uoj.pdb.
+    @> Hydrogens were added to the structure. New structure is saved as addH_1a9u.pdb.
+    @> Hydrogens were added to the structure. New structure is saved as addH_1bl6.pdb.
+    @> Hydrogens were added to the structure. New structure is saved as addH_1bl7.pdb.
+    @> Hydrogens were added to the structure. New structure is saved as addH_1bmk.pdb.
+    @> Hydrogens were added to the structure. New structure is saved as addH_1di9.pdb.
+    @> Hydrogens were added to the structure. New structure is saved as addH_1kv1.pdb.
+    @> Hydrogens were added to the structure. New structure is saved as addH_1lew.pdb.
+    ..
+    ..
+    @> Hydrogens were added to the structure. New structure is saved as addH_3l8x.pdb.
+    @> Hydrogens were added to the structure. New structure is saved as addH_3ctq.pdb.
+    @> Hydrogens were added to the structure. New structure is saved as addH_3d7z.pdb.
+    @> Hydrogens were added to the structure. New structure is saved as addH_3d83.pdb.
 
 
 Aligning all PDB heterogeneous structures onto first PDB
@@ -274,43 +263,6 @@ saved in the local directory with ``'align__'`` prefix.
     @> Trying to match chains based on local sequence alignment:
     @>  Comparing Chain A from addH_1bmk (len=351) and Chain A from addH_5uoj (len=343):
     @> 	Match: 343 residues match with 100% sequence identity and 98% overlap.
-
-    addH_1bmk
-
-    @> Checking AtomGroup addH_1di9: 1 chains are identified
-    @> Checking AtomGroup addH_5uoj: 1 chains are identified
-    @> Trying to match chains based on residue numbers and names:
-    @>   Comparing Chain A from addH_1di9 (len=348) and Chain A from addH_5uoj (len=343):
-    @> 	Failed to match chains (seqid=5%, overlap=99%).
-    @> Trying to match chains based on local sequence alignment:
-    @>  Comparing Chain A from addH_1di9 (len=348) and Chain A from addH_5uoj (len=343):
-    @> 	Match: 341 residues match with 99% sequence identity and 98% overlap.
-
-    addH_1di9
-
-    @> Checking AtomGroup addH_1kv1: 1 chains are identified
-    @> Checking AtomGroup addH_5uoj: 1 chains are identified
-    @> Trying to match chains based on residue numbers and names:
-    @>   Comparing Chain A from addH_1kv1 (len=331) and Chain A from addH_5uoj (len=343):
-    @> 	Failed to match chains (seqid=37%, overlap=97%).
-    @> Trying to match chains based on local sequence alignment:
-    @>  Comparing Chain A from addH_1kv1 (len=331) and Chain A from addH_5uoj (len=343):
-    @> 	Match: 331 residues match with 99% sequence identity and 97% overlap.
-
-    addH_1kv1
-
-    @> Checking AtomGroup addH_1lew: 2 chains are identified
-    @> Checking AtomGroup addH_5uoj: 1 chains are identified
-    @> Trying to match chains based on residue numbers and names:
-    @>   Comparing Chain A from addH_1lew (len=341) and Chain A from addH_5uoj (len=343):
-    @> 	Failed to match chains (seqid=53%, overlap=99%).
-    @>   Comparing Chain B from addH_1lew (len=10) and Chain A from addH_5uoj (len=343):
-    @> 	Failed to match chains (seqid=10%, overlap=3%).
-    @> Trying to match chains based on local sequence alignment:
-    @>  Comparing Chain A from addH_1lew (len=341) and Chain A from addH_5uoj (len=343):
-    @> 	Match: 340 residues match with 99% sequence identity and 99% overlap.
-    @>  Comparing Chain B from addH_1lew (len=10) and Chain A from addH_5uoj (len=343):
-    @> Checking AtomGroup addH_1lez: 2 chains are identified
 
     ..
     ..
