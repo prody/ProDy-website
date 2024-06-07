@@ -1481,8 +1481,8 @@ with the previous figure.
 
     
 We can increase the number of molecules ``numC`` to 10 to see which places are
-especially important for water bridging. Now, we will see only two the most
-significantly preoccupied water position across the heterogeneous stuctures
+especially important for water bridging. Now, we will see only two: the most
+significantly preoccupied water positions across the heterogeneous stuctures
 of p38 MAP kinase.
 
 
