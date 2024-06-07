@@ -1362,7 +1362,7 @@ be ignored. The analyzed structure will be saved using
 
 
     
-Finding clusters of water within homolgous structures
+Finding clusters of water within homologous structures
 -------------------------------------------------------------------------------    
     
 Once the PDB files with selected water bridges are saved, we can start checking
