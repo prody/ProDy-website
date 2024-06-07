@@ -1368,8 +1368,8 @@ Finding clusters of water within homologous structures
 Once the PDB files with selected water bridges are saved, we can start checking
 water clustering using :func:`findClusterCenters` function. With this kind of
 analysis, we should check the names of oxygens that are forming water molecules.
-If the name is different from the default one, we should use ``'resname HOH and name
-O'`` parameter to correct it. We will use default criteria of ``distC`` and ``numC``,
+If the name is different from the default one, we should use ``'resname HOH and name O'`` 
+parameter to correct it. We will use default criteria of ``distC`` and ``numC``,
 which are set to 0.3 and 3, respectively.
 
 
