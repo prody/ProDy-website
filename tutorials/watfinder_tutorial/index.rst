@@ -23,6 +23,7 @@ WatFinder - water bridges within protein structure detector
    singlePDB
    trajectory
    ensemblePDB
+   heterogeneousPDBs
    changeParam
 
 
