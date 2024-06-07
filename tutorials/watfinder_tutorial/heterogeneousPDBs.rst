@@ -680,14 +680,14 @@ be ignored. The analyzed structure will be saved using
 
 
     
-Finding clusters of water within homolgous structures
+Finding clusters of water within homologous structures
 -------------------------------------------------------------------------------    
     
 Once the PDB files with selected water bridges are saved, we can start checking
 water clustering using :func:`findClusterCenters` function. With this kind of
 analysis, we should check the names of oxygens that are forming water molecules.
-If the name is different from the default one, we should use ``'resname HOH and name
-O'`` parameter to correct it. We will use default criteria of ``distC`` and ``numC``,
+If the name is different from the default one, we should use ``'resname HOH and name O'`` 
+parameter to correct it. We will use default criteria of ``distC`` and ``numC``,
 which are set to 0.3 and 3, respectively.
 
 
@@ -799,8 +799,8 @@ with the previous figure.
 
     
 We can increase the number of molecules ``numC`` to 10 to see which places are
-especially important for water bridging. Now, we will see only two the most
-significantly preoccupied water position across the heterogeneous stuctures
+especially important for water bridging. Now, we will see only two: the most
+significantly preoccupied water positions across the heterogeneous stuctures
 of p38 MAP kinase.
 
 
