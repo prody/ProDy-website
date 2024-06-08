@@ -161,8 +161,8 @@ those will be further taken into analysis with WatFinder.
     '3d83.pdb']
 
 
-Finally, we will add missing hydrogen atoms, which are typically missing
-in the PDB files, using :func:`fixStructuresMissingAtoms` function using
+Finally, we will add hydrogen atoms, which are typically missing
+in the PDB files, using :func:`fixStructuresMissingAtoms` function and
 `'pdbfixer'` method. The new files will contain the ``'addH_'`` prefix and
 will be stored in ``new_pdbids``.
 
@@ -202,21 +202,21 @@ saved in the local directory with ``'align__'`` prefix.
 .. ipython:: python
    :verbatim:
 
-    structures = parsePDB(new_pdbids)
-    target = structures[0]
+   structures = parsePDB(new_pdbids)
+   target = structures[0]
 
-    rmsds = []
-    for mobile in structures[1:]:
-        try:
-            i = mobile.getTitle()
-            print (i)
-            matches = matchChains(mobile.protein, target.protein, subset='bb')
-            m = matches[0]
+   rmsds = []
+   for mobile in structures[1:]:
+       try:
+           i = mobile.getTitle()
+           print (i)
+           matches = matchChains(mobile.protein, target.protein, subset='bb')
+           m = matches[0]
 
-            m0_alg, T = superpose(m[0], m[1], weights=m[0].getFlags("mapped"))
-            rmsds.append(calcRMSD(m[0], m[1], weights=m[0].getFlags("mapped")))
-            writePDB('align__'+i+'.pdb', mobile)
-        except: pass   
+           m0_alg, T = superpose(m[0], m[1], weights=m[0].getFlags("mapped"))
+           rmsds.append(calcRMSD(m[0], m[1], weights=m[0].getFlags("mapped")))
+           writePDB('align__'+i+'.pdb', mobile)
+       except: pass   
 
    
 .. parsed-literal::
@@ -314,7 +314,7 @@ saved in the local directory with ``'align__'`` prefix.
     addH_3d83
 
 
-To see how different the protein structures are we will also compute `RMSD` (Root
+To see how different the protein structures are we will also compute ``RMSD`` (Root
 Mean Square Deviation) values:  
 
 
@@ -379,19 +379,19 @@ be ignored. The analyzed structure will be saved using
 .. ipython:: python
    :verbatim:
 
-    import os
+   import os
+   namePrefix = 'align__'
+   directory = os.getcwd()
+   align_files = [file for file in os.listdir(directory) if file.startswith(namePrefix)]
 
-    namePrefix = 'align__'
-    directory = os.getcwd()
-    align_files = [file for file in os.listdir(directory) if file.startswith(namePrefix)]
-
-    for file in align_files:
-        print (file)
-	try:
-            atoms = parsePDB(file)
-            waterBridges = calcWaterBridges(atoms)
-            savePDBWaterBridges(waterBridges, atoms, 'wb_'+file)
-	except: pass
+   for file in align_files:
+       print (file)
+       try:
+           atoms = parsePDB(file)
+           waterBridges = calcWaterBridges(atoms)
+           savePDBWaterBridges(waterBridges, atoms, 'wb_'+file)
+       except:
+           print("This protein doesn't contain water bridges")
 
         
 .. parsed-literal::
@@ -640,9 +640,10 @@ Finding clusters of water within homologous structures
 Once the PDB files with selected water bridges are saved, we can start checking
 water clustering using :func:`findClusterCenters` function. With this kind of
 analysis, we should check the names of oxygens that are forming water molecules.
-If the name is different from the default one, we should use ``'resname HOH and name O'`` 
-parameter to correct it. We will use default criteria of ``distC`` and ``numC``,
-which are set to 0.3 and 3, respectively.
+If the name is different from the default one, we should set a new ``selection``
+parameter. In this case we will use the following selection: ``'resname HOH and name O'``. 
+We will use default criteria of ``distC`` and ``numC``, which are set to 0.3 and 3,
+respectively.
 
 
 .. ipython:: python
@@ -743,9 +744,9 @@ Angstrom from each other.
     @> Results are saved in clusters_wb_.pdb.
 
 
-After displaying in the visualization program we can see a smaller number of
-water clusters and only those which were more preoccupied if we compare it
-with the previous figure.
+After displaying new results in the visualization program, we can see a
+smaller number of water clusters and only those that were more preoccupied
+if we compare it with the previous figure.
 
 
 .. figure:: images/Fig6.png
@@ -753,9 +754,9 @@ with the previous figure.
 
     
 We can increase the number of molecules ``numC`` to 10 to see which places are
-especially important for water bridging. Now, we will see only two: the most
-significantly preoccupied water positions across the heterogeneous stuctures
-of p38 MAP kinase.
+occupied more often by water bridges. Now, we will see only two:
+the most significantly preoccupied water positions across the heterogeneous
+structures of p38 MAP kinase.
 
 
 .. ipython:: python
