@@ -212,7 +212,6 @@ saved in the local directory with ``'align__'`` prefix.
            print (i)
            matches = matchChains(mobile.protein, target.protein, subset='bb')
            m = matches[0]
-
            m0_alg, T = superpose(m[0], m[1], weights=m[0].getFlags("mapped"))
            rmsds.append(calcRMSD(m[0], m[1], weights=m[0].getFlags("mapped")))
            writePDB('align__'+i+'.pdb', mobile)
