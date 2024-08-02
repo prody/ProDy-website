@@ -61,8 +61,7 @@ Derection of protein-water interactions that facilitate ligand binding
    :scale: 40 %
 
 
-IPython notebook (ipynb, protein only): caseStudy4a_
-IPython notebook (ipynb, protein+ligand): caseStudy4b_
+IPython notebooks (ipynb): caseStudy4a_ (protein only) and caseStudy4b_ (protein+ligand)
 
 
 Case study 5
@@ -87,8 +86,6 @@ WatFinder Parameter Adjustments
 .. figure:: images/caseStudy6.jpg
    :scale: 40 %
 
-
-IPython notebook (ipynb): caseStudy6_
 
 
 The description of all cases are availabe in the supplementary file of WatFinder paper which
