@@ -3,13 +3,13 @@
 Additional examples of WatFinder utility
 ===============================================================================
 
-.. _caseStudy1: ../ipynb_file/caseStudy1.ipynb
-.. _caseStudy2: ../ipynb_file/caseStudy2.ipynb
-.. _caseStudy3: ../ipynb_file/caseStudy3.ipynb
-.. _caseStudy4a: ../ipynb_file/caseStudy4a.ipynb
-.. _caseStudy4b: ../ipynb_file/caseStudy4b.ipynb
-.. _caseStudy5: ../ipynb_file/caseStudy5.ipynb
-.. _caseStudy6: ../ipynb_file/caseStudy6.ipynb
+.. _caseStudy1: ../watfinder_tutorial/ipynb_file/caseStudy1.ipynb
+.. _caseStudy2: ../watfinder_tutorial/ipynb_file/caseStudy2.ipynb
+.. _caseStudy3: ../watfinder_tutorial/ipynb_file/caseStudy3.ipynb
+.. _caseStudy4a: ../watfinder_tutorial/ipynb_file/caseStudy4a.ipynb
+.. _caseStudy4b: ../watfinder_tutorial/ipynb_file/caseStudy4b.ipynb
+.. _caseStudy5: ../watfinder_tutorial/ipynb_file/caseStudy5.ipynb
+.. _caseStudy6: ../watfinder_tutorial/ipynb_file/caseStudy6.ipynb
 
 
 Here, we present several more case studies on how to use WatFinder.
