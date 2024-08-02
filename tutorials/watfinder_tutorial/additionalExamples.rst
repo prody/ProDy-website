@@ -19,7 +19,7 @@ bridges as adenylate kinase transitions from the closed to open state
 
 
 .. figure:: images/caseStudy1.jpg
-   :scale: 60 %
+   :scale: 40 %
 
 
 IPython notebook (*.ipynb): caseStudy1_
@@ -30,7 +30,7 @@ transporter VMAT2
 
 
 .. figure:: images/caseStudy2.jpg
-   :scale: 60 %
+   :scale: 40 %
 
 IPython notebook (*.ipynb): caseStudy2_
 
@@ -40,7 +40,7 @@ Aurora kinase A crystal structures identified by BLAST
 
 
 .. figure:: images/caseStudy3.jpg
-   :scale: 60 %
+   :scale: 40 %
 
 
 IPython notebook (*.ipynb): caseStudy3_
@@ -50,7 +50,7 @@ IPython notebook (*.ipynb): caseStudy3_
 
 
 .. figure:: images/caseStudy4.jpg
-   :scale: 60 %
+   :scale: 40 %
 
 
 IPython notebook (*.ipynb, protein only): caseStudy4a_
@@ -62,7 +62,7 @@ including timing for selected regions
 
 
 .. figure:: images/caseStudy5.jpg
-   :scale: 60 %
+   :scale: 40 %
 
 
 IPython notebook (*.ipynb): caseStudy5_
@@ -72,11 +72,11 @@ IPython notebook (*.ipynb): caseStudy5_
 
 
 .. figure:: images/caseStudy6.jpg
-   :scale: 60 %
+   :scale: 40 %
 
 
 IPython notebook (*.ipynb): caseStudy6_
 
 
-All cases are availabe in the supplementary file of WatFinder paper which
-will be available soon.
+The description of all cases are availabe in the supplementary file of WatFinder paper which
+will be available soon. Trejactories are in tutorial's files.
