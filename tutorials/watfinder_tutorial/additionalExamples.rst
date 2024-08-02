@@ -6,7 +6,8 @@ Additional examples of WatFinder utility
 .. _caseStudy1: ../ipynb_file/caseStudy1.ipynb
 .. _caseStudy2: ../ipynb_file/caseStudy2.ipynb
 .. _caseStudy3: ../ipynb_file/caseStudy3.ipynb
-.. _caseStudy4: ../ipynb_file/caseStudy4.ipynb
+.. _caseStudy4a: ../ipynb_file/caseStudy4a.ipynb
+.. _caseStudy4b: ../ipynb_file/caseStudy4b.ipynb
 .. _caseStudy5: ../ipynb_file/caseStudy5.ipynb
 .. _caseStudy6: ../ipynb_file/caseStudy6.ipynb
 
@@ -52,7 +53,8 @@ IPython notebook (*.ipynb): caseStudy3_
    :scale: 60 %
 
 
-IPython notebook (*.ipynb): caseStudy4_
+IPython notebook (*.ipynb, protein only): caseStudy4a_
+IPython notebook (*.ipynb), protein+ligand): caseStudy4b_
 
 
 (5) Water bridges detection in a large chaperonin TRiC/CCT structure
