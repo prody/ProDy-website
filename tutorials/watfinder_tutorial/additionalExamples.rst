@@ -3,6 +3,14 @@
 Additional examples of WatFinder utility
 ===============================================================================
 
+.. _caseStudy1: ../ipynb_file/caseStudy1.ipynb
+.. _caseStudy2: ../ipynb_file/caseStudy2.ipynb
+.. _caseStudy3: ../ipynb_file/caseStudy3.ipynb
+.. _caseStudy4: ../ipynb_file/caseStudy4.ipynb
+.. _caseStudy5: ../ipynb_file/caseStudy5.ipynb
+.. _caseStudy6: ../ipynb_file/caseStudy6.ipynb
+
+
 Here, we present several more case studies on how to use WatFinder.
 
 (1) Detection and quantification of the formation of inter-residue water
@@ -13,7 +21,7 @@ bridges as adenylate kinase transitions from the closed to open state
    :scale: 60 %
 
 
-IPython notebook (*.ipynb): caseStudy1
+IPython notebook (*.ipynb): caseStudy1_
 
 
 (2) Identification of water influx and clusters into the vesicular monoamine
@@ -23,7 +31,7 @@ transporter VMAT2
 .. figure:: images/caseStudy2.jpg
    :scale: 60 %
 
-IPython notebook (*.ipynb): caseStudy2
+IPython notebook (*.ipynb): caseStudy2_
 
 
 (3) Identification of key protein-water interactions observed across various
@@ -34,7 +42,7 @@ Aurora kinase A crystal structures identified by BLAST
    :scale: 60 %
 
 
-IPython notebook (*.ipynb): caseStudy3
+IPython notebook (*.ipynb): caseStudy3_
 
 
 (4) Derection of protein-water interactions that facilitate ligand binding
@@ -44,7 +52,7 @@ IPython notebook (*.ipynb): caseStudy3
    :scale: 60 %
 
 
-IPython notebook (*.ipynb): caseStudy4
+IPython notebook (*.ipynb): caseStudy4_
 
 
 (5) Water bridges detection in a large chaperonin TRiC/CCT structure
@@ -55,7 +63,7 @@ including timing for selected regions
    :scale: 60 %
 
 
-IPython notebook (*.ipynb): caseStudy5
+IPython notebook (*.ipynb): caseStudy5_
 
 
 (6) WatFinder Parameter Adjustments
@@ -65,7 +73,7 @@ IPython notebook (*.ipynb): caseStudy5
    :scale: 60 %
 
 
-IPython notebook (*.ipynb): water parameter adjustments
+IPython notebook (*.ipynb): caseStudy6_
 
 
 All cases are availabe in the supplementary file of WatFinder paper which
