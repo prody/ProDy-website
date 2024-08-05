@@ -49,6 +49,18 @@ molecules or residues.
     default is ``True``
 
 
+The above criteria are used to find hydrogen bonds in a PDB structure which
+are used to predict possible water bridges. 
+
+The angles are calculated so that the hydrogen atom that makes the hydrogen
+bond is the vertex of the angle, where the donor and acceptor atoms form the
+two ends. The angle is measured between the line connecting the donor to the
+hydrogen and the line connecting the hydrogen to the acceptor. 
+
+Most PDB structures do not have hydrogen atoms, therefore we can ignore this
+criterium. Hydrogen bonds will be calculated just based on distance and atom types. 
+
+
 Here's an example of how to apply changes in parameters:
 
 .. ipython:: python

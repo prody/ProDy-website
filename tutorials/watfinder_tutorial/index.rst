@@ -24,6 +24,7 @@ WatFinder - water bridges within protein structure detector
    trajectory
    ensemblePDB
    heterogeneousPDBs
+   additionalExamples
    changeParam
 
 
