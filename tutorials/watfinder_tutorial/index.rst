@@ -1,6 +1,6 @@
 .. use "watfinder_tutorial" to refer to this file
 
-.. _watfinder_tutorial:
+.. _watfinder_additional:
 
 *******************************************************************************
 WatFinder - water bridges within protein structure detector

@@ -1,4 +1,4 @@
-.. _watfinder_tutorial:
+.. _watfinder_additional:
 
 Additional examples of WatFinder utility
 ===============================================================================

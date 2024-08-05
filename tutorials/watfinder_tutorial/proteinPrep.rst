@@ -1,4 +1,4 @@
-.. _watfinder_tutorial:
+.. _watfinder_prep:
 
 Protein Preparation
 ===============================================================================

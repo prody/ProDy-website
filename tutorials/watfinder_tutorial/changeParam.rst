@@ -1,4 +1,4 @@
-.. _watfinder_tutorial:
+.. _watfinder_parameters:
 
 Changes in the default parameters
 ===============================================================================

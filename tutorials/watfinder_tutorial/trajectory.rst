@@ -1,4 +1,4 @@
-.. _watfinder_tutorial:
+.. _watfinder_traj:
 
 Water bridges detection in a trajectory
 ===============================================================================
