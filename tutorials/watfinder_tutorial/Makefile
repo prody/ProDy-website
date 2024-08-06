@@ -36,6 +36,7 @@ setup:
 html: setup
 	cd $(WORKDIR); $(SPHINXBUILD) -b html -d ../$(BUILDDIR)/doctrees ../ ../$(BUILDDIR)/html
 	@echo
+	cp -p -r ipynb_file ../../_build/html/tutorials/$(BASENAME)/
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
 pdf: setup

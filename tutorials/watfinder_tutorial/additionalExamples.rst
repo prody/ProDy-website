@@ -10,7 +10,37 @@ Additional examples of WatFinder utility
 .. _caseStudy4b: ../watfinder_tutorial/ipynb_file/caseStudy4b.ipynb
 .. _caseStudy5: ../watfinder_tutorial/ipynb_file/caseStudy5.ipynb
 .. _caseStudy6: ../watfinder_tutorial/ipynb_file/caseStudy6.ipynb
+.. |_caseStudy11| raw:: html 
 
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy1.ipynb' download="caseStudy1.ipynb">caseStudy1</a>
+
+.. |_caseStudy12| raw:: html 
+
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy2.ipynb' download="caseStudy2.ipynb">caseStudy2</a>
+
+.. |_caseStudy13| raw:: html 
+
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy3.ipynb' download="caseStudy3.ipynb">caseStudy3</a>
+
+.. |_caseStudy14a| raw:: html 
+
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy4a.ipynb' download="caseStudy4a.ipynb">caseStudy4a</a>
+
+.. |_caseStudy14b| raw:: html 
+
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy4b.ipynb' download="caseStudy4b.ipynb">caseStudy4b</a>
+
+.. |_caseStudy15| raw:: html 
+
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy5.ipynb' download="caseStudy5.ipynb">caseStudy5</a>
+   
+.. |_caseStudy16| raw:: html 
+
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6.ipynb' download="caseStudy6.ipynb">caseStudy6</a>
+
+.. |_caseStudyfiles| raw:: html 
+
+   <a href="http://bahar.labs.stonybrook.edu/watFinder_tutorial_files/" target="_blank">here</a>
 
 Here, we present several more case studies on how to use WatFinder.
 
@@ -24,8 +54,7 @@ bridges as adenylate kinase transitions from the closed to open state
    :scale: 40 %
 
 
-IPython notebook (ipynb): caseStudy1_
-
+IPython notebook (ipynb): |_caseStudy11| 
 
 Case study 2
 -------------------------------------------------------------------------------
@@ -36,7 +65,7 @@ transporter VMAT2
 .. figure:: images/caseStudy2.jpg
    :scale: 40 %
 
-IPython notebook (ipynb): caseStudy2_
+IPython notebook (ipynb): |_caseStudy12|
 
 
 Case study 3
@@ -49,7 +78,7 @@ Aurora kinase A crystal structures identified by BLAST
    :scale: 40 %
 
 
-IPython notebook (ipynb): caseStudy3_
+IPython notebook (ipynb): |_caseStudy13|
 
 
 Case study 4
@@ -61,7 +90,7 @@ Derection of protein-water interactions that facilitate ligand binding
    :scale: 40 %
 
 
-IPython notebooks (ipynb): caseStudy4a_ (protein only) and caseStudy4b_ (protein+ligand)
+IPython notebooks (ipynb): |_caseStudy14a| (protein only) and |_caseStudy14b| (protein+ligand)
 
 
 Case study 5
@@ -75,7 +104,7 @@ including timing for selected regions
    :scale: 40 %
 
 
-IPython notebook (ipynb): caseStudy5_
+IPython notebook (ipynb): |_caseStudy15|
 
 
 
@@ -86,7 +115,7 @@ WatFinder Parameter Adjustments
 .. figure:: images/caseStudy6.jpg
    :scale: 40 %
 
-
+IPython notebook (ipynb): |_caseStudy16|
 
 The description of all cases are available in the supplementary file of WatFinder paper which
-will be available soon. Trejactories are in tutorial's files.
+will be available soon. Trojectories are in tutorial's files and |_caseStudyfiles|.
