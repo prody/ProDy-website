@@ -89,4 +89,4 @@ WatFinder Parameter Adjustments
 
 
 The description of all cases are available in the supplementary file of WatFinder paper which
-will be available soon. Trejactories are in tutorial's files.
+will be available soon. Trajectories are in tutorial's files.
