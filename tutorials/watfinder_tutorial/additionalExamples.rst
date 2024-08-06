@@ -12,31 +12,31 @@ Additional examples of WatFinder utility
 .. _caseStudy6: ../watfinder_tutorial/ipynb_file/caseStudy6.ipynb
 .. |_caseStudy6_tab1_1| raw:: html 
 
-   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab1_1.ipynb' download="caseStudy6_tab1_1.ipynb">caseStudy6_tab1_1</a>
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab1_1.ipynb' download="watfinder_tab1_1.ipynb">watfinder_tab1_1</a>
 .. |_caseStudy6_tab1_2| raw:: html 
 
-   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab1_2.ipynb' download="caseStudy6_tab1_2.ipynb">caseStudy6_tab1_2</a>
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab1_2.ipynb' download="watfinder_tab1_2.ipynb">watfinder_tab1_2</a>
 .. |_caseStudy6_tab1_3| raw:: html 
   
-   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab1_3.ipynb' download="caseStudy6_tab1_3.ipynb">caseStudy6_tab1_3</a>
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab1_3.ipynb' download="watfinder_tab1_3.ipynb">watfinder_tab1_3</a>
 .. |_caseStudy6_tab1_4| raw:: html 
 
-   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab1_4.ipynb' download="caseStudy6_tab1_4.ipynb">caseStudy6_tab1_4</a>
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab1_4.ipynb' download="watfinder_tab1_4.ipynb">watfinder_tab1_4</a>
 .. |_caseStudy6_tab1_5| raw:: html 
  
-   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab1_5.ipynb' download="caseStudy6_tab1_5.ipynb">caseStudy6_tab1_5</a>
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab1_5.ipynb' download="watfinder_tab1_5.ipynb">watfinder_tab1_5</a>
 .. |_caseStudy6_tab2_1| raw:: html 
 
-   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab2_1.ipynb' download="caseStudy6_tab2_1.ipynb">caseStudy6_tab2_1</a>
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab2_1.ipynb' download="watfinder_tab2_1.ipynb">watfinder_tab2_1</a>
 .. |_caseStudy6_tab2_2| raw:: html 
 
-   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab2_2.ipynb' download="caseStudy6_tab2_2.ipynb">caseStudy6_tab2_2</a>
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab2_2.ipynb' download="watfinder_tab2_2.ipynb">watfinder_tab2_2</a>
 .. |_caseStudy6_tab2_3| raw:: html 
 
-   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab2_3.ipynb' download="caseStudy6_tab2_3.ipynb">caseStudy6_tab2_3</a>
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab2_3.ipynb' download="watfinder_tab2_3.ipynb">watfinder_tab2_3</a>
 .. |_caseStudy6_tab2_4| raw:: html 
 
-   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab2_4.ipynb' download="caseStudy6_tab2_4.ipynb">caseStudy6_tab2_4</a>
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab2_4.ipynb' download="watfinder_tab2_4.ipynb">watfinder_tab2_4</a>
 
 .. |_caseStudy11| raw:: html 
 
@@ -136,7 +136,7 @@ IPython notebook (ipynb): |_caseStudy15|
 
 
 
-WatFinder Parameter Adjustments
+Example 6: WatFinder Parameter Adjustments
 -------------------------------------------------------------------------------
 
 
@@ -164,4 +164,4 @@ IPython notebook (ipynb): |_caseStudy6_tab2_3|
 IPython notebook (ipynb): |_caseStudy6_tab2_4|
 
 The description of all cases are available in the supplementary file of WatFinder paper which
-will be available soon. Trojectories are in tutorial's files and |_caseStudyfiles|.
+will be available soon. Trajectories are in tutorial's files and |_caseStudyfiles|.
