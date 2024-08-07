@@ -34,6 +34,7 @@ setup:
 	ls -hgoL $(BASENAME)_files/ | tail -n +2 | cut -b 14-128 > files.txt; fi
 
 html: setup
+	@echo "Copy files first:" ${PWD}
 	cp -p -r ipynb_file ../../_build/html/tutorials/$(BASENAME)/
 	cd $(WORKDIR); $(SPHINXBUILD) -b html -d ../$(BUILDDIR)/doctrees ../ ../$(BUILDDIR)/html
 	@echo
