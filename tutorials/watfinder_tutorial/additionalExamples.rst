@@ -9,7 +9,15 @@ Additional examples of WatFinder utility
 .. _caseStudy4a: ../watfinder_tutorial/ipynb_file/caseStudy4a.ipynb
 .. _caseStudy4b: ../watfinder_tutorial/ipynb_file/caseStudy4b.ipynb
 .. _caseStudy5: ../watfinder_tutorial/ipynb_file/caseStudy5.ipynb
-.. _caseStudy6: ../watfinder_tutorial/ipynb_file/caseStudy6.ipynb
+.. _caseStudy6_tab1_1: ../watfinder_tutorial/ipynb_file/caseStudy6_tab1_1.ipynb
+.. _caseStudy6_tab1_2: ../watfinder_tutorial/ipynb_file/caseStudy6_tab1_2.ipynb
+.. _caseStudy6_tab1_3: ../watfinder_tutorial/ipynb_file/caseStudy6_tab1_3.ipynb
+.. _caseStudy6_tab1_4: ../watfinder_tutorial/ipynb_file/caseStudy6_tab1_4.ipynb
+.. _caseStudy6_tab1_5: ../watfinder_tutorial/ipynb_file/caseStudy6_tab1_5.ipynb
+.. _caseStudy6_tab2_1: ../watfinder_tutorial/ipynb_file/caseStudy6_tab2_1.ipynb
+.. _caseStudy6_tab2_2: ../watfinder_tutorial/ipynb_file/caseStudy6_tab2_2.ipynb
+.. _caseStudy6_tab2_3: ../watfinder_tutorial/ipynb_file/caseStudy6_tab2_3.ipynb
+.. _caseStudy6_tab2_4: ../watfinder_tutorial/ipynb_file/caseStudy6_tab2_4.ipynb
 
 
 Here, we present several more case studies on how to use WatFinder.
@@ -86,7 +94,11 @@ WatFinder Parameter Adjustments
 .. figure:: images/caseStudy6.jpg
    :scale: 40 %
 
+IPython notebook (ipynb): caseStudy6_tab2_1_
+IPython notebook (ipynb): caseStudy6_tab2_2_
+IPython notebook (ipynb): caseStudy6_tab2_3_
+IPython notebook (ipynb): caseStudy6_tab2_4_
 
 
-The description of all cases are available in the supplementary file of WatFinder paper which
-will be available soon. Trajectories are in tutorial's files.
+The description of all cases are available in the supplementary file of WatFinder paper
+[JK24]_. Trejactories are in tutorial's files.
