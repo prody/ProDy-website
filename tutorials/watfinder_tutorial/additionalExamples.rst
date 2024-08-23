@@ -101,4 +101,4 @@ IPython notebook (ipynb): caseStudy6_tab2_4_
 
 
 The description of all cases are available in the supplementary file of WatFinder paper
-[JK24]_. Trejactories are in tutorial's files.
+[JK24]_. Trajectories are in tutorial's files.
