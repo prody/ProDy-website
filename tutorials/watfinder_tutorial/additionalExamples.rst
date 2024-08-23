@@ -107,5 +107,5 @@ IPython notebook (ipynb): caseStudy6_tab2_3_
 IPython notebook (ipynb): caseStudy6_tab2_4_
 
 
-The description of all cases are available in the supplementary file of WatFinder paper which
-will be available soon. Trejactories are in tutorial's files.
+The description of all cases are available in the supplementary file of WatFinder paper
+[JK24]_. Trejactories are in tutorial's files.
