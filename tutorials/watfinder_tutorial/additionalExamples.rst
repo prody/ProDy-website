@@ -163,5 +163,5 @@ IPython notebook (ipynb): |_caseStudy6_tab2_3|
 
 IPython notebook (ipynb): |_caseStudy6_tab2_4|
 
-The description of all cases are available in the supplementary file of WatFinder paper which
-will be available soon. Trajectories are in tutorial's files and |_caseStudyfiles|.
+The description of all cases are available in the supplementary file of WatFinder paper
+[JK24]_. Trajectories are in tutorial's files.

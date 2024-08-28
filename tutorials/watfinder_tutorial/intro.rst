@@ -59,3 +59,14 @@ First, we will make necessary imports from ProDy and Matplotlib packages.
 We have included these imports in every part of the tutorial so that the
 code copied from the online pages is complete. You do not need to repeat
 imports in the same Python session.
+
+
+How to Cite
+-------------------------------------------------------------------------------
+
+If you benefited from WatFinder Calculations in your research, 
+please cite the following paper:
+
+.. [JK24] Krieger JM, Doljanin F, Bogetti AT, Zhang F, Manivarma T, Bahar I,
+   Mikulska-Ruminska K. WatFinder: A ProDy tool for protein-water
+   interactions. *Bioinformatics* **2024** btae516.
