@@ -8,3 +8,8 @@ try:
     execfile('../conf.py')
 except NameError:
     exec(open('../conf.py').read())
+
+#try:
+#    execfile('/home/exx/prody/ProDy-website/ProDy/docs/conf.py')
+#except NameError:
+#    exec(open('/home/exx/prody/ProDy-website/ProDy/docs/conf.py').read())

@@ -15,8 +15,7 @@ already.
    from prody import *
    from pylab import *
    ion()
-
-
+ 
 Mode Ensemble
 -------------------------------------------------------------------------------
 

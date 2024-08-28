@@ -1,4 +1,4 @@
-.. _watfinder_tutorial:
+.. _watfinder_homogeneous:
 
 Finding significant crystallographic waters across heterogeneous X-ray structures
 ===============================================================================

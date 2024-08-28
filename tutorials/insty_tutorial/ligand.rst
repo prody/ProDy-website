@@ -30,18 +30,21 @@ before. Selected elements, such as protein and ligand MES, will be saved in
 a separate PDB file in the local directory.
 
 .. ipython:: python
+
    atoms2 = parsePDB('5kqm_all_sci.pdb').select('protein or resname MES')
 
 
 To compute the interactions use :func:`.calcLigandInteractions` function:
 
 .. ipython:: python
+
    ligands_interactions, ligands = calcLigandInteractions(atoms2)
 
 
 The type of the ligand can be checked as follows:
 
 .. ipython:: python
+
    ligands
 
 
@@ -49,6 +52,7 @@ To display the interactions between protein and ligand MES use
 func:`.listLigandInteractions` function:
 
 .. ipython:: python
+
    ligandMES_interactions = ligands_interactions[0]
    protein_ligand_interactions = listLigandInteractions(ligandMES_interactions)
 
@@ -126,6 +130,7 @@ protein_ligand_interactions3 = listLigandInteractions(ligand046_interactions)
 Interactions can be saved for visualization in VMD_:
 
 .. ipython:: python
+
    showLigandInteraction_VMD(atoms3,protein_ligand_interactions3)
 
 

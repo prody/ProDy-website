@@ -24,7 +24,7 @@ Let's get started by getting ANM models for two related protein structures:
 
 .. ipython:: python
 
-   matches = matchChains(str1, str2)
+   matches = matchChains(str1.protein, str2.protein)
    match = matches[0]
    ch1 = match[0]
    ch2 = match[1]

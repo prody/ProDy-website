@@ -1,4 +1,4 @@
-.. _watfinder_tutorial:
+.. _watfinder_ensemble:
 
 Water bridges detection in an Ensemble PDB
 ===============================================================================

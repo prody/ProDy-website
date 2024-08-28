@@ -17,16 +17,17 @@ First, we parse p38 structure :file:`p38.pdb`:
 
 .. ipython:: python
 
-   p38 = parsePDB('conformational_sampling_files/p38.pdb')
+   p38 = parsePDB('p38.pdb')
    p38
 
 Let's take a look at the structure:
 
 .. ipython:: python
 
-   showProtein(p38);
+   showProtein(p38)
    @savefig conformational_sampling_p38.png width=4in
-   legend();
+   legend()
+
 
 Note that this structure has hydrogen atoms which were added using PSFGEN that
 comes with NAMD:

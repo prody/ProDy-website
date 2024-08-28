@@ -16,7 +16,7 @@ Again here are the imports if you need them.
    from prody import *
    from pylab import *
    ion()
-
+  
 Load PDBEnsemble and ModeEnsemble
 -------------------------------------------------------------------------------
 
