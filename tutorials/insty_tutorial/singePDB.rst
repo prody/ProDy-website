@@ -960,6 +960,57 @@ The total number of interaction for each residue can be displayed on the plot us
    :scale: 80 %
 
 
+Additionally, we can also assign the energy to the pairs of
+identified interactions using :meth:`.Interactions.buildInteractionMatrixEnergy`
+method:
+
+.. ipython:: python
+   :verbatim:
+
+   matrix_en = interactions.buildInteractionMatrixEnergy()
+
+.. parsed-literal::
+
+   @> Calculating interactions
+
+The results can be displayed in the following way:
+
+.. ipython:: python
+   :verbatim:
+
+    import matplotlib.pylab as plt
+    showAtomicMatrix(matrix_en, atoms=atoms.ca, cmap='seismic', markersize=8)
+    plt.xlabel('Residue')
+    plt.ylabel('Residue')
+    plt.clim([-3,3])
+
+.. figure:: images/single_imshow_en.png
+   :scale: 50 %
+
+The total energy of interaction for each residue can be displayed on the plot using
+:func:`.showCumulativeInteractionTypes()` function with ``energy=True``.
+
+.. ipython:: python
+   :verbatim:
+
+   interactions.showCumulativeInteractionTypes(energy=True)
+
+.. parsed-literal::
+
+   @> Calculating interactions
+   @> Calculating interactions
+   @> Calculating interactions
+   @> Calculating interactions
+   @> Calculating interactions
+   @> Calculating interactions
+   @> Calculating interactions
+
+
+.. parsed-literal::
+
+.. figure:: images/single_bar_plot_en.png
+   :scale: 80 %
+
 
 Visualize number of interactions onto 3D structure
 -------------------------------------------------------------------------------
