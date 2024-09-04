@@ -1015,7 +1015,7 @@ The total energy of interaction for each residue can be displayed on the plot us
 Visualize number of interactions onto 3D structure
 -------------------------------------------------------------------------------
 
-The number of the interaction can be saved to a PDB file in the
+The number of the interaction or total energy can be saved to a PDB file in the
 *Occupancy* column by using :meth:`.Interactions.saveInteractionsPDB`
 method. Then the score would be displayed in color in any available graphical
 program, for example, in VMD_.
@@ -1037,6 +1037,22 @@ Color Controls -> Color Scale -> Method to BWR`.
 
 .. figure:: images/fig1.png
    :scale: 50 %
+
+
+To save energy of interaction instead of number of interactions we can use
+the following command:
+
+ 
+.. ipython:: python
+   :verbatim:
+
+   interactions.saveInteractionsPDB(filename='5kqm_meanMatrix_en.pdb', energy=True)
+
+.. parsed-literal::
+
+   @> PDB file saved.
+
+
 
 
 Exclude some interaction types from calculations
