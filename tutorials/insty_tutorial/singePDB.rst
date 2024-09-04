@@ -953,13 +953,6 @@ The total number of interaction for each residue can be displayed on the plot us
    @> Calculating interactions
    @> Calculating interactions
 
-The results with the higest number of possible contacts can be saved in PDB
-file. They will be restored in ``Occupancy`` column and display in VMD_.
-
-.. ipython:: python
-   :verbatim:
-
-   interactions.saveInteractionsPDB(filename='5kqm_meanMatrix.pdb')
 
 .. parsed-literal::
 
