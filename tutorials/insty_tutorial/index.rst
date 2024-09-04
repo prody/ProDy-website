@@ -10,7 +10,7 @@ Interactions and Stability (InSty) analysis
 
     You can also read this tutorial in `PDF format <insty_tutorial.pdf>`_.
 
-    Tutorial files: `ZIP <insty.zip>`_ `TGZ <insty.tgz>`_
+    Tutorial files: `ZIP <insty_tutorial_files.zip>`_ `TGZ <insty_tutorial_files.tgz>`_
 
 .. add .rst files to `toctree` in the order that you want them
 

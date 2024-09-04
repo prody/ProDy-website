@@ -118,7 +118,7 @@ latex:
 	@echo "Run \`make' in that directory to run these through (pdf)latex" \
 	      "(use \`make latexpdf' here to do that automatically)."
 
-latexpdf:
+latexpdf: setup
 	cd $(WORKDIR); $(SPHINXBUILD) -b latex -d ../_build/doctrees .. ../_build/latex
 	@echo "Running LaTeX files through pdflatex..."
 	$(MAKE) -C $(BUILDDIR)/latex all-pdf
@@ -170,7 +170,7 @@ doctest:
 
 archive:
 	ls -hgoL comd_tutorial_files/ | tail -n +2 | cut -b 14-128 > files.txt
-	tar -czf comd_plugin_files.tgz comd/*
-	zip comd_plugin_files.zip comd/*
+	tar -czf comd_plugin_files.tgz comd_tutorial_files/*
+	zip comd_plugin_files.zip comd_tutorial_files/*
 	tar -czf comd_tutorial_files.tgz comd_tutorial_files/*
 	zip comd_tutorial_files.zip comd_tutorial_files/*

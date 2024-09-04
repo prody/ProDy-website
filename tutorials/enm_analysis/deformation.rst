@@ -38,7 +38,7 @@ calculate the deformation vector:
 
 .. ipython:: python
 
-   matches = matchChains(reference, mobile)
+   matches = matchChains(reference.protein, mobile.protein)
 
 :func:`.matchChains` function returns a list. If there are no matching chains,
 list is empty, else the list contains a tuple for each pair of matching chains.

@@ -8,7 +8,7 @@ Perturbation Response Scanning Calculations
 
 .. only:: html
 
-    You can also read this tutorial in `PDF format <perturb_response.pdf>`_.
+    You can also read this tutorial in `PDF format <prs_tutorial.pdf>`_.
 
 .. add .rst files to `toctree` in the order that you want them
 

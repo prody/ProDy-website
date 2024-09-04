@@ -8,7 +8,7 @@ Cryo-EM Dynamics (CryoDy)
 
 .. only:: html
 
-    You can also read this tutorial in `PDF format <cryoem_analysis.pdf>`_.
+    You can also read this tutorial in `PDF format <cryoem_tutorial.pdf>`_.
 
     Tutorial files: `ZIP <cryoem_tutorial_files.zip>`_ `TGZ <cryoem_tutorial_files.tgz>`_
 

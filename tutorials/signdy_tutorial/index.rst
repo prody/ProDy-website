@@ -8,7 +8,7 @@ Signature Dynamics
 
 .. only:: html
 
-    You can also read this tutorial in `PDF format <signdy.pdf>`_.
+    You can also read this tutorial in `PDF format <signdy_tutorial.pdf>`_.
 
 .. add .rst files to `toctree` in the order that you want them
 

@@ -1,4 +1,4 @@
-.. _watfinder_tutorial:
+.. _watfinder_additional:
 
 Additional examples of WatFinder utility
 ===============================================================================
@@ -9,16 +9,66 @@ Additional examples of WatFinder utility
 .. _caseStudy4a: ../watfinder_tutorial/ipynb_file/caseStudy4a.ipynb
 .. _caseStudy4b: ../watfinder_tutorial/ipynb_file/caseStudy4b.ipynb
 .. _caseStudy5: ../watfinder_tutorial/ipynb_file/caseStudy5.ipynb
-.. _caseStudy6_tab1_1: ../watfinder_tutorial/ipynb_file/caseStudy6_tab1_1.ipynb
-.. _caseStudy6_tab1_2: ../watfinder_tutorial/ipynb_file/caseStudy6_tab1_2.ipynb
-.. _caseStudy6_tab1_3: ../watfinder_tutorial/ipynb_file/caseStudy6_tab1_3.ipynb
-.. _caseStudy6_tab1_4: ../watfinder_tutorial/ipynb_file/caseStudy6_tab1_4.ipynb
-.. _caseStudy6_tab1_5: ../watfinder_tutorial/ipynb_file/caseStudy6_tab1_5.ipynb
-.. _caseStudy6_tab2_1: ../watfinder_tutorial/ipynb_file/caseStudy6_tab2_1.ipynb
-.. _caseStudy6_tab2_2: ../watfinder_tutorial/ipynb_file/caseStudy6_tab2_2.ipynb
-.. _caseStudy6_tab2_3: ../watfinder_tutorial/ipynb_file/caseStudy6_tab2_3.ipynb
-.. _caseStudy6_tab2_4: ../watfinder_tutorial/ipynb_file/caseStudy6_tab2_4.ipynb
+.. _caseStudy6: ../watfinder_tutorial/ipynb_file/caseStudy6.ipynb
+.. |_caseStudy6_tab1_1| raw:: html 
 
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab1_1.ipynb' download="watfinder_tab1_1.ipynb">watfinder_tab1_1</a>
+.. |_caseStudy6_tab1_2| raw:: html 
+
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab1_2.ipynb' download="watfinder_tab1_2.ipynb">watfinder_tab1_2</a>
+.. |_caseStudy6_tab1_3| raw:: html 
+  
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab1_3.ipynb' download="watfinder_tab1_3.ipynb">watfinder_tab1_3</a>
+.. |_caseStudy6_tab1_4| raw:: html 
+
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab1_4.ipynb' download="watfinder_tab1_4.ipynb">watfinder_tab1_4</a>
+.. |_caseStudy6_tab1_5| raw:: html 
+ 
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab1_5.ipynb' download="watfinder_tab1_5.ipynb">watfinder_tab1_5</a>
+.. |_caseStudy6_tab2_1| raw:: html 
+
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab2_1.ipynb' download="watfinder_tab2_1.ipynb">watfinder_tab2_1</a>
+.. |_caseStudy6_tab2_2| raw:: html 
+
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab2_2.ipynb' download="watfinder_tab2_2.ipynb">watfinder_tab2_2</a>
+.. |_caseStudy6_tab2_3| raw:: html 
+
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab2_3.ipynb' download="watfinder_tab2_3.ipynb">watfinder_tab2_3</a>
+.. |_caseStudy6_tab2_4| raw:: html 
+
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab2_4.ipynb' download="watfinder_tab2_4.ipynb">watfinder_tab2_4</a>
+
+.. |_caseStudy11| raw:: html 
+
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy1.ipynb' download="caseStudy1.ipynb">caseStudy1</a>
+
+.. |_caseStudy12| raw:: html 
+
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy2.ipynb' download="caseStudy2.ipynb">caseStudy2</a>
+
+.. |_caseStudy13| raw:: html 
+
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy3.ipynb' download="caseStudy3.ipynb">caseStudy3</a>
+
+.. |_caseStudy14a| raw:: html 
+
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy4a.ipynb' download="caseStudy4a.ipynb">caseStudy4a</a>
+
+.. |_caseStudy14b| raw:: html 
+
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy4b.ipynb' download="caseStudy4b.ipynb">caseStudy4b</a>
+
+.. |_caseStudy15| raw:: html 
+
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy5.ipynb' download="caseStudy5.ipynb">caseStudy5</a>
+   
+.. |_caseStudy16| raw:: html 
+
+   <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6.ipynb' download="caseStudy6.ipynb">caseStudy6</a>
+
+.. |_caseStudyfiles| raw:: html 
+
+   <a href="http://bahar.labs.stonybrook.edu/watFinder_tutorial_files/" target="_blank">here</a>
 
 Here, we present several more case studies on how to use WatFinder.
 
@@ -32,8 +82,7 @@ bridges as adenylate kinase transitions from the closed to open state
    :scale: 40 %
 
 
-IPython notebook (ipynb): caseStudy1_
-
+IPython notebook (ipynb): |_caseStudy11| 
 
 Case study 2
 -------------------------------------------------------------------------------
@@ -44,7 +93,7 @@ transporter VMAT2
 .. figure:: images/caseStudy2.jpg
    :scale: 40 %
 
-IPython notebook (ipynb): caseStudy2_
+IPython notebook (ipynb): |_caseStudy12|
 
 
 Case study 3
@@ -57,7 +106,7 @@ Aurora kinase A crystal structures identified by BLAST
    :scale: 40 %
 
 
-IPython notebook (ipynb): caseStudy3_
+IPython notebook (ipynb): |_caseStudy13|
 
 
 Case study 4
@@ -69,7 +118,7 @@ Derection of protein-water interactions that facilitate ligand binding
    :scale: 40 %
 
 
-IPython notebooks (ipynb): caseStudy4a_ (protein only) and caseStudy4b_ (protein+ligand)
+IPython notebooks (ipynb): |_caseStudy14a| (protein only) and |_caseStudy14b| (protein+ligand)
 
 
 Case study 5
@@ -83,29 +132,36 @@ including timing for selected regions
    :scale: 40 %
 
 
-IPython notebook (ipynb): caseStudy5_
+IPython notebook (ipynb): |_caseStudy15|
 
 
 
-WatFinder Parameter Adjustments
+Example 6: WatFinder Parameter Adjustments
 -------------------------------------------------------------------------------
 
 
 .. figure:: images/caseStudy6.jpg
    :scale: 40 %
 
+  
+   
+IPython notebook (ipynb): |_caseStudy6_tab1_1|
 
-IPython notebook (ipynb): caseStudy6_tab1_1_
-IPython notebook (ipynb): caseStudy6_tab1_2_
-IPython notebook (ipynb): caseStudy6_tab1_3_
-IPython notebook (ipynb): caseStudy6_tab1_4_
-IPython notebook (ipynb): caseStudy6_tab1_5_
+IPython notebook (ipynb): |_caseStudy6_tab1_2|
 
-IPython notebook (ipynb): caseStudy6_tab2_1_
-IPython notebook (ipynb): caseStudy6_tab2_2_
-IPython notebook (ipynb): caseStudy6_tab2_3_
-IPython notebook (ipynb): caseStudy6_tab2_4_
+IPython notebook (ipynb): |_caseStudy6_tab1_3|
 
+IPython notebook (ipynb): |_caseStudy6_tab1_4|
+
+IPython notebook (ipynb): |_caseStudy6_tab1_5|
+
+IPython notebook (ipynb): |_caseStudy6_tab2_1|
+
+IPython notebook (ipynb): |_caseStudy6_tab2_2|
+
+IPython notebook (ipynb): |_caseStudy6_tab2_3|
+
+IPython notebook (ipynb): |_caseStudy6_tab2_4|
 
 The description of all cases are available in the supplementary file of WatFinder paper
-[JK24]_. Trejactories are in tutorial's files.
+[JK24]_. Trajectories are in tutorial's files.

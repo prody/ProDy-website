@@ -1,4 +1,4 @@
-.. _watfinder_tutorial:
+.. _watfinder_single:
 
 Water bridges detection in a single PDB structure
 ===============================================================================
