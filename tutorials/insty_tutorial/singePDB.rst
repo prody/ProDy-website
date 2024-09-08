@@ -960,9 +960,54 @@ The total number of interaction for each residue can be displayed on the plot us
    :scale: 80 %
 
 
-Additionally, we can also assign the energy to the pairs of
-identified interactions using :meth:`.Interactions.buildInteractionMatrixEnergy`
-method:
+
+Energy of interactions
+-------------------------------------------------------------------------------
+
+Additionally, we can also obtain energy of the pairs of identified interactions 
+with several functions. One of them is :meth:`.showPairEnergy` method that will 
+check the energy of interactions for pairs of residues and add it to the
+interactions list. Energies will be added at the last position for each
+pair.
+
+
+.. ipython:: python
+   :verbatim:
+
+   showPairEnergy(interactions.getHydrogenBonds())
+
+.. parsed-literal::
+
+   [['ARG101', 'NH1_1516', 'P', 'ASP98', 'OD1_1463', 'P', 1.998, 33.1238, -3.92],
+   ['HIS72', 'NE2_1042', 'P', 'ASN15', 'OD1_165', 'P', 2.5997, 34.752, -3.05],
+   ['GLN143', 'NE2_2192', 'P', 'GLU139', 'OE2_2126', 'P', 2.7287, 9.1823, -3.45],
+   ['HIS66', 'NE2_957', 'P', 'GLU139', 'OE1_2125', 'P', 2.7314, 6.3592, -3.15],
+   ['ARG40', 'N_561', 'P', 'LYS6', 'O_37', 'P', 2.7479, 17.1499, -2.11],
+   ['ARG58', 'N_813', 'P', 'ASP56', 'OD1_788', 'P', 2.7499, 29.9737, -3.92],
+   ['ALA45', 'N_634', 'P', 'ARG75', 'O_1097', 'P', 2.7609, 35.0983, -3.26],
+   ['ASN53', 'ND2_747', 'P', 'GLU50', 'OE1_708', 'P', 2.7702, 18.2336, -2.43],
+   ['ALA74', 'N_1064', 'P', 'ASN53', 'O_751', 'P', 2.7782, 21.3375, -2.06],
+   ['ASP56', 'N_780', 'P', 'ILE16', 'O_189', 'P', 2.7793, 27.0481, -3.46],
+   ['LYS110', 'NZ_1667', 'P', 'THR84', 'O_1240', 'P', 2.7977, 38.2213, -1.64],
+   ['LEU116', 'N_1758', 'P', 'CYS90', 'O_1342', 'P', 2.8072, 15.0239, -6.13],
+   ['SER103', 'N_1546', 'P', 'LEU99', 'O_1485', 'P', 2.8075, 29.107, -4.12],
+   ['ASN134', 'N_2045', 'P', 'ASP137', 'OD2_2091', 'P', 2.8132, 22.562, -2.5],
+   ['PHE152', 'N_2321', 'P', 'CYS148', 'O_2275', 'P', 2.8141, 8.2562, -4.81],
+   ['ASN95', 'N_1398', 'P', 'ASP92', 'OD1_1368', 'P', 2.8148, 12.5701, -2.5],
+   ['LYS6', 'N_16', 'P', 'ASN38', 'O_536', 'P', 2.8178, 25.0305, -1.63],
+   ['ILE77', 'N_1115', 'P', 'ALA45', 'O_643', 'P', 2.8179, 12.1855, -4.45],
+   ['ARG58', 'NH2_832', 'P', 'ASP56', 'OD2_789', 'P', 2.8204, 27.6617, -3.92],
+   ['LEU99', 'N_1467', 'P', 'ASN95', 'O_1411', 'P', 2.8205, 15.4867, -3.94],
+   ['CYS149', 'N_2276', 'P', 'CYS145', 'O_2224', 'P', 2.8247, 9.5914, -7.23],
+   ['GLY52', 'N_731', 'P', 'ALA74', 'O_1073', 'P', 2.832, 6.6442, -2.24],
+   ['ASP32', 'N_435', 'P', 'LYS28', 'O_385', 'P', 2.8357, 8.8318, -2.47],
+   ['ILE88', 'N_1294', 'P', 'LYS112', 'O_1704', 'P', 2.8429, 17.7147, -2.88],
+   ..
+   ..
+
+
+Another function is :meth:`.Interactions.buildInteractionMatrixEnergy` which
+provides matrix with energies of interactions for each pair.
 
 .. ipython:: python
    :verbatim:
@@ -972,6 +1017,7 @@ method:
 .. parsed-literal::
 
    @> Calculating interactions
+
 
 The results can be displayed in the following way:
 
@@ -986,6 +1032,7 @@ The results can be displayed in the following way:
 
 .. figure:: images/single_imshow_en.png
    :scale: 50 %
+
 
 The total energy of interaction for each residue can be displayed on the plot using
 :func:`.showCumulativeInteractionTypes()` function with ``energy=True``.
@@ -1051,7 +1098,6 @@ the following command:
 .. parsed-literal::
 
    @> PDB file saved.
-
 
 
 
