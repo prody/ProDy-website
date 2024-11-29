@@ -20,6 +20,7 @@ ClustENMD
 
    intro
    clustenmd
+   anmd
 
 .. only:: html
 
