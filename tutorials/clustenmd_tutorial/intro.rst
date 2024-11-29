@@ -18,8 +18,8 @@ is subjected to energy minimization, producing physically reasonable conformers 
 A key feature of ANMD is that each successive mode is sampled with a lower amplitude related to its frequency.
 
 The first part of this tutorial demonstrates how to use ClustENMD to perform conformational sampling for the homo-dimeric enzyme 
-HIV-1 protease in an open conformation without any ligand (PDB id: 1tw7). Next, we show the application of
-ProDy ensemble analysis tools to study the conformers and generate their population distribution. 
+HIV-1 protease in an open conformation without any ligand (PDB id: 1tw7). Furthermore, we will show the application of
+ProDy ensemble analysis tools to study the conformers and generate their population distribution.
 
 The last part demonstrates how to use ANMD to explore the first two modes of a metabotropic glutamate receptor
 N-terminal domain (PDB id: 1ewk). 
@@ -63,17 +63,17 @@ If you benefited from ClustENMD in your research, please cite the following pape
 
 .. [KD16] Kurkcuoglu Z., Bahar I., and Doruker P., 
    ClustENM: ENM-Based Sampling of Essential Conformational Space at Full Atomic
-   Resolution. *J Chem Theory Comput* **2016** 12: 4549.
+   Resolution, *J Chem Theory Comput* **2016** 12: 4549.
 
 .. [KD21] Kaynak B.T., Zhang S., Bahar I., and Doruker P., 
-   ClustENMD: Efficient sampling of biomolecular conformational space at atomic resolution.
+   ClustENMD: Efficient sampling of biomolecular conformational space at atomic resolution,
    *Bioinformatics* **2021** 37(21): 3956–3958. 
 
 .. [CM22] Mary Hongying Cheng, James M Krieger, Anupam Banerjee, Yufei Xiang, 
    Burak Kaynak, Yi Shi, Moshe Arditi, Ivet Bahar. 
    Impact of new variants on SARS-CoV-2 infectivity and neutralization: 
    A molecular assessment of the alterations in the spike-host protein 
-   interactions. *iScience* **2022** 25(3):103939.
+   interactions, *iScience* **2022** 25(3):103939.
 
 
 Additionally, please also cite the following paper for OpenMM:
