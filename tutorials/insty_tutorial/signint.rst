@@ -11,7 +11,8 @@ steps: (i) download PDB (ii), extract particular chains, (iii) add
 hydrogens/side chains, (iv) perform structural alignment (v) create a
 folder and put their prepared structures.
 
-As an example, we will use Aurora kinase A structure(PDB: **1OL5**).
+As an example, we will use Aurora kinase A structure (PDB: **1OL5**).
+
 
 
 BLAST approach
@@ -583,8 +584,11 @@ Now, we need to go to the newly created folder ``struc_homologs_BLAST`` and use
 of interactions. We cannot do it in an automatic way becasue each system is
 different and often default parameters of ``numC`` and ``distC`` should be tuned.
 
-To compute fingerprint interactions of hydrogen bonds use the command below.
-This function uses the prefix ``INT_HBs_`` to select analyzed interactions.
+To compute fingerprint interactions of hydrogen bonds, use the command below.
+This function uses the prefix ``INT_HBs_`` to select analyzed interactions. 
+Originally, :func:`.findClusterCenters` was created to analyze water clusters
+with the WatFinder module. To apply it here, we are changing the ``selection``
+to ``resnume DUM`` given to dummy atoms that represent interactions.  
 
 .. ipython:: python
    :verbatim:
