@@ -19,9 +19,9 @@ BLAST approach
 
 We will use the PDB code and chain ID to access information from the BLAST server.
 Additionally, we can also define many different types of parameters. Here, we
-will define sequence identity (seqid) and the method to add missing hydrogen bonds
-and side chains (fixer; it can be PDBFixer or Openbabel). We can also define a name for
-a folder in which all the downloaded files will be uploaded. 
+will define sequence identity (``seqid``) and the method to add missing hydrogen bonds
+and side chains (``fixer``; it can be PDBFixer or Openbabel). We can also define a name for
+a folder in which all the downloaded files will be uploaded (``folder_name``). 
 
 To download homologs, add missing hydrogens and align structures, we will
 use :func:`.runBLAST` function:
@@ -305,13 +305,14 @@ To compute all types of interactions for each homolog, we use
 :func:`.calcSignatureInteractions` function, and we are providing the name of the
 folder with the structures.
  
-This function will create additional files with the prefix **'INT_'+type of interactions**
-for each file. In such a file except for protein structure, we will have dummy atoms
-that will correspond to the interactions. The dummy atoms will be inserted
-exactly between the residue-residue pair which is interacting. 
-We are computing seven types of non-covalent interactions (hydrogen bonds - HBs,
-salt bridges - SBs, repulsive ionic bonding - RIB, pi-cation - PiCat,
-pi-stacking - PiStack, hydrophobic interactions - HPh, and disulfide bonds - DiBs).
+This function will create additional files with the prefix ``'INT_'+type of
+interactions`` for each file. In such a file except for protein structure,
+we will have dummy atoms that will correspond to the interactions. 
+The dummy atoms will be inserted exactly between the residue-residue pair which
+is interacting. We are computing seven types of non-covalent interactions 
+(hydrogen bonds - HBs, salt bridges - SBs, repulsive ionic bonding - RIB, 
+pi-cation - PiCat, pi-stacking - PiStack, hydrophobic interactions - HPh,
+and disulfide bonds - DiBs).
 
 
 .. ipython:: python
@@ -320,7 +321,6 @@ pi-stacking - PiStack, hydrophobic interactions - HPh, and disulfide bonds - DiB
    calcSignatureInteractions('struc_homologs_BLAST')
 
 .. parsed-literal::
-
 
    @> struc_homologs_BLAST/align__addH_5l8kA.pdb
    @> 4385 atoms and 1 coordinate set(s) were parsed in 0.04s.
@@ -578,13 +578,13 @@ pi-stacking - PiStack, hydrophobic interactions - HPh, and disulfide bonds - DiB
    ..
 
 
-Now, we need to go to the newly created folder struc_homologs_BLAST and use
+Now, we need to go to the newly created folder ``struc_homologs_BLAST`` and use
 :func:`.findClusterCenters` for each type of interactions to detect clusters
 of interactions. We cannot do it in an automatic way becasue each system is
-different and often default parameters of *numC* and *distC* should be tuned.
+different and often default parameters of ``numC`` and ``distC`` should be tuned.
 
 To compute fingerprint interactions of hydrogen bonds use the command below.
-This function uses the prefix 'INT_HBs_' to select analyzed interactions.
+This function uses the prefix ``INT_HBs_`` to select analyzed interactions.
 
 .. ipython:: python
    :verbatim:
@@ -614,7 +614,7 @@ This function uses the prefix 'INT_HBs_' to select analyzed interactions.
 
 
 To compute fingerprint interactions of salt bridges use the prefix
-'INT_SBs_':
+``INT_SBs_``:
 
 .. ipython:: python
    :verbatim:
@@ -645,7 +645,7 @@ To compute fingerprint interactions of salt bridges use the prefix
 
 
 To compute fingerprint interactions of repulsive ionic bonding use the prefix
-'INT_RIB_':
+``INT_RIB_``:
 
 .. ipython:: python
    :verbatim:
@@ -673,7 +673,7 @@ To compute fingerprint interactions of repulsive ionic bonding use the prefix
 
 
 To compute fingerprint of pi-stacking interactions use the prefix
-'INT_PiStack_':
+``INT_PiStack_``:
 
 .. ipython:: python
    :verbatim:
@@ -700,7 +700,7 @@ To compute fingerprint of pi-stacking interactions use the prefix
 
 
 To compute fingerprint of pi-stacking interactions use the prefix
-'INT_PiCat_':
+``INT_PiCat_``:
 
 .. ipython:: python
    :verbatim:
@@ -724,7 +724,7 @@ To compute fingerprint of pi-stacking interactions use the prefix
 
 
 To compute fingerprint of hydrophobic interactions use the prefix
-'INT_HPh_':
+``INT_HPh_``:
 
 .. ipython:: python
    :verbatim:
@@ -748,10 +748,10 @@ To compute fingerprint of hydrophobic interactions use the prefix
    @> Results are saved in clusters_INT_HPh_.pdb.
 
 We can further visualize those results in a graphical program like VMD_.
-The obtained results are with default numC and distC parameters, and it means
+The obtained results are with default ``numC`` and ``distC`` parameters, and it means
 that we were identifying interactions that were within 0.3 Ang. from each other 
-(distC) in at least three structures (numC). To see more information about those 
-parameters, see the WatFinder tutorial_.
+(distC) in at least three structures (``numC``). To see more information about those 
+parameters, see the `WatFinder tutorial`_.
 
 Visualization of hydrogen bonds clusters is the following:
 
