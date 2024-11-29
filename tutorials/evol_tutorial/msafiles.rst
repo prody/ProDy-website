@@ -182,21 +182,21 @@ covariance patterns for proteins with multiple domains or protein-protein
 interactions. The example shows merging for the multi-domain receptor
 :pdb:`3KG2` containing pfam domains :pfam:`PF01094` and :pfam:`PF00497`.
 
-.. ipython::
+.. ipython:: python
 
-   fetchPfamMSA('PF01094', alignment='full')
+   fetchPfamMSA('PF01094', alignment='seed')
 
-.. ipython::
+.. ipython:: python
 
-   fetchPfamMSA('PF00497', alignment='full')
+   fetchPfamMSA('PF00497', alignment='seed')
 
 Let's parse and merge the two files:
 
 .. ipython:: python
 
-   msa1 = parseMSA('PF01094_full.sth')
+   msa1 = parseMSA('PF01094_seed.sth')
    msa1
-   msa2 = parseMSA('PF00497_full.sth')
+   msa2 = parseMSA('PF00497_seed.sth')
    msa2
    merged = mergeMSA(msa1, msa2)
    merged

@@ -1,4 +1,4 @@
-tutorial_title = u'Adaptive ANM'
+tutorial_title = u'Scipion-EM-ProDy'
 tutorial_author = u'James Krieger, She Zhang'
 tutorial_logo = u''           # default is ProDy logo
 tutorial_version = u''        # default is latest ProDy version

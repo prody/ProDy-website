@@ -22,9 +22,6 @@ Required Programs
 
 The latest versions of ProDy_, OpenMM_, and PDBFixer_ are required for ClustENMD.
 
-.. _ProDy: http://prody.csb.pitt.edu/
-.. _NumPy: https://numpy.org/
-.. _Matplotlib: https://matplotlib.org/
 .. _OpenMM: https://openmm.org/
 .. _PDBFixer: https://github.com/openmm/pdbfixer
 

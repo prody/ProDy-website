@@ -6,10 +6,6 @@ Simulation and Analysis
 First, we will make the following necessary imports ProDy_, NumPy_, and Matplotlib_ 
 if you haven't already done it:
 
-.. _ProDy: http://prody.csb.pitt.edu/
-.. _NumPy: https://numpy.org/
-.. _Matplotlib: https://matplotlib.org/
-
 .. ipython:: python
    :verbatim:
 

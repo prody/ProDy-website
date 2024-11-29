@@ -79,6 +79,7 @@ html: link drugui workdir
 	#cd -; 
 	mv -f $(BUILDDIR)/html/statistics/index.html $(BUILDDIR)/html/statistics/index.php
 	cp -rf $(TEMPLATEDIR)/prody_stats.* $(BUILDDIR)/html/statistics/
+	cp -rf _static/pharmmaker_tutorial.pdf $(BUILDDIR)/html/tutorials/drugui_tutorial/
 
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
@@ -101,7 +102,12 @@ pdf: link
 	make -C tutorials/comd_tutorial clean copy
 	make -C tutorials/membrane_anm clean copy
 	make -C tutorials/mech_stiff clean copy
-	make -C tutorials/perturb_response clean copy
+	make -C tutorials/prs_tutorial clean copy
 	make -C tutorials/signdy_tutorial clean copy
 	make -C tutorials/cryoem_tutorial clean copy
 	make -C tutorials/clustenmd_tutorial clean copy
+	make -C tutorials/essa_tutorial clean copy
+	make -C tutorials/insty_tutorial clean copy
+	make -C tutorials/saxs_tutorial clean copy
+	make -C tutorials/scipion_tutorial clean copy
+	make -C tutorials/watfinder_tutorial  clean copy
