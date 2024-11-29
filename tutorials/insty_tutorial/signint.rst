@@ -305,8 +305,8 @@ To compute all types of interactions for each homolog, we use
 :func:`.calcSignatureInteractions` function, and we are providing the name of the
 folder with the structures.
  
-This function will create additional files with the prefix ``'INT_'+type of
-interactions`` for each file. In such a file except for protein structure,
+This function will create additional files with the prefix ``'INT_'+type_of_interactions``
+for each file. In such a file except for protein structure,
 we will have dummy atoms that will correspond to the interactions. 
 The dummy atoms will be inserted exactly between the residue-residue pair which
 is interacting. We are computing seven types of non-covalent interactions 
@@ -750,40 +750,40 @@ To compute fingerprint of hydrophobic interactions use the prefix
 We can further visualize those results in a graphical program like VMD_.
 The obtained results are with default ``numC`` and ``distC`` parameters, and it means
 that we were identifying interactions that were within 0.3 Ang. from each other 
-(distC) in at least three structures (``numC``). To see more information about those 
+(``distC``) in at least three structures (``numC``). To see more information about those 
 parameters, see the `WatFinder tutorial`_.
 
-Visualization of hydrogen bonds clusters is the following:
+The visualization of hydrogen bond clusters is as follows:
 
 .. figure:: images/blast_hbs.png
    :scale: 60 %
 
-   
-Visualization of salt bridges clusters is the following:
+
+The visualization of salt bridge clusters is as follows:   
 
 .. figure:: images/blast_sbs.png
    :scale: 60 %
    
-   
-Visualization of repulsive ionic bonding clusters is the following:
+
+The visualization of repulsive ionic bonding clusters is as follows:   
 
 .. figure:: images/blast_rib.png
    :scale: 60 %
    
-   
-Visualization of pi-cation clusters is the following:
+
+The visualization of pi-cation clusters is as follows:   
 
 .. figure:: images/blast_picat.png
    :scale: 60 %
    
    
-Visualization of pi-stacking clusters is the following:
+The visualization of pi-stacking clusters is as follows:
 
 .. figure:: images/blast_pistack.png
    :scale: 60 %
 
 
-Visualization of hydrophobic interactions clusters is the following:
+The visualization of hydrophobic clusters is as follows:
    
 .. figure:: images/blast_hph.png
    :scale: 60 %
