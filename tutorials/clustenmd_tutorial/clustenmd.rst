@@ -17,7 +17,7 @@ if you haven't already done it:
 Preparing the system and running a ClustENMD simulation
 -------------------------------------------------------------------------------
 
-We start our calculations by parsing the structure, of which we would like to sample 
+We start our calculations by parsing the structure, from which we would like to sample
 conformations. For this tutorial, we will fetch the X-Ray structure of HIV-1 protease 
 in an open conformation in the absence of any inhibitor (PDB id: 1tw7) from the PDB server.
 
@@ -267,7 +267,7 @@ parameters set for a simulation can be saved into a file by the method :meth:`.C
    clustenm.writeParameters()
 
 As ClustENM ensemble is actually a `ProDy ensemble <http://prody.csb.pitt.edu/manual/reference/ensemble/index.html>`_, 
-we can also save it by the :func:`.saveEnsemble` method:
+we can also save it by using the :func:`.saveEnsemble` method:
 
 .. ipython:: python
    :verbatim:
@@ -291,7 +291,7 @@ are stored as models in a single PDB file, or each of them are saved as a separa
 
    @> PDB file saved as 1tw7_clustenm.pdb
  
-One can also load the previously saved ensemble by
+One can also load the previously saved ensemble using :meth:`.loadEnsemble`
 
 .. ipython:: python
    :verbatim:
