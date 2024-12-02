@@ -7,11 +7,11 @@ Signature Interactions of ensembles
 We have developed a pipeline that leverages BLAST, Dali, or Foldseek search to
 identify and download homologs for a particular PDB structure. The
 identified structures are prepared for InSty analysis by applying the following
-steps: (i) download PDB (ii), extract particular chains, (iii) add
-hydrogens/side chains, (iv) perform structural alignment (v) create a
-folder and put their prepared structures.
+steps: (i) download PDB, (ii) extract particular chains, (iii) add
+hydrogens/side chains, (iv) perform structural alignment, (v) create a
+folder and put in it prepared structures.
 
-As an example, we will use Aurora kinase A structure (PDB: **1OL5**).
+As an example, we will use Aurora kinase A structure (PDB code: **1OL5**).
 
 
 
@@ -311,9 +311,9 @@ for each file. In such a file except for protein structure,
 we will have dummy atoms that will correspond to the interactions. 
 The dummy atoms will be inserted exactly between the residue-residue pair which
 is interacting. We are computing seven types of non-covalent interactions 
-(hydrogen bonds - HBs, salt bridges - SBs, repulsive ionic bonding - RIB, 
-pi-cation - PiCat, pi-stacking - PiStack, hydrophobic interactions - HPh,
-and disulfide bonds - DiBs).
+(hydrogen bonds - ``HBs``, salt bridges - ``SBs``, repulsive ionic bonding -
+``RIB``, pi-cation - ``PiCat``, pi-stacking - ``PiStack``, hydrophobic interactions -
+``HPh``, and disulfide bonds - ``DiBs``).
 
 
 .. ipython:: python
@@ -763,31 +763,31 @@ The visualization of hydrogen bond clusters is as follows:
    :scale: 60 %
 
 
-The visualization of salt bridge clusters is as follows:   
+The visualization of salt bridge clusters:   
 
 .. figure:: images/blast_sbs.png
    :scale: 60 %
    
 
-The visualization of repulsive ionic bonding clusters is as follows:   
+The visualization of repulsive ionic bonding clusters:   
 
 .. figure:: images/blast_rib.png
    :scale: 60 %
    
 
-The visualization of pi-cation clusters is as follows:   
+The visualization of pi-cation clusters:   
 
 .. figure:: images/blast_picat.png
    :scale: 60 %
    
    
-The visualization of pi-stacking clusters is as follows:
+The visualization of pi-stacking clusters:
 
 .. figure:: images/blast_pistack.png
    :scale: 60 %
 
 
-The visualization of hydrophobic clusters is as follows:
+The visualization of hydrophobic clusters:
    
 .. figure:: images/blast_hph.png
    :scale: 60 %
@@ -800,9 +800,9 @@ Dali approach
 We can use a similar approach with the PDB list provided by the Dali server
 instead of BLAST. This time, to download homologs, add missing hydrogens, and
 align structures, we will use :func:`.runDali` function. As a ``subset_Dali``
-we will use ``PDB25`` instead of the full list of homologs. We will use
-Openbabel to fix the structure and all prepared structures will be copied
-to ``folder_name`` called ``struc_homologs_Dali``.
+we will use ``PDB25`` instead of the full list of homologs which is default. 
+We will use Openbabel to fix the structure and all prepared structures will
+be copied to ``folder_name`` called ``struc_homologs_Dali``.
 
 
 .. ipython:: python
@@ -1009,7 +1009,7 @@ to ``folder_name`` called ``struc_homologs_Dali``.
 Further, we can analyze ``struc_homologs_Dali`` folder with prepared PDB files
 in a similar way as for the BLAST dataset by using
 :func:`.calcSignatureInteractions` and :func:`.findClusterCenters` for each
-interaction type (see in BLAST approach).
+interaction type (see the BLAST approach).
 
 .. ipython:: python
    :verbatim:
@@ -1258,7 +1258,7 @@ local directory. Therefore, first, we will fetch it.
 Now, we will run Foldseek, but with more restricted parameters by applying
 higher values for ``coverage_threshold`` and ``tm_threshold``. Default
 criteria is providing large number of PDB files for analysis (~4000 files
-for 1OL5). 
+for PDB code 1OL5). 
 
 
 .. ipython:: python
@@ -1783,7 +1783,7 @@ The file ``HBs_consensus.txt`` content is as follows:
    ..
    ..
 
-This content is also displayed on the plot in ``PNG`` format that and saved
+This content is also displayed on the plot in ``PNG`` format that is saved
 in the folder. If there are a lot of results, several plots will be created,
 as exemplified by hydrogen bonds for which we identified 61 pairs of
 residues.
@@ -1865,7 +1865,7 @@ prefix. For hydrogen bonds is ``INT_HBs_``:
    @> Results are saved in clusters_INT_HBs_.pdb.
 
 
-When we visualize ``clusters_INT_HBs_.pdb.`` in the graphical program with
+When we visualize ``clusters_INT_HBs_.pdb`` in the graphical program with
 protein structure, we will see:
 
 .. figure:: images/foldseek_HBs.png
@@ -1896,7 +1896,7 @@ To compute fingerprint interactions of salt bridges, use the prefix
    @> Results are saved in clusters_INT_SBs_.pdb.
 
 
-When we visualize ``clusters_INT_SBs_.pdb.`` in the graphical program with
+When we visualize ``clusters_INT_SBs_.pdb`` in the graphical program with
 protein structure, we will see:
 
 .. figure:: images/foldseek_SBs.png
@@ -1933,7 +1933,7 @@ To compute the fingerprint of pi-stacking interactions, use the prefix
    @> Results are saved in clusters_INT_PiCat_.pdb.
 
 
-When we visualize ``clusters_INT_PiCat_.pdb.`` in the graphical program with
+When we visualize ``clusters_INT_PiCat_.pdb`` in the graphical program with
 protein structure, we will see:
 
 .. figure:: images/foldseek_PiCat.png
@@ -1972,7 +1972,7 @@ To compute the fingerprint of pi-stacking interactions, use the prefix
    @> Results are saved in clusters_INT_PiStack_.pdb.
 
 
-When we visualize ``clusters_INT_PiStack_.pdb.`` in the graphical program with
+When we visualize ``clusters_INT_PiStack_.pdb`` in the graphical program with
 protein structure, we will see:
 
 .. figure:: images/foldseek_PiStack.png
@@ -2009,7 +2009,7 @@ prefix ``INT_RIB_``:
    @> Results are saved in clusters_INT_RIB_.pdb.
 
 
-When we visualize ``clusters_INT_RIB_.pdb.`` in the graphical program with
+When we visualize ``clusters_INT_RIB_.pdb`` in the graphical program with
 protein structure, we will see:
 
 .. figure:: images/foldseek_RIB.png
@@ -2046,11 +2046,20 @@ To compute the fingerprint of hydrophobic interactions, use the prefix
    @> Results are saved in clusters_INT_HPh_.pdb.
 
 
-When we visualize ``clusters_INT_HPh_.pdb.`` in the graphical program with
+When we visualize ``clusters_INT_HPh_.pdb`` in the graphical program with
 protein structure, we will see:
 
 .. figure:: images/foldseek_HPh.png
    :scale: 60 %
+
+
+If we compare BLAST and Foldseek results, we can see that, in this case,
+BLAST detected more conserved interactions. However, the results for
+Foldseek or Dali would look differently if we used a full database with
+default parameters. 
+It is important, however, to know that some of the methods might be better
+than others, and all depends on the protein we are choosing, their sequence
+identity, and 3D structure similarity toward homologs. 
 
 
 .. _WatFinder tutorial: http://www.bahargroup.org/prody/tutorials/watfinder_tutorial
