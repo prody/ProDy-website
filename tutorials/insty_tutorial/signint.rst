@@ -1865,6 +1865,13 @@ prefix. For hydrogen bonds is ``INT_HBs_``:
    @> Results are saved in clusters_INT_HBs_.pdb.
 
 
+When we visualize ``clusters_INT_HBs_.pdb.`` in the graphical program with
+protein structure, we will see:
+
+.. figure:: images/foldseek_HBs.png
+   :scale: 60 %
+
+
 To compute fingerprint interactions of salt bridges, use the prefix
 ``INT_SBs_``:
 
@@ -1887,6 +1894,13 @@ To compute fingerprint interactions of salt bridges, use the prefix
    @> 4021 atoms and 1 coordinate set(s) were parsed in 0.04s.
    @> 4306 atoms and 1 coordinate set(s) were parsed in 0.04s.
    @> Results are saved in clusters_INT_SBs_.pdb.
+
+
+When we visualize ``clusters_INT_SBs_.pdb.`` in the graphical program with
+protein structure, we will see:
+
+.. figure:: images/foldseek_SBs.png
+   :scale: 60 %
 
 
 To compute the fingerprint of pi-stacking interactions, use the prefix
@@ -1917,6 +1931,13 @@ To compute the fingerprint of pi-stacking interactions, use the prefix
    @> 4127 atoms and 1 coordinate set(s) were parsed in 0.04s.
    @> 4009 atoms and 1 coordinate set(s) were parsed in 0.04s.
    @> Results are saved in clusters_INT_PiCat_.pdb.
+
+
+When we visualize ``clusters_INT_PiCat_.pdb.`` in the graphical program with
+protein structure, we will see:
+
+.. figure:: images/foldseek_PiCat.png
+   :scale: 60 %
 
 
 To compute the fingerprint of pi-stacking interactions, use the prefix
@@ -1951,6 +1972,13 @@ To compute the fingerprint of pi-stacking interactions, use the prefix
    @> Results are saved in clusters_INT_PiStack_.pdb.
 
 
+When we visualize ``clusters_INT_PiStack_.pdb.`` in the graphical program with
+protein structure, we will see:
+
+.. figure:: images/foldseek_PiStack.png
+   :scale: 60 %
+
+
 To compute fingerprint interactions of repulsive ionic bonding, use the
 prefix ``INT_RIB_``:
 
@@ -1981,6 +2009,13 @@ prefix ``INT_RIB_``:
    @> Results are saved in clusters_INT_RIB_.pdb.
 
 
+When we visualize ``clusters_INT_RIB_.pdb.`` in the graphical program with
+protein structure, we will see:
+
+.. figure:: images/foldseek_RIB.png
+   :scale: 60 %
+
+
 To compute the fingerprint of hydrophobic interactions, use the prefix
 ``INT_HPh_``:
 
@@ -2009,6 +2044,13 @@ To compute the fingerprint of hydrophobic interactions, use the prefix
    @> 4087 atoms and 1 coordinate set(s) were parsed in 0.04s.
    @> 4365 atoms and 1 coordinate set(s) were parsed in 0.04s.
    @> Results are saved in clusters_INT_HPh_.pdb.
+
+
+When we visualize ``clusters_INT_HPh_.pdb.`` in the graphical program with
+protein structure, we will see:
+
+.. figure:: images/foldseek_HPh.png
+   :scale: 60 %
 
 
 .. _WatFinder tutorial: http://www.bahargroup.org/prody/tutorials/watfinder_tutorial
