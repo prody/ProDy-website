@@ -617,7 +617,7 @@ to ``resnume DUM`` given to dummy atoms that represent interactions.
    @> Results are saved in clusters_INT_HBs_.pdb.
 
 
-To compute fingerprint interactions of salt bridges use the prefix
+To compute the fingerprint interactions of salt bridges, use the prefix
 ``INT_SBs_``:
 
 .. ipython:: python
@@ -648,8 +648,8 @@ To compute fingerprint interactions of salt bridges use the prefix
    @> Results are saved in clusters_INT_SBs_.pdb.
 
 
-To compute fingerprint interactions of repulsive ionic bonding use the prefix
-``INT_RIB_``:
+To compute the fingerprint interactions of repulsive ionic bonding, use the
+prefix ``INT_RIB_``:
 
 .. ipython:: python
    :verbatim:
@@ -676,7 +676,7 @@ To compute fingerprint interactions of repulsive ionic bonding use the prefix
    @> Results are saved in clusters_INT_RIB_.pdb.
 
 
-To compute fingerprint of pi-stacking interactions use the prefix
+To compute the fingerprint of pi-stacking interactions, use the prefix
 ``INT_PiStack_``:
 
 .. ipython:: python
@@ -703,7 +703,7 @@ To compute fingerprint of pi-stacking interactions use the prefix
    @> Results are saved in clusters_INT_PiStack_.pdb.
 
 
-To compute fingerprint of pi-stacking interactions use the prefix
+To compute the fingerprint of pi-stacking interactions, use the prefix
 ``INT_PiCat_``:
 
 .. ipython:: python
@@ -727,7 +727,7 @@ To compute fingerprint of pi-stacking interactions use the prefix
    @> Results are saved in clusters_INT_PiCat_.pdb.
 
 
-To compute fingerprint of hydrophobic interactions use the prefix
+To compute the fingerprint of hydrophobic interactions, use the prefix
 ``INT_HPh_``:
 
 .. ipython:: python
@@ -1232,13 +1232,14 @@ interaction type (see in BLAST approach).
    ..
 
 
-
 Foldseek approach
 -------------------------------------------------------------------------------
 
-Foldseek requires additional installation of Foldseek and download of the PDB
-database. See more details on the Foldseek_ website. Once we install
-Foldseek and download database to ``~/Downloads/foldseek`` folder, we can run:
+Foldseek requires additional installation of Foldseek and the PDB database
+download. See more details on the Foldseek_ website. Once the installation of
+Foldseek and downloading database to ``~/Downloads/foldseek`` folder is done,
+we can run :func:`.runFoldseek` function. Foldseek requires a PDB file in the
+local directory. Therefore, first, we will fetch it.
 
 
 .. ipython:: python
@@ -1254,19 +1255,26 @@ Foldseek and download database to ``~/Downloads/foldseek`` folder, we can run:
    @> PDB download via HTTP completed (1 downloaded, 0 failed).
 
 
+Now, we will run Foldseek, but with more restricted parameters by applying
+higher values for ``coverage_threshold`` and ``tm_threshold``. Default
+criteria is providing large number of PDB files for analysis (~4000 files
+for 1OL5). 
+
+
 .. ipython:: python
    :verbatim:
 
-   runFoldseek(PDBcode+'.pdb', 'A', database_folder='~/Downloads/foldseek/pdb')
+   runFoldseek('1ol5.pdb', 'A', coverage_threshold=0.9, tm_threshold=0.9, 
+		database_folder='/home/karolamik/Downloads/foldseek/pdb')
 
 .. parsed-literal::
 
    Create directory tmp2
-   easy-search inp.pdb ~/Downloads/foldseek/pdb prot.foldseek tmp2 --exhaustive-search 1 --format-output query,target,qstart,qend,tstart,tend,qcov,tcov,qtmscore,ttmscore,rmsd,qaln,taln -c 0.3 --cov-mode 0 
+   easy-search inp.pdb ~/Downloads/foldseek/pdb prot.foldseek tmp2 --exhaustive-search 1 --format-output query,target,qstart,qend,tstart,tend,qcov,tcov,qtmscore,ttmscore,rmsd,qaln,taln -c 0.9 --cov-mode 0 
 
    MMseqs Version:              	9.427df8a
    Seq. id. threshold           	0
-   Coverage threshold           	0.3
+   Coverage threshold           	0.9
    Coverage mode                	0
    Max reject                   	2147483647
    Max accept                   	2147483647
@@ -1335,9 +1343,9 @@ Foldseek and download database to ``~/Downloads/foldseek`` folder, we can run:
    Greedy best hits             	false
 
    Alignment backtraces will be computed, since they were requested by output format.
-   createdb inp.pdb tmp2/7184098072345140112/query --chain-name-mode 0 --write-mapping 0 --mask-bfactor-threshold 0 --coord-store-mode 2 --write-lookup 1 --input-format 0 --file-include '.*' --file-exclude '^$' --threads 12 -v 3 
+   createdb inp.pdb tmp2/13199197767129585930/query --chain-name-mode 0 --write-mapping 0 --mask-bfactor-threshold 0 --coord-store-mode 2 --write-lookup 1 --input-format 0 --file-include '.*' --file-exclude '^$' --threads 12 -v 3 
 
-   Output file: tmp2/7184098072345140112/query
+   Output file: tmp2/13199197767129585930/query
    [=================================================================] 100.00% 1 eta -
    Time for merging to query_ss: 0h 0m 0s 0ms
    Time for merging to query_h: 0h 0m 0s 0ms
@@ -1345,57 +1353,662 @@ Foldseek and download database to ``~/Downloads/foldseek`` folder, we can run:
    Time for merging to query: 0h 0m 0s 0ms
    Ignore 0 out of 1.
    Too short: 0, incorrect: 0, not proteins: 0.
-   Time for processing: 0h 0m 0s 12ms
-   Create directory tmp2/7184098072345140112/search_tmp
-   search tmp2/7184098072345140112/query ~/Downloads/foldseek/pdb tmp2/7184098072345140112/result tmp2/7184098072345140112/search_tmp -c 0.3 --cov-mode 0 -a 1 --alignment-mode 3 --comp-bias-corr 1 --gap-open aa:10,nucl:10 --gap-extend aa:1,nucl:1 -s 9.5 -k 6 --mask 0 --mask-prob 0.99995 --exhaustive-search 1 --remove-tmp-files 1 
+   Time for processing: 0h 0m 0s 10ms
+   Create directory tmp2/13199197767129585930/search_tmp
+   search tmp2/13199197767129585930/query ~/Downloads/foldseek/pdb tmp2/13199197767129585930/result tmp2/13199197767129585930/search_tmp -c 0.9 --cov-mode 0 -a 1 --alignment-mode 3 --comp-bias-corr 1 --gap-open aa:10,nucl:10 --gap-extend aa:1,nucl:1 -s 9.5 -k 6 --mask 0 --mask-prob 0.99995 --exhaustive-search 1 --remove-tmp-files 1 
 
-   structurealign tmp2/7184098072345140112/query ~/Downloads/foldseek/pdb tmp2/7184098072345140112/search_tmp/5969735056251403712/pref tmp2/7184098072345140112/search_tmp/5969735056251403712/strualn --tmscore-threshold 0 --lddt-threshold 0 --sort-by-structure-bits 1 --alignment-type 2 --exact-tmscore 0 --sub-mat 'aa:3di.out,nucl:3di.out' -a 1 --alignment-mode 3 --alignment-output-mode 0 --wrapped-scoring 0 -e 10 --min-seq-id 0 --min-aln-len 0 --seq-id-mode 0 --alt-ali 0 -c 0.3 --cov-mode 0 --max-seq-len 65535 --comp-bias-corr 1 --comp-bias-corr-scale 0.5 --max-rejected 2147483647 --max-accept 2147483647 --add-self-matches 0 --db-load-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --score-bias 0 --realign 0 --realign-score-bias -0.2 --realign-max-seqs 2147483647 --corr-score-weight 0 --gap-open aa:10,nucl:10 --gap-extend aa:1,nucl:1 --zdrop 40 --threads 12 --compressed 0 -v 3 
+   structurealign tmp2/13199197767129585930/query ~/Downloads/foldseek/pdb tmp2/13199197767129585930/search_tmp/6692268060764353809/pref tmp2/13199197767129585930/search_tmp/6692268060764353809/strualn --tmscore-threshold 0 --lddt-threshold 0 --sort-by-structure-bits 1 --alignment-type 2 --exact-tmscore 0 --sub-mat 'aa:3di.out,nucl:3di.out' -a 1 --alignment-mode 3 --alignment-output-mode 0 --wrapped-scoring 0 -e 10 --min-seq-id 0 --min-aln-len 0 --seq-id-mode 0 --alt-ali 0 -c 0.9 --cov-mode 0 --max-seq-len 65535 --comp-bias-corr 1 --comp-bias-corr-scale 0.5 --max-rejected 2147483647 --max-accept 2147483647 --add-self-matches 0 --db-load-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --score-bias 0 --realign 0 --realign-score-bias -0.2 --realign-max-seqs 2147483647 --corr-score-weight 0 --gap-open aa:10,nucl:10 --gap-extend aa:1,nucl:1 --zdrop 40 --threads 12 --compressed 0 -v 3 
 
    [=================================================================] 100.00% 1 eta -
+   Time for merging to strualn: 0h 0m 0s 0ms
+   Time for processing: 0h 0m 4s 364ms
+   mvdb tmp2/13199197767129585930/search_tmp/6692268060764353809/strualn tmp2/13199197767129585930/search_tmp/6692268060764353809/aln 
 
+   Time for processing: 0h 0m 0s 0ms
+   mvdb tmp2/13199197767129585930/search_tmp/6692268060764353809/aln tmp2/13199197767129585930/result -v 3 
+
+   Time for processing: 0h 0m 0s 0ms
+   Removing temporary files
+   rmdb tmp2/13199197767129585930/search_tmp/6692268060764353809/pref -v 3 
+
+   Time for processing: 0h 0m 0s 0ms
+   convertalis tmp2/13199197767129585930/query ~/Downloads/foldseek/pdb tmp2/13199197767129585930/result prot.foldseek --sub-mat 'aa:3di.out,nucl:3di.out' --format-mode 0 --format-output query,target,qstart,qend,tstart,tend,qcov,tcov,qtmscore,ttmscore,rmsd,qaln,taln --translation-table 1 --gap-open aa:10,nucl:10 --gap-extend aa:1,nucl:1 --db-output 0 --db-load-mode 0 --search-type 0 --threads 12 --compressed 0 -v 3 --exact-tmscore 0 
+
+   [=================================================================] 100.00% 1 eta -
+   Time for merging to prot.foldseek: 0h 0m 0s 0ms
+   Time for processing: 0h 0m 6s 547ms
+   rmdb tmp2/13199197767129585930/result -v 3 
+
+   Time for processing: 0h 0m 0s 0ms
+   rmdb tmp2/13199197767129585930/query -v 3 
+
+   Time for processing: 0h 0m 0s 0ms
+   rmdb tmp2/13199197767129585930/query_h -v 3 
+
+   Time for processing: 0h 0m 0s 0ms
+   rmdb tmp2/13199197767129585930/query_ca -v 3 
+
+   Time for processing: 0h 0m 0s 0ms
+   rmdb tmp2/13199197767129585930/query_ss -v 3 
+
+   Time for processing: 0h 0m 0s 0ms
+   @> MSA file is now created, and saved as prot_struc.msa.
+   --2024-11-29 22:53:23--  https://files.rcsb.org/download/6vpg.pdb
+   Resolving files.rcsb.org (files.rcsb.org)... 132.249.213.241
+   Connecting to files.rcsb.org (files.rcsb.org)|132.249.213.241|:443... connected.
+   HTTP request sent, awaiting response... 200 OK
+   Length: unspecified [application/octet-stream]
+   Saving to: ‘temp/6vpg.pdb’
+
+   6vpg.pdb                                    [       <=>                                                                    ] 420,82K   277KB/s    in 1,5s    
+
+   2024-11-29 22:53:26 (277 KB/s) - ‘temp/6vpg.pdb’ saved [430920]
+
+   Mismatch in sequence and structure of Target protein 6vpgA at Line 1477 Index 165-None ne T
+   --2024-11-29 22:53:26--  https://files.rcsb.org/download/7ztl.pdb
+   Resolving files.rcsb.org (files.rcsb.org)... 132.249.213.241
+   Connecting to files.rcsb.org (files.rcsb.org)|132.249.213.241|:443... connected.
+   HTTP request sent, awaiting response... 200 OK
+   Length: unspecified [application/octet-stream]
+   Saving to: ‘temp/7ztl.pdb’
+
+   7ztl.pdb                                    [        <=>                                                                   ] 451,35K   185KB/s    in 2,4s    
+
+   2024-11-29 22:53:29 (185 KB/s) - ‘temp/7ztl.pdb’ saved [462186]
+
+   Mismatch in sequence and structure of Target protein 7ztlA at Line 1320 Index 162-None ne T
+   --2024-11-29 22:53:29--  https://files.rcsb.org/download/1mq4.pdb
+   Resolving files.rcsb.org (files.rcsb.org)... 132.249.213.241
+   Connecting to files.rcsb.org (files.rcsb.org)|132.249.213.241|:443... connected.
+   HTTP request sent, awaiting response... 200 OK
+   Length: unspecified [application/octet-stream]
+   Saving to: ‘temp/1mq4.pdb’
+
+   1mq4.pdb                                    [     <=>                                                                      ] 223,15K   217KB/s    in 1,0s    
+
+   2024-11-29 22:53:31 (217 KB/s) - ‘temp/1mq4.pdb’ saved [228501]
+
+   --2024-11-29 22:53:31--  https://files.rcsb.org/download/5dt3.pdb
+   Resolving files.rcsb.org (files.rcsb.org)... 132.249.213.241
+   Connecting to files.rcsb.org (files.rcsb.org)|132.249.213.241|:443... connected.
+   HTTP request sent, awaiting response... 200 OK
+   Length: unspecified [application/octet-stream]
+   Saving to: ‘temp/5dt3.pdb’
+
+   5dt3.pdb                                    [     <=>                                                                      ] 220,38K   180KB/s    in 1,2s    
+
+   2024-11-29 22:53:34 (180 KB/s) - ‘temp/5dt3.pdb’ saved [225666]
+
+   Mismatch in sequence and structure of Target protein 5dt3A at Line 1313 Index 160-None ne T
+   --2024-11-29 22:53:34--  https://files.rcsb.org/download/2w1g.pdb
+   Resolving files.rcsb.org (files.rcsb.org)... 132.249.213.241
+   Connecting to files.rcsb.org (files.rcsb.org)|132.249.213.241|:443... connected.
+   HTTP request sent, awaiting response... 200 OK
+   Length: unspecified [application/octet-stream]
+   Saving to: ‘temp/2w1g.pdb’
+
+   2w1g.pdb                                    [            <=>                                                               ] 214,92K  33,3KB/s    in 6,5s    
+
+   2024-11-29 22:53:41 (33,3 KB/s) - ‘temp/2w1g.pdb’ saved [220077]
+
+   --2024-11-29 22:53:41--  https://files.rcsb.org/download/5dpv.pdb
+   Resolving files.rcsb.org (files.rcsb.org)... 132.249.213.241
+   Connecting to files.rcsb.org (files.rcsb.org)|132.249.213.241|:443... connected.
+   HTTP request sent, awaiting response... 200 OK
+   Length: unspecified [application/octet-stream]
+   Saving to: ‘temp/5dpv.pdb’
    ..
    ..
-
-   --2024-11-29 21:27:41--  https://files.rcsb.org/download/3eh9.pdb
-   Resolving files.rcsb.org (files.rcsb.org)... 128.6.159.245
-   Connecting to files.rcsb.org (files.rcsb.org)|128.6.159.245|:443... connected.
-   HTTP request sent, awaiting response... 200 OK
-   Length: unspecified [application/octet-stream]
-   Saving to: ‘temp/3eh9.pdb’
-
-   3eh9.pdb                                  [    <=>                                                                   ] 243,79K   310KB/s    in 0,8s    
-
-   2024-11-29 21:27:42 (310 KB/s) - ‘temp/3eh9.pdb’ saved [249642]
-
-   --2024-11-29 21:27:42--  https://files.rcsb.org/download/7kxw.pdb
-   Resolving files.rcsb.org (files.rcsb.org)... 128.6.159.245
-   Connecting to files.rcsb.org (files.rcsb.org)|128.6.159.245|:443... connected.
-   HTTP request sent, awaiting response... 200 OK
-   Length: unspecified [application/octet-stream]
-   Saving to: ‘temp/7kxw.pdb’
-
-   7kxw.pdb                                  [   <=>                                                                    ] 368,69K   486KB/s    in 0,8s    
-
-   2024-11-29 21:27:44 (486 KB/s) - ‘temp/7kxw.pdb’ saved [377541]
-
-   Mismatch in sequence and structure of Target protein 7kxwA at line 704 Index 98-None ne T
-   --2024-11-29 21:27:44--  https://files.rcsb.org/download/6fha.pdb
-   Resolving files.rcsb.org (files.rcsb.org)... 128.6.159.245
-   Connecting to files.rcsb.org (files.rcsb.org)|128.6.159.245|:443... connected.
-   HTTP request sent, awaiting response... 200 OK
-   Length: unspecified [application/octet-stream]
-   Saving to: ‘temp/6fha.pdb’
-
-   6fha.pdb                                  [   <=>                                                                    ] 225,60K   294KB/s    in 0,8s    
-
-   2024-11-29 21:27:45 (294 KB/s) - ‘temp/6fha.pdb’ saved [231012]
-
+   @> Individual models are saved in struc_homologs.
+   @> Adding hydrogens to the structures..
+   @> Hydrogens were added to the structure. New structure is saved as addH_model1.pdb.
+   @> Hydrogens were added to the structure. New structure is saved as addH_model2.pdb.
+   @> Hydrogens were added to the structure. New structure is saved as addH_model3.pdb.
+   @> Hydrogens were added to the structure. New structure is saved as addH_model4.pdb.
+   ..
+   ..
+   @> 87 PDBs were parsed in 3.40s.                                                                                                                              
+   @> Aligning the structures..
+   @> addH_model2
+   @> Checking AtomGroup addH_model2: 1 chains are identified
+   @> Checking AtomGroup addH_model1: 1 chains are identified
+   @> Trying to match chains based on residue numbers and names:
+   @>   Comparing Chain A from addH_model2 (len=260) and Chain A from addH_model1 (len=264):
+   @> 	Match: 259 residues match with 100% sequence identity and 98% overlap.
+   @> Aligning the structures..
+   @> addH_model3
+   @> Checking AtomGroup addH_model3: 1 chains are identified
+   @> Checking AtomGroup addH_model1: 1 chains are identified
+   @> Trying to match chains based on residue numbers and names:
+   @>   Comparing Chain A from addH_model3 (len=252) and Chain A from addH_model1 (len=264):
+   @> 	Match: 252 residues match with 100% sequence identity and 95% overlap.
+   @> Aligning the structures..
+   @> addH_model4
+   @> Checking AtomGroup addH_model4: 1 chains are identified
+   @> Checking AtomGroup addH_model1: 1 chains are identified
+   @> Trying to match chains based on residue numbers and names:
+   @>   Comparing Chain A from addH_model4 (len=255) and Chain A from addH_model1 (len=264):
+   @> 	Match: 255 residues match with 100% sequence identity and 97% overlap.
+   @> Aligning the structures..
    ..
    ..
 
 
 Once the folder with PDB files will be created, we can analyze it with 
-:func:`.calcSignatureInteractions` and :func:`.findClusterCenters`.
+:func:`.calcSignatureInteractions` and :func:`.findClusterCenters`. Foldseek
+along with the folder containing PDB files, generates also MSA file that can
+be used to obtain sequentially conserved pairs of residues that are
+corresponding to the interacation types. Therefore, we can analyze only folder
+or folder with MSA file by giving ``mapping_file``. Both cases are shown
+below.
+
+Analysis of the folder with prepared PDB homologs:
+
+.. ipython:: python
+   :verbatim:
+
+   calcSignatureInteractions('struc_homologs')
+
+.. parsed-literal::
+
+   @> struc_homologs/align__addH_model65.pdb
+   @> 4126 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> Calculating hydrogen bonds.
+   @>      DONOR (res chid atom)   <--->       ACCEPTOR (res chid atom)    Distance  Angle
+   @>     ARG357    A       NE_3612  <--->     VAL352    A        O_3540     2.7    38.9
+   @>     LEU225    A        N_1656  <--->     GLU221    A        O_1588     2.8    32.6
+   @>     ALA150    A         N_372  <--->     LEU159    A         O_537     2.8    30.0
+   @>     ARG357    A        N_3597  <--->     THR353    A        O_3556     2.9    30.8
+   @>     LEU159    A         N_532  <--->     ALA150    A         O_377     2.9    29.3
+   @>     LEU149    A         N_353  <--->     ARG137    A         O_165     2.9    15.6
+   @>     ARG371    A       NE_3854  <--->     LYS365    A        O_3749     2.9    37.3
+   @>     MET373    A        N_3877  <--->     GLU376    A      OE1_3950     2.9     2.4
+   @>     TYR338    A        N_3283  <--->     TYR334    A        O_3221     2.9    20.2
+   @>     GLU239    A        N_1888  <--->     THR235    A        O_1825     2.9    31.3
+   @>     CYS319    A        N_2984  <--->     LEU315    A        O_2928     2.9    20.3
+   @>     VAL344    A        N_3404  <--->     ILE341    A        O_3355     2.9    39.6
+   @>     VAL163    A         N_602  <--->     ASN146    A         O_307     3.0    29.5
+   @>     ALA160    A         N_551  <--->     CYS210    A        O_1416     3.0    22.2
+   @>     LEU169    A         N_706  <--->     PHE165    A         O_642     3.0    36.1
+   @>     GLU321    A        N_3016  <--->     VAL317    A        O_2954     3.0    30.5
+   @>     LYS224    A        N_1634  <--->     ARG220    A        O_1564     3.0    23.9
+   @>     HIS380    A        N_4002  <--->     VAL377    A        O_3957     3.0    19.8
+   @>     VAL317    A        N_2949  <--->     TRP313    A        O_2893     3.0    27.3
+   @>     TYR246    A        N_1986  <--->     ASN242    A        O_1937     3.0    34.8
+   @>     ASN242    A        N_1932  <--->     THR238    A        O_1879     3.0    27.4
+   @>     ILE209    A        N_1392  <--->     GLY198    A        O_1217     3.1    27.2
+   @>     THR238    A        N_1874  <--->     ALA234    A        O_1815     3.1    32.0
+   @>     CYS247    A        N_2007  <--->     ALA243    A        O_1951     3.1    36.4
+   @>     TYR246    A       OH_2005  <--->     ARG189    A        N_1040     3.1    28.4
+   @>     ALA243    A        N_1946  <--->     GLU239    A        O_1893     3.1    15.4
+   @>     ALA385    A        N_4090  <--->     PRO381    A        O_4023     3.1    26.6
+   @>     TYR148    A         N_332  <--->     LEU161    A         O_566     3.1    34.4
+   @>     SER361    A        N_3671  <--->     ARG357    A        O_3602     3.1    14.6
+   @>     LEU296    A        N_2614  <--->     LEU293    A        O_2567     3.1    25.1
+   @>     ILE360    A        N_3652  <--->     ALA356    A        O_3592     3.1    31.3
+   @>     LEU315    A        N_2923  <--->     ASP311    A        O_2862     3.1    26.1
+   @>     GLN223    A        N_1617  <--->     TYR219    A        O_1543     3.1    18.3
+   @>     LYS250    A        N_2046  <--->     TYR246    A        O_1991     3.1    38.7
+   @>     GLU336    A        N_3254  <--->     THR333    A      OG1_3210     3.1    27.3
+   @>     THR235    A        N_1820  <--->     GLN231    A        O_1760     3.1    31.5
+   @>     SER249    A        N_2035  <--->     SER245    A        O_1980     3.2    13.1
+   @>     SER314    A        N_2912  <--->     VAL310    A        O_2846     3.2    20.2
+   @>     LYS250    A       NZ_2064  <--->     HIS187    A        O_1009     3.2    22.6
+   @>     ASP202    A        N_1276  <--->     ARG205    A        O_1317     3.2    32.9
+   @>     TYR320    A        N_2995  <--->     GLY316    A        O_2948     3.2    26.2
+   @>     TYR219    A        N_1538  <--->     PRO259    A        O_2225     3.2    18.1
+   @>     LEU359    A        N_3633  <--->     GLY355    A        O_3586     3.2     5.7
+   @>     LEU363    A        N_3706  <--->     LEU359    A        O_3638     3.2    29.4
+   @>     ALA129    A          N_43  <--->     ASP132    A        OD2_98     3.3    33.5
+   @>     VAL352    A        N_3535  <--->     PRO349    A        O_3493     3.3    28.8
+   @>     GLY316    A        N_2942  <--->     LEU312    A        O_2874     3.3    31.9
+   @>     ALA172    A         N_762  <--->     GLN168    A         O_694     3.3    29.0
+   @>     ARG180    A         N_887  <--->     HIS176    A         O_815     3.3    17.0
+   @>     ILE184    A         N_957  <--->     ARG180    A         O_892     3.3    20.8
+   @>     VAL377    A        N_3952  <--->     MET373    A        O_3882     3.3    17.5
+   @>     GLY216    A        N_1501  <--->     ALA213    A        O_1463     3.4    18.2
+   @>     THR384    A      OG1_4084  <--->     HIS380    A        O_4007     3.4    28.3
+   @>     ILE301    A        N_2693  <--->     PRO297    A        O_2637     3.4    30.7
+   @>     ARG362    A        N_3682  <--->     ASP358    A        O_3626     3.4    14.3
+   @>     THR337    A        N_3269  <--->     THR333    A        O_3207     3.4     8.2
+   @>     ALA241    A        N_1922  <--->     THR238    A        O_1879     3.4    39.5
+   @>     GLU379    A        N_3987  <--->     ARG375    A        O_3918     3.4    33.0
+   @>     TRP313    A        N_2888  <--->     LYS309    A        O_2824     3.4    22.9
+   @>     GLU330    A        N_3163  <--->     PRO327    A        O_3119     3.4    15.1
+   @>     LEU323    A        N_3051  <--->     CYS319    A        O_2989     3.4    34.6
+   @>     TYR295    A        N_2593  <--->     THR292    A        O_2553     3.5    19.4
+   @> Number of detected hydrogen bonds: 62.
+   @> Creating file with dummy atoms
+   @> struc_homologs/align__addH_model20.pdb
+   @> 4205 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> Calculating hydrogen bonds.
+   ..
+   ..
+
+
+Analysis of the folder with prepared PDB homologs, including the MSA file
+generated by :func:`.runFoldseek` function:
+
+.. ipython:: python
+   :verbatim:
+
+   calcSignatureInteractions('struc_homologs', mapping_file='shortlisted_resind.msa')
+
+.. parsed-literal::
+
+   @> [INFO] Processing HBs
+   @> [INFO] Loading mapping file: shortlisted_resind.msa
+   @> 2158 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> [INFO] Processing PDB files in folder: struc_homologs_MSA
+   @> [INFO] Processing file 1: struc_homologs_MSA/align__addH_model65.pdb
+   @> 4126 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> Calculating hydrogen bonds.
+   @>      DONOR (res chid atom)   <--->       ACCEPTOR (res chid atom)    Distance  Angle
+   @>     ARG357    A       NE_3612  <--->     VAL352    A        O_3540     2.7    38.9
+   @>     LEU225    A        N_1656  <--->     GLU221    A        O_1588     2.8    32.6
+   @>     ALA150    A         N_372  <--->     LEU159    A         O_537     2.8    30.0
+   @>     ARG357    A        N_3597  <--->     THR353    A        O_3556     2.9    30.8
+   @>     LEU159    A         N_532  <--->     ALA150    A         O_377     2.9    29.3
+   @>     LEU149    A         N_353  <--->     ARG137    A         O_165     2.9    15.6
+   @>     ARG371    A       NE_3854  <--->     LYS365    A        O_3749     2.9    37.3
+   @>     MET373    A        N_3877  <--->     GLU376    A      OE1_3950     2.9     2.4
+   @>     TYR338    A        N_3283  <--->     TYR334    A        O_3221     2.9    20.2
+   @>     GLU239    A        N_1888  <--->     THR235    A        O_1825     2.9    31.3
+   @>     CYS319    A        N_2984  <--->     LEU315    A        O_2928     2.9    20.3
+   @>     VAL344    A        N_3404  <--->     ILE341    A        O_3355     2.9    39.6
+   @>     VAL163    A         N_602  <--->     ASN146    A         O_307     3.0    29.5
+   @>     ALA160    A         N_551  <--->     CYS210    A        O_1416     3.0    22.2
+   @>     LEU169    A         N_706  <--->     PHE165    A         O_642     3.0    36.1
+   @>     GLU321    A        N_3016  <--->     VAL317    A        O_2954     3.0    30.5
+   @>     LYS224    A        N_1634  <--->     ARG220    A        O_1564     3.0    23.9
+   @>     HIS380    A        N_4002  <--->     VAL377    A        O_3957     3.0    19.8
+   @>     VAL317    A        N_2949  <--->     TRP313    A        O_2893     3.0    27.3
+   @>     TYR246    A        N_1986  <--->     ASN242    A        O_1937     3.0    34.8
+   @>     ASN242    A        N_1932  <--->     THR238    A        O_1879     3.0    27.4
+   @>     ILE209    A        N_1392  <--->     GLY198    A        O_1217     3.1    27.2
+   @>     THR238    A        N_1874  <--->     ALA234    A        O_1815     3.1    32.0
+   @>     CYS247    A        N_2007  <--->     ALA243    A        O_1951     3.1    36.4
+   @>     TYR246    A       OH_2005  <--->     ARG189    A        N_1040     3.1    28.4
+   @>     ALA243    A        N_1946  <--->     GLU239    A        O_1893     3.1    15.4
+   @>     ALA385    A        N_4090  <--->     PRO381    A        O_4023     3.1    26.6
+   @>     TYR148    A         N_332  <--->     LEU161    A         O_566     3.1    34.4
+   @>     SER361    A        N_3671  <--->     ARG357    A        O_3602     3.1    14.6
+   @>     LEU296    A        N_2614  <--->     LEU293    A        O_2567     3.1    25.1
+   @>     ILE360    A        N_3652  <--->     ALA356    A        O_3592     3.1    31.3
+   @>     LEU315    A        N_2923  <--->     ASP311    A        O_2862     3.1    26.1
+   @>     GLN223    A        N_1617  <--->     TYR219    A        O_1543     3.1    18.3
+   @>     LYS250    A        N_2046  <--->     TYR246    A        O_1991     3.1    38.7
+   @>     GLU336    A        N_3254  <--->     THR333    A      OG1_3210     3.1    27.3
+   @>     THR235    A        N_1820  <--->     GLN231    A        O_1760     3.1    31.5
+   @>     SER249    A        N_2035  <--->     SER245    A        O_1980     3.2    13.1
+   @>     SER314    A        N_2912  <--->     VAL310    A        O_2846     3.2    20.2
+   @>     LYS250    A       NZ_2064  <--->     HIS187    A        O_1009     3.2    22.6
+   @>     ASP202    A        N_1276  <--->     ARG205    A        O_1317     3.2    32.9
+   @>     TYR320    A        N_2995  <--->     GLY316    A        O_2948     3.2    26.2
+   @>     TYR219    A        N_1538  <--->     PRO259    A        O_2225     3.2    18.1
+   @>     LEU359    A        N_3633  <--->     GLY355    A        O_3586     3.2     5.7
+   @>     LEU363    A        N_3706  <--->     LEU359    A        O_3638     3.2    29.4
+   @>     ALA129    A          N_43  <--->     ASP132    A        OD2_98     3.3    33.5
+   @>     VAL352    A        N_3535  <--->     PRO349    A        O_3493     3.3    28.8
+   @>     GLY316    A        N_2942  <--->     LEU312    A        O_2874     3.3    31.9
+   @>     ALA172    A         N_762  <--->     GLN168    A         O_694     3.3    29.0
+   @>     ARG180    A         N_887  <--->     HIS176    A         O_815     3.3    17.0
+   @>     ILE184    A         N_957  <--->     ARG180    A         O_892     3.3    20.8
+   @>     VAL377    A        N_3952  <--->     MET373    A        O_3882     3.3    17.5
+   @>     GLY216    A        N_1501  <--->     ALA213    A        O_1463     3.4    18.2
+   @>     THR384    A      OG1_4084  <--->     HIS380    A        O_4007     3.4    28.3
+   @>     ILE301    A        N_2693  <--->     PRO297    A        O_2637     3.4    30.7
+   @>     ARG362    A        N_3682  <--->     ASP358    A        O_3626     3.4    14.3
+   @>     THR337    A        N_3269  <--->     THR333    A        O_3207     3.4     8.2
+   @>     ALA241    A        N_1922  <--->     THR238    A        O_1879     3.4    39.5
+   @>     GLU379    A        N_3987  <--->     ARG375    A        O_3918     3.4    33.0
+   @>     TRP313    A        N_2888  <--->     LYS309    A        O_2824     3.4    22.9
+   @>     GLU330    A        N_3163  <--->     PRO327    A        O_3119     3.4    15.1
+   @>     LEU323    A        N_3051  <--->     CYS319    A        O_2989     3.4    34.6
+   @>     TYR295    A        N_2593  <--->     THR292    A        O_2553     3.5    19.4
+   @> Number of detected hydrogen bonds: 62.
+   @> Creating file with dummy atoms
+   @> [INFO] Processing file 2: struc_homologs_MSA/align__addH_model20.pdb
+   @> 4205 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> Calculating hydrogen bonds.
+   @>      DONOR (res chid atom)   <--->       ACCEPTOR (res chid atom)    Distance  Angle
+   @>     HIS380    B        N_4081  <--->     GLU376    B        O_4021     2.8    32.3
+   @>     LEU263    B        N_2274  <--->     LYS271    B        O_2386     2.9    36.8
+   @>     LEU149    B         N_336  <--->     ARG137    B         O_148     2.9    34.0
+   @>     ILE253    B        N_2099  <--->     VAL279    B        O_2511     2.9    31.0
+   @>     ALA385    B        N_4169  <--->     PRO381    B        O_4102     2.9    32.3
+   @>     LEU240    B        N_1894  <--->     TYR236    B        O_1830     2.9    28.2
+   @>     CYS247    B        N_1998  <--->     ALA243    B        O_1942     2.9    26.9
+   @>     TYR320    B        N_3074  <--->     GLY316    B        O_3027     3.0    22.9
+   @>     VAL252    B        N_2083  <--->     CYS247    B        O_2003     3.0    39.7
+   @>     SER342    B        N_3448  <--->     TYR338    B        O_3367     3.0    18.9
+   @>     TYR246    B        N_1977  <--->     ASN242    B        O_1928     3.0    34.7
+   @>     VAL317    B        N_3028  <--->     TRP313    B        O_2972     3.0    19.8
+   @>     ALA243    B        N_1937  <--->     GLU239    B        O_1884     3.0    33.7
+   @>     ARG195    B        N_1130  <--->     GLU211    B      OE2_1427     3.0    31.8
+   @>     PHE322    B        N_3110  <--->     LEU318    B        O_3049     3.0    21.6
+   @>     GLU170    B         N_708  <--->     LYS166    B         O_645     3.0    30.4
+   @>     TYR236    B        N_1825  <--->     ARG232    B        O_1768     3.0    12.3
+   @>     GLN185    B         N_959  <--->     GLU181    B         O_899     3.0    35.5
+   @>     SER155    B         N_443  <--->     GLU152    B       OE1_402     3.0    32.8
+   @>     THR337    B        N_3348  <--->     THR333    B        O_3286     3.0    22.5
+   @>     ALA241    B        N_1913  <--->     ILE237    B        O_1851     3.0    12.7
+   @>     GLU134    B         N_102  <--->     ARG151    B         O_370     3.0    36.4
+   @>     HIS254    B        N_2118  <--->     ASP311    B      OD2_2947     3.0    19.4
+   @>     ILE272    B        N_2403  <--->     ASN192    B        O_1083     3.0    32.2
+   @>     LEU359    B        N_3712  <--->     GLY355    B        O_3665     3.0     5.9
+   @>     LYS224    B        N_1625  <--->     ARG220    B        O_1555     3.1    39.7
+   @>     VAL182    B         N_909  <--->     LEU178    B         O_832     3.1    11.8
+   @>     ARG151    B         N_365  <--->     GLU134    B         O_107     3.1    37.7
+   @>     ARG362    B        N_3761  <--->     ASP358    B        O_3705     3.1    28.6
+   @>     THR233    B        N_1787  <--->     ASP229    B        O_1724     3.1    19.5
+   @>     ARG220    B      NH1_1568  <--->     GLN223    B      OE1_1621     3.1    35.1
+   @>     ASP358    B        N_3700  <--->     GLU354    B        O_3649     3.1    11.1
+   @>     LEU169    B         N_689  <--->     PHE165    B         O_625     3.1    18.5
+   @>     GLU221    B        N_1574  <--->     THR217    B        O_1504     3.2    29.6
+   @>     TYR338    B        N_3362  <--->     TYR334    B        O_3300     3.2    36.1
+   @>     LEU215    B        N_1473  <--->     LEU264    B        O_2298     3.2    29.8
+   @>     GLU379    B        N_4066  <--->     ARG375    B        O_3997     3.2    19.4
+   @>     LEU296    B        N_2693  <--->     LEU293    B        O_2646     3.2    21.4
+   @>     ALA172    B         N_745  <--->     GLN168    B         O_677     3.2    34.6
+   @>     ILE301    B        N_2772  <--->     PRO297    B        O_2716     3.2    17.8
+   @>     GLY316    B        N_3021  <--->     LEU312    B        O_2953     3.2    31.8
+   @>     LEU178    B         N_827  <--->     VAL174    B         O_767     3.2    38.9
+   @>     ARG232    B        N_1763  <--->     ASP229    B      OD1_1729     3.2    29.7
+   @>     ILE209    B        N_1375  <--->     GLY198    B        O_1200     3.3     9.5
+   @>     LEU222    B        N_1589  <--->     TYR219    B        O_1534     3.3    29.3
+   @>     SER249    B        N_2026  <--->     SER245    B        O_1971     3.3    29.7
+   @>     ARG357    B        N_3676  <--->     THR353    B        O_3635     3.3    39.5
+   @>     LYS166    B         N_640  <--->     THR204    B        O_1286     3.3    38.8
+   @>     VAL310    B        N_2920  <--->     ASP307    B        O_2876     3.3     9.5
+   @>     TRP313    B        N_2967  <--->     LYS309    B        O_2903     3.3    15.1
+   @>     VAL147    B         N_299  <--->     GLY140    B         O_206     3.4    26.0
+   @>     TYR219    B        N_1529  <--->     PRO259    B        O_2216     3.4    10.3
+   @>     HIS254    B      ND1_2128  <--->     ILE257    B        N_2171     3.4    31.5
+   @>     HIS248    B        N_2009  <--->     SER245    B        O_1971     3.4    33.3
+   @>     GLN370    B        N_3901  <--->     ASN367    B      ND2_3873     3.4    34.9
+   @>     ASN386    B        N_4179  <--->     TRP382    B        O_4117     3.5    29.4
+   @>     LEU323    B        N_3130  <--->     CYS319    B        O_3068     3.5    20.8
+   @> Number of detected hydrogen bonds: 57.
+   @> Creating file with dummy atoms
+   ..
+   ..
+
+Once the calculations are completed and files with the prefix ``'INT_'``
+are generated, we can look at the clusters for each type of interaction.  
+When we are providing MSA file for analysis, except ``INT_*.pdb`` files
+several additional files are generated, such as consensus ``txt`` files with
+pairs of residues that are participating in each type of interactions and
+their count/percentage of occurence among the homolog strutures.  
+
+For this example, we obtained six consensus files: ``HBs_consensus.txt``,
+``SBs_consensus.txt``, ``RIB_consensus.txt``, ``PiStack_consensus.txt``,
+``PiCat_consensus.txt``, ``HPh_consensus.txt``. Disulfide bonds are not
+present in the protein structure.
+
+The file ``HBs_consensus.txt`` content is as follows:
+
+.. parsed-literal::
+
+   Res1 Res2 Count Percentage
+   A129 D132 17 19.767441860465116
+   R137 L149 14 16.27906976744186
+   N146 V163 10 11.627906976744185
+   Y148 L161 13 15.11627906976744
+   A150 L159 18 20.930232558139537
+   A160 L210 14 16.27906976744186
+   F165 L169 27 31.3953488372093
+   Q168 A172 21 24.418604651162788
+   H176 R180 23 26.744186046511626
+   R180 I184 23 26.744186046511626
+   H187 K250 2 2.3255813953488373
+   R189 Y246 10 11.627906976744185
+   G198 I209 22 25.581395348837212
+   D202 R205 14 16.27906976744186
+   A213 G216 18 20.930232558139537
+   Y219 Q223 30 34.883720930232556
+   Y219 P259 20 23.25581395348837
+   R220 K224 28 32.55813953488372
+   E221 L225 20 23.25581395348837
+   Q231 T235 36 41.86046511627907
+   A234 T238 31 36.04651162790697
+   T235 E239 27 31.3953488372093
+   T238 A241 7 8.13953488372093
+   T238 N242 26 30.23255813953488
+   E239 A243 28 32.55813953488372
+   N242 Y246 27 31.3953488372093
+   A243 C247 37 43.02325581395349
+   S245 S249 35 40.69767441860465
+   Y246 K250 26 30.23255813953488
+   ..
+   ..
+
+This content is also displayed on the plot in ``PNG`` format that and saved
+in the folder. If there are a lot of results, several plots will be created,
+as exemplified by hydrogen bonds for which we identified 61 pairs of
+residues.
+
+.. figure:: images/foldseek_hbs_plot1.png
+   :scale: 60 %
+
+
+.. figure:: images/foldseek_hbs_plot2.png
+   :scale: 60 %
+
+
+.. figure:: images/foldseek_hbs_plot3.png
+   :scale: 60 %
+
+
+.. figure:: images/foldseek_hbs_plot4.png
+   :scale: 60 %
+
+
+For the salt bridges, we obtained the following plot:
+
+.. figure:: images/foldseek_SBs_plot_part1.png
+   :scale: 60 %
+
+
+For the repulsive ionic bonding, we obtained the following plot:
+
+.. figure:: images/foldseek_RIB_plot_part1.png
+   :scale: 60 %
+
+
+For the pi-stacking interactions, we obtained the following plot:
+
+.. figure:: images/foldseek_PiStack_plot_part1.png
+   :scale: 60 %
+
+
+For the pi-cation interactions, we obtained the following plot:
+
+.. figure:: images/foldseek_PiCat_plot_part1.png
+   :scale: 60 %
+
+
+For the hydrophobic interactions, we obtained the following plots:
+
+.. figure:: images/foldseek_HPh_plot_part1.png
+   :scale: 60 %
+
+.. figure:: images/foldseek_HPh_plot_part2.png
+   :scale: 60 %
+
+.. figure:: images/foldseek_HPh_plot_part3.png
+   :scale: 60 %
+
+.. figure:: images/foldseek_HPh_plot_part4.png
+   :scale: 60 %
+
+
+Further, to compute the fingerprint interactions, use the corresponding
+prefix. For hydrogen bonds is ``INT_HBs_``:
+
+.. ipython:: python
+   :verbatim:
+
+   findClusterCenters('INT_HBs_*.pdb', selection = 'resname DUM')
+
+.. parsed-literal::
+
+   @> 4338 atoms and 1 coordinate set(s) were parsed in 0.12s.
+   @> 4230 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4231 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4328 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4284 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4365 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   ..
+   @> 4062 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4389 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> Results are saved in clusters_INT_HBs_.pdb.
+
+
+To compute fingerprint interactions of salt bridges, use the prefix
+``INT_SBs_``:
+
+.. ipython:: python
+   :verbatim:
+
+   findClusterCenters('INT_SBs_*.pdb', selection = 'resname DUM')
+
+.. parsed-literal::
+
+   @> 4305 atoms and 1 coordinate set(s) were parsed in 0.12s.
+   @> 4191 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4193 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4280 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4239 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4187 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4059 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4214 atoms and 1 coordinate set(s) were parsed in 0.05s
+   ..
+   @> 4021 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4306 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> Results are saved in clusters_INT_SBs_.pdb.
+
+
+To compute the fingerprint of pi-stacking interactions, use the prefix
+``INT_PiCat_``:
+
+.. ipython:: python
+   :verbatim:
+
+   findClusterCenters('INT_PiCat_*.pdb', selection = 'resname DUM')
+
+.. parsed-literal::
+
+   @> 4291 atoms and 1 coordinate set(s) were parsed in 0.12s.
+   @> 4180 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4185 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4268 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4224 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4174 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4048 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4200 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4225 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 4336 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   ..
+   ..
+   @> 4112 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4191 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4010 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4127 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4009 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> Results are saved in clusters_INT_PiCat_.pdb.
+
+
+To compute the fingerprint of pi-stacking interactions, use the prefix
+``INT_PiStack_``:
+
+.. ipython:: python
+   :verbatim:
+
+   findClusterCenters('INT_PiStack_*.pdb', selection = 'resname DUM')
+
+.. parsed-literal::
+
+   @> 4291 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4178 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4182 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4267 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4223 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4172 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4047 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4200 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4223 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4335 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   ..
+   ..
+   @> 4104 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4114 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4192 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4009 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4129 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4008 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4291 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> Results are saved in clusters_INT_PiStack_.pdb.
+
+
+To compute fingerprint interactions of repulsive ionic bonding, use the
+prefix ``INT_RIB_``:
+
+.. ipython:: python
+   :verbatim:
+
+   findClusterCenters('INT_RIB_*.pdb', selection = 'resname DUM')
+
+.. parsed-literal::
+
+   @> 4291 atoms and 1 coordinate set(s) were parsed in 0.12s.
+   @> 4177 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4182 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4266 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4222 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4199 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4334 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4206 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4217 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   ..
+   ..
+   @> 4204 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4103 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4112 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4190 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4008 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4290 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> Results are saved in clusters_INT_RIB_.pdb.
+
+
+To compute the fingerprint of hydrophobic interactions, use the prefix
+``INT_HPh_``:
+
+.. ipython:: python
+   :verbatim:
+
+   findClusterCenters('INT_HPh_*.pdb', selection = 'resname DUM')
+
+.. parsed-literal::
+
+   @> 4371 atoms and 1 coordinate set(s) were parsed in 0.12s.
+   @> 4253 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4257 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4346 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4304 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4249 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4124 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4280 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4298 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   ..
+   ..
+   @> 4195 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4265 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4085 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4210 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4087 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4365 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> Results are saved in clusters_INT_HPh_.pdb.
 
 
 .. _WatFinder tutorial: http://www.bahargroup.org/prody/tutorials/watfinder_tutorial
