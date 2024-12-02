@@ -5,7 +5,7 @@ intersphinx_mapping = {
     'numpy': ('http://docs.scipy.org/doc/numpy/', None),
     'scipy': ('http://docs.scipy.org/doc/scipy/reference/', None),
     'matplotlib': ('http://matplotlib.sourceforge.net/', None),
-    'prodywebsite': ('http://prody.csb.pitt.edu/', None),
+    'prodywebsite': ('http://www.bahargroup.org/prody/', None),
 }
 RTD = os.environ.get('READTHEDOCS', None) == 'True'
 intersphinx_mapping.pop('prodywebsite')
@@ -38,7 +38,7 @@ extensions = [ 'sphinx.ext.todo',
 sys.path.append(os.path.abspath('../manual/sphinxext'))
 
 # needed when building PDF files for tutorials separately
-intersphinx_mapping['prodywebsite'] = ('http://prody.csb.pitt.edu', None)
+intersphinx_mapping['prodywebsite'] = ('http://www.bahargroup.org/prody', None)
 master_doc = 'index'
 
 #version = release = tutorial_version #or version
