@@ -160,62 +160,62 @@ the trajectories start at the starting structure and move towards the negative e
 
 .. parsed-literal::
 
-Warning: importing 'simtk.openmm' is deprecated.  Import 'openmm' instead.
-@> 
-Fixed structure found
-@> 
-Minimised fixed structure found
-@> 7479 atoms and 1 coordinate set(s) were parsed in 0.07s.
-@> Hessian was built in 0.14s.
-@> 2 modes were calculated in 0.28s.
-@> Parameter: rmsd = 6.00 A
-@> Parameter: n_steps = 5
-@> Step size is 1.20 A RMSD
-@> Mode is scaled by 31.21526594789081.
-@> 
-Minimising 6 conformers for mode 0 ...
-@> 
-Minimising structure 1 along mode 0 ...
-@> The structure was minimised in 31.22s.
-@> 
-Minimising structure 2 along mode 0 ...
-@> The structure was minimised in 132.40s.
-@> 
-Minimising structure 3 along mode 0 ...
-@> The structure was minimised in 171.45s.
-@> 
-Minimising structure 4 along mode 0 ...
-@> The structure was minimised in 286.93s.
-@> 
-Minimising structure 5 along mode 0 ...
-@> The structure was minimised in 366.90s.
-@> 
-Minimising structure 6 along mode 0 ...
-@> The structure was minimised in 459.04s.
-@> Parameter: rmsd = 5.45 A
-@> Parameter: n_steps = 5
-@> Step size is 1.09 A RMSD
-@> Mode is scaled by 31.215268055351423.
-@> 
-Minimising 6 conformers for mode 1 ...
-@> 
-Minimising structure 1 along mode 1 ...
-@> The structure was minimised in 30.34s.
-@> 
-Minimising structure 2 along mode 1 ...
-@> The structure was minimised in 126.45s.
-@> 
-Minimising structure 3 along mode 1 ...
-@> The structure was minimised in 191.12s.
-@> 
-Minimising structure 4 along mode 1 ...
-@> The structure was minimised in 1064.22s.
-@> 
-Minimising structure 5 along mode 1 ...
-@> The structure was minimised in 327.64s.
-@> 
-Minimising structure 6 along mode 1 ...
-@> The structure was minimised in 413.48s.
+   Warning: importing 'simtk.openmm' is deprecated.  Import 'openmm' instead.
+   @> 
+   Fixed structure found
+   @> 
+   Minimised fixed structure found
+   @> 7479 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> Hessian was built in 0.14s.
+   @> 2 modes were calculated in 0.28s.
+   @> Parameter: rmsd = 6.00 A
+   @> Parameter: n_steps = 5
+   @> Step size is 1.20 A RMSD
+   @> Mode is scaled by 31.21526594789081.
+   @> 
+   Minimising 6 conformers for mode 0 ...
+   @> 
+   Minimising structure 1 along mode 0 ...
+   @> The structure was minimised in 31.22s.
+   @> 
+   Minimising structure 2 along mode 0 ...
+   @> The structure was minimised in 132.40s.
+   @> 
+   Minimising structure 3 along mode 0 ...
+   @> The structure was minimised in 171.45s.
+   @> 
+   Minimising structure 4 along mode 0 ...
+   @> The structure was minimised in 286.93s.
+   @> 
+   Minimising structure 5 along mode 0 ...
+   @> The structure was minimised in 366.90s.
+   @> 
+   Minimising structure 6 along mode 0 ...
+   @> The structure was minimised in 459.04s.
+   @> Parameter: rmsd = 5.45 A
+   @> Parameter: n_steps = 5
+   @> Step size is 1.09 A RMSD
+   @> Mode is scaled by 31.215268055351423.
+   @> 
+   Minimising 6 conformers for mode 1 ...
+   @> 
+   Minimising structure 1 along mode 1 ...
+   @> The structure was minimised in 30.34s.
+   @> 
+   Minimising structure 2 along mode 1 ...
+   @> The structure was minimised in 126.45s.
+   @> 
+   Minimising structure 3 along mode 1 ...
+   @> The structure was minimised in 191.12s.
+   @> 
+   Minimising structure 4 along mode 1 ...
+   @> The structure was minimised in 1064.22s.
+   @> 
+   Minimising structure 5 along mode 1 ...
+   @> The structure was minimised in 327.64s.
+   @> 
+   Minimising structure 6 along mode 1 ...
+   @> The structure was minimised in 413.48s.
 
 We can also save these using the :func:`.saveEnsemble` method and also write them to PDB files:
 
