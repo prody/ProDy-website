@@ -41,6 +41,9 @@ Perform InSty calculations and extract chain-chain interactions
 
    interactions = Interactions('7laf')
 
+Compute Interactions
+-------------------------------------------------------------------------------
+
 To compute all interactions:
 
 .. ipython:: python
@@ -411,6 +414,9 @@ To compute all interactions:
    @> Number of detected hydrophobic interactions: 324.
    @> Calculating disulfide bonds.
    @> Number of detected disulfide bonds: 0.
+
+Select interactions between chains
+-------------------------------------------------------------------------------
 
 To extract the interactions between protein's complex, specify *selection* and
 *selection2* and interaction type:
