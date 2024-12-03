@@ -2988,30 +2988,37 @@ For example:
    @>   Average [Ang.]: 4.385379791259766
    @>   Standard deviation [Ang.]: 0.5366479754447937
    @>   Weight: 0.952381
-   @> Statistics for HSE66P-ARG65P:
+   @>   Energy [RT]: -4.51
+   @> Statistics for HIS66P-ARG65P:
    @>   Average [Ang.]: 4.717772006988525
    @>   Standard deviation [Ang.]: 0.6487299799919128
    @>   Weight: 0.857143
-   @> Statistics for HSE157P-LYS112P:
+   @>   Energy [RT]: -3.24
+   @> Statistics for HIS157P-LYS112P:
    @>   Average [Ang.]: 4.388020038604736
    @>   Standard deviation [Ang.]: 1.0506110191345215
    @>   Weight: 0.47619
+   @>   Energy [RT]: -2.14
    @> Statistics for PHE138P-ARG58P:
    @>   Average [Ang.]: 5.318399906158447
    @>   Standard deviation [Ang.]: 0.24265700578689575
    @>   Weight: 0.809524
+   @>   Energy [RT]: -4.51
    @> Statistics for TYR87P-LYS112P:
    @>   Average [Ang.]: 5.441559791564941
    @>   Standard deviation [Ang.]: 0.25401198863983154
    @>   Weight: 0.47619
+   @>   Energy [RT]: -2.64
    @> Statistics for TRP39P-LYS6P:
    @>   Average [Ang.]: 5.522061824798584
    @>   Standard deviation [Ang.]: 0.31886300444602966
    @>   Weight: 0.380952
+   @>   Energy [RT]: -3.12
    @> Statistics for PHE85P-ARG75P:
    @>   Average [Ang.]: 5.877999782562256
    @>   Standard deviation [Ang.]: 0.06788399815559387
    @>   Weight: 0.285714
+   @>   Energy [RT]: -4.51
 
 .. ipython:: python
    :verbatim:
@@ -3024,172 +3031,100 @@ For example:
    @>   Average [Ang.]: 2.793931
    @>   Standard deviation [Ang.]: 0.205527
    @>   Weight: 1.52381
-   @> Statistics for HSE72P-ASN15P:
+   @>   Energy [RT]: -3.92
+   @> Statistics for HIS72P-ASN15P:
    @>   Average [Ang.]: 2.989283
    @>   Standard deviation [Ang.]: 0.270697
    @>   Weight: 0.285714
+   @>   Energy [RT]: -3.05
    @> Statistics for GLN143P-GLU139P:
    @>   Average [Ang.]: 3.051633
    @>   Standard deviation [Ang.]: 0.20753
    @>   Weight: 1.285714
-   @> Statistics for HSE66P-GLU139P:
+   @>   Energy [RT]: -3.45
+   @> Statistics for HIS66P-GLU139P:
    @>   Average [Ang.]: 2.900411
    @>   Standard deviation [Ang.]: 0.169455
    @>   Weight: 0.428571
+   @>   Energy [RT]: -3.15
    @> Statistics for ARG40P-LYS6P:
    @>   Average [Ang.]: 3.055475
    @>   Standard deviation [Ang.]: 0.213814
    @>   Weight: 0.380952
+   @>   Energy [RT]: -2.11
    @> Statistics for ARG58P-ASP56P:
    @>   Average [Ang.]: 2.827481
    @>   Standard deviation [Ang.]: 0.171087
    @>   Weight: 2.952381
+   @>   Energy [RT]: -3.92
    @> Statistics for ALA45P-ARG75P:
    @>   Average [Ang.]: 2.840721
    @>   Standard deviation [Ang.]: 0.105565
    @>   Weight: 0.904762
+   @>   Energy [RT]: -3.26
    @> Statistics for ASN53P-GLU50P:
    @>   Average [Ang.]: 2.980214
    @>   Standard deviation [Ang.]: 0.147229
    @>   Weight: 0.333333
+   @>   Energy [RT]: -2.43
    @> Statistics for ALA74P-ASN53P:
    @>   Average [Ang.]: 2.98522
    @>   Standard deviation [Ang.]: 0.148331
    @>   Weight: 0.952381
+   @>   Energy [RT]: -2.06
    @> Statistics for ASP56P-ILE16P:
    @>   Average [Ang.]: 3.085957
    @>   Standard deviation [Ang.]: 0.21134
    @>   Weight: 0.666667
+   @>   Energy [RT]: -3.46
    @> Statistics for LYS110P-THR84P:
    @>   Average [Ang.]: 2.774475
    @>   Standard deviation [Ang.]: 0.080304
    @>   Weight: 0.380952
+   @>   Energy [RT]: -1.64
    @> Statistics for LEU116P-CYS90P:
    @>   Average [Ang.]: 2.887425
    @>   Standard deviation [Ang.]: 0.118768
    @>   Weight: 0.952381
+   @>   Energy [RT]: -6.13
    @> Statistics for SER103P-LEU99P:
    @>   Average [Ang.]: 2.897324
    @>   Standard deviation [Ang.]: 0.17182
    @>   Weight: 1.380952
+   @>   Energy [RT]: -4.12
    @> Statistics for ASN134P-ASP137P:
    @>   Average [Ang.]: 2.917242
    @>   Standard deviation [Ang.]: 0.160488
    @>   Weight: 0.904762
+   @>   Energy [RT]: -2.5
    @> Statistics for PHE152P-CYS148P:
    @>   Average [Ang.]: 2.956784
    @>   Standard deviation [Ang.]: 0.160039
    @>   Weight: 0.904762
+   @>   Energy [RT]: -4.81
    @> Statistics for ASN95P-ASP92P:
    @>   Average [Ang.]: 3.061373
    @>   Standard deviation [Ang.]: 0.215848
    @>   Weight: 0.714286
+   @>   Energy [RT]: -2.5
    @> Statistics for LYS6P-ASN38P:
    @>   Average [Ang.]: 3.006786
    @>   Standard deviation [Ang.]: 0.154497
    @>   Weight: 0.333333
+   @>   Energy [RT]: -1.63
    @> Statistics for ILE77P-ALA45P:
    @>   Average [Ang.]: 2.819429
    @>   Standard deviation [Ang.]: 0.092538
    @>   Weight: 0.666667
+   @>   Energy [RT]: -4.45
    @> Statistics for LEU99P-ASN95P:
    @>   Average [Ang.]: 3.027242
    @>   Standard deviation [Ang.]: 0.19744
    @>   Weight: 0.904762
-   @> Statistics for CYS149P-CYS145P:
-   @>   Average [Ang.]: 2.928052
-   @>   Standard deviation [Ang.]: 0.146811
-   @>   Weight: 1.190476
-   @> Statistics for GLY52P-ALA74P:
-   @>   Average [Ang.]: 2.887583
-   @>   Standard deviation [Ang.]: 0.088417
-   @>   Weight: 0.285714
-   @> Statistics for ASP32P-LYS28P:
-   @>   Average [Ang.]: 2.86277
-   @>   Standard deviation [Ang.]: 0.119982
-   @>   Weight: 0.952381
-   @> Statistics for ILE88P-LYS112P:
-   @>   Average [Ang.]: 2.906433
-   @>   Standard deviation [Ang.]: 0.147086
-   @>   Weight: 1.0
-   @> Statistics for ARG27P-GLU23P:
-   @>   Average [Ang.]: 2.790357
-   @>   Standard deviation [Ang.]: 0.140396
-   @>   Weight: 2.0
-   @> Statistics for TYR142P-PHE138P:
-   @>   Average [Ang.]: 3.094219
-   @>   Standard deviation [Ang.]: 0.152889
-   @>   Weight: 1.0
-   @> Statistics for PHE26P-ALA22P:
-   @>   Average [Ang.]: 3.023619
-   @>   Standard deviation [Ang.]: 0.150087
-   @>   Weight: 1.0
-   @> Statistics for ASN15P-SER19P:
-   @>   Average [Ang.]: 2.96532
-   @>   Standard deviation [Ang.]: 0.213496
-   @>   Weight: 0.238095
-   @> Statistics for ARG75P-ASP81P:
-   @>   Average [Ang.]: 2.782441
-   @>   Standard deviation [Ang.]: 0.185369
-   @>   Weight: 2.095238
-   @> Statistics for ARG75P-ASP42P:
-   @>   Average [Ang.]: 2.760572
-   @>   Standard deviation [Ang.]: 0.134486
-   @>   Weight: 1.380952
-   @> Statistics for ARG97P-GLU93P:
-   @>   Average [Ang.]: 2.881173
-   @>   Standard deviation [Ang.]: 0.223159
-   @>   Weight: 1.952381
-   @> Statistics for ARG65P-GLU139P:
-   @>   Average [Ang.]: 2.826732
-   @>   Standard deviation [Ang.]: 0.198775
-   @>   Weight: 1.047619
-   @> Statistics for VAL25P-ILE21P:
-   @>   Average [Ang.]: 2.975267
-   @>   Standard deviation [Ang.]: 0.121046
-   @>   Weight: 1.0
-   @> Statistics for LEU153P-CYS149P:
-   @>   Average [Ang.]: 3.04695
-   @>   Standard deviation [Ang.]: 0.1793
-   @>   Weight: 0.952381
-   @> Statistics for SER7P-ASP86P:
-   @>   Average [Ang.]: 2.758983
-   @>   Standard deviation [Ang.]: 0.122097
-   @>   Weight: 1.142857
+   @>   Energy [RT]: -3.94
    ..
    ..
-   @> Statistics for ALA83P-LYS79P:
-   @>   Average [Ang.]: 3.225643
-   @>   Standard deviation [Ang.]: 0.148806
-   @>   Weight: 0.333333
-   @> Statistics for GLN60P-MET70P:
-   @>   Average [Ang.]: 2.902757
-   @>   Standard deviation [Ang.]: 0.162208
-   @>   Weight: 0.333333
-   @> Statistics for GLN124P-ILE126P:
-   @>   Average [Ang.]: 2.98456
-   @>   Standard deviation [Ang.]: 0.198396
-   @>   Weight: 0.238095
-   @> Statistics for SER19P-ASN15P:
-   @>   Average [Ang.]: 2.691612
-   @>   Standard deviation [Ang.]: 0.10843
-   @>   Weight: 0.380952
-   @> Statistics for ASN95P-THR46P:
-   @>   Average [Ang.]: 3.056129
-   @>   Standard deviation [Ang.]: 0.197107
-   @>   Weight: 0.333333
-   @> Statistics for ARG150P-ASP120P:
-   @>   Average [Ang.]: 2.752571
-   @>   Standard deviation [Ang.]: 0.112541
-   @>   Weight: 0.333333
-   @> Statistics for LYS155P-HSE157P:
-   @>   Average [Ang.]: 2.833843
-   @>   Standard deviation [Ang.]: 0.185712
-   @>   Weight: 0.333333
-   @> Statistics for ARG65P-ASP135P:
-   @>   Average [Ang.]: 2.86488
-   @>   Standard deviation [Ang.]: 0.213607
-   @>   Weight: 0.47619
+
 
 For better visualization of the results, we can use
 :func:`.showInteractionsGraph`, which displays results as a graph with
@@ -3216,74 +3151,59 @@ analyze from residue 1 to 100.
    @>   Average [Ang.]: 2.793931
    @>   Standard deviation [Ang.]: 0.205527
    @>   Weight: 1.52381
-   @> Statistics for HSE72P-ASN15P:
+   @>   Energy [RT]: -3.92
+   @> Statistics for HIS72P-ASN15P:
    @>   Average [Ang.]: 2.989283
    @>   Standard deviation [Ang.]: 0.270697
    @>   Weight: 0.285714
-   @> Statistics for HSE66P-GLU139P:
+   @>   Energy [RT]: -3.05
+   @> Statistics for HIS66P-GLU139P:
    @>   Average [Ang.]: 2.900411
    @>   Standard deviation [Ang.]: 0.169455
    @>   Weight: 0.428571
+   @>   Energy [RT]: -3.15
    @> Statistics for ARG40P-LYS6P:
    @>   Average [Ang.]: 3.055475
    @>   Standard deviation [Ang.]: 0.213814
    @>   Weight: 0.380952
+   @>   Energy [RT]: -2.11
    @> Statistics for ARG58P-ASP56P:
    @>   Average [Ang.]: 2.827481
    @>   Standard deviation [Ang.]: 0.171087
    @>   Weight: 2.952381
+   @>   Energy [RT]: -3.92
    @> Statistics for ALA45P-ARG75P:
    @>   Average [Ang.]: 2.840721
    @>   Standard deviation [Ang.]: 0.105565
    @>   Weight: 0.904762
+   @>   Energy [RT]: -3.26
    @> Statistics for ASN53P-GLU50P:
    @>   Average [Ang.]: 2.980214
    @>   Standard deviation [Ang.]: 0.147229
    @>   Weight: 0.333333
+   @>   Energy [RT]: -2.43
    @> Statistics for ALA74P-ASN53P:
    @>   Average [Ang.]: 2.98522
    @>   Standard deviation [Ang.]: 0.148331
    @>   Weight: 0.952381
-   @> Statistics for ASP56P-ILE16P:
-   @>   Average [Ang.]: 3.085957
-   @>   Standard deviation [Ang.]: 0.21134
-   @>   Weight: 0.666667
-   @> Statistics for LYS110P-THR84P:
-   @>   Average [Ang.]: 2.774475
-   @>   Standard deviation [Ang.]: 0.080304
-   @>   Weight: 0.380952
-   @> Statistics for LEU116P-CYS90P:
-   @>   Average [Ang.]: 2.887425
-   @>   Standard deviation [Ang.]: 0.118768
-   @>   Weight: 0.952381
-   @> Statistics for SER103P-LEU99P:
-   @>   Average [Ang.]: 2.897324
-   @>   Standard deviation [Ang.]: 0.17182
-   @>   Weight: 1.380952
-   @> Statistics for ASN95P-ASP92P:
-   @>   Average [Ang.]: 3.061373
-   @>   Standard deviation [Ang.]: 0.215848
-   @>   Weight: 0.714286
-   @> Statistics for LYS6P-ASN38P:
-   @>   Average [Ang.]: 3.006786
-   @>   Standard deviation [Ang.]: 0.154497
-   @>   Weight: 0.333333
-   @> Statistics for ILE77P-ALA45P:
-   @>   Average [Ang.]: 2.819429
-   @>   Standard deviation [Ang.]: 0.092538
-   @>   Weight: 0.666667
-   @> Statistics for LEU99P-ASN95P:
-   @>   Average [Ang.]: 3.027242
-   @>   Standard deviation [Ang.]: 0.19744
-   @>   Weight: 0.904762
-   @> Statistics for GLY52P-ALA74P:
-   @>   Average [Ang.]: 2.887583
-   @>   Standard deviation [Ang.]: 0.088417
-   @>   Weight: 0.285714
+   @>   Energy [RT]: -2.06
    ..
    ..
 
 .. figure:: images/insty_traj_graph1.png
+   :scale: 60 %
+
+
+We can also use the :func:`.showInteractionsHist` function to display the
+results as a bar plot (``clip`` define how many pair we would like to display).
+
+.. ipython:: python
+   :verbatim:
+
+   showInteractionsHist(statistics, clip=20)
+
+
+.. figure:: images/traj_hist_inter.png
    :scale: 60 %
 
 
@@ -3755,13 +3675,13 @@ tutorial. For example, we can compute all interactions for ``frame0`` and
 
 .. parsed-literal::
 
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
 
 .. figure:: images/insty_traj_cum1.png
    :scale: 60 %
@@ -3801,13 +3721,13 @@ tutorial. For example, we can compute all interactions for ``frame0`` and
 
 .. parsed-literal::
 
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
 
 .. figure:: images/insty_traj_cum2.png
    :scale: 60 %
@@ -3892,26 +3812,32 @@ After uploading, we have access to all data, for example:
    @>   Average [Ang.]: 2.793931
    @>   Standard deviation [Ang.]: 0.205527
    @>   Weight: 1.52381
-   @> Statistics for HSE72P-ASN15P:
+   @>   Energy [RT]: -3.92
+   @> Statistics for HIS72P-ASN15P:
    @>   Average [Ang.]: 2.989283
    @>   Standard deviation [Ang.]: 0.270697
    @>   Weight: 0.285714
+   @>   Energy [RT]: -3.05
    @> Statistics for GLN143P-GLU139P:
    @>   Average [Ang.]: 3.051633
    @>   Standard deviation [Ang.]: 0.20753
    @>   Weight: 1.285714
-   @> Statistics for HSE66P-GLU139P:
+   @>   Energy [RT]: -3.45
+   @> Statistics for HIS66P-GLU139P:
    @>   Average [Ang.]: 2.900411
    @>   Standard deviation [Ang.]: 0.169455
    @>   Weight: 0.428571
+   @>   Energy [RT]: -3.15
    @> Statistics for ARG40P-LYS6P:
    @>   Average [Ang.]: 3.055475
    @>   Standard deviation [Ang.]: 0.213814
    @>   Weight: 0.380952
+   @>   Energy [RT]: -2.11
    @> Statistics for ARG58P-ASP56P:
    @>   Average [Ang.]: 2.827481
    @>   Standard deviation [Ang.]: 0.171087
    @>   Weight: 2.952381
+   @>   Energy [RT]: -3.92
    ..
    ..
 
