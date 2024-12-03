@@ -52,7 +52,11 @@ first it needs to be downloaded.
 
 .. parsed-literal::
 
-   '5kqm.pdb'
+   @> Connecting wwPDB FTP server RCSB PDB (USA).
+   @> Downloading PDB files via FTP failed, trying HTTP.
+   @> 5kqm downloaded (5kqm.pdb)
+   @> PDB download via HTTP completed (1 downloaded, 0 failed).
+
 
 When PDB file is already in the local directory, we can choose between
 Openbabel_ and PDBfixer_ to add missing hydrogen bonds to the protein

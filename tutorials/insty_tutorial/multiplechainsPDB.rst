@@ -32,6 +32,10 @@ Openbabel_.
    @> Hydrogens were added to the structure. Structure addH_7laf.pdb is saved in the local directry.
    @> 21970 atoms and 1 coordinate set(s) were parsed in 0.24s.
 
+
+Perform InSty calculations and extract chain-chain interactions
+-------------------------------------------------------------------------------
+
 .. ipython:: python
    :verbatim:
 
@@ -502,3 +506,21 @@ display them:
    @> TCL file saved
    @> TCL file saved
 
+
+Extract chain-chain interactions in ensemble or trajectory analysis
+-------------------------------------------------------------------------------
+
+To extract the intermolecular interactions between two chains in a
+trajectory or PDB ensemble, we should follow the corresponding tutorial and
+include selections (``selection`` and ``selection2``) and the ``replace``
+parameter set to ``True`` as follows: 
+
+.. ipython:: python
+   :verbatim:
+
+   interactionsTrajectory.getInteractions(selection='chain A', selection2='chain B', replace=True)
+
+Once we use ``replace = True``, the selection will be replaced by
+chain-chain interactions or any other interaction selected by selecting
+option. Be aware that once ``replace`` is used, you can not return back to all
+interactions.
