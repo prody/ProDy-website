@@ -119,7 +119,7 @@ regarding the main steps of the method are as follows:
 
    ``num_modes`` : Number of global modes for sampling (default is 2).
 
-   ``num_steps`` : Number of steps along each mode in each direction (default is 2).
+   ``num_steps`` : Number of steps along each mode in each direction (default is 5).
 
    ``max_rmsd`` : Maximum RMSD for the first global mode in :math:`\mathring{A}`
    (default is 2). Successive modes are downscaled to lower RMSDs based on their frequency. 
@@ -147,10 +147,16 @@ In the following, we will perform ANMD simulations with 5 steps up to a maximum 
 Relaxation of conformers is carried out in implicit solvent via energy minimization only. 
 Simulation details will be printed out during execution.
 
-We also use the keyword options to follow the negative direction along these modes in the 
-reverse direction. This means that, rather than starting at the negative extreme of the mode
-and moving towards the starting structure and then moving on towards the positive extreme,
-the trajectories start at the starting structure and move towards the negative extreme.
+We also use keyword options of :func:`.traverseMode` to control the direction along the modes
+and the output ensemble. The default ``pos``=**True**, ``neg``=**True** and ``reverse``=**False**
+leads to ensembles with 5 conformations in the negative direction ordered such that the most extreme
+one is first and the last one is closest to the starting conformation, then the starting conformation,
+then 5 conformations in the positive direction, giving a total of 11 conformations.
+
+In this case, we only want to follow the negative direction along these modes, so we set
+``pos``=**False**. We also set ``reverse``=**True**, meaning that rather than starting
+at the negative extreme of the mode and ordering to approach towards the starting structure,
+the trajectories start at the starting structure and approach towards the negative extreme.
 
 .. ipython:: python
    :verbatim:
