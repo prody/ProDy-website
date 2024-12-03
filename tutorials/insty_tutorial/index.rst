@@ -24,6 +24,7 @@ Interactions and Stability (InSty) analysis
    multiplechainsPDB
    ensemblePDB
    trajectory
+   signint
 
 
 .. only:: html
