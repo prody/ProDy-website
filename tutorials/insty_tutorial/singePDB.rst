@@ -956,7 +956,7 @@ The results can be displayed in the following way:
    :verbatim:
 
     import matplotlib.pylab as plt
-    showAtomicMatrix(matrix, atoms=atoms.ca, cmap='seismic', markersize=8)
+    showAtomicMatrix(matrix, atoms=atoms.ca, cmap='seismic', markersize=5)
     plt.xlabel('Residue')
     plt.ylabel('Residue')
     plt.clim([-3,3])
@@ -974,13 +974,13 @@ The total number of interaction for each residue can be displayed on the plot us
 
 .. parsed-literal::
 
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
 
 
 .. parsed-literal::
@@ -1045,7 +1045,7 @@ provides matrix with energies of interactions for each pair.
 
 .. parsed-literal::
 
-   @> Calculating interactions
+   @> Calculating interaction matrix
 
 
 The results can be displayed in the following way:
@@ -1054,7 +1054,7 @@ The results can be displayed in the following way:
    :verbatim:
 
     import matplotlib.pylab as plt
-    showAtomicMatrix(matrix_en, atoms=atoms.ca, cmap='seismic', markersize=8)
+    showAtomicMatrix(matrix_en, atoms=atoms.ca, cmap='seismic', markersize=5)
     plt.xlabel('Residue')
     plt.ylabel('Residue')
     plt.clim([-3,3])
@@ -1073,13 +1073,13 @@ The total energy of interaction for each residue can be displayed on the plot us
 
 .. parsed-literal::
 
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
 
 
 .. parsed-literal::
