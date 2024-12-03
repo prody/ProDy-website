@@ -1504,7 +1504,8 @@ along with the folder containing PDB files, also generates an MSA file that can
 be used to obtain sequentially conserved pairs of residues that are
 corresponding to the interacation types. Therefore, we can analyze only the folder
 or the folder with the MSA file by giving ``mapping_file``. Both cases are shown
-below.
+below. Using the MSA allows us to compare interactions between corresponding residues
+rather than just comparing in 3D space as above.
 
 Analysis of the folder with prepared PDB homologs:
 
