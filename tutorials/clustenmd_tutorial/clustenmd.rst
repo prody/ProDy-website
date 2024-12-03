@@ -1,6 +1,6 @@
 .. _clustenmd:
 
-Simulation and Analysis
+ClustENMD Simulation and Analysis
 ===============================================================================
 
 First, we will make the following necessary imports ProDy_, NumPy_, and Matplotlib_ 

@@ -1,6 +1,6 @@
-.. d:
+.. _anmd:
 
-Simulation and Analysis
+ANMD Simulation and Analysis
 ===============================================================================
 
 First, we will make the following necessary imports ProDy_, NumPy_, and Matplotlib_ 
