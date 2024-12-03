@@ -1150,129 +1150,84 @@ quantitative analysis using :func:`.calcStatisticsInteractions`:
    @>   Average [Ang.]: 2.720873
    @>   Standard deviation [Ang.]: 0.179343
    @>   Weight: 0.8
+   @>   Energy [RT]: -2.83
    @> Statistics for GLY10A-THR7A:
    @>   Average [Ang.]: 3.037245
    @>   Standard deviation [Ang.]: 0.1988
    @>   Weight: 0.669565
+   @>   Energy [RT]: -1.81
    @> Statistics for ARG72A-GLN40A:
    @>   Average [Ang.]: 2.874946
    @>   Standard deviation [Ang.]: 0.18885
    @>   Weight: 0.782609
+   @>   Energy [RT]: -4.13
    @> Statistics for LYS6A-LEU67A:
    @>   Average [Ang.]: 2.920333
    @>   Standard deviation [Ang.]: 0.157525
    @>   Weight: 0.947826
+   @>   Energy [RT]: -3.24
    @> Statistics for GLU34A-ILE30A:
    @>   Average [Ang.]: 2.896524
    @>   Standard deviation [Ang.]: 0.171493
    @>   Weight: 0.878261
+   @>   Energy [RT]: -3.99
    @> Statistics for THR55A-ASP58A:
    @>   Average [Ang.]: 2.777835
    @>   Standard deviation [Ang.]: 0.158068
    @>   Weight: 1.504348
+   @>   Energy [RT]: -2.41
    @> Statistics for ILE44A-HIS68A:
    @>   Average [Ang.]: 2.941125
    @>   Standard deviation [Ang.]: 0.177848
    @>   Weight: 0.834783
+   @>   Energy [RT]: -4.55
    @> Statistics for LYS29A-ASN25A:
    @>   Average [Ang.]: 3.050209
    @>   Standard deviation [Ang.]: 0.211243
    @>   Weight: 0.582609
+   @>   Energy [RT]: -1.63
    @> Statistics for HIS68A-ILE44A:
    @>   Average [Ang.]: 2.951679
    @>   Standard deviation [Ang.]: 0.195428
    @>   Weight: 0.826087
+   @>   Energy [RT]: -4.55
    @> Statistics for GLU51A-TYR59A:
    @>   Average [Ang.]: 2.967038
    @>   Standard deviation [Ang.]: 0.18416
    @>   Weight: 0.834783
+   @>   Energy [RT]: -3.62
    @> Statistics for GLU64A-GLN2A:
    @>   Average [Ang.]: 2.860456
    @>   Standard deviation [Ang.]: 0.142289
    @>   Weight: 0.895652
+   @>   Energy [RT]: -3.45
    @> Statistics for LEU50A-LEU43A:
    @>   Average [Ang.]: 3.028411
    @>   Standard deviation [Ang.]: 0.19173
    @>   Weight: 0.773913
+   @>   Energy [RT]: -7.16
    @> Statistics for ILE13A-VAL5A:
    @>   Average [Ang.]: 2.900624
    @>   Standard deviation [Ang.]: 0.149592
    @>   Weight: 0.930435
+   @>   Energy [RT]: -5.31
    @> Statistics for SER65A-GLN62A:
    @>   Average [Ang.]: 2.989405
    @>   Standard deviation [Ang.]: 0.276179
    @>   Weight: 0.678261
+   @>   Energy [RT]: -3.06
    @> Statistics for VAL17A-MET1A:
    @>   Average [Ang.]: 2.917662
    @>   Standard deviation [Ang.]: 0.146237
    @>   Weight: 0.93913
+   @>   Energy [RT]: -5.16
    @> Statistics for ASN60A-SER57A:
    @>   Average [Ang.]: 3.176033
    @>   Standard deviation [Ang.]: 0.176174
    @>   Weight: 0.626087
-   @> Statistics for LYS33A-LYS29A:
-   @>   Average [Ang.]: 3.124632
-   @>   Standard deviation [Ang.]: 0.203019
-   @>   Weight: 0.547826
-   @> Statistics for VAL70A-ARG42A:
-   @>   Average [Ang.]: 2.990983
-   @>   Standard deviation [Ang.]: 0.202089
-   @>   Weight: 0.921739
-   @> Statistics for ASP32A-ALA28A:
-   @>   Average [Ang.]: 3.06256
-   @>   Standard deviation [Ang.]: 0.189158
-   @>   Weight: 0.730435
-   @> Statistics for LEU67A-PHE4A:
-   @>   Average [Ang.]: 2.967632
-   @>   Standard deviation [Ang.]: 0.178013
-   @>   Weight: 0.852174
-   @> Statistics for THR7A-LYS11A:
-   @>   Average [Ang.]: 2.907541
-   @>   Standard deviation [Ang.]: 0.188693
-   @>   Weight: 1.46087
-   @> Statistics for LEU15A-ILE3A:
-   @>   Average [Ang.]: 3.006021
-   @>   Standard deviation [Ang.]: 0.198347
-   @>   Weight: 0.913043
-   @> Statistics for GLU18A-ASP21A:
-   @>   Average [Ang.]: 2.909238
-   @>   Standard deviation [Ang.]: 0.185235
-   @>   Weight: 0.6
-   @> Statistics for ILE61A-LEU56A:
-   @>   Average [Ang.]: 3.054711
-   @>   Standard deviation [Ang.]: 0.198213
-   @>   Weight: 0.878261
-   @> Statistics for GLN41A-LYS27A:
-   @>   Average [Ang.]: 2.989313
-   @>   Standard deviation [Ang.]: 0.183486
-   @>   Weight: 0.547826
-   @> Statistics for PHE4A-SER65A:
-   @>   Average [Ang.]: 2.992881
-   @>   Standard deviation [Ang.]: 0.18513
-   @>   Weight: 0.886957
-   @> Statistics for ILE3A-LEU15A:
-   @>   Average [Ang.]: 3.023158
-   @>   Standard deviation [Ang.]: 0.185656
-   @>   Weight: 0.869565
-   @> Statistics for LYS48A-PHE45A:
-   @>   Average [Ang.]: 3.081561
-   @>   Standard deviation [Ang.]: 0.189569
-   @>   Weight: 0.608696
-   @> Statistics for ARG42A-VAL70A:
-   @>   Average [Ang.]: 2.971445
-   @>   Standard deviation [Ang.]: 0.212987
-   @>   Weight: 0.834783
-   @> Statistics for SER57A-PRO19A:
-   @>   Average [Ang.]: 3.036466
-   @>   Standard deviation [Ang.]: 0.200139
-   @>   Weight: 0.713043
-   @> Statistics for PHE45A-LYS48A:
-   @>   Average [Ang.]: 3.03853
-   @>   Standard deviation [Ang.]: 0.184267
-   @>   Weight: 0.86087
+   @>   Energy [RT]: -2.13
    ..
    ..
-
 
 To provide a better way for visualization of those results, another function,
 :func:`.showInteractionsGraph`, could be used, which provides a graph with
