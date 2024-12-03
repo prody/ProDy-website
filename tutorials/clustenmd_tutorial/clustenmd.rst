@@ -14,7 +14,7 @@ if you haven't already done it:
    from prody import *
    plt.ion()
 
-Preparing the system and running a ClustENMD simulation
+Preparing the system and ClustENMD simulation
 -------------------------------------------------------------------------------
 
 We start our calculations by parsing the structure, from which we would like to sample
@@ -194,7 +194,7 @@ thousand residues. For larger assemblies, the user may prefer: (*i*) to decrease
 number of clusters and/or generations, (*ii*) to perform only energy minimization with/out 
 heating-up phase, or (*iii*) to carefully shrink the padding distance in explicit solvent.
 
-Performing a simulation
+Running a ClustENMD simulation
 -------------------------------------------------------------------------------
 
 In the following, we will perform a ClustENMD simulation of 5 generations using the first 

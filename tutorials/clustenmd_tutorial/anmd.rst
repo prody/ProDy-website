@@ -108,7 +108,7 @@ We see that the 1st mode (index 0 in Python) has a strong negative overlap, so
 we will focus on this mode for ANMD. We will also use the 2nd mode (index 1 in Python) 
 to illustrate that the method can traverse multiple modes in the same execution.
 
-Running ANMD simulations
+Running an ANMD simulation
 -------------------------------------------------------------------------------
 
 ANMD is implemented as a ProDy function called :function:`.runAMND`. The main parameters 
