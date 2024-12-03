@@ -1145,7 +1145,7 @@ hydrophobic interactions and finally DiBs - disulfide bonds).
 
 .. parsed-literal::
 
-   @> Calculating interactions
+   @> Calculating interaction matrix
 
 The results can be displayed in a similar way:
 
@@ -1160,3 +1160,25 @@ The results can be displayed in a similar way:
 
 .. figure:: images/single_imshow2.png
    :scale: 50 %
+
+
+.. ipython:: python
+   :verbatim:
+
+   interactions.showCumulativeInteractionTypes(HPh=0, DiBs=0)
+
+
+.. parsed-literal::
+
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+
+
+.. figure:: images/single_bar_plot2.png
+   :scale: 80 %
+
