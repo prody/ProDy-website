@@ -148,15 +148,15 @@ Relaxation of conformers is carried out in implicit solvent via energy minimizat
 Simulation details will be printed out during execution.
 
 We also use keyword options of :func:`.traverseMode` to control the direction along the modes
-and the output ensemble. The default ``pos``=**True**, ``neg``=**True** and ``reverse``=**False**
-leads to ensembles with 5 conformations in the negative direction ordered such that the most extreme
-one is first and the last one is closest to the starting conformation, then the starting conformation,
+and the output ensemble. The default pos=True, neg=True and reverse=False leads to ensembles 
+with 5 conformations in the negative direction ordered such that the most extreme one is first 
+and the last one is closest to the starting conformation, then the starting conformation,
 then 5 conformations in the positive direction, giving a total of 11 conformations.
 
 In this case, we only want to follow the negative direction along these modes, so we set
-``pos``=**False**. We also set ``reverse``=**True**, meaning that rather than starting
-at the negative extreme of the mode and ordering to approach towards the starting structure,
-the trajectories start at the starting structure and approach towards the negative extreme.
+pos=False. We also set reverse=True, meaning that rather than starting at the negative extreme
+ of the mode and ordering to approach towards the starting structure, the trajectories start 
+ at the starting structure and approach towards the negative extreme.
 
 .. ipython:: python
    :verbatim:
