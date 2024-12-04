@@ -25,7 +25,7 @@ drugui:
 
 pull: clone
 	#git checkout master; git pull origin master
-	cd ProDy; git checkout master; git pull origin master
+	cd ProDy; git checkout main; git pull origin main
 	#cd ProDy; git checkout devel; git pull origin devel
 
 latest: pull
