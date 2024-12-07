@@ -487,7 +487,8 @@ For repulsive ionic bonding interactions:
 .. ipython:: python
    :verbatim:
 
-   interactions.getRepulsiveIonicBonding(selection='chain A', selection2='chain B')
+   interactions.getRepulsiveIonicBonding(selection='chain A', 
+   					selection2='chain B')
 
 .. parsed-literal::
 
@@ -504,8 +505,8 @@ chains. To set this selection and ignore all intramolecular interactions, we can
 .. ipython:: python
    :verbatim:
 
-   chain_interactions = interactions.getInteractions(selection='chain A', selection2='chain B', 
-							replace=True)
+   chain_interactions = interactions.getInteractions(selection='chain A', 
+					selection2='chain B', replace=True)
 
 .. parsed-literal::
 
@@ -699,8 +700,9 @@ possible interactions.
    @> GLU168B  <--->  hb:ARG215A  hb:ARG215A  sb:ARG215A
    @> ARG215A  <--->  hb:GLU168B  hb:GLU168B  sb:GLU168B
    @> 
-   Legend: hb-hydrogen bond, sb-salt bridge, rb-repulsive ionic bond, ps-Pi stacking interaction,
-   pc-Cation-Pi interaction, hp-hydrophobic interaction, dibs-disulfide bonds
+   Legend: hb-hydrogen bond, sb-salt bridge, rb-repulsive ionic bond, 
+   ps-Pi stacking interaction, pc-Cation-Pi interaction, hp-hydrophobic 
+   interaction, dibs-disulfide bonds
 
 To have access to interactors that are having smaller number of
 interactions, we can modify ``contacts_min`` parameter.
@@ -735,7 +737,7 @@ We can also diplay them as a bar plot:
 .. ipython:: python
    :verbatim:
 
-   interactions.showFrequentInteractors(cutoff = 1)
+   interactions.showFrequentInteractors(cutoff=1)
 
 .. figure:: images/chainchain_showFreqInteractors.png
    :scale: 60 %
@@ -767,7 +769,8 @@ parameter set to ``True`` as follows:
 .. ipython:: python
    :verbatim:
 
-   interactionsTrajectory.getInteractions(selection='chain A', selection2='chain B', replace=True)
+   interactionsTrajectory.getInteractions(selection='chain A', 
+				selection2='chain B', replace=True)
 
 Once we use ``replace = True``, the selection will be replaced by
 chain-chain interactions or any other interaction selected by selecting
