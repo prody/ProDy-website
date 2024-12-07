@@ -936,7 +936,7 @@ be copied to a folder with ``folder_name`` set to ``struc_homologs_Dali``.
    @> 	Failed to match chains (seqid=5%, overlap=76%).
    @> Trying to match chains based on local sequence alignment:
    @>  Comparing Chain A from addH_6c9jA (len=386) and Chain A from addH_4ysmA (len=475):
-   /home/karolamik/.local/lib/python3.10/site-packages/Bio/pairwise2.py:278: BiopythonDeprecationWarning: Bio.pairwise2 has been deprecated, and we intend to remove it in a future release of Biopython. As an alternative, please consider using Bio.Align.PairwiseAligner as a replacement, and contact the Biopython developers if you still need the Bio.pairwise2 module.
+   ~/.local/lib/python3.10/site-packages/Bio/pairwise2.py:278: BiopythonDeprecationWarning: Bio.pairwise2 has been deprecated, and we intend to remove it in a future release of Biopython. As an alternative, please consider using Bio.Align.PairwiseAligner as a replacement, and contact the Biopython developers if you still need the Bio.pairwise2 module.
    warnings.warn(
    @> 	Match: 381 residues match with 35% sequence identity and 80% overlap.
    @> Aligning the structures..
@@ -1262,14 +1262,14 @@ local directory. Therefore, first, we will fetch it.
 Now, we will run Foldseek, but with more restricted parameters by applying
 higher values for ``coverage_threshold`` and ``tm_threshold``. Default
 criteria is providing large number of PDB files for analysis (~4000 files
-for PDB code 1OL5). 
+for PDB code *1OL5*). 
 
 
 .. ipython:: python
    :verbatim:
 
    runFoldseek('1ol5.pdb', 'A', coverage_threshold=0.9, tm_threshold=0.9, 
-		database_folder='/home/karolamik/Downloads/foldseek/pdb')
+		database_folder='~/Downloads/foldseek/pdb')
 
 .. parsed-literal::
 
@@ -1500,7 +1500,7 @@ for PDB code 1OL5).
 
 Once the folder with PDB files will be created, we can analyze it with 
 :func:`.calcSignatureInteractions` and :func:`.findClusterCenters`. Foldseek
-along with the folder containing PDB files, also generates an MSA file that can
+along with the folder containing PDB files, also generates an ``MSA`` file that can
 be used to obtain sequentially conserved pairs of residues that are
 corresponding to the interacation types. Therefore, we can analyze only the folder
 or the folder with the MSA file by giving ``mapping_file``. Both cases are shown

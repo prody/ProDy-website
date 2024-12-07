@@ -1890,7 +1890,7 @@ Now, interactions are replaced:
 If we just want to change distance parameters, we can also apply them by
 giving the names of the distances specified for each interaction type. Here
 is ``distDA`` for hydrogen bonds, ``distSB`` for salt bridges, ``distPS``
-for Pi-stacking interactions, ``distPC`` for Pi-cartion interactions,
+for pi-stacking interactions, ``distPC`` for pi-cartion interactions,
 ``distHPh`` for hydrophobic interactions, and ``distDB`` for disulfide
 bonds.
 
