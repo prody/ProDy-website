@@ -32,10 +32,17 @@ Openbabel_.
    @> Hydrogens were added to the structure. Structure addH_7laf.pdb is saved in the local directry.
    @> 21970 atoms and 1 coordinate set(s) were parsed in 0.24s.
 
+
+Perform InSty calculations and extract chain-chain interactions
+-------------------------------------------------------------------------------
+
 .. ipython:: python
    :verbatim:
 
    interactions = Interactions('7laf')
+
+Compute Interactions
+-------------------------------------------------------------------------------
 
 To compute all interactions:
 
@@ -408,6 +415,9 @@ To compute all interactions:
    @> Calculating disulfide bonds.
    @> Number of detected disulfide bonds: 0.
 
+Select interactions between chains
+-------------------------------------------------------------------------------
+
 To extract the interactions between protein's complex, specify *selection* and
 *selection2* and interaction type:
 
@@ -477,28 +487,293 @@ For repulsive ionic bonding interactions:
 .. ipython:: python
    :verbatim:
 
-   interactions.getRepulsiveIonicBonding(selection='chain A', selection2='chain B')
+   interactions.getRepulsiveIonicBonding(selection='chain A', 
+   					selection2='chain B')
 
 .. parsed-literal::
 
    []
 
-Non-zero interactions could be futher saved and used in VMD_ program to
-display them:
+
+Set only interactions between chains
+-------------------------------------------------------------------------------
+
+With the above functions, we can display particular types of interactions between selected
+chains. To set this selection and ignore all intramolecular interactions, we can use
+``replace`` option. 
 
 .. ipython:: python
    :verbatim:
 
-   showProteinInteractions_VMD(atoms, interactions.getHydrogenBonds(), 
-				color='blue', filename='HBs_7laf.tcl')
-   showProteinInteractions_VMD(atoms, interactions.getSaltBridges(), 
-				color='yellow',filename='SBs_7laf.tcl')
-   showProteinInteractions_VMD(atoms, interactions.getHydrophobic(), 
-				color='silver',filename='HPh_7laf.tcl')
+   chain_interactions = interactions.getInteractions(selection='chain A', 
+					selection2='chain B', replace=True)
+
+.. parsed-literal::
+
+   @> New interactions are set
+
+.. ipython:: python
+   :verbatim:
+
+   chain_interactions
+
+.. parsed-literal::
+
+   [[['ARG215', 'NH2_1620', 'A', 'GLU168', 'OE1_6442', 'B', 2.5802, 24.8343],
+     ['ARG215', 'NH1_1619', 'A', 'GLU168', 'OE2_6443', 'B', 2.6778, 28.6548],
+     ['ASP202', 'OD2_1504', 'A', 'GLU418', 'OE2_8442', 'B', 2.744, 31.6383]],
+    [['ARG215', 'NH1_1619_1620', 'A', 'GLU168', 'OE1_6442_6443', 'B', 2.6066],
+     ['ARG208', 'NH1_1560_1561', 'A', 'GLU111', 'OE1_5976_5977', 'B', 4.3468]],
+    [],
+    [],
+    [],
+    [['ILE197', 'CD1_1467', 'A', 'PHE184', 'CD2_6569', 'B', 3.2502, 29.5284],
+     ['LEU419', 'CD1_8449', 'B', 'LYS196', 'CD_1457', 'A', 3.4645, 34.5683],
+     ['ILE197', 'CD1_6671', 'B', 'ALA182', 'CB_1349', 'A', 3.7348, 34.1782],
+     ['LEU186', 'CD1_1387', 'A', 'ALA193', 'CB_6637', 'B', 4.2965, 20.2503]],
+    []]
+
+Now, when new interactions are set, we can use the functions that we
+introduced before:
+
+Interaction matrix:
+
+.. ipython:: python
+   :verbatim:
+
+   matrix = interactions.buildInteractionMatrix()
+
+.. parsed-literal::
+
+   @> Calculating interaction matrix
+
+.. ipython:: python
+   :verbatim:
+
+   import matplotlib.pylab as plt
+
+   showAtomicMatrix(matrix, atoms=atoms.ca, cmap='plasma', markersize=5)
+   plt.xlabel('Residue')
+   plt.ylabel('Residue')
+   plt.clim([0,np.max(matrix)+1])   
+
+.. figure:: images/chainchain_InSty_matrix.png
+   :scale: 60 %
+
+Interaction matrix displayed with energies:
+
+.. ipython:: python
+   :verbatim:
+
+   matrix_en = interactions.buildInteractionMatrixEnergy()
+
+.. parsed-literal::
+
+   @> Calculating interaction energies matrix with type IB_solv
+
+.. ipython:: python
+   :verbatim:
+
+   import matplotlib.pylab as plt
+   showAtomicMatrix(matrix_en, atoms=atoms.ca, cmap='plasma', 
+                 markersize=5)
+   plt.xlabel('Residue')
+   plt.ylabel('Residue')
+   plt.clim([np.min(matrix_en),0])
+
+.. figure:: images/chainchain_InSty_matrix_en.png
+   :scale: 60 %
+
+A bar plot with information about interaction types per residue between the
+two chains:
+
+.. ipython:: python
+   :verbatim:
+
+   interactions.showCumulativeInteractionTypes()
+
+.. parsed-literal::
+
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+
+.. figure:: images/chainchain_InSty_barplot.png
+   :scale: 80 %
+
+A bar plot with information about interaction types per residue between the
+two chains displayed by energies instead of the interactions number:
+
+.. ipython:: python
+   :verbatim:
+
+   interactions.showCumulativeInteractionTypes(energy=True)
+
+.. figure:: images/chainchain_InSty_barplot_en.png
+   :scale: 80 %
+
+The results with the higest number of possible contacts can be saved in PDB
+file. They will be restored in Occupancy column and display in VMD_.
+
+.. ipython:: python
+   :verbatim:
+
+   interactions.saveInteractionsPDB(filename='7laf_meanMatrix_chAB_both.pdb')
+
+.. parsed-literal::
+
+   @> PDB file saved.
+
+Also, with enegies instead of the number of interactions:
+
+.. ipython:: python
+   :verbatim:
+
+   interactions.saveInteractionsPDB(filename='7laf_meanMatrix_chAB_both_en.pdb', energy=True)
+
+.. parsed-literal::
+
+   @> PDB file saved.
+
+We can also save all the interactions into the ``TCL`` scripts to visualize
+them in VMD_.
+
+.. ipython:: python
+   :verbatim:
+
+   showProteinInteractions_VMD(atoms, interactions.getHydrogenBonds(),
+                                     color='blue', filename='7laf_HBs_chAB.tcl')
+
+   showProteinInteractions_VMD(atoms, interactions.getSaltBridges(),
+                                     color='yellow',filename='7laf_SBs_chAB.tcl')
+
+   showProteinInteractions_VMD(atoms, interactions.getRepulsiveIonicBonding(),
+                                     color='red',filename='7laf_RIB_chAB.tcl')
+
+   showProteinInteractions_VMD(atoms, interactions.getPiStacking(),
+                                     color='green',filename='7laf_PiStacking_chAB.tcl')
+
+   showProteinInteractions_VMD(atoms, interactions.getPiCation(),
+                                     color='orange',filename='7laf_PiCation_chAB.tcl')
+
+   showProteinInteractions_VMD(atoms, interactions.getHydrophobic(),
+                                     color='silver',filename='7laf_HPh_chAB.tcl')
+
+   showProteinInteractions_VMD(atoms, interactions.getDisulfideBonds(),
+                                     color='black',filename='7laf_DiBs_chAB.tcl')
 
 .. parsed-literal::
 
    @> TCL file saved
    @> TCL file saved
+   @> Lack of results
    @> TCL file saved
+   @> Lack of results
+   @> TCL file saved
+   @> Lack of results
+   @> TCL file saved
+   @> TCL file saved
+   @> Lack of results
+   @> TCL file saved
+
+After uploading ``TCL`` scripts to VMD, as it was explained before, we can
+obtain such a view:
+
+.. figure:: images/chainAB_interface_InSty.png
+   :scale: 60 %
+
+Except for visualization, we can also get access to the most frequent
+interactors, i.e., residues that can form the biggest number of
+possible interactions.
+
+.. ipython:: python
+   :verbatim:
+
+   interactions.getFrequentInteractors()
+
+.. parsed-literal::
+
+   @> GLU168B  <--->  hb:ARG215A  hb:ARG215A  sb:ARG215A
+   @> ARG215A  <--->  hb:GLU168B  hb:GLU168B  sb:GLU168B
+   @> 
+   Legend: hb-hydrogen bond, sb-salt bridge, rb-repulsive ionic bond, 
+   ps-Pi stacking interaction, pc-Cation-Pi interaction, hp-hydrophobic 
+   interaction, dibs-disulfide bonds
+
+To have access to interactors that are having smaller number of
+interactions, we can modify ``contacts_min`` parameter.
+
+.. ipython:: python
+   :verbatim:
+
+   interactions.getFrequentInteractors(contacts_min=1)
+
+.. parsed-literal::
+
+   @> ALA182A  <--->  hp:ILE197B
+   @> LYS196A  <--->  hp:LEU419B
+   @> GLU111B  <--->  sb:ARG208A
+   @> GLU168B  <--->  hb:ARG215A  hb:ARG215A  sb:ARG215A
+   @> PHE184B  <--->  hp:ILE197A
+   @> ALA193B  <--->  hp:LEU186A
+   @> GLU418B  <--->  hb:ASP202A
+   @> ILE197B  <--->  hp:ALA182A
+   @> LEU419B  <--->  hp:LYS196A
+   @> ARG208A  <--->  sb:GLU111B
+   @> ARG215A  <--->  hb:GLU168B  hb:GLU168B  sb:GLU168B
+   @> ILE197A  <--->  hp:PHE184B
+   @> LEU186A  <--->  hp:ALA193B
+   @> ASP202A  <--->  hb:GLU418B
+   @> 
+   Legend: hb-hydrogen bond, sb-salt bridge, rb-repulsive ionic bond, ps-Pi stacking interaction,
+   pc-Cation-Pi interaction, hp-hydrophobic interaction, dibs-disulfide bonds
+
+We can also diplay them as a bar plot:
+
+.. ipython:: python
+   :verbatim:
+
+   interactions.showFrequentInteractors(cutoff=1)
+
+.. figure:: images/chainchain_showFreqInteractors.png
+   :scale: 60 %
+
+To have access to information about the type of possible interactions and
+residue partner, we can use the :func:`.getInteractors` function and define
+residue by its three letter code and chain ID.
+
+.. ipython:: python
+   :verbatim:
+
+   interactions.getInteractors('ARG215A')
+
+.. parsed-literal::
+
+   @> hb:ARG215A-GLU168B
+   @> hb:ARG215A-GLU168B
+   @> sb:ARG215A-GLU168B
+
+
+Extract chain-chain interactions in ensemble or trajectory analysis
+===============================================================================
+
+To extract the intermolecular interactions between two chains in a
+trajectory or PDB ensemble, we should follow the corresponding tutorial and
+include selections (``selection`` and ``selection2``) and the ``replace``
+parameter set to ``True`` as follows: 
+
+.. ipython:: python
+   :verbatim:
+
+   interactionsTrajectory.getInteractions(selection='chain A', 
+				selection2='chain B', replace=True)
+
+Once we use ``replace = True``, the selection will be replaced by
+chain-chain interactions or any other interaction selected by selecting
+option. Be aware that once ``replace`` is used, you can not return back to all
+interactions.
 

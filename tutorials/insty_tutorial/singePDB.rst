@@ -375,32 +375,61 @@ structure):
    []
 
 To display residues with the biggest number of potential interactions and their
-types, we can use :meth:`.Interactions.getFrequentInteractions` method:
+types, we can use :meth:`.Interactions.getFrequentInteractors` method:
 
 .. ipython:: python
    :verbatim:
 
-   frequent_interactions = interactions.getFrequentInteractions(contacts_min=3)
-   frequent_interactions
+   interactions.getFrequentInteractors(contacts_min=4)
 
 .. parsed-literal::
 
-   @> The most frequent interactions between:
-   @> LEU9P  <--->  hp:ALA44P  hp:PHE85P  hb:LEU89P
-   @> CYS12P  <--->  hb:ASN15P  hb:SER19P  hb:THR46P
-   @> ILE16P  <--->  hb:ASP56P  hp:ALA74P  hp:TYR131P
-   @> PHE26P  <--->  hp:VAL8P  hp:VAL30P  ps:TRP39P  hp:VAL41P
-   @> TRP39P  <--->  hp:LYS6P  hp:ILE35P  hp:LEU153P
-   @> MET63P  <--->  hp:ILE21P  hp:ILE68P  hp:MET70P
-   @> ASP81P  <--->  hb:ARG75P  hb:THR78P  hb:PHE85P
-   @> THR84P  <--->  hb:SER7P  hb:ARG40P  hb:LYS110P
-   @> ASP86P  <--->  hb:SER7P  sb:LYS110P  hb:LYS112P
-   @> ILE88P  <--->  hp:VAL11P  hp:PHE82P  hp:ALA111P  hb:GLU114P
-   @> ASP92P  <--->  sb:ARG18P  hb:ASN95P  hb:LEU96P
-   @> LYS112P  <--->  hb:ILE88P  sb:GLU114P  pc:HSE157P
-   @> ILE127P  <--->  hb:ARG18P  hp:MET91P  hp:LEU116P  hp:VAL141P
-   @> Legend: hb-hydrogen bond, sb-salt bridge, rb-repulsive ionic bond, ps-Pi stacking interaction,pc-Cation-Pi interaction, hp-hydrophobic interaction, dibs-disulfide bonds
-   @> The biggest number of interactions: 4
+   @> VAL8P  <--->  hb:ASP42P  hp:LEU89P  hp:PHE26P  hb:ARG40P
+   @> LEU9P  <--->  hp:ALA44P  hp:PHE85P  hb:LEU89P  hp:ILE77P  hb:TYR87P
+   @> CYS12P  <--->  hb:ASN15P  hb:SER19P  hb:THR46P  hb:ALA44P
+   @> ASN15P  <--->  hb:HIS72P  hb:ARG75P  hb:CYS12P  hb:SER19P  hb:SER43P
+   @> ARG18P  <--->  hb:ALA22P  hb:ASP92P  sb:ASP92P  hb:ILE127P  sb:ASP129P  hp:VAL141P
+   @> GLU23P  <--->  hb:ARG27P  hb:ARG27P  hb:ARG27P  sb:ARG27P  sb:HIS72P  hb:SER19P
+   @> VAL25P  <--->  hb:LEU29P  hp:LEU29P  hb:ILE21P  hp:TYR142P
+   @> PHE26P  <--->  hp:VAL8P  hb:VAL30P  hp:VAL30P  ps:TRP39P  hp:VAL41P  hb:ALA22P
+   @> ARG27P  <--->  hb:THR31P  hb:GLU23P  hb:GLU23P  hb:GLU23P  sb:GLU23P
+   @> LYS28P  <--->  hb:ASP32P  sb:ASP32P  hb:ALA24P  hp:ILE68P
+   @> TRP39P  <--->  hp:LYS6P  hp:ILE35P  hp:LEU153P  ps:PHE26P  hb:SER36P
+   @> ARG40P  <--->  hb:VAL8P  pc:PHE85P  hb:LYS6P  hb:THR84P  hp:PHE85P
+   @> ASP42P  <--->  hb:PHE10P  hb:ARG75P  sb:ARG75P  hb:VAL8P
+   @> ALA44P  <--->  hb:CYS12P  hp:ARG75P  hp:LEU9P  hb:PHE10P
+   @> ASP56P  <--->  hb:ARG58P  hb:ARG58P  hb:ARG58P  sb:ARG58P  hb:GLN60P  hb:ILE16P
+   @> ARG58P  <--->  hb:CYS62P  hb:ASP56P  hb:ASP56P  hb:ASP56P  sb:ASP56P  hb:TYR131P  hb:TYR131P  hp:PHE138P
+   @> MET63P  <--->  hp:ILE21P  hb:ILE68P  hp:ILE68P  hp:ALA24P  hb:GLY59P
+   @> ARG65P  <--->  pc:HIS66P  sb:GLU139P  hb:SER61P  hb:GLU139P
+   @> HIS66P  <--->  ps:TYR142P  pc:ARG65P  hb:GLU139P  sb:GLU139P
+   @> ARG75P  <--->  hb:ALA45P  sb:ASP81P  hb:ASN15P  hb:ASP42P  sb:ASP42P  hp:ALA44P  hb:ASP81P  hb:ASP81P
+   @> ILE77P  <--->  hp:LEU9P  hp:LYS102P  hb:ALA45P  hp:LEU99P
+   @> ASP81P  <--->  hb:ARG75P  hb:ARG75P  hb:THR78P  hb:PHE85P  sb:ARG75P  hb:THR78P
+   @> PHE85P  <--->  hp:ARG40P  hp:LEU9P  pc:ARG40P  hb:ASP81P
+   @> ASP86P  <--->  hb:SER7P  sb:LYS110P  hb:LYS112P  hb:SER7P
+   @> ILE88P  <--->  hp:VAL11P  hp:PHE82P  hp:ALA111P  hb:GLU114P  hb:LYS112P
+   @> LEU89P  <--->  hb:VAL11P  hp:TYR119P  hp:VAL8P  hb:LEU9P
+   @> ASP92P  <--->  hb:ARG18P  sb:ARG18P  hb:ASN95P  hb:LEU96P
+   @> ASP98P  <--->  hb:ARG101P  sb:ARG101P  hb:LYS102P  hb:LYS102P  sb:LYS102P  hb:SER94P
+   @> LYS102P  <--->  rb:ARG101P  hb:GLN105P  hp:ILE77P  hb:ASP98P  hb:ASP98P  sb:ASP98P
+   @> LYS112P  <--->  hb:ILE88P  sb:GLU114P  pc:HIS157P  hb:ASP86P  hb:HIS157P
+   @> GLU114P  <--->  hb:CYS90P  hb:ILE88P  sb:LYS112P  sb:HIS157P
+   @> TYR119P  <--->  hb:HIS157P  hp:LEU89P  hb:HIS157P  ps:HIS157P
+   @> ASP120P  <--->  hb:LYS123P  hb:GLN124P  sb:ARG147P  hb:GLY117P
+   @> ILE127P  <--->  hb:ARG18P  hp:MET91P  hp:LEU116P  hp:VAL141P  hb:MET91P
+   @> TYR131P  <--->  hb:ARG58P  hb:ARG58P  ps:TYR132P  hp:ILE16P
+   @> PHE138P  <--->  hp:ARG58P  hb:TYR142P  hp:ILE21P  hb:ASN134P
+   @> GLU139P  <--->  hb:ARG65P  hb:HIS66P  sb:HIS66P  hb:GLN143P  hb:GLN143P  sb:ARG65P  hb:ASP135P
+   @> VAL141P  <--->  hp:ARG18P  hb:CYS145P  hp:ILE127P  hb:ASP137P
+   @> TYR142P  <--->  hp:VAL25P  hb:VAL146P  ps:HIS66P  hb:PHE138P  hp:VAL146P
+   @> ARG147P  <--->  hb:ALA151P  sb:ASP120P  hb:GLN124P  hb:GLN124P  hb:GLN143P
+   @> HIS157P  <--->  hb:LYS112P  sb:GLU114P  hb:TYR119P  ps:TYR119P  pc:LYS112P  hb:TYR119P
+   @> ARG101P  <--->  hb:ARG97P  hb:ASP98P  sb:ASP98P  rb:LYS102P
+   @> 
+   Legend: hb-hydrogen bond, sb-salt bridge, rb-repulsive ionic bond, ps-Pi stacking interaction,
+   pc-Cation-Pi interaction, hp-hydrophobic interaction, dibs-disulfide bonds
+
 
 The value of ``contacts_min`` can be modified to display residues with smaller
 or bigger number of interactions. 
@@ -927,7 +956,7 @@ The results can be displayed in the following way:
    :verbatim:
 
     import matplotlib.pylab as plt
-    showAtomicMatrix(matrix, atoms=atoms.ca, cmap='seismic', markersize=8)
+    showAtomicMatrix(matrix, atoms=atoms.ca, cmap='seismic', markersize=5)
     plt.xlabel('Residue')
     plt.ylabel('Residue')
     plt.clim([-3,3])
@@ -945,13 +974,13 @@ The total number of interaction for each residue can be displayed on the plot us
 
 .. parsed-literal::
 
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
 
 
 .. parsed-literal::
@@ -1016,7 +1045,7 @@ provides matrix with energies of interactions for each pair.
 
 .. parsed-literal::
 
-   @> Calculating interactions
+   @> Calculating interaction matrix
 
 
 The results can be displayed in the following way:
@@ -1025,7 +1054,7 @@ The results can be displayed in the following way:
    :verbatim:
 
     import matplotlib.pylab as plt
-    showAtomicMatrix(matrix_en, atoms=atoms.ca, cmap='seismic', markersize=8)
+    showAtomicMatrix(matrix_en, atoms=atoms.ca, cmap='seismic', markersize=5)
     plt.xlabel('Residue')
     plt.ylabel('Residue')
     plt.clim([-3,3])
@@ -1044,13 +1073,13 @@ The total energy of interaction for each residue can be displayed on the plot us
 
 .. parsed-literal::
 
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
-   @> Calculating interactions
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
 
 
 .. parsed-literal::
@@ -1116,7 +1145,7 @@ hydrophobic interactions and finally DiBs - disulfide bonds).
 
 .. parsed-literal::
 
-   @> Calculating interactions
+   @> Calculating interaction matrix
 
 The results can be displayed in a similar way:
 
@@ -1131,3 +1160,25 @@ The results can be displayed in a similar way:
 
 .. figure:: images/single_imshow2.png
    :scale: 50 %
+
+
+.. ipython:: python
+   :verbatim:
+
+   interactions.showCumulativeInteractionTypes(HPh=0, DiBs=0)
+
+
+.. parsed-literal::
+
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+   @> Calculating interaction matrix
+
+
+.. figure:: images/single_bar_plot2.png
+   :scale: 80 %
+

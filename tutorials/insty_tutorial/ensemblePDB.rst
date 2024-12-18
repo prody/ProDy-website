@@ -1150,129 +1150,84 @@ quantitative analysis using :func:`.calcStatisticsInteractions`:
    @>   Average [Ang.]: 2.720873
    @>   Standard deviation [Ang.]: 0.179343
    @>   Weight: 0.8
+   @>   Energy [RT]: -2.83
    @> Statistics for GLY10A-THR7A:
    @>   Average [Ang.]: 3.037245
    @>   Standard deviation [Ang.]: 0.1988
    @>   Weight: 0.669565
+   @>   Energy [RT]: -1.81
    @> Statistics for ARG72A-GLN40A:
    @>   Average [Ang.]: 2.874946
    @>   Standard deviation [Ang.]: 0.18885
    @>   Weight: 0.782609
+   @>   Energy [RT]: -4.13
    @> Statistics for LYS6A-LEU67A:
    @>   Average [Ang.]: 2.920333
    @>   Standard deviation [Ang.]: 0.157525
    @>   Weight: 0.947826
+   @>   Energy [RT]: -3.24
    @> Statistics for GLU34A-ILE30A:
    @>   Average [Ang.]: 2.896524
    @>   Standard deviation [Ang.]: 0.171493
    @>   Weight: 0.878261
+   @>   Energy [RT]: -3.99
    @> Statistics for THR55A-ASP58A:
    @>   Average [Ang.]: 2.777835
    @>   Standard deviation [Ang.]: 0.158068
    @>   Weight: 1.504348
+   @>   Energy [RT]: -2.41
    @> Statistics for ILE44A-HIS68A:
    @>   Average [Ang.]: 2.941125
    @>   Standard deviation [Ang.]: 0.177848
    @>   Weight: 0.834783
+   @>   Energy [RT]: -4.55
    @> Statistics for LYS29A-ASN25A:
    @>   Average [Ang.]: 3.050209
    @>   Standard deviation [Ang.]: 0.211243
    @>   Weight: 0.582609
+   @>   Energy [RT]: -1.63
    @> Statistics for HIS68A-ILE44A:
    @>   Average [Ang.]: 2.951679
    @>   Standard deviation [Ang.]: 0.195428
    @>   Weight: 0.826087
+   @>   Energy [RT]: -4.55
    @> Statistics for GLU51A-TYR59A:
    @>   Average [Ang.]: 2.967038
    @>   Standard deviation [Ang.]: 0.18416
    @>   Weight: 0.834783
+   @>   Energy [RT]: -3.62
    @> Statistics for GLU64A-GLN2A:
    @>   Average [Ang.]: 2.860456
    @>   Standard deviation [Ang.]: 0.142289
    @>   Weight: 0.895652
+   @>   Energy [RT]: -3.45
    @> Statistics for LEU50A-LEU43A:
    @>   Average [Ang.]: 3.028411
    @>   Standard deviation [Ang.]: 0.19173
    @>   Weight: 0.773913
+   @>   Energy [RT]: -7.16
    @> Statistics for ILE13A-VAL5A:
    @>   Average [Ang.]: 2.900624
    @>   Standard deviation [Ang.]: 0.149592
    @>   Weight: 0.930435
+   @>   Energy [RT]: -5.31
    @> Statistics for SER65A-GLN62A:
    @>   Average [Ang.]: 2.989405
    @>   Standard deviation [Ang.]: 0.276179
    @>   Weight: 0.678261
+   @>   Energy [RT]: -3.06
    @> Statistics for VAL17A-MET1A:
    @>   Average [Ang.]: 2.917662
    @>   Standard deviation [Ang.]: 0.146237
    @>   Weight: 0.93913
+   @>   Energy [RT]: -5.16
    @> Statistics for ASN60A-SER57A:
    @>   Average [Ang.]: 3.176033
    @>   Standard deviation [Ang.]: 0.176174
    @>   Weight: 0.626087
-   @> Statistics for LYS33A-LYS29A:
-   @>   Average [Ang.]: 3.124632
-   @>   Standard deviation [Ang.]: 0.203019
-   @>   Weight: 0.547826
-   @> Statistics for VAL70A-ARG42A:
-   @>   Average [Ang.]: 2.990983
-   @>   Standard deviation [Ang.]: 0.202089
-   @>   Weight: 0.921739
-   @> Statistics for ASP32A-ALA28A:
-   @>   Average [Ang.]: 3.06256
-   @>   Standard deviation [Ang.]: 0.189158
-   @>   Weight: 0.730435
-   @> Statistics for LEU67A-PHE4A:
-   @>   Average [Ang.]: 2.967632
-   @>   Standard deviation [Ang.]: 0.178013
-   @>   Weight: 0.852174
-   @> Statistics for THR7A-LYS11A:
-   @>   Average [Ang.]: 2.907541
-   @>   Standard deviation [Ang.]: 0.188693
-   @>   Weight: 1.46087
-   @> Statistics for LEU15A-ILE3A:
-   @>   Average [Ang.]: 3.006021
-   @>   Standard deviation [Ang.]: 0.198347
-   @>   Weight: 0.913043
-   @> Statistics for GLU18A-ASP21A:
-   @>   Average [Ang.]: 2.909238
-   @>   Standard deviation [Ang.]: 0.185235
-   @>   Weight: 0.6
-   @> Statistics for ILE61A-LEU56A:
-   @>   Average [Ang.]: 3.054711
-   @>   Standard deviation [Ang.]: 0.198213
-   @>   Weight: 0.878261
-   @> Statistics for GLN41A-LYS27A:
-   @>   Average [Ang.]: 2.989313
-   @>   Standard deviation [Ang.]: 0.183486
-   @>   Weight: 0.547826
-   @> Statistics for PHE4A-SER65A:
-   @>   Average [Ang.]: 2.992881
-   @>   Standard deviation [Ang.]: 0.18513
-   @>   Weight: 0.886957
-   @> Statistics for ILE3A-LEU15A:
-   @>   Average [Ang.]: 3.023158
-   @>   Standard deviation [Ang.]: 0.185656
-   @>   Weight: 0.869565
-   @> Statistics for LYS48A-PHE45A:
-   @>   Average [Ang.]: 3.081561
-   @>   Standard deviation [Ang.]: 0.189569
-   @>   Weight: 0.608696
-   @> Statistics for ARG42A-VAL70A:
-   @>   Average [Ang.]: 2.971445
-   @>   Standard deviation [Ang.]: 0.212987
-   @>   Weight: 0.834783
-   @> Statistics for SER57A-PRO19A:
-   @>   Average [Ang.]: 3.036466
-   @>   Standard deviation [Ang.]: 0.200139
-   @>   Weight: 0.713043
-   @> Statistics for PHE45A-LYS48A:
-   @>   Average [Ang.]: 3.03853
-   @>   Standard deviation [Ang.]: 0.184267
-   @>   Weight: 0.86087
+   @>   Energy [RT]: -2.13
    ..
    ..
-
 
 To provide a better way for visualization of those results, another function,
 :func:`.showInteractionsGraph`, could be used, which provides a graph with
@@ -1930,4 +1885,112 @@ Now, interactions are replaced:
     ['TYR59', '931_932_933_934_935_936', 'A', 'LYS48', 'NZ_762', 'A', 6.3869],
     ['HIS68', '1083_1084_1085_1086_1087', 'A', 'LYS6', 'NZ_99', 'A', 7.1937],
     ['PHE45', '722_723_724_725_726_727', 'A', 'LYS48', 'NZ_762', 'A', 7.5218]]
+
+
+If we just want to change distance parameters, we can also apply them by
+giving the names of the distances specified for each interaction type. Here
+is ``distDA`` for hydrogen bonds, ``distSB`` for salt bridges, ``distPS``
+for pi-stacking interactions, ``distPC`` for pi-cartion interactions,
+``distHPh`` for hydrophobic interactions, and ``distDB`` for disulfide
+bonds.
+
+.. ipython:: python
+   :verbatim:
+
+   interactionsTrajectoryNMR.calcProteinInteractionsTrajectory(atoms, distDA=4, 
+		    distSB=6, distPS=6, distPC=6, distHPh=4, distRB=4, distDB=4)
+
+.. parsed-literal::
+
+   @> Model: 0
+   @> Calculating hydrogen bonds.
+   @>      DONOR (res chid atom)   <--->       ACCEPTOR (res chid atom)    Distance  Angle
+   @>      GLN49    A       NE2_784  <--->      GLU51    A       OE2_820     2.6    16.2
+   @>      LYS11    A        NZ_175  <--->      GLU34    A       OE1_547     2.6     7.0
+   @>      GLY10    A         N_160  <--->       THR7    A         O_116     2.7    19.8
+   @>      ARG72    A        N_1149  <--->      GLN40    A         O_624     2.7    21.1
+   @>      ARG72    A      NH1_1158  <--->      GLN40    A       OE1_628     2.7     7.5
+   @>       LYS6    A          N_91  <--->      LEU67    A        O_1062     2.7     2.6
+   @>      GLU34    A         N_540  <--->      ILE30    A         O_473     2.8    28.2
+   @>      THR55    A         N_870  <--->      ASP58    A       OD2_921     2.8    19.7
+   @>      ILE44    A         N_698  <--->      HIS68    A        O_1081     2.9    20.2
+   @>      THR55    A       OG1_875  <--->      ASP58    A       OD2_921     2.9    13.2
+   @>      LYS29    A         N_448  <--->      ASN25    A         O_389     2.9    13.6
+   @>      LEU73    A        N_1173  <--->      LEU71    A        O_1133     2.9    27.8
+   @>      HIS68    A        N_1078  <--->      ILE44    A         O_701     2.9    21.8
+   @>      THR14    A       OG1_227  <--->       ILE3    A          O_39     2.9    13.1
+   @>      GLU51    A         N_812  <--->      TYR59    A        OH_937     3.0    23.4
+   @>      GLU64    A        N_1019  <--->       GLN2    A          O_22     3.0    23.2
+   @>      LEU50    A         N_793  <--->      LEU43    A         O_682     3.0    15.3
+   @>      GLN62    A         N_980  <--->      SER65    A       OG_1039     3.0    23.4
+   @>      ILE13    A         N_203  <--->       VAL5    A          O_78     3.0    12.8
+   @>      SER65    A        N_1034  <--->      GLN62    A         O_983     3.0    18.3
+   @>      VAL17    A         N_270  <--->       MET1    A           O_3     3.0     8.8
+   @>      ASN60    A         N_947  <--->      SER57    A         O_906     3.1    28.5
+   @>      LYS33    A         N_518  <--->      LYS29    A         O_451     3.1    33.1
+   @>      VAL70    A        N_1114  <--->      ARG42    A         O_658     3.1    17.9
+   @>      ASP32    A         N_506  <--->      ALA28    A         O_441     3.1    10.6
+   @>      LEU67    A        N_1059  <--->       PHE4    A          O_58     3.1    32.7
+   @>       THR7    A         N_113  <--->      LYS11    A         O_170     3.1    10.9
+   @>      LEU15    A         N_236  <--->       ILE3    A          O_39     3.1    18.3
+   @>      GLU18    A         N_286  <--->      ASP21    A       OD2_333     3.1    29.0
+   @>      ILE61    A         N_961  <--->      LEU56    A         O_887     3.1    32.1
+   @>      GLN41    A       NE2_646  <--->      LYS27    A         O_419     3.1    30.7
+   @>       PHE4    A          N_55  <--->      SER65    A        O_1037     3.2    15.4
+   @>       ILE3    A          N_36  <--->      LEU15    A         O_239     3.2    33.3
+   @>      LYS48    A         N_754  <--->      PHE45    A         O_720     3.2    18.9
+   @>      ARG42    A         N_655  <--->      VAL70    A        O_1117     3.2    24.8
+   @>      SER57    A         N_903  <--->      PRO19    A         O_304     3.3    29.1
+   @>      PHE45    A         N_717  <--->      LYS48    A         O_757     3.3    15.6
+   @>       GLN2    A        NE2_27  <--->      THR14    A       OG1_227     3.3    19.4
+   @>      GLN41    A         N_638  <--->      PRO38    A         O_598     3.4    33.7
+   @>      THR66    A      OG1_1050  <--->      GLU64    A        O_1022     3.4    28.3
+   @>      LEU56    A         N_884  <--->      ASP21    A         O_329     3.4    23.8
+   @>      ALA28    A         N_438  <--->      GLU24    A         O_374     3.5    18.5
+   @>      GLN41    A       NE2_646  <--->      PRO37    A         O_584     3.5    26.0
+   @>      TYR59    A         N_926  <--->      THR55    A         O_873     3.5    27.1
+   @>      ASP21    A         N_326  <--->      GLU18    A         O_289     3.6    19.8
+   @>      ASP58    A         N_914  <--->      THR55    A       OG1_875     3.6    17.1
+   @>      ILE23    A         N_352  <--->      ARG54    A         O_849     3.6    31.5
+   @>      ILE36    A         N_562  <--->      ILE30    A         O_473     3.7    17.8
+   @>      GLN40    A         N_621  <--->      PRO37    A         O_584     3.9    35.8
+   @>      GLN49    A       NE2_784  <--->      GLU51    A       OE1_819     3.9    30.8
+   @>       LEU8    A         N_127  <--->      LEU69    A        O_1098     3.9    18.6
+   @>      VAL26    A         N_400  <--->      THR22    A         O_341     4.0    18.2
+   @> Number of detected hydrogen bonds: 52.
+   @> Calculating salt bridges.
+   @>      LYS11    A          NZ_175  <--->      GLU34    A     OE1_547_548     2.7
+   @>      LYS33    A          NZ_526  <--->      ASP32    A     OD1_512_513     3.6
+   @>      LYS29    A          NZ_456  <--->      ASP21    A     OD1_332_333     4.5
+   @>      ARG42    A     NH1_664_665  <--->      GLU51    A     OE1_819_820     6.0
+   @> Number of detected salt bridges: 4.
+   @> Calculating repulsive ionic bonding.
+   @> Number of detected Repulsive Ionic Bonding interactions: 0.
+   @> Calculating Pi stacking interactions.
+   @> Number of detected Pi stacking interactions: 0.
+   @> Calculating cation-Pi interactions.
+   @> Number of detected cation-pi interactions: 0.
+   @> Hydrophobic Overlapping Areas are computed.
+   @> Calculating hydrophobic interactions.
+   @>      PHE45    A       CD1_72314s  <--->      LEU67    A      CD1_1065     3.6    25.2
+   @>       ILE3    A        CG1_4114s  <--->      VAL17    A       CG2_276     3.6    17.8
+   @>      LEU56    A       CD2_89114s  <--->      ILE23    A       CD1_359     3.6    22.8
+   @>      LEU43    A       CD1_68514s  <--->      ILE23    A       CG2_358     3.7    10.1
+   @>      LYS27    A        CG_42114s  <--->      LEU43    A       CD1_685     3.7    13.4
+   @>      ILE61    A       CD1_96814s  <--->      LEU56    A       CD2_891     3.8    40.6
+   @>      TYR59    A       CD2_93314s  <--->      ILE23    A       CD1_359     3.8    24.0
+   @>      LEU69    A      CD1_110114s  <--->      ILE30    A       CD1_477     3.8    10.5
+   @>       MET1    A          CE_714s  <--->       ILE3    A        CG2_42     3.8    28.7
+   @>       VAL5    A        CG1_8014s  <--->      LEU69    A      CD1_1101     3.9    14.6
+   @>      LEU15    A       CD1_24214s  <--->      ILE13    A       CG2_209     3.9    19.8
+   @>      ARG42    A        CG_66014s  <--->      VAL70    A      CG2_1120     4.0    42.9
+   @>      ILE44    A       CD1_70514s  <--->      VAL70    A      CG1_1119     4.0    17.7
+   @>      ALA46    A        CB_74114s  <--->      PHE45    A       CD2_724     4.1    50.7
+   @>      LYS11    A        CG_17214s  <--->      ILE13    A       CG1_208     4.1    30.5
+   @>       LEU8    A       CD1_13314s  <--->      VAL70    A      CG1_1119     4.5     8.8
+   @> Number of detected hydrophobic interactions: 16.
+   @> Lack of cysteines in the structure.
+   @> Number of detected disulfide bonds: 0.
+   ..
+   ..
 
