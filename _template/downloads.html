@@ -51,23 +51,31 @@
                   <pre style="text-align: left; white-space: pre-line;">
                     $ pip install prody
                   </pre>
-                  <p>If you don't, you can manually download and extract 
-                    <a href="https://pypi.org/project/ProDy/#files">tarball contents from PyPI website</a> 
+                  <p>This will give you ProDy-2.4.1, which is the latest stable release but does not include InSty.</p>
+
+                  <p>If you want the latest version of ProDy, you can either clone or manually download and extract the
+                    <a href="https://github.com/prody/ProDy/archive/refs/heads/main.zip">zip file contents from GitHub</a> 
                     and run setup.py as follows:
                   </p>
 
                   <pre style="text-align: left; white-space: pre-line;">
-                    $ tar -xzf ProDy-{{ version }}.tar.gz
-                    $ cd ProDy-{{ version }}
-                    $ python setup.py build
-                    $ python setup.py install
+                    $ git clone https://github.com/prody/ProDy.git
+                    $ cd ProDy
+                    $ python setup.py build_ext --inplace --force
+                    $ pip install -Ue .
                   </pre>
-                  If you need root access for installation, try  <code class="docutils literal">sudo python setup.py install</code>. If you don’t have root access, see alternate installation schemes in <a href="https://docs.python.org/2/installing/">Installing Python Modules</a>.
+
+                  <pre style="text-align: left; white-space: pre-line;">
+                    $ tar -xzf ProDy-main.zip
+                    $ cd ProDy-main
+                    $ python setup.py build_ext --inplace --force
+                    $ pip install -Ue .
+                  </pre>
 
                 </div>
                 <div class="tab-pane" id="windows">
                   <p>Since version 1.10.3, <i>ProDy</i> does not provide a binary installer anymore. Instead, 
-                    please install <i>ProDy</i> through <i>pip</i>:</p>
+                    please install <i>ProDy</i> through <i>pip</i>:</p> or from GitHub as on Linux and Mac.
                   <pre style="text-align: left; white-space: pre-line;">
                     $ pip install prody
                   </pre>
