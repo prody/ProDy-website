@@ -23,7 +23,7 @@ Latest version of ProDy_ is required.
 Recommended Programs
 -------------------------------------------------------------------------------
 
-Besides the latest development version of ProDy_ from GitHub (see contrib_), 
+Besides the latest development version of ProDy_ from GitHub (see manual_), 
 the Matplotlib_ library and VMD_ program are required for some steps in the tutorial. 
 IPython_ is highly recommended for interactive usage.
 
@@ -41,7 +41,7 @@ predicting hydrogen bonds.
 
 .. _Openbabel: https://github.com/openbabel
 .. _PDBfixer: https://github.com/openmm/pdbfixer
-.. _contrib: http://www.bahargroup.org/prody/manual/devel/develop.html
+.. _manual: http://www.bahargroup.org/prody/manual/devel/develop.html
 
 
 Getting Started
