@@ -23,8 +23,9 @@ Latest version of ProDy_ is required.
 Recommended Programs
 -------------------------------------------------------------------------------
 
-Besides ProDy_, the Matplotlib_ library and VMD_ program are required for
-some steps in the tutorial. IPython_ is highly recommended for interactive usage.
+Besides the latest development version of ProDy_ from GitHub (see contrib_), 
+the Matplotlib_ library and VMD_ program are required for some steps in the tutorial. 
+IPython_ is highly recommended for interactive usage.
 
 To take full advantage of InSty's capabilities in predicting hydrophobic
 interactions, we should download an additional component written in C++ and
@@ -40,6 +41,7 @@ predicting hydrogen bonds.
 
 .. _Openbabel: https://github.com/openbabel
 .. _PDBfixer: https://github.com/openmm/pdbfixer
+.. _contrib: http://www.bahargroup.org/prody/manual/devel/develop.html
 
 
 Getting Started
