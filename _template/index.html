@@ -273,7 +273,9 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       "WatFinder prediction of water clusters in membrane transporter",
       "WatFinder prediction of water influx in membrane transporter",
       "Scipion-EM-ProDy Ensemble Analysis",
-      "Scipion-EM-ProDy GNM Analysis"
+      "Scipion-EM-ProDy GNM Analysis",
+      "ANMD sampling of mGluR1 NTD along mode 1",
+      "ANMD sampling of mGluR1 NTD along mode 2"
       );
 
       panelSlides = new Array();
@@ -295,6 +297,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       panelSlides[15] = new Array(46, 47, 48);
       panelSlides[16] = new Array(49, 50, 51, 52, 53);
       panelSlides[17] = new Array(54, 55);
+      panelSlides[18] = new Array(56, 57);
 
       var slideIndices = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
@@ -839,6 +842,23 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
           An example GNM analysis in Scipion-EM-ProDy is shown, including visualisation of 
           the main results (a-c), a pipeline including dynamical domain decomposition and 
           comparison of all-atom and CA-only GNM (d), and visualisation of their results (e-g).
+        </p>
+      </div>
+
+      <div class="prody-slide" id="slide-56">
+        <div class="slide-image"><img src="../_static/figures/movie1_mGluR_mode1_anmd.avi"/></div>
+        <p></p><p style="font-size: 95%; font-style: italic;">
+          Example output from ANMD analysis of the metabotropic glutamate receptor mGluR1 N-terminal
+          domain showing the generated conformers along mode 1, closing the venus fly trap clamshell.
+        </p>
+      </div>
+
+      <div class="prody-slide" id="slide-57">
+        <div class="slide-image"><img src="../_static/figures/movie1_mGluR_mode2_anmd.avi"/></div>
+        <p></p><p style="font-size: 95%; font-style: italic;">
+          Example output from ANMD analysis of the metabotropic glutamate receptor mGluR1 N-terminal
+          domain showing the generated conformers along mode 1, twisting the venus fly trap clamshell 
+          as in related GABA-B receptors.
         </p>
       </div>
 
