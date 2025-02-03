@@ -17,23 +17,15 @@ to create a larger number of potential interactions in single PDB, ensemble PDB
 Required Programs
 -------------------------------------------------------------------------------
 
-Latest version of ProDy_ is required.
+Latest version of ProDy_ (2.5.0) is required. This should be installed from GitHub (see manual_)
+or conda-forge.
 
 
 Recommended Programs
 -------------------------------------------------------------------------------
 
-Besides the latest development version of ProDy_ from GitHub (see manual_), 
-the Matplotlib_ library and VMD_ program are required for some steps in the tutorial. 
+Besides ProDy_, the Matplotlib_ library and VMD_ program are required for some steps in the tutorial. 
 IPython_ is highly recommended for interactive usage.
-
-To take full advantage of InSty's capabilities in predicting hydrophobic
-interactions, we should download an additional component written in C++ and
-Fortran. The additional component (hpb.so file) is available in the ProDy
-repository (prody/proteins/hpbmodule folder) and should be chosen and
-selected according to the version of Python that is being used by user.
-This file should be copied to the ProDy folder (prody/proteins/) or to the
-local directory.
 
 Moreover, in the case of the lack of hydrogen atoms in protein structure,
 additional package such as Openbabel_ or PDBfixer_ are required for
