@@ -20,7 +20,6 @@ ClustENMD and ANMD
 
    intro
    clustenmd
-   anmd
 
 .. only:: html
 
