@@ -72,6 +72,8 @@ Additional examples of WatFinder utility
 
 Here, we present several more case studies on how to use WatFinder.
 
+The files needed for these case studies can be found here: |_caseStudyfiles|
+
 Case study 1
 -------------------------------------------------------------------------------
 
