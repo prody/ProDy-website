@@ -3,14 +3,14 @@
 .. _REFERENCE:
 
 *******************************************************************************
-ClustENMD and ANMD
+ANMD
 *******************************************************************************
 
 .. only:: html
 
-    You can also read this tutorial in `PDF format <clustenmd_tutorial.pdf>`_.
+    You can also read this tutorial in `PDF format <anmd_tutorial.pdf>`_.
 
-    Tutorial files: `ZIP <clustenmd_tutorial_files.zip>`_ `TGZ <clustenmd_tutorial_files.tgz>`_
+    Tutorial files: `ZIP <anmd_tutorial_files.zip>`_ `TGZ <anmd_tutorial_files.tgz>`_
 
 .. add .rst files to `toctree` in the order that you want them
 

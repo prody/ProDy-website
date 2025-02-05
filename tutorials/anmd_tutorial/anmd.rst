@@ -22,13 +22,11 @@ conformations. For this tutorial, we use an initial structure of the metabotropi
 receptor 1 (mGluR1) N-terminal venus fly trap domain (VFTD) in the open conformation (chain B from PDB structure 1ewk)
 with missing loops modelled by MODELLER [FA00]_. This file is available in the following archives can be used to follow this tutorial:
 
-  * `ClustENMD and ANMD Tutorial Files (TGZ) <clustenmd_tutorial_files.tgz>`_
-  * `ClustENMD and ANMD Tutorial Files (ZIP) <clustenmd_tutorial_files.zip>`_
+  * `ANMD Tutorial Files (TGZ) <anmd_tutorial_files.tgz>`_
+  * `ANMD Tutorial Files (ZIP) <anmd_tutorial_files.zip>`_
 
-In the extracted directory, you will find the output of ClustENMD from the previous tutorial 
-as well as two PDB files that we will parse here. The first one is the open chain model 
-1ewkB_modeller_protein.pdb, which we will use for ANMD. 
-
+In the extracted directory, you will find the two PDB files that we will parse here. 
+The first one is the open chain model 1ewkB_modeller_protein.pdb, which we will use for ANMD. 
 The second is the closed chain 1ewkA_protein_trim.pdb, which we compare against. This already
 has the ligand L-glutamate and an extra C-terminal residue that isn't in chain B trimmed away.
 
