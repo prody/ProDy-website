@@ -78,8 +78,6 @@ workdir:
 
 	cp -rf tutorials/anmd_tutorial/anmd_tutorial_files/* $(WORKDIR)
 
-	cp -rf tutorials/scipion_tutorial/scipion_tutorial_files/* $(WORKDIR)
-
 #	cp -rf tutorials/saxs_tutorial/saxs_tutorial_files/* $(WORKDIR)
 
 html: link drugui workdir 
