@@ -86,7 +86,7 @@ The parameters regarding the main steps of the method can be grouped as follows:
 
 1. **ANM sampling:**
 
-   ``cutoff`` : Cutoff distance :math:`(\mathring{A})` for pairwise
+   ``cutoff`` : Cutoff distance :raw-math:`$(\mathring{A})$` for pairwise
    interactions used in ANM computations (default is 15.0).
 
    ``n_modes`` : Number of global modes for sampling (default is 3).
@@ -94,7 +94,7 @@ The parameters regarding the main steps of the method can be grouped as follows:
    ``n_confs`` : Number of new conformers generated from each parent
    conformer (default is 50).
 
-   ``rmsd`` : RMSD :math:`(\mathring{A})` of new conformers with
+   ``rmsd`` : RMSD :raw-math:`$(\mathring{A})$` of new conformers with
    respect to the parent (default is 1.0).
 
    ``v1`` : Full enumeration of ANM modes, which is used in the original
