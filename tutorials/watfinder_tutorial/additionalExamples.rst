@@ -67,13 +67,13 @@ Additional examples of WatFinder utility
 
    <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6.ipynb' download="caseStudy6.ipynb">caseStudy6</a>
 
-.. |_caseStudyfiles| raw:: html 
+.. |_the case study files| raw:: html 
 
    <a href="http://bahar.labs.stonybrook.edu/watFinder_tutorial_files/" target="_blank">here</a>
 
 Here, we present several more case studies on how to use WatFinder.
 
-The files needed for these case studies can be found here: |_caseStudyfiles|
+The files needed for these case studies can be found in |_the case study files|.
 
 Case study 1
 -------------------------------------------------------------------------------
@@ -167,4 +167,4 @@ IPython notebook (ipynb): |_caseStudy6_tab2_3|
 IPython notebook (ipynb): |_caseStudy6_tab2_4|
 
 The description of all cases are available in the supplementary file of the WatFinder paper
-[JK24]_. Trajectories are in the |_caseStudyfiles|.
+[JK24]_. Trajectories are in |_the case study files|.
