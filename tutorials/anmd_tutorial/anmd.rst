@@ -1,8 +1,5 @@
 .. _anmd:
 
-.. role:: raw-math(raw)
-    :format: latex html
-
 ANMD Simulation and Analysis
 ===============================================================================
 
@@ -75,8 +72,8 @@ we can just align that chain to the closed chain.
    @> Finding the atommaps based on their coverages...
    @> Identified that there exists 1 atommap(s) potentially.
 
-We find an RMSD of 4.5 :raw-math:`$\mathring{A}$`, so we will select a maximum RMSD that is higher than
-this: 6 :raw-math:`$\mathring{A}$`.
+We find an RMSD of 4.5 :math:`$\mathring{A}$`, so we will select a maximum RMSD that is higher than
+this: 6 :math:`$\mathring{A}$`.
 
 We next calculate the ANM modes for the full system and slice them with a selection based on 
 this atom map to compare against the deformation vector.
@@ -122,7 +119,7 @@ regarding the main steps of the method are as follows:
 
    ``num_steps`` : Number of steps along each mode in each direction (default is 5).
 
-   ``max_rmsd`` : Maximum RMSD for the first global mode in :raw-math:`$\mathring{A}$`
+   ``max_rmsd`` : Maximum RMSD for the first global mode in :math:`$\mathring{A}$`
    (default is 2). Successive modes are downscaled to lower RMSDs based on their frequency. 
 
    ``skip_modes`` : Number of modes to skip if the first modes are not interesting.
@@ -142,8 +139,8 @@ Other keyword options are also possible for controlling traverse mode:
 
 
 In the following, we will perform ANMD simulations with 5 steps up to a maximum RMSD of 6
-:raw-math:`$\mathring{A}$` using the first 2 global modes. This means that the first mode has
-5 steps of 1.2 :raw-math:`$\mathring{A}$`, while the second mode has slightly smaller steps.
+:math:`$\mathring{A}$` using the first 2 global modes. This means that the first mode has
+5 steps of 1.2 :math:`$\mathring{A}$`, while the second mode has slightly smaller steps.
 
 Relaxation of conformers is carried out in implicit solvent via energy minimization only. 
 Simulation details will be printed out during execution.
