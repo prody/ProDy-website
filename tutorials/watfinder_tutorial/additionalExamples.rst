@@ -10,6 +10,7 @@ Additional examples of WatFinder utility
 .. _caseStudy4b: ../watfinder_tutorial/ipynb_file/caseStudy4b.ipynb
 .. _caseStudy5: ../watfinder_tutorial/ipynb_file/caseStudy5.ipynb
 .. _caseStudy6: ../watfinder_tutorial/ipynb_file/caseStudy6.ipynb
+
 .. |_caseStudy6_tab1_1| raw:: html 
 
    <a class="reference external" href='../watfinder_tutorial/ipynb_file/caseStudy6_tab1_1.ipynb' download="watfinder_tab1_1.ipynb">watfinder_tab1_1</a>
@@ -165,5 +166,5 @@ IPython notebook (ipynb): |_caseStudy6_tab2_3|
 
 IPython notebook (ipynb): |_caseStudy6_tab2_4|
 
-The description of all cases are available in the supplementary file of WatFinder paper
-[JK24]_. Trajectories are in tutorial's files.
+The description of all cases are available in the supplementary file of the WatFinder paper
+[JK24]_. Trajectories are in the |_caseStudyfiles|.
