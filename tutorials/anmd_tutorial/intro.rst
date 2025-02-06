@@ -3,7 +3,7 @@ Introduction
 
 ANMD [CM22]_ is a simple conformers generation algorithm that explores motions along single ANM modes.
 The normal mode calculation is only performed once and a set of structures along each of the first few modes
-is subjected to energy minimization, producing physically reasonable conformers near the initial energy well.
+is subjected to energy minimization with OpenMM [E17]_, producing physically reasonable conformers near the initial energy well.
 A key feature of ANMD is that each successive mode is sampled with a lower amplitude related to its frequency.
 
 This tutorial demonstrates how to use ANMD to explore the first two modes of a metabotropic glutamate receptor
