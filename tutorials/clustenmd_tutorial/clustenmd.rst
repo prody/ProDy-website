@@ -1,5 +1,8 @@
 .. _clustenmd:
 
+.. role:: raw-math(raw)
+    :format: latex html
+
 ClustENMD Simulation and Analysis
 ===============================================================================
 

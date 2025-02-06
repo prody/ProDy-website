@@ -1,5 +1,8 @@
 .. _anmd:
 
+.. role:: raw-math(raw)
+    :format: latex html
+
 ANMD Simulation and Analysis
 ===============================================================================
 
