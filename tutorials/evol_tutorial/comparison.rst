@@ -21,14 +21,14 @@ First, we retrieve MSA for protein for protein family :pfam:`PF00074`:
 .. ipython::
    :verbatim:
 
-   In [1]: fetchPfamMSA('PF00074')
-   Out[1]: 'PF00074_full.sth'
+   In [1]: fetchPfamMSA('PF00074', alignment='seed')
+   Out[1]: 'PF00074_seed.sth'
 
 We parse the MSA file:
 
 .. ipython:: python
 
-   msa = parseMSA('PF00074_full.sth')
+   msa = parseMSA('PF00074_seed.sth')
 
 Then, we refine it using :func:`.refineMSA` based on the sequence of
 :uniprot:`RNAS1_BOVIN`:
