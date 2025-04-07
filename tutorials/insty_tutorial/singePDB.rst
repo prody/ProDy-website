@@ -334,12 +334,12 @@ charges):
      'P',
      4.828]]
 
-:meth:`.Interactions.getHydrophohic` - hydrophobic interactions:
+:meth:`.Interactions.getHydrophobic` - hydrophobic interactions:
 
 .. ipython:: python
    :verbatim:
 
-   interactions.getHydrophohic()
+   interactions.getHydrophobic()
 
 .. parsed-literal::
 
@@ -812,14 +812,14 @@ of interactions using the preferable parameters.
 We can do it using the following functions: :func:`.calcHydrogenBonds`,
 :func:`.calcHydrogenBonds`, :func:`.calcSaltBridges`,
 :func:`.calcRepulsiveIonicBonding`, :func:`.calcPiStacking`,
-:func:`.calcPiCation`, :func:`.calcHydrophohic`,
+:func:`.calcPiCation`, :func:`.calcHydrophobic`,
 :func:`.calcDisulfideBonds`, and use
 :meth:`.Interactions.setNewHydrogenBonds`,
 :meth:`.Interactions.setNewSaltBridges`,
 :meth:`.Interactions.setNewRepulsiveIonicBonding`,
 :meth:`.Interactions.setNewPiStacking`,
 :meth:`.Interactions.setNewPiCation`,
-:meth:`.Interactions.setNewHydrophohic`,
+:meth:`.Interactions.setNewHydrophobic`,
 :meth:`.Interactions.setNewDisulfideBonds` method to replace it in the main
 Instance. 
 
