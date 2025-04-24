@@ -32,14 +32,14 @@ We can do this by specifying the PDB ID of a protein in this family.
 .. ipython::
    :verbatim:
 
-   In [2]: fetchPfamMSA('PF00074')
-   Out[2]: 'PF00074_full.sth'
+   In [2]: fetchPfamMSA('PF00074', alignment='seed')
+   Out[2]: 'PF00074_seed.sth'
 
 Let's parse the downloaded file:
 
 .. ipython:: python
 
-   msa = parseMSA('PF00074_full.sth')
+   msa = parseMSA('PF00074_seed.sth')
 
 
 Refine MSA
