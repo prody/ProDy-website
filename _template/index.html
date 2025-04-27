@@ -273,7 +273,10 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       "WatFinder prediction of water clusters in membrane transporter",
       "WatFinder prediction of water influx in membrane transporter",
       "Scipion-EM-ProDy Ensemble Analysis",
-      "Scipion-EM-ProDy GNM Analysis"
+      "Scipion-EM-ProDy GNM Analysis",
+      "ANMD sampling of mGluR1 NTD along mode 1",
+      "ANMD sampling of mGluR1 NTD along mode 2",
+      "RBD-VH F6 Motion from ANMD"
       );
 
       panelSlides = new Array();
@@ -295,6 +298,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
       panelSlides[15] = new Array(46, 47, 48);
       panelSlides[16] = new Array(49, 50, 51, 52, 53);
       panelSlides[17] = new Array(54, 55);
+      panelSlides[18] = new Array(56, 57, 58);
 
       var slideIndices = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
@@ -842,6 +846,34 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
         </p>
       </div>
 
+      <div class="prody-slide" id="slide-56">
+        <div class="slide-image"><img src="../_static/figures/movie1_mGluR_mode1_anmd.gif"/></div>
+        <p></p><p style="font-size: 95%; font-style: italic;">
+          Example output from ANMD analysis of the metabotropic glutamate receptor mGluR1 N-terminal
+          domain showing the generated conformers along mode 1, closing the venus fly trap clamshell.
+        </p>
+      </div>
+
+      <div class="prody-slide" id="slide-57">
+        <div class="slide-image"><img src="../_static/figures/movie2_mGluR_mode2_anmd.gif"/></div>
+        <p></p><p style="font-size: 95%; font-style: italic;">
+          Example output from ANMD analysis of the metabotropic glutamate receptor mGluR1 N-terminal
+          domain showing the generated conformers along mode 1, twisting the venus fly trap clamshell 
+          as in related GABA-B receptors.
+        </p>
+      </div>
+
+      <div class="prody-slide" id="slide-58">
+        <div class="slide-image"><img src="../_static/figures/anmd_fig_allatom.png"/></div>
+        <p></p><p style="font-size: 95%; font-style: italic;">
+          The motion of the Omicron RBD (green) – V<sub>H</sub> F6 (red) complex, generated using ANMD 
+          and sampled along ANM Mode 1 (two shades of cyan, softest mode of motion), enabled quantification of 
+          intrinsic dynamics leading to variability at the interaction interface. The structures are superimposed on 
+          the RBD to highlight variations at the V<sub>H</sub> F6 interface, facilitating an efficient evaluation of 
+          changes in interaction affinity between the RBD and V<sub>H</sub> F6 across Omicron and Wild Type variants.
+        </p>
+      </div>
+
   <div class="container" id="about">
 
 <!-- Logo & Nav
@@ -869,6 +901,7 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
           <li title="InSty" ><a href="{{ pathto('insty', 1) }}">InSty</a></li>
           <li title="WatFinder" ><a href="{{ pathto('watfinder', 1) }}">WatFinder</a></li>
           <li title="Scipion" ><a href="{{ pathto('scipion', 1) }}">Scipion</a></li>
+          <li title="ANMD" ><a href="{{ pathto('anmd', 1) }}">ANMD</a></li>
           <li title="Downloads"><a href="{{ pathto('downloads', 1) }}">Downloads</a></li>
           <li title="Tutorials"><a href="{{ pathto('tutorials', 1) }}">Tutorials</a></li>
           <li title="Workshops"><a href="{{ pathto('workshop', 1) }}">Workshops</a></li>

@@ -12,22 +12,14 @@ several generations to allow for sufficiently large excursions from the initial 
 sampling can be efficiently performed for highly flexible systems composed of proteins, RNA and/or DNA chains. 
 Furthermore, the generated ensemble can be analyzed and utilized using the available tools in ProDy.
 
-ANMD [CM22]_ is a simple conformers generation algorithm that explores motions along single ANM modes.
-The normal mode calculation is only performed once and a set of structures along each of the first few modes
-is subjected to energy minimization, producing physically reasonable conformers near the initial energy well.
-A key feature of ANMD is that each successive mode is sampled with a lower amplitude related to its frequency.
-
-The first part of this tutorial demonstrates how to use ClustENMD to perform conformational sampling for the homo-dimeric enzyme 
+This tutorial demonstrates how to use ClustENMD to perform conformational sampling for the homo-dimeric enzyme 
 HIV-1 protease in an open conformation without any ligand (PDB id: 1tw7). Furthermore, we will show the application of
 ProDy ensemble analysis tools to study the conformers and generate their population distribution.
-
-The last part demonstrates how to use ANMD to explore the first two modes of a metabotropic glutamate receptor
-N-terminal domain (PDB id: 1ewk). 
 
 Required Programs
 -------------------------------------------------------------------------------
 
-The latest versions of ProDy_, OpenMM_, and PDBFixer_ are required for ClustENMD.
+Recent versions of ProDy_, OpenMM_ 7, and PDBFixer_ are required for ClustENMD.
 
 .. _OpenMM: https://openmm.org/
 .. _PDBFixer: https://github.com/openmm/pdbfixer
@@ -68,13 +60,6 @@ If you benefited from ClustENMD in your research, please cite the following pape
 .. [KD21] Kaynak B.T., Zhang S., Bahar I., and Doruker P., 
    ClustENMD: Efficient sampling of biomolecular conformational space at atomic resolution,
    *Bioinformatics* **2021** 37(21): 3956–3958. 
-
-.. [CM22] Mary Hongying Cheng, James M Krieger, Anupam Banerjee, Yufei Xiang, 
-   Burak Kaynak, Yi Shi, Moshe Arditi, Ivet Bahar. 
-   Impact of new variants on SARS-CoV-2 infectivity and neutralization: 
-   A molecular assessment of the alterations in the spike-host protein 
-   interactions, *iScience* **2022** 25(3):103939.
-
 
 Additionally, please also cite the following paper for OpenMM:
 

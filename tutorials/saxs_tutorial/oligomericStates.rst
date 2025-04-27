@@ -63,7 +63,7 @@ Parse SAXS data
 We need to parse experimental SAXS data and save it into Numpy
 arrays for further use. An experimental SAXS profile contains three columns:
 
-* q: Magnitude of scattering vector or scattering angle. We will use 1/Angstrom a
+* q: Magnitude of scattering vector or scattering angle. We will use 1/Angstrom
   as q unit. 
 * I(q): Scattering intensity, which may be in logarithmic scale. 
 * Sigma(q): Errors for each I(q) value 

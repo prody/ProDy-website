@@ -25,7 +25,7 @@ drugui:
 
 pull: clone
 	#git checkout master; git pull origin master
-	cd ProDy; git checkout master; git pull origin master
+	cd ProDy; git checkout main; git pull origin main
 	#cd ProDy; git checkout devel; git pull origin devel
 
 latest: pull
@@ -72,6 +72,12 @@ workdir:
 
 	cp -rf tutorials/cryoem_tutorial/cryoem_tutorial_files/* $(WORKDIR)
 
+	cp -rf tutorials/insty_tutorial/insty_tutorial_files/* $(WORKDIR)
+
+	cp -rf tutorials/watfinder_tutorial/watfinder_tutorial_files/* $(WORKDIR)
+
+	cp -rf tutorials/anmd_tutorial/anmd_tutorial_files/* $(WORKDIR)
+
 #	cp -rf tutorials/saxs_tutorial/saxs_tutorial_files/* $(WORKDIR)
 
 html: link drugui workdir 
@@ -111,3 +117,4 @@ pdf: link
 	make -C tutorials/saxs_tutorial clean copy
 	make -C tutorials/scipion_tutorial clean copy
 	make -C tutorials/watfinder_tutorial  clean copy
+	make -C tutorials/anmd_tutorial  clean copy
