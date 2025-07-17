@@ -99,9 +99,9 @@ under a similar name with 'addH_' prefix and '_sele.pdb' suffix.
 
 .. ipython:: python
 
-PDBname3 = '3ugc.pdb'
-addHydrogens(PDBname3, method='openbabel')
-pdb3 = parsePDB('addH_'+str(PDBname3[:-4])+'_sele.pdb')
+   PDBname3 = '3ugc.pdb'
+   addHydrogens(PDBname3, method='openbabel')
+   pdb3 = parsePDB('addH_'+str(PDBname3[:-4])+'_sele.pdb')
 
 
 To select protein and ligand structures for analysis and compute
@@ -110,15 +110,14 @@ Example 1.
 
 .. ipython:: python
 
-
-atoms3 = pdb3.select('protein or resname 046') 
-ligands_interactions3, ligands3 = calcLigandInteractions(atoms3)
+   atoms3 = pdb3.select('protein or resname 046')
+   ligands_interactions3, ligands3 = calcLigandInteractions(atoms3)
 
 
 .. ipython:: python
 
-ligand046_interactions = ligands_interactions3[0]
-protein_ligand_interactions3 = listLigandInteractions(ligand046_interactions)
+   ligand046_interactions = ligands_interactions3[0]
+   protein_ligand_interactions3 = listLigandInteractions(ligand046_interactions)
 
 
 .. ipython:: python
@@ -138,7 +137,7 @@ A tcl file will be saved and can be used in VMD_ after uploading the PDB file
 with protein and ligand structure **addH_3ugc_sele.pdb** and by running
 in the command line instruction in the VMD_ *TKConsole* (*VMD Main*): 
 
-::  play addH_3ugc_sele_interaction.tcl
+   ::  play addH_3ugc_sele_interaction.tcl
 
 
 The tcl file contains a method for drawing lines between protein and ligand
