@@ -15,6 +15,7 @@ Start by importing everything from the ProDy packages unless you
 already did that.
 
 .. ipython:: python
+   :verbatim:
 
    from prody import *
    from pylab import *
@@ -30,6 +31,7 @@ before. Selected elements, such as protein and ligand MES, will be saved in
 a separate PDB file in the local directory.
 
 .. ipython:: python
+   :verbatim:
 
    atoms2 = parsePDB('5kqm_all_sci.pdb').select('protein or resname MES')
 
@@ -37,6 +39,7 @@ a separate PDB file in the local directory.
 To compute the interactions use :func:`.calcLigandInteractions` function:
 
 .. ipython:: python
+   :verbatim:
 
    ligands_interactions, ligands = calcLigandInteractions(atoms2)
 
@@ -44,6 +47,7 @@ To compute the interactions use :func:`.calcLigandInteractions` function:
 The type of the ligand can be checked as follows:
 
 .. ipython:: python
+   :verbatim:
 
    ligands
 
@@ -52,6 +56,7 @@ To display the interactions between protein and ligand MES use
 func:`.listLigandInteractions` function:
 
 .. ipython:: python
+   :verbatim:
 
    ligandMES_interactions = ligands_interactions[0]
    protein_ligand_interactions = listLigandInteractions(ligandMES_interactions)
@@ -59,6 +64,7 @@ func:`.listLigandInteractions` function:
 We can display them: 
 
 .. ipython:: python
+   :verbatim:
 
    for nr_k,k in enumerate(protein_ligand_interactions):
        print ("%3i%24s%10s%28s%4s    <---> %8s%12s%4s%6.1f" % (nr_k,k[0],k[1],k[2],k[3],k[4],k[5],k[6],k[7]))
@@ -68,6 +74,7 @@ Interactions can be saved for visualization in VMD_. We can use
 func:`.showLigandInteraction_VMD` function in the following way:
 
 .. ipython:: python
+   :verbatim:
 
    showLigandInteraction_VMD(atoms2,protein_ligand_interactions)
 
@@ -98,6 +105,7 @@ First, we need to add missing hydrogens. Openbabel will save a new structure
 under a similar name with 'addH_' prefix and '_sele.pdb' suffix.
 
 .. ipython:: python
+   :verbatim:
 
    PDBname3 = '3ugc.pdb'
    addHydrogens(PDBname3, method='openbabel')
@@ -109,18 +117,21 @@ interactions use the following functions. The procedure is similar to
 Example 1.
 
 .. ipython:: python
+   :verbatim:
 
    atoms3 = pdb3.select('protein or resname 046')
    ligands_interactions3, ligands3 = calcLigandInteractions(atoms3)
 
 
 .. ipython:: python
+   :verbatim:
 
    ligand046_interactions = ligands_interactions3[0]
    protein_ligand_interactions3 = listLigandInteractions(ligand046_interactions)
 
 
 .. ipython:: python
+   :verbatim:
 
    for nr_k,k in enumerate(protein_ligand_interactions3):
        print ("%3i%24s%10s%28s%4s    <---> %8s%12s%4s%6.1f" % (nr_k,k[0],k[1],k[2],k[3],k[4],k[5],k[6],k[7]))
@@ -129,6 +140,7 @@ Example 1.
 Interactions can be saved for visualization in VMD_:
 
 .. ipython:: python
+   :verbatim:
 
    showLigandInteraction_VMD(atoms3,protein_ligand_interactions3)
 
