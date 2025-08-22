@@ -27,6 +27,7 @@ ProDy Documentation
    tutorials/clustenmd_tutorial/index
    tutorials/insty_tutorial/index
    tutorials/watfinder_tutorial/index
+   tutorials/anmd_tutorial/index
    tutorials/scipion_tutorial/index
 
 * :ref:`genindex`

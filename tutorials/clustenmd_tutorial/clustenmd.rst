@@ -1,6 +1,6 @@
 .. _clustenmd:
 
-Simulation and Analysis
+ClustENMD Simulation and Analysis
 ===============================================================================
 
 First, we will make the following necessary imports ProDy_, NumPy_, and Matplotlib_ 
@@ -14,7 +14,7 @@ if you haven't already done it:
    from prody import *
    plt.ion()
 
-Preparing the system and running a ClustENMD simulation
+Preparing the system and ClustENMD simulation
 -------------------------------------------------------------------------------
 
 We start our calculations by parsing the structure, from which we would like to sample
@@ -86,7 +86,7 @@ The parameters regarding the main steps of the method can be grouped as follows:
 
 1. **ANM sampling:**
 
-   ``cutoff`` : Cutoff distance :math:`(\mathring{A})` for pairwise
+   ``cutoff`` : Cutoff distance (Angstrom) for pairwise
    interactions used in ANM computations (default is 15.0).
 
    ``n_modes`` : Number of global modes for sampling (default is 3).
@@ -94,7 +94,7 @@ The parameters regarding the main steps of the method can be grouped as follows:
    ``n_confs`` : Number of new conformers generated from each parent
    conformer (default is 50).
 
-   ``rmsd`` : RMSD :math:`(\mathring{A})` of new conformers with
+   ``rmsd`` : RMSD (Angstrom) of new conformers with
    respect to the parent (default is 1.0).
 
    ``v1`` : Full enumeration of ANM modes, which is used in the original
@@ -194,7 +194,7 @@ thousand residues. For larger assemblies, the user may prefer: (*i*) to decrease
 number of clusters and/or generations, (*ii*) to perform only energy minimization with/out 
 heating-up phase, or (*iii*) to carefully shrink the padding distance in explicit solvent.
 
-Performing a simulation
+Running a ClustENMD simulation
 -------------------------------------------------------------------------------
 
 In the following, we will perform a ClustENMD simulation of 5 generations using the first 
