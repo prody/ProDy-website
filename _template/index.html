@@ -10,10 +10,7 @@
     <link href="{{ pathto('_static/css/prodydocs.css', 1) }}" rel="stylesheet">
 
     <script type="text/javascript" src="{{ pathto('_static/js/jquery-2.0.0.min.js', 1) }}"></script>
-    <!--<script type="text/javascript" src="{{ pathto('_static/js/bootstrap.min.js', 1) }}"></script> -->
-
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ pathto('_static/js/bootstrap.min.js', 1) }}"></script>
     <script type="text/javascript" src="{{ pathto('_static/js/prodydocs.js', 1) }}"></script>
     <script type="text/javascript">
 
@@ -861,18 +858,37 @@ for (var c=0, length = datad.getNumberOfRows(), myVal; c < length; c++) {
           <li title="stiffMech" ><a href="{{ pathto('mechstiff', 1) }}">MechStiff</a></li>
           <li title="PRS" ><a href="{{ pathto('prs', 1) }}">PRS</a></li>
           <li title="DruGUI" ><a href="{{ pathto('drugui', 1) }}">DruGUI</a></li>
-          <li title="Pharmmaker" ><a href="{{ pathto('pharmmaker', 1) }}">Pharmmaker</a></li>
-          <li title="coMD" ><a href="{{ pathto('comd', 1) }}">coMD</a></li>
-          <li title="ESSA" ><a href="{{ pathto('essa', 1) }}">ESSA</a></li>  
-          <li title="CryoDy" ><a href="{{ pathto('cryody', 1) }}">CryoDy</a></li>
-          <li title="ClustENMD" ><a href="{{ pathto('clustenmd', 1) }}">ClustENMD</a></li>
-          <li title="InSty" ><a href="{{ pathto('insty', 1) }}">InSty</a></li>
-          <li title="WatFinder" ><a href="{{ pathto('watfinder', 1) }}">WatFinder</a></li>
-          <li title="Scipion" ><a href="{{ pathto('scipion', 1) }}">Scipion</a></li>
-          <li title="Downloads"><a href="{{ pathto('downloads', 1) }}">Downloads</a></li>
-          <li title="Tutorials"><a href="{{ pathto('tutorials', 1) }}">Tutorials</a></li>
-          <li title="Workshops"><a href="{{ pathto('workshop', 1) }}">Workshops</a></li>
-          <li title="Statistics"><a href="{{ pathto('statistics', 1) }}">Statistics</a></li>
+          
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="true">Apps <b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu">
+              <li title="Pharmmaker"><a href="{{ pathto('pharmmaker', 1) }}">Pharmmaker</a></li>
+              <li title="coMD"><a href="{{ pathto('comd', 1) }}">coMD</a></li>
+              <li title="ESSA"><a href="{{ pathto('essa', 1) }}">ESSA</a></li>
+              <li title="CryoDy"><a href="{{ pathto('cryody', 1) }}">CryoDy</a></li>
+              <li title="ClustENMD"><a href="{{ pathto('clustenmd', 1) }}">ClustENMD</a></li>
+              <li title="InSty"><a href="{{ pathto('insty', 1) }}">InSty</a></li>
+              <li title="WatFinder"><a href="{{ pathto('watfinder', 1) }}">WatFinder</a></li>
+              <li title="Scipion"><a href="{{ pathto('scipion', 1) }}">Scipion</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="true">Learn <b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu">
+              <li title="Tutorials"><a href="{{ pathto('tutorials', 1) }}">Tutorials</a></li>
+              <li title="Workshops"><a href="{{ pathto('workshop', 1) }}">Workshops</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="true">Resources <b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu">
+              <li title="Downloads"><a href="{{ pathto('downloads', 1) }}">Downloads</a></li>
+              <li title="Statistics"><a href="{{ pathto('statistics', 1) }}">Statistics</a></li>
+            </ul>
+          </li>
+
           <li class="pull-right">
             <form class="navbar-search form-search pull-right" action="{{ pathto('search') }}" method="get" style="margin-right: 15px">
               <div class="input-append">
