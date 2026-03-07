@@ -7,8 +7,9 @@ Detection of intraprotein tunnels, channels and cavities in a single PDB structu
 CaviTracer prediction
 -------------------------------------------------------------------------------
 
-To analyze the structure, we need to parse a structure :file:`1tqn`
-using :func:`.parsePDB`:
+As an example for this tutorial, we will analyze the structure of cytochrome
+P450 which contains 486 residues. To analyze the structure, we need to parse
+a structure :file:`1tqn` using :func:`.parsePDB`:
 
 .. ipython:: python
    :verbatim:
@@ -23,14 +24,12 @@ using :func:`.parsePDB`:
    @> PDB download via HTTP completed (1 downloaded, 0 failed).
    @> 3999 atoms and 1 coordinate set(s) were parsed in 0.14s.
 
-
 Now, we select protein structure for analysis:
 
 .. ipython:: python
    :verbatim:
 
    atoms = p.select("protein")
-
 
 To predict channels, tunnels, or cavities within protein structure, we should
 utilize :func:`.calcChannels` function. This function analyzes the provided
@@ -40,12 +39,11 @@ and Delaunay tessellations to identify these regions (see more details in
 the description of the function). 
 
 The ``'separate'`` parameter controls whether each detected channel is
-saved to a separate file (True) or if all channels are saved in a single
-file (False). Files are saved as PQR file under the name specified using
+saved to a separate file (``True``) or if all channels are saved in a single
+file (``False``). Files are saved as PQR file under the name specified using
 `'output_path'``. If we add .pdb the file will be saved as a PDB file;
 Otherwise, it will be saved as a PQR file. Results with ``'separate'``
 option set to True can be saved only as a PQR files. 
-
 
 .. ipython:: python
    :verbatim:
@@ -57,7 +55,6 @@ option set to True can be saved only as a PQR files.
    @> Detected 9 channels.
    @> Saving results to channels_1tqn_ALL.pdb.
 
-
 .. ipython:: python
    :verbatim:
 
@@ -67,7 +64,6 @@ option set to True can be saved only as a PQR files.
 
    @> Detected 9 channels.
    @> Saving multiple results to directory ..
-
 
 Files with separated channels will be saved in separate PQR files in the
 local directory:
@@ -83,7 +79,6 @@ local directory:
    channels_1tqn_channel6.pqr  
    channels_1tqn_channel7.pqr  
    channels_1tqn_channel8.pqr
-
 
 Each PQR file will contain ``FIL`` atoms that describe the predicted
 channel/tunnel/pore. The ``Beta`` column denotes the radius of
@@ -105,20 +100,16 @@ the sphere, which is needed for visualization purposes.
    ATOM     12  H   FIL T   1     -19.421 -32.227  -9.225  1.00  1.69
    ..
 
-
 Generated PQR file can be visualized together with protein PDB file using VMD_
 or another program for graphical visualizations of molecules.
 
-
 .. figure:: images/cavitracer_figure1.jpg
    :scale: 50 %
-
 
 CaviTracer provides various information about predicted
 channels/tunnels/pores, such as volume, length of the channels, and the
 bottleneck (narrowest point of the channel). To obtain this information use
 :func:`.getChannelParameters` function.
-
 
 .. ipython:: python
    :verbatim:
@@ -166,13 +157,11 @@ bottleneck (narrowest point of the channel). To obtain this information use
      187.24450715204378,
      219.87584623622723])
 
-
 Additionally, to obtain information on which residues are involved in the
 formation of the predicted channels, use :func:`.getChannelResidueNames` function.
 To save the data in the local directory, provide a name for ``residues_file_name``.
 This information can be saved with a one-letter or three-letter code of
 residues, as shown below. 
-
 
 .. ipython:: python
    :verbatim:
@@ -201,7 +190,6 @@ residues, as shown below.
     'channel6: ILE149, ALA150, GLY153, ASP154, TYR179, PRO344, PRO345, MET450, ASN451, LEU454, ALA455, ARG458',
     'channel7: TYR152, LEU156, ASN159, LEU160, GLU163, VAL175, ALA178, TYR179, ASP182, LEU196',
     'channel8: LEU132, PRO135, THR136, LYS141, LEU274, MET275, SER278, GLN279, LEU290, LEU295']
-
 
 .. ipython:: python
    :verbatim:
@@ -255,7 +243,6 @@ Open3D_ library.
 
    @> Model created successfully.
 
-
 .. ipython:: python
    :verbatim:
 
@@ -265,21 +252,17 @@ Open3D_ library.
 
    TriangleMesh with 56180 points and 112320 triangles.
 
-
 Once the model is created, we can display several things: 
 
 **(i)** Cavities with :func:`.showCavities`:
-
 
 .. ipython:: python
    :verbatim:
 
    showCavities(surface)
 
-
 .. figure:: images/cavitracer_figure2.jpg
    :scale: 50 %
-
 
 **(ii)** Channels with :func:`.showChannels` in a several ways:
 
@@ -288,56 +271,45 @@ Once the model is created, we can display several things:
 
    showChannels(channels, surface=surface, model=model)
 
-
 .. figure:: images/cavitracer_figure3.jpg
    :scale: 50 %
-
 
 .. ipython:: python
    :verbatim:
 
    showChannels(channels, model=model)
 
-
 .. figure:: images/cavitracer_figure4.jpg
    :scale: 50 %
-
 
 .. ipython:: python
    :verbatim:
 
    showCavities(surface, show_surface=True)
 
-
 .. figure:: images/cavitracer_figure5.jpg
    :scale: 50 %
-
 
 Channels can be visualized separately. Below are several examples of how to
 display single channels (channel #1, channel #2), two channels at once (channel
 #1 and channel #8), or a range of channels (channels from #1 to channel #4
 #from the prediction).
 
-
 .. ipython:: python
    :verbatim:
 
    showChannels(channels[1], model)
 
-
 .. figure:: images/cavitracer_figure6.jpg
    :scale: 50 %
-
 
 .. ipython:: python
    :verbatim:
 
    showChannels(channels[2], model)
 
-
 .. figure:: images/cavitracer_figure7.jpg
    :scale: 50 %
-
 
 .. ipython:: python
    :verbatim:
@@ -345,10 +317,8 @@ display single channels (channel #1, channel #2), two channels at once (channel
    selected_channels = [channels[1], channels[8]]
    showChannels(selected_channels, model)
 
-
 .. figure:: images/cavitracer_figure8.jpg
    :scale: 50 %
-
 
 .. ipython:: python
    :verbatim:
@@ -356,10 +326,8 @@ display single channels (channel #1, channel #2), two channels at once (channel
    selected_channels = channels[1:4]
    showChannels(selected_channels, model)
 
-
 Once we select which channels are of interest, we can obtain information
 about their parameters.
-
 
 .. ipython:: python
    :verbatim:
@@ -368,7 +336,6 @@ about their parameters.
    lengths, bottlenecks, volumes = getChannelParameters(selected_channels)
    selected_channels_atoms = getChannelAtoms(selected_channels)
 
-
 .. parsed-literal::
 
    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
@@ -376,6 +343,4 @@ about their parameters.
    @> channel 1: 	1049.53 	52.79 		1.15
    @> channel 2: 	1342.21 	69.76 		1.15
    @> 715 atoms and 1 coordinate set(s) were parsed in 0.01s.
-
-
 
