@@ -5,11 +5,12 @@ Detection of intraprotein channels across heterogeneous structures
 
 
 Now, we will illustrate how to detect channels across various PDB structures.
-As an example, we will also use Cytochrome P450. 
+As an example, we will also Cytochrome P450. 
 
 First, we will provide a list of PDB codes with different Cytochrome P450
-structures. Such a list can be provided by BLAST or Dali, depending on what we
-want to analyze.
+structures. Such a list can be also provided by BLAST, Dali, or Foldseek
+(see :func:`.runBLAST`, :func:`.runDali`, :func:`.runFoldseek` in InSty
+tutorial).
 
 .. ipython:: python
    :verbatim:
