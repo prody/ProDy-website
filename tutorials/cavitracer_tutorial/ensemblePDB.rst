@@ -9,8 +9,8 @@ As an example, we will also Cytochrome P450.
 
 First, we will provide a list of PDB codes with different Cytochrome P450
 structures. Such a list can be also provided by BLAST, Dali, or Foldseek
-(see :func:`.runBLAST`, :func:`.runDali`, :func:`.runFoldseek` in InSty
-tutorial).
+(see :func:`.runBLAST`, :func:`.runDali`, :func:`.runFoldseek` in the
+`InSty tutorial`_).
 
 .. ipython:: python
    :verbatim:
@@ -22,9 +22,10 @@ tutorial).
 Protein preparation
 -------------------------------------------------------------------------------
 
-Before performing the analysis, we will align all the structures onto first
-structure and save it under new name with ``align__`` perfix. Such approach
-was shown also in other ProDy tutorials.
+Before performing the analysis, we will align all the structures onto the first
+structure and save it under a new name with ``align__`` prefix. Such an approach
+was also shown in other ProDy tutorials and explained in detail (see
+Structure Composition of the `Structure Analysis tutorial`_).
 
 .. ipython:: python
    :verbatim:
@@ -640,3 +641,6 @@ least 80% of analyzed files from ``pqr_files``.
 .. figure:: images/cavitracer_figure10.jpg
    :scale: 50 %
 
+
+.. _InSty tutorial: http://www.bahargroup.org/prody/tutorials/insty_tutorial/
+.. _Structure Analysis tutorial: http://www.bahargroup.org/prody/tutorials/structure_analysis/
