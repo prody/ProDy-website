@@ -1,11 +1,11 @@
 .. _cavitracer_single:
 
-Detection of intraprotein channels across heterogeneous structures
+Detection of channels across heterogeneous structures
 ===============================================================================
 
 
-Now, we will illustrate how to detect channels across various PDB structures.
-As an example, we will also Cytochrome P450. 
+Now, we will illustrate how to detect intraprotein channels across various PDB
+structures. As an example, we will use Cytochrome P450. 
 
 First, we will provide a list of PDB codes with different Cytochrome P450
 structures. Such a list can be also provided by BLAST, Dali, or Foldseek
@@ -23,9 +23,9 @@ Protein preparation
 -------------------------------------------------------------------------------
 
 Before performing the analysis, we will align all the structures onto the first
-structure and save it under a new name with ``align__`` prefix. Such an approach
-was also shown in other ProDy tutorials and explained in detail (see
-Structure Composition of the `Structure Analysis tutorial`_).
+structure from our list (``target``) and save it under a new name with ``align__``
+prefix. Such an approach was also shown in other ProDy tutorials and explained
+in detail (see Structure Composition of the `Structure Analysis tutorial`_).
 
 .. ipython:: python
    :verbatim:
@@ -190,19 +190,21 @@ various PDB models.
     'align__5VCC.pdb']
 
 
-Channels prediction
+Channel prediction for individual PDB files
 -------------------------------------------------------------------------------
 
 Now, all PDB structures can be analyzed to detect channels, tunnels, or
 pores in the protein structure using :func:`.calcChannels`. In this example,
-the results will be saved in one file (all detected channels in ``.pqr``
+the results will be saved in a single file (all detected channels in ``.pqr``
 file with the name of the input file) and in multiple files (``separate``
 must be set to ``True``) to save each detected channel independently.
 Additionally, we will use :func:`.getChannelParameters` and
 :func:`.getChannelResidueNames` to obtain information about channel
 parameters and residues involved in its formation. To save this information
 in the local directory, we provide ``param_file_name`` and
-``residues_file_name``.
+``residues_file_name``. The function will create files with the same name as
+provided PDB with ``'_Parameters_All_channels.txt'`` and
+``'_Residues_All_channels.txt'`` as suffixes.
 
 .. ipython:: python
    :verbatim:
@@ -322,7 +324,7 @@ in the local directory, we provide ``param_file_name`` and
    ..
 
 
-Selection of channels in certain protein area
+Selection of channels in a certain protein area
 -------------------------------------------------------------------------------
 
 CaviTracer will generate multiple channels, but we might be interested only
@@ -333,8 +335,8 @@ are localized near the region of our interest. Below, we first select which
 that is also saved by default). Next, we use the ``residue_sele`` option to
 apply any selection that is understandable by ProDy select. In our case, we
 select all ``FIL`` atoms (channel prediction artificial atoms) that are
-within 5 Angstroms from the residue with the number 442. This values can be
-changes using ``distA`` parameter of the function.
+within 5 Angstroms from the residue with the number 442. These values can be
+changed using ``distA`` parameter of the function.
 
 .. ipython:: python
    :verbatim:
@@ -452,7 +454,7 @@ changes using ``distA`` parameter of the function.
    are: PDB_id+_Parameters_All_channels.txt
 
 If we do not provide ``folder_name``, the results will be copied into the folder
-``selected_file`` which is created automatically. That name can be changed using
+``selected_file``, which is created automatically. That name can be changed using
 ``folder_name``, as shown below. Additionally, if we generated in the previous
 step files with parameters and residues for the channels, we can also use
 options ``residues_file`` and ``param_file`` set to ``True``. Then two new
@@ -537,7 +539,7 @@ selected channels only.
    names are: PDB_id+_Parameters_All_channels.txt
 
 
-Calculating overlaping channel regions accross PDB structures
+Calculating overlapping channel regions across PDB structures
 -------------------------------------------------------------------------------
 
 Now, we will select files for analysis. In our case, we will select files with
