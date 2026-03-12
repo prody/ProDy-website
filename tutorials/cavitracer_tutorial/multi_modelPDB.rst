@@ -90,7 +90,7 @@ to use :func:`.scalcChannelsMultipleFrames`.
    @> Detected 11 channels.
    @> No output path given.
 
-Channels are storaged in a list:
+Channels are stored in a list:
 
 .. ipython:: python
    :verbatim:
@@ -135,7 +135,7 @@ Channels are storaged in a list:
 
 To have acess to a particular frame/model, we should treat it as a list of
 elements, where elements are predicted channels. To display channels for
-frame #0, use :func:`.showChannels`:
+model #0, use :func:`.showChannels`:
 
 .. ipython:: python
    :verbatim:
@@ -144,6 +144,7 @@ frame #0, use :func:`.showChannels`:
 
 .. figure:: images/cavitracer_figure11.jpg
    :scale: 50 %
+
 
 We can also visualize one particular channel from model #2:
 
@@ -154,6 +155,7 @@ We can also visualize one particular channel from model #2:
 
 .. figure:: images/cavitracer_figure12.jpg
    :scale: 50 %
+
 
 Visualization with protein required building a 3D model of the protein as a
 TriangleMesh using getVmdModel. Below we will generate two models. One for
@@ -256,9 +258,9 @@ Access to the parameters of the channels is provided by
    @> channel 0: 	765.54 		49.58 		1.23
    @> channel 1: 	594.32 		36.42 		1.29
    @> channel 2: 	577.01 		38.35 		1.21
-   @> channel 3: 	1024.87 		68.2 		1.23
+   @> channel 3: 	1024.87 	68.2 		1.23
    @> channel 4: 	673.95 		42.82 		1.29
-   @> channel 5: 	1064.34 		76.67 		1.27
+   @> channel 5: 	1064.34 	76.67 		1.27
    @> channel 6: 	570.84 		28.65 		1.29
    @> channel 7: 	517.45 		25.8 		1.29
    @> channel 8: 	933.33 		73.52 		1.25
@@ -278,14 +280,14 @@ Access to the parameters of the channels is provided by
    @> channel 10: 	583.42 		38.48 		1.21
    @> Frame 4
    @> channel 0: 	703.36 		51.06 		1.22
-   @> channel 1: 	1216.13 		108.55 		1.22
+   @> channel 1: 	1216.13 	108.55 		1.22
    @> channel 2: 	324.48 		27.55 		1.22
    @> channel 3: 	482.35 		42.41 		1.22
-   @> channel 4: 	1049.38 		77.94 		1.22
+   @> channel 4: 	1049.38 	77.94 		1.22
    @> channel 5: 	649.91 		35.99 		1.22
    @> channel 6: 	657.11 		56.46 		1.22
-   @> channel 7: 	1063.54 		97.6 		1.22
-   @> channel 8: 	1113.29 		106.2 		1.22
+   @> channel 7: 	1063.54 	97.6 		1.22
+   @> channel 8: 	1113.29 	106.2 		1.22
    @> channel 9: 	925.5 		83.76 		1.22
    @> channel 10: 	442.14 		39.93 		1.16
    @> Frame 5
@@ -323,9 +325,9 @@ Access to the parameters of the channels is provided by
    @> channel 7: 	603.77 		42.53 		1.16
    @> channel 8: 	310.89 		25.17 		1.24
    @> Frame 8
-   @> channel 0: 	1055.84 		85.67 		1.17
+   @> channel 0: 	1055.84 	85.67 		1.17
    @> channel 1: 	664.34 		45.42 		1.25
-   @> channel 2: 	1213.39 		96.42 		1.17
+   @> channel 2: 	1213.39 	96.42 		1.17
    @> channel 3: 	879.21 		60.1 		1.25
    @> channel 4: 	441.49 		35.82 		1.25
    @> channel 5: 	461.51 		35.51 		1.25
@@ -342,20 +344,20 @@ Access to the parameters of the channels is provided by
    @> channel 2: 	956.62 		65.85 		1.27
    @> channel 3: 	654.11 		58.81 		1.25
    @> channel 4: 	739.8 		61.93 		1.25
-   @> channel 5: 	1178.41 		81.2 		1.27
+   @> channel 5: 	1178.41 	81.2 		1.27
    @> channel 6: 	765.0 		54.01 		1.27
    @> channel 7: 	758.55 		54.49 		1.27
    @> channel 8: 	808.05 		53.16 		1.17
    @> channel 9: 	556.39 		34.85 		1.27
-   @> channel 10: 	1383.79 		105.29 		1.27
+   @> channel 10: 	1383.79 	105.29 		1.27
    @> Frame 18
    @> channel 0: 	393.13 		39.09 		1.25
    @> channel 1: 	953.06 		69.43 		1.23
-   @> channel 2: 	1164.29 		80.85 		1.22
+   @> channel 2: 	1164.29 	80.85 		1.22
    @> channel 3: 	535.81 		51.2 		1.23
    @> channel 4: 	923.7 		61.91 		1.23
    @> channel 5: 	371.19 		38.42 		1.24
-   @> channel 6: 	1064.27 		90.59 		1.18
+   @> channel 6: 	1064.27 	90.59 		1.18
    @> channel 7: 	685.76 		69.22 		1.25
    @> channel 8: 	273.71 		28.1 		1.24
    @> channel 9: 	222.94 		29.14 		1.23
