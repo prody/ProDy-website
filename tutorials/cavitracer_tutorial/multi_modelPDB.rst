@@ -215,11 +215,29 @@ points and 56400 triangles.
 .. ipython:: python
    :verbatim:
 
+   showChannels(channels3[0], model=model3_0)
+
+.. figure:: images/cavitracer_figure13.jpg
+   :scale: 50 %
+
+
+.. ipython:: python
+   :verbatim:
+
    model3_2
 
 .. parsed-literal::
 
    TriangleMesh with 28210 points and 56400 triangles.
+
+.. ipython:: python
+   :verbatim:
+
+   showChannels(channels3[2][1], model=model3_2)
+
+.. figure:: images/cavitracer_figure14.jpg
+   :scale: 50 %
+
 
 Access to the parameters of the channels is provided by
 :func:`.getChannelParameters`:
