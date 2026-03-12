@@ -21,6 +21,7 @@ CaviTracer - detection of tunnels, channels and cavities within proteins
    intro
    singlePDB
    ensemblePDB
+   multi_modelPDB
 
 
 .. only:: html
