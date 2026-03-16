@@ -413,3 +413,77 @@ Access to the parameters of the channels is provided by
       537.6598046904968,
       608.0129166908057]),
       ..])]
+
+Access to the residues that are forming the channels is provided by
+:func:`.getChannelResidueNames` function. Below, the example on how to
+obtain information for frame #0.
+
+.. ipython:: python
+   :verbatim:
+
+   p3.setACSIndex(0)
+   getChannelResidueNames(p3, channels3[0])
+
+.. parsed-literal::
+
+   @> 3874 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 3959 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3874 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3884 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3889 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3784 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3934 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3939 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3869 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   [B@> 3939 atoms and 1 coordinate set(s) were parsed in 0.04s.
+
+
+   ['channel0: VAL36, PHE73, TYR76, MET77, ARG80, TYR191, ILE192, PHE195, GLY196, TRP197, ALA198, ILE199, TYR200, TYR223, ASN224, ALA226, ASP227, PHE228, VAL229, ASN230, LEU233',
+    'channel1: VAL36, SER55, LYS57, TRP58, PHE73, TYR76, MET77, ARG80, TRP98, LEU105, ILE106, PHE109, TYR110, ILE112, LEU113, ALA114, ALA116, THR117, ALA120, LYS126, GLY171, ALA178, VAL182, TYR186, MET189, ILE193, TRP197, TYR223, ASN224, ALA226, ASP227, PHE228, ASN230, LYS231, SER246',
+    'channel2: VAL36, THR44, PHE47, SER65, GLY66, THR69, GLY70, PHE73, TYR76, MET77, ARG80, TRP98, VAL102, LEU105, TYR223, ASN224, ALA226, ASP227, PHE228, ASN230, LYS231, ILE232, PHE234, GLY235',
+    'channel3: GLY20, GLY21, VAL36, PHE73, TYR76, MET77, ARG80, TYR200, TYR204, THR206, GLY207, MET210, GLY211, ASP212, GLY214, SER215, ASN218, LEU219, ILE222, TYR223, ASN224, ALA226, ASP227, PHE228',
+    'channel4: VAL36, PHE73, TYR76, MET77, ARG80, TRP98, VAL129, LEU132, VAL133, VAL136, PHE137, ALA151, ILE154, GLY155, ALA158, TYR200, TYR223, ASN224, ALA226, ASP227, PHE228',
+    'channel5: VAL36, PHE73, TYR76, MET77, ARG80, ARG94, PHE137, TYR223, ASN224, ASP227, PHE228',
+    'channel6: VAL36, PHE73, TYR76, MET77, ARG80, TRP98, LEU105, ILE106, PHE109, TYR110, LEU113, ALA114, THR117, ASN118, VAL119, ALA120, LYS126, GLU170, GLY171, ALA174, VAL182, TYR186, MET189, ILE193, TRP197, TYR223, ASN224, ALA226, ASP227, PHE228, ASN230, LYS231',
+    'channel7: VAL36, PHE73, TYR76, MET77, ARG80, TRP98, LEU105, ILE106, PHE109, TYR110, LEU113, LYS126, GLY171, LYS172, VAL182, GLN183, TYR186, ASN187, MET189, ILE193, TRP197, TYR223, ASN224, ALA226, ASP227, PHE228, ASN230, LYS231',
+    'channel8: VAL36, PHE73, TYR76, MET77, ARG80, TRP98, VAL133, ALA148, TRP149, ALA151, PHE152, ILE153, GLY155, TYR200, PRO201, TYR204, PHE205, TYR223, ASN224, ALA226, ASP227, PHE228',
+    'channel9: VAL36, PHE47, TRP58, SER61, LEU62, VAL64, SER65, GLY66, THR69, PHE73, TYR76, MET77, ARG80, TRP98, LEU105, GLU108, PHE109, LEU111, ILE112, LEU113, ILE193, TRP197, TYR223, ASN224, ALA226, ASP227, PHE228, ASN230, LYS231, PHE234, GLY235, ILE238']
+
+Second frame is accessible by setting :meth:`.p3.setACSIndex` to ``1``.
+To analyze the results for the second model, we need to select second set of
+data in ``channels3`` prediction. Additionally, we will display residues
+using one letter code and save the results to file by using
+``residues_file_name``.
+
+.. ipython:: python
+   :verbatim:
+
+   p3.setACSIndex(1)
+   getChannelResidueNames(p3, channels3[1], one_letter_aa=True, residues_file_name='results_frame1')
+
+.. parsed-literal::
+
+   @> 3849 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3809 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3864 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3864 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3914 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3849 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3899 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3869 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3879 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 3739 atoms and 1 coordinate set(s) were parsed in 0.04s.
+
+
+   ['channel0: S43, T44, F47, S65, G66, V68, T69, G70, F73, W74, W98, L105, I106, F109, Y110, K126, M189, I193, N230, K231, I232, F234, G235',
+    'channel1: W98, L105, I106, F109, Y110, K126, M189, I192, I193, V229, N230, L233, F234, I237',
+    'channel2: Y76, T91, V92, R94, Y95, W98, L105, I106, F109, Y110, K126, M134, F137, G138, E142, M189, I193, W197, D227, N230, K231',
+    'channel3: W98, L105, I106, F109, Y110, K126, V133, G155, C156, A158, W159, V160, M189, I193, I194, W197, A198, N230',
+    'channel4: F47, K57, W58, S61, L62, S65, G66, V68, T69, W98, L105, I106, F109, Y110, I112, L113, A116, K126, S179, A181, V182, M189, I193, N230, K231, F234, G235, I238',
+    'channel5: W98, V102, L105, I106, F109, Y110, K125, K126, L128, V129, G130, L132, V133, M134, L157, A158, Y161, M162, M189, W197',
+    'channel6: W98, L105, I106, F109, Y110, K126, V133, F137, G141, G144, I145, M146, A147, A148, P150, A151, I154, M189, I193, W197, Y200, Y204, Y208, L209, N230',
+    'channel7: W98, L105, I106, F109, Y110, K126, V133, V136, F137, M140, M146, A147, P150, A151, I154, M189, I193, W197, Y200, N230',
+    'channel8: F47, W58, S61, L62, V64, S65, G66, V68, T69, W98, L105, I106, E108, F109, Y110, L111, I112, L113, K126, M189, I193, N230, K231, F234, G235, I238',
+    'channel9: A147, A148, A151, F152, P201, V202, Y204, F205, Y208, L209']
+
+
