@@ -551,5 +551,130 @@ protein structure using :func:`.showChannels`.
 .. figure:: images/cavitracer_figure15.jpg
    :scale: 50 %
 
+To select channels with particular localization, we can further use
+`:func:.selectChannelBySelection` function and specify which region will be
+analyzed, for example, using residues, as shown below. In the example, we
+are selecting channels that are generated from MD trajectory using
+``"channels_pLoxA_dcd*_channel*.pqr"`` pattern. List with ``pqr`` files
+called ``pqr_files_channels`` is further use by
+`:func:.selectChannelBySelection`.
+
+.. ipython:: python
+   :verbatim:
+   
+   from pathlib import Path
+   pqr_files_channels = [i.name for i in Path(".").glob("channels_pLoxA_dcd*_channel*.pqr") if i.is_file()]
+   pqr_files_channels
+
+.. parsed-literal::
+
+   ['channels_pLoxA_dcd2_channel8.pqr',
+    'channels_pLoxA_dcd3_channel2.pqr',
+    'channels_pLoxA_dcd0_channel13.pqr',
+    'channels_pLoxA_dcd3_channel0.pqr',
+    'channels_pLoxA_dcd4_channel15.pqr',
+    'channels_pLoxA_dcd1_channel2.pqr',
+    'channels_pLoxA_dcd2_channel7.pqr',
+    'channels_pLoxA_dcd1_channel8.pqr',
+    'channels_pLoxA_dcd1_channel14.pqr',
+    'channels_pLoxA_dcd0_channel0.pqr',
+    ..]
+
+.. ipython:: python
+   :verbatim:
+
+   selectChannelBySelection(atoms, pqr_files=pqr_files_channels, residue_sele='resid 382 685 and name CA', 
+                         folder_name="Selected_channel1", distA=4.0)
+
+.. parsed-literal::
+
+   @> 285 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> Filtered files are now in: Selected_channel1
+   @> 1040 atoms and 1 coordinate sets were parsed in 0.02s.
+   @> 270 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 965 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 215 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 495 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> Filtered files are now in: Selected_channel1
+   @> 330 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Filtered files are now in: Selected_channel1
+   @> 380 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Filtered files are now in: Selected_channel1
+   ..
+   ..
+   @> 460 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 135 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 455 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 360 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 190 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 165 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 115 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Selected files: 
+   @> channels_pLoxA_dcd2_channel8.pqr channels_pLoxA_dcd1_channel2.pqr 
+   channels_pLoxA_dcd2_channel7.pqr channels_pLoxA_dcd1_channel8.pqr 
+   channels_pLoxA_dcd2_channel4.pqr channels_pLoxA_dcd1_channel0.pqr 
+   channels_pLoxA_dcd0_channel8.pqr channels_pLoxA_dcd1_channel7.pqr 
+   channels_pLoxA_dcd1_channel11.pqr channels_pLoxA_dcd2_channel10.pqr 
+   channels_pLoxA_dcd2_channel9.pqr channels_pLoxA_dcd2_channel6.pqr 
+   channels_pLoxA_dcd0_channel4.pqr channels_pLoxA_dcd1_channel3.pqr 
+   channels_pLoxA_dcd2_channel5.pqr channels_pLoxA_dcd1_channel5.pqr 
+   channels_pLoxA_dcd0_channel2.pqr
+   @> If newly created files are empty please check whether the parameter 
+   names are: PDB_id+_Parameters_All_channels.txt
+
+Filtered pqr files will be stored in ``"Selected_channel1"``. Once the files
+are filtered, the `:func:.calcChannelSurfaceOverlaps` function can be used to
+display the overlapping surface that is shared by filtered channels, which
+will be saved when using ``output_file_name`` option.
+
+.. ipython:: python
+   :verbatim:
+
+   calcChannelSurfaceOverlaps(pqr_files="./Selected_channel1", output_file_name='overlapping_surf_traj.pdb')
+
+.. parsed-literal::
+
+   @> Processing file: channels_pLoxA_dcd2_channel8.pqr
+   @> 285 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> Processing file: channels_pLoxA_dcd1_channel2.pqr
+   @> 495 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: channels_pLoxA_dcd2_channel7.pqr
+   @> 330 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: channels_pLoxA_dcd1_channel8.pqr
+   @> 380 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: channels_pLoxA_dcd2_channel4.pqr
+   @> 435 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: channels_pLoxA_dcd1_channel0.pqr
+   @> 335 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: channels_pLoxA_dcd0_channel8.pqr
+   @> 540 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: channels_pLoxA_dcd1_channel7.pqr
+   @> 215 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: channels_pLoxA_dcd1_channel11.pqr
+   @> 455 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: channels_pLoxA_dcd2_channel10.pqr
+   @> 350 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: channels_pLoxA_dcd2_channel9.pqr
+   @> 405 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: channels_pLoxA_dcd2_channel6.pqr
+   @> 385 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: channels_pLoxA_dcd0_channel4.pqr
+   @> 585 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: channels_pLoxA_dcd1_channel3.pqr
+   @> 320 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: channels_pLoxA_dcd2_channel5.pqr
+   @> 375 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: channels_pLoxA_dcd1_channel5.pqr
+   @> 340 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: channels_pLoxA_dcd0_channel2.pqr
+   @> 645 atoms and 1 coordinate sets were parsed in 0.00s.
+
+.. figure:: images/cavitracer_figure17.jpg
+   :scale: 50 %
+
+.. figure:: images/cavitracer_figure18.jpg
+   :scale: 50 %
+
 
 .. _Trajectory tutorial: http://www.bahargroup.org/prody/tutorials/trajectory_analysis/
+
