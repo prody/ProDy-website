@@ -57,7 +57,7 @@ All the details about the predicted channels can be displayed using
 .. ipython:: python
    :verbatim:
 
-   channels4, surfaces4=calcChannelsMultipleFrames(atoms, dcd, output_path = 'channels_pLoxA_dcd', separate=True)
+   getChannelParameters(channels4, param_file_name='DATA_channels_pLoxA_dcd')
 
 .. parsed-literal::
 
