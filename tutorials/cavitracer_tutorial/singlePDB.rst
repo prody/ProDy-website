@@ -41,7 +41,7 @@ the description of the function).
 The ``'separate'`` parameter controls whether each detected channel is
 saved to a separate file (``True``) or if all channels are saved in a single
 file (``False``). Files are saved as PQR file under the name specified using
-`'output_path'``. If we add .pdb the file will be saved as a PDB file;
+``'output_path'``. If we add ``.pdb`` the file will be saved as a PDB file;
 Otherwise, it will be saved as a PQR file. Results with ``'separate'``
 option set to True can be saved only as a PQR files. 
 

@@ -5,7 +5,7 @@ Detection of channels in molecular dynamics (MD) trajectory
 
 Analysis of the trajectory will be performed on a short MD trajectory
 containing a few frames of simulation performed for 15-lipoxygenase from
-P.aeruginosa (pLoxA). This protein contains 665 residues and a catalytic center
+P. aeruginosa (pLoxA). This protein contains 665 residues and a catalytic center
 with iron. During the analysis, the metal center is ignored.
 
 Before analyzing the trajectory, its need to be parsed (see more details
@@ -552,12 +552,12 @@ protein structure using :func:`.showChannels`.
    :scale: 50 %
 
 To select channels with particular localization, we can further use
-`:func:.selectChannelBySelection` function and specify which region will be
+:func:`.selectChannelBySelection` function and specify which region will be
 analyzed, for example, using residues, as shown below. In the example, we
 are selecting channels that are generated from MD trajectory using
 ``"channels_pLoxA_dcd*_channel*.pqr"`` pattern. List with ``pqr`` files
 called ``pqr_files_channels`` is further use by
-`:func:.selectChannelBySelection`.
+:func:`.selectChannelBySelection`.
 
 .. ipython:: python
    :verbatim:
@@ -623,7 +623,7 @@ called ``pqr_files_channels`` is further use by
    names are: PDB_id+_Parameters_All_channels.txt
 
 Filtered pqr files will be stored in ``"Selected_channel1"``. Once the files
-are filtered, the `:func:.calcChannelSurfaceOverlaps` function can be used to
+are filtered, the :func:`.calcChannelSurfaceOverlaps` function can be used to
 display the overlapping surface that is shared by filtered channels, which
 will be saved when using ``output_file_name`` option.
 

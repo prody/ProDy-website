@@ -158,8 +158,8 @@ We can also visualize one particular channel from model #2:
 
 
 Visualization with protein required building a 3D model of the protein as a
-TriangleMesh using getVmdModel. Below we will generate two models. One for
-model #0 and second for model #2.
+TriangleMesh using :func:`.getVmdModel`. Below we will generate two models.
+One for model #0 and second for model #2.
 
 .. ipython:: python
    :verbatim:
@@ -449,7 +449,7 @@ obtain information for frame #0.
     'channel8: VAL36, PHE73, TYR76, MET77, ARG80, TRP98, VAL133, ALA148, TRP149, ALA151, PHE152, ILE153, GLY155, TYR200, PRO201, TYR204, PHE205, TYR223, ASN224, ALA226, ASP227, PHE228',
     'channel9: VAL36, PHE47, TRP58, SER61, LEU62, VAL64, SER65, GLY66, THR69, PHE73, TYR76, MET77, ARG80, TRP98, LEU105, GLU108, PHE109, LEU111, ILE112, LEU113, ILE193, TRP197, TYR223, ASN224, ALA226, ASP227, PHE228, ASN230, LYS231, PHE234, GLY235, ILE238']
 
-Second frame is accessible by setting :meth:`.p3.setACSIndex` to ``1``.
+Second frame is accessible by setting :meth:`.setACSIndex` to ``1``.
 To analyze the results for the second model, we need to select second set of
 data in ``channels3`` prediction. Additionally, we will display residues
 using one letter code and save the results to file by using
