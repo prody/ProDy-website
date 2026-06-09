@@ -344,3 +344,22 @@ about their parameters.
    @> channel 2: 	1342.21 	69.76 		1.15
    @> 715 atoms and 1 coordinate set(s) were parsed in 0.01s.
 
+
+Predefined starting point for channel prediction
+-------------------------------------------------------------------------------
+
+By default, CaviTracer automatically selects the starting tetrahedron
+(starting point for the interior cavity prediction) based on cavity depth.
+Alternatively, users can provide a custom starting point using
+``start_point`` argument. 
+
+.. ipython:: python
+   :verbatim:
+
+   channels, surface = calcChannels(atoms, start_point=[-22.312, -20.065, -11.144])
+
+.. parsed-literal::
+
+   @> Using user-provided start_point for channel seed: [-22.312, -20.065, -11.144] Å
+   @> Detected 9 channels.
+
