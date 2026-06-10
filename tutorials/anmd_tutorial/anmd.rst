@@ -1,6 +1,6 @@
-.. d:
+.. _anmd:
 
-Simulation and Analysis
+ANMD Simulation and Analysis
 ===============================================================================
 
 First, we will make the following necessary imports ProDy_, NumPy_, and Matplotlib_ 
@@ -22,13 +22,11 @@ conformations. For this tutorial, we use an initial structure of the metabotropi
 receptor 1 (mGluR1) N-terminal venus fly trap domain (VFTD) in the open conformation (chain B from PDB structure 1ewk)
 with missing loops modelled by MODELLER [FA00]_. This file is available in the following archives can be used to follow this tutorial:
 
-  * `ClustENMD and ANMD Tutorial Files (TGZ) <clustenmd_tutorial_files.tgz>`_
-  * `ClustENMD and ANMD Tutorial Files (ZIP) <clustenmd_tutorial_files.zip>`_
+  * `ANMD Tutorial Files (TGZ) <anmd_tutorial_files.tgz>`_
+  * `ANMD Tutorial Files (ZIP) <anmd_tutorial_files.zip>`_
 
-In the extracted directory, you will find the output of ClustENMD from the previous tutorial 
-as well as two PDB files that we will parse here. The first one is the open chain model 
-1ewkB_modeller_protein.pdb, which we will use for ANMD. 
-
+In the extracted directory, you will find the two PDB files that we will parse here. 
+The first one is the open chain model 1ewkB_modeller_protein.pdb, which we will use for ANMD. 
 The second is the closed chain 1ewkA_protein_trim.pdb, which we compare against. This already
 has the ligand L-glutamate and an extra C-terminal residue that isn't in chain B trimmed away.
 
@@ -74,8 +72,8 @@ we can just align that chain to the closed chain.
    @> Finding the atommaps based on their coverages...
    @> Identified that there exists 1 atommap(s) potentially.
 
-We find an RMSD of 4.5 :math:`\mathring{A}`, so we will select a maximum RMSD that is higher than 
-this: 6 :math:`\mathring{A}`.
+We find an RMSD of 4.5 Angstrom, so we will select a maximum RMSD that is higher than
+this: 6 Angstrom.
 
 We next calculate the ANM modes for the full system and slice them with a selection based on 
 this atom map to compare against the deformation vector.
@@ -108,7 +106,7 @@ We see that the 1st mode (index 0 in Python) has a strong negative overlap, so
 we will focus on this mode for ANMD. We will also use the 2nd mode (index 1 in Python) 
 to illustrate that the method can traverse multiple modes in the same execution.
 
-Running ANMD simulations
+Running an ANMD simulation
 -------------------------------------------------------------------------------
 
 ANMD is implemented as a ProDy function called :function:`.runAMND`. The main parameters 
@@ -119,9 +117,9 @@ regarding the main steps of the method are as follows:
 
    ``num_modes`` : Number of global modes for sampling (default is 2).
 
-   ``num_steps`` : Number of steps along each mode in each direction (default is 2).
+   ``num_steps`` : Number of steps along each mode in each direction (default is 5).
 
-   ``max_rmsd`` : Maximum RMSD for the first global mode in :math:`\mathring{A}`
+   ``max_rmsd`` : Maximum RMSD for the first global mode in Angstrom
    (default is 2). Successive modes are downscaled to lower RMSDs based on their frequency. 
 
    ``skip_modes`` : Number of modes to skip if the first modes are not interesting.
@@ -140,17 +138,23 @@ Other keyword options are also possible for controlling traverse mode:
    ``reverse`` : whether to reverse the direction default is **False**
 
 
-In the following, we will perform ANMD simulations with 5 steps up to a maximum RMSD of 
-6 :math:`\mathring{A}` using the first 2 global modes. This means that the first mode has 
-5 steps of 1.2 :math:`\mathring{A}`, while the second mode has slightly smaller steps.
+In the following, we will perform ANMD simulations with 5 steps up to a maximum RMSD of 6
+Angstrom using the first 2 global modes. This means that the first mode has
+5 steps of 1.2 Angstrom, while the second mode has slightly smaller steps.
 
 Relaxation of conformers is carried out in implicit solvent via energy minimization only. 
 Simulation details will be printed out during execution.
 
-We also use the keyword options to follow the negative direction along these modes in the 
-reverse direction. This means that, rather than starting at the negative extreme of the mode
-and moving towards the starting structure and then moving on towards the positive extreme,
-the trajectories start at the starting structure and move towards the negative extreme.
+We also use keyword options of :func:`.traverseMode` to control the direction along the modes
+and the output ensemble. The default pos=True, neg=True and reverse=False leads to ensembles 
+with 5 conformations in the negative direction ordered such that the most extreme one is first 
+and the last one is closest to the starting conformation, then the starting conformation,
+then 5 conformations in the positive direction, giving a total of 11 conformations.
+
+In this case, we only want to follow the negative direction along these modes, so we set
+pos=False. We also set reverse=True, meaning that rather than starting at the negative extreme
+of the mode and ordering to approach towards the starting structure, the trajectories start 
+at the starting structure and approach towards the negative extreme.
 
 .. ipython:: python
    :verbatim:
@@ -160,62 +164,62 @@ the trajectories start at the starting structure and move towards the negative e
 
 .. parsed-literal::
 
-Warning: importing 'simtk.openmm' is deprecated.  Import 'openmm' instead.
-@> 
-Fixed structure found
-@> 
-Minimised fixed structure found
-@> 7479 atoms and 1 coordinate set(s) were parsed in 0.07s.
-@> Hessian was built in 0.14s.
-@> 2 modes were calculated in 0.28s.
-@> Parameter: rmsd = 6.00 A
-@> Parameter: n_steps = 5
-@> Step size is 1.20 A RMSD
-@> Mode is scaled by 31.21526594789081.
-@> 
-Minimising 6 conformers for mode 0 ...
-@> 
-Minimising structure 1 along mode 0 ...
-@> The structure was minimised in 31.22s.
-@> 
-Minimising structure 2 along mode 0 ...
-@> The structure was minimised in 132.40s.
-@> 
-Minimising structure 3 along mode 0 ...
-@> The structure was minimised in 171.45s.
-@> 
-Minimising structure 4 along mode 0 ...
-@> The structure was minimised in 286.93s.
-@> 
-Minimising structure 5 along mode 0 ...
-@> The structure was minimised in 366.90s.
-@> 
-Minimising structure 6 along mode 0 ...
-@> The structure was minimised in 459.04s.
-@> Parameter: rmsd = 5.45 A
-@> Parameter: n_steps = 5
-@> Step size is 1.09 A RMSD
-@> Mode is scaled by 31.215268055351423.
-@> 
-Minimising 6 conformers for mode 1 ...
-@> 
-Minimising structure 1 along mode 1 ...
-@> The structure was minimised in 30.34s.
-@> 
-Minimising structure 2 along mode 1 ...
-@> The structure was minimised in 126.45s.
-@> 
-Minimising structure 3 along mode 1 ...
-@> The structure was minimised in 191.12s.
-@> 
-Minimising structure 4 along mode 1 ...
-@> The structure was minimised in 1064.22s.
-@> 
-Minimising structure 5 along mode 1 ...
-@> The structure was minimised in 327.64s.
-@> 
-Minimising structure 6 along mode 1 ...
-@> The structure was minimised in 413.48s.
+   Warning: importing 'simtk.openmm' is deprecated.  Import 'openmm' instead.
+   @> 
+   Fixed structure found
+   @> 
+   Minimised fixed structure found
+   @> 7479 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> Hessian was built in 0.14s.
+   @> 2 modes were calculated in 0.28s.
+   @> Parameter: rmsd = 6.00 A
+   @> Parameter: n_steps = 5
+   @> Step size is 1.20 A RMSD
+   @> Mode is scaled by 31.21526594789081.
+   @> 
+   Minimising 6 conformers for mode 0 ...
+   @> 
+   Minimising structure 1 along mode 0 ...
+   @> The structure was minimised in 31.22s.
+   @> 
+   Minimising structure 2 along mode 0 ...
+   @> The structure was minimised in 132.40s.
+   @> 
+   Minimising structure 3 along mode 0 ...
+   @> The structure was minimised in 171.45s.
+   @> 
+   Minimising structure 4 along mode 0 ...
+   @> The structure was minimised in 286.93s.
+   @> 
+   Minimising structure 5 along mode 0 ...
+   @> The structure was minimised in 366.90s.
+   @> 
+   Minimising structure 6 along mode 0 ...
+   @> The structure was minimised in 459.04s.
+   @> Parameter: rmsd = 5.45 A
+   @> Parameter: n_steps = 5
+   @> Step size is 1.09 A RMSD
+   @> Mode is scaled by 31.215268055351423.
+   @> 
+   Minimising 6 conformers for mode 1 ...
+   @> 
+   Minimising structure 1 along mode 1 ...
+   @> The structure was minimised in 30.34s.
+   @> 
+   Minimising structure 2 along mode 1 ...
+   @> The structure was minimised in 126.45s.
+   @> 
+   Minimising structure 3 along mode 1 ...
+   @> The structure was minimised in 191.12s.
+   @> 
+   Minimising structure 4 along mode 1 ...
+   @> The structure was minimised in 1064.22s.
+   @> 
+   Minimising structure 5 along mode 1 ...
+   @> The structure was minimised in 327.64s.
+   @> 
+   Minimising structure 6 along mode 1 ...
+   @> The structure was minimised in 413.48s.
 
 We can also save these using the :func:`.saveEnsemble` method and also write them to PDB files:
 

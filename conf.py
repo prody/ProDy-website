@@ -69,7 +69,8 @@ html_additional_pages = {
     'clustenmd/index': 'clustenmd.html',
     'watfinder/index': 'watfinder.html',
     'insty/index': 'insty.html',
-    'scipion/index': 'scipion.html'
+    'scipion/index': 'scipion.html',
+    'anmd/index': 'anmd.html',
 }
 
 html_sidebars = {
