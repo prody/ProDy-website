@@ -49,17 +49,17 @@ compressed files, but reading uncompressed files is much faster.
 .. ipython::
    :verbatim:
 
-   In [1]: fetchPfamMSA('PF02171', compressed=True)
-   Out[1]: 'PF02171_full.sth.gz'
+   In [1]: fetchPfamMSA('PF02171', compressed=True, alignment='seed')
+   Out[1]: 'PF02171_seed.sth.gz'
 
-   In [2]: parseMSA('PF02171_full.sth.gz')
-   Out[2]: <MSA: PF02171_full (2067 sequences, 1392 residues)>
+   In [2]: parseMSA('PF02171_seed.sth.gz')
+   Out[2]: <MSA: PF02171_seed (2067 sequences, 1392 residues)>
 
-   In [3]: fetchPfamMSA('PF02171', format='fasta')
-   Out[3]: 'PF02171_full.fasta.gz'
+   In [3]: fetchPfamMSA('PF02171', format='fasta', alignment='seed')
+   Out[3]: 'PF02171_seed.fasta.gz'
 
-   In [3]: parseMSA('PF02171_full.fasta.gz')
-   Out[3]: <MSA: PF02171_full (2067 sequences, 1392 residues)>
+   In [3]: parseMSA('PF02171_seed.fasta.gz')
+   Out[3]: <MSA: PF02171_seed (2067 sequences, 1392 residues)>
 
 
 Iterating over a file will yield sequence id, sequence, residue start and
