@@ -376,3 +376,11 @@ a > tt {
   white-space: nowrap;
   vertical-align: baseline;
 }
+
+/* Show dropdowns on hover as well as click */
+.navbar .dropdown:hover .dropdown-menu,
+.subnav .dropdown:hover .dropdown-menu,
+.navbar .dropdown:focus-within .dropdown-menu,
+.subnav .dropdown:focus-within .dropdown-menu {
+  display: block;
+}
