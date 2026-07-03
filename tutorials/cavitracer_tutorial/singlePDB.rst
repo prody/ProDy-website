@@ -381,3 +381,11 @@ geometric center is used as the starting point.
    @> Saving results to results.pdb.
 
 
+Below is the visualization of channel identification for the two different starting
+points mentioned above. The blue one represents identification of channels when
+the starting point is [-22.312, -20.065, -11.144], whereas the orange one
+represents identification based on the center of the mass for residues 212, 309,
+and 483. 
+
+.. figure:: images/cavitracer_figure19.jpg
+   :scale: 50 %
