@@ -391,4 +391,4 @@ and 483 (displayed as orange spheres).
    :scale: 50 %
 
 Visualization of the system was performed in the VMD_ program. This outcome
-shows how the prediction result can change when the start_point changes.
+shows how the prediction result can change when the ``start_point`` changes.
