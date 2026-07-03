@@ -392,3 +392,156 @@ and 483 (displayed as orange spheres).
 
 Visualization of the system was performed in the VMD_ program. This outcome
 shows how the prediction result can change when the ``start_point`` changes.
+
+
+
+Detection of surface cavities in a single PDB structure
+===============================================================================
+
+
+CaviTracer prediction
+-------------------------------------------------------------------------------
+
+In this part of the tutorial, we will also use Cytochrome P450 structure, but
+this time we will identify surface cavities instead of intraprotein
+cavities.  
+
+
+.. ipython:: python
+   :verbatim:
+
+   atoms = parsePDB('1tqn').select('protein')
+
+.. parsed-literal::
+
+   @> PDB file is found in working directory (1tqn.pdb).
+   @> 3999 atoms and 1 coordinate set(s) were parsed in 0.04s.
+
+XXXXXXXXXX
+
+.. ipython:: python
+   :verbatim:
+
+   cavities, surface = calcSurfaceCavities(atoms, output_path='test_surf_cav.pqr')
+
+.. parsed-literal::
+
+   @> Returning surface cavities
+   @> Saving surface cavities to test_surf_cav.pqr.
+
+XXXXXXXXXXXXXXX
+
+.. ipython:: python
+   :verbatim:
+
+   vmd_path = '/usr/local/bin/vmd'
+   model = getVmdModel(vmd_path, atoms)
+
+.. parsed-literal::
+
+   @> Model created successfully.
+
+.. figure:: images/cavitracer_figure20.jpg
+   :scale: 50 %
+
+XXXXXXXXXXXXXXX
+
+.. ipython:: python
+   :verbatim:
+
+   cavities2, surface2 = calcSurfaceCavities(atoms, min_volume=500, max_volume=1000, output_path='surf_cav_MinMax_volume.pqr')
+
+.. parsed-literal::
+
+   @> Returning surface cavities
+   @> Saving surface cavities to surf_cav_MinMax_volume.pqr.
+
+XXXXXXXXXXXXXXXXX
+
+.. ipython:: python
+   :verbatim:
+
+   showSurfaceCavities(surface2, model=model, show_surface=True)
+
+.. figure:: images/cavitracer_figure21.jpg
+   :scale: 50 %
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+.. ipython:: python
+   :verbatim:
+
+   cav_model = getVmdModel(vmd_path, parsePQR('surf_cav_MinMax_volume.pqr'),
+    	representation='QuickSurf')
+
+.. parsed-literal::
+
+   @> Model created successfully.
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+.. ipython:: python
+   :verbatim:
+
+   showSurfaceCavities(surface2, model=model, cavity_atoms=cav_model)
+
+
+.. figure:: images/cavitracer_figure22.jpg
+   :scale: 50 %
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+.. ipython:: python
+   :verbatim:
+
+   parameters = getSurfaceCavityParameters(cavities2)
+
+.. parsed-literal::
+
+   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+   @> cavity 0: 	928.09 		8 		97
+   @> cavity 1: 	771.55 		5 		77
+
+
+XXXXXXXXXXXXXXXX
+
+.. ipython:: python
+   :verbatim:
+
+   parameters
+
+.. parsed-literal::
+
+   ([928.0878561950001, 771.5530158881667], [8, 5], [97, 77])
+
+
+XXXXXXXXXXXXXX Volume can be obtained: ##################
+
+.. ipython:: python
+   :verbatim:
+
+   parameters[0]
+
+.. parsed-literal::
+
+   [928.0878561950001, 771.5530158881667]
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+.. ipython:: python
+   :verbatim:
+
+   residues = getSurfaceCavityResidueNames(atoms, cavities2, surface2, residues_file_name='results')
+
+.. parsed-literal::
+
+   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+   @> cavity 0: 	928.09 		8 		97
+   @> cavity 1: 	771.55 		5 		77
+   @> Surface cavity residues were saved to: results_Residues_All_surface_cavities.txt
+
+
