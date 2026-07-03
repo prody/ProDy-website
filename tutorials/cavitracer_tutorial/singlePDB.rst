@@ -351,7 +351,10 @@ Predefined starting point for channel prediction
 By default, CaviTracer automatically selects the starting tetrahedron
 (starting point for the interior cavity prediction) based on cavity depth.
 Alternatively, users can provide a custom starting point using
-``start_point`` argument. 
+``start_point`` argument. This can be either a 3D coordinate point or an 
+atomic selection/AtomGroup as show below. If an atomic selection is provided, its 
+geometric center is used as the starting point.
+
 
 .. ipython:: python
    :verbatim:
@@ -362,4 +365,19 @@ Alternatively, users can provide a custom starting point using
 
    @> Using user-provided start_point for channel seed: [-22.312, -20.065, -11.144] Å
    @> Detected 9 channels.
+
+
+.. ipython:: python
+   :verbatim:
+
+   start_sel = protein.select('resid 212 309 483')
+   calcChannels(protein, output_path='results.pdb', start_point=start_sel)
+
+
+.. parsed-literal::
+
+   @> Using user-provided start_point for channel seed: [-24.395, -23.462, -15.132] Å
+   @> Detected 9 channels.
+   @> Saving results to results.pdb.
+
 
