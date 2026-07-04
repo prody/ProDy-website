@@ -402,10 +402,11 @@ Detection of surface cavities in a single PDB structure
 CaviTracer prediction
 -------------------------------------------------------------------------------
 
-In this part of the tutorial, we will also use Cytochrome P450 structure, but
-this time we will identify surface cavities instead of intraprotein
+In this part of the tutorial, we will also use the Cytochrome P450 structure,
+but this time we will identify surface cavities instead of intraprotein
 cavities.  
 
+Once again we will parse protein structure with PDB ID ``1tqn``. 
 
 .. ipython:: python
    :verbatim:
@@ -417,7 +418,10 @@ cavities.
    @> PDB file is found in working directory (1tqn.pdb).
    @> 3999 atoms and 1 coordinate set(s) were parsed in 0.04s.
 
-XXXXXXXXXX
+
+Now, to identify the potential surface cavities, we will use :func:`.calcSurfaceCavities`
+and save the results as :file:`test_surf_cav.pqr` file using ``output_path``
+parameter.
 
 .. ipython:: python
    :verbatim:
@@ -429,7 +433,9 @@ XXXXXXXXXX
    @> Returning surface cavities
    @> Saving surface cavities to test_surf_cav.pqr.
 
-XXXXXXXXXXXXXXX
+To display the identified surface cavities, similarly to the channel identification, we
+need to use VMD_ to create the model for visualization within ProDy. For that reason,
+we need to provide ``vmd_path`` and use :func:`.getVmdModel`. 
 
 .. ipython:: python
    :verbatim:
@@ -444,7 +450,17 @@ XXXXXXXXXXXXXXX
 .. figure:: images/cavitracer_figure20.jpg
    :scale: 50 %
 
-XXXXXXXXXXXXXXX
+The protein model is displayed in the NewCartoon representation, whereas the
+identified surface cavities are shown using the tetrahedral representation
+derived from the Voronoi/Delaunay tessellation.
+
+The :func:`.calcSurfaceCavities` function provides several parameters that
+can be used to tune the detection and selection of surface cavities,
+including min_volume, max_volume, min_depth, max_depth, min_tetrahedra,
+max_tetrahedra, as well as r1, r2, and sparsity. In the example below, only
+surface cavities with volumes between 500 and 1000 Å³ are selected and
+saved to a file specified by the output_path parameter,
+:file:`surf_cav_MinMax_volume.pqr`.
 
 .. ipython:: python
    :verbatim:
@@ -456,7 +472,7 @@ XXXXXXXXXXXXXXX
    @> Returning surface cavities
    @> Saving surface cavities to surf_cav_MinMax_volume.pqr.
 
-XXXXXXXXXXXXXXXXX
+We can display the results using :func:`.showSurfaceCavities` function:
 
 .. ipython:: python
    :verbatim:
@@ -467,8 +483,9 @@ XXXXXXXXXXXXXXXXX
    :scale: 50 %
 
 
-XXXXXXXXXXXXXXXXXXXXXXXXX
-
+To provide nicer visualization for the surface cavities, we can also use
+:func:`.getVmdModel` function with ``representation`` parameter set to
+``'QuickSurf'``. We need to provide PQR file to do that.
 
 .. ipython:: python
    :verbatim:
@@ -481,7 +498,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXX
    @> Model created successfully.
 
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXX
+Once the model is created, we can display it by setting ``cavity_atoms``
+parameter.
 
 .. ipython:: python
    :verbatim:
@@ -492,7 +510,9 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXX
 .. figure:: images/cavitracer_figure22.jpg
    :scale: 50 %
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+To obtain information about the surface cavities, such as volume, depth or
+tetrahedra count, use :func:`getSurfaceCavityParameters`.
 
 .. ipython:: python
    :verbatim:
@@ -504,9 +524,12 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXX
    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
    @> cavity 0: 	928.09 		8 		97
    @> cavity 1: 	771.55 		5 		77
+   @> Surface cavity residues were saved to: results_Residues_All_surface_cavities.txt
 
-
-XXXXXXXXXXXXXXXX
+By assigning the output of :func:`getSurfaceCavityParameters` to the
+variable parameters, the extracted cavity descriptors can be accessed as
+lists, including cavity volume (``parameters[0]``), depth
+(``parameters[1]``), and tetrahedra count (``parameters[2]``).
 
 .. ipython:: python
    :verbatim:
@@ -518,8 +541,6 @@ XXXXXXXXXXXXXXXX
    ([928.0878561950001, 771.5530158881667], [8, 5], [97, 77])
 
 
-XXXXXXXXXXXXXX Volume can be obtained: ##################
-
 .. ipython:: python
    :verbatim:
 
@@ -530,7 +551,13 @@ XXXXXXXXXXXXXX Volume can be obtained: ##################
    [928.0878561950001, 771.5530158881667]
 
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+In addition to quantitative descriptors, CaviTracer also allows the
+identification of residues forming each detected surface cavity. This
+information can be obtained using :func:`getSurfaceCavityResidueNames`,
+which returns residue names and residue numbers for each cavity based on
+the distance between cavity points and protein residues. The results can be
+saved using ``residues_file_name`` parameter. Provided name will be used to
+save the results with ``_Residues_All_surface_cavities.txt`` sufix.
 
 .. ipython:: python
    :verbatim:
@@ -539,9 +566,20 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 .. parsed-literal::
 
-   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	928.09 		8 		97
-   @> cavity 1: 	771.55 		5 		77
    @> Surface cavity residues were saved to: results_Residues_All_surface_cavities.txt
+
+
+.. ipython:: python
+   :verbatim:
+
+   residues
+
+.. parsed-literal::
+
+   ['cavity0: LYS173, ASP174, GLY177, ALA178, SER195, LEU196, PRO199, LYS208, LYS209,
+   LEU211, ARG212, PHE213, PHE219, PHE220, CYS239, VAL240, PHE241, PRO242, PHE304,
+   TYR307, GLU308, SER311, LEU482', 'cavity1: LYS55, MET59, MET62, GLU63, TYR319, 
+   GLU320, THR323, HIS324, PHE367, TYR399, ARG403, GLU412, LYS413, PHE414, ILE473, 
+   PRO474, LEU475, LEU477, SER478, LEU479']
 
 
