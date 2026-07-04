@@ -395,12 +395,10 @@ shows how the prediction result can change when the ``start_point`` changes.
 
 
 
+
 Detection of surface cavities in a single PDB structure
 ===============================================================================
 
-
-CaviTracer prediction
--------------------------------------------------------------------------------
 
 In this part of the tutorial, we will also use the Cytochrome P450 structure,
 but this time we will identify surface cavities instead of intraprotein
@@ -419,9 +417,9 @@ Once again we will parse protein structure with PDB ID ``1tqn``.
    @> 3999 atoms and 1 coordinate set(s) were parsed in 0.04s.
 
 
-Now, to identify the potential surface cavities, we will use :func:`.calcSurfaceCavities`
-and save the results as :file:`test_surf_cav.pqr` file using ``output_path``
-parameter.
+Now, to identify the potential surface cavities, we will use
+:func:`.calcSurfaceCavities` and save the results as :file:`test_surf_cav.pqr`
+file using ``output_path`` parameter.
 
 .. ipython:: python
    :verbatim:
@@ -433,9 +431,10 @@ parameter.
    @> Returning surface cavities
    @> Saving surface cavities to test_surf_cav.pqr.
 
-To display the identified surface cavities, similarly to the channel identification, we
-need to use VMD_ to create the model for visualization within ProDy. For that reason,
-we need to provide ``vmd_path`` and use :func:`.getVmdModel`. 
+To display the identified surface cavities, similarly to the channel
+identification, we need to use VMD_ to create the model for visualization
+within ProDy. For that reason, we need to provide ``vmd_path`` and use 
+:func:`.getVmdModel`. 
 
 .. ipython:: python
    :verbatim:
@@ -450,9 +449,9 @@ we need to provide ``vmd_path`` and use :func:`.getVmdModel`.
 .. figure:: images/cavitracer_figure20.jpg
    :scale: 50 %
 
-The protein model is displayed in the NewCartoon representation, whereas the
-identified surface cavities are shown using the tetrahedral representation
-derived from the Voronoi/Delaunay tessellation.
+The protein model is displayed in the NewCartoon representation, whereas
+the identified surface cavities are shown using the tetrahedral 
+representation derived from the Voronoi/Delaunay tessellation.
 
 The :func:`.calcSurfaceCavities` function provides several parameters that
 can be used to tune the detection and selection of surface cavities,
@@ -465,7 +464,8 @@ saved to a file specified by the output_path parameter,
 .. ipython:: python
    :verbatim:
 
-   cavities2, surface2 = calcSurfaceCavities(atoms, min_volume=500, max_volume=1000, output_path='surf_cav_MinMax_volume.pqr')
+   cavities2, surface2 = calcSurfaceCavities(atoms, min_volume=500,
+		max_volume=1000, output_path='surf_cav_MinMax_volume.pqr')
 
 .. parsed-literal::
 
@@ -482,7 +482,6 @@ We can display the results using :func:`.showSurfaceCavities` function:
 .. figure:: images/cavitracer_figure21.jpg
    :scale: 50 %
 
-
 To provide nicer visualization for the surface cavities, we can also use
 :func:`.getVmdModel` function with ``representation`` parameter set to
 ``'QuickSurf'``. We need to provide PQR file to do that.
@@ -490,7 +489,8 @@ To provide nicer visualization for the surface cavities, we can also use
 .. ipython:: python
    :verbatim:
 
-   cav_model = getVmdModel(vmd_path, parsePQR('surf_cav_MinMax_volume.pqr'),
+   cav_model = getVmdModel(vmd_path, 
+        parsePQR('surf_cav_MinMax_volume.pqr'),
     	representation='QuickSurf')
 
 .. parsed-literal::
@@ -562,7 +562,8 @@ save the results with ``_Residues_All_surface_cavities.txt`` sufix.
 .. ipython:: python
    :verbatim:
 
-   residues = getSurfaceCavityResidueNames(atoms, cavities2, surface2, residues_file_name='results')
+   residues = getSurfaceCavityResidueNames(atoms, cavities2, surface2, 
+					residues_file_name='results')
 
 .. parsed-literal::
 
