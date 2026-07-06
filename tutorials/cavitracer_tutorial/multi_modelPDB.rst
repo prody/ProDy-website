@@ -487,3 +487,423 @@ using one letter code and save the results to file by using
     'channel9: A147, A148, A151, F152, P201, V202, Y204, F205, Y208, L209']
 
 
+
+Detection of surface cavities in multi-model PDBs
+===============================================================================
+
+
+In this tutorial, we demonstrate how to identify and characterize surface
+cavities  in the substrate-bound structure of *S. aureus* Sortase A using
+the NMR structure with PDB ID ``2KID``. Sortase A is a membrane-associated
+transpeptidase essential for bacterial virulence, and its substrate-binding
+region provides a useful example of a shallow surface cavity located near
+the catalytic site.
+
+We first load the protein structure and select only ``chain A``, which
+corresponds to the Sortase A protein. This step removes the bound substrate
+peptide from the analysis, allowing the cavity detection procedure to
+identify the surface groove that accommodates the substrate. 
+
+
+.. ipython:: python
+   :verbatim:
+
+   PDB_ID = '2KID'
+   atoms = parsePDB(PDB_ID).select('protein and chain A')
+
+
+.. parsed-literal::
+
+   @> Connecting wwPDB FTP server RCSB PDB (USA).
+   @> Downloading PDB files via FTP failed, trying HTTP.
+   @> 2kid downloaded (2kid.pdb.gz)
+   @> PDB download via HTTP completed (1 downloaded, 0 failed).
+   @> 2437 atoms and 20 coordinate set(s) were parsed in 0.23s.
+
+
+Surface cavities are calculated for all available NMR models using
+:func:`.calcSurfaceCavitiesMultipleFrames`. We used ``r2=1.5`` controlling
+the detection of accessible surface cavities. 
+The results are also saved as separate PQR files for individual cavities
+when ``separate`` parameter is set.
+
+
+.. ipython:: python
+   :verbatim:
+
+   cavities, surface = calcSurfaceCavitiesMultipleFrames(atoms, r2=1.5, 
+			output_path=PDB_ID+'_CAV_', separate=True)   
+
+.. parsed-literal::
+
+   @> Model: 0
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+   @> Model: 1
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+   @> Model: 2
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+   @> Model: 3
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+   @> Model: 4
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+   @> Model: 5
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+   @> Model: 6
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+   @> Model: 7
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+   @> Model: 8
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+   @> Model: 9
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+   @> Model: 10
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+   @> Model: 11
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+   @> Model: 12
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+   @> Model: 13
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+   @> Model: 14
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+   @> Model: 15
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+   @> Model: 16
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+   @> Model: 17
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+   @> Model: 18
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+   @> Model: 19
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+
+Next, we generate a VMD molecular model of the protein, which can be used
+together with :func:`.showSurfaceCavities` to visualize the detected
+cavities and the protein surface. 
+
+.. ipython:: python
+   :verbatim:
+
+   vmd_path = '/usr/local/bin/vmd'
+   model = getVmdModel(vmd_path, atoms)
+
+We then extract quantitative parameters for each cavity, such as its 
+size and geometric descriptors, using
+:func:`.getSurfaceCavityParametersMultipleFrames`. 
+
+.. parsed-literal::
+
+   @> Model created successfully.
+
+In addition, we identify the amino acid residues surrounding each cavity
+with :func:`.getSurfaceCavityResidueNamesMultipleFrames`, which allows the
+detected cavities to be related to the substrate-binding and catalytic
+regions of Sortase A.
+
+.. ipython:: python
+   :verbatim:
+
+   parameters = getSurfaceCavityParametersMultipleFrames(cavities, 
+			param_file_name=PDB_ID+'_param')
+
+.. parsed-literal::
+
+   @> Model/frame: 0
+   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+   @> cavity 0: 	739.11 		6 		138
+   @> cavity 1: 	134.92 		3 		37
+   @> cavity 2: 	682.86 		4 		90
+   @> cavity 3: 	806.05 		10 		117
+   @> cavity 4: 	603.5 		18 		112
+   @> cavity 5: 	386.76 		3 		87
+   @> cavity 6: 	563.31 		10 		82
+   @> cavity 7: 	56.82 		2 		18
+   @> cavity 8: 	62.54 		2 		7
+   @> cavity 9: 	63.68 		2 		13
+   @> cavity 10: 	75.02 		2 		17
+   @> Model/frame: 1
+   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+   @> cavity 0: 	62.33 		2 		14
+   @> cavity 1: 	593.38 		4 		71
+   @> cavity 2: 	504.13 		5 		97
+   @> cavity 3: 	312.72 		4 		65
+   @> cavity 4: 	941.82 		15 		163
+   @> cavity 5: 	142.57 		6 		36
+   @> cavity 6: 	152.28 		3 		25
+   @> cavity 7: 	256.12 		8 		42
+   @> cavity 8: 	638.62 		9 		101
+   @> cavity 9: 	60.43 		4 		14
+   @> cavity 10: 	60.54 		2 		24
+   @> cavity 11: 	117.7 		5 		20
+   @> Model/frame: 2
+   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+   @> cavity 0: 	311.49 		6 		46
+   @> cavity 1: 	517.64 		7 		81
+   @> cavity 2: 	1761.28 		12 		294
+   @> cavity 3: 	557.34 		7 		83
+   @> cavity 4: 	180.69 		3 		44
+   @> cavity 5: 	438.89 		3 		71
+   @> cavity 6: 	273.11 		5 		57
+   @> cavity 7: 	71.83 		2 		9
+   @> cavity 8: 	105.32 		2 		12
+   @> Model/frame: 3
+   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+   @> cavity 0: 	280.01 		7 		67
+   @> cavity 1: 	793.98 		7 		120
+   @> cavity 2: 	527.87 		7 		83
+   @> cavity 3: 	1071.83 		15 		198
+   @> cavity 4: 	476.35 		4 		98
+   @> cavity 5: 	473.23 		4 		87
+   @> cavity 6: 	114.1 		3 		31
+   @> cavity 7: 	505.36 		7 		83
+   @> cavity 8: 	53.98 		2 		15
+   @> cavity 9: 	97.81 		2 		23
+   @> cavity 10: 	78.36 		6 		18
+   @> Model/frame: 4
+   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+   @> cavity 0: 	2080.17 		13 		392
+   @> cavity 1: 	293.84 		5 		51
+   @> cavity 2: 	52.31 		4 		18
+   @> cavity 3: 	67.06 		2 		16
+   @> cavity 4: 	728.88 		5 		133
+   @> cavity 5: 	363.06 		5 		42
+   @> cavity 6: 	229.16 		3 		41
+   @> cavity 7: 	130.05 		3 		20
+   @> cavity 8: 	56.77 		3 		18
+   @> cavity 9: 	50.94 		7 		10
+   @> Model/frame: 5
+   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+   @> cavity 0: 	410.58 		3 		74
+   @> cavity 1: 	696.45 		6 		123
+   @> cavity 2: 	398.07 		5 		61
+   @> cavity 3: 	1008.08 		13 		184
+   @> cavity 4: 	106.05 		3 		13
+   @> cavity 5: 	51.35 		4 		9
+   @> cavity 6: 	79.04 		2 		27
+   @> cavity 7: 	55.33 		2 		16
+   @> cavity 8: 	184.93 		4 		42
+   @> cavity 9: 	147.4 		3 		32
+   @> Model/frame: 6
+   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+   @> cavity 0: 	1351.73 		8 		199
+   @> cavity 1: 	123.85 		4 		36
+   @> cavity 2: 	706.28 		3 		108
+   @> cavity 3: 	101.46 		4 		30
+   @> cavity 4: 	327.98 		14 		62
+   @> cavity 5: 	81.06 		2 		16
+   @> cavity 6: 	298.8 		3 		45
+   @> cavity 7: 	141.86 		4 		25
+   @> cavity 8: 	54.57 		2 		13
+   @> cavity 9: 	277.15 		3 		48
+   @> cavity 10: 	166.08 		2 		21
+   @> cavity 11: 	181.76 		3 		39
+   @> cavity 12: 	52.61 		2 		8
+   ..
+   ..
+   @> Model/frame: 13
+   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+   @> cavity 0: 	1186.6 		13 		198
+   @> cavity 1: 	170.93 		4 		43
+   @> cavity 2: 	717.86 		3 		124
+   @> cavity 3: 	380.96 		4 		57
+   @> cavity 4: 	539.86 		6 		84
+   @> cavity 5: 	275.78 		3 		56
+   @> cavity 6: 	210.73 		3 		40
+   @> cavity 7: 	64.85 		2 		13
+   @> cavity 8: 	83.71 		3 		14
+   @> cavity 9: 	53.92 		6 		10
+   @> cavity 10: 	51.12 		5 		8
+   @> cavity 11: 	170.27 		2 		30
+   @> Model/frame: 14
+   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+   @> cavity 0: 	434.61 		13 		86
+   @> cavity 1: 	1189.18 		7 		181
+   @> cavity 2: 	469.08 		7 		74
+   @> cavity 3: 	457.69 		6 		86
+   @> cavity 4: 	510.37 		5 		76
+   @> cavity 5: 	887.23 		4 		131
+   @> cavity 6: 	273.34 		5 		41
+   @> cavity 7: 	72.6 		3 		25
+   @> Model/frame: 15
+   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+   @> cavity 0: 	663.19 		5 		101
+   @> cavity 1: 	811.11 		5 		139
+   @> cavity 2: 	1071.78 		14 		184
+   @> cavity 3: 	358.12 		5 		69
+   @> cavity 4: 	391.57 		3 		79
+   @> cavity 5: 	427.31 		3 		71
+   @> cavity 6: 	161.62 		3 		36
+   @> cavity 7: 	367.26 		6 		57
+   @> cavity 8: 	74.43 		4 		16
+   @> cavity 9: 	50.42 		6 		6
+   @> Model/frame: 16
+   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+   @> cavity 0: 	1037.05 		6 		157
+   @> cavity 1: 	1360.16 		10 		230
+   @> cavity 2: 	304.61 		4 		52
+   @> cavity 3: 	503.7 		5 		81
+   @> cavity 4: 	689.45 		5 		103
+   @> cavity 5: 	73.65 		3 		24
+   @> cavity 6: 	71.17 		3 		21
+   @> cavity 7: 	97.28 		3 		29
+   @> cavity 8: 	243.16 		2 		44
+   @> cavity 9: 	58.66 		2 		15
+   @> Model/frame: 17
+   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+   @> cavity 0: 	1162.98 		5 		180
+   @> cavity 1: 	549.98 		13 		92
+   @> cavity 2: 	642.53 		6 		99
+   @> cavity 3: 	474.69 		4 		68
+   @> cavity 4: 	107.63 		2 		24
+   @> cavity 5: 	484.59 		6 		110
+   @> cavity 6: 	318.31 		6 		48
+   @> Model/frame: 18
+   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+   @> cavity 0: 	381.47 		4 		68
+   @> cavity 1: 	1844.05 		10 		329
+   @> cavity 2: 	1058.5 		6 		174
+   @> cavity 3: 	448.84 		3 		86
+   @> cavity 4: 	88.46 		2 		13
+   @> cavity 5: 	117.31 		3 		25
+   @> cavity 6: 	186.11 		3 		47
+   @> cavity 7: 	270.97 		5 		43
+   @> cavity 8: 	81.33 		6 		17
+   @> cavity 9: 	573.02 		7 		82
+   @> cavity 10: 	63.11 		2 		23
+   @> Model/frame: 19
+   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+   @> cavity 0: 	1284.54 		4 		249
+   @> cavity 1: 	62.97 		4 		15
+   @> cavity 2: 	1209.83 		5 		206
+   @> cavity 3: 	1294.08 		13 		237
+   @> cavity 4: 	469.89 		3 		84
+   @> cavity 5: 	123.16 		3 		34
+   @> cavity 6: 	78.79 		3 		23
+   @> cavity 7: 	339.04 		7 		45
+
+
+.. ipython:: python
+   :verbatim:
+
+   residues = getSurfaceCavityResidueNamesMultipleFrames(atoms, cavities, 
+				surface, residues_file_name=PDB_ID+'_resAA')
+
+.. parsed-literal::
+
+   @> Surface cavity residues were saved to: 2KID_resAA_model0_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: 2KID_resAA_model1_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: 2KID_resAA_model2_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: 2KID_resAA_model3_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: 2KID_resAA_model4_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: 2KID_resAA_model5_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: 2KID_resAA_model6_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: 2KID_resAA_model7_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: 2KID_resAA_model8_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: 2KID_resAA_model9_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: 2KID_resAA_model10_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: 2KID_resAA_model11_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: 2KID_resAA_model12_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: 2KID_resAA_model13_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: 2KID_resAA_model14_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: 2KID_resAA_model15_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: 2KID_resAA_model16_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: 2KID_resAA_model17_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: 2KID_resAA_model18_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: 2KID_resAA_model19_Residues_All_surface_cavities.txt
+
+
+.. ipython:: python
+   :verbatim:
+
+   showSurfaceCavities(surface[0], model=model, show_surface=True)
+
+
+.. figure:: images/cavitracer_figure23.jpg
+   :scale: 50 %
+
+
+Finally, the generated cavity PQR files are collected and passed to 
+:func:`.calcSurfaceCavityOverlaps`. This step compares cavities detected
+across different NMR models and produces an overlap representation, which
+can be used to identify surface cavities that are consistently present
+across the conformational ensemble.
+
+.. ipython:: python
+   :verbatim:
+
+   import glob
+   pqr_files_cavities = glob.glob(PDB_ID+"_CAV_?.pqr")
+   calcSurfaceCavityOverlaps(pqr_files=pqr_files_cavities, 
+		output_file_name=PDB_ID+'surface_cavity_overlap.pdb')
+
+
+.. parsed-literal::
+
+   @> Processing file: 2KID_CAV_6.pqr
+   @> 650 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> Processing file: 2KID_CAV_2.pqr
+   @> 697 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: 2KID_CAV_5.pqr
+   @> 581 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: 2KID_CAV_4.pqr
+   @> 741 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: 2KID_CAV_9.pqr
+   @> 773 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: 2KID_CAV_8.pqr
+   @> 644 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: 2KID_CAV_7.pqr
+   @> 653 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: 2KID_CAV_3.pqr
+   @> 823 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: 2KID_CAV_1.pqr
+   @> 672 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: 2KID_CAV_0.pqr
+   @> 718 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: 2KID_CAV_17.pqr
+   @> 621 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: 2KID_CAV_19.pqr
+   @> 893 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> Processing file: 2KID_CAV_10.pqr
+   @> 710 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: 2KID_CAV_12.pqr
+   @> 652 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: 2KID_CAV_16.pqr
+   @> 756 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: 2KID_CAV_11.pqr
+   @> 654 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: 2KID_CAV_18.pqr
+   @> 907 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> Processing file: 2KID_CAV_15.pqr
+   @> 758 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: 2KID_CAV_13.pqr
+   @> 677 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Processing file: 2KID_CAV_14.pqr
+   @> 700 atoms and 1 coordinate sets were parsed in 0.00s.
+
+The final outcome can be displayed in VMD_. In the example shown below, 
+the surface cavities present in at least 75% of the analyzed NMR models 
+are displayed.
+
+.. figure:: images/cavitracer_figure24.jpg
+   :scale: 50 %
+
