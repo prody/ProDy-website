@@ -14,7 +14,7 @@ a structure :file:`1tqn` using :func:`.parsePDB`:
 .. ipython:: python
    :verbatim:
 
-   atoms = parsePDB('1tqn')
+   p = parsePDB('1tqn')
 
 .. parsed-literal::
 
@@ -52,8 +52,16 @@ option set to True can be saved only as a PQR files.
 
 .. parsed-literal::
 
-   @> Detected 9 channels.
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> WARNING structure has no hydrogens and r2=0.90 is below 1.2 A: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise r2 to 1.2 A or more, where protonated and unprotonated structures give the same channels.
+   @> Substituted 3766 atoms with 23638 homogeneous balls of radius 1.52 A in 0.26s.
+   @> Delaunay tessellation of 23638 points constructed in 0.87s.
+   @> Surface and inner simplices filtered in 1.41s.
+   @> 5 surface cavities detected and filtered in 0.32s.
+   @> Channel pathfinding (graph Dijkstra) over 5 cavities completed in 4.12s.
+   @> Detected 57 channels.
    @> Saving results to channels_1tqn_ALL.pdb.
+   @> Channel calculation completed in 7.07s.
 
 .. ipython:: python
    :verbatim:
@@ -62,23 +70,33 @@ option set to True can be saved only as a PQR files.
 
 .. parsed-literal::
 
-   @> Detected 9 channels.
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> WARNING structure has no hydrogens and r2=0.90 is below 1.2 A: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise r2 to 1.2 A or more, where protonated and unprotonated structures give the same channels.
+   @> Substituted 3766 atoms with 23638 homogeneous balls of radius 1.52 A in 0.26s.
+   @> Delaunay tessellation of 23638 points constructed in 0.85s.
+   @> Surface and inner simplices filtered in 1.41s.
+   @> 5 surface cavities detected and filtered in 0.29s.
+   @> Channel pathfinding (graph Dijkstra) over 5 cavities completed in 4.11s.
+   @> Detected 57 channels.
    @> Saving multiple results to directory ..
+   @> Channel calculation completed in 7.07s.
 
 Files with separated channels will be saved in separate PQR files in the
 local directory:
 
 .. parsed-literal::
 
-   channels_1tqn_channel0.pqr
-   channels_1tqn_channel1.pqr  
-   channels_1tqn_channel2.pqr  
-   channels_1tqn_channel3.pqr  
-   channels_1tqn_channel4.pqr
-   channels_1tqn_channel5.pqr  
-   channels_1tqn_channel6.pqr  
-   channels_1tqn_channel7.pqr  
-   channels_1tqn_channel8.pqr
+   channels_1tqn_chl0.pqr
+   channels_1tqn_chl1.pqr  
+   channels_1tqn_chl2.pqr  
+   channels_1tqn_chl3.pqr  
+   channels_1tqn_chl4.pqr
+   channels_1tqn_chl5.pqr  
+   channels_1tqn_chl6.pqr  
+   channels_1tqn_chl7.pqr  
+   channels_1tqn_chl8.pqr
+   ..
+   channels_1tqn_chl56.pqr
 
 Each PQR file will contain ``FIL`` atoms that describe the predicted
 channel/tunnel/pore. The ``Beta`` column denotes the radius of
@@ -119,43 +137,85 @@ bottleneck (narrowest point of the channel). To obtain this information use
 .. parsed-literal::
 
    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> channel 0: 	871.33 		56.95 		1.15
-   @> channel 1: 	1113.95 	48.53 		1.15
-   @> channel 2: 	1049.53 	52.79 		1.15
-   @> channel 3: 	1342.21 	69.76 		1.15
-   @> channel 4: 	626.63 		36.5 		1.15
-   @> channel 5: 	417.49 		33.76 		1.15
-   @> channel 6: 	104.09 		11.7 		1.16
-   @> channel 7: 	187.24 		16.15 		1.31
-   @> channel 8: 	219.88 		22.43 		1.21
+   @> channel 0: 	60.22 		6.49 		0.95
+   @> channel 1: 	46.16 		8.75 		0.89
+   @> channel 2: 	63.12 		9.89 		0.89
+   @> channel 3: 	40.11 		8.97 		0.95
+   @> channel 4: 	75.41 		11.22 		0.89
+   @> channel 5: 	35.54 		8.98 		0.93
+   @> channel 6: 	76.9 		12.55 		0.89
+   @> channel 7: 	74.84 		16.19 		0.86
+   @> channel 8: 	100.23 		19.31 		0.86
+   @> channel 9: 	193.9 		33.95 		0.91
+   @> channel 10: 	187.54 		34.46 		0.91
+   @> channel 11: 	135.54 		34.2 		0.87
+   @> channel 12: 	214.24 		43.14 		0.84
+   @> channel 13: 	146.5 		36.37 		0.87
+   @> channel 14: 	756.01 		65.84 		0.85
+   @> channel 15: 	312.62 		48.38 		0.85
+   @> channel 16: 	626.95 		63.69 		0.85
+   @> channel 17: 	1099.1 		76.6 		0.85
+   @> channel 18: 	633.91 		64.34 		0.85
+   @> channel 19: 	1174.08 	77.85 		0.85
+   @> channel 20: 	217.18 		45.23 		0.91
+   @> channel 21: 	237.05 		47.31 		0.91
+   @> channel 22: 	1038.56 	76.77 		0.85
+   @> channel 23: 	1037.87 	76.97 		0.85
+   @> channel 24: 	551.39 		62.29 		0.85
+   @> channel 25: 	287.77 		52.63 		0.91
+   @> channel 26: 	249.46 		48.77 		0.79
+   @> channel 27: 	273.57 		52.29 		0.91
+   @> channel 28: 	521.44 		61.41 		0.84
+   @> channel 29: 	387.2 		57.1 		0.85
+   @> channel 30: 	745.97 		70.94 		0.85
+   @> channel 31: 	335.67 		55.67 		0.85
+   @> channel 32: 	402.03 		59.42 		0.85
+   @> channel 33: 	463.98 		63.81 		0.85
+   @> channel 34: 	473.98 		65.06 		0.85
+   @> channel 35: 	1012.12 	81.79 		0.85
+   @> channel 36: 	747.34 		72.88 		0.85
+   @> channel 37: 	504.33 		68.06 		0.85
+   @> channel 38: 	1030.95 	84.17 		0.85
+   @> channel 39: 	457.82 		65.23 		0.85
+   @> channel 40: 	476.47 		65.18 		0.77
+   @> channel 41: 	489.71 		67.2 		0.77
+   @> channel 42: 	541.12 		71.05 		0.85
+   @> channel 43: 	1000.67 	85.13 		0.85
+   @> channel 44: 	453.94 		69.05 		0.85
+   @> channel 45: 	767.08 		78.21 		0.85
+   @> channel 46: 	424.95 		65.58 		0.78
+   @> channel 47: 	1063.79 	86.23 		0.59
+   @> channel 48: 	1003.87 	87.76 		0.67
+   @> channel 49: 	1057.96 	86.47 		0.59
+   @> channel 50: 	376.7 		70.69 		0.85
+   @> channel 51: 	372.05 		70.8 		0.85
+   @> channel 52: 	1011.7 		90.14 		0.66
+   @> channel 53: 	334.86 		68.83 		0.85
+   @> channel 54: 	362.79 		70.69 		0.84
+   @> channel 55: 	1022.15 	92.38 		0.66
+   @> channel 56: 	1013.42 	93.48 		0.66
 
-   ([56.945124331611794,
-     48.534803029525044,
-     52.793238139469054,
-     69.76196724198059,
-     36.49901131352283,
-     33.764800308315536,
-     11.699064048139602,
-     16.154296930458283,
-     22.42697614131529],
-    [1.1529255252365347,
-     1.1529255252365347,
-     1.1529255252365347,
-     1.1529255252365347,
-     1.1529255252365347,
-     1.1529255252365347,
-     1.161672543421736,
-     1.3122081535867374,
-     1.2063476851586834],
-    [871.3272015249249,
-     1113.9480417205011,
-     1049.5320771190782,
-     1342.2090130173915,
-     626.6339281791867,
-     417.4940800159774,
-     104.08765471789833,
-     187.24450715204378,
-     219.87584623622723])
+   ([6.492057612806176,
+     8.747214787071009,
+     9.88835768477351,
+     ..
+     70.69375950960386,
+     92.37669761808526,
+     93.47861401991176],
+    [0.9465177739700246,
+     0.8945378037566032,
+     0.8860264274901208,
+     ..
+     0.8378961392220603,
+     0.6624844558162226,
+     0.6624844558162226],
+    [60.221979215355034,
+     46.16486691455868,
+     63.11707773997961,
+     ..
+     362.7912307310119,
+     1022.1498363831043,
+     1013.4237285330822])
 
 Additionally, to obtain information on which residues are involved in the
 formation of the predicted channels, use :func:`.getChannelResidueNames` function.
@@ -170,26 +230,27 @@ residues, as shown below.
 
 .. parsed-literal::
 
-   @> 4021 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 3961 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 4011 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 4041 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3911 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3911 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3841 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3866 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3876 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3831 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3861 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3861 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3856 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   ..
+   @> 4311 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4336 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4486 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4496 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> Channel residues were saved to: 1tqn_data_Residues_All_channels.txt
 
+   ['channel0: PHE33, ILE38, PRO39, GLY40, PRO41, PRO43, ASN49, GLY73, PHE74, TYR75',
+    'channel1: LEU172, SER315, MET318, TYR319, ALA322, THR323, PRO467, THR471, ILE473, VAL489, LEU491',
+    'channel2: LEU172, SER315, MET318, TYR319, GLU470, THR471, GLN472, PRO488, VAL489, VAL490, LEU491',
+    'channel3: MET89, THR92, VAL93, GLU97, PHE102, ILE383, ASN384',
+    ..
+    'channel53: MET145, ILE148, ILE149, ALA150, TYR152, GLY153, VAL155, LEU156, VAL157, ASN159, LEU160, VAL170, LEU172, VAL175, PHE176, TYR179, ASP182, VAL183, SER186, THR187, ILE193, ASP194, SER195, LEU196, ALA322, PHE447, MET450, ASN451, LEU454, ALA455, ARG458, VAL459, PHE463, PHE465, LYS466, PRO467, LEU491, LYS492, VAL493',
+    'channel54: MET145, ILE148, ILE149, ALA150, TYR152, GLY153, VAL155, LEU156, VAL157, ASN159, LEU160, VAL170, LEU172, ASP174, VAL175, PHE176, ALA178, TYR179, ASP182, VAL183, SER186, THR187, LEU196, ALA322, PHE447, MET450, ASN451, LEU454, ALA455, ARG458, VAL459, PHE463, PHE465, LYS466, PRO467, LEU491, LYS492, VAL493',
+    'channel55: PHE57, CYS58, ASP61, MET62, HIS65, TRP72, THR85, LEU156, LEU160, VAL170, LEU172, VAL175, PHE176, TYR179, SER180, ILE184, ALA305, GLY306, THR309, THR310, SER311, LEU314, ALA322, ALA370, MET371, ARG372, PRO397, SER398, TYR399, ALA400, LEU401, ASP404, TYR407, CYS442, GLY444, PHE447, ALA448, ASN451, PHE465, LYS466, PRO467, LEU491, LYS492, VAL493',
+    'channel56: PHE57, CYS58, ASP61, MET62, HIS65, TRP72, THR85, LEU156, LEU160, VAL170, LEU172, VAL175, PHE176, TYR179, SER180, ILE184, ALA305, GLY306, THR309, THR310, SER311, LEU314, ALA322, ALA370, MET371, ARG372, PRO397, SER398, TYR399, ALA400, LEU401, ASP404, TYR407, ILE431, CYS442, GLY444, PHE447, ALA448, ASN451, PHE465, LYS466, PRO467, LEU491, LYS492, VAL493']
 
-   ['channel0: LYS173, SER180, VAL183, ILE184, ARG212, PHE302, ALA305, GLY306, THR309, THR310, SER312, SER315, PHE316, TYR319, GLU320, PHE367, ILE369, ALA370, CYS442, GLY444, PHE447, ASN451, LEU475, LEU482, LEU483, GLN484, PRO485, VAL489',
-    'channel1: ARG106, SER180, VAL183, ILE184, PHE215, THR224, PHE302, ALA305, GLY306, THR310, CYS442, GLY444, PHE447, ASN451',
-    'channel2: ILE50, LEU51, TYR53, HIS54, PHE57, SER180, VAL183, ILE184, PHE215, LEU216, LEU221, THR224, PHE302, ALA305, GLY306, THR310, CYS442, GLY444, PHE447, ASN451',
-    'channel3: PHE46, ASP76, GLY77, GLN78, GLN79, ARG106, SER180, VAL183, ILE184, PHE215, THR224, VAL225, PHE226, PRO227, PHE228, PHE302, ALA305, GLY306, THR310, CYS442, GLY444, PHE447, ASN451',
-    'channel4: SER180, VAL183, ILE184, ARG212, PHE302, ALA305, GLY306, GLU308, THR309, THR310, SER312, ILE369, ALA370, CYS442, GLY444, PHE447, ASN451, LEU482, GLN484',
-    'channel5: SER180, VAL183, ILE184, THR187, SER188, PHE203, PHE248, SER252, VAL253, ARG255, MET256, PHE271, SER299, PHE302, ILE303, GLY306, THR310, PHE447, ASN451',
-    'channel6: ILE149, ALA150, GLY153, ASP154, TYR179, PRO344, PRO345, MET450, ASN451, LEU454, ALA455, ARG458',
-    'channel7: TYR152, LEU156, ASN159, LEU160, GLU163, VAL175, ALA178, TYR179, ASP182, LEU196',
-    'channel8: LEU132, PRO135, THR136, LYS141, LEU274, MET275, SER278, GLN279, LEU290, LEU295']
 
 .. ipython:: python
    :verbatim:
@@ -198,26 +259,26 @@ residues, as shown below.
 
 .. parsed-literal::
 
-   @> 4021 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3961 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 4011 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 4041 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3911 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3911 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3841 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3866 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3876 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3831 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3861 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3861 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3856 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   ..
+   @> 4311 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4336 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4486 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 4496 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> Channel residues were saved to: 1tqn_data_Residues_All_channels.txt
 
-
-   ['channel0: S180, S312, F316, Y319, E320, F367, N451, L475, L483, Q484',
-    'channel1: S180, N451',
-    'channel2: I50, Y53, S180, L216, L221, N451',
-    'channel3: F46, S180, N451',
-    'channel4: S180, N451, Q484',
-    'channel5: S180, F203, S252, R255, M256, N451',
-    'channel6: I149, Y179, N451, L454',
-    'channel7: N159, V175, L196',
-    'channel8: L132, T136, M275, S278, Q279, L290, L295']
+   ['channel0: P41, N49, G73, F74, Y75',
+    'channel1: L172, Y319, T323, P467, T471, I473, V489, L491',
+    'channel2: L172, Y319, T471, V489, L491',
+    'channel3: M89, T92, V93, E97, F102, I383, N384',
+     ..
+    'channel53: M145, I148, I149, Y152, G153, V155, L156, V157, N159, L160, V170, L172, Y179, D182, V183, T187, I193, D194, A322, F447, N451, L454, A455, R458, V459, F465, K466, P467, L491, K492, V493',
+    'channel54: M145, I148, I149, Y152, G153, L156, V157, L160, V170, L172, D174, V175, A178, Y179, D182, V183, T187, L196, A322, F447, N451, L454, A455, R458, V459, F465, K466, P467, L491, K492, V493',
+    'channel55: F57, D61, H65, W72, L156, V170, L172, V175, F176, Y179, S180, T310, L314, A322, M371, R372, P397, A400, L401, D404, Y407, N451, F465, K466, P467, L491, K492, V493',
+    'channel56: F57, D61, H65, W72, T85, L156, V170, L172, V175, F176, Y179, S180, T310, L314, A322, M371, R372, P397, A400, L401, D404, Y407, I431, N451, F465, K466, P467, L491, K492, V493']
 
 
 Visualization of channels within ProDy
@@ -298,7 +359,7 @@ display single channels (channel #1, channel #2), two channels at once (channel
 .. ipython:: python
    :verbatim:
 
-   showChannels(channels[1], model)
+   showChannels(channels[40], model)
 
 .. figure:: images/cavitracer_figure6.jpg
    :scale: 50 %
@@ -306,7 +367,7 @@ display single channels (channel #1, channel #2), two channels at once (channel
 .. ipython:: python
    :verbatim:
 
-   showChannels(channels[2], model)
+   showChannels(channels[15], model)
 
 .. figure:: images/cavitracer_figure7.jpg
    :scale: 50 %
@@ -314,7 +375,7 @@ display single channels (channel #1, channel #2), two channels at once (channel
 .. ipython:: python
    :verbatim:
 
-   selected_channels = [channels[1], channels[8]]
+   selected_channels = [channels[9], channels[40]]
    showChannels(selected_channels, model)
 
 .. figure:: images/cavitracer_figure8.jpg
@@ -323,7 +384,7 @@ display single channels (channel #1, channel #2), two channels at once (channel
 .. ipython:: python
    :verbatim:
 
-   selected_channels = channels[1:4]
+   selected_channels = channels[10:20]
    showChannels(selected_channels, model)
 
 Once we select which channels are of interest, we can obtain information
@@ -332,17 +393,24 @@ about their parameters.
 .. ipython:: python
    :verbatim:
 
-   selected_channels = channels[1:4]
+   selected_channels = channels[10:20]
    lengths, bottlenecks, volumes = getChannelParameters(selected_channels)
    selected_channels_atoms = getChannelAtoms(selected_channels)
 
 .. parsed-literal::
 
    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> channel 0: 	1113.95 	48.53 		1.15
-   @> channel 1: 	1049.53 	52.79 		1.15
-   @> channel 2: 	1342.21 	69.76 		1.15
-   @> 715 atoms and 1 coordinate set(s) were parsed in 0.01s.
+   @> channel 0: 	187.54 		34.46 		0.91
+   @> channel 1: 	135.54 		34.2 		0.87
+   @> channel 2: 	214.24 		43.14 		0.84
+   @> channel 3: 	146.5 		36.37 		0.87
+   @> channel 4: 	756.01 		65.84 		0.85
+   @> channel 5: 	312.62 		48.38 		0.85
+   @> channel 6: 	626.95 		63.69 		0.85
+   @> channel 7: 	1099.1 		76.6 		0.85
+   @> channel 8: 	633.91 		64.34 		0.85
+   @> channel 9: 	1174.08 	77.85 		0.85
+   @> 4330 atoms and 1 coordinate set(s) were parsed in 0.10s.
 
 
 Predefined starting point for channel prediction
