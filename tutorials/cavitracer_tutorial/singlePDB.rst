@@ -517,7 +517,10 @@ and 483 (displayed as orange spheres).
 
 Visualization of the system was performed in the VMD_ program. This outcome
 shows how the prediction result can change when the ``start_point`` changes.
+Changes in the prediction can be better seen when the protein is undisplayed.
 
+.. figure:: images/cavitracer_figure19B.jpg
+   :scale: 50 %
 
 
 
