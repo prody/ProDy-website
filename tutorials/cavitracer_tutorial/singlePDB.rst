@@ -432,21 +432,78 @@ geometric center is used as the starting point.
 .. parsed-literal::
 
    @> Using user-provided start_point for channel seed: [-22.312, -20.065, -11.144] Å
-   @> Detected 9 channels.
-
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> WARNING structure has no hydrogens and r2=0.90 is below 1.2 A: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise r2 to 1.2 A or more, where protonated and unprotonated structures give the same channels.
+   @> Substituted 3766 atoms with 23638 homogeneous balls of radius 1.52 A in 0.27s.
+   @> Delaunay tessellation of 23638 points constructed in 0.87s.
+   @> Surface and inner simplices filtered in 1.43s.
+   @> start_point seeded at tetrahedron 11317 (Voronoi vertex at [-24.951, -19.189, -10.516], 2.850 A from start_point, inscribed radius 1.330 A, depth 13.3 A).
+   @>     widened from the nearest tetrahedron 8399 (2.444 A away, inscribed radius 0.924 A, depth 13.1 A), the widest of the 4 tetrahedra no shallower than it among the 4 reachable within 3.0 A; seeding the narrow one would have capped every channel here at its radius.
+   @>     restricting the channel search to the cavity that contains it (10149 tetrahedra, depth 32.4 A).
+   @> 1 surface cavities detected and filtered in 0.36s.
+   @> Channel pathfinding (graph Dijkstra) over 1 cavities completed in 3.03s.
+   @> Detected 47 channels.
+   @> No output path given.
+   @> Channel calculation completed in 5.97s.
 
 .. ipython:: python
    :verbatim:
 
-   start_sel = protein.select('resid 212 309 483')
-   calcChannels(protein, output_path='results.pdb', start_point=start_sel)
+   start_sel = atoms.select('resid 212 309 483')
+   calcChannels(atoms, output_path='results.pdb', start_point=start_sel)
 
 
 .. parsed-literal::
 
    @> Using user-provided start_point for channel seed: [-24.395, -23.462, -15.132] Å
-   @> Detected 9 channels.
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> WARNING structure has no hydrogens and r2=0.90 is below 1.2 A: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise r2 to 1.2 A or more, where protonated and unprotonated structures give the same channels.
+   @> Substituted 3766 atoms with 23638 homogeneous balls of radius 1.52 A in 0.27s.
+   @> Delaunay tessellation of 23638 points constructed in 0.86s.
+   @> Surface and inner simplices filtered in 1.33s.
+   @> start_point seeded at tetrahedron 10064 (Voronoi vertex at [-24.209, -22.626, -15.674], 1.013 A from start_point, inscribed radius 2.308 A, depth 6.6 A).
+   @>     already the widest of the 31 tetrahedra no shallower than it among the 84 reachable within 3.0 A.
+   @>     restricting the channel search to the cavity that contains it (10149 tetrahedra, depth 32.4 A).
+   @> 1 surface cavities detected and filtered in 0.32s.
+   @> Channel pathfinding (graph Dijkstra) over 1 cavities completed in 2.76s.
+   @> Detected 47 channels.
    @> Saving results to results.pdb.
+   @> Channel calculation completed in 5.59s.
+
+   ([<prody.proteins.channels.Channel at 0x79c0da891e10>,
+     <prody.proteins.channels.Channel at 0x79c0da891a80>,
+     <prody.proteins.channels.Channel at 0x79c1479697e0>,
+     ..
+     <prody.proteins.channels.Channel at 0x79c147045c30>,
+     <prody.proteins.channels.Channel at 0x79c0da8924d0>],
+    [array([[-30.07      ,   8.178     , -13.891     ],
+            [-29.618     ,   8.226     , -15.315     ],
+            [-29.58642188,   8.14478071, -15.1575    ],
+            ...,
+            [-26.49550663, -61.26776883, -23.6695    ],
+            [-26.76969072, -61.18417412, -23.7145    ],
+            [-26.57247665, -61.10354151, -23.7595    ]]),
+     array([[ 408,  393,  396,  405],
+            [ 394,  408,  396,  405],
+            [ 394,  408,  393,  396],
+            ...,
+            [2348, 2340, 2322, 2355],
+            [2348, 2340, 2357, 2355],
+            [2348, 2340, 2357, 2322]], dtype=int32),
+     array([[ 7615, 21484, 14211, 14209],
+            [21290,  7615, 21484, 14211],
+            [21264, 21290,  7615, 21484],
+            ...,
+            [21319, 21338, 21339, 21118],
+            [21338, 21339, 21126, 21118],
+            [21290, 14214, 21484, 14211]], dtype=int32),
+     array([[ 7615, 21484, 14211, 14209],
+            [ 9671,  9668,  9476,  9278],
+            [16207, 16434, 16401, 16192],
+            ...,
+            [ 2356,  1907,  2976,  1917],
+            [ 1504,  1501, 18522,  1516],
+            [ 1504,  1501, 18522, 18495]], dtype=int32)])
 
 
 Below is the visualization of channel identification for the two different starting
@@ -496,8 +553,14 @@ file using ``output_path`` parameter.
 
 .. parsed-literal::
 
-   @> Returning surface cavities
-   @> Saving surface cavities to test_surf_cav.pqr.
+  @> The atoms supplied to calcChannels contain protein atoms only.
+  @> Substituted 3766 atoms with 23638 homogeneous balls of radius 1.52 A in 0.22s.
+  @> Delaunay tessellation of 23638 points constructed in 0.84s.
+  @> Surface and inner simplices filtered in 0.32s.
+  @> 40 surface cavities detected and filtered in 0.30s.
+  @> Returning surface cavities
+  @> Saving surface cavities to test_surf_cav.pqr.
+  @> Surface cavity calculation completed in 1.81s.
 
 To display the identified surface cavities, similarly to the channel
 identification, we need to use VMD_ to create the model for visualization
@@ -549,8 +612,14 @@ saved to a file specified by the output_path parameter,
 
 .. parsed-literal::
 
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> Substituted 3766 atoms with 23638 homogeneous balls of radius 1.52 A in 0.28s.
+   @> Delaunay tessellation of 23638 points constructed in 0.81s.
+   @> Surface and inner simplices filtered in 0.33s.
+   @> 40 surface cavities detected and filtered in 0.31s.
    @> Returning surface cavities
    @> Saving surface cavities to surf_cav_MinMax_volume.pqr.
+   @> Surface cavity calculation completed in 1.84s.
 
 We can display the results using :func:`.showSurfaceCavities` function:
 
@@ -602,9 +671,9 @@ tetrahedra count, use :func:`getSurfaceCavityParameters`.
 .. parsed-literal::
 
    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	928.09 		8 		97
-   @> cavity 1: 	771.55 		5 		77
-   @> Surface cavity residues were saved to: results_Residues_All_surface_cavities.txt
+   @> cavity 0: 	503.05 		7.78 		133
+   @> cavity 1: 	955.46 		8.29 		269
+   @> cavity 2: 	621.45 		8.01 		152
 
 By assigning the output of :func:`getSurfaceCavityParameters` to the
 variable parameters, the extracted cavity descriptors can be accessed as
@@ -618,7 +687,9 @@ lists, including cavity volume (``parameters[0]``), depth
 
 .. parsed-literal::
 
-   ([928.0878561950001, 771.5530158881667], [8, 5], [97, 77])
+   ([503.04967293496003, 955.46028274561, 621.4527824426602],
+    [7.7812978201386995, 8.293453349117478, 8.006634128744826],
+    [133, 269, 152])
 
 
 .. ipython:: python
@@ -628,7 +699,7 @@ lists, including cavity volume (``parameters[0]``), depth
 
 .. parsed-literal::
 
-   [928.0878561950001, 771.5530158881667]
+   [503.04967293496003, 955.46028274561, 621.4527824426602]
 
 
 In addition to quantitative descriptors, CaviTracer also allows the
@@ -658,10 +729,15 @@ sufix.
 
 .. parsed-literal::
 
-   ['cavity0: LYS173, ASP174, GLY177, ALA178, SER195, LEU196, PRO199, LYS208, LYS209,
-   LEU211, ARG212, PHE213, PHE219, PHE220, CYS239, VAL240, PHE241, PRO242, PHE304,
-   TYR307, GLU308, SER311, LEU482', 'cavity1: LYS55, MET59, MET62, GLU63, TYR319, 
-   GLU320, THR323, HIS324, PHE367, TYR399, ARG403, GLU412, LYS413, PHE414, ILE473, 
-   PRO474, LEU475, LEU477, SER478, LEU479']
+   ['cavity0: LYS55, MET59, MET62, TYR319, THR323, HIS324, TYR399, GLU412, 
+     LYS413, PHE414, LEU415, ILE473, LYS476, LEU477, LEU479, GLU486',
+    'cavity1: GLU163, GLY167, LYS168, PRO169, VAL170, THR171, LYS173, 
+     ASP174, SER195, LEU196, PRO199, LYS208, LYS209, LEU211, ARG212, PHE213, 
+     ASP214, ASP217, PHE219, PHE220, ILE238, CYS239, VAL240, TYR307, GLU308, 
+     CYS468, LYS469, GLU470, GLN472, LEU482, GLN484, PRO485, GLU486, LYS487, 
+     PRO488, VAL490, LYS492',
+    'cavity2: LEU142, TYR347, LEU351, GLN352, GLU354, ASN361, PHE419, LYS424, 
+     ASP425, ASN426, ILE427, ASP428, PRO429, TYR432, PRO434, PHE435, GLY436, 
+     SER437, MET445, ARG446, LEU449, MET450, LYS453']
 
 
