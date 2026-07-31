@@ -218,108 +218,108 @@ provided PDB with ``'_Parameters_All_channels.txt'`` and
 
 .. parsed-literal::
 
-   @> 3727 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> Detected 11 channels.
+   @> 3727 atoms and 1 coordinate set(s) were parsed in 0.12s.
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> WARNING structure has no hydrogens and r2=0.90 is below 1.2 A: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise r2 to 1.2 A or more, where protonated and unprotonated structures give the same channels.
+   @> Substituted 3630 atoms with 22830 homogeneous balls of radius 1.52 A in 0.20s.
+   @> Delaunay tessellation of 22830 points constructed in 0.87s.
+   @> Surface and inner simplices filtered in 1.85s.
+   @> 10 surface cavities detected and filtered in 0.34s.
+   @> Channel pathfinding (graph Dijkstra) over 10 cavities completed in 1.83s.
+   @> Detected 35 channels.
    @> Saving multiple results to directory ..
+   @> Channel calculation completed in 5.32s.
    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> channel 0: 	476.65 		37.88 		1.19
-   @> channel 1: 	812.54 		55.68 		1.19
-   @> channel 2: 	468.4 		37.98 		1.19
-   @> channel 3: 	900.79 		79.98 		1.16
-   @> channel 4: 	157.11 		16.23 		1.19
-   @> channel 5: 	301.27 		34.04 		1.21
-   @> channel 6: 	320.77 		35.19 		1.21
-   @> channel 7: 	418.67 		32.05 		1.37
-   @> channel 8: 	305.17 		25.08 		1.17
-   @> channel 9: 	344.82 		28.58 		1.18
-   @> channel 10: 	178.86 		28.58 		1.16
-   @> 3800 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 3890 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3790 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3930 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> channel 0: 	45.24 		6.35 		0.92
+   @> channel 1: 	45.17 		6.41 		0.91
+   @> channel 2: 	91.45 		10.27 		0.96
+   @> channel 3: 	27.86 		6.22 		0.93
+   @> channel 4: 	30.59 		6.27 		0.84
+   @> channel 5: 	36.62 		7.4 		0.84
+   @> channel 6: 	68.78 		10.84 		0.96
+   @> channel 7: 	96.88 		11.03 		0.94
+   @> channel 8: 	31.08 		7.2 		0.88
+   @> channel 9: 	82.38 		12.93 		0.96
+   @> channel 10: 	83.38 		12.99 		0.95
+   @> channel 11: 	28.95 		7.93 		0.9
+   @> channel 12: 	55.61 		12.24 		0.91
+   @> channel 13: 	45.36 		11.92 		0.87
+   @> channel 14: 	153.25 		23.13 		0.86
+   @> channel 15: 	158.78 		24.83 		0.86
+   @> channel 16: 	92.84 		21.61 		0.9
+   @> channel 17: 	130.74 		28.38 		0.92
+   @> channel 18: 	121.29 		28.43 		0.92
+   @> channel 19: 	193.41 		34.83 		0.9
+   @> channel 20: 	163.44 		34.56 		0.89
+   @> channel 21: 	310.39 		44.99 		0.81
+   @> channel 22: 	416.28 		48.01 		0.81
+   @> channel 23: 	385.01 		47.7 		0.81
+   @> channel 24: 	254.88 		47.38 		0.83
+   @> channel 25: 	318.51 		49.41 		0.81
+   @> channel 26: 	250.6 		50.89 		0.57
+   @> channel 27: 	261.86 		51.71 		0.57
+   @> channel 28: 	354.45 		61.17 		0.81
+   @> channel 29: 	377.43 		63.37 		0.81
+   @> channel 30: 	350.68 		63.92 		0.81
+   @> channel 31: 	370.19 		66.39 		0.81
+   @> channel 32: 	359.68 		66.19 		0.81
+   @> channel 33: 	385.8 		71.46 		0.81
+   @> channel 34: 	388.4 		72.31 		0.81
+   @> 3695 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 3690 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 3710 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3700 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3700 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3695 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 3710 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3705 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 3690 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 3725 atoms and 1 coordinate set(s) were parsed in 0.05s.
    @> 3730 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 3725 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 3735 atoms and 1 coordinate set(s) were parsed in 0.05s.
    @> 3755 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3820 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3740 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3755 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3765 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3765 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 3815 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 3835 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 3855 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 3905 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 3910 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 3905 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 3905 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 3975 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 4010 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 3990 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4020 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4040 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4070 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 4065 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 4110 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4125 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4125 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4145 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4135 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4205 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> 4220 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> Channel residues were saved to: align__6OOA_Residues_All_channels.txt
    @> 3756 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> Detected 9 channels.
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> 3756 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> WARNING structure has no hydrogens and r2=0.90 is below 1.2 A: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise r2 to 1.2 A or more, where protonated and unprotonated structures give the same channels.
+   @> Substituted 3675 atoms with 23131 homogeneous balls of radius 1.52 A in 0.19s.
+   @> Delaunay tessellation of 23131 points constructed in 0.85s.
+   @> Surface and inner simplices filtered in 1.70s.
+   @> 8 surface cavities detected and filtered in 0.32s.
+   @> Channel pathfinding (graph Dijkstra) over 8 cavities completed in 4.16s.
+   @> Detected 70 channels.
    @> Saving multiple results to directory ..
+   @> Channel calculation completed in 7.38s.
    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> channel 0: 	253.61 		24.65 		1.27
-   @> channel 1: 	417.39 		39.5 		1.27
-   @> channel 2: 	1352.48 		60.93 		1.34
-   @> channel 3: 	1311.03 		63.49 		1.24
-   @> channel 4: 	1027.73 		46.22 		1.34
-   @> channel 5: 	534.62 		53.32 		1.22
-   @> channel 6: 	194.56 		16.8 		1.18
-   @> channel 7: 	257.68 		20.12 		1.18
-   @> channel 8: 	131.27 		13.21 		1.24
-   @> 3795 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3845 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3950 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3960 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3900 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3900 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3770 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3775 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3745 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3746 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> Detected 7 channels.
-   @> Saving multiple results to directory ..
-   @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> channel 0: 	178.38 		13.76 		1.2
-   @> channel 1: 	281.04 		29.03 		1.2
-   @> channel 2: 	1142.65 		49.24 		1.22
-   @> channel 3: 	1222.33 		56.04 		1.22
-   @> channel 4: 	1206.08 		76.84 		1.22
-   @> channel 5: 	1600.66 		79.1 		1.22
-   @> channel 6: 	296.85 		34.41 		1.26
-   @> 3728 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3783 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3883 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3908 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3963 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3963 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3823 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3802 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> Detected 9 channels.
-   @> Saving multiple results to directory ..
-   @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> channel 0: 	996.54 		58.67 		1.12
-   @> channel 1: 	1271.15 		59.62 		1.12
-   @> channel 2: 	1118.13 		78.65 		1.12
-   @> channel 3: 	210.05 		26.91 		1.34
-   @> channel 4: 	182.51 		13.8 		1.2
-   @> channel 5: 	299.59 		29.24 		1.18
-   @> channel 6: 	308.72 		20.54 		1.26
-   @> channel 7: 	127.59 		14.81 		1.21
-   @> channel 8: 	243.32 		20.81 		1.23
-   @> 3946 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3976 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 4051 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3846 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3801 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3861 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3826 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3786 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3836 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3709 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> Detected 10 channels.
-   @> Saving multiple results to directory ..
-   @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> channel 0: 	460.8 		34.28 		1.19
-   @> channel 1: 	626.63 		66.13 		1.19
-   @> channel 2: 	485.58 		35.1 		1.15
-   @> channel 3: 	437.47 		39.85 		1.24
-   @> channel 4: 	439.73 		49.0 		1.24
-   @> channel 5: 	165.16 		16.2 		1.22
-   @> channel 6: 	164.28 		17.82 		1.21
-   @> channel 7: 	112.92 		10.81 		1.25
-   @> channel 8: 	204.64 		20.48 		1.21
-   @> channel 9: 	82.85 		9.8 		1.17
+   @> channel 0: 	53.33 		5.65 		0.85
+   @> channel 1: 	36.47 		7.03 		0.94
+   @> channel 2: 	42.3 		6.7 		0.84
+   @> channel 3: 	38.71 		7.09 		0.91
+   @> channel 4: 	31.3 		8.82 		0.86
    ..
    ..
 
@@ -342,41 +342,47 @@ changed using ``distA`` parameter of the function.
    :verbatim:
 
    from pathlib import Path
-   pdb_files_new_channels = [i.name for i in Path(".").glob("align__*channel*.pqr") if i.is_file()]
+   pdb_files_new_channels = [i.name for i in Path(".").glob("align__*chl*.pqr") if i.is_file()]
    pdb_files_new_channels
 
 .. parsed-literal::
 
-   ['align__6BD8_channel3.pqr',
-    'align__6DAL_channel0.pqr',
-    'align__6MA6_channel4.pqr',
-    'align__6BDM_channel11.pqr',
-    'align__6OOA_channel3.pqr',
-    'align__6DAJ_channel5.pqr',
-    'align__6DAJ_channel6.pqr',
-    'align__6DAJ_channel4.pqr',
-    'align__6MA7_channel3.pqr',
-    'align__6UNG_channel0.pqr',
-    'align__6DA8_channel3.pqr',
-    'align__4I3Q_channel5.pqr',
-    'align__6OOA_channel5.pqr',
-    'align__6DAL_channel9.pqr',
-    'align__6BDI_channel4.pqr',
-    'align__6UNE_channel0.pqr',
-    'align__6MA7_channel7.pqr',
-    'align__6MA7_channel5.pqr',
-    'align__5VCC_channel0.pqr',
-    'align__6UNE_channel4.pqr',
-    'align__5VCC_channel6.pqr',
-    'align__6DA8_channel2.pqr',
-    'align__1W0E_channel8.pqr',
-    'align__6DAL_channel11.pqr',
-    'align__6BDI_channel6.pqr',
-    'align__6OOA_channel10.pqr',
-    'align__6BD6_channel5.pqr',
-    'align__1W0E_channel0.pqr',
-    'align__6BD8_channel1.pqr',
-    ..]
+   [['align__6UNE_chl18.pqr',
+     'align__6BDM_chl53.pqr',
+     'align__6BDM_chl65.pqr',
+     'align__6DAJ_chl16.pqr',
+     'align__6BDI_chl14.pqr',
+     'align__5A1P_chl29.pqr',
+     'align__4I3Q_chl27.pqr',
+     'align__6MA7_chl39.pqr',
+     'align__6BDM_chl31.pqr',
+     'align__6BDI_chl40.pqr',
+     'align__5VCC_chl2.pqr',
+     'align__5A1P_chl38.pqr',
+     'align__6DAL_chl8.pqr',
+     'align__1W0E_chl62.pqr',
+     'align__6MA6_chl15.pqr',
+     'align__6MA7_chl30.pqr',
+     'align__6UNE_chl43.pqr',
+     'align__6BD8_chl19.pqr',
+     'align__6OOA_chl33.pqr',
+     'align__5A1P_chl34.pqr',
+     'align__6BD8_chl24.pqr',
+     'align__6UNG_chl54.pqr',
+     'align__6MA6_chl23.pqr',
+     'align__6MA7_chl57.pqr',
+     'align__1W0E_chl4.pqr',
+     ..
+     ..
+     'align__6MA6_chl48.pqr',
+     'align__1W0E_chl44.pqr',
+     'align__6MA7_chl14.pqr',
+     'align__5A1P_chl47.pqr',
+     'align__6BDI_chl34.pqr',
+     'align__1W0E_chl49.pqr',
+     'align__6BDI_chl33.pqr',
+     'align__6MA6_chl17.pqr']
+
 
 .. ipython:: python
    :verbatim:
@@ -386,72 +392,83 @@ changed using ``distA`` parameter of the function.
 
 .. parsed-literal::
 
-   @> 3756 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 285 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 3718 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 335 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 640 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 875 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 370 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 420 atoms and 1 coordinate sets were parsed in 0.00s.
    @> Filtered files are now in: selected_files
-   @> 100 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 240 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 345 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 515 atoms and 1 coordinate sets were parsed in 0.00s.
    @> Filtered files are now in: selected_files
-   @> 125 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 300 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 75 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 105 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 180 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 175 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 300 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 525 atoms and 1 coordinate sets were parsed in 0.00s.
    @> Filtered files are now in: selected_files
-   @> 145 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 685 atoms and 1 coordinate sets were parsed in 0.00s.
    @> Filtered files are now in: selected_files
-   @> 280 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> Filtered files are now in: selected_files
-   @> 125 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 100 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 80 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 300 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> Filtered files are now in: selected_files
-   @> 80 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 60 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 205 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 325 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> Filtered files are now in: selected_files
-   @> 60 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 75 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 475 atoms and 1 coordinate sets were parsed in 0.00s.
    @> 95 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 65 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 105 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 135 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 290 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 390 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 280 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 450 atoms and 1 coordinate sets were parsed in 0.00s.
    @> Filtered files are now in: selected_files
-   @> 150 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 170 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 345 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 535 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Filtered files are now in: selected_files
+   @> 435 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 350 atoms and 1 coordinate sets were parsed in 0.00s.
+   ..
+   ..
+   @> Filtered files are now in: selected_files
+   @> 475 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Filtered files are now in: selected_files
+   @> 470 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Filtered files are now in: selected_files
+   @> 515 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Filtered files are now in: selected_files
+   @> 405 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Filtered files are now in: selected_files
+   @> 405 atoms and 1 coordinate sets were parsed in 0.00s.
    @> 355 atoms and 1 coordinate sets were parsed in 0.00s.
-   ..
-   ..
-   @> Filtered files are now in: selected_files
    @> Selected files: 
-   @> align__6BD8_channel3.pqr align__6MA6_channel4.pqr
-   align__6UNG_channel0.pqr align__6DA8_channel3.pqr align__4I3Q_channel5.pqr
-   align__6UNE_channel0.pqr align__6UNE_channel4.pqr align__6BD6_channel5.pqr
-   align__6UNE_channel3.pqr align__5A1P_channel1.pqr align__6MA6_channel2.pqr
-   align__1W0E_channel4.pqr align__6MA7_channel2.pqr align__6MA6_channel3.pqr
-   align__6MA6_channel1.pqr align__1W0E_channel3.pqr align__5VCC_channel2.pqr
-   align__6DAJ_channel2.pqr align__6BDM_channel2.pqr align__6UNE_channel1.pqr
-   align__5A1P_channel0.pqr align__5A1P_channel2.pqr align__6UNG_channel3.pqr
-   align__6BDM_channel1.pqr align__6UNE_channel5.pqr align__1W0E_channel2.pqr
-   align__6UNG_channel1.pqr align__6BDM_channel3.pqr align__6MA6_channel0.pqr
-   align__6BDM_channel4.pqr align__6BDM_channel0.pqr align__5VCC_channel4.pqr
-   align__6UNE_channel7.pqr align__6UNE_channel6.pqr align__6BDM_channel5.pqr
-   align__6MA6_channel6.pqr align__6BD8_channel5.pqr align__6DA8_channel4.pqr
-   align__6UNG_channel2.pqr align__6DAL_channel7.pqr align__6BD6_channel4.pqr
-   align__6BD6_channel2.pqr align__6BDM_channel6.pqr align__5VCC_channel3.pqr
-   align__6BDM_channel9.pqr align__6DAL_channel10.pqr align__6BDI_channel2.pqr
-   align__6MA7_channel4.pqr align__6BDI_channel1.pqr align__6UNG_channel8.pqr
-   align__5A1P_channel3.pqr align__6OOA_channel1.pqr align__6BD8_channel4.pqr
-   align__6BD6_channel3.pqr align__6MA6_channel5.pqr align__6BDI_channel0.pqr
-   align__6UNG_channel4.pqr align__6UNE_channel2.pqr align__6BD8_channel2.pqr
-   align__6MA7_channel0.pqr
-   @> If newly created files are empty please check whether the parameter names
-   are: PDB_id+_Parameters_All_channels.txt
+   @> align__6BDI_chl14.pqr align__4I3Q_chl27.pqr align__6MA7_chl39.pqr 
+      align__6BDM_chl31.pqr align__1W0E_chl62.pqr align__6MA7_chl30.pqr 
+      align__6BD8_chl19.pqr align__5A1P_chl34.pqr align__6MA7_chl52.pqr 
+      align__6BDM_chl30.pqr align__6MA6_chl31.pqr align__6BD8_chl26.pqr 
+      align__1W0E_chl24.pqr align__6BDI_chl22.pqr align__6BD6_chl48.pqr 
+      align__6MA7_chl15.pqr align__6BDI_chl37.pqr align__6UNE_chl6.pqr 
+      align__6BD6_chl54.pqr align__4I3Q_chl35.pqr align__6BD6_chl71.pqr 
+      align__6UNE_chl42.pqr align__6BDM_chl28.pqr align__5A1P_chl23.pqr 
+      align__1W0E_chl64.pqr align__5VCC_chl17.pqr align__1W0E_chl39.pqr 
+      align__6BD8_chl43.pqr align__6BDM_chl29.pqr align__6UNE_chl7.pqr 
+      align__6UNG_chl16.pqr align__6UNE_chl55.pqr align__1W0E_chl22.pqr 
+      align__6UNE_chl21.pqr align__6BDI_chl57.pqr align__6BDI_chl47.pqr 
+      align__6UNE_chl41.pqr align__1W0E_chl38.pqr align__5A1P_chl17.pqr 
+      align__6BDI_chl43.pqr align__1W0E_chl57.pqr align__6MA7_chl34.pqr 
+      align__6UNE_chl29.pqr align__6UNE_chl49.pqr align__6BD6_chl53.pqr 
+      align__6UNG_chl44.pqr align__6BDI_chl69.pqr align__6BDI_chl17.pqr 
+      align__4I3Q_chl58.pqr align__6UNE_chl48.pqr align__6BD6_chl42.pqr 
+      align__6BDM_chl34.pqr align__6BD6_chl24.pqr align__6BDI_chl20.pqr 
+      align__6BD8_chl42.pqr align__6UNE_chl39.pqr align__6BD6_chl21.pqr 
+      align__6UNE_chl72.pqr align__6BD6_chl63.pqr align__1W0E_chl9.pqr 
+      align__6UNE_chl56.pqr align__4I3Q_chl30.pqr align__5A1P_chl46.pqr 
+      align__4I3Q_chl26.pqr align__5A1P_chl18.pqr align__1W0E_chl68.pqr 
+      align__6BD6_chl12.pqr align__6BD8_chl50.pqr align__1W0E_chl51.pqr 
+      align__5VCC_chl35.pqr align__4I3Q_chl69.pqr align__6BDI_chl68.pqr 
+      align__6MA6_chl27.pqr align__5A1P_chl55.pqr align__6BDI_chl62.pqr 
+      align__6BDM_chl47.pqr align__6BDM_chl45.pqr align__6MA6_chl49.pqr 
+      align__6MA7_chl61.pqr align__6BDM_chl57.pqr align__6UNG_chl31.pqr 
+      align__5A1P_chl40.pqr align__5VCC_chl32.pqr align__5VCC_chl36.pqr 
+      align__4I3Q_chl61.pqr align__6BD6_chl58.pqr align__6MA7_chl43.pqr 
+      align__6MA7_chl41.pqr align__6UNG_chl24.pqr align__6MA6_chl25.pqr 
+      align__1W0E_chl59.pqr align__6UNG_chl62.pqr align__1W0E_chl61.pqr 
+      align__5A1P_chl22.pqr align__6UNE_chl71.pqr align__6MA6_chl29.pqr 
+      ..
+      ..
+      align__5A1P_chl47.pqr align__6BDI_chl34.pqr align__1W0E_chl49.pqr
+   @> If newly created files are empty please check whether the parameter 
+      names are: PDB_id+_Parameters_All_channels.txt
+
 
 If we do not provide ``folder_name``, the results will be copied into the folder
 ``selected_file``, which is created automatically. That name can be changed using
@@ -471,72 +488,54 @@ selected channels only.
 
 .. parsed-literal::
 
-   @> 3756 atoms and 1 coordinate set(s) were parsed in 0.12s.
-   @> 285 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 3718 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 335 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 640 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 875 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 370 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 420 atoms and 1 coordinate sets were parsed in 0.00s.
    @> Filtered files are now in: res442
-   @> 100 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 240 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 345 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 515 atoms and 1 coordinate sets were parsed in 0.00s.
    @> Filtered files are now in: res442
-   @> 125 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 300 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 75 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 105 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 180 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 175 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 300 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 525 atoms and 1 coordinate sets were parsed in 0.00s.
    @> Filtered files are now in: res442
-   @> 145 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 685 atoms and 1 coordinate sets were parsed in 0.00s.
    @> Filtered files are now in: res442
-   @> 280 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> Filtered files are now in: res442
-   @> 125 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 100 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 80 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 300 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> Filtered files are now in: res442
-   @> 80 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 60 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 205 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 325 atoms and 1 coordinate sets were parsed in 0.00s.
-   ..
-   ..
-   @> Filtered files are now in: res442
+   @> 475 atoms and 1 coordinate sets were parsed in 0.00s.
    @> 95 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 105 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 390 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 280 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 450 atoms and 1 coordinate sets were parsed in 0.00s.
    @> Filtered files are now in: res442
+   @> 345 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 535 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Filtered files are now in: res442
+   @> 435 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 350 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Filtered files are now in: res442
+   @> 575 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 445 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Filtered files are now in: res442
+   @> 220 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 455 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 490 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 450 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 75 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 660 atoms and 1 coordinate sets were parsed in 0.00s.
+   ..
+   ..
    @> Selected files: 
-   @> align__6BD8_channel3.pqr align__6MA6_channel4.pqr
-   align__6UNG_channel0.pqr align__6DA8_channel3.pqr
-   align__4I3Q_channel5.pqr align__6UNE_channel0.pqr
-   align__6UNE_channel4.pqr align__6BD6_channel5.pqr
-   align__6UNE_channel3.pqr align__5A1P_channel1.pqr
-   align__6MA6_channel2.pqr align__1W0E_channel4.pqr
-   align__6MA7_channel2.pqr align__6MA6_channel3.pqr
-   align__6MA6_channel1.pqr align__1W0E_channel3.pqr
-   align__5VCC_channel2.pqr align__6DAJ_channel2.pqr
-   align__6BDM_channel2.pqr align__6UNE_channel1.pqr
-   align__5A1P_channel0.pqr align__5A1P_channel2.pqr
-   align__6UNG_channel3.pqr align__6BDM_channel1.pqr
-   align__6UNE_channel5.pqr align__1W0E_channel2.pqr
-   align__6UNG_channel1.pqr align__6BDM_channel3.pqr
-   align__6MA6_channel0.pqr align__6BDM_channel4.pqr
-   align__6BDM_channel0.pqr align__5VCC_channel4.pqr
-   align__6UNE_channel7.pqr align__6UNE_channel6.pqr
-   align__6BDM_channel5.pqr align__6MA6_channel6.pqr
-   align__6BD8_channel5.pqr align__6DA8_channel4.pqr
-   align__6UNG_channel2.pqr align__6DAL_channel7.pqr
-   align__6BD6_channel4.pqr align__6BD6_channel2.pqr
-   align__6BDM_channel6.pqr align__5VCC_channel3.pqr
-   align__6BDM_channel9.pqr align__6DAL_channel10.pqr
-   align__6BDI_channel2.pqr align__6MA7_channel4.pqr
-   align__6BDI_channel1.pqr align__6UNG_channel8.pqr
-   align__5A1P_channel3.pqr align__6OOA_channel1.pqr
-   align__6BD8_channel4.pqr align__6BD6_channel3.pqr
-   align__6MA6_channel5.pqr align__6BDI_channel0.pqr
-   align__6UNG_channel4.pqr align__6UNE_channel2.pqr
-   align__6BD8_channel2.pqr align__6MA7_channel0.pqr
-   @> If newly created files are empty please check whether the parameter
-   names are: PDB_id+_Parameters_All_channels.txt
+   @> align__6BDI_chl14.pqr align__4I3Q_chl27.pqr align__6MA7_chl39.pqr 
+      align__6BDM_chl31.pqr align__1W0E_chl62.pqr align__6MA7_chl30.pqr 
+      align__6BD8_chl19.pqr align__5A1P_chl34.pqr align__6MA7_chl52.pqr 
+      align__6BDM_chl30.pqr align__6MA6_chl31.pqr align__6BD8_chl26.pqr 
+      align__1W0E_chl24.pqr align__6BDI_chl22.pqr align__6BD6_chl48.pqr 
+      align__6MA7_chl15.pqr align__6BDI_chl37.pqr align__6UNE_chl6.pqr 
+      align__6BD6_chl54.pqr align__4I3Q_chl35.pqr align__6BD6_chl71.pqr 
+      ..
+      ..
+      align__5A1P_chl47.pqr align__6BDI_chl34.pqr align__1W0E_chl49.pqr
 
 
 Calculating overlapping channel regions across PDB structures
@@ -583,38 +582,31 @@ need to specify ``output_file_name``.
 
 .. parsed-literal::
 
-   @> Processing file: align__4I3Q.pqr
-   @> 1860 atoms and 1 coordinate sets were parsed in 0.03s.
-   @> Processing file: align__6BDM.pqr
-   @> 2540 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> Processing file: align__6UNG.pqr
-   @> 1685 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> Processing file: align__6OOA.pqr
-   @> 1810 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> Processing file: align__6MA7.pqr
-   @> 1485 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> Processing file: align__6DAJ.pqr
-   @> 1365 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> Processing file: align__5A1P.pqr
-   @> 1505 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> Processing file: align__1W0E.pqr
-   @> 1685 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> Processing file: align__6BD6.pqr
-   @> 1340 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> Processing file: align__6UNE.pqr
-   @> 3290 atoms and 1 coordinate sets were parsed in 0.02s.
-   @> Processing file: align__5VCC.pqr
-   @> 1180 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> Processing file: align__6BD8.pqr
-   @> 1565 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> Processing file: align__6BDI.pqr
-   @> 1440 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> Processing file: align__6DAL.pqr
-   @> 1600 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> Processing file: align__6MA6.pqr
-   @> 2395 atoms and 1 coordinate sets were parsed in 0.02s.
-   @> Processing file: align__6DA8.pqr
-   @> 1070 atoms and 1 coordinate sets were parsed in 0.01s.
+   [@> Number of PQR files: 16
+    @> Resolution: 0.5
+    @> max_proc: 2
+    @> Calculating overlaps using 2 processes.
+    @> 23365 atoms and 1 coordinate sets were parsed in 0.20s.
+    @> 27720 atoms and 1 coordinate sets were parsed in 0.22s.
+    @> 41040 atoms and 1 coordinate sets were parsed in 0.20s.
+    @> 9280 atoms and 1 coordinate sets were parsed in 0.04s.
+    @> 26615 atoms and 1 coordinate sets were parsed in 0.15s.
+    @> 8530 atoms and 1 coordinate sets were parsed in 0.04s.
+    @> 19370 atoms and 1 coordinate sets were parsed in 0.11s.
+    @> 35700 atoms and 1 coordinate sets were parsed in 0.19s.
+    @> 26080 atoms and 1 coordinate sets were parsed in 0.12s.
+    @> 32005 atoms and 1 coordinate sets were parsed in 0.15s.
+    @> 18525 atoms and 1 coordinate sets were parsed in 0.10s.
+    @> 25105 atoms and 1 coordinate sets were parsed in 0.12s.
+   [@> 31010 atoms and 1 coordinate sets were parsed in 0.16s.
+    @> 11550 atoms and 1 coordinate sets were parsed in 0.06s.
+    @> 35110 atoms and 1 coordinate sets were parsed in 0.19s.
+    @> 380 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> Overlap written to: overlapping_surf.pdb
+    @> Number of occupied overlap voxels: 143228
+
+    'overlapping_surf.pdb'
+
 
 The results can be displayed in any graphical visualization program. We
 will use VMD_. Generated file ``overlapping_surf.pdb`` will contain a grid
