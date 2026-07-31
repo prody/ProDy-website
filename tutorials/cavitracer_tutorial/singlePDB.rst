@@ -1,6 +1,6 @@
 .. _cavitracer_single:
 
-Detection of intraprotein tunnels, channels and cavities in a single PDB structure
+Detection of intraprotein tunnels and channels in a single PDB structure
 ===============================================================================
 
 
@@ -743,5 +743,214 @@ sufix.
     'cavity2: LEU142, TYR347, LEU351, GLN352, GLU354, ASN361, PHE419, LYS424, 
      ASP425, ASN426, ILE427, ASP428, PRO429, TYR432, PRO434, PHE435, GLY436, 
      SER437, MET445, ARG446, LEU449, MET450, LYS453']
+
+
+
+Indentification of pores in a single PDB structure
+===============================================================================
+
+In this example, we will identify pores in the outer membrane porin Omp32 from 
+Delftia acidovorans using the crystal structure deposited under PDB ID 2FGQ. 
+Omp32 is a strongly anion-selective membrane channel formed by a 16-stranded 
+β-barrel and shows substrate specificity for organic acids such as malate. 
+The deposited protein structure contains 330 amino acids.
+
+In order to identify pores, we first need to upload the structure, select
+the protein structure, and identify channels.
+
+
+.. ipython:: python
+   :verbatim:
+
+   pdb = parsePDB('2fgq')
+
+.. parsed-literal::
+
+   @> Connecting wwPDB FTP server RCSB PDB (USA).
+   @> Downloading PDB files via FTP failed, trying HTTP.
+   @> 2fgq downloaded (2fgq.pdb.gz)
+   @> PDB download via HTTP completed (1 downloaded, 0 failed).
+   @> 2866 atoms and 1 coordinate set(s) were parsed in 0.12s.
+
+.. ipython:: python
+   :verbatim:
+
+   protein = pdb.select('protein')
+
+
+.. ipython:: python
+   :verbatim:
+
+   protein
+
+.. parsed-literal::
+
+   <Selection: 'protein' from 2fgq (2447 atoms)>
+
+Now, we are using :func:`calcChannels` to identify the channels with protein
+structure. ``starting point`` is selected and various channels are saved
+separately as PQR files (``separate`` = True). Additionally, we are using
+``return_details`` parameter which is required for pores reconstruction. 
+
+.. ipython:: python
+   :verbatim:
+
+   channels, surface, details = calcChannels(protein, r1=20, r2=1, 
+	start_point = [39.277, 43.995, -0.961], max_deviation=0.1, 
+	return_details=True, output_path='channels', separate=True)
+
+.. parsed-literal::
+
+   @> Using user-provided start_point for channel seed: [39.277, 43.995, -0.961] Å
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> WARNING structure has no hydrogens and r2=1.00 is below 1.2 A: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise r2 to 1.2 A or more, where protonated and unprotonated structures give the same channels.
+   @> Substituted 2447 atoms with 14777 homogeneous balls of radius 1.52 A in 0.19s.
+   @> Delaunay tessellation of 14777 points constructed in 0.46s.
+   @> Surface and inner simplices filtered in 1.49s.
+   @> start_point seeded at tetrahedron 2488 (Voronoi vertex at [40.254, 44.976, -0.984], 1.385 A from start_point, inscribed radius 1.021 A, depth 6.6 A).
+   @>     already the widest of the 1 tetrahedra no shallower than it among the 3 reachable within 3.0 A.
+   @>     restricting the channel search to the cavity that contains it (2588 tetrahedra, depth 24.5 A).
+   @> 1 surface cavities detected and filtered in 0.18s.
+   @> Channel pathfinding (graph Dijkstra) over 1 cavities completed in 0.21s.
+   @> Detected 4 channels.
+   @> Saving multiple results to directory ..
+   @> Channel calculation completed in 2.56s.
+
+
+Becasue PQR files with channels were saved, they can be displayed in VMD_.
+
+.. figure:: images/cavitracer_figure25.jpg
+   :scale: 50 %
+
+To reconstruct pores, we should use :func:`calcPoresFromChannels` function
+by providing information about channels and its details.
+
+.. ipython:: python
+   :verbatim:
+
+   pores = calcPoresFromChannels(channels, details)
+
+
+.. ipython:: python
+   :verbatim:
+
+   pores
+
+.. parsed-literal::
+
+   [<prody.proteins.channels.Channel at 0x7ad5b8da3400>,
+    <prody.proteins.channels.Channel at 0x7ad5b8da2d70>,
+    <prody.proteins.channels.Channel at 0x7ad5b8da3160>,
+    <prody.proteins.channels.Channel at 0x7ad5b8f933d0>,
+    <prody.proteins.channels.Channel at 0x7ad5b8f93bb0>,
+    <prody.proteins.channels.Channel at 0x7ad5b8f93940>]
+
+Pores can be displayed directly in ProDy, but first, a model of protein
+should be created using :func:`getVmdModel`.
+
+.. ipython:: python
+   :verbatim:
+
+   vmd_path = '/usr/local/bin/vmd'
+   model = getVmdModel(vmd_path, protein)
+
+.. parsed-literal::
+
+   @> Model created successfully.
+
+Now, we can display all pores at once or each pore separately, as show
+below.
+
+.. ipython:: python
+   :verbatim:
+
+   showPores(pores, model=model)
+
+
+.. figure:: images/cavitracer_figure26.jpg
+   :scale: 50 %
+
+
+
+.. ipython:: python
+   :verbatim:
+
+   showPores(pores[0], model=model)
+
+
+.. figure:: images/cavitracer_figure27.jpg
+   :scale: 50 %
+
+
+.. ipython:: python
+   :verbatim:
+
+   showPores(pores[1], model=model)
+
+
+.. figure:: images/cavitracer_figure28.jpg
+   :scale: 50 %
+
+
+Except, visualizing reconstructed pores, we can get information about
+residues that are forming pore and details about pores, such as volume,
+length and bottleneck.
+
+.. ipython:: python
+   :verbatim:
+
+   getPoreResidueNames(protein, pores)
+
+.. parsed-literal::
+
+   @> 2547 atoms and 1 coordinate set(s) were parsed in 0.03s.
+   @> 2552 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 2562 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 2577 atoms and 1 coordinate set(s) were parsed in 0.03s.
+   @> 2587 atoms and 1 coordinate set(s) were parsed in 0.03s.
+   @> 2492 atoms and 1 coordinate set(s) were parsed in 0.03s.
+
+   ['pore0: ALA109, ARG133',
+    'pore1: ALA34, SER35, THR36, ARG38, ARG75, SER108, ALA109, ARG133',
+    'pore2: ILE9, SER35, THR36, ARG38, ARG75, SER108, ALA109, ARG133',
+    'pore3: ALA34, SER35, THR36, ARG38, ARG75, SER108',
+    'pore4: ILE9, SER35, THR36, ARG38, ARG75, SER108',
+    'pore5: ILE9, ALA34, SER35, ARG38, SER108']
+
+
+.. ipython:: python
+   :verbatim:
+   
+   getPoreParameters(pores)
+
+.. parsed-literal::
+
+   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+   @> pore 0: 	808.12 		16.44 		2.47
+   @> pore 1: 	406.51 		18.04 		1.37
+   @> pore 2: 	477.25 		20.81 		1.55
+   @> pore 3: 	763.24 		22.24 		1.37
+   @> pore 4: 	833.99 		25.01 		1.55
+   @> pore 5: 	128.78 		8.68 		1.37
+
+   ([16.442455628341676,
+     18.043389175660067,
+     20.810131379452656,
+     22.23999878703292,
+     25.005354064264544,
+     8.682169636960701],
+    [2.4681569231154814,
+     1.3720934190119256,
+     1.5463489935179795,
+     1.3720934190119256,
+     1.5463489935179795,
+     1.3720934190119256],
+    [808.1235129472813,
+     406.51125360840706,
+     477.2547276494931,
+     763.2420957499684,
+     833.9855419940334,
+     128.78107671605596])
+
 
 
