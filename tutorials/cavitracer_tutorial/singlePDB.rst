@@ -858,7 +858,7 @@ should be created using :func:`getVmdModel`.
 
    @> Model created successfully.
 
-Now, we can display all pores at once or each pore separately, as show
+Now, we can display all pores at once or each pore separately, as shown
 below.
 
 .. ipython:: python
@@ -870,7 +870,7 @@ below.
 .. figure:: images/cavitracer_figure26.jpg
    :scale: 50 %
 
-
+Pore #1:
 
 .. ipython:: python
    :verbatim:
@@ -881,6 +881,7 @@ below.
 .. figure:: images/cavitracer_figure27.jpg
    :scale: 50 %
 
+Pore #2:
 
 .. ipython:: python
    :verbatim:
@@ -892,9 +893,9 @@ below.
    :scale: 50 %
 
 
-Except, visualizing reconstructed pores, we can get information about
-residues that are forming pore and details about pores, such as volume,
-length and bottleneck.
+Except for visualizing reconstructed pores, we can get information about
+residues that form pores and details about pores, such as volume,
+length, and bottleneck.
 
 .. ipython:: python
    :verbatim:
