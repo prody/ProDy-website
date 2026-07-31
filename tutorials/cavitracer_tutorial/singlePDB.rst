@@ -508,7 +508,7 @@ geometric center is used as the starting point.
 
 Below is the visualization of channel identification for the two different starting
 points mentioned above. The blue one represents identification of channels when
-the starting point is [-22.312, -20.065, -11.144], whereas the orange one
+the starting point is [-22.312, -20.065, -11.144], whereas the dark-yellow one
 represents identification based on the center of the mass for residues 212, 309,
 and 483 (displayed as orange spheres). 
 
