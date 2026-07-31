@@ -352,9 +352,9 @@ Once the model is created, we can display several things:
    :scale: 50 %
 
 Channels can be visualized separately. Below are several examples of how to
-display single channels (channel #1, channel #2), two channels at once (channel
-#1 and channel #8), or a range of channels (channels from #1 to channel #4
-#from the prediction).
+display single channels (channel #40, channel #15), two channels at once (channel
+#9 and channel #40), or a range of channels (channels from #10 to channel #20
+from the prediction).
 
 .. ipython:: python
    :verbatim:
@@ -517,7 +517,8 @@ and 483 (displayed as orange spheres).
 
 Visualization of the system was performed in the VMD_ program. This outcome
 shows how the prediction result can change when the ``start_point`` changes.
-Changes in the prediction can be better seen when the protein is undisplayed.
+Changes in the prediction can be better seen when the protein is
+undisplayed, as shown bellow.
 
 .. figure:: images/cavitracer_figure19B.jpg
    :scale: 50 %
