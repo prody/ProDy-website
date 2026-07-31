@@ -1,6 +1,6 @@
 .. _cavitracer_single:
 
-Detection of intraprotein tunnels and channels in a single PDB structure
+I. Detection of intraprotein tunnels and channels in a single PDB structure
 ===============================================================================
 
 
@@ -525,7 +525,7 @@ undisplayed, as shown bellow.
 
 
 
-Detection of surface cavities in a single PDB structure
+II. Detection of surface cavities in a single PDB structure
 ===============================================================================
 
 
@@ -746,8 +746,9 @@ sufix.
 
 
 
-Indentification of pores in a single PDB structure
+III. Indentification of pores in a single PDB structure
 ===============================================================================
+
 
 In this example, we will identify pores in the outer membrane porin Omp32 from 
 Delftia acidovorans using the crystal structure deposited under PDB ID 2FGQ. 
