@@ -954,4 +954,26 @@ length, and bottleneck.
      128.78107671605596])
 
 
+For some structures, particularly when a smaller ``r2`` value is used,
+predictions may provide a large number of channels. Consequently, the number
+of reconstructed pore candidates will be very large. Therefore, the function
+:func:`calcPoresFromChannels` provides several types of filters that can be
+used to retain only pores with the desired geometrical properties. 
 
+The available filters include:
+
+``min_end_to_end`` | ``max_end_to_end`` — minimum and maximum distance 
+between the two pore openings. These parameters can be used to remove short,
+local connections that do not span a substantial part of the protein.
+
+``min_bottleneck`` | ``max_bottleneck`` — minimum and maximum radius of 
+the narrowest region along the pore.
+
+``min_length`` | ``max_length`` — minimum and maximum total length of the 
+reconstructed pore pathway.
+
+``min_volume`` | ``max_volume`` — minimum and maximum estimated pore volume.
+
+
+The examples of usage are shown for multi-model PDBs and trajectories. In a
+similar way, it can be applied to a single PDB analysis.
