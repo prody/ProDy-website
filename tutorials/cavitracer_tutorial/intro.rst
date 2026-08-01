@@ -1,9 +1,9 @@
 Introduction
 ===============================================================================
 
-This tutorial shows how to detect intraprotein channels, tunnels, and
-cavities. This method can be applied to single PDB file, PDB enseble, and
-molecular dynamics (MD) trajectory.
+This tutorial shows how to detect intraprotein channels, tunnels, and pores
+or surface cavities. This method can be applied to single PDB file, PDB
+enseble, and molecular dynamics (MD) trajectory.
 
 
 Required Programs
@@ -23,6 +23,12 @@ Moreover, ProDy provides visualization of the predictions using Open3D_.
 .. _Open3D: https://pypi.org/project/open3d/
 
 It can be installed using a conda or pip.
+
+Additionally, to use more advanced predictions of channels by using
+a ``weighted`` parameter, the installation of vorpy3_ is needed.
+
+.. _vorpy3: https://github.com/jackericson98/vorpy
+
 
 Getting Started
 -------------------------------------------------------------------------------
