@@ -1349,6 +1349,7 @@ Next, the residues that are forming the pores can be identified using
    getPoreResidueNamesMultipleFrames(protein, pores, dcd,
 		residues_file_name='pores_Residues')
 
+.. parsed-literal::
 
    @> Frame: 0
    @> 6651 atoms and 1 coordinate set(s) were parsed in 0.07s.
