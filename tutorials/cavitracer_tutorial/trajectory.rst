@@ -4,9 +4,9 @@ Detection of channels in molecular dynamics (MD) trajectory
 ===============================================================================
 
 Analysis of the trajectory will be performed on a short MD trajectory
-containing a few frames of simulation performed for 15-lipoxygenase from
-P. aeruginosa (pLoxA). This protein contains 665 residues and a catalytic center
-with iron. During the analysis, the metal center is ignored.
+containing over 200 frames of simulation performed for the vesicular monoamine 
+transporter VMAT2. This protein contains 460 residues. During the analysis, 
+only protein structure will be taken into consideration.
 
 Before analyzing the trajectory, its need to be parsed (see more details
 in `Trajectory tutorial`_).
@@ -14,8 +14,8 @@ in `Trajectory tutorial`_).
 .. ipython:: python
    :verbatim:
 
-   PDBfile = 'pLoxA2.pdb'
-   DCDfile = 'pLoxA2_ev5.dcd'
+   PDBfile = 'caseStudy2.pdb'
+   DCDfile = 'caseStudy2.dcd'
    atoms = parsePDB(PDBfile)
    dcd = Trajectory(DCDfile)
    dcd.link(atoms)
@@ -23,217 +23,271 @@ in `Trajectory tutorial`_).
 
 .. parsed-literal::
 
-   @> 10298 atoms and 1 coordinate set(s) were parsed in 0.11s.
+   @> 56457 atoms and 1 coordinate set(s) were parsed in 0.69s.
 
-To detect channels in MD trajectories, we need to use
-:func:`.scalcChannelsMultipleFrames` function.
+To analyze only protein structure for the analysis, we will select protein
+structure:
 
 .. ipython:: python
    :verbatim:
 
-   channels4, surfaces4=calcChannelsMultipleFrames(atoms, dcd, output_path = 'channels_pLoxA_dcd', separate=True)
+   protein = atoms.select("protein")
+   dcd.setAtoms(protein)
+
+Next, to detect channels in MD trajectories, we need to use
+:func:`.scalcChannelsMultipleFrames` function. To speed up the calculations,
+``max_proc`` parameter can be set up to a higher number. In the example
+below, we will use 4 processors to perform the calulations. The results will
+saved with the prefix ``"chls_dcd"``, and all the channels will be storage
+separately (``separate=True``). 
+
+.. ipython:: python
+   :verbatim:
+
+   channels4, surfaces4=calcChannelsMultipleFrames(atoms, dcd, 
+		output_path='chls_dcd', separate=True, max_proc=4)
 
 .. parsed-literal::
 
-   @> Frame: 0
-   @> Detected 23 channels.
+   @> Frame/model: 0
+   @> Frame/model: 14
+   @> Frame/model: 28
+   @> Frame/model: 42
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 A in 0.29s.
+   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 A in 0.29s.
+   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 A in 0.30s.
+   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 A in 0.30s.
+   @> Delaunay tessellation of 77434 points constructed in 4.00s.
+   @> Delaunay tessellation of 77434 points constructed in 4.04s.
+   @> Delaunay tessellation of 77434 points constructed in 4.10s.
+   @> Delaunay tessellation of 77434 points constructed in 4.16s.
+   @> Surface and inner simplices filtered in 3.77s.
+   @> Surface and inner simplices filtered in 3.86s.
+   @> Surface and inner simplices filtered in 3.97s.
+   @> Surface and inner simplices filtered in 3.84s.
+   @> 6 surface cavities detected and filtered in 0.55s.
+   @> 7 surface cavities detected and filtered in 0.57s.
+   @> 11 surface cavities detected and filtered in 0.55s.
+   @> 12 surface cavities detected and filtered in 0.55s.
+   @> Channel pathfinding (graph Dijkstra) over 7 cavities completed in 0.99s.
+   @> Detected 25 channels.
    @> Saving multiple results to directory ..
-   @> Frame: 1
-   @> Detected 21 channels.
-   @> Saving multiple results to directory ..
-   @> Frame: 2
+   @> Channel calculation completed in 9.81s.
+   @> Frame/model: 29
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> Channel pathfinding (graph Dijkstra) over 11 cavities completed in 1.04s.
    @> Detected 20 channels.
    @> Saving multiple results to directory ..
-   @> Frame: 3
-   @> Detected 17 channels.
+   @> Channel calculation completed in 9.91s.
+   @> Frame/model: 15
+   ..
+   ..
+   @> Frame/model: 195
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 A in 0.31s.
+   @> Surface and inner simplices filtered in 2.70s.
+   @> 9 surface cavities detected and filtered in 0.55s.
+   @> Delaunay tessellation of 77434 points constructed in 3.00s.
+   @> Channel pathfinding (graph Dijkstra) over 9 cavities completed in 1.28s.
+   @> Detected 30 channels.
    @> Saving multiple results to directory ..
-   @> Frame: 4
-   @> Detected 17 channels.
-   @> Saving multiple results to directory ..  
+   @> Channel calculation completed in 8.12s.
+   @> Delaunay tessellation of 77434 points constructed in 3.24s.
+   @> Surface and inner simplices filtered in 2.93s.
+   @> Surface and inner simplices filtered in 2.69s.
+   @> 9 surface cavities detected and filtered in 0.53s.
+   @> 6 surface cavities detected and filtered in 0.50s.
+   @> Channel pathfinding (graph Dijkstra) over 9 cavities completed in 1.43s.
+   @> Detected 35 channels.
+   @> Saving multiple results to directory ..
+   @> Channel calculation completed in 8.31s.
+   @> Channel pathfinding (graph Dijkstra) over 6 cavities completed in 2.36s.
+   @> Detected 36 channels.
+   @> Saving multiple results to directory ..
+   @> Channel calculation completed in 9.20s.
+
 
 All the details about the predicted channels can be displayed using
-:func:`.getChannelParameters`.
+:func:`.getChannelParametersMultipleFrames`.
 
 .. ipython:: python
    :verbatim:
 
-   getChannelParameters(channels4, param_file_name='DATA_channels_pLoxA_dcd')
+   getChannelParametersMultipleFrames(channels4, param_file_name='DATA_chls_dcd')
 
 .. parsed-literal::
 
+   @> Frame/model: 0
    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame 0
-   @> channel 0: 	992.48 		81.53 		1.2
-   @> channel 1: 	1312.76 	100.87 		1.2
-   @> channel 2: 	2054.1 		155.22 		1.2
-   @> channel 3: 	418.26 		44.36 		1.2
-   @> channel 4: 	1859.55 	141.17 		1.2
-   @> channel 5: 	1790.54 	116.13 		1.2
-   @> channel 6: 	312.79 		40.46 		1.15
-   @> channel 7: 	1904.32 	130.45 		1.2
-   @> channel 8: 	1745.99 	131.33 		1.2
-   @> channel 9: 	1680.53 	113.63 		1.2
-   @> channel 10: 	402.18 		47.8 		1.15
-   @> channel 11: 	682.06 		63.98 		1.19
-   @> channel 12: 	846.48 		86.61 		1.16
-   @> channel 13: 	637.88 		62.92 		1.19
-   @> channel 14: 	1134.36 	119.14 		1.16
-   @> channel 15: 	352.71 		44.41 		1.19
-   @> channel 16: 	408.86 		36.05 		1.29
-   @> channel 17: 	356.74 		38.1 		1.17
-   @> channel 18: 	425.39 		47.89 		1.16
-   @> channel 19: 	238.69 		29.66 		1.17
-   @> channel 20: 	135.42 		14.25 		1.23
-   @> channel 21: 	312.2 		28.6 		1.2
-   @> channel 22: 	262.23 		30.13 		1.24
-   @> Frame 1
-   @> channel 0: 	938.59 		74.19 		1.22
-   @> channel 1: 	556.67 		36.35 		1.22
-   @> channel 2: 	1754.65 	114.13 		1.22
-   @> channel 3: 	820.62 		69.04 		1.17
-   @> channel 4: 	1099.72 	88.55 		1.22
-   @> channel 5: 	1192.77 	75.42 		1.22
-   @> channel 6: 	734.64 		55.9 		1.22
-   @> channel 7: 	583.27 		49.71 		1.22
-   @> channel 8: 	1147.81 	80.93 		1.22
-   @> channel 9: 	876.36 		67.71 		1.22
-   @> channel 10: 	1248.18 	110.28 		1.19
-   @> channel 11: 	1459.2 		104.78 		1.22
-   @> channel 12: 	592.62 		42.78 		1.22
-   @> channel 13: 	327.34 		27.46 		1.42
-   @> channel 14: 	843.11 		74.27 		1.21
-   @> channel 15: 	1154.27 	101.07 		1.21
-   @> channel 16: 	776.61 		64.91 		1.42
-   @> channel 17: 	119.26 		12.88 		1.18
-   @> channel 18: 	378.36 		44.11 		1.26
-   @> channel 19: 	257.43 		25.44 		1.26
-   @> channel 20: 	135.45 		12.38 		1.24
-   @> Frame 2
-   @> channel 0: 	657.62 		57.69 		1.22
-   @> channel 1: 	382.37 		36.18 		1.22
-   @> channel 2: 	360.74 		35.36 		1.22
-   @> channel 3: 	705.24 		75.91 		1.22
-   @> channel 4: 	1113.35 	120.45 		1.21
-   @> channel 5: 	1064.11 	104.61 		1.22
-   @> channel 6: 	994.6 		112.42 		1.21
-   @> channel 7: 	841.52 		88.26 		1.22
-   @> channel 8: 	771.1 		78.79 		1.22
-   @> channel 9: 	1039.73 	109.33 		1.2
-   @> channel 10: 	888.9 		95.13 		1.22
-   @> channel 11: 	523.87 		63.65 		1.25
-   @> channel 12: 	778.0 		35.3 		1.14
-   @> channel 13: 	521.2 		28.3 		1.14
-   @> channel 14: 	801.16 		33.07 		1.14
-   @> channel 15: 	1200.77 	62.09 		1.14
-   @> channel 16: 	851.3 		35.67 		1.14
-   @> channel 17: 	168.1 		12.94 		1.28
-   @> channel 18: 	191.81 		16.51 		1.34
-   @> channel 19: 	217.48 		17.62 		1.16
-   @> Frame 3
-   @> channel 0: 	2169.69 	229.15 		1.14
-   @> channel 1: 	1616.05 	180.27 		1.14
-   @> channel 2: 	2558.28 	247.6 		1.14
-   @> channel 3: 	3125.51 	272.92 		1.14
-   @> channel 4: 	3021.33 	258.99 		1.14
-   @> channel 5: 	2688.17 	255.62 		1.14
-   @> channel 6: 	1355.6 		140.36 		1.14
-   @> channel 7: 	2455.01 	254.3 		1.14
-   @> channel 8: 	360.38 		42.81 		1.14
-   @> channel 9: 	479.56 		55.04 		1.14
-   @> channel 10: 	1192.58 	126.35 		1.14
-   @> channel 11: 	1437.5 		147.12 		1.14
-   @> channel 12: 	826.59 		71.77 		1.14
-   @> channel 13: 	831.59 		94.04 		1.14
-   @> channel 14: 	1250.23 	138.19 		1.14
-   @> channel 15: 	495.7 		56.03 		1.14
-   @> channel 16: 	188.57 		16.54 		1.25
-   @> Frame 4
-   @> channel 0: 	1166.47 	78.73 		1.23
-   @> channel 1: 	1337.89 	92.61 		1.23
-   @> channel 2: 	812.56 		67.79 		1.23
-   @> channel 3: 	1604.16 	119.55 		1.23
-   @> channel 4: 	1147.63 	96.77 		1.23
-   @> channel 5: 	532.67 		47.51 		1.23
-   @> channel 6: 	621.67 		58.09 		1.23
-   @> channel 7: 	357.02 		43.58 		1.2
-   @> channel 8: 	1327.45 	94.03 		1.23
-   @> channel 9: 	550.83 		58.65 		1.19
-   @> channel 10: 	302.35 		31.08 		1.19
-   @> channel 11: 	91.71 		13.11 		1.18
-   @> channel 12: 	313.56 		24.87 		1.37
-   @> channel 13: 	423.17 		40.18 		1.14
-   @> channel 14: 	460.7 		49.85 		1.14
-   @> channel 15: 	514.97 		51.72 		1.14
-   @> channel 16: 	175.27 		14.78 		1.34
-
-
-   [([81.53076854675717,
-      100.87184622137524,
-      155.21730562517422,
-      44.35946093281574,
-      141.1656656186375,
-      116.12867797358405,
-      40.46376251691566,
-      130.45000999468857,
-      131.33211590537636,
-      113.63048581490258,
-      47.795798586969184,
-      63.978188025186526,
-      86.60576976913924,
-      62.919007506778094,
-      119.14107539131692,
-      44.40927920760103,
-      36.04783735884794,
-      38.09776525349153,
-      47.89398842913637,
-      29.65774826306761,
-      14.248646497732171,
-      28.599643876182448,
-      30.129791668784087],
-     [1.196090464916565,
-      1.196090464916565,
-      1.196090464916565,
-      1.196090464916565,
-      1.196090464916565,
-      1.196090464916565,
-      1.148694455970017,
-      1.196090464916565,
+   @> channel 0: 	42.62 		5.23 		0.91
+   @> channel 1: 	46.26 		6.49 		0.91
+   @> channel 2: 	41.15 		6.61 		0.91
+   @> channel 3: 	39.01 		6.52 		0.95
+   @> channel 4: 	39.8 		6.83 		0.91
+   @> channel 5: 	28.15 		6.23 		0.85
+   @> channel 6: 	31.99 		7.13 		0.85
+   @> channel 7: 	43.34 		9.08 		0.8
+   @> channel 8: 	42.4 		10.06 		0.99
+   @> channel 9: 	57.35 		10.05 		0.94
+   @> channel 10: 	28.1 		7.24 		0.56
+   @> channel 11: 	54.05 		11.69 		0.96
+   @> channel 12: 	64.98 		12.59 		0.82
+   @> channel 13: 	76.95 		14.62 		0.94
+   @> channel 14: 	72.35 		14.99 		0.94
+   @> channel 15: 	48.2 		12.18 		0.56
+   @> channel 16: 	60.7 		15.73 		0.81
+   @> channel 17: 	61.95 		17.84 		0.85
+   @> channel 18: 	487.25 		46.63 		0.93
+   @> channel 19: 	141.6 		27.14 		0.85
+   @> channel 20: 	133.72 		26.46 		0.85
+   @> channel 21: 	97.65 		20.64 		0.53
+   @> channel 22: 	64.82 		18.52 		0.53
+   @> channel 23: 	434.36 		46.08 		0.93
+   @> channel 24: 	72.47 		19.67 		0.53
+   @> channel 25: 	420.49 		52.08 		0.9
+   @> channel 26: 	377.6 		51.75 		0.9
+   @> channel 27: 	547.44 		62.65 		0.9
+   @> channel 28: 	520.97 		61.04 		0.9
+   @> channel 29: 	563.87 		65.18 		0.9
+   @> channel 30: 	579.84 		66.15 		0.9
+   @> channel 31: 	587.81 		66.92 		0.9
+   @> Frame/model: 1
+   @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+   @> channel 0: 	25.35 		5.48 		0.88
+   @> channel 1: 	33.95 		6.76 		0.9
+   @> channel 2: 	39.95 		7.56 		0.89
+   @> channel 3: 	23.72 		6.63 		0.87
+   @> channel 4: 	36.81 		10.0 		0.9
+   @> channel 5: 	80.37 		13.18 		0.79
+   @> channel 6: 	52.55 		11.86 		0.9
+   @> channel 7: 	49.69 		13.07 		0.79
+   @> channel 8: 	75.65 		14.36 		0.64
+   @> channel 9: 	108.27 		22.83 		0.88
+   @> channel 10: 	96.26 		21.57 		0.78
+   @> channel 11: 	69.35 		18.87 		0.58
+   @> channel 12: 	42.33 		14.67 		0.5
+   @> channel 13: 	136.31 		26.84 		0.84
+   @> channel 14: 	127.65 		26.21 		0.84
+   @> channel 15: 	517.36 		47.06 		0.81
+   @> channel 16: 	136.2 		28.73 		0.81
+   @> channel 17: 	455.47 		48.29 		0.81
+   @> channel 18: 	110.0 		27.4 		0.59
+   @> channel 19: 	355.87 		48.16 		0.81
+   @> channel 20: 	308.57 		48.47 		0.81
+   @> channel 21: 	464.03 		55.84 		0.81
+   @> channel 22: 	498.0 		58.37 		0.81
+   @> channel 23: 	489.61 		58.64 		0.81
+   @> channel 24: 	506.86 		60.38 		0.81
+   ..
+   ..
+   [([5.227329141803516,
+      6.487400298449215,
+      6.605144066108894,
+      6.516275048865574,
+      6.82887082510323,
+      6.225022727043587,
+      7.130896203430573,
+      9.0820395745718,
+      10.055076137621302,
+      10.046965975880378,
+      7.2448800420085835,
+      11.685716270931396,
+      12.588204876727449,
+      14.615599846655114,
+      14.987739219808653,
+      12.177197068381641,
+      15.728096263328084,
+      17.83669237347921,
+      46.63095154889754,
+      27.14201931744085,
+      26.46087867366709,
+      20.638332276673168,
+      18.520993854173597,
+      46.07627263551035,
+      19.666847649036676,
+      52.08168239809312,
+      51.754432428231695,
+      62.65440497610238,
+      61.038934300273354,
+      65.17632012481089,
+      66.14572267592729,
+      66.91973888604468],
+     [0.9062093848777095,
+      0.9062093848777095,
+      0.9091246523541974,
+      0.9466973308923545,
+      0.9062093848777095,
+      0.8450995780137116,
+      0.8450995780137116,
+      0.7964742507765301,
+      0.9877666026933867,
+      0.9440099272394715,
+      0.5627200930417462,
+      0.9580799362892518,
+      0.8168412673605527,
+      0.9368914605676404,
+      0.9368914605676404,
+      0.5634107045739882,
+      0.8126297939221512,
+      0.8458444201300528,
+      0.9288219861959515,
+      0.8471905678106821,
+      0.8471905678106821,
+      0.5336380547900532,
+      0.5336380547900532,
+      0.9288219861959515,
+      0.5336380547900532,
+      0.8980676489273869,
+      0.8980676489273869,
+      0.8980374597036274,
+      0.8980374597036274,
+      0.8980374597036274,
+      0.8980374597036274,
+      0.8980374597036274],
       ..
       ..
-     [1.227526787656218,
-      1.227526787656218,
-      1.227526787656218,
-      1.227526787656218,
-      1.227526787656218,
-      1.227526787656218,
-      1.227526787656218,
-      1.2011749676816736,
-      1.227526787656218,
-      1.1932295513238282,
-      1.1932295513238282,
-      1.183074525904224,
-      1.3700950318669023,
-      1.138079894553803,
-      1.138079894553803,
-      1.138079894553803,
-      1.3402358031075432],
-     [1166.4706995833308,
-      1337.8854802839428,
-      812.560483578324,
-      1604.1597848068766,
-      1147.6292984197153,
-      532.6712321117886,
-      621.6682874770008,
-      357.0213867625684,
-      1327.4544405780978,
-      550.8263659229955,
-      302.3506391526108,
-      91.71321425940671,
-      313.5638679068994,
-      423.17395857062263,
-      460.69557216242544,
-      514.9659792511438,
-      175.2730899436576])]
+     [33.93878201451358,
+      53.57138814058363,
+      51.65102405007965,
+      60.40988921509134,
+      93.47767217117577,
+      153.06628278359594,
+      65.78081695746604,
+      188.95516489959445,
+      160.83223704342512,
+      174.62962363999816,
+      62.95855748022218,
+      71.36168073076173,
+      140.79568166555896,
+      68.43219227709203,
+      114.26271670969929,
+      746.4890229908065,
+      784.8926565168398,
+      699.5382690630242,
+      770.3751166765595,
+      805.863155925841,
+      695.3510801096598,
+      767.8987104643048,
+      621.7119196863381,
+      797.251345235155,
+      694.1672952596066,
+      820.4920143280556,
+      749.9826774750843,
+      758.222986561308,
+      788.8971708945872,
+      539.6884081368177,
+      794.5395102358551,
+      537.7938757590493,
+      473.89250290133845,
+      371.30162647018585,
+      383.5343643574686,
+      381.43842455263564,
+      324.36179374323757])]
+
 
 Assigning the function's output to the ``results`` variable grants access 
 to these parameters, as shown below.
@@ -241,24 +295,113 @@ to these parameters, as shown below.
 .. ipython:: python
    :verbatim:
 
-   results = getChannelParameters(channels4)
+   results = getChannelParametersMultipleFrames(channels4)
 
 .. parsed-literal::
 
+   @> Frame/model: 0
    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame 0
-   @> channel 0: 	992.48 		81.53 		1.2
-   @> channel 1: 	1312.76 	100.87 		1.2
-   @> channel 2: 	2054.1 		155.22 		1.2
-   @> channel 3: 	418.26 		44.36 		1.2
-   @> channel 4: 	1859.55 	141.17 		1.2
-   @> channel 5: 	1790.54 	116.13 		1.2
-   @> channel 6: 	312.79 		40.46 		1.15
-   @> channel 7: 	1904.32 	130.45 		1.2
-   @> channel 8: 	1745.99 	131.33 		1.2
-   @> channel 9: 	1680.53 	113.63 		1.2
-   @> channel 10: 	402.18 		47.8 		1.15
+   @> channel 0: 	42.62 		5.23 		0.91
+   @> channel 1: 	46.26 		6.49 		0.91
+   @> channel 2: 	41.15 		6.61 		0.91
+   @> channel 3: 	39.01 		6.52 		0.95
+   @> channel 4: 	39.8 		6.83 		0.91
+   @> channel 5: 	28.15 		6.23 		0.85
+   @> channel 6: 	31.99 		7.13 		0.85
+   @> channel 7: 	43.34 		9.08 		0.8
+   @> channel 8: 	42.4 		10.06 		0.99
+   @> channel 9: 	57.35 		10.05 		0.94
+   @> channel 10: 	28.1 		7.24 		0.56
+   @> channel 11: 	54.05 		11.69 		0.96
+   @> channel 12: 	64.98 		12.59 		0.82
+   @> channel 13: 	76.95 		14.62 		0.94
+   @> channel 14: 	72.35 		14.99 		0.94
+   @> channel 15: 	48.2 		12.18 		0.56
+   @> channel 16: 	60.7 		15.73 		0.81
+   @> channel 17: 	61.95 		17.84 		0.85
+   @> channel 18: 	487.25 		46.63 		0.93
+   @> channel 19: 	141.6 		27.14 		0.85
+   @> channel 20: 	133.72 		26.46 		0.85
+   @> channel 21: 	97.65 		20.64 		0.53
+   @> channel 22: 	64.82 		18.52 		0.53
+   @> channel 23: 	434.36 		46.08 		0.93
+   @> channel 24: 	72.47 		19.67 		0.53
+   @> channel 25: 	420.49 		52.08 		0.9
+   @> channel 26: 	377.6 		51.75 		0.9
+   @> channel 27: 	547.44 		62.65 		0.9
+   @> channel 28: 	520.97 		61.04 		0.9
+   @> channel 29: 	563.87 		65.18 		0.9
+   @> channel 30: 	579.84 		66.15 		0.9
+   @> channel 31: 	587.81 		66.92 		0.9
+   @> Frame/model: 1
+   @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+   @> channel 0: 	25.35 		5.48 		0.88
+   @> channel 1: 	33.95 		6.76 		0.9
+   @> channel 2: 	39.95 		7.56 		0.89
+   @> channel 3: 	23.72 		6.63 		0.87
+   @> channel 4: 	36.81 		10.0 		0.9
+   @> channel 5: 	80.37 		13.18 		0.79
+   @> channel 6: 	52.55 		11.86 		0.9
+   @> channel 7: 	49.69 		13.07 		0.79
+   @> channel 8: 	75.65 		14.36 		0.64
+   @> channel 9: 	108.27 		22.83 		0.88
+   @> channel 10: 	96.26 		21.57 		0.78
+   @> channel 11: 	69.35 		18.87 		0.58
+   @> channel 12: 	42.33 		14.67 		0.5
+   @> channel 13: 	136.31 		26.84 		0.84
+   @> channel 14: 	127.65 		26.21 		0.84
+   @> channel 15: 	517.36 		47.06 		0.81
+   @> channel 16: 	136.2 		28.73 		0.81
+   @> channel 17: 	455.47 		48.29 		0.81
+   @> channel 18: 	110.0 		27.4 		0.59
+   @> channel 19: 	355.87 		48.16 		0.81
+   @> channel 20: 	308.57 		48.47 		0.81
+   @> channel 21: 	464.03 		55.84 		0.81
+   @> channel 22: 	498.0 		58.37 		0.81
+   @> channel 23: 	489.61 		58.64 		0.81
+   @> channel 24: 	506.86 		60.38 		0.81
    ..
+   ..
+   @> Frame/model: 210
+   @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+   @> channel 0: 	33.94 		5.84 		0.91
+   @> channel 1: 	53.57 		6.06 		0.9
+   @> channel 2: 	51.65 		8.36 		0.92
+   @> channel 3: 	60.41 		10.15 		0.9
+   @> channel 4: 	93.48 		14.96 		0.9
+   @> channel 5: 	153.07 		20.89 		0.85
+   @> channel 6: 	65.78 		15.06 		0.78
+   @> channel 7: 	188.96 		22.78 		0.85
+   @> channel 8: 	160.83 		22.3 		0.85
+   @> channel 9: 	174.63 		23.52 		0.85
+   @> channel 10: 	62.96 		15.47 		0.8
+   @> channel 11: 	71.36 		16.67 		0.78
+   @> channel 12: 	140.8 		23.1 		0.85
+   @> channel 13: 	68.43 		16.98 		0.8
+   @> channel 14: 	114.26 		26.12 		0.75
+   @> channel 15: 	746.49 		56.91 		0.82
+   @> channel 16: 	784.89 		59.45 		0.82
+   @> channel 17: 	699.54 		57.48 		0.82
+   @> channel 18: 	770.38 		59.6 		0.82
+   @> channel 19: 	805.86 		61.61 		0.82
+   @> channel 20: 	695.35 		58.25 		0.82
+   @> channel 21: 	767.9 		61.46 		0.82
+   @> channel 22: 	621.71 		56.17 		0.82
+   @> channel 23: 	797.25 		63.75 		0.82
+   @> channel 24: 	694.17 		58.74 		0.82
+   @> channel 25: 	820.49 		65.8 		0.82
+   @> channel 26: 	749.98 		61.69 		0.82
+   @> channel 27: 	758.22 		61.31 		0.81
+   @> channel 28: 	788.9 		64.56 		0.82
+   @> channel 29: 	539.69 		56.59 		0.82
+   @> channel 30: 	794.54 		68.51 		0.82
+   @> channel 31: 	537.79 		57.32 		0.82
+   @> channel 32: 	473.89 		53.43 		0.73
+   @> channel 33: 	371.3 		55.49 		0.82
+   @> channel 34: 	383.53 		57.85 		0.82
+   @> channel 35: 	381.44 		57.9 		0.82
+   @> channel 36: 	324.36 		53.64 		0.64
+
 
 Results for the first frame in the trajectory:
 
@@ -269,75 +412,103 @@ Results for the first frame in the trajectory:
 
 .. parsed-literal::
 
-   ([81.53076854675717,
-    100.87184622137524,
-    155.21730562517422,
-     44.35946093281574,
-    141.1656656186375,
-    116.12867797358405,
-     40.46376251691566,
-    130.45000999468857,
-    131.33211590537636,
-    113.63048581490258,
-    47.795798586969184,
-    63.978188025186526,
-    86.60576976913924,
-    62.919007506778094,
-    119.14107539131692,
-    44.40927920760103,
-    36.04783735884794,
-    38.09776525349153,
-    47.89398842913637,
-    29.65774826306761,
-    14.248646497732171,
-    28.599643876182448,
-    30.129791668784087],
-   [1.196090464916565,
-    1.196090464916565,
-    1.196090464916565,
-    1.196090464916565,
-    1.196090464916565,
-    1.196090464916565,
-    1.148694455970017,
-    1.196090464916565,
-    1.196090464916565,
-    1.196090464916565,
-    1.148694455970017,
-    1.1910426818565816,
-    1.1639197434893152,
-    1.1910426818565816,
-    1.1639197434893152,
-    1.1910426818565816,
-    1.285962724963367,
-    1.1697509690515397,
-    1.158333238790114,
-    1.1697509690515397,
-    1.2290282909977648,
-    1.2045446926470393,
-    1.2372900747968767],
-   [992.4842653102705,
-    1312.7649852915242,
-    2054.1011826328895,
-    418.26050817006507,
-    1859.5528753413366,
-    1790.5405946658473,
-    312.7857361187134,
-    1904.3157874898,
-    1745.9901933926658,
-    1680.5336124135697,
-    402.17503054377386,
-    682.063499836242,
-    846.4839456899284,
-    637.8841942942074,
-    1134.3607901158177,
-    352.71210068388814,
-    408.8563806761948,
-    356.73525993569035,
-    425.38870942307784,
-    238.68740556217102,
-    135.4169260377724,
-    312.2046931577367,
-    262.2261752030014])
+   ([5.227329141803516,
+     6.487400298449215,
+     6.605144066108894,
+     6.516275048865574,
+     6.82887082510323,
+     6.225022727043587,
+     7.130896203430573,
+     9.0820395745718,
+     10.055076137621302,
+     10.046965975880378,
+     7.2448800420085835,
+     11.685716270931396,
+     12.588204876727449,
+     14.615599846655114,
+     14.987739219808653,
+     12.177197068381641,
+     15.728096263328084,
+     17.83669237347921,
+     46.63095154889754,
+     27.14201931744085,
+     26.46087867366709,
+     20.638332276673168,
+     18.520993854173597,
+     46.07627263551035,
+     19.666847649036676,
+     52.08168239809312,
+     51.754432428231695,
+     62.65440497610238,
+     61.038934300273354,
+     65.17632012481089,
+     66.14572267592729,
+     66.91973888604468],
+    [0.9062093848777095,
+     0.9062093848777095,
+     0.9091246523541974,
+     0.9466973308923545,
+     0.9062093848777095,
+     0.8450995780137116,
+     0.8450995780137116,
+     0.7964742507765301,
+     0.9877666026933867,
+     0.9440099272394715,
+     0.5627200930417462,
+     0.9580799362892518,
+     0.8168412673605527,
+     0.9368914605676404,
+     0.9368914605676404,
+     0.5634107045739882,
+     0.8126297939221512,
+     0.8458444201300528,
+     0.9288219861959515,
+     0.8471905678106821,
+     0.8471905678106821,
+     0.5336380547900532,
+     0.5336380547900532,
+     0.9288219861959515,
+     0.5336380547900532,
+     0.8980676489273869,
+     0.8980676489273869,
+     0.8980374597036274,
+     0.8980374597036274,
+     0.8980374597036274,
+     0.8980374597036274,
+     0.8980374597036274],
+    [42.618844639015094,
+     46.26452069417938,
+     41.145690082853065,
+     39.00955277636218,
+     39.7986371406858,
+     28.151929526035254,
+     31.988857209237942,
+     43.33960313799116,
+     42.39734128980631,
+     57.34659622602214,
+     28.095445326847372,
+     54.05182624768031,
+     64.97821132673613,
+     76.94831436706494,
+     72.34929204813164,
+     48.195036012352446,
+     60.699269451579816,
+     61.954394708434094,
+     487.24788755195357,
+     141.60215966117727,
+     133.71951470120246,
+     97.64763069231812,
+     64.81924213531595,
+     434.36430272846616,
+     72.47178046077198,
+     420.49095799060683,
+     377.5965996540025,
+     547.4403640282828,
+     520.965184770951,
+     563.8703645100817,
+     579.8383939046562,
+     587.8109741174737])
+
 
 To obtain information about the lengths of the channels detected in the 
 first frame in the trajectory (#0):
@@ -349,29 +520,38 @@ first frame in the trajectory (#0):
 
 .. parsed-literal::
 
-   [81.53076854675717,
-   100.87184622137524,
-   155.21730562517422,
-    44.35946093281574,
-   141.1656656186375,
-   116.12867797358405,
-    40.46376251691566,
-   130.45000999468857,
-   131.33211590537636,
-   113.63048581490258,
-    47.795798586969184,
-    63.978188025186526,
-    86.60576976913924,
-    62.919007506778094,
-   119.14107539131692,
-    44.40927920760103,
-    36.04783735884794,
-    38.09776525349153,
-    47.89398842913637,
-    29.65774826306761,
-    14.248646497732171,
-    28.599643876182448,
-    30.129791668784087]
+   [5.227329141803516,
+    6.487400298449215,
+    6.605144066108894,
+    6.516275048865574,
+    6.82887082510323,
+    6.225022727043587,
+    7.130896203430573,
+    9.0820395745718,
+    10.055076137621302,
+    10.046965975880378,
+    7.2448800420085835,
+    11.685716270931396,
+    12.588204876727449,
+    14.615599846655114,
+    14.987739219808653,
+    12.177197068381641,
+    15.728096263328084,
+    17.83669237347921,
+    46.63095154889754,
+    27.14201931744085,
+    26.46087867366709,
+    20.638332276673168,
+    18.520993854173597,
+    46.07627263551035,
+    19.666847649036676,
+    52.08168239809312,
+    51.754432428231695,
+    62.65440497610238,
+    61.038934300273354,
+    65.17632012481089,
+    66.14572267592729,
+    66.91973888604468]
 
 Bottlenecks of the channels in the first frame in the trajectory (#0):
 
@@ -382,29 +562,38 @@ Bottlenecks of the channels in the first frame in the trajectory (#0):
 
 .. parsed-literal::
 
-   [1.196090464916565,
-    1.196090464916565,
-    1.196090464916565,
-    1.196090464916565,
-    1.196090464916565,
-    1.196090464916565,
-    1.148694455970017,
-    1.196090464916565,
-    1.196090464916565,
-    1.196090464916565,
-    1.148694455970017,
-    1.1910426818565816,
-    1.1639197434893152,
-    1.1910426818565816,
-    1.1639197434893152,
-    1.1910426818565816,
-    1.285962724963367,
-    1.1697509690515397,
-    1.158333238790114,
-    1.1697509690515397,
-    1.2290282909977648,
-    1.2045446926470393,
-    1.2372900747968767]
+   [0.9062093848777095,
+    0.9062093848777095,
+    0.9091246523541974,
+    0.9466973308923545,
+    0.9062093848777095,
+    0.8450995780137116,
+    0.8450995780137116,
+    0.7964742507765301,
+    0.9877666026933867,
+    0.9440099272394715,
+    0.5627200930417462,
+    0.9580799362892518,
+    0.8168412673605527,
+    0.9368914605676404,
+    0.9368914605676404,
+    0.5634107045739882,
+    0.8126297939221512,
+    0.8458444201300528,
+    0.9288219861959515,
+    0.8471905678106821,
+    0.8471905678106821,
+    0.5336380547900532,
+    0.5336380547900532,
+    0.9288219861959515,
+    0.5336380547900532,
+    0.8980676489273869,
+    0.8980676489273869,
+    0.8980374597036274,
+    0.8980374597036274,
+    0.8980374597036274,
+    0.8980374597036274,
+    0.8980374597036274]
 
 Volume of the channels detected in the first frame in the trajectory:
 
@@ -415,29 +604,38 @@ Volume of the channels detected in the first frame in the trajectory:
 
 .. parsed-literal::
 
-   [992.4842653102705,
-    1312.7649852915242,
-    2054.1011826328895,
-    418.26050817006507,
-    1859.5528753413366,
-    1790.5405946658473,
-    312.7857361187134,
-    1904.3157874898,
-    1745.9901933926658,
-    1680.5336124135697,
-    402.17503054377386,
-    682.063499836242,
-    846.4839456899284,
-    637.8841942942074,
-    1134.3607901158177,
-    352.71210068388814,
-    408.8563806761948,
-    356.73525993569035,
-    425.38870942307784,
-    238.68740556217102,
-    135.4169260377724,
-    312.2046931577367,
-    262.2261752030014]
+   [42.618844639015094,
+    46.26452069417938,
+    41.145690082853065,
+    39.00955277636218,
+    39.7986371406858,
+    28.151929526035254,
+    31.988857209237942,
+    43.33960313799116,
+    42.39734128980631,
+    57.34659622602214,
+    28.095445326847372,
+    54.05182624768031,
+    64.97821132673613,
+    76.94831436706494,
+    72.34929204813164,
+    48.195036012352446,
+    60.699269451579816,
+    61.954394708434094,
+    487.24788755195357,
+    141.60215966117727,
+    133.71951470120246,
+    97.64763069231812,
+    64.81924213531595,
+    434.36430272846616,
+    72.47178046077198,
+    420.49095799060683,
+    377.5965996540025,
+    547.4403640282828,
+    520.965184770951,
+    563.8703645100817,
+    579.8383939046562,
+    587.8109741174737]
 
 Once we have access to ``results``, we can display bottleneck data for all
 the channels in the following way:
@@ -451,14 +649,17 @@ the channels in the following way:
       all_Bottleneck.extend(results[nr_i][1])
 
    plt.hist(all_Bottleneck)
+   plt.show()
 
 .. parsed-literal::
 
-   (array([30., 11., 27., 20.,  3.,  2.,  0.,  2.,  1.,  2.]),
-    array([1.13653642, 1.16496133, 1.19338624, 1.22181114, 1.25023605,
-        1.27866096, 1.30708586, 1.33551077, 1.36393568, 1.39236058,
-        1.42078549]),
+   (array([  15.,   20.,   68.,  105.,  186.,  475., 1295., 3483.,  953.,
+             43.]),
+    array([0.10125895, 0.20444863, 0.30763831, 0.410828  , 0.51401768,
+           0.61720736, 0.72039704, 0.82358673, 0.92677641, 1.02996609,
+           1.13315577]),
     <BarContainer object of 10 artists>)
+
 
 .. figure:: images/cavitracer_figure16.jpg
    :scale: 50 %
@@ -475,57 +676,84 @@ Below, we will select third frame from the simulation (counting from 0):
 
 .. parsed-literal::
 
-   <Frame: 2 from pLoxA2_ev5 (10298 atoms)>
+   <Frame: 2 from caseStudy2 (selected 5986 of 56457 atoms)>
+
+
+To obtain infromation about residues for a particular frame, the following
+operations should be performed:
 
 .. ipython:: python
    :verbatim:
 
-   getChannelResidueNames(frame3, channels4[1], residues_file_name='pLoxA_DCD_res')
+   protein_frame3 = protein.copy()
+   protein_frame3.setCoords(frame3.getCoords())
+
+.. ipython:: python
+   :verbatim:
+
+   getChannelResidueNames(protein_frame3, channels4[2], residues_file_name='DCD_fr3_res')
 
 .. parsed-literal::
 
-   @> 10633 atoms and 1 coordinate set(s) were parsed in 0.10s.
-   @> 10438 atoms and 1 coordinate set(s) were parsed in 0.09s.
-   @> 10793 atoms and 1 coordinate set(s) were parsed in 0.10s.
-   @> 10618 atoms and 1 coordinate set(s) were parsed in 0.09s.
-   @> 10663 atoms and 1 coordinate set(s) were parsed in 0.10s.
-   @> 10638 atoms and 1 coordinate set(s) were parsed in 0.10s.
-   @> 10543 atoms and 1 coordinate set(s) were parsed in 0.10s.
-   @> 10513 atoms and 1 coordinate set(s) were parsed in 0.10s.
-   @> 10678 atoms and 1 coordinate set(s) were parsed in 0.10s.
-   @> 10588 atoms and 1 coordinate set(s) were parsed in 0.10s.
-   @> 10753 atoms and 1 coordinate set(s) were parsed in 0.10s.
-   @> 10753 atoms and 1 coordinate set(s) were parsed in 0.11s.
-   @> 10463 atoms and 1 coordinate set(s) were parsed in 0.11s.
-   @> 10423 atoms and 1 coordinate set(s) were parsed in 0.10s.
-   @> 10668 atoms and 1 coordinate set(s) were parsed in 0.11s.
-   @> 10753 atoms and 1 coordinate set(s) were parsed in 0.10s.
-   @> 10633 atoms and 1 coordinate set(s) were parsed in 0.10s.
-   @> 10368 atoms and 1 coordinate set(s) were parsed in 0.10s.
-   @> 10513 atoms and 1 coordinate set(s) were parsed in 0.10s.
-   @> 10433 atoms and 1 coordinate set(s) were parsed in 0.10s.
-   @> 10358 atoms and 1 coordinate set(s) were parsed in 0.09s.
+   @> 6076 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6101 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6056 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6076 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6081 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6046 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6056 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6071 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6121 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6181 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6171 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6211 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6366 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6366 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6346 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6406 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6396 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6406 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6431 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6436 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6466 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6461 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6466 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6466 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6521 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6596 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6536 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6536 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> Channel residues were saved to: DCD_fr3_res_Residues_All_channels.txt
 
-   ['channel0: GLU223, VAL224, SER227, PHE228, ASP230, ASP231, GLU232, ALA233, PHE234, ALA235, TYR236, VAL239, TYR311, LEU319, ALA324, ARG325, LEU326, LEU327, GLN358, LYS361, THR362, GLN365, VAL366, LEU475, ASP477, TYR478, ALA569, PRO570, ALA571, ILE572, CYS573, SER576, TRP592, MET595, MET596, PRO597, ARG668, ARG669',
-    'channel1: VAL224, SER227, PHE228, ARG229, ASP230, ASP231, PHE234, ALA235, TYR311, PRO328, ARG345, PRO346, ALA347, SER349, TYR354, TRP357, GLN358, LYS361, THR362, GLN365, VAL366, ALA569, PRO570, ALA571, ILE572, CYS573, SER576, TRP592, MET595, MET596, PRO597',
-    'channel2: LEU221, PRO222, GLU223, VAL224, ASP226, SER227, PHE228, ASP230, ALA233, PHE234, TYR311, GLN358, LYS361, THR362, GLN365, VAL366, ALA569, PRO570, ALA571, ILE572, CYS573, SER576, TRP592, MET595, MET596, PRO597',
-    'channel3: ASP104, THR381, HSD382, SER385, PHE388, THR392, HSE400, PRO401, LEU402, LEU405, LEU406, HSD409, PHE410, THR413, TRP494, ALA495, TYR498, VAL499, TYR502, TYR503, LEU515, TRP518, LEU540, VAL543, LEU544, VAL547, ILE548, THR550, ALA551, HSD555, PHE560, SER614, VAL615, TYR616, PRO680, SER682, THR683, ASN684, ILE685',
-    'channel4: PHE83, LEU291, LEU294, ALA295, PRO296, SER297, GLY298, ALA299, PHE309, ALA310, TYR311, ALA312, GLY334, GLN335, HSD340, ASN370, TYR371, GLU373, MET374, PHE375, LEU378, THR381, HSD382, SER385, PHE388, THR392, HSE400, PRO401, LEU402, LEU405, LEU406, HSD409, PHE410, THR413, ILE416, ASN417, ALA420, LEU424, LEU425, ILE431, ALA437, THR442, GLN443, THR445, ALA446, TRP494, ALA495, TYR498, VAL499, TYR502, TYR503, LEU515, TRP518, LEU540, VAL543, LEU544, VAL547, ILE548, THR550, ALA551, HSD555, THR683, ASN684, ILE685',
-    'channel5: ILE113, LEU116, PHE120, VAL189, LEU193, VAL200, GLN205, LEU209, THR381, HSD382, SER385, PHE388, THR392, HSE400, PRO401, LEU402, LEU405, LEU406, HSD409, PHE410, THR413, ILE416, ASN417, ALA420, ILE423, PHE430, TRP494, ALA495, TYR498, VAL499, TYR502, TYR503, LEU515, TRP518, LEU540, VAL543, LEU544, VAL547, ILE548, THR550, ALA551, HSD555, THR599, LEU600, LEU603, GLU604, ILE608, LEU611, LEU612, THR683, ASN684, ILE685',
-    'channel6: PHE83, LEU291, LEU294, VAL300, LYS302, ASN370, TYR371, GLU373, MET374, PHE375, LEU378, THR381, HSD382, SER385, PHE388, THR392, HSE400, PRO401, LEU402, LEU405, LEU406, HSD409, PHE410, THR413, ILE416, ASN417, ALA420, LEU424, LEU425, ILE431, ASP432, PHE435, ALA436, ALA437, PRO438, ILE439, THR442, GLN443, THR445, ALA446, TRP494, ALA495, TYR498, VAL499, TYR502, TYR503, LEU515, TRP518, LEU540, VAL543, LEU544, VAL547, ILE548, THR550, ALA551, HSD555, THR683, ASN684, ILE685',
-    'channel7: VAL95, LEU100, ILE179, LEU182, THR381, HSD382, SER385, PHE388, THR392, HSE400, PRO401, LEU402, LEU405, LEU406, HSD409, PHE410, THR413, PHE415, ILE416, ASN417, GLU418, GLY419, ALA420, ARG422, ILE423, TRP494, ALA495, TYR498, VAL499, TYR502, TYR503, LEU515, TRP518, LEU540, VAL543, LEU544, VAL547, ILE548, THR550, ALA551, HSD555, LEU612, THR683, ASN684, ILE685',
-    'channel8: PHE83, GLY84, LEU378, THR381, HSD382, LEU383, SER385, GLU386, PHE388, THR392, HSE400, PRO401, LEU402, LEU405, LEU406, HSD409, PHE410, THR413, ILE416, ASN417, ALA420, ALA421, LEU424, LEU425, TRP494, ALA495, TYR498, VAL499, TYR502, TYR503, LEU515, TRP518, LEU540, VAL543, LEU544, VAL547, ILE548, THR550, ALA551, HSD555, THR683, ASN684, ILE685',
-    'channel9: VAL112, ILE113, GLU115, LEU116, VAL118, ASN119, THR137, SER140, VAL189, THR381, HSD382, SER385, PHE388, THR392, HSE400, PRO401, LEU402, LEU405, LEU406, HSD409, PHE410, THR413, ILE416, ASN417, ALA420, ILE423, PHE430, TRP494, ALA495, TYR498, VAL499, TYR502, TYR503, LEU515, TRP518, LEU540, VAL543, LEU544, VAL547, ILE548, THR550, ALA551, HSD555, GLU604, ASN607, ILE608, LEU611, LEU612, THR683, ASN684, ILE685',
-    'channel10: ILE113, LEU116, GLY186, LEU187, VAL189, ASP190, LEU193, THR381, HSD382, SER385, PHE388, THR392, HSE400, PRO401, LEU402, LEU405, LEU406, HSD409, PHE410, THR413, ILE416, ASN417, ALA420, ARG422, ILE423, ALA428, GLY429, PHE430, TRP494, ALA495, TYR498, VAL499, TYR502, TYR503, LEU515, TRP518, LEU540, VAL543, LEU544, VAL547, ILE548, THR550, ALA551, HSD555, LEU611, LEU612, THR683, ASN684, ILE685',
-    'channel11: LEU245, GLN380, VAL384, SER385, PHE388, THR392, HSE400, PRO401, LEU402, LEU405, LEU406, HSD409, PHE410, PHE453, PHE455, GLY458, SER463, TRP494, ALA495, TYR498, VAL499, TYR502, TYR503, LEU515, TRP518, LEU540, VAL543, LEU544, MET546, VAL547, ILE548, THR550, ALA551, GLN554',
-    'channel12: ALA33, ARG37, ALA41, GLY98, GLU99, LEU100, PHE171, THR172, GLN175, GLU411, TYR616, HSP617, GLY618, TYR623, ARG624, PRO680, ALA681, SER682, THR683, ASN684',
-    'channel13: ASP104, LEU154, GLU411, TYR616, HSP617, GLY618, TYR623, ARG624, GLN625, THR626, GLY627, PHE628, PRO629, PRO680, ALA681, SER682, THR683, ASN684',
-    'channel14: SER44, LEU49, GLU411, TYR616, HSP617, GLY618, TYR623, ARG624, PRO629, ALA631, PRO632, SER635, PRO680, ALA681, SER682, THR683, ASN684',
-    'channel15: GLN36, ILE39, ASP40, PRO55, ARG66, ARG67, VAL69, LEU70, LYS73, GLU99, GLN393, THR395, LEU396, ALA397, PRO398, HSE403, ALA407, GLU411, ASP512, VAL513, GLU514, TYR616, HSP617, GLY618, TYR623, ARG624, VAL633, PRO680, ALA681, SER682, THR683, ASN684',
-    'channel16: GLN36, ILE39, ASP40, VAL69, LYS73, GLU99, GLN393, ALA397, PRO398, HSE403, ALA407, GLU411, TYR616, HSP617, GLY618, TYR623, ARG624, VAL633, PRO680, ALA681, SER682, THR683, ASN684',
-    'channel17: PHE212, ALA214, VAL215, PHE216, THR567, TYR568, ALA569, PRO570, ALA602, LEU603, LYS605, VAL606',
-    'channel18: VAL487, ALA490, ILE491, ARG619, LEU620, GLY621, ASP622, PHE649, LEU653, LYS654, VAL656, PRO676, SER677, ILE679',
-    'channel19: THR80, GLU81, ASN82, PHE83, VAL86, LYS87, GLY88, VAL89, PRO90, MET91, GLY447, GLY448, LEU451, LYS527']
+   ['channel0: MET310, ALA444, PHE449, PRO450, LEU452, MET453, ILE456',
+    'channel1: THR212, ASP214, ARG217, MET221, ARG357, MET403, PRO404, GLY407, TYR408, ASP411, TYR422',
+    'channel2: ARG19, VAL210, TYR211, THR212, ASP213, GLU216, ARG217',
+    'channel3: TYR293, ARG357, ILE405, TYR408, LEU409, PHE469, LEU470, PRO473',
+    'channel4: LEU285, LEU288, LEU289, ILE294, SER420, VAL421, ALA423, ILE424, VAL427',
+    'channel5: TYR293, ILE405, TYR408, LEU409, PHE469, LEU470, ARG471, SER472, PRO473',
+    'channel6: MET310, ALA444, PHE449, PRO450, LEU452, MET453, ILE456',
+    'channel7: LEU288, LEU289, LYS290, ASP291, ILE294, LEU295, ALA298, ILE424',
+    'channel8: LEU151, ASN154, LYS281, GLY282, THR283, PRO284, LEU288, GLY407, VAL410, VAL417, TYR418, SER420, VAL421',
+    'channel9: SER300, PHE303, ALA304, GLY364, MET365, VAL368, ALA394, ILE395, MET397, VAL398, ILE459, ASP460, PHE463',
+    'channel10: SER300, PHE303, ALA304, GLY364, MET365, VAL368, ALA394, ILE395, MET397, VAL398, ILE459, ASP460, LEU462, PHE463',
+    'channel11: MET204, ARG217, GLY218, MET221, GLY222, ALA224, LEU225, GLY349, ALA352, HSP353, LYS354, GLY356, ARG357, LEU359, CYS360, LEU363, ASP399, SER400, SER401, MET403, PRO404',
+    'channel12: ASP33, ASN34, LEU37, THR38, LYS138, GLN142, SER196, SER200, LEU225, LEU228, VAL232, ALA297, ALA298, ILE301, GLU312, LEU315, ILE317, GLN329, VAL332, ALA333, PHE334, PRO336, ALA337, TYR341, ILE381, ILE385, ASN388, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433',
+    'channel13: ASP33, ASN34, LEU37, THR38, LYS138, GLN142, SER196, SER200, LEU225, LEU228, VAL232, ALA297, ALA298, ILE301, GLU312, LEU315, ILE317, GLN329, ALA333, PHE334, PRO336, ALA337, TYR341, ILE381, TYR382, ILE385, ASN388, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433',
+    'channel14: ASP33, ASN34, LEU37, THR38, LYS138, GLN142, SER196, SER200, LEU225, LEU228, VAL232, ALA297, ALA298, ILE301, GLU312, LEU315, ILE317, VAL332, ALA333, PHE334, PRO336, ALA337, TYR341, ILE381, ILE385, ASN388, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433',
+    'channel15: ASP33, ASN34, LEU37, THR38, LYS138, GLN142, SER196, SER200, LEU225, LEU228, VAL232, ALA297, ALA298, ILE301, GLU312, LEU315, ILE317, ARG326, GLN329, ALA333, PHE334, PRO336, ALA337, TYR341, ILE381, ILE385, ASN388, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433',
+    'channel16: ASP33, ASN34, LEU37, THR38, LYS138, GLN142, SER196, SER200, LEU225, LEU228, VAL232, ALA297, ALA298, ILE301, GLU312, LEU315, ILE317, ARG326, GLN329, ALA333, PHE334, PRO336, ALA337, TYR341, ILE381, TYR382, ILE385, ASN388, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433',
+    'channel17: ASP33, ASN34, LEU37, THR38, LYS138, GLN142, SER196, SER200, LEU225, LEU228, VAL232, ALA297, ALA298, ILE301, GLU312, LEU315, PRO316, ILE317, THR322, ARG326, GLN329, ALA333, PHE334, PRO336, ALA337, TYR341, ILE381, ILE385, ASN388, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433',
+    'channel18: ASP33, ASN34, LEU37, THR38, LYS138, GLN142, SER196, SER200, LEU225, LEU228, VAL232, ALA297, ALA298, ILE301, GLU312, LEU315, PRO316, ILE317, MET319, GLU321, THR322, ARG326, GLN329, ALA333, PHE334, PRO336, ALA337, TYR341, ILE381, ILE385, ASN388, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433',
+    'channel19: ASP33, ASN34, LEU37, THR38, VAL40, VAL41, PRO42, ILE44, PHE135, LYS138, GLN142, ARG189, SER196, SER200, LEU225, LEU228, PRO236, SER240, ALA297, ALA298, ILE301, GLU312, ILE317, TRP318, LYS327, TRP328, LEU330, GLY331, ALA333, PHE334, TYR341, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433',
+    'channel20: ASP33, ASN34, LEU37, THR38, VAL40, VAL41, PRO42, ILE44, PHE135, LYS138, GLN142, ARG189, SER196, SER200, LEU225, LEU228, PRO236, SER240, TYR243, GLU244, ALA297, ALA298, ILE301, GLU312, ILE317, TRP318, LYS327, TRP328, LEU330, GLY331, ALA333, PHE334, TYR341, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433',
+    'channel21: ASP33, ASN34, LEU37, THR38, VAL40, VAL41, PRO42, ILE44, PHE135, LYS138, GLN142, ARG189, SER196, SER200, LEU225, LEU228, PRO236, SER240, TYR243, GLU244, ALA297, ALA298, ILE301, GLU312, ILE317, TRP318, LYS327, LEU330, GLY331, ALA333, PHE334, TYR341, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433',
+    'channel22: ASP33, ASN34, LEU37, THR38, VAL40, VAL41, PRO42, ILE44, PRO45, PHE135, LYS138, GLN142, ARG189, SER196, SER200, LEU225, LEU228, PRO236, SER240, TYR243, ALA297, ALA298, ILE301, GLU312, ILE317, TRP318, LYS327, LEU330, GLY331, ALA333, PHE334, TYR341, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433',
+    'channel23: ASP33, ASN34, LEU37, THR38, VAL40, VAL41, PRO42, ILE44, PRO45, PHE135, LYS138, GLN142, ARG189, SER196, SER200, LEU225, LEU228, PRO236, SER240, TYR243, ALA297, ALA298, ILE301, GLU312, ILE317, TRP318, MET323, LYS327, LEU330, GLY331, ALA333, PHE334, TYR341, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433',
+    'channel24: ASP33, ASN34, LEU37, THR38, LYS138, GLN142, SER196, SER200, LEU225, LEU228, VAL232, ALA297, ALA298, ILE301, LEU311, GLU312, LEU315, ALA333, PHE334, PRO336, ALA337, TYR341, SER371, ILE372, LEU373, ILE375, PRO376, LEU384, ILE385, PRO387, ASN388, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433, PRO450, TRP451, MET453, THR454',
+    'channel25: ASP33, ASN34, LEU37, THR38, LYS138, GLN142, SER196, SER200, LEU225, LEU228, VAL232, ALA297, ALA298, ILE301, PHE303, ALA304, MET306, GLY307, ILE308, LEU311, GLU312, LEU315, ALA333, PHE334, PRO336, ALA337, TYR341, VAL368, ILE372, LEU384, ILE385, PRO387, ASN388, VAL391, ILE395, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433, ILE456, ILE459, ASP460',
+    'channel26: ASP33, ASN34, LEU37, THR38, LYS122, LYS138, GLN142, SER196, SER200, LEU225, LEU228, VAL232, ALA297, ALA298, ILE301, LEU311, GLU312, LEU315, ALA333, PHE334, PRO336, ALA337, TYR341, SER371, ILE372, LEU373, ILE375, PRO376, LYS379, LEU384, ILE385, PRO387, ASN388, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433, PRO450, MET453, THR454',
+    'channel27: ASP33, ASN34, LEU37, THR38, LYS122, LYS138, GLN142, SER196, SER200, LEU225, LEU228, VAL232, ALA297, ALA298, ILE301, LEU311, GLU312, LEU315, ALA333, PHE334, PRO336, ALA337, TYR341, SER371, ILE372, LEU373, ILE375, PRO376, LEU384, ILE385, PRO387, ASN388, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433, PRO450, MET453, THR454']
+
 
 To display the results for a particular frame, we need to create a model
 using :func:`.getVmdModel` function and provide a path to VMD_.
@@ -534,7 +762,7 @@ using :func:`.getVmdModel` function and provide a path to VMD_.
    :verbatim:
 
    vmd_path = '/usr/local/bin/vmd'
-   model2_traj = getVmdModel(vmd_path, frame2)
+   model3_traj = getVmdModel(vmd_path, frame3)
 
 .. parsed-literal::
 
@@ -546,7 +774,7 @@ protein structure using :func:`.showChannels`.
 .. ipython:: python
    :verbatim:
 
-   showChannels(channels4[2], model=model2_traj)
+   showChannels(channels4[2], model=model3_traj)
 
 .. figure:: images/cavitracer_figure15.jpg
    :scale: 50 %
@@ -555,7 +783,7 @@ To select channels with particular localization, we can further use
 :func:`.selectChannelBySelection` function and specify which region will be
 analyzed, for example, using residues, as shown below. In the example, we
 are selecting channels that are generated from MD trajectory using
-``"channels_pLoxA_dcd*_channel*.pqr"`` pattern. List with ``pqr`` files
+``"chls_dcd*_chl*.pqr"`` pattern. List with ``pqr`` files
 called ``pqr_files_channels`` is further use by
 :func:`.selectChannelBySelection`.
 
@@ -563,64 +791,99 @@ called ``pqr_files_channels`` is further use by
    :verbatim:
    
    from pathlib import Path
-   pqr_files_channels = [i.name for i in Path(".").glob("channels_pLoxA_dcd*_channel*.pqr") if i.is_file()]
+   pqr_files_channels = [i.name for i in Path(".").glob("chls_dcd*_chl*.pqr") if i.is_file()]
    pqr_files_channels
 
 .. parsed-literal::
 
-   ['channels_pLoxA_dcd2_channel8.pqr',
-    'channels_pLoxA_dcd3_channel2.pqr',
-    'channels_pLoxA_dcd0_channel13.pqr',
-    'channels_pLoxA_dcd3_channel0.pqr',
-    'channels_pLoxA_dcd4_channel15.pqr',
-    'channels_pLoxA_dcd1_channel2.pqr',
-    'channels_pLoxA_dcd2_channel7.pqr',
-    'channels_pLoxA_dcd1_channel8.pqr',
-    'channels_pLoxA_dcd1_channel14.pqr',
-    'channels_pLoxA_dcd0_channel0.pqr',
-    ..]
+   ['chls_dcd118_chl19.pqr',
+    'chls_dcd185_chl31.pqr',
+    'chls_dcd13_chl10.pqr',
+    'chls_dcd186_chl16.pqr',
+    'chls_dcd47_chl16.pqr',
+    'chls_dcd3_chl27.pqr',
+    'chls_dcd184_chl18.pqr',
+    'chls_dcd52_chl21.pqr',
+    'chls_dcd174_chl5.pqr',
+    'chls_dcd16_chl17.pqr',
+    'chls_dcd163_chl24.pqr',
+    'chls_dcd173_chl11.pqr',
+    'chls_dcd204_chl6.pqr',
+    'chls_dcd63_chl39.pqr',
+    'chls_dcd183_chl4.pqr',
+    ..
+    'chls_dcd90_chl11.pqr',
+    'chls_dcd124_chl18.pqr',
+    'chls_dcd145_chl19.pqr',
+    'chls_dcd22_chl7.pqr',
+    'chls_dcd125_chl14.pqr',
+    'chls_dcd46_chl12.pqr',
+    'chls_dcd29_chl35.pqr',
+    'chls_dcd12_chl9.pqr',
+    ...]
+
 
 .. ipython:: python
    :verbatim:
 
-   selectChannelBySelection(atoms, pqr_files=pqr_files_channels, residue_sele='resid 382 685 and name CA', 
-                         folder_name="Selected_channel1", distA=4.0)
+   selectChannelBySelection(atoms, pqr_files=pqr_files_channels, 
+			residue_sele='resid 135 37 and backbone', 
+                        folder_name="Selected_channel1", 
+			distA=4.0)
 
 .. parsed-literal::
 
-   @> 285 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> Filtered files are now in: Selected_channel1
-   @> 1040 atoms and 1 coordinate sets were parsed in 0.02s.
-   @> 270 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 965 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 215 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 495 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> Filtered files are now in: Selected_channel1
-   @> 330 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> Filtered files are now in: Selected_channel1
-   @> 380 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> Filtered files are now in: Selected_channel1
-   ..
-   ..
-   @> 460 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 135 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 455 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 360 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 190 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 165 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 390 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 455 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 105 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 325 atoms and 1 coordinate sets were parsed in 0.01s.
    @> 115 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 455 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> Filtered files are now in: Selected_channel1
+   @> 410 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> Filtered files are now in: Selected_channel1
+   @> 565 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 70 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 380 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 215 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 180 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 85 atoms and 1 coordinate sets were parsed in 0.00s.
+   ..
+   ..
+   @> 60 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 210 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 85 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 475 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 140 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 65 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 400 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 440 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Filtered files are now in: Selected_channel1
+   @> 155 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 490 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 75 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 450 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Filtered files are now in: Selected_channel1
+   @> 390 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 100 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 60 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 430 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 335 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Filtered files are now in: Selected_channel1
+   @> 130 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 170 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 165 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 130 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 435 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Filtered files are now in: Selected_channel1
+   @> 545 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 385 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 505 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 570 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 70 atoms and 1 coordinate sets were parsed in 0.00s.
    @> Selected files: 
-   @> channels_pLoxA_dcd2_channel8.pqr channels_pLoxA_dcd1_channel2.pqr 
-   channels_pLoxA_dcd2_channel7.pqr channels_pLoxA_dcd1_channel8.pqr 
-   channels_pLoxA_dcd2_channel4.pqr channels_pLoxA_dcd1_channel0.pqr 
-   channels_pLoxA_dcd0_channel8.pqr channels_pLoxA_dcd1_channel7.pqr 
-   channels_pLoxA_dcd1_channel11.pqr channels_pLoxA_dcd2_channel10.pqr 
-   channels_pLoxA_dcd2_channel9.pqr channels_pLoxA_dcd2_channel6.pqr 
-   channels_pLoxA_dcd0_channel4.pqr channels_pLoxA_dcd1_channel3.pqr 
-   channels_pLoxA_dcd2_channel5.pqr channels_pLoxA_dcd1_channel5.pqr 
-   channels_pLoxA_dcd0_channel2.pqr
-   @> If newly created files are empty please check whether the parameter 
-   names are: PDB_id+_Parameters_All_channels.txt
+   @> chls_dcd3_chl27.pqr chls_dcd184_chl18.pqr chls_dcd75_chl25.pqr chls_dcd85_chl16.pqr chls_dcd140_chl12.pqr chls_dcd174_chl19.pqr chls_dcd204_chl35.pqr chls_dcd66_chl17.pqr chls_dcd97_chl19.pqr chls_dcd3_chl24.pqr chls_dcd44_chl27.pqr chls_dcd205_chl19.pqr chls_dcd154_chl18.pqr chls_dcd134_chl13.pqr chls_dcd135_chl26.pqr chls_dcd116_chl29.pqr chls_dcd181_chl20.pqr chls_dcd14_chl19.pqr chls_dcd69_chl21.pqr chls_dcd87_chl13.pqr chls_dcd120_chl5.pqr chls_dcd209_chl14.pqr chls_dcd101_chl21.pqr chls_dcd95_chl10.pqr chls_dcd142_chl12.pqr chls_dcd143_chl14.pqr chls_dcd113_chl21.pqr chls_dcd10_chl37.pqr chls_dcd135_chl18.pqr chls_dcd12_chl17.pqr chls_dcd17_chl24.pqr chls_dcd3_chl20.pqr chls_dcd124_chl7.pqr chls_dcd72_chl16.pqr chls_dcd195_chl21.pqr chls_dcd54_chl28.pqr chls_dcd14_chl17.pqr chls_dcd136_chl29.pqr chls_dcd153_chl11.pqr chls_dcd31_chl21.pqr chls_dcd83_chl18.pqr chls_dcd77_chl23.pqr chls_dcd21_chl16.pqr chls_dcd74_chl29.pqr chls_dcd80_chl20.pqr chls_dcd93_chl20.pqr chls_dcd209_chl23.pqr chls_dcd74_chl31.pqr chls_dcd5_chl19.pqr chls_dcd118_chl13.pqr chls_dcd157_chl20.pqr chls_dcd65_chl33.pqr chls_dcd8_chl29.pqr chls_dcd3_chl19.pqr chls_dcd102_chl19.pqr chls_dcd21_chl15.pqr chls_dcd173_chl9.pqr chls_dcd9_chl23.pqr chls_dcd8_chl30.pqr chls_dcd82_chl17.pqr chls_dcd131_chl25.pqr chls_dcd101_chl29.pqr chls_dcd29_chl14.pqr chls_dcd103_chl25.pqr chls_dcd127_chl21.pqr chls_dcd19_chl27.pqr chls_dcd116_chl22.pqr chls_dcd122_chl17.pqr chls_dcd90_chl19.pqr chls_dcd145_chl19.pqr chls_dcd125_chl14.pqr chls_dcd151_chl31.pqr chls_dcd111_chl18.pqr chls_dcd191_chl19.pqr chls_dcd88_chl26.pqr chls_dcd153_chl9.pqr chls_dcd97_chl20.pqr chls_dcd196_chl18.pqr chls_dcd85_chl15.pqr chls_dcd106_chl19.pqr chls_dcd133_chl15.pqr chls_dcd126_chl24.pqr chls_dcd17_chl25.pqr chls_dcd16_chl20.pqr chls_dcd173_chl17.pqr chls_dcd129_chl17.pqr chls_dcd206_chl20.pqr chls_dcd137_chl23.pqr chls_dcd58_chl23.pqr chls_dcd135_chl24.pqr chls_dcd104_chl23.pqr chls_dcd24_chl9.pqr chls_dcd0_chl26.pqr chls_dcd92_chl21.pqr chls_dcd173_chl13.pqr chls_dcd100_chl20.pqr chls_dcd22_chl19.pqr chls_dcd4_chl26.pqr chls_dcd80_chl16.pqr chls_dcd19_chl23.pqr chls_dcd22_chl20.pqr chls_dcd0_chl25.pqr chls_dcd16_chl25.pqr chls_dcd19_chl25.pqr chls_dcd11_chl22.pqr chls_dcd165_chl17.pqr chls_dcd1_chl20.pqr chls_dcd146_chl13.pqr chls_dcd95_chl14.pqr chls_dcd83_chl17.pqr chls_dcd101_chl20.pqr chls_dcd14_chl18.pqr chls_dcd74_chl23.pqr chls_dcd150_chl26.pqr chls_dcd22_chl16.pqr chls_dcd150_chl27.pqr chls_dcd155_chl17.pqr chls_dcd114_chl17.pqr chls_dcd109_chl23.pqr chls_dcd59_chl22.pqr chls_dcd146_chl14.pqr chls_dcd209_chl12.pqr chls_dcd148_chl14.pqr chls_dcd94_chl25.pqr chls_dcd48_chl29.pqr chls_dcd149_chl27.pqr chls_dcd184_chl15.pqr chls_dcd194_chl27.pqr chls_dcd19_chl21.pqr chls_dcd46_chl29.pqr chls_dcd45_chl12.pqr chls_dcd44_chl26.pqr chls_dcd105_chl23.pqr chls_dcd118_chl15.pqr chls_dcd76_chl20.pqr chls_dcd60_chl26.pqr chls_dcd186_chl20.pqr chls_dcd97_chl34.pqr chls_dcd66_chl12.pqr chls_dcd175_chl19.pqr chls_dcd107_chl36.pqr chls_dcd143_chl16.pqr chls_dcd113_chl9.pqr chls_dcd197_chl30.pqr chls_dcd6_chl30.pqr chls_dcd100_chl21.pqr chls_dcd172_chl16.pqr chls_dcd148_chl18.pqr chls_dcd210_chl20.pqr chls_dcd206_chl12.pqr chls_dcd3_chl29.pqr chls_dcd68_chl14.pqr chls_dcd210_chl17.pqr chls_dcd130_chl14.pqr chls_dcd45_chl15.pqr chls_dcd92_chl16.pqr chls_dcd171_chl13.pqr chls_dcd132_chl22.pqr chls_dcd173_chl27.pqr chls_dcd67_chl15.pqr chls_dcd60_chl27.pqr chls_dcd155_chl11.pqr chls_dcd209_chl11.pqr chls_dcd201_chl14.pqr chls_dcd165_chl19.pqr chls_dcd131_chl24.pqr chls_dcd59_chl24.pqr chls_dcd157_chl26.pqr chls_dcd93_chl19.pqr chls_dcd59_chl26.pqr chls_dcd12_chl16.pqr chls_dcd21_chl18.pqr chls_dcd125_chl9.pqr chls_dcd201_chl20.pqr chls_dcd68_chl15.pqr chls_dcd5_chl20.pqr chls_dcd33_chl41.pqr chls_dcd50_chl26.pqr chls_dcd203_chl19.pqr chls_dcd144_chl16.pqr chls_dcd121_chl15.pqr chls_dcd9_chl22.pqr chls_dcd132_chl24.pqr chls_dcd157_chl27.pqr chls_dcd148_chl23.pqr chls_dcd122_chl18.pqr chls_dcd167_chl13.pqr chls_dcd119_chl22.pqr chls_dcd20_chl23.pqr chls_dcd3_chl25.pqr chls_dcd59_chl23.pqr chls_dcd22_chl18.pqr chls_dcd65_chl29.pqr chls_dcd11_chl25.pqr chls_dcd68_chl21.pqr chls_dcd120_chl10.pqr chls_dcd87_chl17.pqr chls_dcd22_chl21.pqr chls_dcd151_chl26.pqr chls_dcd1_chl19.pqr chls_dcd149_chl28.pqr chls_dcd70_chl18.pqr chls_dcd170_chl25.pqr chls_dcd30_chl17.pqr chls_dcd206_chl24.pqr chls_dcd27_chl29.pqr chls_dcd180_chl23.pqr chls_dcd60_chl24.pqr chls_dcd19_chl26.pqr chls_dcd188_chl11.pqr chls_dcd182_chl15.pqr chls_dcd13_chl29.pqr chls_dcd176_chl17.pqr chls_dcd107_chl41.pqr chls_dcd72_chl18.pqr chls_dcd55_chl31.pqr chls_dcd204_chl32.pqr chls_dcd114_chl13.pqr chls_dcd97_chl22.pqr chls_dcd119_chl21.pqr chls_dcd182_chl17.pqr chls_dcd149_chl24.pqr chls_dcd20_chl22.pqr chls_dcd191_chl20.pqr chls_dcd152_chl17.pqr chls_dcd113_chl22.pqr chls_dcd181_chl16.pqr chls_dcd59_chl29.pqr chls_dcd81_chl24.pqr chls_dcd147_chl17.pqr chls_dcd115_chl23.pqr chls_dcd33_chl39.pqr chls_dcd180_chl27.pqr chls_dcd45_chl18.pqr chls_dcd19_chl24.pqr chls_dcd197_chl29.pqr chls_dcd158_chl17.pqr chls_dcd157_chl25.pqr chls_dcd44_chl30.pqr chls_dcd110_chl17.pqr chls_dcd175_chl22.pqr chls_dcd4_chl24.pqr chls_dcd146_chl16.pqr chls_dcd157_chl32.pqr chls_dcd179_chl31.pqr chls_dcd153_chl8.pqr chls_dcd112_chl13.pqr chls_dcd95_chl8.pqr chls_dcd180_chl25.pqr chls_dcd10_chl35.pqr chls_dcd121_chl21.pqr chls_dcd123_chl19.pqr chls_dcd177_chl22.pqr chls_dcd53_chl21.pqr chls_dcd57_chl25.pqr chls_dcd92_chl20.pqr chls_dcd188_chl15.pqr chls_dcd157_chl28.pqr chls_dcd120_chl6.pqr chls_dcd96_chl13.pqr chls_dcd71_chl19.pqr chls_dcd127_chl13.pqr chls_dcd198_chl5.pqr chls_dcd3_chl28.pqr chls_dcd206_chl11.pqr chls_dcd113_chl11.pqr chls_dcd150_chl23.pqr chls_dcd90_chl21.pqr chls_dcd87_chl18.pqr chls_dcd8_chl27.pqr chls_dcd196_chl25.pqr chls_dcd16_chl23.pqr chls_dcd10_chl32.pqr chls_dcd178_chl11.pqr chls_dcd189_chl4.pqr chls_dcd107_chl32.pqr chls_dcd145_chl27.pqr chls_dcd194_chl26.pqr chls_dcd207_chl6.pqr chls_dcd91_chl13.pqr chls_dcd8_chl28.pqr chls_dcd134_chl15.pqr chls_dcd187_chl10.pqr chls_dcd126_chl25.pqr chls_dcd191_chl21.pqr chls_dcd202_chl22.pqr chls_dcd16_chl22.pqr chls_dcd31_chl20.pqr chls_dcd194_chl29.pqr chls_dcd181_chl17.pqr chls_dcd202_chl20.pqr chls_dcd107_chl40.pqr chls_dcd60_chl20.pqr chls_dcd16_chl21.pqr chls_dcd164_chl19.pqr chls_dcd21_chl17.pqr chls_dcd57_chl36.pqr chls_dcd187_chl8.pqr chls_dcd123_chl14.pqr chls_dcd173_chl18.pqr chls_dcd164_chl28.pqr chls_dcd15_chl27.pqr chls_dcd75_chl15.pqr chls_dcd98_chl20.pqr chls_dcd154_chl21.pqr chls_dcd60_chl28.pqr chls_dcd18_chl22.pqr chls_dcd128_chl16.pqr chls_dcd99_chl15.pqr chls_dcd111_chl16.pqr chls_dcd141_chl19.pqr chls_dcd10_chl34.pqr chls_dcd205_chl18.pqr chls_dcd141_chl26.pqr chls_dcd62_chl22.pqr chls_dcd107_chl37.pqr chls_dcd126_chl28.pqr chls_dcd81_chl23.pqr chls_dcd127_chl17.pqr chls_dcd195_chl9.pqr chls_dcd173_chl20.pqr chls_dcd200_chl19.pqr chls_dcd207_chl9.pqr chls_dcd111_chl9.pqr chls_dcd210_chl24.pqr chls_dcd198_chl9.pqr chls_dcd165_chl18.pqr chls_dcd76_chl25.pqr chls_dcd198_chl17.pqr chls_dcd6_chl29.pqr chls_dcd17_chl21.pqr chls_dcd202_chl18.pqr chls_dcd14_chl16.pqr chls_dcd28_chl15.pqr chls_dcd80_chl21.pqr chls_dcd197_chl33.pqr chls_dcd110_chl16.pqr chls_dcd170_chl26.pqr chls_dcd108_chl19.pqr chls_dcd175_chl9.pqr chls_dcd168_chl18.pqr chls_dcd39_chl27.pqr chls_dcd136_chl24.pqr chls_dcd180_chl21.pqr chls_dcd10_chl36.pqr chls_dcd130_chl19.pqr chls_dcd3_chl18.pqr chls_dcd144_chl24.pqr chls_dcd152_chl18.pqr chls_dcd196_chl22.pqr chls_dcd130_chl17.pqr chls_dcd200_chl17.pqr chls_dcd167_chl16.pqr chls_dcd116_chl28.pqr chls_dcd181_chl21.pqr chls_dcd187_chl11.pqr chls_dcd193_chl21.pqr chls_dcd180_chl20.pqr chls_dcd124_chl16.pqr chls_dcd13_chl27.pqr chls_dcd3_chl21.pqr chls_dcd10_chl33.pqr chls_dcd156_chl23.pqr chls_dcd84_chl13.pqr chls_dcd117_chl15.pqr chls_dcd131_chl26.pqr chls_dcd148_chl19.pqr chls_dcd3_chl26.pqr chls_dcd71_chl14.pqr chls_dcd173_chl22.pqr chls_dcd157_chl18.pqr chls_dcd149_chl26.pqr chls_dcd55_chl32.pqr chls_dcd184_chl13.pqr chls_dcd104_chl26.pqr chls_dcd116_chl30.pqr chls_dcd33_chl40.pqr chls_dcd93_chl16.pqr chls_dcd143_chl13.pqr chls_dcd119_chl19.pqr chls_dcd9_chl18.pqr chls_dcd18_chl23.pqr chls_dcd88_chl22.pqr chls_dcd57_chl22.pqr chls_dcd125_chl15.pqr chls_dcd71_chl20.pqr chls_dcd156_chl17.pqr chls_dcd185_chl28.pqr chls_dcd146_chl12.pqr chls_dcd57_chl38.pqr chls_dcd82_chl20.pqr chls_dcd192_chl16.pqr chls_dcd3_chl31.pqr chls_dcd162_chl19.pqr chls_dcd29_chl13.pqr chls_dcd3_chl30.pqr chls_dcd102_chl24.pqr chls_dcd64_chl25.pqr chls_dcd20_chl21.pqr chls_dcd106_chl18.pqr chls_dcd127_chl27.pqr chls_dcd167_chl22.pqr chls_dcd9_chl21.pqr chls_dcd12_chl18.pqr chls_dcd173_chl24.pqr chls_dcd162_chl17.pqr chls_dcd71_chl12.pqr chls_dcd3_chl23.pqr chls_dcd15_chl26.pqr chls_dcd4_chl25.pqr chls_dcd101_chl24.pqr chls_dcd112_chl15.pqr chls_dcd124_chl21.pqr chls_dcd114_chl15.pqr chls_dcd11_chl20.pqr chls_dcd207_chl11.pqr chls_dcd132_chl17.pqr chls_dcd117_chl14.pqr chls_dcd91_chl11.pqr chls_dcd107_chl35.pqr chls_dcd158_chl12.pqr chls_dcd109_chl29.pqr chls_dcd19_chl22.pqr chls_dcd145_chl26.pqr chls_dcd178_chl16.pqr chls_dcd109_chl19.pqr chls_dcd15_chl25.pqr chls_dcd188_chl10.pqr chls_dcd5_chl18.pqr chls_dcd147_chl19.pqr chls_dcd71_chl15.pqr chls_dcd88_chl32.pqr chls_dcd70_chl21.pqr chls_dcd94_chl23.pqr chls_dcd105_chl22.pqr chls_dcd4_chl23.pqr chls_dcd129_chl18.pqr chls_dcd128_chl20.pqr chls_dcd89_chl15.pqr chls_dcd175_chl20.pqr chls_dcd127_chl20.pqr chls_dcd101_chl19.pqr chls_dcd86_chl10.pqr chls_dcd133_chl12.pqr chls_dcd83_chl13.pqr chls_dcd193_chl15.pqr chls_dcd202_chl21.pqr chls_dcd73_chl14.pqr chls_dcd109_chl28.pqr chls_dcd66_chl13.pqr chls_dcd171_chl19.pqr chls_dcd171_chl11.pqr chls_dcd147_chl18.pqr chls_dcd172_chl11.pqr chls_dcd55_chl28.pqr chls_dcd6_chl28.pqr chls_dcd15_chl10.pqr chls_dcd161_chl26.pqr chls_dcd112_chl18.pqr chls_dcd156_chl16.pqr chls_dcd8_chl31.pqr chls_dcd192_chl20.pqr chls_dcd197_chl35.pqr chls_dcd133_chl20.pqr chls_dcd139_chl21.pqr chls_dcd118_chl20.pqr chls_dcd96_chl15.pqr
+   @> If newly created files are empty please check whether the parameter names are: PDB_id+_Parameters_All_channels.txt
 
 Filtered pqr files will be stored in ``"Selected_channel1"``. Once the files
 are filtered, the :func:`.calcChannelSurfaceOverlaps` function can be used to
@@ -630,44 +893,56 @@ will be saved when using ``output_file_name`` option.
 .. ipython:: python
    :verbatim:
 
-   calcChannelSurfaceOverlaps(pqr_files="./Selected_channel1", output_file_name='overlapping_surf_traj.pdb')
+   calcChannelSurfaceOverlaps(pqr_files="./Selected_channel1", 
+			output_file_name='overlapping_surf_traj.pdb',
+			max_proc=4)
 
 .. parsed-literal::
 
-   @> Processing file: channels_pLoxA_dcd2_channel8.pqr
-   @> 285 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> Processing file: channels_pLoxA_dcd1_channel2.pqr
-   @> 495 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> Processing file: channels_pLoxA_dcd2_channel7.pqr
-   @> 330 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> Processing file: channels_pLoxA_dcd1_channel8.pqr
-   @> 380 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> Processing file: channels_pLoxA_dcd2_channel4.pqr
-   @> 435 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> Processing file: channels_pLoxA_dcd1_channel0.pqr
-   @> 335 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> Processing file: channels_pLoxA_dcd0_channel8.pqr
-   @> 540 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> Processing file: channels_pLoxA_dcd1_channel7.pqr
-   @> 215 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> Processing file: channels_pLoxA_dcd1_channel11.pqr
+   @> Number of PQR files: 467
+   @> Resolution: 0.5
+   @> max_proc: 4
+   @> Calculating overlaps using 4 processes.
+   @> 450 atoms and 1 coordinate sets were parsed in 0.00s.
    @> 455 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> Processing file: channels_pLoxA_dcd2_channel10.pqr
-   @> 350 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> Processing file: channels_pLoxA_dcd2_channel9.pqr
-   @> 405 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> Processing file: channels_pLoxA_dcd2_channel6.pqr
+   @> 395 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 455 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 400 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 285 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 410 atoms and 1 coordinate sets were parsed in 0.00s.
    @> 385 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> Processing file: channels_pLoxA_dcd0_channel4.pqr
-   @> 585 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> Processing file: channels_pLoxA_dcd1_channel3.pqr
-   @> 320 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> Processing file: channels_pLoxA_dcd2_channel5.pqr
-   @> 375 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> Processing file: channels_pLoxA_dcd1_channel5.pqr
-   @> 340 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> Processing file: channels_pLoxA_dcd0_channel2.pqr
-   @> 645 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 480 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 475 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 295 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 450 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 495 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 415 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 455 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 445 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 500 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 185 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 390 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 425 atoms and 1 coordinate sets were parsed in 0.00s.
+   ..
+   ..
+   @> 505 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 435 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 405 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 600 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 345 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 450 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 345 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 370 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 490 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 440 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 450 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 335 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 435 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Overlap written to: overlapping_surf_traj.pdb
+   @> Number of occupied overlap voxels: 68347
+
+   'overlapping_surf_traj.pdb'
+
 
 .. figure:: images/cavitracer_figure17.jpg
    :scale: 50 %
