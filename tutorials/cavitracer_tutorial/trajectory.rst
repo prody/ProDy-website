@@ -1177,13 +1177,9 @@ such as ``min_end_to_end`` and ``min_bottleneck``.
 .. ipython:: python
    :verbatim:
 
+   getPoreParametersMultipleFrames(pores, param_file_name='pores_DATA')
 
 .. parsed-literal::
-
-
-getPoreParametersMultipleFrames(pores, param_file_name='pores_DATA')
-
-
 
    @> Frame/model: 0
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
