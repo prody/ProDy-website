@@ -1022,7 +1022,370 @@ will be saved when using ``output_file_name`` option.
 II. Reconstruction of pores in molecular dynamics (MD) trajectory
 ===============================================================================
 
-...
+Now, we will use the same MD trajectory to show how to detect pores with
+protein structure.
+
+First, we need to upload the data in the same way as for the channels
+calculations.
+
+.. ipython:: python
+   :verbatim:
+
+   PDBfile = 'caseStudy2.pdb'
+   DCDfile = 'caseStudy2.dcd'
+   atoms = parsePDB(PDBfile)
+   dcd = Trajectory(DCDfile)
+   dcd.link(atoms)
+   dcd.setCoords(atoms)
+   protein = atoms.select("protein")
+   dcd.setAtoms(protein)
+
+.. parsed-literal::
+
+   @> 56457 atoms and 1 coordinate set(s) were parsed in 0.77s.
+
+Next, we use :func:.`calcChannelsMultipleFrames`, but this time with
+``return_details=True``. Without it, it is not possible to obtain
+information about pores. Additionally, this time, ``r2=0.8`` to find
+narrower passages within protein structure.
+
+.. ipython:: python
+   :verbatim:
+
+   channels, surface, details = calcChannelsMultipleFrames(protein, dcd, r2=0.8, 
+                                output_path='ch_dcd_', separate=True, 
+				return_details=True, max_proc=4)
+
+.. parsed-literal::
+
+   @> Frame/model: 0
+   @> Frame/model: 14
+   @> Frame/model: 28
+   @> Frame/model: 42
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 A in 0.28s.
+   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 A in 0.28s.
+   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 A in 0.29s.
+   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 A in 0.29s.
+   @> Delaunay tessellation of 77434 points constructed in 3.89s.
+   @> Delaunay tessellation of 77434 points constructed in 3.91s.
+   @> Delaunay tessellation of 77434 points constructed in 3.91s.
+   @> Delaunay tessellation of 77434 points constructed in 3.99s.
+   @> Surface and inner simplices filtered in 3.60s.
+   @> Surface and inner simplices filtered in 3.70s.
+   @> Surface and inner simplices filtered in 3.76s.
+   @> Surface and inner simplices filtered in 3.80s.
+   @> 6 surface cavities detected and filtered in 0.69s.
+   @> 7 surface cavities detected and filtered in 0.72s.
+   @> 10 surface cavities detected and filtered in 0.65s.
+   @> 14 surface cavities detected and filtered in 0.70s.
+   @> Channel pathfinding (graph Dijkstra) over 14 cavities completed in 1.67s.
+   @> Detected 36 channels.
+   @> Saving multiple results to directory ..
+   @> Channel calculation completed in 10.44s.
+   ..
+   ..
+   @> Frame/model: 209
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 A in 0.27s.
+   @> 10 surface cavities detected and filtered in 0.77s.
+   @> Delaunay tessellation of 77434 points constructed in 2.99s.
+   @> Channel pathfinding (graph Dijkstra) over 10 cavities completed in 3.83s.
+   @> Detected 50 channels.
+   @> Saving multiple results to directory ..
+   @> Channel calculation completed in 11.13s.
+   @> Surface and inner simplices filtered in 2.91s.
+   @> 10 surface cavities detected and filtered in 0.65s.
+   @> Channel pathfinding (graph Dijkstra) over 10 cavities completed in 2.80s.
+   @> Detected 48 channels.
+   @> Saving multiple results to directory ..
+   @> Channel calculation completed in 9.75s.
+
+
+Once the channels are identified, a function called
+:func:.`calcPoresFromChannelsMultipleFrames` can be applied to reconstrct
+pores. To eliminate certain pores an additional filters will be applied,
+such as ``min_end_to_end`` and ``min_bottleneck``.
+
+.. ipython:: python
+   :verbatim:
+
+   pores = calcPoresFromChannelsMultipleFrames(channels, details, 
+					min_end_to_end=45, 
+                                	output_path='pores_dcd_', 
+					separate=True, 
+					min_bottleneck=0.6, 
+					max_proc=4)
+
+.. parsed-literal::
+   
+   @> Frame/model: 0
+   @> Frame/model: 1
+   ..
+   ..
+   @> Frame/model: 204
+   @> Frame/model: 205
+   @> Frame/model: 206
+   @> Frame/model: 207
+   @> Frame/model: 208
+   @> Frame/model: 209
+
+
+.. ipython:: python
+   :verbatim:
+
+   pores
+
+.. parsed-literal::
+
+   [[<prody.proteins.channels.Channel at 0x723a25804250>,
+     <prody.proteins.channels.Channel at 0x723a258043d0>,
+     <prody.proteins.channels.Channel at 0x723a258044c0>,
+     <prody.proteins.channels.Channel at 0x723a25804610>,
+     <prody.proteins.channels.Channel at 0x723a25804700>,
+     <prody.proteins.channels.Channel at 0x723a25804820>,
+     <prody.proteins.channels.Channel at 0x723a258048e0>,
+     <prody.proteins.channels.Channel at 0x723a25804a00>,
+     <prody.proteins.channels.Channel at 0x723a25804af0>,
+     <prody.proteins.channels.Channel at 0x723a25804c10>,
+     <prody.proteins.channels.Channel at 0x723a25804d00>,
+     <prody.proteins.channels.Channel at 0x723a25804e50>,
+     <prody.proteins.channels.Channel at 0x723a25804f10>,
+     <prody.proteins.channels.Channel at 0x723a25805060>,
+     <prody.proteins.channels.Channel at 0x723a25805120>,
+     <prody.proteins.channels.Channel at 0x723a25805240>,
+     <prody.proteins.channels.Channel at 0x723a25805390>],
+    [<prody.proteins.channels.Channel at 0x723a25805480>,
+     <prody.proteins.channels.Channel at 0x723a258055a0>,
+     <prody.proteins.channels.Channel at 0x723a25805690>,
+     <prody.proteins.channels.Channel at 0x723a25805780>,
+     <prody.proteins.channels.Channel at 0x723a258058a0>,
+     <prody.proteins.channels.Channel at 0x723a25805990>,
+     <prody.proteins.channels.Channel at 0x723a25805a80>,
+     ..
+     <prody.proteins.channels.Channel at 0x723a76160c40>,
+     <prody.proteins.channels.Channel at 0x723a76161ed0>,
+     <prody.proteins.channels.Channel at 0x723a76161bd0>,
+     <prody.proteins.channels.Channel at 0x723a76162ce0>,
+     <prody.proteins.channels.Channel at 0x723a76160130>,
+     <prody.proteins.channels.Channel at 0x723a76160430>]]
+
+
+.. ipython:: python
+   :verbatim:
+
+
+.. parsed-literal::
+
+
+getPoreParametersMultipleFrames(pores, param_file_name='pores_DATA')
+
+
+
+   @> Frame/model: 0
+   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+   @> pore 0: 	488.65 		69.46 		0.79
+   @> pore 1: 	496.62 		71.97 		0.79
+   @> pore 2: 	581.56 		79.68 		0.78
+   @> pore 3: 	633.35 		87.67 		0.78
+   @> pore 4: 	608.23 		86.7 		0.78
+   @> pore 5: 	573.67 		79.0 		0.78
+   @> pore 6: 	625.47 		86.98 		0.78
+   @> pore 7: 	600.34 		86.02 		0.78
+   @> pore 8: 	445.76 		69.13 		0.79
+   @> pore 9: 	458.33 		71.27 		0.79
+   @> pore 10: 	453.73 		71.64 		0.79
+   @> pore 11: 	605.6 		79.42 		0.79
+   @> pore 12: 	621.57 		80.39 		0.79
+   @> pore 13: 	629.54 		81.16 		0.79
+   @> pore 14: 	613.57 		81.93 		0.79
+   @> pore 15: 	629.54 		82.9 		0.79
+   @> pore 16: 	637.51 		83.68 		0.79
+   @> Frame/model: 1
+   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+   @> pore 0: 	534.25 		67.29 		0.69
+   @> pore 1: 	485.48 		69.16 		0.86
+   @> pore 2: 	438.18 		69.48 		0.86
+   @> pore 3: 	455.5 		71.94 		0.86
+   @> pore 4: 	567.56 		70.19 		0.69
+   @> pore 5: 	443.17 		71.95 		0.81
+   @> pore 6: 	581.06 		77.88 		0.82
+   @> pore 7: 	598.31 		79.62 		0.82
+   @> pore 8: 	460.5 		74.42 		0.81
+   ..
+   ..
+
+   [([69.45502993303754,
+      71.96649622694555,
+      79.68334256806159,
+      87.66602479713018,
+      86.70487263137626,
+      78.9984426504088,
+      86.98323351113143,
+      86.02207112060964,
+      69.12751210792567,
+      71.26709343921263,
+      71.63962681557534,
+      79.42123977383082,
+      80.39068347838764,
+      81.16435270464021,
+      81.9337633916112,
+      82.9032107565874,
+      83.67604002776511],
+     [0.787475023965595,
+      0.787475023965595,
+      0.7801363553848397,
+      0.7801363553848397,
+      0.7801363553848397,
+      0.7801363553848397,
+      0.7801363553848397,
+      0.7801363553848397,
+      0.787475023965595,
+      0.787475023965595,
+      0.787475023965595,
+      0.787475023965595,
+      0.787475023965595,
+      0.787475023965595,
+      0.787475023965595,
+      0.787475023965595,
+      0.787475023965595],
+     ..
+     ..
+     [859.3209819223591,
+      857.2250421175263,
+      800.1479407180493,
+      832.6513119668273,
+      830.5553721619943,
+      773.4782707625176,
+      863.3254963001066,
+      861.2295564952738,
+      804.1524550957969,
+      846.2005807778157,
+      828.9071023368879,
+      826.811162532055,
+      769.7340611325781,
+      851.1192785668344,
+      849.0233387620015,
+      791.9462373625246,
+      868.9678356413744,
+      866.8718958365415,
+      809.7947944370645])]
+
+To visualize the results directly in ProDy create the model and use
+:func:.`showPores` function.
+
+.. ipython:: python
+   :verbatim:
+
+   vmd_path = '/usr/local/bin/vmd'
+   model = getVmdModel(vmd_path, protein)
+
+.. parsed-literal::
+
+   @> Model created successfully.
+
+
+To display all the pores from frame #0:
+
+.. ipython:: python
+   :verbatim:
+
+   showPores(pores[0], model=model)
+
+
+.. figure:: images/cavitracer_figure29.jpg
+   :scale: 50 %
+
+To display first pore in frame #0:
+
+.. ipython:: python
+   :verbatim:
+
+   showPores(pores[0][0], model=model)
+
+.. figure:: images/cavitracer_figure30.jpg
+   :scale: 50 %
+
+
+To display second pore in frame #1:
+
+.. ipython:: python
+   :verbatim:
+
+   showPores(pores[0][1], model=model)
+
+.. figure:: images/cavitracer_figure31.jpg
+   :scale: 50 %
+
+Below are also the results for frames #101 and #201 (counting from 0). 
+As we can see, pores are changing along the MD trajectory.
+
+.. ipython:: python
+   :verbatim:
+
+   showPores(pores[100], model=model)
+
+.. figure:: images/cavitracer_figure33.jpg
+   :scale: 50 %
+
+
+.. ipython:: python
+   :verbatim:
+
+   showPores(pores[200], model=model)
+
+.. figure:: images/cavitracer_figure32.jpg
+   :scale: 50 %
+
+Next, the residues that are forming the pores can be identified using
+:func:.`getPoreResidueNamesMultipleFrames` function.
+
+.. ipython:: python
+   :verbatim:
+
+   getPoreResidueNamesMultipleFrames(protein, pores, dcd,
+		residues_file_name='pores_Residues')
+
+
+   @> Frame: 0
+   @> 6651 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6671 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6586 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6621 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6621 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6566 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6601 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6601 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6641 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6656 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6661 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6676 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6676 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6691 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6696 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6696 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6711 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> Pore residues were saved to: pores_Residues_frame0_Residues_All_pores.txt
+   @> Frame: 1
+   @> 6591 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6656 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6661 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6656 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6601 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6686 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6701 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6706 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6681 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> Pore residues were saved to: pores_Residues_frame1_Residues_All_pores.txt
+   ..
+   ..
+
 
 .. _Trajectory tutorial: http://www.bahargroup.org/prody/tutorials/trajectory_analysis/
+
+
+
 
