@@ -664,6 +664,62 @@ the channels in the following way:
 .. figure:: images/cavitracer_figure16.jpg
    :scale: 50 %
 
+To obtain information about all residues that are participating in the
+formation of channels, use :func:.`getChannelResidueNamesMultipleFrames`.
+It may take some time because each channel is mapped to a particular
+protein structure. Therefore, if only a paricualar region is interested for
+us, we first might apply filtering of the channels which is described below.
+
+.. ipython:: python
+   :verbatim:
+
+   residuesALL = getChannelResidueNamesMultipleFrames(protein, 
+					channels4, dcd, 
+					residues_file_name='DCD_res_ALL')
+
+.. parsed-literal::
+
+   @> Frame: 0
+   @> 6061 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6056 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6086 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6081 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6061 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6036 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6026 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6081 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6111 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6071 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6061 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6111 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6101 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6121 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6126 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6066 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6126 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6201 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6351 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6206 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6186 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6151 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6151 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6341 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6151 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6461 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6451 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6526 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6516 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6546 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6546 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6561 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> Channel residues were saved to: DCD_res_ALL_frame0_Residues_All_channels.txt
+   @> Frame: 1
+   @> 6036 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6086 atoms and 1 coordinate set(s) were parsed in 0.07s.
+   @> 6081 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   ..
+   ..
+
 
 To have access to a particular frame, we need to use :meth:`.getFrame`.
 Below, we will select third frame from the simulation (counting from 0):
