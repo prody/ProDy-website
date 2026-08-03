@@ -1,6 +1,6 @@
 .. _cavitracer_single:
 
-Detection of channels in molecular dynamics (MD) trajectory
+I. Detection of channels in molecular dynamics (MD) trajectory
 ===============================================================================
 
 Analysis of the trajectory will be performed on a short MD trajectory
@@ -719,6 +719,18 @@ us, we first might apply filtering of the channels which is described below.
    @> 6081 atoms and 1 coordinate set(s) were parsed in 0.06s.
    ..
    ..
+   @> 6431 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6461 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6506 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6441 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6531 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6451 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6431 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6456 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6496 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6491 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> 6416 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> Channel residues were saved to: DCD_res_ALL_frame210_Residues_All_channels.txt
 
 
 To have access to a particular frame, we need to use :meth:`.getFrame`.
@@ -1006,6 +1018,11 @@ will be saved when using ``output_file_name`` option.
 .. figure:: images/cavitracer_figure18.jpg
    :scale: 50 %
 
+
+II. Reconstruction of pores in molecular dynamics (MD) trajectory
+===============================================================================
+
+...
 
 .. _Trajectory tutorial: http://www.bahargroup.org/prody/tutorials/trajectory_analysis/
 
