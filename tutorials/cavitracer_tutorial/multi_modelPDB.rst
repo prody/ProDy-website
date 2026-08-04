@@ -1256,7 +1256,7 @@ are displayed.
    :scale: 50 %
 
 
-III. Detection of pores cavities in multi-model PDBs
+III. Detection of pores in multi-model PDBs
 ===============================================================================
 
 
