@@ -1273,7 +1273,6 @@ can be found in the tutorial files.
 
    pdb_multi = parsePDB('case_study2_ev10_multi.pdb')
 
-
 .. parsed-literal::
 
    @> 5986 atoms and 22 coordinate set(s) were parsed in 0.29s.
@@ -1300,7 +1299,6 @@ processors for calculations.
    channels, surface, details = calcChannelsMultipleFrames(pdb_multi, r2=0.85,
                                     output_path='ch_multi_', separate=True,
                                     return_details=True, max_proc=4)
-
 
 .. parsed-literal::
 
@@ -1490,7 +1488,6 @@ code.
    :verbatim:
 
    getPoreResidueNamesMultipleFrames(pdb_multi, pores, one_letter_aa=True)
-
 
 .. parsed-literal::
 
