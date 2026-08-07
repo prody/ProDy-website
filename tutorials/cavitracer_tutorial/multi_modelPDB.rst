@@ -984,7 +984,7 @@ identify the surface groove that accommodates the substrate.
 
 
 Surface cavities are calculated for all available NMR models using
-:func:`.calcSurfaceCavitiesMultipleFrames`. We used ``r2=1.5`` controlling
+:func:`.calcSurfaceCavitiesMultipleFrames`. We used ``inner_radius1.5`` controlling
 the detection of accessible surface cavities. 
 The results are also saved as separate PQR files for individual cavities
 when ``separate`` parameter is set.
@@ -993,7 +993,7 @@ when ``separate`` parameter is set.
 .. ipython:: python
    :verbatim:
 
-   cavities, surface = calcSurfaceCavitiesMultipleFrames(atoms, r2=1.5, 
+   cavities, surface = calcSurfaceCavitiesMultipleFrames(atoms, inner_radius1.5, 
 			output_path=PDB_ID+'_CAV_', separate=True)   
 
 .. parsed-literal::
@@ -1095,7 +1095,7 @@ regions of Sortase A.
    @> cavity 13: 	96.49 		3.23 		70
    @> Model/frame: 1
    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	1584.91 		7.96 		980
+   @> cavity 0: 	1584.91 	7.96 		980
    @> cavity 1: 	78.4 		2.06 		75
    @> cavity 2: 	164.29 		2.28 		157
    @> cavity 3: 	174.84 		6.11 		71
@@ -1296,7 +1296,8 @@ processors for calculations.
 .. ipython:: python
    :verbatim:
 
-   channels, surface, details = calcChannelsMultipleFrames(pdb_multi, r2=0.85,
+   channels, surface, details = calcChannelsMultipleFrames(pdb_multi,
+				    inner_radius=0.85,
                                     output_path='ch_multi_', separate=True,
                                     return_details=True, max_proc=4)
 
@@ -1759,16 +1760,16 @@ bottlenck, use :func:.`getPoreParametersMultipleFrames` function.
    @> Frame/model: 6
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
    @> pore 0: 	1081.0 		76.59 		0.83
-   @> pore 1: 	1094.62 		79.18 		0.83
-   @> pore 2: 	1071.63 		76.13 		0.83
-   @> pore 3: 	1085.25 		78.72 		0.83
+   @> pore 1: 	1094.62 	79.18 		0.83
+   @> pore 2: 	1071.63 	76.13 		0.83
+   @> pore 3: 	1085.25 	78.72 		0.83
    ..
    ..
    @> Frame/model: 19
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
    @> pore 0: 	917.75 		66.68 		0.73
    @> pore 1: 	903.64 		68.75 		0.73
-   @> pore 2: 	1005.38 		79.53 		0.75
+   @> pore 2: 	1005.38 	79.53 		0.75
    @> pore 3: 	837.51 		71.53 		0.73
    @> Frame/model: 20
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
