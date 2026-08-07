@@ -1,6 +1,6 @@
 .. _cavitracer_single:
 
-Detection of channels across heterogeneous structures
+I. Detection of channels across heterogeneous structures
 ===============================================================================
 
 
@@ -213,22 +213,23 @@ provided PDB with ``'_Parameters_All_channels.txt'`` and
        base_name = pdb_files_new[0]
        atoms = parsePDB(i).select('protein')
        channels2, surface2 = calcChannels(atoms, output_path=i[:-4], separate=True)
+
        getChannelParameters(channels2, param_file_name=i[:-4])
        getChannelResidueNames(atoms, channels2, residues_file_name=i[:-4])
 
 .. parsed-literal::
 
-   @> 3727 atoms and 1 coordinate set(s) were parsed in 0.12s.
+   @> 3727 atoms and 1 coordinate set(s) were parsed in 0.05s.
    @> The atoms supplied to calcChannels contain protein atoms only.
-   @> WARNING structure has no hydrogens and r2=0.90 is below 1.2 A: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise r2 to 1.2 A or more, where protonated and unprotonated structures give the same channels.
+   @> WARNING structure has no hydrogens and inner_radius=0.90 is below 1.2 A: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise inner_radius to 1.2 A or more, where protonated and unprotonated structures give the same channels.
    @> Substituted 3630 atoms with 22830 homogeneous balls of radius 1.52 A in 0.20s.
-   @> Delaunay tessellation of 22830 points constructed in 0.87s.
-   @> Surface and inner simplices filtered in 1.85s.
-   @> 10 surface cavities detected and filtered in 0.34s.
-   @> Channel pathfinding (graph Dijkstra) over 10 cavities completed in 1.83s.
+   @> Delaunay tessellation of 22830 points constructed in 0.89s.
+   @> Surface and inner simplices filtered in 1.98s.
+   @> 10 surface cavities detected and filtered in 0.39s.
+   @> Channel pathfinding (graph Dijkstra) over 10 cavities completed in 1.82s.
    @> Detected 35 channels.
    @> Saving multiple results to directory ..
-   @> Channel calculation completed in 5.32s.
+   @> Channel calculation completed in 5.51s.
    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
    @> channel 0: 	45.24 		6.35 		0.92
    @> channel 1: 	45.17 		6.41 		0.91
@@ -265,63 +266,158 @@ provided PDB with ``'_Parameters_All_channels.txt'`` and
    @> channel 32: 	359.68 		66.19 		0.81
    @> channel 33: 	385.8 		71.46 		0.81
    @> channel 34: 	388.4 		72.31 		0.81
-   @> 3695 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3690 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3710 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3700 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3700 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3695 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3710 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3705 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3690 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3725 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3730 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3725 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3735 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3755 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3815 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3835 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3855 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3905 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3910 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3905 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3905 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3975 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 4010 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 3990 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 4020 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 4040 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 4070 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 4065 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 4110 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 4125 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 4125 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 4145 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 4135 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 4205 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> 4220 atoms and 1 coordinate set(s) were parsed in 0.05s.
    @> Channel residues were saved to: align__6OOA_Residues_All_channels.txt
    @> 3756 atoms and 1 coordinate set(s) were parsed in 0.05s.
    @> The atoms supplied to calcChannels contain protein atoms only.
-   @> 3756 atoms and 1 coordinate set(s) were parsed in 0.05s.
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> WARNING structure has no hydrogens and r2=0.90 is below 1.2 A: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise r2 to 1.2 A or more, where protonated and unprotonated structures give the same channels.
-   @> Substituted 3675 atoms with 23131 homogeneous balls of radius 1.52 A in 0.19s.
-   @> Delaunay tessellation of 23131 points constructed in 0.85s.
-   @> Surface and inner simplices filtered in 1.70s.
-   @> 8 surface cavities detected and filtered in 0.32s.
-   @> Channel pathfinding (graph Dijkstra) over 8 cavities completed in 4.16s.
+   @> WARNING structure has no hydrogens and inner_radius=0.90 is below 1.2 A: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise inner_radius to 1.2 A or more, where protonated and unprotonated structures give the same channels.
+   @> Substituted 3675 atoms with 23131 homogeneous balls of radius 1.52 A in 0.17s.
+   @> Delaunay tessellation of 23131 points constructed in 0.79s.
+   @> Surface and inner simplices filtered in 1.41s.
+   @> 8 surface cavities detected and filtered in 0.34s.
+   @> Channel pathfinding (graph Dijkstra) over 8 cavities completed in 4.07s.
    @> Detected 70 channels.
    @> Saving multiple results to directory ..
-   @> Channel calculation completed in 7.38s.
+   @> Channel calculation completed in 6.94s.
    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
    @> channel 0: 	53.33 		5.65 		0.85
    @> channel 1: 	36.47 		7.03 		0.94
    @> channel 2: 	42.3 		6.7 		0.84
    @> channel 3: 	38.71 		7.09 		0.91
    @> channel 4: 	31.3 		8.82 		0.86
+   @> channel 5: 	389.19 		27.31 		0.91
+   @> channel 6: 	450.32 		29.07 		0.91
+   @> channel 7: 	723.95 		34.66 		0.91
+   @> channel 8: 	479.46 		31.52 		0.91
+   @> channel 9: 	44.94 		12.03 		0.86
+   @> channel 10: 	331.31 		28.29 		0.91
+   @> channel 11: 	332.07 		28.88 		0.91
+   @> channel 12: 	331.88 		28.92 		0.91
+   @> channel 13: 	339.09 		30.57 		0.91
+   @> channel 14: 	392.72 		32.94 		0.91
+   @> channel 15: 	61.96 		14.62 		0.83
+   @> channel 16: 	69.51 		16.27 		0.9
+   @> channel 17: 	446.22 		33.71 		0.91
+   @> channel 18: 	381.86 		34.28 		0.91
+   @> channel 19: 	986.68 		51.21 		0.89
+   @> channel 20: 	873.83 		44.97 		0.91
+   @> channel 21: 	961.04 		50.23 		0.89
+   @> channel 22: 	396.3 		37.21 		0.87
+   @> channel 23: 	89.27 		20.88 		0.82
+   @> channel 24: 	102.09 		21.77 		0.85
+   @> channel 25: 	887.21 		47.36 		0.91
+   @> channel 26: 	859.52 		42.82 		0.64
+   @> channel 27: 	354.6 		35.27 		0.81
+   @> channel 28: 	872.12 		47.69 		0.91
+   @> channel 29: 	937.27 		51.2 		0.87
+   @> channel 30: 	955.72 		51.96 		0.91
+   @> channel 31: 	885.66 		48.23 		0.91
+   @> channel 32: 	925.96 		51.13 		0.91
+   @> channel 33: 	123.46 		25.27 		0.89
+   @> channel 34: 	951.86 		53.03 		0.89
+   @> channel 35: 	746.46 		46.58 		0.72
+   @> channel 36: 	112.95 		26.11 		0.89
+   @> channel 37: 	777.99 		49.76 		0.89
+   @> channel 38: 	781.98 		50.28 		0.89
+   @> channel 39: 	864.97 		49.26 		0.71
+   @> channel 40: 	1061.55 		63.56 		0.91
+   @> channel 41: 	937.62 		55.14 		0.85
+   @> channel 42: 	921.41 		55.0 		0.91
+   @> channel 43: 	1033.98 		60.73 		0.85
+   @> channel 44: 	985.2 		59.88 		0.85
+   @> channel 45: 	1059.84 		65.84 		0.91
+   @> channel 46: 	940.45 		57.0 		0.91
+   @> channel 47: 	933.81 		56.65 		0.91
+   @> channel 48: 	954.52 		62.34 		0.85
+   @> channel 49: 	1045.79 		67.75 		0.91
+   @> channel 50: 	1060.35 		67.6 		0.91
+   @> channel 51: 	1051.26 		69.56 		0.91
+   @> channel 52: 	1084.86 		71.78 		0.91
+   @> channel 53: 	573.94 		57.04 		0.91
+   @> channel 54: 	578.98 		57.75 		0.87
+   @> channel 55: 	1033.22 		68.87 		0.8
+   @> channel 56: 	1039.49 		64.17 		0.45
+   @> channel 57: 	962.34 		62.86 		0.83
+   @> channel 58: 	1158.57 		77.37 		0.91
+   @> channel 59: 	1124.23 		78.2 		0.91
+   @> channel 60: 	1009.17 		67.59 		0.61
+   @> channel 61: 	963.07 		63.74 		0.83
+   @> channel 62: 	991.8 		66.55 		0.87
+   @> channel 63: 	583.71 		61.7 		0.87
+   @> channel 64: 	580.48 		61.16 		0.87
+   @> channel 65: 	1128.18 		80.95 		0.91
+   @> channel 66: 	1052.02 		75.32 		0.77
+   @> channel 67: 	1028.55 		73.43 		0.87
+   @> channel 68: 	1216.29 		92.83 		0.91
+   @> channel 69: 	1325.53 		105.73 		0.91
+   @> Channel residues were saved to: align__6BD8_Residues_All_channels.txt
+   @> 3746 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> WARNING structure has no hydrogens and inner_radius=0.90 is below 1.2 A: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise inner_radius to 1.2 A or more, where protonated and unprotonated structures give the same channels.
+   @> Substituted 3673 atoms with 23121 homogeneous balls of radius 1.52 A in 0.18s.
+   @> Delaunay tessellation of 23121 points constructed in 0.80s.
+   @> Surface and inner simplices filtered in 1.44s.
+   @> 5 surface cavities detected and filtered in 0.30s.
+   @> Channel pathfinding (graph Dijkstra) over 5 cavities completed in 4.28s.
+   @> Detected 73 channels.
+   @> Saving multiple results to directory ..
    ..
    ..
+   @> 4124 atoms and 1 coordinate set(s) were parsed in 0.05s.
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> WARNING structure has no hydrogens and inner_radius=0.90 is below 1.2 A: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise inner_radius to 1.2 A or more, where protonated and unprotonated structures give the same channels.
+   @> Substituted 3675 atoms with 23131 homogeneous balls of radius 1.52 A in 0.18s.
+   @> Delaunay tessellation of 23131 points constructed in 0.76s.
+   @> Surface and inner simplices filtered in 1.30s.
+   @> 6 surface cavities detected and filtered in 0.29s.
+   @> Channel pathfinding (graph Dijkstra) over 6 cavities completed in 3.07s.
+   @> Detected 43 channels.
+   @> Saving multiple results to directory ..
+   @> Channel calculation completed in 5.71s.
+   @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+   @> channel 0: 	67.86 		6.08 		0.9
+   @> channel 1: 	76.09 		12.08 		0.91
+   @> channel 2: 	74.97 		11.03 		0.94
+   @> channel 3: 	90.38 		13.17 		0.91
+   @> channel 4: 	52.15 		10.68 		0.93
+   @> channel 5: 	88.91 		14.2 		0.91
+   @> channel 6: 	43.02 		9.62 		0.8
+   @> channel 7: 	78.64 		14.33 		0.92
+   @> channel 8: 	83.02 		16.35 		0.92
+   @> channel 9: 	115.49 		18.42 		0.9
+   @> channel 10: 	119.46 		21.16 		0.9
+   @> channel 11: 	816.14 		68.81 		0.91
+   @> channel 12: 	1159.36 		75.77 		0.91
+   @> channel 13: 	647.21 		65.36 		0.91
+   @> channel 14: 	411.0 		56.52 		0.91
+   @> channel 15: 	1084.72 		78.28 		0.91
+   @> channel 16: 	759.15 		70.63 		0.91
+   @> channel 17: 	840.01 		72.99 		0.91
+   @> channel 18: 	376.59 		57.16 		0.91
+   @> channel 19: 	1026.09 		77.95 		0.91
+   @> channel 20: 	398.39 		58.99 		0.91
+   @> channel 21: 	223.65 		46.95 		0.91
+   @> channel 22: 	1024.49 		78.13 		0.91
+   @> channel 23: 	847.83 		74.4 		0.91
+   @> channel 24: 	406.86 		58.97 		0.91
+   @> channel 25: 	873.11 		76.32 		0.91
+   @> channel 26: 	391.51 		60.63 		0.91
+   @> channel 27: 	231.13 		49.95 		0.84
+   @> channel 28: 	784.19 		72.44 		0.86
+   @> channel 29: 	1083.98 		84.04 		0.91
+   @> channel 30: 	391.61 		62.52 		0.87
+   @> channel 31: 	698.26 		71.86 		0.69
+   @> channel 32: 	858.42 		77.37 		0.71
+   @> channel 33: 	317.78 		59.47 		0.9
+   @> channel 34: 	256.94 		56.2 		0.82
+   @> channel 35: 	733.09 		78.62 		0.91
+   @> channel 36: 	1104.17 		90.08 		0.72
+   @> channel 37: 	392.7 		66.7 		0.86
+   @> channel 38: 	421.37 		70.91 		0.89
+   @> channel 39: 	324.3 		64.66 		0.9
+   @> channel 40: 	781.97 		87.74 		0.91
+   @> channel 41: 	781.69 		88.51 		0.87
+   @> channel 42: 	796.09 		89.61 		0.87
+   @> Channel residues were saved to: align__5VCC_Residues_All_channels.txt
 
 
 Selection of channels in a certain protein area
@@ -347,48 +443,69 @@ changed using ``distA`` parameter of the function.
 
 .. parsed-literal::
 
-   [['align__6UNE_chl18.pqr',
-     'align__6BDM_chl53.pqr',
-     'align__6BDM_chl65.pqr',
-     'align__6DAJ_chl16.pqr',
-     'align__6BDI_chl14.pqr',
-     'align__5A1P_chl29.pqr',
-     'align__4I3Q_chl27.pqr',
-     'align__6MA7_chl39.pqr',
-     'align__6BDM_chl31.pqr',
-     'align__6BDI_chl40.pqr',
-     'align__5VCC_chl2.pqr',
-     'align__5A1P_chl38.pqr',
-     'align__6DAL_chl8.pqr',
-     'align__1W0E_chl62.pqr',
-     'align__6MA6_chl15.pqr',
-     'align__6MA7_chl30.pqr',
-     'align__6UNE_chl43.pqr',
-     'align__6BD8_chl19.pqr',
-     'align__6OOA_chl33.pqr',
-     'align__5A1P_chl34.pqr',
-     'align__6BD8_chl24.pqr',
-     'align__6UNG_chl54.pqr',
-     'align__6MA6_chl23.pqr',
-     'align__6MA7_chl57.pqr',
-     'align__1W0E_chl4.pqr',
-     ..
-     ..
-     'align__6MA6_chl48.pqr',
-     'align__1W0E_chl44.pqr',
-     'align__6MA7_chl14.pqr',
-     'align__5A1P_chl47.pqr',
-     'align__6BDI_chl34.pqr',
-     'align__1W0E_chl49.pqr',
-     'align__6BDI_chl33.pqr',
-     'align__6MA6_chl17.pqr']
+   @> 3718 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 335 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 640 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 875 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 370 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 420 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Filtered files are now in: selected_files
+   @> 345 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 515 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Filtered files are now in: selected_files
+   @> 525 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Filtered files are now in: selected_files
+   @> 685 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Filtered files are now in: selected_files
+   @> 475 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 95 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 390 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 280 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 450 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Filtered files are now in: selected_files
+   @> 345 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 535 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Filtered files are now in: selected_files
+   @> 435 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 350 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Filtered files are now in: selected_files
+   @> 575 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 445 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Filtered files are now in: selected_files
+   @> 220 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 455 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 490 atoms and 1 coordinate sets were parsed in 0.00s.
+   ..
+   ..
+   @> Filtered files are now in: selected_files
+   @> 515 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Filtered files are now in: selected_files
+   @> 405 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Filtered files are now in: selected_files
+   @> 405 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 355 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Selected files: 
+   @> align__6BDI_chl14.pqr align__4I3Q_chl27.pqr align__6MA7_chl39.pqr 
+      align__6BDM_chl31.pqr align__1W0E_chl62.pqr align__6MA7_chl30.pqr 
+      align__6BD8_chl19.pqr align__5A1P_chl34.pqr align__6MA7_chl52.pqr 
+      align__6BDM_chl30.pqr align__6MA6_chl31.pqr align__6BD8_chl26.pqr 
+      align__1W0E_chl24.pqr align__6BDI_chl22.pqr align__6BD6_chl48.pqr 
+      align__6MA7_chl15.pqr align__6BDI_chl37.pqr align__6UNE_chl6.pqr 
+      align__6BD6_chl54.pqr align__4I3Q_chl35.pqr align__6BD6_chl71.pqr 
+      align__6UNE_chl42.pqr align__6BDM_chl28.pqr align__5A1P_chl23.pqr 
+      ..
+      ..
+      align__5A1P_chl47.pqr align__6BDI_chl34.pqr align__1W0E_chl49.pqr
+   @> If newly created files are empty please check whether 
+      the parameter names are: PDB_id+_Parameters_All_channels.txt
 
 
 .. ipython:: python
    :verbatim:
 
    atoms = parsePDB(pdb_files_new_channels[0].split('_ch')[0]+'.pdb')
-   selectChannelBySelection(atoms, pqr_files=pdb_files_new_channels, residue_sele='resid 442')
+   selectChannelBySelection(atoms, pqr_files=pdb_files_new_channels, 
+					residue_sele='resid 442')
 
 .. parsed-literal::
 
@@ -578,7 +695,8 @@ need to specify ``output_file_name``.
 .. ipython:: python
    :verbatim:
 
-   calcChannelSurfaceOverlaps(pqr_files=pdb_files_new_channels_ALL, output_file_name='overlapping_surf.pdb')
+   calcChannelSurfaceOverlaps(pqr_files=pdb_files_new_channels_ALL, 
+				output_file_name='overlapping_surf.pdb')
 
 .. parsed-literal::
 
