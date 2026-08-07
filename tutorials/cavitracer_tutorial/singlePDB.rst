@@ -53,7 +53,7 @@ option set to True can be saved only as a PQR files.
 .. parsed-literal::
 
    @> The atoms supplied to calcChannels contain protein atoms only.
-   @> WARNING structure has no hydrogens and r2=0.90 is below 1.2 A: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise r2 to 1.2 A or more, where protonated and unprotonated structures give the same channels.
+   @> WARNING structure has no hydrogens and inner_radius=0.90 is below 1.2 A: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise r2 to 1.2 A or more, where protonated and unprotonated structures give the same channels.
    @> Substituted 3766 atoms with 23638 homogeneous balls of radius 1.52 A in 0.26s.
    @> Delaunay tessellation of 23638 points constructed in 0.87s.
    @> Surface and inner simplices filtered in 1.41s.
@@ -71,7 +71,7 @@ option set to True can be saved only as a PQR files.
 .. parsed-literal::
 
    @> The atoms supplied to calcChannels contain protein atoms only.
-   @> WARNING structure has no hydrogens and r2=0.90 is below 1.2 A: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise r2 to 1.2 A or more, where protonated and unprotonated structures give the same channels.
+   @> WARNING structure has no hydrogens and inner_radius=0.90 is below 1.2 A: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise r2 to 1.2 A or more, where protonated and unprotonated structures give the same channels.
    @> Substituted 3766 atoms with 23638 homogeneous balls of radius 1.52 A in 0.26s.
    @> Delaunay tessellation of 23638 points constructed in 0.85s.
    @> Surface and inner simplices filtered in 1.41s.
@@ -433,7 +433,7 @@ geometric center is used as the starting point.
 
    @> Using user-provided start_point for channel seed: [-22.312, -20.065, -11.144] Å
    @> The atoms supplied to calcChannels contain protein atoms only.
-   @> WARNING structure has no hydrogens and r2=0.90 is below 1.2 A: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise r2 to 1.2 A or more, where protonated and unprotonated structures give the same channels.
+   @> WARNING structure has no hydrogens and inner_radius=0.90 is below 1.2 A: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise r2 to 1.2 A or more, where protonated and unprotonated structures give the same channels.
    @> Substituted 3766 atoms with 23638 homogeneous balls of radius 1.52 A in 0.27s.
    @> Delaunay tessellation of 23638 points constructed in 0.87s.
    @> Surface and inner simplices filtered in 1.43s.
@@ -457,7 +457,7 @@ geometric center is used as the starting point.
 
    @> Using user-provided start_point for channel seed: [-24.395, -23.462, -15.132] Å
    @> The atoms supplied to calcChannels contain protein atoms only.
-   @> WARNING structure has no hydrogens and r2=0.90 is below 1.2 A: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise r2 to 1.2 A or more, where protonated and unprotonated structures give the same channels.
+   @> WARNING structure has no hydrogens and inner_radius=0.90 is below 1.2 A: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise r2 to 1.2 A or more, where protonated and unprotonated structures give the same channels.
    @> Substituted 3766 atoms with 23638 homogeneous balls of radius 1.52 A in 0.27s.
    @> Delaunay tessellation of 23638 points constructed in 0.86s.
    @> Surface and inner simplices filtered in 1.33s.
@@ -603,9 +603,9 @@ regions based on the Voronoi/Delaunay tessellation.
 The :func:`.calcSurfaceCavities` function provides several parameters that
 can be used to tune the detection and selection of surface cavities,
 including min_volume, max_volume, min_depth, max_depth, min_tetrahedra,
-max_tetrahedra, as well as r1, r2, and sparsity. In the example below, only
-surface cavities with volumes between 500 and 1000 Å³ are selected and
-saved to a file specified by the output_path parameter,
+max_tetrahedra, as well as surf_radius, inner_radius, and sparsity. In the
+example below, only surface cavities with volumes between 500 and 1000 Å³ are
+selected and saved to a file specified by the output_path parameter,
 :file:`surf_cav_MinMax_volume.pqr`.
 
 .. ipython:: python
@@ -796,15 +796,17 @@ separately as PQR files (``separate`` = True). Additionally, we are using
 .. ipython:: python
    :verbatim:
 
-   channels, surface, details = calcChannels(protein, r1=20, r2=1, 
-	start_point = [39.277, 43.995, -0.961], max_deviation=0.1, 
-	return_details=True, output_path='channels', separate=True)
+   channels, surface, details = calcChannels(protein, 
+	surf_radius=20, inner_radius=1, 
+	start_point = [39.277, 43.995, -0.961], 
+	return_details=True, 
+	output_path='channels', separate=True)
 
 .. parsed-literal::
 
    @> Using user-provided start_point for channel seed: [39.277, 43.995, -0.961] Å
    @> The atoms supplied to calcChannels contain protein atoms only.
-   @> WARNING structure has no hydrogens and r2=1.00 is below 1.2 A: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise r2 to 1.2 A or more, where protonated and unprotonated structures give the same channels.
+   @> WARNING structure has no hydrogens and inner_radius=1.00 is below 1.2 A: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise r2 to 1.2 A or more, where protonated and unprotonated structures give the same channels.
    @> Substituted 2447 atoms with 14777 homogeneous balls of radius 1.52 A in 0.19s.
    @> Delaunay tessellation of 14777 points constructed in 0.46s.
    @> Surface and inner simplices filtered in 1.49s.
