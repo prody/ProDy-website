@@ -44,7 +44,7 @@ separately (``separate=True``).
 .. ipython:: python
    :verbatim:
 
-   channels4, surfaces4=calcChannelsMultipleFrames(atoms, dcd, 
+   channels4, surfaces4=calcChannelsMultipleFrames(protein, dcd, 
 		output_path='chls_dcd', separate=True, max_proc=4)
 
 .. parsed-literal::
@@ -680,56 +680,34 @@ us, we first might apply filtering of the channels which is described below.
 .. parsed-literal::
 
    @> Frame: 0
-   @> 6061 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6056 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6086 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6081 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6061 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6036 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6026 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6081 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6111 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6071 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6061 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6111 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6101 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6121 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6126 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6066 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6126 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6201 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6351 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6206 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6186 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6151 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6151 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6341 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6151 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6461 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6451 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6526 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6516 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6546 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6546 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6561 atoms and 1 coordinate set(s) were parsed in 0.07s.
    @> Channel residues were saved to: DCD_res_ALL_frame0_Residues_All_channels.txt
    @> Frame: 1
-   @> 6036 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6086 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6081 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> Channel residues were saved to: DCD_res_ALL_frame1_Residues_All_channels.txt
+   @> Frame: 2
+   @> Channel residues were saved to: DCD_res_ALL_frame2_Residues_All_channels.txt
+   @> Frame: 3
+   @> Channel residues were saved to: DCD_res_ALL_frame3_Residues_All_channels.txt
+   @> Frame: 4
+   @> Channel residues were saved to: DCD_res_ALL_frame4_Residues_All_channels.txt
+   @> Frame: 5
+   @> Channel residues were saved to: DCD_res_ALL_frame5_Residues_All_channels.txt
+   @> Frame: 6
+   @> Channel residues were saved to: DCD_res_ALL_frame6_Residues_All_channels.txt
+   @> Frame: 7
+   @> Channel residues were saved to: DCD_res_ALL_frame7_Residues_All_channels.txt
+   @> Frame: 8
+   @> Channel residues were saved to: DCD_res_ALL_frame8_Residues_All_channels.txt
+   @> Frame: 9
+   @> Channel residues were saved to: DCD_res_ALL_frame9_Residues_All_channels.txt
+   @> Frame: 10
+   @> Channel residues were saved to: DCD_res_ALL_frame10_Residues_All_channels.txt
    ..
    ..
-   @> 6431 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6461 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6506 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6441 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6531 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6451 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6431 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6456 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6496 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6491 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6416 atoms and 1 coordinate set(s) were parsed in 0.06s.
+   @> Frame: 208
+   @> Channel residues were saved to: DCD_res_ALL_frame208_Residues_All_channels.txt
+   @> Frame: 209
+   @> Channel residues were saved to: DCD_res_ALL_frame209_Residues_All_channels.txt
+   @> Frame: 210
    @> Channel residues were saved to: DCD_res_ALL_frame210_Residues_All_channels.txt
 
 
@@ -759,68 +737,39 @@ operations should be performed:
 .. ipython:: python
    :verbatim:
 
-   getChannelResidueNames(protein_frame3, channels4[2], residues_file_name='DCD_fr3_res')
+   getChannelResidueNames(protein_frame3, channels4[2], 
+				residues_file_name='DCD_fr3_res')
 
 .. parsed-literal::
 
-   @> 6076 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6101 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6056 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6076 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6081 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6046 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6056 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6071 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6121 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6181 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6171 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6211 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6366 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6366 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6346 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6406 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6396 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6406 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6431 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6436 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6466 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6461 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6466 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6466 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6521 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6596 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6536 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6536 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> Channel residues were saved to: DCD_fr3_res_Residues_All_channels.txt
-
-   ['channel0: MET310, ALA444, PHE449, PRO450, LEU452, MET453, ILE456',
-    'channel1: THR212, ASP214, ARG217, MET221, ARG357, MET403, PRO404, GLY407, TYR408, ASP411, TYR422',
-    'channel2: ARG19, VAL210, TYR211, THR212, ASP213, GLU216, ARG217',
-    'channel3: TYR293, ARG357, ILE405, TYR408, LEU409, PHE469, LEU470, PRO473',
-    'channel4: LEU285, LEU288, LEU289, ILE294, SER420, VAL421, ALA423, ILE424, VAL427',
-    'channel5: TYR293, ILE405, TYR408, LEU409, PHE469, LEU470, ARG471, SER472, PRO473',
-    'channel6: MET310, ALA444, PHE449, PRO450, LEU452, MET453, ILE456',
-    'channel7: LEU288, LEU289, LYS290, ASP291, ILE294, LEU295, ALA298, ILE424',
-    'channel8: LEU151, ASN154, LYS281, GLY282, THR283, PRO284, LEU288, GLY407, VAL410, VAL417, TYR418, SER420, VAL421',
-    'channel9: SER300, PHE303, ALA304, GLY364, MET365, VAL368, ALA394, ILE395, MET397, VAL398, ILE459, ASP460, PHE463',
-    'channel10: SER300, PHE303, ALA304, GLY364, MET365, VAL368, ALA394, ILE395, MET397, VAL398, ILE459, ASP460, LEU462, PHE463',
-    'channel11: MET204, ARG217, GLY218, MET221, GLY222, ALA224, LEU225, GLY349, ALA352, HSP353, LYS354, GLY356, ARG357, LEU359, CYS360, LEU363, ASP399, SER400, SER401, MET403, PRO404',
-    'channel12: ASP33, ASN34, LEU37, THR38, LYS138, GLN142, SER196, SER200, LEU225, LEU228, VAL232, ALA297, ALA298, ILE301, GLU312, LEU315, ILE317, GLN329, VAL332, ALA333, PHE334, PRO336, ALA337, TYR341, ILE381, ILE385, ASN388, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433',
-    'channel13: ASP33, ASN34, LEU37, THR38, LYS138, GLN142, SER196, SER200, LEU225, LEU228, VAL232, ALA297, ALA298, ILE301, GLU312, LEU315, ILE317, GLN329, ALA333, PHE334, PRO336, ALA337, TYR341, ILE381, TYR382, ILE385, ASN388, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433',
-    'channel14: ASP33, ASN34, LEU37, THR38, LYS138, GLN142, SER196, SER200, LEU225, LEU228, VAL232, ALA297, ALA298, ILE301, GLU312, LEU315, ILE317, VAL332, ALA333, PHE334, PRO336, ALA337, TYR341, ILE381, ILE385, ASN388, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433',
-    'channel15: ASP33, ASN34, LEU37, THR38, LYS138, GLN142, SER196, SER200, LEU225, LEU228, VAL232, ALA297, ALA298, ILE301, GLU312, LEU315, ILE317, ARG326, GLN329, ALA333, PHE334, PRO336, ALA337, TYR341, ILE381, ILE385, ASN388, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433',
-    'channel16: ASP33, ASN34, LEU37, THR38, LYS138, GLN142, SER196, SER200, LEU225, LEU228, VAL232, ALA297, ALA298, ILE301, GLU312, LEU315, ILE317, ARG326, GLN329, ALA333, PHE334, PRO336, ALA337, TYR341, ILE381, TYR382, ILE385, ASN388, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433',
-    'channel17: ASP33, ASN34, LEU37, THR38, LYS138, GLN142, SER196, SER200, LEU225, LEU228, VAL232, ALA297, ALA298, ILE301, GLU312, LEU315, PRO316, ILE317, THR322, ARG326, GLN329, ALA333, PHE334, PRO336, ALA337, TYR341, ILE381, ILE385, ASN388, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433',
-    'channel18: ASP33, ASN34, LEU37, THR38, LYS138, GLN142, SER196, SER200, LEU225, LEU228, VAL232, ALA297, ALA298, ILE301, GLU312, LEU315, PRO316, ILE317, MET319, GLU321, THR322, ARG326, GLN329, ALA333, PHE334, PRO336, ALA337, TYR341, ILE381, ILE385, ASN388, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433',
-    'channel19: ASP33, ASN34, LEU37, THR38, VAL40, VAL41, PRO42, ILE44, PHE135, LYS138, GLN142, ARG189, SER196, SER200, LEU225, LEU228, PRO236, SER240, ALA297, ALA298, ILE301, GLU312, ILE317, TRP318, LYS327, TRP328, LEU330, GLY331, ALA333, PHE334, TYR341, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433',
-    'channel20: ASP33, ASN34, LEU37, THR38, VAL40, VAL41, PRO42, ILE44, PHE135, LYS138, GLN142, ARG189, SER196, SER200, LEU225, LEU228, PRO236, SER240, TYR243, GLU244, ALA297, ALA298, ILE301, GLU312, ILE317, TRP318, LYS327, TRP328, LEU330, GLY331, ALA333, PHE334, TYR341, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433',
-    'channel21: ASP33, ASN34, LEU37, THR38, VAL40, VAL41, PRO42, ILE44, PHE135, LYS138, GLN142, ARG189, SER196, SER200, LEU225, LEU228, PRO236, SER240, TYR243, GLU244, ALA297, ALA298, ILE301, GLU312, ILE317, TRP318, LYS327, LEU330, GLY331, ALA333, PHE334, TYR341, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433',
-    'channel22: ASP33, ASN34, LEU37, THR38, VAL40, VAL41, PRO42, ILE44, PRO45, PHE135, LYS138, GLN142, ARG189, SER196, SER200, LEU225, LEU228, PRO236, SER240, TYR243, ALA297, ALA298, ILE301, GLU312, ILE317, TRP318, LYS327, LEU330, GLY331, ALA333, PHE334, TYR341, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433',
-    'channel23: ASP33, ASN34, LEU37, THR38, VAL40, VAL41, PRO42, ILE44, PRO45, PHE135, LYS138, GLN142, ARG189, SER196, SER200, LEU225, LEU228, PRO236, SER240, TYR243, ALA297, ALA298, ILE301, GLU312, ILE317, TRP318, MET323, LYS327, LEU330, GLY331, ALA333, PHE334, TYR341, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433',
-    'channel24: ASP33, ASN34, LEU37, THR38, LYS138, GLN142, SER196, SER200, LEU225, LEU228, VAL232, ALA297, ALA298, ILE301, LEU311, GLU312, LEU315, ALA333, PHE334, PRO336, ALA337, TYR341, SER371, ILE372, LEU373, ILE375, PRO376, LEU384, ILE385, PRO387, ASN388, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433, PRO450, TRP451, MET453, THR454',
-    'channel25: ASP33, ASN34, LEU37, THR38, LYS138, GLN142, SER196, SER200, LEU225, LEU228, VAL232, ALA297, ALA298, ILE301, PHE303, ALA304, MET306, GLY307, ILE308, LEU311, GLU312, LEU315, ALA333, PHE334, PRO336, ALA337, TYR341, VAL368, ILE372, LEU384, ILE385, PRO387, ASN388, VAL391, ILE395, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433, ILE456, ILE459, ASP460',
-    'channel26: ASP33, ASN34, LEU37, THR38, LYS122, LYS138, GLN142, SER196, SER200, LEU225, LEU228, VAL232, ALA297, ALA298, ILE301, LEU311, GLU312, LEU315, ALA333, PHE334, PRO336, ALA337, TYR341, SER371, ILE372, LEU373, ILE375, PRO376, LYS379, LEU384, ILE385, PRO387, ASN388, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433, PRO450, MET453, THR454',
-    'channel27: ASP33, ASN34, LEU37, THR38, LYS122, LYS138, GLN142, SER196, SER200, LEU225, LEU228, VAL232, ALA297, ALA298, ILE301, LEU311, GLU312, LEU315, ALA333, PHE334, PRO336, ALA337, TYR341, SER371, ILE372, LEU373, ILE375, PRO376, LEU384, ILE385, PRO387, ASN388, ASP399, MET402, MET403, MET406, ALA425, ASP426, PHE429, TYR433, PRO450, MET453, THR454']
+   ['channel0: MET310:P, ALA444:P, PHE449:P, LEU452:P, MET453:P, ILE456:P',
+    'channel1: ASP214:P, ARG217:P, MET221:P, PRO404:P, GLY407:P, TYR408:P, ASP411:P, TYR422:P',
+    'channel2: ARG19:P, TYR211:P, THR212:P, ASP213:P, GLU216:P, ARG217:P',
+    'channel3: ASP214:P, TYR293:P, HSP353:P, GLY356:P, ARG357:P, TRP358:P, ILE405:P, TYR408:P, LEU409:P, PHE469:P, LEU470:P, ARG471:P, PRO473:P',
+    'channel4: LEU285:P, LEU288:P, LEU289:P, ILE294:P, SER420:P, VAL421:P, ALA423:P, ILE424:P, VAL427:P',
+    'channel5: TYR293:P, ILE405:P, TYR408:P, LEU409:P, PHE469:P, LEU470:P, ARG471:P, SER472:P, PRO473:P',
+    'channel6: MET310:P, ALA444:P, PHE449:P, LEU452:P, MET453:P, ILE456:P',
+    'channel7: LEU288:P, LEU289:P, ASP291:P, ILE294:P, LEU295:P, ALA298:P, ILE424:P',
+    'channel8: LEU151:P, ASN154:P, LYS281:P, GLY282:P, THR283:P, PRO284:P, LEU288:P, VAL410:P, VAL417:P, TYR418:P, SER420:P, VAL421:P',
+    'channel9: PHE303:P, ALA304:P, GLY364:P, MET365:P, VAL368:P, ALA394:P, ILE395:P, MET397:P, VAL398:P, ILE459:P, ASP460:P, PHE463:P',
+    'channel10: PHE303:P, ALA304:P, GLY364:P, MET365:P, VAL368:P, ALA394:P, ILE395:P, MET397:P, VAL398:P, ILE459:P, ASP460:P, LEU462:P, PHE463:P',
+    'channel11: MET204:P, GLY218:P, MET221:P, GLY222:P, LEU225:P, GLY349:P, ALA352:P, HSP353:P, LYS354:P, GLY356:P, ARG357:P, LEU359:P, CYS360:P, LEU363:P, ASP399:P, SER400:P, SER401:P, MET403:P, PRO404:P',
+    'channel12: LEU30:P, ASP33:P, ASN34:P, LEU37:P, THR38:P, PHE135:P, LYS138:P, GLN142:P, SER196:P, SER200:P, LEU225:P, LEU228:P, VAL232:P, ALA297:P, ILE301:P, ILE308:P, GLU312:P, LEU315:P, ILE317:P, GLN329:P, VAL332:P, ALA333:P, PHE334:P, PRO336:P, ALA337:P, TYR341:P, ILE381:P, ILE385:P, ASN388:P, ASP399:P, MET402:P, MET403:P, MET406:P, ALA425:P, ASP426:P, PHE429:P, TYR433:P',
+    'channel13: LEU30:P, ASP33:P, ASN34:P, LEU37:P, THR38:P, PHE135:P, LYS138:P, GLN142:P, SER196:P, SER200:P, LEU225:P, LEU228:P, VAL232:P, ALA297:P, ILE301:P, ILE308:P, GLU312:P, LEU315:P, ILE317:P, GLN329:P, ALA333:P, PHE334:P, PRO336:P, ALA337:P, TYR341:P, ILE381:P, TYR382:P, ILE385:P, ASN388:P, ASP399:P, MET402:P, MET403:P, MET406:P, ALA425:P, ASP426:P, PHE429:P, TYR433:P',
+    'channel14: LEU30:P, ASP33:P, ASN34:P, LEU37:P, THR38:P, PHE135:P, LYS138:P, GLN142:P, SER196:P, SER200:P, LEU225:P, LEU228:P, VAL232:P, ALA297:P, ILE301:P, ILE308:P, GLU312:P, LEU315:P, ILE317:P, VAL332:P, ALA333:P, PHE334:P, PRO336:P, ALA337:P, TYR341:P, ILE381:P, ILE385:P, ASN388:P, ASP399:P, MET402:P, MET403:P, MET406:P, ALA425:P, ASP426:P, PHE429:P, TYR433:P',
+    'channel15: ASP33:P, ASN34:P, LEU37:P, THR38:P, PHE135:P, LYS138:P, GLN142:P, SER196:P, SER200:P, LEU225:P, LEU228:P, VAL232:P, ALA297:P, ILE301:P, ILE308:P, GLU312:P, LEU315:P, PRO316:P, ILE317:P, ARG326:P, GLN329:P, ALA333:P, PHE334:P, PRO336:P, ALA337:P, TYR341:P, ILE381:P, ILE385:P, ASN388:P, ASP399:P, MET402:P, MET403:P, MET406:P, ALA425:P, ASP426:P, PHE429:P, TYR433:P',
+    'channel16: ASP33:P, ASN34:P, LEU37:P, THR38:P, PHE135:P, LYS138:P, GLN142:P, SER196:P, SER200:P, LEU225:P, LEU228:P, VAL232:P, ALA297:P, ILE301:P, ILE308:P, GLU312:P, LEU315:P, PRO316:P, ILE317:P, ARG326:P, GLN329:P, ALA333:P, PHE334:P, PRO336:P, ALA337:P, TYR341:P, ILE381:P, TYR382:P, ILE385:P, ASN388:P, ASP399:P, MET402:P, MET403:P, MET406:P, ALA425:P, ASP426:P, PHE429:P, TYR433:P',
+    'channel17: ASP33:P, ASN34:P, LEU37:P, THR38:P, PHE135:P, LYS138:P, GLN142:P, SER196:P, SER200:P, LEU225:P, LEU228:P, VAL232:P, ALA297:P, ILE301:P, ILE308:P, GLU312:P, LEU315:P, PRO316:P, ILE317:P, ARG326:P, GLN329:P, ALA333:P, PHE334:P, PRO336:P, ALA337:P, TYR341:P, ILE381:P, ILE385:P, ASN388:P, ASP399:P, MET402:P, MET403:P, MET406:P, ALA425:P, ASP426:P, PHE429:P, TYR433:P',
+    'channel18: ASP33:P, ASN34:P, LEU37:P, THR38:P, PHE135:P, LYS138:P, GLN142:P, SER196:P, SER200:P, LEU225:P, LEU228:P, VAL232:P, ALA297:P, ILE301:P, ILE308:P, GLU312:P, LEU315:P, PRO316:P, ILE317:P, MET319:P, GLU321:P, THR322:P, ARG326:P, GLN329:P, ALA333:P, PHE334:P, PRO336:P, ALA337:P, TYR341:P, ILE381:P, ILE385:P, ASN388:P, ASP399:P, MET402:P, MET403:P, MET406:P, ALA425:P, ASP426:P, PHE429:P, TYR433:P',
+    'channel19: ASP33:P, ASN34:P, LEU37:P, THR38:P, VAL40:P, VAL41:P, PRO42:P, ILE44:P, PHE135:P, LYS138:P, GLN142:P, ARG189:P, SER196:P, SER200:P, LEU225:P, LEU228:P, VAL232:P, PRO236:P, SER240:P, ALA297:P, ILE301:P, ILE308:P, GLU312:P, ILE317:P, TRP318:P, LYS327:P, TRP328:P, LEU330:P, GLY331:P, ALA333:P, PHE334:P, TYR341:P, ASP399:P, MET402:P, MET403:P, MET406:P, ALA425:P, ASP426:P, PHE429:P, TYR433:P',
+    'channel20: ASP33:P, ASN34:P, LEU37:P, THR38:P, VAL40:P, VAL41:P, PRO42:P, ILE44:P, PHE135:P, LYS138:P, GLN142:P, ARG189:P, SER196:P, SER200:P, LEU225:P, LEU228:P, VAL232:P, PRO236:P, SER240:P, TYR243:P, GLU244:P, ALA297:P, ILE301:P, ILE308:P, GLU312:P, ILE317:P, TRP318:P, LYS327:P, TRP328:P, LEU330:P, GLY331:P, ALA333:P, PHE334:P, TYR341:P, ASP399:P, MET402:P, MET403:P, MET406:P, ALA425:P, ASP426:P, PHE429:P, TYR433:P',
+    'channel21: ASP33:P, ASN34:P, LEU37:P, THR38:P, VAL40:P, VAL41:P, PRO42:P, ILE44:P, PHE135:P, LYS138:P, GLN142:P, ARG189:P, SER196:P, SER200:P, LEU225:P, LEU228:P, VAL232:P, PRO236:P, SER240:P, TYR243:P, GLU244:P, ALA297:P, ILE301:P, ILE308:P, GLU312:P, ILE317:P, TRP318:P, LYS327:P, LEU330:P, GLY331:P, ALA333:P, PHE334:P, TYR341:P, ASP399:P, MET402:P, MET403:P, MET406:P, ALA425:P, ASP426:P, PHE429:P, TYR433:P',
+    'channel22: ASP33:P, ASN34:P, LEU37:P, THR38:P, VAL40:P, VAL41:P, PRO42:P, ILE44:P, PRO45:P, PHE135:P, LYS138:P, GLN142:P, ARG189:P, SER196:P, SER200:P, LEU225:P, LEU228:P, VAL232:P, PRO236:P, SER240:P, TYR243:P, ALA297:P, ILE301:P, ILE308:P, GLU312:P, ILE317:P, TRP318:P, LYS327:P, LEU330:P, GLY331:P, ALA333:P, PHE334:P, TYR341:P, ASP399:P, MET402:P, MET403:P, MET406:P, ALA425:P, ASP426:P, PHE429:P, TYR433:P',
+    'channel23: ASP33:P, ASN34:P, LEU37:P, THR38:P, VAL40:P, VAL41:P, PRO42:P, ILE44:P, PRO45:P, PHE135:P, LYS138:P, GLN142:P, ARG189:P, SER196:P, SER200:P, LEU225:P, LEU228:P, VAL232:P, PRO236:P, SER240:P, TYR243:P, ALA297:P, ILE301:P, ILE308:P, GLU312:P, ILE317:P, TRP318:P, MET323:P, LYS327:P, LEU330:P, GLY331:P, ALA333:P, PHE334:P, TYR341:P, ASP399:P, MET402:P, MET403:P, MET406:P, ALA425:P, ASP426:P, PHE429:P, TYR433:P',
+    'channel24: ASP33:P, ASN34:P, LEU37:P, THR38:P, PHE135:P, LYS138:P, GLN142:P, SER196:P, SER200:P, LEU225:P, LEU228:P, VAL232:P, ALA297:P, ILE301:P, ILE308:P, LEU311:P, GLU312:P, LEU315:P, ALA333:P, PHE334:P, ALA337:P, TYR341:P, SER371:P, ILE372:P, LEU373:P, ILE375:P, PRO376:P, LEU384:P, ILE385:P, PRO387:P, ASN388:P, ASP399:P, MET402:P, MET403:P, MET406:P, ALA425:P, ASP426:P, PHE429:P, TYR433:P, PRO450:P, TRP451:P, MET453:P, THR454:P',
+    'channel25: ASP33:P, ASN34:P, LEU37:P, THR38:P, PHE135:P, LYS138:P, GLN142:P, SER196:P, SER200:P, LEU225:P, LEU228:P, VAL232:P, ALA297:P, ILE301:P, PHE303:P, ALA304:P, MET306:P, GLY307:P, ILE308:P, LEU311:P, GLU312:P, LEU315:P, ALA333:P, PHE334:P, ALA337:P, TYR341:P, VAL368:P, ILE372:P, LEU384:P, ILE385:P, PRO387:P, ASN388:P, VAL391:P, ILE395:P, ASP399:P, MET402:P, MET403:P, MET406:P, ALA425:P, ASP426:P, PHE429:P, TYR433:P, ILE456:P, ILE459:P, ASP460:P',
+    'channel26: ASP33:P, ASN34:P, LEU37:P, THR38:P, LYS122:P, PHE135:P, LYS138:P, GLN142:P, SER196:P, SER200:P, LEU225:P, LEU228:P, VAL232:P, ALA297:P, ILE301:P, ILE308:P, LEU311:P, GLU312:P, LEU315:P, ALA333:P, PHE334:P, ALA337:P, TYR341:P, SER371:P, ILE372:P, LEU373:P, ILE375:P, PRO376:P, LYS379:P, LEU384:P, ILE385:P, PRO387:P, ASN388:P, ASP399:P, MET402:P, MET403:P, MET406:P, ALA425:P, ASP426:P, PHE429:P, TYR433:P, PRO450:P, MET453:P, THR454:P',
+    'channel27: ASP33:P, ASN34:P, LEU37:P, THR38:P, LYS122:P, PHE135:P, LYS138:P, GLN142:P, SER196:P, SER200:P, LEU225:P, LEU228:P, VAL232:P, ALA297:P, ILE301:P, ILE308:P, LEU311:P, GLU312:P, LEU315:P, ALA333:P, PHE334:P, ALA337:P, TYR341:P, SER371:P, ILE372:P, LEU373:P, ILE375:P, PRO376:P, LEU384:P, ILE385:P, PRO387:P, ASN388:P, ASP399:P, MET402:P, MET403:P, MET406:P, ALA425:P, ASP426:P, PHE429:P, TYR433:P, PRO450:P, MET453:P, THR454:P']
 
 
 To display the results for a particular frame, we need to create a model
@@ -1046,13 +995,14 @@ calculations.
 
 Next, we use :func:.`calcChannelsMultipleFrames`, but this time with
 ``return_details=True``. Without it, it is not possible to obtain
-information about pores. Additionally, this time, ``r2=0.8`` to find
-narrower passages within protein structure.
+information about pores. Additionally, this time, ``inner_radius=0.8`` 
+to find narrower passages within protein structure.
 
 .. ipython:: python
    :verbatim:
 
-   channels, surface, details = calcChannelsMultipleFrames(protein, dcd, r2=0.8, 
+   channels, surface, details = calcChannelsMultipleFrames(protein, dcd,
+				inner_radius=0.8, 
                                 output_path='ch_dcd_', separate=True, 
 				return_details=True, max_proc=4)
 
@@ -1283,7 +1233,7 @@ To visualize the results directly in ProDy create the model and use
 
    @> Model created successfully.
 
-
+	
 To display all the pores from frame #0:
 
 .. ipython:: python
@@ -1348,35 +1298,27 @@ Next, the residues that are forming the pores can be identified using
 .. parsed-literal::
 
    @> Frame: 0
-   @> 6651 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6671 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6586 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6621 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6621 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6566 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6601 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6601 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6641 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6656 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6661 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6676 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6676 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6691 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6696 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6696 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6711 atoms and 1 coordinate set(s) were parsed in 0.06s.
    @> Pore residues were saved to: pores_Residues_frame0_Residues_All_pores.txt
    @> Frame: 1
-   @> 6591 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6656 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6661 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6656 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6601 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6686 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6701 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6706 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6681 atoms and 1 coordinate set(s) were parsed in 0.06s.
    @> Pore residues were saved to: pores_Residues_frame1_Residues_All_pores.txt
+   @> Frame: 2
+   @> Pore residues were saved to: pores_Residues_frame2_Residues_All_pores.txt
+   @> Frame: 3
+   @> Pore residues were saved to: pores_Residues_frame3_Residues_All_pores.txt
+   @> Frame: 4
+   @> Pore residues were saved to: pores_Residues_frame4_Residues_All_pores.txt
+   @> Frame: 5
+   @> Pore residues were saved to: pores_Residues_frame5_Residues_All_pores.txt
+   @> Frame: 6
+   @> Pore residues were saved to: pores_Residues_frame6_Residues_All_pores.txt
+   @> Frame: 7
+   @> Pore residues were saved to: pores_Residues_frame7_Residues_All_pores.txt
+   @> Frame: 8
+   @> Pore residues were saved to: pores_Residues_frame8_Residues_All_pores.txt
+   @> Frame: 9
+   @> Pore residues were saved to: pores_Residues_frame9_Residues_All_pores.txt
+   @> Frame: 10
+   @> Pore residues were saved to: pores_Residues_frame10_Residues_All_pores.txt
    ..
    ..
 
