@@ -984,7 +984,7 @@ identify the surface groove that accommodates the substrate.
 
 
 Surface cavities are calculated for all available NMR models using
-:func:`.calcSurfaceCavitiesMultipleFrames`. We used ``inner_radius1.5`` controlling
+:func:`.calcSurfaceCavitiesMultipleFrames`. We used ``inner_radius=1.5`` controlling
 the detection of accessible surface cavities. 
 The results are also saved as separate PQR files for individual cavities
 when ``separate`` parameter is set.
@@ -993,7 +993,8 @@ when ``separate`` parameter is set.
 .. ipython:: python
    :verbatim:
 
-   cavities, surface = calcSurfaceCavitiesMultipleFrames(atoms, inner_radius1.5, 
+   cavities, surface = calcSurfaceCavitiesMultipleFrames(atoms,
+			inner_radius=1.5, 
 			output_path=PDB_ID+'_CAV_', separate=True)   
 
 .. parsed-literal::
