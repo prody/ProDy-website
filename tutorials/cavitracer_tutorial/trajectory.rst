@@ -1652,7 +1652,9 @@ object.
 .. ipython:: python
    :verbatim:
 
+   import matplotlib.pyplot as plt
    showFrequentObjectResidues(frequent_residues)
+   plt.show()
 
 
 .. figure:: images/cavitracer_figure37.png
@@ -1698,7 +1700,9 @@ surface cavities.
 .. ipython:: python
    :verbatim:
 
+   import matplotlib.pyplot as plt
    showFrequentObjectResidues(frequent_residue_names)
+   plt.show()
 
 
 .. figure:: images/cavitracer_figure38.png
