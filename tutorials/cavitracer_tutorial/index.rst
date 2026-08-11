@@ -22,7 +22,8 @@ CaviTracer - detection of tunnels, channels and cavities within proteins
    singlePDB
    ensemblePDB
    multi_modelPDB
-   trajectory.rst
+   trajectory
+   test_params
 
 
 .. only:: html
