@@ -1323,8 +1323,509 @@ Next, the residues that are forming the pores can be identified using
    ..
 
 
+III. Identification of surface cavities in molecular dynamics (MD) trajectory
+===============================================================================
+
+
+In this example, surface cavities are analyzed for a trajectory prepared from
+the structure with PDB ID 5KQM. This structure corresponds to human low molecular
+weight phosphotyrosine protein phosphatase (LMW-PTP, ACP1) in complex with MES.
+
+The trajectory used here contains both the protein without the ligand (MES). 
+The protein selection is applied to the trajectory using :meth:`Trajectory.setAtoms`, 
+so that only protein coordinates are passed to the surface-cavity calculation.
+
+.. ipython:: python
+   :verbatim:
+   
+   PDBfile = '5kqm_all_sci_wWat.pdb'
+   DCDfile = '5kqm_all_sci_wWat.dcd'
+   atoms = parsePDB(PDBfile)
+   dcd = Trajectory(DCDfile)
+   dcd.link(atoms)
+   dcd.setCoords(atoms)
+
+.. ipython:: python
+   :verbatim:
+
+   protein = atoms.select("protein")
+   dcd.setAtoms(protein)
+
+
+.. parsed-literal::
+
+   @> 2425 atoms and 1 coordinate set(s) were parsed in 0.02s.
+
+
+The selected protein and the linked trajectory are then used as input for
+:func:`calcSurfaceCavitiesMultipleFrames`. The function calculates surface
+cavities independently for each trajectory frame. With ``separate=True``, each
+detected cavity is saved as an individual PQR file for each frame, using the
+prefix provided by ``output_path``.
+
+.. ipython:: python
+   :verbatim:
+
+   cavities, surfaces=calcSurfaceCavitiesMultipleFrames(protein, dcd, 
+		output_path='cav_dcd', separate=True)
+		
+
+.. parsed-literal::
+
+   @> Frame: 0
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 A in 0.12s.
+   @> Delaunay tessellation of 31833 points constructed in 1.33s.
+   @> Surface and inner simplices filtered in 0.39s.
+   @> 20 surface cavities detected and filtered in 0.24s.
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+   @> Surface cavity calculation completed in 2.14s.
+   @> Frame: 1
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 A in 0.11s.
+   @> Delaunay tessellation of 31833 points constructed in 1.27s.
+   @> Surface and inner simplices filtered in 0.37s.
+   @> 20 surface cavities detected and filtered in 0.22s.
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+   @> Surface cavity calculation completed in 2.02s.
+   @> Frame: 2
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 A in 0.11s.
+   @> Delaunay tessellation of 31833 points constructed in 1.23s.
+   @> Surface and inner simplices filtered in 0.37s.
+   @> 27 surface cavities detected and filtered in 0.21s.
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+   @> Surface cavity calculation completed in 1.97s.
+   ..
+   ..
+   @> Frame: 49
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 A in 0.11s.
+   @> Delaunay tessellation of 31833 points constructed in 1.18s.
+   @> Surface and inner simplices filtered in 0.42s.
+   @> 27 surface cavities detected and filtered in 0.21s.
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+   @> Surface cavity calculation completed in 1.97s.
+
+
+The parameters of the detected surface cavities can be extracted with
+:func:`getSurfaceCavityParametersMultipleFrames`. This function analyzes the
+surface cavities returned for all trajectory frames and reports, for each frame,
+the volume, depth, and number of tetrahedra assigned to each detected cavity.
+If ``param_file_name`` is provided, the results are also saved to text files
+using this name as a prefix.
+
+.. ipython:: python
+   :verbatim:
+
+   parameters = getSurfaceCavityParametersMultipleFrames(cavities,
+   		                         param_file_name='cavi_param')
+
+.. parsed-literal::
+
+   @> Model/frame: 0
+   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+   @> cavity 0: 	185.19 		7.26 		80
+   @> cavity 1: 	221.58 		4.37 		84
+   @> cavity 2: 	53.79 		2.41 		24
+   @> cavity 3: 	313.39 		4.69 		156
+   @> cavity 4: 	360.65 		4.04 		117
+   @> cavity 5: 	84.52 		2.2 		36
+   @> cavity 6: 	87.28 		3.23 		40
+   @> cavity 7: 	66.87 		2.92 		45
+   @> cavity 8: 	242.94 		3.75 		87
+   @> cavity 9: 	147.79 		3.12 		48
+   @> cavity 10: 	194.93 		2.42 		75
+   @> cavity 11: 	92.82 		1.64 		52
+   @> Model/frame: 1
+   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+   @> cavity 0: 	320.4 		7.76 		175
+   @> cavity 1: 	162.26 		3.32 		53
+   @> cavity 2: 	155.38 		2.3 		70
+   @> cavity 3: 	51.88 		1.86 		36
+   @> cavity 4: 	95.75 		1.73 		49
+   @> cavity 5: 	56.5 		1.54 		27
+   @> cavity 6: 	260.45 		3.66 		89
+   @> cavity 7: 	292.86 		4.41 		86
+   @> cavity 8: 	70.15 		2.41 		38
+   @> cavity 9: 	77.78 		7.26 		25
+   @> cavity 10: 	98.21 		2.59 		52
+   @> cavity 11: 	207.6 		2.55 		70
+   @> cavity 12: 	127.42 		2.34 		72
+   ..
+   ..
+   @> Model/frame: 49
+   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+   @> cavity 0: 	121.03 		2.72 		56
+   @> cavity 1: 	227.05 		2.83 		103
+   @> cavity 2: 	91.85 		3.77 		49
+   @> cavity 3: 	458.74 		2.96 		145
+   @> cavity 4: 	177.08 		2.45 		78
+   @> cavity 5: 	90.71 		2.03 		43
+   @> cavity 6: 	212.61 		3.84 		106
+   @> cavity 7: 	172.96 		2.39 		63
+   @> cavity 8: 	78.59 		1.86 		29
+   @> cavity 9: 	130.72 		2.08 		45
+   @> cavity 10: 	81.99 		3.7 		28
+   @> cavity 11: 	54.33 		1.66 		39
+   @> cavity 12: 	51.63 		2.09 		21
+   @> cavity 13: 	159.86 		3.45 		59
+   @> cavity 14: 	66.62 		2.28 		24
+   @> cavity 15: 	60.45 		1.71 		21
+   	
+
+Residues lining the detected surface cavities can be identified with
+:func:`getSurfaceCavityResidueNamesMultipleFrames`. The function analyzes each
+trajectory frame using the corresponding set of surface cavities and surface
+vertices returned by :func:`calcSurfaceCavitiesMultipleFrames`.
+
+For each cavity, residues are selected based on their distance from the cavity
+surface. The calculation uses the protein coordinates from the matching
+trajectory frame, so the supplied trajectory should be the same trajectory that
+was used for cavity detection. If ``residues_file_name`` is provided, the
+identified residues are also saved to text files using this name as a prefix.
+
+.. ipython:: python
+   :verbatim:
+
+   residues = getSurfaceCavityResidueNamesMultipleFrames(protein, cavities,
+                             surfaces, dcd, residues_file_name='cavi_resAA')
+
+
+.. parsed-literal::
+
+   @> Surface cavity residues were saved to: cavi_resAA_frame0_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: cavi_resAA_frame1_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: cavi_resAA_frame2_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: cavi_resAA_frame3_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: cavi_resAA_frame4_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: cavi_resAA_frame5_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: cavi_resAA_frame6_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: cavi_resAA_frame7_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: cavi_resAA_frame8_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: cavi_resAA_frame9_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: cavi_resAA_frame10_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: cavi_resAA_frame11_Residues_All_surface_cavities.txt
+   ..
+   ..
+   @> Surface cavity residues were saved to: cavi_resAA_frame43_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: cavi_resAA_frame44_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: cavi_resAA_frame45_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: cavi_resAA_frame46_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: cavi_resAA_frame47_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: cavi_resAA_frame48_Residues_All_surface_cavities.txt
+   @> Surface cavity residues were saved to: cavi_resAA_frame49_Residues_All_surface_cavities.txt
+
+
+The returned ``residues`` object contains residue lists for all analyzed frames.
+By default, chain identifiers are included in the residue labels, which makes it
+possible to distinguish residues from different protein chains.
+
+The residue lists obtained for all trajectory frames can be further analyzed with
+:func:`calcFrequentObjectResidues`. This function counts how often individual
+residues occur among the residues lining the detected objects. The counting can
+be performed separately for each chain, which is useful for multichain systems
+or oligomeric proteins.
+
+In this example, the function is applied to residues lining surface cavities.
+The ``object_type`` argument is used only for labeling the output and can be set
+to ``'channel'``, ``'pore'``, or ``'surface_cavity'`` depending on the analyzed
+object.
+
+.. ipython:: python
+   :verbatim:
+
+   frequent_residues = calcFrequentObjectResidues(residues, output_file_name='cavi_freq_res')
+
+.. parsed-literal::
+
+   @> Residue counts by chain were saved to: cavi_freq_res_ResCounts.txt
+
+
+.. ipython:: python
+   :verbatim:
+
+   frequent_residues
+
+.. parsed-literal::
+
+   {'P': Counter({'GLU128': 51,
+             'ARG75': 51,
+             'HSE72': 51,
+             'ARG40': 50,
+             'ASP129': 50,
+             'LYS79': 50,
+             'THR78': 50,
+             'HSE157': 50,
+             'LYS6': 50,
+             'GLN76': 50,
+             'LEU13': 50,
+             'PRO130': 50,
+             'ASP137': 49,
+             'LYS155': 49,
+             'THR140': 49,
+             'ARG27': 49,
+             'SER71': 49,
+             'TYR131': 49,
+             'TYR119': 48,
+             'ILE16': 48,
+             'THR31': 48,
+             'ALA156': 48,
+             'THR84': 48,
+             'ILE51': 48,
+             'GLU80': 48,
+             'TRP39': 48,
+             'ASP42': 48,
+             'LYS102': 48,
+             'SER94': 47,
+             'TYR49': 47,
+             'GLU154': 47,
+             'ILE77': 47,
+             'ILE126': 47,
+             'THR5': 46,
+             'ASP86': 46,
+             'LYS28': 46,
+             'LYS110': 46,
+             'PHE85': 46,
+             'LEU153': 46,
+             'THR46': 45,
+             'VAL73': 45,
+             'GLN124': 45,
+             'VAL106': 45,
+             'ILE68': 44,
+             'PRO54': 44,
+             'ARG101': 44,
+             'VAL41': 44,
+             'SER118': 44,
+             'GLU23': 44,
+             'ARG150': 44,
+             'LYS123': 44,
+             'LYS112': 44,
+             'ALA83': 44,
+             'PRO69': 43,
+             'ARG18': 43,
+             'ASP92': 43,
+             'GLU50': 43,
+             'MET70': 43,
+             'GLN60': 43,
+             'ILE35': 43,
+             'TYR87': 43,
+             'SER36': 42,
+             'ASP32': 42,
+             'GLY48': 42,
+             'GLN33': 42,
+             'GLU37': 41,
+             'PRO55': 41,
+             'SER47': 41,
+             'TYR57': 41,
+             'SER136': 41,
+             'LYS107': 41,
+             'ALA151': 40,
+             'GLN143': 40,
+             'GLU93': 40,
+             'ASP56': 40,
+             'ASP98': 40,
+             'SER7': 40,
+             'THR108': 40,
+             'ASN53': 39,
+             'ARG97': 39,
+             'GLN105': 39,
+             'ARG58': 39,
+             'TYR132': 39,
+             'VAL146': 38,
+             'GLY14': 38,
+             'ASN38': 38,
+             'SER43': 37,
+             'ARG147': 37,
+             ..
+	     ..
+	     'ALA45': 2,
+             'PRO20': 1,
+             'LEU99': 1,
+             'PHE26': 1})}
+
+
+.. ipython:: python
+   :verbatim:
+
+   showFrequentObjectResidues(frequent_residues)
+
+
+.. figure:: images/cavitracer_figure37.png
+   :scale: 50 %
+
+If ``count_residue_names=True``, residue types are counted instead of individual
+residue positions. For example, residues such as ``ARG75:P`` and ``ARG150:P``
+are counted together as ``ARG`` for chain ``R``. This option is useful when
+we want to identify which amino-acid types most frequently line the detected
+surface cavities.
+
+.. ipython:: python
+   :verbatim:
+
+   frequent_residue_names = calcFrequentObjectResidues(residues, count_residue_names=True)
+   frequent_residue_names
+
+
+.. parsed-literal::
+
+   {'P': Counter({'SER': 51,
+             'TYR': 51,
+             'ARG': 51,
+             'LYS': 51,
+             'VAL': 51,
+             'HSE': 51,
+             'PRO': 51,
+             'GLN': 51,
+             'THR': 51,
+             'GLU': 51,
+             'ALA': 51,
+             'LEU': 51,
+             'GLY': 51,
+             'ASP': 51,
+             'ILE': 51,
+             'PHE': 50,
+             'ASN': 50,
+             'TRP': 48,
+             'MET': 43,
+             'CYS': 35})}
+
+
+.. ipython:: python
+   :verbatim:
+
+   showFrequentObjectResidues(frequent_residue_names)
+
+
+.. figure:: images/cavitracer_figure38.png
+   :scale: 50 %
+
+
+If ``count_once_per_frame=False``, every occurrence of a residue is counted. In
+this mode, if the same residue appears in more than one detected surface cavity
+within the same frame, it contributes more than once to the final count. This
+option emphasizes repeated object-level participation rather than simple
+frame-level occurrence.
+
+.. ipython:: python
+   :verbatim:
+
+   frequent_residue_occurrences = calcFrequentObjectResidues(
+       residues,
+       count_once_per_frame=False,
+       output_file_name='cavi_frequent_residue_occurrences')
+
+   showFrequentObjectResidues(frequent_residue_occurrences, top=20)
+
+
+.. parsed-literal::
+   
+   @> Residue counts by chain were saved to: cavi_frequent_residue_occurrences_ResCounts.txt
+
+
+.. figure:: images/cavitracer_figure39.png
+   :scale: 50 %
+
+
+In general, ``count_residue_names=True`` changes what is counted, from residue
+positions to residue types, whereas ``count_once_per_frame=False`` changes how
+often repeated appearances are counted.
+
+
+Finally, surface cavities detected across trajectory frames can be combined into
+a spatial overlap map using :func:`calcSurfaceCavityOverlaps`. In this example,
+the PQR files generated by :func:`calcSurfaceCavitiesMultipleFrames` are first
+collected with :mod:`glob`. The patterns ``"cav_dcd?.pqr"`` and
+``"cav_dcd??.pqr"`` select files with one- and two-digit frame numbers,
+respectively.
+
+The overlap calculation voxelizes the FIL pseudoatoms from all selected PQR
+files and writes a PDB file in which the occupancy column stores the normalized
+frequency of each voxel. Regions with higher occupancy correspond to surface
+cavity regions that are detected in more frames.
+
+
+.. ipython:: python
+   :verbatim:
+
+   import glob
+   pqr_files_cavities = glob.glob("cav_dcd?.pqr") + glob.glob("cav_dcd??.pqr")
+   calcSurfaceCavityOverlaps(pqr_files=pqr_files_cavities, 
+			     output_file_name='surface_cavity_overlap.pdb', 
+			     max_proc=4)
+
+.. parsed-literal::
+
+   @> Number of PQR files: 51
+   @> Resolution: 0.5
+   @> max_proc: 4
+   @> Calculating overlaps using 4 processes.
+   @> 686 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 946 atoms and 1 coordinate sets were parsed in 0.02s.
+   @> 1072 atoms and 1 coordinate sets were parsed in 0.02s.
+   @> 803 atoms and 1 coordinate sets were parsed in 0.02s.
+   @> 818 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 966 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 1140 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 772 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 858 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 1043 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 723 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 980 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 832 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 774 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 1020 atoms and 1 coordinate sets were parsed in 0.01s.
+   ..
+   ..
+   @> 1020 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 962 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 691 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 936 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 899 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 869 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 885 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> Overlap written to: surface_cavity_overlap.pdb
+   @> Number of occupied overlap voxels: 138222
+
+   'surface_cavity_overlap.pdb'
+
+
+The results can be visualized using VMD_ as shown below.
+
+The resulting overlap map can be visualized at different occupancy thresholds.
+Below, we show examples for occupancy values greater than 0.2 and 0.5.
+
+At the lower occupancy threshold, the surface-cavity region overlaps with the
+ligand-binding site, indicating that this region is detected in part of the
+trajectory. At the higher threshold, only a few recurrent cavity regions remain,
+and these regions do not coincide with the ligand-binding site.
+
+This suggests that the ligand-binding cavity may be sensitive to the selected
+surface-cavity parameters in this system. However, it may also reflect the
+dynamic character of this region. Since the ligand is not present in the
+trajectory (and only displayed based on initial PDB structure) 
+The binding-site cavity may not remain open throughout the
+simulation and may instead alternate between more open and more closed
+conformations.
+
+Therefore, the default settings should be treated as a starting point rather
+than a universal choice. Nevertheless, this can be further examined using
+:func:`scanSurfaceCavityParameters`, which samples different combinations of
+surface-cavity parameters and helps determine whether the observed cavity is
+robustly detected under alternative settings.
+
+
+.. figure:: images/cavitracer_figure36.jpg
+   :scale: 50 %
+
+
+.. figure:: images/cavitracer_figure36b.jpg
+   :scale: 50 %
+
+
 .. _Trajectory tutorial: http://www.bahargroup.org/prody/tutorials/trajectory_analysis/
-
-
-
 
