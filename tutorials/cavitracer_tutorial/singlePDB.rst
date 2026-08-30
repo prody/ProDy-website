@@ -31,19 +31,19 @@ Now, we select protein structure for analysis:
 
    atoms = p.select("protein")
 
-To predict channels, tunnels, or cavities within protein structure, we should
+To predict channels or tunnels within protein structure, we should
 utilize :func:`.calcChannels` function. This function analyzes the provided
-atomic structure to detect intraprotein channels/tunnels/cavities, which
+atomic structure to detect intraprotein channels/tunnels, which
 are voids or pathways within the molecular structure. It employs Voronoi
-and Delaunay tessellations to identify these regions (see more details in
-the description of the function). 
+and Delaunay tessellations to identify these regions (see more details 
+in the description of the function). 
 
 The ``'separate'`` parameter controls whether each detected channel is
 saved to a separate file (``True``) or if all channels are saved in a single
 file (``False``). Files are saved as PQR file under the name specified using
 ``'output_path'``. If we add ``.pdb`` the file will be saved as a PDB file;
 Otherwise, it will be saved as a PQR file. Results with ``'separate'``
-option set to True can be saved only as a PQR files. 
+option set to ``True`` can be saved only as a PQR files. 
 
 .. ipython:: python
    :verbatim:
@@ -53,15 +53,48 @@ option set to True can be saved only as a PQR files.
 .. parsed-literal::
 
    @> The atoms supplied to calcChannels contain protein atoms only.
-   @> WARNING structure has no hydrogens and inner_radius=0.90 is below 1.2 A: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise r2 to 1.2 A or more, where protonated and unprotonated structures give the same channels.
-   @> Substituted 3766 atoms with 23638 homogeneous balls of radius 1.52 A in 0.26s.
-   @> Delaunay tessellation of 23638 points constructed in 0.87s.
-   @> Surface and inner simplices filtered in 1.41s.
-   @> 5 surface cavities detected and filtered in 0.32s.
-   @> Channel pathfinding (graph Dijkstra) over 5 cavities completed in 4.12s.
-   @> Detected 57 channels.
-   @> Saving results to channels_1tqn_ALL.pdb.
-   @> Channel calculation completed in 7.07s.
+   @> WARNING structure has no hydrogens and inner_radius=0.90 is below 1.2 Å: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise inner_radius to 1.2 Å or more, where protonated and unprotonated structures give the same channels.
+   @> Substituted 3766 atoms with 23638 homogeneous balls of radius 1.52 Å in 0.27s.
+   @> Delaunay tessellation of 23638 points constructed in 0.86s.
+   @> Surface and inner simplices filtered in 1.38s.
+   @> Surface cavities: 205 found, 5 deeper than min_depth=5.0 Å and searched for channels, in 0.29s.
+   @> Chambers (probe 1.40 Å): 2 of the 5 searched cavities have them; the other 3 are searched whole.
+   @>     cavity 0: 41 chambers, 21 of them qualify as sites, the 20 largest seeded (max_seeds=20).
+   @>     cavity 1: 1 chamber, seeded.
+   @> 24 search sites (sp) in 0.12s: one per seeded chamber, one per cavity searched whole.
+   @> Channel search (Dijkstra) over 24 search sites in 5 cavities completed in 3.29s.
+   @> Found 55 channels and 16 links (a link joins a deep chamber to a shallower one and never reaches the surface).
+   @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
+   @>     site  void                     volume [Å³]  depth [Å]  channels  links
+   @>     sp0   cavity 0, chamber 1/20          4634       14.9        19      -
+   @>     sp1   cavity 2, whole                  392        5.8         1      -
+   @>     sp2   cavity 3, whole                  287        5.6         1      -
+   @>     sp3   cavity 0, chamber 2/20           199        6.9         2      -
+   @>     sp4   cavity 4, whole                  169        7.3         2      -
+   @>     sp5   cavity 0, chamber 3/20           123       10.4         -      1  -> sp0
+   @>     sp6   cavity 0, chamber 4/20           121       20.0         -      2  -> sp8, sp22
+   @>     sp7   cavity 0, chamber 5/20           116        5.1         2      -
+   @>     sp8   cavity 0, chamber 6/20           107       15.3         -      2  -> sp22, sp23
+   @>     sp9   cavity 0, chamber 7/20            83       13.9         2      1  -> sp0
+   @>     sp10  cavity 1, chamber 1/1             53        7.2         2      -
+   @>     sp11  cavity 0, chamber 8/20            50        5.1         1      -
+   @>     sp12  cavity 0, chamber 9/20            50        6.8         2      -
+   @>     sp13  cavity 0, chamber 10/20           50        5.5         3      -
+   @>     sp14  cavity 0, chamber 11/20           49        9.7         3      -
+   @>     sp15  cavity 0, chamber 12/20           47       13.9         -      1  -> sp0
+   @>     sp16  cavity 0, chamber 13/20           47       15.5         2      3  -> sp8, sp9, sp0
+   @>     sp17  cavity 0, chamber 14/20           46        9.1         1      1  -> sp0
+   @>     sp18  cavity 0, chamber 15/20           43        6.2         1      -
+   @>     sp19  cavity 0, chamber 16/20           42       11.9         4      3  -> sp23, sp14, sp0
+   @>     sp20  cavity 0, chamber 17/20           41        9.9         2      1  -> sp0
+   @>     sp21  cavity 0, chamber 18/20           39        7.3         -      -  sealed
+   @>     sp22  cavity 0, chamber 19/20           39        8.4         1      1  -> sp23
+   @>     sp23  cavity 0, chamber 20/20           39        5.6         4      -
+   @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
+   @> The 1 site marked sealed above report neither a channel nor a link: every route out of them is narrower than bottleneck=0.90 Å. Lower it to see how they connect.
+   @> Saving 55 channels to channels_1tqn_ALL.pdb and 16 links to channels_1tqn_ALL_links.pdb.
+   @> Channel calculation completed in 6.58s.
+
 
 .. ipython:: python
    :verbatim:
@@ -71,63 +104,120 @@ option set to True can be saved only as a PQR files.
 .. parsed-literal::
 
    @> The atoms supplied to calcChannels contain protein atoms only.
-   @> WARNING structure has no hydrogens and inner_radius=0.90 is below 1.2 A: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise r2 to 1.2 A or more, where protonated and unprotonated structures give the same channels.
-   @> Substituted 3766 atoms with 23638 homogeneous balls of radius 1.52 A in 0.26s.
+   @> WARNING structure has no hydrogens and inner_radius=0.90 is below 1.2 Å: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise inner_radius to 1.2 Å or more, where protonated and unprotonated structures give the same channels.
+   @> Substituted 3766 atoms with 23638 homogeneous balls of radius 1.52 Å in 0.27s.
    @> Delaunay tessellation of 23638 points constructed in 0.85s.
-   @> Surface and inner simplices filtered in 1.41s.
-   @> 5 surface cavities detected and filtered in 0.29s.
-   @> Channel pathfinding (graph Dijkstra) over 5 cavities completed in 4.11s.
-   @> Detected 57 channels.
-   @> Saving multiple results to directory ..
-   @> Channel calculation completed in 7.07s.
+   @> Surface and inner simplices filtered in 1.36s.
+   @> Surface cavities: 205 found, 5 deeper than min_depth=5.0 Å and searched for channels, in 0.29s.
+   @> Chambers (probe 1.40 Å): 2 of the 5 searched cavities have them; the other 3 are searched whole.
+   @>     cavity 0: 41 chambers, 21 of them qualify as sites, the 20 largest seeded (max_seeds=20).
+   @>     cavity 1: 1 chamber, seeded.
+   @> 24 search sites (sp) in 0.08s: one per seeded chamber, one per cavity searched whole.
+   @> Channel search (Dijkstra) over 24 search sites in 5 cavities completed in 3.26s.
+   @> Found 55 channels and 16 links (a link joins a deep chamber to a shallower one and never reaches the surface).
+   @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
+   @>     site  void                     volume [Å³]  depth [Å]  channels  links
+   @>     sp0   cavity 0, chamber 1/20          4634       14.9        19      -
+   @>     sp1   cavity 2, whole                  392        5.8         1      -
+   @>     sp2   cavity 3, whole                  287        5.6         1      -
+   @>     sp3   cavity 0, chamber 2/20           199        6.9         2      -
+   @>     sp4   cavity 4, whole                  169        7.3         2      -
+   @>     sp5   cavity 0, chamber 3/20           123       10.4         -      1  -> sp0
+   @>     sp6   cavity 0, chamber 4/20           121       20.0         -      2  -> sp8, sp22
+   @>     sp7   cavity 0, chamber 5/20           116        5.1         2      -
+   @>     sp8   cavity 0, chamber 6/20           107       15.3         -      2  -> sp22, sp23
+   @>     sp9   cavity 0, chamber 7/20            83       13.9         2      1  -> sp0
+   @>     sp10  cavity 1, chamber 1/1             53        7.2         2      -
+   @>     sp11  cavity 0, chamber 8/20            50        5.1         1      -
+   @>     sp12  cavity 0, chamber 9/20            50        6.8         2      -
+   @>     sp13  cavity 0, chamber 10/20           50        5.5         3      -
+   @>     sp14  cavity 0, chamber 11/20           49        9.7         3      -
+   @>     sp15  cavity 0, chamber 12/20           47       13.9         -      1  -> sp0
+   @>     sp16  cavity 0, chamber 13/20           47       15.5         2      3  -> sp8, sp9, sp0
+   @>     sp17  cavity 0, chamber 14/20           46        9.1         1      1  -> sp0
+   @>     sp18  cavity 0, chamber 15/20           43        6.2         1      -
+   @>     sp19  cavity 0, chamber 16/20           42       11.9         4      3  -> sp23, sp14, sp0
+   @>     sp20  cavity 0, chamber 17/20           41        9.9         2      1  -> sp0
+   @>     sp21  cavity 0, chamber 18/20           39        7.3         -      -  sealed
+   @>     sp22  cavity 0, chamber 19/20           39        8.4         1      1  -> sp23
+   @>     sp23  cavity 0, chamber 20/20           39        5.6         4      -
+   @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
+   @> The 1 site marked sealed above report neither a channel nor a link: every route out of them is narrower than bottleneck=0.90 Å. Lower it to see how they connect.
+   @> Saving 55 channels and 16 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
+   @> Channel calculation completed in 6.54s.
+
 
 Files with separated channels will be saved in separate PQR files in the
 local directory:
 
 .. parsed-literal::
 
-   channels_1tqn_chl0.pqr
-   channels_1tqn_chl1.pqr  
-   channels_1tqn_chl2.pqr  
-   channels_1tqn_chl3.pqr  
-   channels_1tqn_chl4.pqr
-   channels_1tqn_chl5.pqr  
-   channels_1tqn_chl6.pqr  
-   channels_1tqn_chl7.pqr  
-   channels_1tqn_chl8.pqr
-   ..
-   channels_1tqn_chl56.pqr
+   channels_1tqn_sp0_chl0.pqr 
+   channels_1tqn_sp0_chl1.pqr 
+   channels_1tqn_sp0_chl2.pqr 
+   channels_1tqn_sp0_chl3.pqr 
+   channels_1tqn_sp0_chl4.pqr 
+   channels_1tqn_sp0_chl5.pqr 
+   channels_1tqn_sp0_chl6.pqr 
+   ...
+   channels_1tqn_sp23_chl47.pqr
+   channels_1tqn_sp23_chl48.pqr   
+   channels_1tqn_sp5_lnk0_sp0.pqr
+   channels_1tqn_sp22_lnk1_sp23.pqr
+   channels_1tqn_sp9_lnk5_sp0.pqr
+   channels_1tqn_sp6_lnk2_sp8.pqr
+   channels_1tqn_sp16_lnk4_sp8.pqr
+   channels_1tqn_sp15_lnk3_sp0.pqr
+   channels_1tqn_sp8_lnk7_sp22.pqr
+   channels_1tqn_sp19_lnk8_sp23.pqr
+   channels_1tqn_sp17_lnk6_sp0.pqr
+   channels_1tqn_sp6_lnk9_sp22.pqr
+   channels_1tqn_sp20_lnk10_sp0.pqr
+   channels_1tqn_sp8_lnk11_sp23.pqr
+   channels_1tqn_sp19_lnk12_sp14.pqr
+   channels_1tqn_sp19_lnk13_sp0.pqr
+   channels_1tqn_sp16_lnk14_sp9.pqr
+   channels_1tqn_sp16_lnk15_sp0.pqr
+
 
 Each PQR file will contain ``FIL`` atoms that describe the predicted
-channel/tunnel/pore. The ``Beta`` column denotes the radius of
-the sphere, which is needed for visualization purposes.
+channels/tunnels. The ``Beta`` column denotes the radius of the sphere, 
+which is needed for visualization purposes.
 
 .. parsed-literal::
 
-   ATOM      1  H   FIL T   1     -20.047 -33.772 -10.026  1.00  1.15
-   ATOM      2  H   FIL T   1     -19.937 -33.497  -9.816  1.00  1.26
-   ATOM      3  H   FIL T   1     -19.835 -33.235  -9.619  1.00  1.36
-   ATOM      4  H   FIL T   1     -19.748 -32.998  -9.449  1.00  1.45
-   ATOM      5  H   FIL T   1     -19.685 -32.797  -9.317  1.00  1.52
-   ATOM      6  H   FIL T   1     -19.655 -32.644  -9.237  1.00  1.57
-   ATOM      7  H   FIL T   1     -19.659 -32.549  -9.218  1.00  1.60
-   ATOM      8  H   FIL T   1     -19.680 -32.494  -9.240  1.00  1.61
-   ATOM      9  H   FIL T   1     -19.692 -32.456  -9.278  1.00  1.61
-   ATOM     10  H   FIL T   1     -19.669 -32.414  -9.304  1.00  1.62
-   ATOM     11  H   FIL T   1     -19.586 -32.344  -9.294  1.00  1.64
-   ATOM     12  H   FIL T   1     -19.421 -32.227  -9.225  1.00  1.69
+   REMARK   channel 3  length=16.134 A  bottleneck=1.918 A  curvature=1.288  cost=2.733  from sp0
+   ATOM      1  H   FIL T   4     -17.336 -19.734 -11.982  1.00  3.54
+   ATOM      2  H   FIL T   4     -17.498 -19.456 -11.981  1.00  3.38
+   ATOM      3  H   FIL T   4     -17.648 -19.194 -11.986  1.00  3.25
+   ATOM      4  H   FIL T   4     -17.774 -18.966 -12.001  1.00  3.18
+   ATOM      5  H   FIL T   4     -17.864 -18.789 -12.034  1.00  3.18
+   ATOM      6  H   FIL T   4     -17.906 -18.679 -12.088  1.00  3.20
+   ATOM      7  H   FIL T   4     -17.893 -18.648 -12.168  1.00  3.19
+   ATOM      8  H   FIL T   4     -17.846 -18.674 -12.249  1.00  3.18
+   ATOM      9  H   FIL T   4     -17.802 -18.717 -12.297  1.00  3.20
+   ATOM     10  H   FIL T   4     -17.795 -18.739 -12.278  1.00  3.25
+   ATOM     11  H   FIL T   4     -17.861 -18.702 -12.159  1.00  3.23
+   ATOM     12  H   FIL T   4     -18.032 -18.571 -11.907  1.00  3.07
+   ATOM     13  H   FIL T   4     -18.293 -18.355 -11.544  1.00  2.79
+   ATOM     14  H   FIL T   4     -18.595 -18.100 -11.126  1.00  2.57
+   ATOM     15  H   FIL T   4     -18.887 -17.848 -10.709  1.00  2.51
+   ATOM     16  H   FIL T   4     -19.118 -17.645 -10.350  1.00  2.55
+   ATOM     17  H   FIL T   4     -19.240 -17.534 -10.105  1.00  2.59
+   ATOM     18  H   FIL T   4     -19.251 -17.520  -9.985  1.00  2.59
    ..
 
-Generated PQR file can be visualized together with protein PDB file using VMD_
-or another program for graphical visualizations of molecules.
+
+Generated PQR file can be visualized together with protein PDB file using 
+VMD_ or another program for graphical visualizations of molecules.
 
 .. figure:: images/cavitracer_figure1.jpg
    :scale: 50 %
 
-CaviTracer provides various information about predicted
-channels/tunnels/pores, such as volume, length of the channels, and the
-bottleneck (narrowest point of the channel). To obtain this information use
-:func:`.getChannelParameters` function.
+CaviTracer provides various information about predicted channels/tunnels, 
+such as volume, length of the channels, and the bottleneck (narrowest point 
+of the channel). To obtain this information use :func:`.getChannelParameters` 
+function.
 
 .. ipython:: python
    :verbatim:
@@ -137,148 +227,194 @@ bottleneck (narrowest point of the channel). To obtain this information use
 .. parsed-literal::
 
    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> channel 0: 	60.22 		6.49 		0.95
-   @> channel 1: 	46.16 		8.75 		0.89
-   @> channel 2: 	63.12 		9.89 		0.89
-   @> channel 3: 	40.11 		8.97 		0.95
-   @> channel 4: 	75.41 		11.22 		0.89
-   @> channel 5: 	35.54 		8.98 		0.93
-   @> channel 6: 	76.9 		12.55 		0.89
-   @> channel 7: 	74.84 		16.19 		0.86
-   @> channel 8: 	100.23 		19.31 		0.86
-   @> channel 9: 	193.9 		33.95 		0.91
-   @> channel 10: 	187.54 		34.46 		0.91
-   @> channel 11: 	135.54 		34.2 		0.87
-   @> channel 12: 	214.24 		43.14 		0.84
-   @> channel 13: 	146.5 		36.37 		0.87
-   @> channel 14: 	756.01 		65.84 		0.85
-   @> channel 15: 	312.62 		48.38 		0.85
-   @> channel 16: 	626.95 		63.69 		0.85
-   @> channel 17: 	1099.1 		76.6 		0.85
-   @> channel 18: 	633.91 		64.34 		0.85
-   @> channel 19: 	1174.08 	77.85 		0.85
-   @> channel 20: 	217.18 		45.23 		0.91
-   @> channel 21: 	237.05 		47.31 		0.91
-   @> channel 22: 	1038.56 	76.77 		0.85
-   @> channel 23: 	1037.87 	76.97 		0.85
-   @> channel 24: 	551.39 		62.29 		0.85
-   @> channel 25: 	287.77 		52.63 		0.91
-   @> channel 26: 	249.46 		48.77 		0.79
-   @> channel 27: 	273.57 		52.29 		0.91
-   @> channel 28: 	521.44 		61.41 		0.84
-   @> channel 29: 	387.2 		57.1 		0.85
-   @> channel 30: 	745.97 		70.94 		0.85
-   @> channel 31: 	335.67 		55.67 		0.85
-   @> channel 32: 	402.03 		59.42 		0.85
-   @> channel 33: 	463.98 		63.81 		0.85
-   @> channel 34: 	473.98 		65.06 		0.85
-   @> channel 35: 	1012.12 	81.79 		0.85
-   @> channel 36: 	747.34 		72.88 		0.85
-   @> channel 37: 	504.33 		68.06 		0.85
-   @> channel 38: 	1030.95 	84.17 		0.85
-   @> channel 39: 	457.82 		65.23 		0.85
-   @> channel 40: 	476.47 		65.18 		0.77
-   @> channel 41: 	489.71 		67.2 		0.77
-   @> channel 42: 	541.12 		71.05 		0.85
-   @> channel 43: 	1000.67 	85.13 		0.85
-   @> channel 44: 	453.94 		69.05 		0.85
-   @> channel 45: 	767.08 		78.21 		0.85
-   @> channel 46: 	424.95 		65.58 		0.78
-   @> channel 47: 	1063.79 	86.23 		0.59
-   @> channel 48: 	1003.87 	87.76 		0.67
-   @> channel 49: 	1057.96 	86.47 		0.59
-   @> channel 50: 	376.7 		70.69 		0.85
-   @> channel 51: 	372.05 		70.8 		0.85
-   @> channel 52: 	1011.7 		90.14 		0.66
-   @> channel 53: 	334.86 		68.83 		0.85
-   @> channel 54: 	362.79 		70.69 		0.84
-   @> channel 55: 	1022.15 	92.38 		0.66
-   @> channel 56: 	1013.42 	93.48 		0.66
+   @> channel 0: 	146.5 		5.51 		1.77
+   @> channel 1: 	69.03 		5.89 		1.43
+   @> channel 2: 	64.05 		6.59 		1.24
+   @> channel 3: 	423.9 		16.13 		1.92
+   @> channel 4: 	51.56 		5.71 		1.25
+   @> channel 5: 	57.41 		5.74 		0.97
+   @> channel 6: 	664.86 		23.93 		2.15
+   @> channel 7: 	739.84 		25.18 		2.15
+   @> channel 8: 	86.51 		8.15 		1.11
+   @> channel 9: 	385.95 		16.16 		1.29
+   @> channel 10: 	392.91 		16.81 		1.33
+   @> channel 11: 	40.68 		6.49 		1.01
+   @> channel 12: 	54.21 		7.11 		1.11
+   @> channel 13: 	82.22 		8.29 		1.03
+   @> channel 14: 	81.91 		8.71 		1.13
+   @> channel 15: 	34.03 		5.36 		0.9
+   @> channel 16: 	604.32 		24.1 		1.12
+   @> channel 17: 	49.35 		7.36 		0.99
+   @> channel 18: 	59.47 		8.46 		0.99
+   @> channel 19: 	90.68 		11.23 		1.18
+   @> channel 20: 	603.63 		24.3 		1.0
+   @> channel 21: 	46.0 		7.58 		0.94
+   @> channel 22: 	38.39 		7.9 		0.99
+   @> channel 23: 	89.84 		10.84 		0.91
+   @> channel 24: 	426.27 		20.87 		0.91
+   @> channel 25: 	122.11 		12.11 		0.95
+   @> channel 26: 	72.5 		10.84 		0.96
+   @> channel 27: 	33.82 		7.91 		0.93
+   @> channel 28: 	75.64 		10.51 		0.91
+   @> channel 29: 	98.23 		12.75 		0.97
+   @> channel 30: 	56.07 		8.89 		0.94
+   @> channel 31: 	85.59 		11.73 		0.97
+   @> channel 32: 	301.19 		16.72 		0.99
+   @> channel 33: 	74.27 		11.62 		0.97
+   @> channel 34: 	48.36 		9.65 		0.91
+   @> channel 35: 	63.68 		11.17 		0.99
+   @> channel 36: 	51.14 		10.13 		0.9
+   @> channel 37: 	64.48 		12.44 		1.02
+   @> channel 38: 	96.08 		15.8 		0.97
+   @> channel 39: 	115.94 		17.88 		1.11
+   @> channel 40: 	313.89 		20.23 		0.9
+   @> channel 41: 	602.7 		34.6 		1.02
+   @> channel 42: 	388.08 		23.9 		0.91
+   @> channel 43: 	483.05 		28.97 		0.95
+   @> channel 44: 	596.71 		31.5 		0.98
+   @> channel 45: 	85.62 		16.34 		0.95
+   @> channel 46: 	86.68 		17.73 		0.94
+   @> channel 47: 	124.35 		20.39 		0.93
+   @> channel 48: 	113.03 		20.28 		0.93
+   @> channel 49: 	100.52 		19.31 		0.94
+   @> channel 50: 	629.5 		38.68 		0.91
+   @> channel 51: 	683.4 		42.38 		0.91
+   @> channel 52: 	685.23 		44.49 		0.9
+   @> channel 53: 	514.54 		36.79 		0.95
+   @> channel 54: 	673.91 		47.46 		0.9
 
-   ([6.492057612806176,
-     8.747214787071009,
-     9.88835768477351,
+   ([5.514260036626099,
+     5.886380861494063,
+     6.5934334141643145,
+     16.13378355698167,
+     5.707212434124496,
+     5.743534416215082,
+     23.93205559550196,
+     25.18416954265959,
+     8.14858424927066,
+     16.159465309540064,
+     16.8060796205449,
+     6.485933613458969,
+     7.111113208265152,
+     8.285912512775523,
+     8.709097354513776,
+     5.361456571558767,
+     24.096755473777034,
      ..
-     70.69375950960386,
-     92.37669761808526,
-     93.47861401991176],
-    [0.9465177739700246,
-     0.8945378037566032,
-     0.8860264274901208,
-     ..
-     0.8378961392220603,
-     0.6624844558162226,
-     0.6624844558162226],
-    [60.221979215355034,
-     46.16486691455868,
-     63.11707773997961,
-     ..
-     362.7912307310119,
-     1022.1498363831043,
-     1013.4237285330822])
+     596.7108038562736,
+     85.622888910006,
+     86.68202485968703,
+     124.35038669081072,
+     113.02985361728128,
+     100.52196879281517,
+     629.5048123718835,
+     683.4028210551583,
+     685.2304661354045,
+     514.5362345553576,
+     673.9143514431406])
+
 
 Additionally, to obtain information on which residues are involved in the
-formation of the predicted channels, use :func:`.getChannelResidueNames` function.
-To save the data in the local directory, provide a name for ``residues_file_name``.
-This information can be saved with a one-letter or three-letter code of
-residues, as shown below. 
+formation of the predicted channels, use :func:`.getChannelResidueNames` 
+function. To save the data in the local directory, provide a name for 
+``residues_file_name``. This information can be saved with a one-letter 
+or three-letter code of residues, as shown below. 
 
 .. ipython:: python
    :verbatim:
 
-   getChannelResidueNames(atoms, channels, residues_file_name='1tqn_data')
+   getChannelResidueNames(atoms, channels, 
+				residues_file_name='1tqn_data')
 
 .. parsed-literal::
 
-   @> 3831 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3861 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3861 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3856 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   ..
-   @> 4311 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 4336 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 4486 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 4496 atoms and 1 coordinate set(s) were parsed in 0.04s.
    @> Channel residues were saved to: 1tqn_data_Residues_All_channels.txt
 
-   ['channel0: PHE33, ILE38, PRO39, GLY40, PRO41, PRO43, ASN49, GLY73, PHE74, TYR75',
-    'channel1: LEU172, SER315, MET318, TYR319, ALA322, THR323, PRO467, THR471, ILE473, VAL489, LEU491',
-    'channel2: LEU172, SER315, MET318, TYR319, GLU470, THR471, GLN472, PRO488, VAL489, VAL490, LEU491',
-    'channel3: MET89, THR92, VAL93, GLU97, PHE102, ILE383, ASN384',
+   ['channel0: LYS173:A, SER312:A, SER315:A, PHE316:A, GLN484:A, PRO485:A, PRO488:A',
+    'channel1: ILE149:A, ALA150:A, GLY153:A, ASP154:A, TYR179:A, PRO345:A, LEU454:A, ALA455:A, ARG458:A',
+    'channel2: ILE149:A, ALA150:A, GLY153:A, TYR179:A, PRO345:A, LEU454:A, ALA455:A, ARG458:A',
+    'channel3: ARG105:A, ARG106:A, PRO107:A, PHE108:A, SER119:A, ILE120:A, GLU122:A, ARG212:A, PHE304:A, ALA370:A, CYS442:A',
+    'channel4: LYS209:A, LEU210:A, PRO242:A, VAL245:A, THR246:A, LEU249:A, ILE300:A',
+    'channel5: PHE33:A, ILE38:A, PRO39:A, GLY40:A, PRO41:A, ASN49:A, GLY73:A, PHE74:A, TYR75:A',
+    'channel6: ASP76:A, GLN79:A, ARG105:A, ARG106:A, PRO107:A, PHE108:A, ARG212:A, PHE215:A, ILE223:A, THR224:A, PRO227:A, ALA370:A, ARG372:A, GLU374:A, CYS442:A',
+    'channel7: ASP76:A, GLN79:A, ARG105:A, ARG106:A, PRO107:A, PHE108:A, ARG212:A, PHE215:A, ILE223:A, THR224:A, PRO227:A, ILE230:A, ALA370:A, ARG372:A, GLU374:A, CYS442:A',
+    'channel8: VAL155:A, LEU156:A, ASN159:A, LEU160:A, GLU163:A, VAL175:A, ALA178:A, TYR179:A, ASP182:A, LEU196:A',
+    'channel9: ARG105:A, ARG212:A, ALA305:A, GLU308:A, THR309:A, SER312:A, ILE369:A, ALA370:A, CYS442:A, LEU482:A, LEU483:A, GLN484:A',
+    'channel10: ARG105:A, ARG212:A, ALA305:A, GLU308:A, THR309:A, SER312:A, ILE369:A, ALA370:A, CYS442:A, LEU482:A, LEU483:A, GLN484:A',
+    'channel11: TYR319:A, ALA322:A, THR323:A, PRO467:A, THR471:A, ILE473:A, VAL489:A, LEU491:A',
+    'channel12: ALA150:A, GLY153:A, LEU156:A, PRO345:A, LEU454:A, ALA455:A, ARG458:A, VAL459:A',
+    'channel13: VAL155:A, LEU156:A, ASN159:A, GLU163:A, ASP174:A, VAL175:A, ALA178:A, TYR179:A, ASP182:A, LEU196:A',
+    'channel14: LYS209:A, LEU210:A, LEU211:A, PHE213:A, VAL240:A, PHE241:A, PRO242:A, VAL245:A, THR246:A, LEU249:A, ILE300:A, PHE304:A',
+    'channel15: PRO41:A, ASN49:A, SER52:A, TYR53:A, PHE60:A, PHE74:A, ASP76:A',
+    'channel16: ILE50:A, TYR53:A, PHE57:A, ASP76:A, ARG105:A, ARG106:A, ARG212:A, PHE215:A, LEU216:A, LEU221:A, THR224:A, ALA370:A, ARG372:A, GLU374:A, CYS442:A',
+    'channel17: LEU129:A, LEU132:A, LEU133:A, SER278:A, LEU290:A, GLN298:A',
+    'channel18: LEU129:A, LEU132:A, LEU133:A, THR136:A, LEU274:A, MET275:A, SER278:A, LEU290:A, GLN298:A',
+    'channel19: SER312:A, SER315:A, PHE316:A, TYR319:A, GLU320:A, PHE367:A, LEU475:A, PRO485:A, VAL489:A',
+    'channel20: ILE50:A, TYR53:A, PHE57:A, ASP76:A, ARG105:A, ARG106:A, ARG212:A, PHE215:A, LEU216:A, LEU221:A, THR224:A, ALA370:A, ARG372:A, GLU374:A, CYS442:A',
+    'channel21: LEU82:A, ILE84:A, MET89:A, ILE383:A, ASN384:A, GLY385:A, MET386:A, ILE388:A, VAL394:A',
+    'channel22: MET89:A, THR92:A, VAL93:A, GLU97:A, PHE102:A, ILE383:A, ASN384:A',
+    'channel23: MET145:A, ILE148:A, ILE149:A, TYR152:A, ASP182:A, VAL183:A, SER186:A, THR187:A, ARG268:A, VAL269:A, ASP270:A',
+    'channel24: ARG105:A, SER119:A, PHE137:A, ARG212:A, PHE302:A, ALA305:A, GLY306:A, ALA370:A, ASN441:A, CYS442:A, ILE443:A, GLY444:A, MET445:A, ARG446:A, PHE447:A',
+    'channel25: PHE113:A, MET114:A, LEU210:A, CYS239:A, PHE241:A, ARG243:A, VAL245:A, THR246:A, LEU249:A, ILE300:A',
+    'channel26: PHE33:A, LEU36:A, ILE38:A, LEU82:A, ILE84:A, ILE383:A, PHE387:A, ILE388:A, PRO389:A, VAL392:A, VAL394:A',
+    'channel27: MET89:A, THR92:A, VAL93:A, GLU97:A, PHE102:A, ILE383:A, ASN384:A',
+    'channel28: MET145:A, ILE148:A, ILE149:A, TYR152:A, ASP182:A, VAL183:A, SER186:A, THR187:A, ARG268:A, VAL269:A, ASP270:A',
+    'channel29: THR136:A, PHE137:A, THR138:A, LEU142:A, MET145:A, ILE149:A, PHE271:A, ILE443:A, GLY444:A, ARG446:A, PHE447:A, MET450:A, ASN451:A',
+    'channel30: HIS65:A, TRP72:A, THR85:A, PRO397:A, ALA400:A, LEU401:A, ASP404:A, TYR407:A',
+    'channel31: LEU142:A, MET145:A, ILE148:A, ILE149:A, SER186:A, THR187:A, ARG268:A, VAL269:A, ASP270:A, PHE447:A, MET450:A, ASN451:A',
+    'channel32: LEU94:A, ARG105:A, ARG212:A, ALA370:A, LEU373:A, ARG375:A, PRO429:A, TYR432:A, THR433:A, PRO434:A, PHE435:A, GLY436:A, SER437:A, ARG440:A, ASN441:A, CYS442:A',
+    'channel33: LEU142:A, MET145:A, ILE148:A, ILE149:A, SER186:A, THR187:A, ARG268:A, VAL269:A, ASP270:A, PHE447:A, MET450:A, ASN451:A',
+    'channel34: MET145:A, ILE148:A, ILE149:A, TYR152:A, ASP182:A, VAL183:A, SER186:A, THR187:A',
+    'channel35: ILE90:A, LEU94:A, LEU373:A, ILE396:A, LEU401:A, PRO429:A, TYR430:A, ILE431:A, TYR432:A, THR433:A, GLY436:A, SER437:A',
+    'channel36: ILE90:A, LEU94:A, ILE396:A, LEU401:A, PRO429:A, TYR430:A, ILE431:A, THR433:A, SER437:A',
+    'channel37: CYS98:A, TYR99:A, PHE102:A, THR103:A, ASN104:A, ARG105:A, TRP126:A, LYS127:A, GLU374:A, ARG375:A, ARG440:A',
+    'channel38: VAL313:A, PHE316:A, ILE317:A, ASP357:A, VAL360:A, THR363:A, LEU364:A, PHE367:A, LEU449:A, MET452:A, LYS453:A, LEU456:A',
+    'channel39: VAL313:A, PHE316:A, ILE317:A, ASP357:A, VAL360:A, ASN361:A, THR363:A, LEU364:A, PHE367:A, LEU449:A, MET452:A, LYS453:A, LEU456:A',
+    'channel40: LEU94:A, ARG105:A, ARG212:A, ALA370:A, LEU373:A, ARG375:A, PRO429:A, TYR430:A, THR433:A, PRO434:A, PHE435:A, GLY436:A, SER437:A, ARG440:A, ASN441:A, CYS442:A',
+    'channel41: ARG105:A, SER119:A, LEU132:A, LEU133:A, THR136:A, PHE137:A, ILE184:A, THR187:A, SER188:A, ARG212:A, PHE271:A, LEU272:A, LEU274:A, MET275:A, SER278:A, SER299:A, PHE302:A, ILE303:A, ALA305:A, GLY306:A, ALA370:A, ASN441:A, CYS442:A, ILE443:A, GLY444:A, PHE447:A',
+    'channel42: ARG105:A, ARG212:A, ALA305:A, THR309:A, VAL313:A, ILE317:A, VAL360:A, LEU364:A, ILE369:A, ALA370:A, PRO434:A, PHE435:A, CYS442:A, LEU449:A, MET452:A, LYS453:A, LEU456:A',
+    'channel43: ARG105:A, SER119:A, THR136:A, PHE137:A, THR138:A, LYS141:A, LEU142:A, MET145:A, ARG212:A, VAL269:A, PHE271:A, LEU274:A, PHE302:A, ALA305:A, GLY306:A, ALA370:A, ASN441:A, CYS442:A, ILE443:A, GLY444:A, PHE447:A',
+    'channel44: ARG105:A, ARG106:A, PRO107:A, PHE108:A, GLY109:A, PRO110:A, ARG212:A, PHE215:A, PHE219:A, PHE220:A, ILE223:A, THR224:A, LEU229:A, ILE230:A, LEU233:A, ALA370:A, ARG372:A, GLU374:A, CYS442:A',
+    'channel45: THR136:A, PHE137:A, THR138:A, LYS141:A, LEU142:A, MET145:A, ILE149:A, VAL269:A, PHE271:A, LEU274:A, PHE447:A, MET450:A, ASN451:A',
+    'channel46: ILE317:A, LEU321:A, LEU331:A, ILE335:A, LEU356:A, VAL359:A, VAL360:A, LEU449:A, MET452:A, LYS453:A, LEU456:A, ILE457:A, LEU460:A',
+    'channel47: MET145:A, ILE148:A, ILE149:A, ALA150:A, GLY153:A, TYR179:A, VAL183:A, SER186:A, THR187:A, ARG268:A, VAL269:A, ASP270:A, PHE447:A, MET450:A, ASN451:A, LEU454:A, ALA455:A',
+    'channel48: MET145:A, ILE148:A, ILE149:A, ALA150:A, GLY153:A, TYR179:A, VAL183:A, SER186:A, THR187:A, ARG268:A, VAL269:A, ASP270:A, PHE447:A, MET450:A, ASN451:A, LEU454:A, ALA455:A',
+    'channel49: ILE317:A, LEU321:A, LEU331:A, ILE335:A, LEU356:A, ASP357:A, VAL359:A, VAL360:A, ASN361:A, LEU449:A, MET452:A, LYS453:A, LEU456:A, ILE457:A, LEU460:A',
+    'channel50: ARG105:A, SER119:A, LEU133:A, PRO135:A, THR136:A, PHE137:A, LYS141:A, ILE184:A, THR187:A, SER188:A, ARG212:A, PHE271:A, LEU272:A, LEU274:A, MET275:A, SER278:A, SER299:A, PHE302:A, ILE303:A, ALA305:A, GLY306:A, ALA370:A, ASN441:A, CYS442:A, ILE443:A, GLY444:A, PHE447:A',
+    'channel51: ARG105:A, PHE113:A, SER119:A, PHE137:A, ILE184:A, THR187:A, SER188:A, PHE203:A, ARG212:A, THR246:A, ASN247:A, LEU249:A, ARG250:A, VAL253:A, PHE271:A, VAL296:A, SER299:A, ILE300:A, PHE302:A, ILE303:A, ALA305:A, GLY306:A, ALA370:A, ASN441:A, CYS442:A, ILE443:A, GLY444:A, PHE447:A',
+    'channel52: ARG105:A, SER119:A, PHE137:A, LYS173:A, ASP174:A, GLY177:A, ALA178:A, MET181:A, ILE184:A, THR185:A, THR187:A, SER188:A, THR207:A, LYS208:A, ARG212:A, PHE271:A, SER299:A, PHE302:A, ILE303:A, ALA305:A, GLY306:A, TYR307:A, ALA370:A, ASN441:A, CYS442:A, ILE443:A, GLY444:A, PHE447:A',
+    'channel53: ARG105:A, SER119:A, THR136:A, PHE137:A, THR138:A, LEU142:A, MET145:A, ILE148:A, ILE149:A, SER186:A, THR187:A, ARG212:A, PHE271:A, PHE302:A, ALA305:A, GLY306:A, ALA370:A, ASN441:A, CYS442:A, ILE443:A, GLY444:A, PHE447:A',
+    'channel54: ARG105:A, SER119:A, PHE137:A, GLY177:A, ALA178:A, MET181:A, ILE184:A, THR185:A, THR187:A, SER188:A, SER195:A, VAL204:A, THR207:A, LYS208:A, ARG212:A, PHE271:A, SER299:A, PHE302:A, ILE303:A, ALA305:A, GLY306:A, TYR307:A, ALA370:A, ASN441:A, CYS442:A, ILE443:A, GLY444:A, PHE447:A']
+
+.. ipython:: python
+   :verbatim:
+
+   getChannelResidueNames(atoms, channels, distA=3, 
+		one_letter_aa=True, residues_file_name='1tqn_data_1letter')
+
+.. parsed-literal::
+
+   @> Channel residues were saved to: 1tqn_data_1letter_Residues_All_channels.txt
+
+   ['channel0: K173:A, S311:A, S312:A, S315:A, F316:A, Q484:A, P485:A, P488:A',
+    'channel1: I149:A, A150:A, Q151:A, G153:A, D154:A, Y179:A, P344:A, P345:A, L454:A, A455:A, R458:A',
+    'channel2: I149:A, A150:A, G153:A, Y179:A, P344:A, P345:A, T346:A, L454:A, A455:A, R458:A',
+    'channel3: R105:A, R106:A, P107:A, F108:A, S119:A, I120:A, E122:A, R212:A, F215:A, F304:A, A305:A, A370:A, N441:A, C442:A',
+    'channel4: N206:A, K209:A, L210:A, F241:A, P242:A, V245:A, T246:A, L249:A, I300:A',
+    'channel5: F33:A, K34:A, I38:A, P39:A, G40:A, P41:A, P43:A, N49:A, G73:A, F74:A, Y75:A',
+    'channel6: D76:A, Q78:A, Q79:A, R105:A, R106:A, P107:A, F108:A, R212:A, F215:A, F220:A, I223:A, T224:A, P227:A, I230:A, A305:A, A370:A, R372:A, E374:A, N441:A, C442:A',
+    'channel7: D76:A, Q79:A, R105:A, R106:A, P107:A, F108:A, R212:A, F215:A, F220:A, I223:A, T224:A, P227:A, I230:A, A305:A, A370:A, R372:A, E374:A, N441:A, C442:A',
+    'channel8: V155:A, L156:A, N159:A, L160:A, E163:A, V175:A, A178:A, Y179:A, D182:A, D194:A, L196:A',
+    'channel9: R105:A, R212:A, A305:A, E308:A, T309:A, S312:A, I369:A, A370:A, P434:A, F435:A, N441:A, C442:A, L482:A, L483:A, Q484:A',
+    'channel10: R105:A, R212:A, A305:A, E308:A, T309:A, S312:A, I369:A, A370:A, P434:A, F435:A, N441:A, C442:A, L482:A, L483:A, Q484:A',
+    'channel11: M318:A, Y319:A, A322:A, T323:A, K466:A, P467:A, T471:A, I473:A, V489:A, L491:A',
     ..
-    'channel53: MET145, ILE148, ILE149, ALA150, TYR152, GLY153, VAL155, LEU156, VAL157, ASN159, LEU160, VAL170, LEU172, VAL175, PHE176, TYR179, ASP182, VAL183, SER186, THR187, ILE193, ASP194, SER195, LEU196, ALA322, PHE447, MET450, ASN451, LEU454, ALA455, ARG458, VAL459, PHE463, PHE465, LYS466, PRO467, LEU491, LYS492, VAL493',
-    'channel54: MET145, ILE148, ILE149, ALA150, TYR152, GLY153, VAL155, LEU156, VAL157, ASN159, LEU160, VAL170, LEU172, ASP174, VAL175, PHE176, ALA178, TYR179, ASP182, VAL183, SER186, THR187, LEU196, ALA322, PHE447, MET450, ASN451, LEU454, ALA455, ARG458, VAL459, PHE463, PHE465, LYS466, PRO467, LEU491, LYS492, VAL493',
-    'channel55: PHE57, CYS58, ASP61, MET62, HIS65, TRP72, THR85, LEU156, LEU160, VAL170, LEU172, VAL175, PHE176, TYR179, SER180, ILE184, ALA305, GLY306, THR309, THR310, SER311, LEU314, ALA322, ALA370, MET371, ARG372, PRO397, SER398, TYR399, ALA400, LEU401, ASP404, TYR407, CYS442, GLY444, PHE447, ALA448, ASN451, PHE465, LYS466, PRO467, LEU491, LYS492, VAL493',
-    'channel56: PHE57, CYS58, ASP61, MET62, HIS65, TRP72, THR85, LEU156, LEU160, VAL170, LEU172, VAL175, PHE176, TYR179, SER180, ILE184, ALA305, GLY306, THR309, THR310, SER311, LEU314, ALA322, ALA370, MET371, ARG372, PRO397, SER398, TYR399, ALA400, LEU401, ASP404, TYR407, ILE431, CYS442, GLY444, PHE447, ALA448, ASN451, PHE465, LYS466, PRO467, LEU491, LYS492, VAL493']
-
-
-.. ipython:: python
-   :verbatim:
-
-   getChannelResidueNames(atoms, channels, distA=3, one_letter_aa=True, residues_file_name='1tqn_data_1letter')
-
-.. parsed-literal::
-
-   @> 3831 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3861 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3861 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 3856 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   ..
-   @> 4311 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 4336 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 4486 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 4496 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> Channel residues were saved to: 1tqn_data_Residues_All_channels.txt
-
-   ['channel0: P41, N49, G73, F74, Y75',
-    'channel1: L172, Y319, T323, P467, T471, I473, V489, L491',
-    'channel2: L172, Y319, T471, V489, L491',
-    'channel3: M89, T92, V93, E97, F102, I383, N384',
-     ..
-    'channel53: M145, I148, I149, Y152, G153, V155, L156, V157, N159, L160, V170, L172, Y179, D182, V183, T187, I193, D194, A322, F447, N451, L454, A455, R458, V459, F465, K466, P467, L491, K492, V493',
-    'channel54: M145, I148, I149, Y152, G153, L156, V157, L160, V170, L172, D174, V175, A178, Y179, D182, V183, T187, L196, A322, F447, N451, L454, A455, R458, V459, F465, K466, P467, L491, K492, V493',
-    'channel55: F57, D61, H65, W72, L156, V170, L172, V175, F176, Y179, S180, T310, L314, A322, M371, R372, P397, A400, L401, D404, Y407, N451, F465, K466, P467, L491, K492, V493',
-    'channel56: F57, D61, H65, W72, T85, L156, V170, L172, V175, F176, Y179, S180, T310, L314, A322, M371, R372, P397, A400, L401, D404, Y407, I431, N451, F465, K466, P467, L491, K492, V493']
+    'channel49: I317:A, L321:A, L331:A, I335:A, L356:A, D357:A, V359:A, V360:A, N361:A, L449:A, M452:A, K453:A, L456:A, I457:A, L460:A',
+    'channel50: R105:A, S119:A, L132:A, L133:A, P135:A, T136:A, F137:A, K141:A, V183:A, I184:A, T187:A, S188:A, R212:A, F271:A, L272:A, L274:A, M275:A, S278:A, Q298:A, S299:A, F302:A, I303:A, A305:A, G306:A, A370:A, N441:A, C442:A, I443:A, G444:A, F447:A',
+    'channel51: R105:A, F113:A, S119:A, F137:A, V183:A, I184:A, T187:A, S188:A, F203:A, R212:A, T246:A, N247:A, L249:A, R250:A, V253:A, M256:A, F271:A, L272:A, V296:A, S299:A, I300:A, F302:A, I303:A, A305:A, G306:A, A370:A, N441:A, C442:A, I443:A, G444:A, F447:A',
+    'channel52: R105:A, S119:A, F137:A, K173:A, D174:A, G177:A, A178:A, M181:A, V183:A, I184:A, T185:A, T187:A, S188:A, F203:A, T207:A, K208:A, R212:A, F271:A, S299:A, F302:A, I303:A, A305:A, G306:A, Y307:A, A370:A, N441:A, C442:A, I443:A, G444:A, F447:A',
+    'channel53: R105:A, S119:A, T136:A, F137:A, T138:A, K141:A, L142:A, M145:A, V146:A, I148:A, I149:A, S186:A, T187:A, R212:A, F271:A, F302:A, A305:A, G306:A, A370:A, N441:A, C442:A, I443:A, G444:A, F447:A',
+    'channel54: R105:A, S119:A, F137:A, G177:A, A178:A, M181:A, V183:A, I184:A, T185:A, T187:A, S188:A, S195:A, L196:A, N198:A, P199:A, F203:A, V204:A, T207:A, K208:A, R212:A, F271:A, S299:A, F302:A, I303:A, A305:A, G306:A, Y307:A, A370:A, N441:A, C442:A, I443:A, G444:A, F447:A']
 
 
 Visualization of channels within ProDy
@@ -291,8 +427,8 @@ predictions directly in ProDy.
 First, we need to use :func:`.getVmdModel` function and provide the pathway
 to where VMD_ binary file is localized, as shown below. VMD_ is used to
 create protein structure in the NewCartoon representation. That model is
-further used by CaviTracer functions to display predicted channels/tunnels using
-Open3D_ library. 
+further used by CaviTracer functions to display predicted channels/tunnels 
+using Open3D_ library. 
 
 .. ipython:: python
    :verbatim:
@@ -359,7 +495,7 @@ from the prediction).
 .. ipython:: python
    :verbatim:
 
-   showChannels(channels[40], model)
+   showChannels(channels[3], model)
 
 .. figure:: images/cavitracer_figure6.jpg
    :scale: 50 %
@@ -367,7 +503,7 @@ from the prediction).
 .. ipython:: python
    :verbatim:
 
-   showChannels(channels[15], model)
+   showChannels(channels[41], model)
 
 .. figure:: images/cavitracer_figure7.jpg
    :scale: 50 %
@@ -387,6 +523,10 @@ from the prediction).
    selected_channels = channels[10:20]
    showChannels(selected_channels, model)
 
+
+.. figure:: images/cavitracer_figure8B.jpg
+   :scale: 50 %
+
 Once we select which channels are of interest, we can obtain information
 about their parameters.
 
@@ -400,17 +540,17 @@ about their parameters.
 .. parsed-literal::
 
    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> channel 0: 	187.54 		34.46 		0.91
-   @> channel 1: 	135.54 		34.2 		0.87
-   @> channel 2: 	214.24 		43.14 		0.84
-   @> channel 3: 	146.5 		36.37 		0.87
-   @> channel 4: 	756.01 		65.84 		0.85
-   @> channel 5: 	312.62 		48.38 		0.85
-   @> channel 6: 	626.95 		63.69 		0.85
-   @> channel 7: 	1099.1 		76.6 		0.85
-   @> channel 8: 	633.91 		64.34 		0.85
-   @> channel 9: 	1174.08 	77.85 		0.85
-   @> 4330 atoms and 1 coordinate set(s) were parsed in 0.10s.
+   @> channel 0: 	392.91 		16.81 		1.33
+   @> channel 1: 	40.68 		6.49 		1.01
+   @> channel 2: 	54.21 		7.11 		1.11
+   @> channel 3: 	82.22 		8.29 		1.03
+   @> channel 4: 	81.91 		8.71 		1.13
+   @> channel 5: 	34.03 		5.36 		0.9
+   @> channel 6: 	604.32 		24.1 		1.12
+   @> channel 7: 	49.35 		7.36 		0.99
+   @> channel 8: 	59.47 		8.46 		0.99
+   @> channel 9: 	90.68 		11.23 		1.18
+   @> 845 atoms and 1 coordinate set(s) were parsed in 0.02s.
 
 
 Predefined starting point for channel prediction
@@ -433,18 +573,23 @@ geometric center is used as the starting point.
 
    @> Using user-provided start_point for channel seed: [-22.312, -20.065, -11.144] Å
    @> The atoms supplied to calcChannels contain protein atoms only.
-   @> WARNING structure has no hydrogens and inner_radius=0.90 is below 1.2 A: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise r2 to 1.2 A or more, where protonated and unprotonated structures give the same channels.
-   @> Substituted 3766 atoms with 23638 homogeneous balls of radius 1.52 A in 0.27s.
-   @> Delaunay tessellation of 23638 points constructed in 0.87s.
-   @> Surface and inner simplices filtered in 1.43s.
-   @> start_point seeded at tetrahedron 11317 (Voronoi vertex at [-24.951, -19.189, -10.516], 2.850 A from start_point, inscribed radius 1.330 A, depth 13.3 A).
-   @>     widened from the nearest tetrahedron 8399 (2.444 A away, inscribed radius 0.924 A, depth 13.1 A), the widest of the 4 tetrahedra no shallower than it among the 4 reachable within 3.0 A; seeding the narrow one would have capped every channel here at its radius.
-   @>     restricting the channel search to the cavity that contains it (10149 tetrahedra, depth 32.4 A).
-   @> 1 surface cavities detected and filtered in 0.36s.
-   @> Channel pathfinding (graph Dijkstra) over 1 cavities completed in 3.03s.
-   @> Detected 47 channels.
+   @> WARNING structure has no hydrogens and inner_radius=0.90 is below 1.2 Å: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise inner_radius to 1.2 Å or more, where protonated and unprotonated structures give the same channels.
+   @> Substituted 3766 atoms with 23638 homogeneous balls of radius 1.52 Å in 0.27s.
+   @> Delaunay tessellation of 23638 points constructed in 0.86s.
+   @> Surface and inner simplices filtered in 1.45s.
+   @> start_point seeded at tetrahedron 11317 (Voronoi vertex at [-24.951, -19.189, -10.516], 2.850 Å from start_point, inscribed radius 1.330 Å, depth 13.3 Å).
+   @>     widened from the nearest tetrahedron 8399 (2.444 Å away, inscribed radius 0.924 Å, depth 13.1 Å), the widest of the 4 tetrahedra no shallower than it among the 4 reachable within 3.0 Å; seeding the narrow one would have capped every channel here at its radius.
+   @>     restricting the channel search to the cavity that contains it (10149 tetrahedra, depth 32.4 Å).
+   @> Surface cavities: 1 found, 1 deeper than min_depth=5.0 Å and searched for channels, in 0.33s.
+   @> Channel search (Dijkstra) over 1 search sites in 1 cavities completed in 1.10s.
+   @> Found 23 channels.
+   @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
+   @>     site  void             volume [Å³]  depth [Å]  channels  links
+   @>     sp0   cavity 0, whole        22599       13.3        23      -
+   @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
    @> No output path given.
-   @> Channel calculation completed in 5.97s.
+   @> Channel calculation completed in 4.45s.
+
 
 .. ipython:: python
    :verbatim:
