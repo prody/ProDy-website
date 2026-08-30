@@ -703,13 +703,13 @@ file using ``output_path`` parameter.
 .. parsed-literal::
 
   @> The atoms supplied to calcChannels contain protein atoms only.
-  @> Substituted 3766 atoms with 23638 homogeneous balls of radius 1.52 A in 0.22s.
-  @> Delaunay tessellation of 23638 points constructed in 0.84s.
-  @> Surface and inner simplices filtered in 0.32s.
-  @> 40 surface cavities detected and filtered in 0.30s.
+  @> Substituted 3766 atoms with 23638 homogeneous balls of radius 1.52 Å in 0.27s.
+  @> Delaunay tessellation of 23638 points constructed in 0.86s.
+  @> Surface and inner simplices filtered in 0.33s.
+  @> Surface cavities: 336 found, 40 deeper than min_depth=1.5 Å and kept, in 0.29s.
   @> Returning surface cavities
   @> Saving surface cavities to test_surf_cav.pqr.
-  @> Surface cavity calculation completed in 1.81s.
+  @> Surface cavity calculation completed in 1.87s.
 
 To display the identified surface cavities, similarly to the channel
 identification, we need to use VMD_ to create the model for visualization
@@ -762,13 +762,13 @@ selected and saved to a file specified by the output_path parameter,
 .. parsed-literal::
 
    @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Substituted 3766 atoms with 23638 homogeneous balls of radius 1.52 A in 0.28s.
-   @> Delaunay tessellation of 23638 points constructed in 0.81s.
-   @> Surface and inner simplices filtered in 0.33s.
-   @> 40 surface cavities detected and filtered in 0.31s.
+   @> Substituted 3766 atoms with 23638 homogeneous balls of radius 1.52 Å in 0.28s.
+   @> Delaunay tessellation of 23638 points constructed in 0.82s.
+   @> Surface and inner simplices filtered in 0.32s.
+   @> Surface cavities: 336 found, 40 deeper than min_depth=1.5 Å and kept, in 0.31s.
    @> Returning surface cavities
    @> Saving surface cavities to surf_cav_MinMax_volume.pqr.
-   @> Surface cavity calculation completed in 1.84s.
+   @> Surface cavity calculation completed in 1.85s.
 
 We can display the results using :func:`.showSurfaceCavities` function:
 
@@ -820,9 +820,10 @@ tetrahedra count, use :func:`getSurfaceCavityParameters`.
 .. parsed-literal::
 
    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	503.05 		7.78 		133
-   @> cavity 1: 	955.46 		8.29 		269
-   @> cavity 2: 	621.45 		8.01 		152
+   @> cavity 0: 	955.46 		8.29 		269
+   @> cavity 1: 	621.45 		8.01 		152
+   @> cavity 2: 	503.05 		7.78 		133
+
 
 By assigning the output of :func:`getSurfaceCavityParameters` to the
 variable parameters, the extracted cavity descriptors can be accessed as
@@ -836,9 +837,9 @@ lists, including cavity volume (``parameters[0]``), depth
 
 .. parsed-literal::
 
-   ([503.04967293496003, 955.46028274561, 621.4527824426602],
-    [7.7812978201386995, 8.293453349117478, 8.006634128744826],
-    [133, 269, 152])
+   ([955.46028274561, 621.4527824426602, 503.04967293496003],
+    [8.293453349117478, 8.006634128744826, 7.7812978201386995],
+    [269, 152, 133])
 
 
 .. ipython:: python
@@ -848,8 +849,7 @@ lists, including cavity volume (``parameters[0]``), depth
 
 .. parsed-literal::
 
-   [503.04967293496003, 955.46028274561, 621.4527824426602]
-
+   [955.46028274561, 621.4527824426602, 503.04967293496003]
 
 In addition to quantitative descriptors, CaviTracer also allows the
 identification of residues forming each detected surface cavity. This
@@ -878,17 +878,21 @@ sufix.
 
 .. parsed-literal::
 
-   ['cavity0: LYS55, MET59, MET62, TYR319, THR323, HIS324, TYR399, GLU412, 
-     LYS413, PHE414, LEU415, ILE473, LYS476, LEU477, LEU479, GLU486',
-    'cavity1: GLU163, GLY167, LYS168, PRO169, VAL170, THR171, LYS173, 
-     ASP174, SER195, LEU196, PRO199, LYS208, LYS209, LEU211, ARG212, PHE213, 
-     ASP214, ASP217, PHE219, PHE220, ILE238, CYS239, VAL240, TYR307, GLU308, 
-     CYS468, LYS469, GLU470, GLN472, LEU482, GLN484, PRO485, GLU486, LYS487, 
-     PRO488, VAL490, LYS492',
-    'cavity2: LEU142, TYR347, LEU351, GLN352, GLU354, ASN361, PHE419, LYS424, 
-     ASP425, ASN426, ILE427, ASP428, PRO429, TYR432, PRO434, PHE435, GLY436, 
-     SER437, MET445, ARG446, LEU449, MET450, LYS453']
-
+   ['cavity0: GLU163:A, GLY167:A, LYS168:A, PRO169:A, VAL170:A, THR171:A, 
+    LYS173:A, ASP174:A, GLY177:A, ALA178:A, SER195:A, LEU196:A, PRO199:A, 
+    GLU205:A, LYS208:A, LYS209:A, LEU211:A, ARG212:A, PHE213:A, ASP214:A, 
+    ASP217:A, PHE219:A, PHE220:A, ILE238:A, CYS239:A, VAL240:A, PRO242:A, 
+    TYR307:A, GLU308:A, CYS468:A, LYS469:A, GLU470:A, THR471:A, GLN472:A, 
+    LEU482:A, GLN484:A, PRO485:A, GLU486:A, LYS487:A, PRO488:A, VAL490:A, 
+    LYS492:A',
+    'cavity1: LEU142:A, TYR347:A, LEU351:A, GLN352:A, GLU354:A, ASP357:A, 
+    ASN361:A, PHE419:A, LYS421:A, LYS424:A, ASP425:A, ASN426:A, ILE427:A, 
+    ASP428:A, PRO429:A, TYR432:A, THR433:A, PRO434:A, PHE435:A, GLY436:A, 
+    SER437:A, ASN441:A, MET445:A, ARG446:A, LEU449:A, MET450:A, LYS453:A',
+    'cavity2: LYS55:A, MET59:A, MET62:A, TYR319:A, THR323:A, HIS324:A, 
+    TYR399:A, ARG403:A, GLU412:A, LYS413:A, PHE414:A, LEU415:A, PRO467:A, 
+    ILE473:A, PRO474:A, LEU475:A, LYS476:A, LEU477:A, SER478:A, LEU479:A, 
+    GLU486:A']
 
 
 III. Indentification of pores in a single PDB structure
