@@ -955,18 +955,22 @@ separately as PQR files (``separate`` = True). Additionally, we are using
 
    @> Using user-provided start_point for channel seed: [39.277, 43.995, -0.961] Å
    @> The atoms supplied to calcChannels contain protein atoms only.
-   @> WARNING structure has no hydrogens and inner_radius=1.00 is below 1.2 A: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise r2 to 1.2 A or more, where protonated and unprotonated structures give the same channels.
-   @> Substituted 2447 atoms with 14777 homogeneous balls of radius 1.52 A in 0.19s.
-   @> Delaunay tessellation of 14777 points constructed in 0.46s.
-   @> Surface and inner simplices filtered in 1.49s.
-   @> start_point seeded at tetrahedron 2488 (Voronoi vertex at [40.254, 44.976, -0.984], 1.385 A from start_point, inscribed radius 1.021 A, depth 6.6 A).
-   @>     already the widest of the 1 tetrahedra no shallower than it among the 3 reachable within 3.0 A.
-   @>     restricting the channel search to the cavity that contains it (2588 tetrahedra, depth 24.5 A).
-   @> 1 surface cavities detected and filtered in 0.18s.
-   @> Channel pathfinding (graph Dijkstra) over 1 cavities completed in 0.21s.
-   @> Detected 4 channels.
-   @> Saving multiple results to directory ..
-   @> Channel calculation completed in 2.56s.
+   @> WARNING structure has no hydrogens and inner_radius=1.00 is below 1.2 Å: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise inner_radius to 1.2 Å or more, where protonated and unprotonated structures give the same channels.
+   @> Substituted 2447 atoms with 14777 homogeneous balls of radius 1.52 Å in 0.19s.
+   @> Delaunay tessellation of 14777 points constructed in 0.43s.
+   @> Surface and inner simplices filtered in 1.53s.
+   @> start_point seeded at tetrahedron 2488 (Voronoi vertex at [40.254, 44.976, -0.984], 1.385 Å from start_point, inscribed radius 1.021 Å, depth 6.6 Å).
+   @>     already the widest of the 1 tetrahedra no shallower than it among the 3 reachable within 3.0 Å.
+   @>     restricting the channel search to the cavity that contains it (2588 tetrahedra, depth 24.5 Å).
+   @> Surface cavities: 1 found, 1 deeper than min_depth=5.0 Å and searched for channels, in 0.18s.
+   @> Channel search (Dijkstra) over 1 search sites in 1 cavities completed in 0.20s.
+   @> Found 4 channels.
+   @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
+   @>     site  void             volume [Å³]  depth [Å]  channels  links
+   @>     sp0   cavity 0, whole         7335        6.6         4      -
+   @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
+   @> Saving 4 channels to directory ., one file per object named sp<site>_chl<n>.
+   @> Channel calculation completed in 2.64s.
 
 
 Becasue PQR files with channels were saved, they can be displayed in VMD_.
@@ -1056,20 +1060,12 @@ length, and bottleneck.
 
 .. parsed-literal::
 
-   @> 2547 atoms and 1 coordinate set(s) were parsed in 0.03s.
-   @> 2552 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 2562 atoms and 1 coordinate set(s) were parsed in 0.04s.
-   @> 2577 atoms and 1 coordinate set(s) were parsed in 0.03s.
-   @> 2587 atoms and 1 coordinate set(s) were parsed in 0.03s.
-   @> 2492 atoms and 1 coordinate set(s) were parsed in 0.03s.
-
-   ['pore0: ALA109, ARG133',
-    'pore1: ALA34, SER35, THR36, ARG38, ARG75, SER108, ALA109, ARG133',
-    'pore2: ILE9, SER35, THR36, ARG38, ARG75, SER108, ALA109, ARG133',
-    'pore3: ALA34, SER35, THR36, ARG38, ARG75, SER108',
-    'pore4: ILE9, SER35, THR36, ARG38, ARG75, SER108',
-    'pore5: ILE9, ALA34, SER35, ARG38, SER108']
-
+   ['pore0: THR36:X, ARG38:X, GLU60:X, ARG75:X, LEU94:X, GLN99:X, THR102:X, SER103:X, SER108:X, ALA109:X, ASN130:X, ILE132:X, ARG133:X, LYS308:X',
+    'pore1: ALA34:X, SER35:X, THR36:X, ARG38:X, GLU60:X, ARG75:X, LEU94:X, SER108:X, ALA109:X, THR110:X, ASN130:X, ILE132:X, ARG133:X, LYS308:X',
+    'pore2: ILE9:X, ALA34:X, SER35:X, THR36:X, ARG38:X, GLU60:X, ARG75:X, LEU94:X, SER108:X, ALA109:X, THR110:X, ASN130:X, ILE132:X, ARG133:X, LYS308:X',
+    'pore3: ALA34:X, SER35:X, THR36:X, ARG38:X, ARG75:X, LEU94:X, GLN99:X, THR102:X, SER103:X, SER108:X, ALA109:X, THR110:X, ILE132:X, ARG133:X',
+    'pore4: ILE9:X, ALA34:X, SER35:X, THR36:X, ARG38:X, ARG75:X, LEU94:X, GLN99:X, THR102:X, SER103:X, SER108:X, ALA109:X, THR110:X, ILE132:X, ARG133:X',
+    'pore5: ILE9:X, ALA34:X, SER35:X, THR36:X, ARG38:X, SER108:X']
 
 .. ipython:: python
    :verbatim:
@@ -1104,7 +1100,6 @@ length, and bottleneck.
      763.2420957499684,
      833.9855419940334,
      128.78107671605596])
-
 
 For some structures, particularly when a smaller ``r2`` value is used,
 predictions may provide a large number of channels. Consequently, the number
