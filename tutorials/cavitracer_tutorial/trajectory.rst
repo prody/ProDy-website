@@ -693,7 +693,7 @@ operations should be performed:
 
 .. parsed-literal::
 
-@> Channel residues were saved to: DCD_fr3_res_Residues_All_channels.txt
+   @> Channel residues were saved to: DCD_fr3_res_Residues_All_channels.txt
 
    ['channel0: ASP214:P, HSP353:P, GLY356:P, ARG357:P, TRP358:P, ILE405:P, TYR408:P, LEU409:P, LEU470:P, ARG471:P, PRO473:P',
     'channel1: LEU315:P, ILE317:P, GLN329:P, VAL332:P, ALA333:P, PRO336:P, ILE381:P, ILE385:P, ASN388:P',
@@ -1396,16 +1396,16 @@ such as ``min_end_to_end`` and ``min_bottleneck``.
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
    @> Frame/model: 69
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	1176.59 		70.54 		0.91
-   @> pore 1: 	1164.71 		70.27 		0.82
-   @> pore 2: 	1108.46 		75.52 		0.81
-   @> pore 3: 	1186.28 		72.98 		0.91
+   @> pore 0: 	1176.59 	70.54 		0.91
+   @> pore 1: 	1164.71 	70.27 		0.82
+   @> pore 2: 	1108.46 	75.52 		0.81
+   @> pore 3: 	1186.28 	72.98 		0.91
    @> pore 4: 	1174.4 		72.7 		0.82
-   @> pore 5: 	1057.83 		77.63 		0.81
-   @> pore 6: 	1167.48 		72.58 		0.89
+   @> pore 5: 	1057.83 	77.63 		0.81
+   @> pore 6: 	1167.48 	72.58 		0.89
    @> pore 7: 	1155.6 		72.3 		0.82
-   @> pore 8: 	1099.35 		77.56 		0.81
-   @> pore 9: 	1076.07 		79.94 		0.81
+   @> pore 8: 	1099.35 	77.56 		0.81
+   @> pore 9: 	1076.07 	79.94 		0.81
    @> Frame/model: 70
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
    @> Frame/model: 71
@@ -1435,7 +1435,7 @@ such as ``min_end_to_end`` and ``min_bottleneck``.
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
    @> Frame/model: 83
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	1108.72 		65.41 		0.88
+   @> pore 0: 	1108.72 	65.41 		0.88
    @> Frame/model: 84
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
    @> Frame/model: 85
@@ -1456,9 +1456,9 @@ such as ``min_end_to_end`` and ``min_bottleneck``.
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
    @> Frame/model: 93
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	1144.18 		68.3 		0.86
-   @> pore 1: 	1060.45 		68.18 		0.86
-   @> pore 2: 	1085.82 		69.92 		0.86
+   @> pore 0: 	1144.18 	68.3 		0.86
+   @> pore 1: 	1060.45 	68.18 		0.86
+   @> pore 2: 	1085.82 	69.92 		0.86
    @> pore 3: 	942.95 		68.95 		0.86
    @> Frame/model: 94
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
@@ -1486,9 +1486,9 @@ such as ``min_end_to_end`` and ``min_bottleneck``.
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
    @> Frame/model: 99
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	1238.29 		69.38 		0.99
-   @> pore 1: 	1213.77 		69.32 		1.05
-   @> pore 2: 	1154.92 		72.43 		0.9
+   @> pore 0: 	1238.29 	69.38 		0.99
+   @> pore 1: 	1213.77 	69.32 		1.05
+   @> pore 2: 	1154.92 	72.43 		0.9
    @> Frame/model: 100
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
    @> pore 0: 	989.59 		63.76 		0.91
@@ -1521,17 +1521,17 @@ such as ``min_end_to_end`` and ``min_bottleneck``.
    @> pore 2: 	967.57 		68.76 		1.05
    @> pore 3: 	943.48 		69.54 		0.91
    @> pore 4: 	1016.2 		68.52 		1.04
-   @> pore 5: 	1021.47 		70.56 		1.05
+   @> pore 5: 	1021.47 	70.56 		1.05
    @> pore 6: 	980.77 		68.13 		1.04
    @> pore 7: 	986.04 		70.16 		1.05
    @> pore 8: 	960.28 		67.83 		1.04
    @> pore 9: 	965.55 		69.86 		1.05
    @> Frame/model: 111
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	1034.87 		62.91 		1.06
-   @> pore 1: 	1065.49 		63.72 		1.06
-   @> pore 2: 	1053.66 		63.97 		1.06
-   @> pore 3: 	1041.08 		68.13 		0.81
+   @> pore 0: 	1034.87 	62.91 		1.06
+   @> pore 1: 	1065.49 	63.72 		1.06
+   @> pore 2: 	1053.66 	63.97 		1.06
+   @> pore 3: 	1041.08 	68.13 		0.81
    @> Frame/model: 112
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
    @> pore 0: 	948.16 		64.22 		0.81
@@ -1555,19 +1555,19 @@ such as ``min_end_to_end`` and ``min_bottleneck``.
    @> pore 2: 	973.74 		72.61 		0.88
    @> Frame/model: 118
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	1046.85 		68.35 		0.92
-   @> pore 1: 	1040.18 		68.24 		0.81
+   @> pore 0: 	1046.85 	68.35 		0.92
+   @> pore 1: 	1040.18 	68.24 		0.81
    @> pore 2: 	980.96 		71.31 		0.92
    @> pore 3: 	974.29 		71.19 		0.81
-   @> pore 4: 	1054.73 		68.35 		0.99
+   @> pore 4: 	1054.73 	68.35 		0.99
    @> pore 5: 	1004.6 		68.69 		0.99
-   @> pore 6: 	1032.15 		74.8 		0.92
-   @> pore 7: 	1025.48 		74.69 		0.81
-   @> pore 8: 	1040.33 		75.56 		0.9
+   @> pore 6: 	1032.15 	74.8 		0.92
+   @> pore 7: 	1025.48 	74.69 		0.81
+   @> pore 8: 	1040.33 	75.56 		0.9
    @> pore 9: 	1062.8 		69.78 		0.99
-   @> pore 10: 	1012.67 		70.13 		0.99
-   @> pore 11: 	1040.22 		76.24 		0.92
-   @> pore 12: 	1033.55 		76.12 		0.81
+   @> pore 10: 	1012.67 	70.13 		0.99
+   @> pore 11: 	1040.22 	76.24 		0.92
+   @> pore 12: 	1033.55 	76.12 		0.81
    @> pore 13: 	1048.4 		77.0 		0.9
    @> pore 14: 	742.19 		68.97 		0.81
    @> pore 15: 	884.19 		67.34 		0.85
@@ -1692,8 +1692,8 @@ such as ``min_end_to_end`` and ``min_bottleneck``.
    @> pore 12: 	895.7 		72.4 		0.91
    @> pore 13: 	887.02 		72.86 		0.88
    @> pore 14: 	985.69 		73.86 		0.99
-   @> pore 15: 	1021.04 		74.84 		0.99
-   @> pore 16: 	1004.31 		76.97 		0.99
+   @> pore 15: 	1021.04 	74.84 		0.99
+   @> pore 16: 	1004.31 	76.97 		0.99
    @> pore 17: 	995.17 		80.62 		0.99
    @> pore 18: 	993.83 		80.21 		0.91
    @> pore 19: 	985.15 		80.68 		0.88
@@ -2349,7 +2349,8 @@ surface cavities.
 .. ipython:: python
    :verbatim:
 
-   frequent_residue_names = calcFrequentObjectResidues(residues, count_residue_names=True)
+   frequent_residue_names = calcFrequentObjectResidues(residues, 
+						count_residue_names=True)
    frequent_residue_names
 
 .. parsed-literal::
