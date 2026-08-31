@@ -1143,81 +1143,115 @@ processors for calculations.
 
    @> Frame/model: 0
    @> Frame/model: 2
+   @> The atoms supplied to calcChannels contain protein atoms only.
    @> Frame/model: 4
    @> The atoms supplied to calcChannels contain protein atoms only.
    @> Frame/model: 6
    @> The atoms supplied to calcChannels contain protein atoms only.
    @> The atoms supplied to calcChannels contain protein atoms only.
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 A in 0.28s.
-   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 A in 0.28s.
-   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 A in 0.28s.
-   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 A in 0.29s.
+   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.29s.
+   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.30s.
+   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.29s.
+   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.30s.
+   @> Delaunay tessellation of 77434 points constructed in 3.91s.
+   @> Delaunay tessellation of 77434 points constructed in 3.94s.
    @> Delaunay tessellation of 77434 points constructed in 3.97s.
-   @> Delaunay tessellation of 77434 points constructed in 4.06s.
-   @> Delaunay tessellation of 77434 points constructed in 4.08s.
-   @> Delaunay tessellation of 77434 points constructed in 4.14s.
-   @> Surface and inner simplices filtered in 3.77s.
-   @> Surface and inner simplices filtered in 3.60s.
-   @> Surface and inner simplices filtered in 3.72s.
-   @> Surface and inner simplices filtered in 3.81s.
-   @> 11 surface cavities detected and filtered in 0.60s.
-   @> 9 surface cavities detected and filtered in 0.59s.
-   @> 9 surface cavities detected and filtered in 0.65s.
-   @> 8 surface cavities detected and filtered in 0.58s.
-   @> Channel pathfinding (graph Dijkstra) over 8 cavities completed in 1.20s.
-   @> Detected 32 channels.
-   @> Saving multiple results to directory ..
-   @> Channel calculation completed in 10.01s.
-   @> Frame/model: 3
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 A in 0.27s.
-   @> Channel pathfinding (graph Dijkstra) over 9 cavities completed in 1.66s.
-   @> Detected 37 channels.
-   @> Saving multiple results to directory ..
-   @> Channel calculation completed in 10.43s.
-   @> Frame/model: 5
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Channel pathfinding (graph Dijkstra) over 11 cavities completed in 1.97s.
-   @> Detected 36 channels.
-   @> Saving multiple results to directory ..
-   @> Channel pathfinding (graph Dijkstra) over 9 cavities completed in 1.94s.
-   @> Detected 42 channels.
-   @> Saving multiple results to directory ..
-   @> Channel calculation completed in 10.68s.
-   @> Frame/model: 1
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 A in 0.27s.
-   @> Channel calculation completed in 10.73s.
-   @> Frame/model: 7
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 A in 0.30s.
-   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 A in 0.30s.
-   @> Delaunay tessellation of 77434 points constructed in 3.42s.
-   @> Delaunay tessellation of 77434 points constructed in 3.67s.
+   @> Delaunay tessellation of 77434 points constructed in 4.04s.
+   @> Surface and inner simplices filtered in 3.82s.
+   @> Surface and inner simplices filtered in 3.74s.
+   @> Surface and inner simplices filtered in 3.74s.
+   @> Surface and inner simplices filtered in 3.95s.
+   @> Surface cavities: 380 found, 11 deeper than min_depth=5.0 Å and searched for channels, in 0.61s.
+   @> Surface cavities: 396 found, 9 deeper than min_depth=5.0 Å and searched for channels, in 0.66s.
+   @> Surface cavities: 384 found, 9 deeper than min_depth=5.0 Å and searched for channels, in 0.63s.
+   @> Surface cavities: 386 found, 8 deeper than min_depth=5.0 Å and searched for channels, in 0.60s.
+   @> Chambers (probe 1.40 Å): 2 of the 11 searched cavities have them; the other 10 are searched whole.
+   @>     cavity 0: 20 chambers, 8 of them seeded.
+   @>     cavity 5: 1 chamber, none of them deep and large enough to seed; searched whole.
+   @> 18 search sites (sp) in 0.05s: one per seeded chamber, one per cavity searched whole.
+   @> Chambers (probe 1.40 Å): 3 of the 9 searched cavities have them; the other 7 are searched whole.
+   @>     cavity 0: 18 chambers, 9 of them seeded.
+   @>     cavity 1: 3 chambers, 1 of them seeded.
+   @>     cavity 3: 1 chamber, none of them deep and large enough to seed; searched whole.
+   @> 17 search sites (sp) in 0.09s: one per seeded chamber, one per cavity searched whole.
+   @> Chambers (probe 1.40 Å): 4 of the 9 searched cavities have them; the other 6 are searched whole.
+   @>     cavity 0: 12 chambers, 5 of them seeded.
+   @>     cavity 1: 2 chambers, all seeded.
+   @>     cavity 2: 3 chambers, none of them deep and large enough to seed; searched whole.
+   @>     cavity 4: 1 chamber, seeded.
+   @> 14 search sites (sp) in 0.09s: one per seeded chamber, one per cavity searched whole.
+   @> Chambers (probe 1.40 Å): 4 of the 8 searched cavities have them; the other 5 are searched whole.
+   @>     cavity 0: 23 chambers, 11 of them seeded.
+   @>     cavity 1: 2 chambers, 1 of them seeded.
+   @>     cavity 2: 1 chamber, none of them deep and large enough to seed; searched whole.
+   @>     cavity 3: 1 chamber, seeded.
+   @> 18 search sites (sp) in 0.06s: one per seeded chamber, one per cavity searched whole.
+   @> Channel search (Dijkstra) over 14 search sites in 9 cavities completed in 1.40s.
+   @> Found 35 channels and 6 links (a link joins a deep chamber to a shallower one and never reaches the surface).
+   @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
+   @>     site  void                   volume [Å³]  depth [Å]  channels  links
+   @>     sp0   cavity 0, chamber 1/5         2747       16.5        14      -
+   @>     sp1   cavity 2, whole                680        5.3         6      -
+   @>     sp2   cavity 3, whole                645        5.1         1      -
+   @>     sp3   cavity 5, whole                236       10.4         1      -
+   @>     sp4   cavity 0, chamber 2/5          220        5.3         3      2  -> sp0, sp0
+   @>     sp5   cavity 0, chamber 3/5          151       34.6         -      1  -> sp6
+   @>     sp6   cavity 0, chamber 4/5          111       26.0         -      1  -> sp0
+   @>     sp7   cavity 6, whole                 92        5.1         1      -
+   @>     sp8   cavity 7, whole                 73        5.2         -      -  sealed
+   @>     sp9   cavity 8, whole                 57        5.4         1      -
+   @>     sp10  cavity 1, chamber 1/2           42        6.8         3      1  -> sp11
+   @>     sp11  cavity 1, chamber 2/2           41        5.1         3      -
+   @>     sp12  cavity 4, chamber 1/1           39        6.5         1      -
+   @>     sp13  cavity 0, chamber 5/5           34        7.4         1      1  -> sp0
+   @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
+   @> Saving 35 channels and 6 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
+   @> Channel calculation completed in 10.64s.
    ..
-   ..
-   @> Frame/model: 19
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 A in 0.28s.
-   @> Channel pathfinding (graph Dijkstra) over 10 cavities completed in 1.66s.
-   @> Detected 32 channels.
-   @> Saving multiple results to directory ..
-   @> Channel calculation completed in 9.65s.
-   @> Delaunay tessellation of 77434 points constructed in 3.26s.
-   @> Delaunay tessellation of 77434 points constructed in 3.28s.
-   @> Surface and inner simplices filtered in 3.06s.
-   @> Surface and inner simplices filtered in 2.89s.
-   @> 5 surface cavities detected and filtered in 0.56s.
-   @> 7 surface cavities detected and filtered in 0.56s.
-   @> Channel pathfinding (graph Dijkstra) over 5 cavities completed in 1.66s.
-   @> Detected 31 channels.
-   @> Saving multiple results to directory ..
-   @> Channel calculation completed in 8.88s.
-   @> Channel pathfinding (graph Dijkstra) over 7 cavities completed in 1.49s.
-   @> Detected 31 channels.
-   @> Saving multiple results to directory ..
-   @> Channel calculation completed in 8.59s.
+   @> Found 25 channels and 6 links (a link joins a deep chamber to a shallower one and never reaches the surface).
+   @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
+   @>     site  void                   volume [Å³]  depth [Å]  channels  links
+   @>     sp0   cavity 0, chamber 1/7         2608       12.4        10      -
+   @>     sp1   cavity 0, chamber 2/7          231       13.7         2      1  -> sp0
+   @>     sp2   cavity 1, whole                182        6.3         1      -
+   @>     sp3   cavity 0, chamber 3/7          138        5.5         6      1  -> sp0
+   @>     sp4   cavity 2, whole                 83        5.1         -      -  sealed
+   @>     sp5   cavity 3, whole                 78        5.1         1      -
+   @>     sp6   cavity 4, whole                 74        5.1         -      -  sealed
+   @>     sp7   cavity 0, chamber 4/7           54       10.8         -      2  -> sp1, sp0
+   @>     sp8   cavity 0, chamber 5/7           48        5.8         2      1  -> sp0
+   @>     sp9   cavity 0, chamber 6/7           44       11.4         -      1  -> sp8
+   @>     sp10  cavity 0, chamber 7/7           31        5.1         3      -
+   @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
+   @> Saving 25 channels and 6 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
+   @> Channel calculation completed in 8.90s.
+   @> Channel search (Dijkstra) over 18 search sites in 7 cavities completed in 1.75s.
+   @> Found 33 channels and 10 links (a link joins a deep chamber to a shallower one and never reaches the surface).
+   @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
+   @>     site  void                     volume [Å³]  depth [Å]  channels  links
+   @>     sp0   cavity 0, chamber 1/12          2871       15.8        15      1  -> sp3
+   @>     sp1   cavity 1, whole                  350        5.2         1      -
+   @>     sp2   cavity 2, whole                  334       10.5         -      -  sealed
+   @>     sp3   cavity 0, chamber 2/12           315       10.8         5      -
+   @>     sp4   cavity 0, chamber 3/12           293       12.3         1      2  -> sp3, sp0
+   @>     sp5   cavity 3, whole                  269        9.4         -      -  sealed
+   @>     sp6   cavity 4, whole                  267        5.4         2      -
+   @>     sp7   cavity 5, whole                  148        9.0         -      -  sealed
+   @>     sp8   cavity 6, whole                   84        5.3         -      -  sealed
+   @>     sp9   cavity 0, chamber 4/12            57        9.4         -      -  sealed
+   @>     sp10  cavity 0, chamber 5/12            56       12.6         -      3  -> sp9, sp4, sp0
+   @>     sp11  cavity 0, chamber 6/12            53       24.2         -      -  sealed
+   @>     sp12  cavity 0, chamber 7/12            51        5.1         5      -
+   @>     sp13  cavity 0, chamber 8/12            45       20.3         -      1  -> sp0
+   @>     sp14  cavity 0, chamber 9/12            42        5.5         1      1  -> sp0
+   @>     sp15  cavity 0, chamber 10/12           40        9.8         1      -
+   @>     sp16  cavity 0, chamber 11/12           31        5.0         2      -
+   @>     sp17  cavity 0, chamber 12/12           31       18.3         -      2  -> sp0, sp14
+   @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
+   @> The 2 sites marked sealed above report neither a channel nor a link: every route out of them is narrower than bottleneck=0.85 Å. Lower it to see how they connect.
+   @> Saving 33 channels and 10 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
+   @> Channel calculation completed in 9.47s.
+
 
 After channels, :func:.`calcPoresFromChannelsMultipleFrames` function can be
 applied to reconstruct pores.
@@ -1331,189 +1365,56 @@ code.
 .. parsed-literal::
 
    @> Model: 0
-   @> 6651 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6671 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6641 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6656 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6661 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6736 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6736 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6751 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6756 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6756 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6771 atoms and 1 coordinate set(s) were parsed in 0.06s.
    @> Model: 1
    @> Model: 2
-   @> 6506 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6641 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6651 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6656 atoms and 1 coordinate set(s) were parsed in 0.06s.
    @> Model: 3
-   @> 6516 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6521 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6561 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6661 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6546 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6576 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6586 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6581 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6586 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6596 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6621 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6616 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6626 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6621 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6611 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6626 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6756 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6756 atoms and 1 coordinate set(s) were parsed in 0.06s.
    @> Model: 4
    @> Model: 5
-   @> 6511 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6561 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6536 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6556 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6571 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6621 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6596 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6616 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6576 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6591 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6626 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6601 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6621 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6576 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6591 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6626 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6601 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6621 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6611 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6626 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6661 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6636 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6656 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   ..
-   ..
+   @> Model: 6
+   @> Model: 7
+   @> Model: 8
+   @> Model: 9
+   @> Model: 10
+   @> Model: 11
+   @> Model: 12
+   @> Model: 13
+   @> Model: 14
+   @> Model: 15
+   @> Model: 16
+   @> Model: 17
    @> Model: 18
-   @> 6531 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6531 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6671 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6531 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6476 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6476 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6686 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6471 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6471 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6681 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6486 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6486 atoms and 1 coordinate set(s) were parsed in 0.06s.
    @> Model: 19
-   @> 6486 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6491 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6656 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6496 atoms and 1 coordinate set(s) were parsed in 0.06s.
    @> Model: 20
-   @> 6546 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6566 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6551 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6571 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6551 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6571 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6576 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6596 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6621 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6641 atoms and 1 coordinate set(s) were parsed in 0.06s.
-   @> 6621 atoms and 1 coordinate set(s) were parsed in 0.07s.
-   @> 6641 atoms and 1 coordinate set(s) were parsed in 0.06s.
 
-   [['pore0: L30, N34, L36, L37, V39, V40, I43, F135, K138, A139, Q142, F176, S179, S181, L185, R189, Q192, S196, S200, M204, D214, E215, R217, G218, M221, G222, L225, L228, K248, F252, G349, I350, H353, R357, D399, S400, S401, M403, P404, D426, F429, C430, Y433',
-     'pore1: L30, N34, L36, L37, V39, V40, I43, F135, K138, A139, Q142, F176, S179, S181, L185, R189, Q192, S196, S200, M204, R217, G218, M221, G222, L225, L228, K248, F252, F348, G349, A352, H353, K354, M355, G356, R357, L359, C360, D399, S400, S401, M403, P404, D426, F429, C430, Y433',
-     'pore2: L30, N34, L36, L37, V39, V40, I43, F135, K138, A139, Q142, F176, A177, F178, S179, L185, R189, Q192, S196, S200, M204, D214, E215, R217, G218, M221, G222, L225, L228, K248, F252, G349, I350, H353, R357, D399, S400, S401, M403, P404, D426, F429, C430, Y433',
-     'pore3: L30, N34, L36, L37, V39, V40, I43, F135, K138, A139, Q142, F176, A177, F178, S179, L185, R189, Q192, S196, S200, M204, R217, G218, M221, G222, L225, L228, K248, F252, F348, G349, A352, H353, K354, G356, R357, L359, C360, L363, D399, S400, S401, M403, P404, D426, F429, C430, Y433',
-     'pore4: L30, N34, L36, L37, V39, V40, I43, F135, K138, A139, Q142, F176, A177, F178, S179, L185, R189, Q192, S196, S200, M204, R217, G218, M221, G222, L225, L228, K248, F252, F348, G349, A352, H353, K354, M355, G356, R357, L359, C360, D399, S400, S401, M403, P404, D426, F429, C430, Y433',
-     'pore5: L30, N34, L37, T38, V40, V41, P42, I44, P45, F135, K138, Q142, R189, S196, S200, M204, D214, E215, R217, G218, M221, G222, L225, L228, V232, P236, S240, Y243, E244, E312, I317, W318, K327, L330, G331, A333, F334, G349, I350, H353, R357, D399, S400, S401, M403, P404, D426, F429',
-     'pore6: L30, N34, L37, T38, V40, V41, P42, I44, P45, F135, K138, Q142, R189, S196, S200, M204, D214, E215, R217, G218, M221, G222, L225, L228, V232, P236, S240, Y243, E312, I317, W318, M323, K327, L330, G331, A333, F334, G349, I350, H353, R357, D399, S400, S401, M403, P404, D426, F429',
-     'pore7: L30, N34, L37, T38, V40, V41, P42, I43, I44, P45, S46, F135, K138, Q142, R189, S196, S200, M204, D214, E215, R217, G218, M221, G222, L225, L228, V232, P236, S240, Y243, E312, I317, W318, K327, L330, G331, A333, F334, G349, I350, H353, R357, D399, S400, S401, M403, P404, D426, F429',
-     'pore8: L30, N34, L37, T38, V40, V41, P42, I44, P45, F135, K138, Q142, R189, S196, S200, M204, R217, G218, M221, G222, L225, L228, V232, P236, S240, Y243, E244, E312, I317, W318, K327, L330, G331, A333, F334, F348, G349, A352, H353, K354, M355, G356, R357, L359, C360, D399, S400, S401, M403, P404, D426, F429',
-     'pore9: L30, N34, L37, T38, V40, V41, P42, I44, P45, F135, K138, Q142, R189, S196, S200, M204, R217, G218, M221, G222, L225, L228, V232, P236, S240, Y243, E312, I317, W318, M323, K327, L330, G331, A333, F334, F348, G349, A352, H353, K354, M355, G356, R357, L359, C360, D399, S400, S401, M403, P404, D426, F429',
-     'pore10: L30, N34, L37, T38, V40, V41, P42, I43, I44, P45, S46, F135, K138, Q142, R189, S196, S200, M204, R217, G218, M221, G222, L225, L228, V232, P236, S240, Y243, E312, I317, W318, K327, L330, G331, A333, F334, F348, G349, A352, H353, K354, M355, G356, R357, L359, C360, D399, S400, S401, M403, P404, D426, F429'],
+   [[],
     [],
-    ['pore0: I22, I25, V26, A29, L30, D33, N34, L37, K138, Q142, Y158, P159, I162, S196, S199, S200, G203, M204, M206, L225, L228, V232, L270, Q276, I308, E312, L315, I317, Q329, A333, F334, A337, S338, Y341, I381, I385, N388, M403, D426, F429',
-     'pore1: L30, D33, N34, L36, L37, V40, I43, K138, Q142, F176, S179, L185, R189, Q192, S196, S200, M204, L225, L228, K248, F252, A297, S300, I301, Y341, R357, W358, A361, M397, V398, D399, S401, M402, M403, I405, Y408, D426, F429, C467, L470',
-     'pore2: L30, D33, N34, L36, L37, V40, I43, K138, Q142, F176, S179, S180, S181, L185, R189, Q192, S196, S200, M204, L225, L228, K248, F252, A297, S300, I301, Y341, R357, W358, A361, M397, V398, D399, S401, M402, M403, I405, Y408, D426, F429, C467, L470',
-     'pore3: L30, D33, N34, L36, L37, V40, I43, K138, Q142, F176, A177, S179, L185, R189, Q192, S196, S200, M204, L225, L228, K248, T249, F252, A297, S300, I301, Y341, R357, W358, A361, M397, V398, D399, S401, M402, M403, I405, Y408, D426, F429, C467, L470'],
-    ['pore0: L30, L37, K138, A139, Q142, G150, T153, N154, Y158, S200, V201, A202, M204, G205, L225, L228, V232, G282, T283, P284, E312, L315, I317, Q329, A333, F334, P336, A337, S338, Y341, I381, I385, N388, M403, V417, G419, S420, Y422, A423, A425, D426, F429, C430, Y433',
-     'pore1: L30, L37, K138, A139, Q142, G150, T153, N154, Y158, S200, V201, A202, M204, G205, L225, L228, V232, S279, Q280, K281, G282, E312, L315, I317, Q329, A333, F334, P336, A337, S338, Y341, I381, I385, N388, M403, V417, G419, S420, Y422, A423, A425, D426, F429, C430, Y433',
-     'pore2: L30, L37, K138, A139, Q142, G150, T153, N154, R155, G157, Y158, S200, V201, A202, M204, G205, L225, L228, V232, E278, S279, Q280, K281, E312, L315, I317, Q329, A333, F334, P336, A337, S338, Y341, I381, I385, N388, M403, V417, Y418, G419, Y422, A423, A425, D426, F429, C430, Y433',
-     'pore3: L30, L37, K138, A139, Q142, G150, T153, N154, Y158, S200, V201, A202, M204, G205, L225, L228, V232, G282, T283, T287, L288, K290, D291, I294, E312, L315, I317, Q329, A333, F334, P336, A337, S338, Y341, I381, I385, N388, M403, V410, H414, V417, G419, S420, V421, Y422, A423, A425, D426, F429, C430, Y433',
-     'pore4: L30, L37, K138, A139, Q142, G150, T153, N154, R155, G157, Y158, S200, V201, A202, M204, G205, L225, L228, V232, E278, S279, Q280, K281, E312, L315, A333, F334, P336, A337, S338, Y341, I385, N388, F389, M403, V417, Y418, G419, Y422, A423, A425, D426, F429, C430, Y433',
-     'pore5: L30, L37, K138, A139, Q142, G150, T153, N154, Y158, S200, V201, A202, M204, G205, L225, L228, V232, G282, T283, P284, L311, E312, A314, L315, F334, A337, S338, Y341, I375, P376, A378, K379, N380, G383, L384, P387, N388, M403, V417, G419, S420, Y422, A423, A425, D426, F429, C430, Y433',
-     'pore6: L30, L37, K138, A139, Q142, G150, T153, N154, Y158, S200, V201, A202, M204, G205, S209, L225, L228, V232, S279, L311, E312, A314, L315, F334, A337, S338, Y341, I375, P376, A378, K379, N380, G383, L384, P387, N388, M403, S416, V417, Y418, G419, Y422, A423, A425, D426, F429, C430, Y433',
-     'pore7: L30, L37, K138, A139, Q142, G150, T153, N154, Y158, S200, V201, A202, M204, G205, L225, L228, V232, S279, Q280, K281, G282, L311, E312, A314, L315, F334, A337, S338, Y341, I375, P376, A378, K379, N380, G383, L384, P387, N388, M403, V417, G419, S420, Y422, A423, A425, D426, F429, C430, Y433',
-     'pore8: L30, L37, K138, A139, Q142, G150, T153, N154, G157, Y158, S200, V201, A202, M204, G205, S209, L225, L228, V232, E278, S279, L311, E312, A314, L315, F334, A337, S338, Y341, I375, P376, A378, K379, N380, G383, L384, P387, N388, M403, V417, Y418, G419, Y422, A423, A425, D426, F429, C430, Y433',
-     'pore9: R17, L30, L37, K138, A139, Q142, G150, T153, N154, G157, Y158, S200, V201, A202, M204, G205, M206, L225, L228, V232, E278, S279, L311, E312, A314, L315, F334, A337, S338, Y341, I375, P376, A378, K379, N380, G383, L384, P387, N388, M403, V417, Y418, G419, Y422, A423, A425, D426, F429, C430, Y433',
-     'pore10: L30, L37, K138, A139, Q142, G150, T153, N154, R155, G157, Y158, S200, V201, A202, M204, G205, L225, L228, V232, E278, S279, Q280, K281, L311, E312, A314, L315, F334, A337, S338, Y341, I375, P376, A378, K379, N380, G383, L384, P387, N388, M403, V417, Y418, G419, Y422, A423, A425, D426, F429, C430, Y433',
-     'pore11: I25, V26, A29, L30, L37, K138, A139, Q142, P159, I160, I162, F163, S199, S200, G203, M204, L225, L228, V232, Q266, L270, Q271, P272, L311, E312, A314, L315, F334, A337, S338, Y341, I375, P376, A378, K379, N380, G383, L384, P387, N388, M403, D426, F429, C430, Y433',
-     'pore12: I25, V26, A29, L30, L37, K138, A139, Q142, P159, I160, I162, F163, S199, S200, G203, M204, L225, L228, V232, Q266, L267, L270, Q271, P272, L311, E312, A314, L315, F334, A337, S338, Y341, I375, P376, A378, K379, N380, G383, L384, P387, N388, M403, D426, F429, C430, Y433',
-     'pore13: I25, V26, A29, L30, L37, K138, A139, Q142, P159, I160, I162, F163, S199, S200, G203, M204, L225, L228, V232, Q266, L267, L270, Q271, P272, L311, E312, A314, L315, F334, A337, S338, Y341, I375, P376, A378, K379, N380, G383, L384, P387, N388, M403, D426, F429, C430, Y433',
-     'pore14: I25, V26, A29, L30, L37, K138, A139, Q142, P159, I160, I162, F163, S199, S200, G203, M204, L225, L228, V232, Q266, L267, L270, P272, L311, E312, A314, L315, F334, A337, S338, Y341, I375, P376, A378, K379, N380, G383, L384, P387, N388, M403, D426, F429, C430, Y433',
-     'pore15: A29, L30, L32, D33, N34, L36, K138, Q142, I162, G165, F166, M169, F170, T173, I174, A177, S196, S199, S200, M204, G218, N219, M221, G222, A224, L225, L228, F252, L253, L255, A256, V259, D262, Q266, T345, F348, G349, I350, H353, G356, R357, D399, S400, S401, M403, P404, D426, F429',
-     'pore16: A29, L30, L32, D33, N34, L36, K138, Q142, G150, T153, N154, Y158, I162, G165, F166, M169, F170, T173, I174, A177, S196, S199, S200, V201, A202, M204, G205, L225, L228, F252, L253, L255, A256, V259, D262, Q266, G282, T283, T287, L288, K290, D291, I294, M403, V410, H414, V417, G419, S420, V421, Y422, A423, A425, D426, F429',
-     'pore17: A29, L30, L32, D33, N34, L36, K138, Q142, G150, T153, N154, Y158, I162, G165, F166, M169, F170, T173, I174, A177, S196, S199, S200, V201, A202, M204, G205, L225, L228, F252, L253, L255, A256, V259, D262, Q266, G282, T283, T287, L288, K290, D291, I294, M403, V410, H414, V417, G419, S420, V421, Y422, A423, A425, D426, F429'],
     [],
-    ['pore0: I22, I25, V26, A29, L30, D33, N34, L37, F135, K138, Q142, P159, I162, F163, S196, S199, S200, G203, M206, L228, V232, Q266, L270, Q271, P272, L311, E312, L315, P316, I317, M319, A333, L384, I385, N388, D426, F429, Y433',
-     'pore1: I22, I25, V26, A29, L30, D33, N34, L37, F135, K138, Q142, P159, I160, I162, F163, S196, S199, S200, G203, M206, L228, V232, Q266, L270, P272, S273, R274, V275, L311, E312, L315, P316, I317, M319, A333, L384, I385, N388, D426, F429, Y433',
-     'pore2: I22, I25, V26, A29, L30, D33, N34, L37, F135, K138, Q142, P159, I160, I162, F163, S196, S199, S200, G203, M206, L228, V232, Q266, L270, Q271, P272, R274, V275, Q276, L311, E312, L315, P316, I317, M319, A333, L384, I385, N388, D426, F429, Y433',
-     'pore3: I22, I25, V26, A29, L30, D33, N34, L37, F135, K138, Q142, Y158, P159, I160, I162, F163, S196, S199, S200, G203, M206, L228, V232, Q266, L270, P272, R274, V275, Q276, L311, E312, L315, P316, I317, M319, A333, L384, I385, N388, D426, F429, Y433',
-     'pore4: I22, I25, V26, A29, L30, D33, N34, L37, V41, I44, E120, L124, F135, K138, Q142, P159, I162, F163, S196, S199, S200, G203, M206, L228, V232, Q266, L270, Q271, P272, E312, P313, P316, I317, W318, F334, D426, F429, Y433',
-     'pore5: I22, I25, V26, A29, L30, D33, N34, L37, V41, I44, E120, L124, F135, K138, Q142, P159, I160, I162, F163, S196, S199, S200, G203, M206, L228, V232, Q266, L270, P272, S273, R274, V275, E312, P313, P316, I317, W318, F334, D426, F429, Y433',
-     'pore6: I22, I25, V26, A29, L30, D33, N34, L37, V41, I44, E120, L124, F135, K138, Q142, P159, I160, I162, F163, S196, S199, S200, G203, M206, L228, V232, Q266, L270, Q271, P272, R274, V275, Q276, E312, P313, P316, I317, W318, F334, D426, F429, Y433',
-     'pore7: I22, I25, V26, A29, L30, D33, N34, L37, V41, I44, E120, L124, F135, K138, Q142, Y158, P159, I160, I162, F163, S196, S199, S200, G203, M206, L228, V232, Q266, L270, P272, R274, V275, Q276, E312, P313, P316, I317, W318, F334, D426, F429, Y433',
-     'pore8: I22, I25, V26, A29, L30, D33, N34, L37, V41, I44, L124, F135, K138, Q142, P159, I162, F163, S196, S199, S200, G203, M206, L228, V232, Q266, L270, Q271, P272, E312, P313, A314, L315, P316, I317, W318, F334, D426, F429, Y433',
-     'pore9: I22, I25, V26, A29, L30, D33, N34, L37, V41, I44, L124, F135, K138, Q142, P159, I160, I162, F163, S196, S199, S200, G203, M206, L228, V232, Q266, L270, P272, E312, P313, A314, L315, P316, I317, W318, F334, D426, F429, Y433',
-     'pore10: I22, I25, V26, A29, L30, D33, N34, L37, V41, I44, L124, F135, K138, Q142, P159, I160, I162, F163, S196, S199, S200, G203, M206, L228, V232, Q266, L270, P272, S273, R274, V275, E312, P313, A314, L315, P316, I317, W318, F334, D426, F429, Y433',
-     'pore11: I22, I25, V26, A29, L30, D33, N34, L37, V41, I44, L124, F135, K138, Q142, P159, I160, I162, F163, S196, S199, S200, G203, M206, L228, V232, Q266, L270, Q271, P272, R274, V275, Q276, E312, P313, A314, L315, P316, I317, W318, F334, D426, F429, Y433',
-     'pore12: I22, I25, V26, A29, L30, D33, N34, L37, V41, I44, L124, F135, K138, Q142, Y158, P159, I160, I162, F163, S196, S199, S200, G203, M206, L228, V232, Q266, L270, P272, R274, V275, Q276, E312, P313, A314, L315, P316, I317, W318, F334, D426, F429, Y433',
-     'pore13: I22, I25, V26, A29, L30, D33, N34, L37, V41, I44, L124, F135, K138, Q142, P159, I162, F163, S196, S199, S200, G203, M206, L228, V232, Q266, L270, Q271, P272, E312, P313, A314, L315, P316, I317, W318, F334, D426, F429, Y433',
-     'pore14: I22, I25, V26, A29, L30, D33, N34, L37, V41, I44, L124, F135, K138, Q142, P159, I160, I162, F163, S196, S199, S200, G203, M206, L228, V232, Q266, L270, P272, E312, P313, A314, L315, P316, I317, W318, F334, D426, F429, Y433',
-     'pore15: I22, I25, V26, A29, L30, D33, N34, L37, V41, I44, L124, F135, K138, Q142, P159, I160, I162, F163, S196, S199, S200, G203, M206, L228, V232, Q266, L270, P272, S273, R274, V275, E312, P313, A314, L315, P316, I317, W318, F334, D426, F429, Y433',
-     'pore16: I22, I25, V26, A29, L30, D33, N34, L37, V41, I44, L124, F135, K138, Q142, P159, I160, I162, F163, S196, S199, S200, G203, M206, L228, V232, Q266, L270, Q271, P272, R274, V275, Q276, E312, P313, A314, L315, P316, I317, W318, F334, D426, F429, Y433',
-     'pore17: I22, I25, V26, A29, L30, D33, N34, L37, V41, I44, L124, F135, K138, Q142, Y158, P159, I160, I162, F163, S196, S199, S200, G203, M206, L228, V232, Q266, L270, P272, R274, V275, Q276, E312, P313, A314, L315, P316, I317, W318, F334, D426, F429, Y433',
-     'pore18: I22, I25, V26, A29, L30, D33, N34, L37, V41, I44, E120, D121, K122, L124, L125, E127, N128, V129, V131, G132, F135, K138, Q142, P159, I162, F163, S196, S199, S200, G203, M206, L228, V232, Q266, L270, Q271, P272, E312, P313, W318, F334, D426, F429, P437',
-     'pore19: I22, I25, V26, A29, L30, D33, N34, L37, V41, I44, E120, D121, K122, L124, L125, E127, N128, V129, V131, G132, F135, K138, Q142, P159, I160, I162, F163, S196, S199, S200, G203, M206, L228, V232, Q266, L270, P272, E312, P313, W318, F334, D426, F429, Y433, P437',
-     'pore20: I22, I25, V26, A29, L30, D33, N34, L37, V41, I44, E120, D121, K122, L124, L125, E127, N128, V129, V131, G132, F135, K138, Q142, P159, I160, I162, F163, S196, S199, S200, G203, M206, L228, V232, Q266, L270, P272, S273, R274, V275, E312, P313, W318, F334, D426, F429, Y433, P437',
-     'pore21: I22, I25, V26, A29, L30, D33, N34, L37, V41, I44, E120, D121, K122, L124, L125, E127, N128, V129, V131, G132, F135, K138, Q142, P159, I160, I162, F163, S196, S199, S200, G203, M206, L228, V232, Q266, L270, Q271, P272, R274, V275, Q276, E312, P313, W318, F334, D426, F429, Y433, P437',
-     'pore22: I22, I25, V26, A29, L30, D33, N34, L37, V41, I44, E120, D121, K122, L124, L125, E127, N128, V129, V131, G132, F135, K138, Q142, Y158, P159, I160, I162, F163, S196, S199, S200, G203, M206, L228, V232, Q266, L270, P272, R274, V275, Q276, E312, P313, W318, F334, D426, F429, Y433, P437'],
-      ..
-      ..
-    ['pore0: L30, D33, N34, L37, T38, E120, N128, Q130, V131, K138, Q142, S196, S200, M204, D214, E215, G218, N219, M221, G222, L225, L228, V232, E312, I317, W318, Y341, T345, F348, G349, H353, R357, G396, D399, S400, M403, P404, D426, F429, Y433',
-     'pore1: L30, D33, N34, L37, T38, E120, N128, Q130, V131, K138, Q142, S196, S200, M204, G218, N219, M221, G222, L225, L228, V232, E312, I317, W318, Y341, T345, F348, G349, H353, K354, M355, G356, R357, G396, D399, S400, M403, P404, D426, F429, Y433',
-     'pore2: L30, D33, N34, L37, T38, E120, N128, Q130, V131, K138, Q142, S196, S200, M204, A208, Y211, T212, D214, E215, R217, G218, N219, M221, G222, L225, L228, V232, E312, I317, W318, Y341, T345, F348, G349, H353, R357, G396, D399, S400, M403, P404, G407, Y408, D411, Y418, Y422, D426, F429, Y433',
-     'pore3: L30, D33, N34, L37, T38, V40, V41, I44, P45, V131, L134, F135, K138, Q142, S180, L185, R189, S196, S200, M204, G218, N219, M221, G222, L225, L228, V232, E312, Y341, T345, F348, G349, H353, K354, M355, G356, R357, G396, D399, S400, M403, P404, D426, F429, Y433',
-     'pore4: I22, I25, V26, A29, L30, D33, N34, L37, T38, V41, K138, Q142, Y158, P159, I162, S196, S199, S200, G203, M206, L228, V232, L270, Q276, E312, L315, P316, I317, Q329, A333, F334, I381, L384, N388, D426, F429, Y433',
-     'pore5: R17, I22, I25, V26, A29, L30, D33, N34, L37, T38, V41, K138, Q142, Y158, P159, I162, S196, S199, S200, G203, M206, L228, V232, L270, Q276, E312, L315, P316, I317, Q329, A333, F334, I381, L384, N388, D426, F429, Y433',
-     'pore6: L30, D33, N34, L37, T38, V41, K138, Q142, S196, S200, M204, A208, Y211, T212, D214, E215, R217, G218, N219, M221, G222, L225, L228, V232, E312, L315, P316, I317, Q329, A333, F334, Y341, T345, F348, G349, H353, R357, I381, L384, N388, G396, D399, S400, M403, P404, G407, Y408, D411, Y418, Y422, D426, F429, Y433',
-     'pore7: I22, I25, V26, A29, L30, D33, N34, L37, T38, K122, D123, L124, E127, N128, V131, K138, Q142, Y158, P159, I162, S196, S199, S200, G203, M206, L228, V232, L270, Q276, E312, P313, L315, P316, I317, W318, D426, F429, Y433',
-     'pore8: R17, I22, I25, V26, A29, L30, D33, N34, L37, T38, K122, D123, L124, E127, N128, V131, K138, Q142, Y158, P159, I162, S196, S199, S200, G203, M206, L228, V232, L270, Q276, E312, P313, L315, P316, I317, W318, D426, F429, Y433',
-     'pore9: L30, D33, N34, L37, T38, K122, D123, L124, E127, N128, V131, K138, Q142, S196, S200, M204, A208, Y211, T212, D214, E215, R217, G218, N219, M221, G222, L225, L228, V232, E312, P313, L315, P316, I317, W318, Y341, T345, F348, G349, H353, R357, G396, D399, S400, M403, P404, G407, Y408, D411, Y418, Y422, D426, F429, Y433',
-     'pore10: I22, I25, V26, A29, L30, D33, N34, L37, T38, K122, D123, L124, E127, N128, V131, K138, Q142, Y158, P159, I162, S196, S199, S200, G203, M206, L228, V232, L270, Q276, E312, P313, A314, L315, P316, I317, W318, D426, F429, Y433',
-     'pore11: R17, I22, I25, V26, A29, L30, D33, N34, L37, T38, K122, D123, L124, E127, N128, V131, K138, Q142, Y158, P159, I162, S196, S199, S200, G203, M206, L228, V232, L270, Q276, E312, P313, A314, L315, P316, I317, W318, D426, F429, Y433'],
-    ['pore0: R17, I22, I25, V26, A29, L30, D33, N34, L37, K122, L124, N128, V131, K138, A139, Q142, Y158, P159, I162, S196, S199, S200, G203, M206, L228, L270, Q276, E312, P313, A314, L315, P316, I317, W318, F334, F429, C430, Y433',
-     'pore1: R17, I22, I25, V26, A29, L30, D33, N34, L37, K122, N128, V131, K138, A139, Q142, Y158, P159, I162, S196, S199, S200, G203, M206, L228, L270, Q276, E312, P313, L315, P316, I317, W318, M319, F334, F429, C430, Y433',
-     'pore2: L30, D33, N34, L37, V41, P42, I43, I44, P45, K138, A139, Q142, S196, S200, M204, D214, E215, R217, G218, M221, A224, L225, L228, Y243, K248, E312, I317, W318, M319, T322, M323, F334, R357, M403, P404, G407, Y422, D426, F429, C430, Y433',
-     'pore3: R17, I22, I25, V26, A29, L30, D33, N34, L37, V41, K138, A139, Q142, Y158, P159, I162, S196, S199, S200, G203, M206, L228, L270, Q276, E312, L315, P316, I317, M319, Q329, L330, A333, F334, I381, F429, C430, Y433'],
-    ['pore0: R17, S18, L21, I22, I25, V26, A29, L30, D33, N34, L37, T38, K122, L124, N128, V131, K138, Q142, I162, F166, M169, S196, S199, S200, M206, L228, V232, D262, Q266, V269, L270, E312, P313, A314, L315, P316, I317, W318, F334, D426, F429',
-     'pore1: R17, S18, L21, I22, I25, V26, A29, L30, D33, N34, L37, T38, K122, L124, N128, V131, K138, Q142, I162, F166, M169, S196, S199, S200, M206, L228, V232, D262, Q266, V269, L270, E312, P313, A314, L315, P316, I317, W318, F334, D426, F429',
-     'pore2: R17, S18, L21, I22, I25, V26, A29, L30, D33, N34, L37, T38, K122, D123, L124, E127, N128, V131, K138, Q142, I162, F166, M169, S196, S199, S200, M206, L228, V232, D262, Q266, V269, L270, E312, P313, I317, W318, F334, D426, F429',
-     'pore3: R17, S18, L21, I22, I25, V26, A29, L30, D33, N34, L37, T38, K122, D123, L124, E127, N128, V131, K138, Q142, I162, F166, M169, S196, S199, S200, M206, L228, V232, D262, Q266, V269, L270, E312, P313, I317, W318, F334, D426, F429',
-     'pore4: R17, S18, L21, I22, I25, V26, A29, L30, D33, N34, L37, T38, K122, N128, V131, K138, Q142, I162, F166, M169, S196, S199, S200, M206, L228, V232, D262, Q266, V269, L270, E312, P313, L315, P316, I317, W318, M319, F334, D426, F429',
-     'pore5: R17, S18, L21, I22, I25, V26, A29, L30, D33, N34, L37, T38, K122, N128, V131, K138, Q142, I162, F166, M169, S196, S199, S200, M206, L228, V232, D262, Q266, V269, L270, E312, P313, L315, P316, I317, W318, M319, F334, D426, F429',
-     'pore6: R17, S18, L21, I22, I25, V26, A29, L30, D33, N34, L37, T38, E120, D121, K122, E127, N128, V131, K138, Q142, I162, F166, M169, S196, S199, S200, M206, L228, V232, D262, Q266, V269, L270, E312, P313, I317, W318, F334, D426, F429',
-     'pore7: R17, S18, L21, I22, I25, V26, A29, L30, D33, N34, L37, T38, E120, D121, K122, E127, N128, V131, K138, Q142, I162, F166, M169, S196, S199, S200, M206, L228, V232, D262, Q266, V269, L270, E312, P313, I317, W318, F334, D426, F429',
-     'pore8: R17, S18, L21, I22, I25, V26, A29, L30, D33, N34, L37, T38, V41, P42, N128, V131, K138, Q142, I162, F166, M169, S196, S199, S200, M206, L228, V232, D262, Q266, V269, L270, E312, I317, W318, M319, E321, T322, R326, K327, W328, Q329, L330, F334, D426, F429',
-     'pore9: R17, S18, L21, I22, I25, V26, A29, L30, D33, N34, L37, T38, V41, P42, N128, V131, K138, Q142, I162, F166, M169, S196, S199, S200, M206, L228, V232, D262, Q266, V269, L270, E312, I317, W318, M319, E321, T322, R326, K327, W328, Q329, L330, F334, D426, F429',
-     'pore10: R17, S18, L21, I22, I25, V26, A29, L30, D33, N34, L37, K138, Q142, I162, F166, M169, S196, S199, S200, M206, L228, V232, D262, Q266, V269, L270, I308, E312, L315, P316, I317, W328, Q329, V332, A333, F334, L335, P336, A337, S338, I381, I385, N388, D426, F429, Y433',
-     'pore11: R17, S18, L21, I22, I25, V26, A29, L30, D33, N34, L37, K138, Q142, I162, F166, M169, S196, S199, S200, M206, L228, V232, D262, Q266, V269, L270, I308, E312, L315, P316, I317, W328, Q329, V332, A333, F334, L335, P336, A337, S338, I381, I385, N388, D426, F429, Y433']]
+    [],
+    [],
+    [],
+    [],
+    ['pore0: I22:P, I25:P, V26:P, A29:P, L30:P, D33:P, N34:P, L37:P, T38:P, V41:P, I44:P, P45:P, S46:P, S119:P, E120:P, L124:P, N128:P, V131:P, F135:P, K138:P, Q142:P, Y158:P, P159:P, I162:P, S196:P, S199:P, S200:P, G203:P, M206:P, L228:P, V232:P, L270:P, I308:P, L311:P, E312:P, I317:P, W318:P, M319:P, F334:P, A337:P, S338:P, Y341:P, N388:P, G392:P, I395:P, D426:P, F429:P, Y433:P',
+     'pore1: I22:P, I25:P, V26:P, A29:P, L30:P, D33:P, N34:P, L37:P, T38:P, V41:P, I44:P, P45:P, S46:P, E120:P, L124:P, N128:P, V131:P, F135:P, K138:P, Q142:P, Y158:P, P159:P, I162:P, S196:P, S199:P, S200:P, G203:P, M206:P, L228:P, V232:P, L270:P, I308:P, L311:P, E312:P, I317:P, W318:P, M319:P, F334:P, A337:P, S338:P, Y341:P, N388:P, G392:P, I395:P, D426:P, F429:P, Y433:P',
+     'pore2: I22:P, I25:P, V26:P, A29:P, L30:P, D33:P, N34:P, L37:P, T38:P, V41:P, I44:P, P45:P, S46:P, S119:P, E120:P, L124:P, N128:P, V131:P, F135:P, K138:P, Q142:P, Y158:P, P159:P, I162:P, S196:P, S199:P, S200:P, G203:P, M206:P, L228:P, V232:P, L270:P, I308:P, L311:P, E312:P, I317:P, W318:P, F334:P, A337:P, S338:P, Y341:P, N388:P, G392:P, I395:P, D426:P, F429:P, Y433:P'],
+    [],
+    [],
+    ['pore0: I22:P, I25:P, V26:P, A29:P, L30:P, D33:P, N34:P, L37:P, T38:P, V40:P, V41:P, I44:P, K122:P, D123:P, L124:P, N128:P, V131:P, G132:P, F135:P, K138:P, Q142:P, I162:P, F166:P, M169:P, S196:P, S199:P, S200:P, G203:P, M206:P, L228:P, V232:P, D262:P, Q266:P, V269:P, L270:P, Q276:P, I308:P, E312:P, P313:P, A314:P, L315:P, P316:P, I317:P, W318:P, F334:P, Y341:P, K379:P, D426:P, F429:P, Y433:P, P437:P',
+     'pore1: I22:P, I25:P, V26:P, A29:P, L30:P, D33:P, N34:P, L37:P, T38:P, V40:P, V41:P, I44:P, L124:P, N128:P, V131:P, G132:P, F135:P, K138:P, Q142:P, I162:P, F166:P, M169:P, S196:P, S199:P, S200:P, G203:P, M206:P, L228:P, V232:P, D262:P, Q266:P, V269:P, L270:P, Q276:P, I308:P, E312:P, P313:P, L315:P, P316:P, I317:P, W318:P, F334:P, Y341:P, K379:P, D426:P, F429:P, Y433:P, P437:P',
+     'pore2: I22:P, I25:P, V26:P, A29:P, L30:P, D33:P, N34:P, L37:P, T38:P, V40:P, V41:P, I44:P, S46:P, V131:P, F135:P, K138:P, Q142:P, I162:P, F166:P, M169:P, S196:P, S199:P, S200:P, G203:P, M206:P, L228:P, V232:P, D262:P, Q266:P, V269:P, L270:P, Q276:P, I308:P, E312:P, I317:P, W318:P, M319:P, E321:P, T322:P, R326:P, K327:P, W328:P, Q329:P, L330:P, F334:P, Y341:P, D426:P, F429:P, Y433:P'],
+    [],
+    [],
+    [],
+    [],
+    ['pore0: L30:P, N34:P, L37:P, T38:P, V41:P, D121:P, K122:P, D123:P, L124:P, E127:P, N128:P, V131:P, G132:P, F135:P, K138:P, Q142:P, G150:P, T153:P, N154:P, S200:P, V201:P, A202:P, M204:P, G205:P, L225:P, L228:P, V232:P, S279:P, Q280:P, K281:P, G282:P, E312:P, P313:P, A314:P, L315:P, P316:P, I317:P, W318:P, F334:P, M403:P, V417:P, G419:P, S420:P, Y422:P, A423:P, A425:P, D426:P, F429:P, C430:P, Y433:P',
+     'pore1: L30:P, N34:P, L37:P, T38:P, V41:P, S119:P, E120:P, D121:P, K122:P, D123:P, L124:P, E127:P, N128:P, V131:P, G132:P, F135:P, K138:P, Q142:P, G150:P, T153:P, N154:P, S200:P, V201:P, A202:P, M204:P, G205:P, L225:P, L228:P, V232:P, Q280:P, G282:P, T283:P, E312:P, P313:P, A314:P, L315:P, P316:P, I317:P, W318:P, M319:P, F334:P, M403:P, V417:P, G419:P, S420:P, Y422:P, A423:P, A425:P, D426:P, F429:P, C430:P, Y433:P',
+     'pore2: L30:P, N34:P, L37:P, T38:P, V41:P, S119:P, E120:P, D121:P, K122:P, D123:P, L124:P, E127:P, N128:P, V131:P, G132:P, F135:P, K138:P, Q142:P, G150:P, T153:P, N154:P, S200:P, V201:P, A202:P, M204:P, G205:P, L225:P, L228:P, V232:P, S279:P, Q280:P, K281:P, G282:P, E312:P, P313:P, A314:P, L315:P, P316:P, I317:P, W318:P, M319:P, F334:P, M403:P, V417:P, G419:P, S420:P, Y422:P, A423:P, A425:P, D426:P, F429:P, C430:P, Y433:P',
+     'pore3: L30:P, N34:P, L37:P, T38:P, V41:P, D121:P, K122:P, D123:P, L124:P, E127:P, N128:P, V131:P, G132:P, F135:P, K138:P, Q142:P, G150:P, T153:P, N154:P, S200:P, V201:P, A202:P, M204:P, G205:P, L225:P, L228:P, V232:P, S279:P, Q280:P, K281:P, G282:P, E312:P, P313:P, A314:P, L315:P, P316:P, I317:P, W318:P, M319:P, F334:P, M403:P, V417:P, G419:P, S420:P, Y422:P, A423:P, A425:P, D426:P, F429:P, C430:P, Y433:P',
+     'pore4: L30:P, N34:P, L37:P, T38:P, V41:P, E120:P, D121:P, K122:P, D123:P, L124:P, E127:P, N128:P, V131:P, G132:P, F135:P, K138:P, Q142:P, G150:P, T153:P, N154:P, S200:P, V201:P, A202:P, M204:P, G205:P, L225:P, L228:P, V232:P, S279:P, Q280:P, K281:P, G282:P, E312:P, P313:P, I317:P, W318:P, F334:P, M403:P, V417:P, G419:P, S420:P, Y422:P, A423:P, A425:P, D426:P, F429:P, C430:P, Y433:P'],
+    [],
+    [],
+    [],
+    [],
+    []]
 
 
 To obtain information about pore's parameters, such as volume, length, or
@@ -1529,241 +1430,96 @@ bottlenck, use :func:.`getPoreParametersMultipleFrames` function.
 
    @> Frame/model: 0
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	488.65 		69.46 		0.79
-   @> pore 1: 	496.62 		71.97 		0.79
-   @> pore 2: 	445.76 		69.13 		0.79
-   @> pore 3: 	458.33 		71.27 		0.79
-   @> pore 4: 	453.73 		71.64 		0.79
-   @> pore 5: 	632.03 		82.55 		0.79
-   @> pore 6: 	648.0 		83.52 		0.79
-   @> pore 7: 	655.97 		84.3 		0.79
-   @> pore 8: 	640.0 		85.07 		0.79
-   @> pore 9: 	655.97 		86.03 		0.79
-   @> pore 10: 	663.94 		86.81 		0.79
    @> Frame/model: 1
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
    @> Frame/model: 2
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	736.53 		76.26 		0.74
-   @> pore 1: 	390.95 		70.74 		0.77
-   @> pore 2: 	446.88 		74.25 		0.77
-   @> pore 3: 	397.35 		73.78 		0.77
    @> Frame/model: 3
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	718.41 		66.0 		0.9
-   @> pore 1: 	707.57 		67.72 		0.9
-   @> pore 2: 	704.15 		70.05 		0.87
-   @> pore 3: 	798.15 		82.9 		0.9
-   @> pore 4: 	670.63 		68.01 		0.87
-   @> pore 5: 	779.85 		74.07 		0.81
-   @> pore 6: 	786.62 		75.23 		0.81
-   @> pore 7: 	769.01 		75.8 		0.81
-   @> pore 8: 	828.28 		77.69 		0.81
-   @> pore 9: 	851.12 		79.58 		0.81
-   @> pore 10: 	765.59 		78.12 		0.81
-   @> pore 11: 	773.95 		78.67 		0.81
-   @> pore 12: 	777.69 		79.7 		0.81
-   @> pore 13: 	778.14 		79.9 		0.81
-   @> pore 14: 	774.42 		79.68 		0.81
-   @> pore 15: 	445.12 		74.17 		0.81
-   @> pore 16: 	518.23 		90.65 		0.81
-   @> pore 17: 	508.04 		90.06 		0.81
    @> Frame/model: 4
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
    @> Frame/model: 5
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	825.73 		65.49 		0.75
-   @> pore 1: 	834.72 		69.75 		0.75
-   @> pore 2: 	879.72 		71.52 		0.75
-   @> pore 3: 	843.12 		72.77 		0.69
-   @> pore 4: 	823.63 		70.8 		0.75
-   @> pore 5: 	832.63 		75.06 		0.75
-   @> pore 6: 	877.62 		76.83 		0.75
-   @> pore 7: 	841.03 		78.09 		0.69
-   @> pore 8: 	805.46 		72.68 		0.75
-   @> pore 9: 	800.69 		73.07 		0.75
-   @> pore 10: 	814.46 		76.94 		0.75
-   @> pore 11: 	859.45 		78.71 		0.75
-   @> pore 12: 	822.86 		79.97 		0.69
-   @> pore 13: 	809.3 		73.65 		0.75
-   @> pore 14: 	804.53 		74.04 		0.75
-   @> pore 15: 	818.29 		77.91 		0.75
-   @> pore 16: 	863.29 		79.68 		0.75
-   @> pore 17: 	826.69 		80.93 		0.69
-   @> pore 18: 	839.04 		79.23 		0.75
-   @> pore 19: 	834.27 		79.62 		0.75
-   @> pore 20: 	848.04 		83.48 		0.75
-   @> pore 21: 	893.03 		85.25 		0.75
-   @> pore 22: 	856.43 		86.51 		0.69
    @> Frame/model: 6
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	1081.0 		76.59 		0.83
-   @> pore 1: 	1094.62 	79.18 		0.83
-   @> pore 2: 	1071.63 	76.13 		0.83
-   @> pore 3: 	1085.25 	78.72 		0.83
-   ..
-   ..
+   @> Frame/model: 7
+   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+   @> pore 0: 	1176.59 		70.54 		0.91
+   @> pore 1: 	1186.28 		72.98 		0.91
+   @> pore 2: 	1167.48 		72.58 		0.89
+   @> Frame/model: 8
+   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+   @> Frame/model: 9
+   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+   @> Frame/model: 10
+   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+   @> pore 0: 	1238.29 		69.38 		0.99
+   @> pore 1: 	1213.77 		69.32 		1.05
+   @> pore 2: 	1154.92 		72.43 		0.9
+   @> Frame/model: 11
+   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+   @> Frame/model: 12
+   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+   @> Frame/model: 13
+   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+   @> Frame/model: 14
+   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+   @> Frame/model: 15
+   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+   @> pore 0: 	850.56 		66.88 		0.88
+   @> pore 1: 	846.51 		65.5 		0.89
+   @> pore 2: 	843.03 		68.95 		0.88
+   @> pore 3: 	823.02 		69.18 		0.88
+   @> pore 4: 	805.46 		69.65 		0.88
+   @> Frame/model: 16
+   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+   @> Frame/model: 17
+   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+   @> Frame/model: 18
+   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
    @> Frame/model: 19
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	917.75 		66.68 		0.73
-   @> pore 1: 	903.64 		68.75 		0.73
-   @> pore 2: 	1005.38 	79.53 		0.75
-   @> pore 3: 	837.51 		71.53 		0.73
    @> Frame/model: 20
    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	827.19 		72.32 		0.74
-   @> pore 1: 	825.69 		72.86 		0.74
-   @> pore 2: 	837.73 		73.17 		0.74
-   @> pore 3: 	836.23 		73.7 		0.74
-   @> pore 4: 	825.38 		74.14 		0.74
-   @> pore 5: 	823.88 		74.68 		0.74
-   @> pore 6: 	841.65 		75.46 		0.74
-   @> pore 7: 	840.15 		76.0 		0.74
-   @> pore 8: 	850.76 		82.77 		0.74
-   @> pore 9: 	849.26 		83.3 		0.74
-   @> pore 10: 	661.25 		77.57 		0.7
-   @> pore 11: 	659.75 		78.11 		0.7
+
+   [([], [], []),
+    ([], [], []),
+    ([], [], []),
+    ([], [], []),
+    ([], [], []),
+    ([], [], []),
+    ([], [], []),
+    ([70.54471000644224, 72.97668159155492, 72.57642405027067],
+     [0.9118922696158223, 0.9118922696158223, 0.8935285215508568],
+     [1176.5915219465767, 1186.2812882068201, 1167.4824441528995]),
+    ([], [], []),
+    ([], [], []),
+    ([69.38102226316408, 69.32201029179326, 72.42687193686625],
+     [0.9935284974640439, 1.052007326607179, 0.8999179901412739],
+     [1238.2922478727692, 1213.7679963582323, 1154.9207891309438]),
+    ([], [], []),
+    ([], [], []),
+    ([], [], []),
+    ([], [], []),
+    ([66.88389586204593,
+      65.50350047091752,
+      68.94966156122996,
+      69.17585872830173,
+      69.65214108106966],
+     [0.8785444091924826,
+      0.8880679059215846,
+      0.8785444091924826,
+      0.8785444091924826,
+      0.8785444091924826],
+     [850.5576852359668,
+      846.5127103297621,
+      843.0339610299748,
+      823.0212056231321,
+      805.4572654140516]),
+    ([], [], []),
+    ([], [], []),
+    ([], [], []),
+    ([], [], []),
+    ([], [], [])]
 
 
-   [([69.45502768105918,
-      71.96649407548894,
-      69.12750263241286,
-      71.26708571765487,
-      71.63961744090273,
-      82.55451383619868,
-      83.52396585265168,
-      84.29783204005349,
-      85.06541245274701,
-      86.03486664862177,
-      86.80869225174177],
-     [0.787475287601636,
-      0.787475287601636,
-      0.787475287601636,
-      0.787475287601636,
-      0.787475287601636,
-      0.787475287601636,
-      0.787475287601636,
-      0.787475287601636,
-      0.787475287601636,
-      0.787475287601636,
-      0.787475287601636],
-     [488.64964627041616,
-      496.62316240682196,
-      445.7552795979281,
-      458.32782550479305,
-      453.7287957343339,
-      632.0290597965962,
-      647.9970483717335,
-      655.9696422330798,
-      640.0025759330023,
-      655.9705645081393,
-      663.9431583694858]),
-    ([], [], []),
-    ([76.25554318296521, 70.7396012605854, 74.24741676738773, 73.7821638072704],
-     [0.7377256742368303,
-      0.7665948006419143,
-      0.7665948006419143,
-      0.7665948006419143],
-     [736.5266497510764, 390.9548792283829, 446.8818284249258, 397.351310741719]),
-    ([65.99612596892734,
-      67.72240950857788,
-      70.05324423093188,
-      82.8991908134472,
-      68.00508788536808,
-      74.06987315935343,
-      75.23354024582183,
-      75.79567659473777,
-      77.69478849148587,
-      79.58425479138188,
-      78.1216917701227,
-      78.67470988459809,
-      79.69602785270617,
-      79.90483119958927,
-      79.67745297454553,
-      74.17406970340068,
-      90.65437801038513,
-      90.05595173996146],
-     [0.9028329092896226,
-      0.9028329092896226,
-      0.8662049490899701,
-      0.9028329092896226,
-      0.8662049490899701,
-      0.8061447412549654,
-      0.8061447412549654,
-      0.8061447412549654,
-      0.8061447412549654,
-      0.8061447412549654,
-      0.8061447412549654,
-      0.8061447412549654,
-      0.8061447412549654,
-      0.8061447412549654,
-      0.8061447412549654,
-      0.8077845691591083,
-      0.8077845691591083,
-      0.8077845691591083],
-     [718.4089819932893,
-      707.5721907118374,
-      704.1519451225709,
-      798.1523499571715,
-      670.6317159810806,
-      779.8499325383403,
-      786.6155674519079,
-      769.0131412568883,
-      828.2774602538221,
-      851.1161517501379,
-      765.5928956676216,
-      773.945018254014,
-      777.6915703142158,
-      778.1419792119323,
-      774.4223480637129,
-      445.12384283504224,
-      518.2288512108375,
-      508.03651031422163]),
-    ([], [], []),
-     ..
-     ..
-    ([66.68372279689746, 68.75221055480887, 79.53024687396352, 71.52985176307159],
-     [0.734319287054954,
-      0.734319287054954,
-      0.7457030900913533,
-      0.734319287054954],
-     [917.7467921779041,
-      903.6381808951435,
-      1005.3774089996299,
-      837.5051936376151]),
-    ([72.32025313948844,
-      72.85516519386799,
-      73.1672543089378,
-      73.70185140026537,
-      74.14132642165086,
-      74.67592272082813,
-      75.46495842953746,
-      75.99856845811442,
-      82.76661156783351,
-      83.30216472820338,
-      77.57230691976758,
-      78.10768359887855],
-     [0.7364088729090561,
-      0.7364088729090561,
-      0.7364088729090561,
-      0.7364088729090561,
-      0.7364088729090561,
-      0.7364088729090561,
-      0.7364088729090561,
-      0.7364088729090561,
-      0.7364088729090561,
-      0.7364088729090561,
-      0.696807047060563,
-      0.696807047060563],
-     [827.1881069459962,
-      825.6858201324296,
-      837.7315469778725,
-      836.229260164306,
-      825.3801480802197,
-      823.877861266653,
-      841.6475524369033,
-      840.1452656233367,
-      850.7590533242167,
-      849.2567665106501,
-      661.2535770445566,
-      659.75129023099])]
