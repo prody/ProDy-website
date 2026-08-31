@@ -1930,6 +1930,47 @@ Next, the residues that are forming the pores can be identified using
    ..
 
 
+    ['pore0: ASP33:P, ASN34:P, LEU37:P, THR38:P, VAL41:P, ILE44:P, GLU120:P, ASP121:P, LYS122:P, ASP123:P, GLU127:P, ASN128:P, VAL131:P, GLY132:P, PHE135:P, LYS138:P, GLN142:P, SER196:P, SER200:P, MET204:P, LEU207:P, ALA208:P, TYR211:P, THR212:P, ARG217:P, VAL220:P, MET221:P, LEU225:P, LEU228:P, VAL232:P, GLU312:P, PRO313:P, LEU315:P, PRO316:P, ILE317:P, TRP318:P, PHE334:P, TYR341:P, MET403:P, GLY407:P, ASP411:P, TYR418:P, TYR422:P, ALA425:P, ASP426:P, PHE429:P, TYR433:P',
+     'pore1: ASP33:P, ASN34:P, LEU37:P, THR38:P, VAL41:P, ILE44:P, GLU120:P, ASP121:P, LYS122:P, ASP123:P, GLU127:P, ASN128:P, VAL131:P, GLY132:P, PHE135:P, LYS138:P, GLN142:P, SER196:P, SER200:P, MET204:P, LEU207:P, ALA208:P, TYR211:P, ASP214:P, GLU215:P, ARG217:P, GLY218:P, VAL220:P, MET221:P, LEU225:P, LEU228:P, VAL232:P, GLU312:P, PRO313:P, LEU315:P, PRO316:P, ILE317:P, TRP318:P, PHE334:P, TYR341:P, ARG357:P, MET403:P, PRO404:P, GLY407:P, TYR422:P, ALA425:P, ASP426:P, PHE429:P, TYR433:P',
+     'pore2: ASP33:P, ASN34:P, LEU37:P, THR38:P, VAL41:P, ILE44:P, GLU120:P, ASP121:P, LYS122:P, ASP123:P, GLU127:P, ASN128:P, VAL131:P, GLY132:P, PHE135:P, LYS138:P, GLN142:P, SER196:P, SER200:P, MET204:P, LEU207:P, ALA208:P, TYR211:P, ASP214:P, GLU215:P, ARG217:P, GLY218:P, VAL220:P, MET221:P, LEU225:P, LEU228:P, VAL232:P, GLU312:P, PRO313:P, LEU315:P, PRO316:P, ILE317:P, TRP318:P, PHE334:P, TYR341:P, ARG357:P, MET403:P, PRO404:P, GLY407:P, TYR422:P, ALA425:P, ASP426:P, PHE429:P, TYR433:P',
+     'pore3: ASP33:P, ASN34:P, LEU37:P, THR38:P, VAL41:P, PRO42:P, ILE44:P, SER46:P, ASN128:P, VAL131:P, GLY132:P, PHE135:P, LYS138:P, GLN142:P, SER196:P, SER200:P, MET204:P, LEU207:P, ALA208:P, TYR211:P, THR212:P, ARG217:P, VAL220:P, MET221:P, LEU225:P, LEU228:P, VAL232:P, GLU312:P, PRO313:P, ILE317:P, TRP318:P, MET319:P, GLU321:P, THR322:P, MET323:P, ARG326:P, LYS327:P, TRP328:P, GLN329:P, LEU330:P, PHE334:P, TYR341:P, MET403:P, GLY407:P, ASP411:P, TYR418:P, TYR422:P, ALA425:P, ASP426:P, PHE429:P, TYR433:P'],
+    [],
+    [],
+    [],
+    ['pore0: LEU30:P, ASN34:P, LEU37:P, THR38:P, VAL41:P, ILE44:P, GLU120:P, ASN128:P, GLN130:P, VAL131:P, GLY132:P, PHE135:P, LYS138:P, GLN142:P, SER200:P, MET204:P, ALA208:P, TYR211:P, THR212:P, ARG217:P, MET221:P, ALA224:P, LEU225:P, LEU228:P, VAL232:P, ILE308:P, GLU312:P, PRO313:P, ILE317:P, TRP318:P, PHE334:P, TYR341:P, MET403:P, PRO404:P, GLY407:P, ASP411:P, TYR418:P, TYR422:P, ASP426:P, PHE429:P, TYR433:P',
+     'pore1: LEU30:P, ASN34:P, LEU37:P, THR38:P, VAL41:P, PRO42:P, ILE43:P, ILE44:P, SER46:P, VAL131:P, GLY132:P, PHE135:P, LYS138:P, GLN142:P, SER200:P, MET204:P, ALA208:P, TYR211:P, THR212:P, ARG217:P, MET221:P, ALA224:P, LEU225:P, LEU228:P, VAL232:P, TYR243:P, GLU244:P, ILE308:P, GLU312:P, PRO313:P, ILE317:P, TRP318:P, MET319:P, MET320:P, THR322:P, MET323:P, SER325:P, LEU330:P, PHE334:P, TYR341:P, MET403:P, PRO404:P, GLY407:P, ASP411:P, TYR418:P, TYR422:P, ASP426:P, PHE429:P, TYR433:P',
+     'pore2: LEU30:P, ASN34:P, LEU37:P, THR38:P, VAL41:P, PRO42:P, ILE44:P, VAL131:P, GLY132:P, PHE135:P, LYS138:P, GLN142:P, SER200:P, MET204:P, ALA208:P, TYR211:P, THR212:P, ARG217:P, MET221:P, ALA224:P, LEU225:P, LEU228:P, VAL232:P, ILE308:P, GLU312:P, PRO313:P, ILE317:P, TRP318:P, MET319:P, GLU321:P, THR322:P, ARG326:P, LYS327:P, TRP328:P, GLN329:P, LEU330:P, PHE334:P, TYR341:P, MET403:P, PRO404:P, GLY407:P, ASP411:P, TYR418:P, TYR422:P, ASP426:P, PHE429:P, TYR433:P',
+     'pore3: LEU30:P, ASN34:P, LEU37:P, THR38:P, VAL41:P, PRO42:P, ILE44:P, VAL131:P, GLY132:P, PHE135:P, LYS138:P, GLN142:P, SER200:P, MET204:P, ALA208:P, TYR211:P, THR212:P, ARG217:P, MET221:P, ALA224:P, LEU225:P, LEU228:P, VAL232:P, ILE308:P, GLU312:P, PRO313:P, ILE317:P, TRP318:P, MET319:P, GLU321:P, THR322:P, ARG326:P, LYS327:P, TRP328:P, GLN329:P, LEU330:P, PHE334:P, TYR341:P, MET403:P, PRO404:P, GLY407:P, ASP411:P, TYR418:P, TYR422:P, ASP426:P, PHE429:P, TYR433:P'],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []]
+
+
 III. Identification of surface cavities in molecular dynamics (MD) trajectory
 ===============================================================================
 
@@ -1979,44 +2020,58 @@ prefix provided by ``output_path``.
 
 .. parsed-literal::
 
-   @> Frame: 0
+   @> Frame/model: 0
+   @> Frame/model: 7
    @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 A in 0.12s.
-   @> Delaunay tessellation of 31833 points constructed in 1.33s.
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 Å in 0.17s.
+   @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 Å in 0.17s.
+   @> Delaunay tessellation of 31833 points constructed in 1.40s.
+   @> Delaunay tessellation of 31833 points constructed in 1.40s.
+   @> Surface and inner simplices filtered in 0.41s.
+   @> Surface and inner simplices filtered in 0.44s.
+   @> Surface cavities: 228 found, 25 deeper than min_depth=1.5 Å and kept, in 0.23s.
+   @> Surface cavities: 222 found, 22 deeper than min_depth=1.5 Å and kept, in 0.21s.
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+   @> Surface cavity calculation completed in 2.29s.
+   @> Frame/model: 8
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> Surface cavity calculation completed in 2.31s.
+   @> Frame/model: 1
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 Å in 0.11s.
+   @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 Å in 0.12s.
+   @> Delaunay tessellation of 31833 points constructed in 1.35s.
+   @> Delaunay tessellation of 31833 points constructed in 1.37s.
    @> Surface and inner simplices filtered in 0.39s.
-   @> 20 surface cavities detected and filtered in 0.24s.
+   @> Surface and inner simplices filtered in 0.49s.
+   @> Surface cavities: 209 found, 22 deeper than min_depth=1.5 Å and kept, in 0.23s.
    @> Returning surface cavities
    @> Saving multiple surface cavities to directory ..
-   @> Surface cavity calculation completed in 2.14s.
-   @> Frame: 1
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 A in 0.11s.
-   @> Delaunay tessellation of 31833 points constructed in 1.27s.
-   @> Surface and inner simplices filtered in 0.37s.
-   @> 20 surface cavities detected and filtered in 0.22s.
-   @> Returning surface cavities
-   @> Saving multiple surface cavities to directory ..
-   @> Surface cavity calculation completed in 2.02s.
-   @> Frame: 2
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 A in 0.11s.
-   @> Delaunay tessellation of 31833 points constructed in 1.23s.
-   @> Surface and inner simplices filtered in 0.37s.
-   @> 27 surface cavities detected and filtered in 0.21s.
-   @> Returning surface cavities
-   @> Saving multiple surface cavities to directory ..
-   @> Surface cavity calculation completed in 1.97s.
+   @> Surface cavity calculation completed in 2.16s.
    ..
    ..
-   @> Frame: 49
+   @> Frame/model: 47
    @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 A in 0.11s.
-   @> Delaunay tessellation of 31833 points constructed in 1.18s.
-   @> Surface and inner simplices filtered in 0.42s.
-   @> 27 surface cavities detected and filtered in 0.21s.
+   @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 Å in 0.10s.
+   @> Delaunay tessellation of 31833 points constructed in 1.15s.
+   @> Surface and inner simplices filtered in 0.40s.
+   @> Surface cavities: 225 found, 25 deeper than min_depth=1.5 Å and kept, in 0.21s.
    @> Returning surface cavities
    @> Saving multiple surface cavities to directory ..
-   @> Surface cavity calculation completed in 1.97s.
+   @> Surface cavity calculation completed in 1.94s.
+   @> Frame/model: 48
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 Å in 0.11s.
+   @> Delaunay tessellation of 31833 points constructed in 1.15s.
+   @> Surface and inner simplices filtered in 0.43s.
+   @> Surface cavities: 251 found, 26 deeper than min_depth=1.5 Å and kept, in 0.24s.
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+   @> Surface cavity calculation completed in 1.99s.
 
 
 The parameters of the detected surface cavities can be extracted with
@@ -2036,53 +2091,56 @@ using this name as a prefix.
 
    @> Model/frame: 0
    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	185.19 		7.26 		80
-   @> cavity 1: 	221.58 		4.37 		84
-   @> cavity 2: 	53.79 		2.41 		24
-   @> cavity 3: 	313.39 		4.69 		156
-   @> cavity 4: 	360.65 		4.04 		117
-   @> cavity 5: 	84.52 		2.2 		36
-   @> cavity 6: 	87.28 		3.23 		40
-   @> cavity 7: 	66.87 		2.92 		45
-   @> cavity 8: 	242.94 		3.75 		87
-   @> cavity 9: 	147.79 		3.12 		48
-   @> cavity 10: 	194.93 		2.42 		75
-   @> cavity 11: 	92.82 		1.64 		52
+   @> cavity 0: 	402.75 		4.87 		132
+   @> cavity 1: 	392.11 		4.12 		161
+   @> cavity 2: 	318.46 		6.12 		136
+   @> cavity 3: 	214.1 		2.99 		110
+   @> cavity 4: 	169.45 		3.64 		48
+   @> cavity 5: 	116.88 		5.59 		27
+   @> cavity 6: 	114.71 		1.97 		61
+   @> cavity 7: 	103.98 		2.34 		47
+   @> cavity 8: 	92.73 		1.84 		29
+   @> cavity 9: 	89.05 		1.62 		48
+   @> cavity 10: 	83.4 		1.93 		27
+   @> cavity 11: 	77.01 		3.19 		60
+   @> cavity 12: 	74.52 		1.99 		34
+   @> cavity 13: 	67.8 		1.96 		38
+   @> cavity 14: 	53.49 		2.6 		22
    @> Model/frame: 1
    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	320.4 		7.76 		175
-   @> cavity 1: 	162.26 		3.32 		53
-   @> cavity 2: 	155.38 		2.3 		70
-   @> cavity 3: 	51.88 		1.86 		36
-   @> cavity 4: 	95.75 		1.73 		49
-   @> cavity 5: 	56.5 		1.54 		27
-   @> cavity 6: 	260.45 		3.66 		89
-   @> cavity 7: 	292.86 		4.41 		86
-   @> cavity 8: 	70.15 		2.41 		38
-   @> cavity 9: 	77.78 		7.26 		25
-   @> cavity 10: 	98.21 		2.59 		52
-   @> cavity 11: 	207.6 		2.55 		70
-   @> cavity 12: 	127.42 		2.34 		72
+   @> cavity 0: 	355.13 		4.06 		111
+   @> cavity 1: 	273.6 		5.54 		137
+   @> cavity 2: 	247.31 		2.26 		105
+   @> cavity 3: 	188.24 		2.05 		78
+   @> cavity 4: 	176.18 		7.41 		107
+   @> cavity 5: 	162.63 		2.34 		56
+   @> cavity 6: 	149.92 		3.13 		54
+   @> cavity 7: 	142.73 		1.79 		61
+   @> cavity 8: 	133.09 		5.38 		42
+   @> cavity 9: 	94.12 		2.03 		54
+   @> cavity 10: 	84.77 		1.75 		48
+   @> cavity 11: 	84.44 		2.76 		26
+   @> cavity 12: 	73.41 		2.48 		27
+   @> cavity 13: 	53.78 		2.42 		40
    ..
    ..
-   @> Model/frame: 49
+   @> Model/frame: 50
    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	121.03 		2.72 		56
-   @> cavity 1: 	227.05 		2.83 		103
-   @> cavity 2: 	91.85 		3.77 		49
-   @> cavity 3: 	458.74 		2.96 		145
-   @> cavity 4: 	177.08 		2.45 		78
-   @> cavity 5: 	90.71 		2.03 		43
-   @> cavity 6: 	212.61 		3.84 		106
-   @> cavity 7: 	172.96 		2.39 		63
-   @> cavity 8: 	78.59 		1.86 		29
-   @> cavity 9: 	130.72 		2.08 		45
-   @> cavity 10: 	81.99 		3.7 		28
-   @> cavity 11: 	54.33 		1.66 		39
-   @> cavity 12: 	51.63 		2.09 		21
-   @> cavity 13: 	159.86 		3.45 		59
-   @> cavity 14: 	66.62 		2.28 		24
-   @> cavity 15: 	60.45 		1.71 		21
+   @> cavity 0: 	503.78 		4.84 		145
+   @> cavity 1: 	214.13 		3.85 		108
+   @> cavity 2: 	188.51 		2.75 		95
+   @> cavity 3: 	173.52 		2.4 		62
+   @> cavity 4: 	158.52 		3.03 		71
+   @> cavity 5: 	158.33 		1.82 		64
+   @> cavity 6: 	130.09 		2.08 		38
+   @> cavity 7: 	126.88 		2.82 		58
+   @> cavity 8: 	94.47 		4.01 		51
+   @> cavity 9: 	89.66 		1.78 		42
+   @> cavity 10: 	86.84 		1.89 		28
+   @> cavity 11: 	80.71 		2.55 		54
+   @> cavity 12: 	68.29 		2.36 		22
+   @> cavity 13: 	54.54 		2.17 		40
+   @> cavity 14: 	54.13 		1.71 		21
    	
 
 Residues lining the detected surface cavities can be identified with
@@ -2146,7 +2204,8 @@ object.
 .. ipython:: python
    :verbatim:
 
-   frequent_residues = calcFrequentObjectResidues(residues, output_file_name='cavi_freq_res')
+   frequent_residues = calcFrequentObjectResidues(residues, 
+					output_file_name='cavi_freq_res')
 
 .. parsed-literal::
 
@@ -2160,99 +2219,113 @@ object.
 
 .. parsed-literal::
 
-   {'P': Counter({'GLU128': 51,
-             'ARG75': 51,
+   'P': Counter({'GLU128': 51,
              'HSE72': 51,
-             'ARG40': 50,
-             'ASP129': 50,
-             'LYS79': 50,
-             'THR78': 50,
-             'HSE157': 50,
+             'ARG75': 51,
              'LYS6': 50,
-             'GLN76': 50,
              'LEU13': 50,
+             'HSE157': 50,
+             'GLN76': 50,
+             'THR78': 50,
+             'LYS79': 50,
+             'ARG40': 50,
              'PRO130': 50,
-             'ASP137': 49,
+             'ASP129': 50,
              'LYS155': 49,
              'THR140': 49,
-             'ARG27': 49,
              'SER71': 49,
+             'ASP137': 49,
              'TYR131': 49,
-             'TYR119': 48,
-             'ILE16': 48,
-             'THR31': 48,
-             'ALA156': 48,
-             'THR84': 48,
-             'ILE51': 48,
+             'ARG27': 49,
              'GLU80': 48,
-             'TRP39': 48,
              'ASP42': 48,
+             'TYR119': 48,
+             'THR84': 48,
              'LYS102': 48,
+             'ILE16': 48,
+             'ILE51': 48,
+             'THR31': 48,
+             'TRP39': 48,
+             'ALA156': 48,
+             'ILE126': 47,
              'SER94': 47,
+             'ILE77': 47,
              'TYR49': 47,
              'GLU154': 47,
-             'ILE77': 47,
-             'ILE126': 47,
-             'THR5': 46,
-             'ASP86': 46,
              'LYS28': 46,
-             'LYS110': 46,
+             'THR5': 46,
              'PHE85': 46,
              'LEU153': 46,
-             'THR46': 45,
-             'VAL73': 45,
+             'LYS110': 46,
+             'ASP86': 46,
              'GLN124': 45,
+             'VAL73': 45,
+             'THR46': 45,
              'VAL106': 45,
+             'GLU23': 44,
+             'SER118': 44,
+             'LYS123': 44,
              'ILE68': 44,
              'PRO54': 44,
              'ARG101': 44,
-             'VAL41': 44,
-             'SER118': 44,
-             'GLU23': 44,
              'ARG150': 44,
-             'LYS123': 44,
-             'LYS112': 44,
+             'VAL41': 44,
              'ALA83': 44,
-             'PRO69': 43,
-             'ARG18': 43,
-             'ASP92': 43,
-             'GLU50': 43,
-             'MET70': 43,
+             'LYS112': 44,
              'GLN60': 43,
+             'GLU50': 43,
+             'PRO69': 43,
              'ILE35': 43,
+             'MET70': 43,
+             'ASP92': 43,
+             'ARG18': 43,
              'TYR87': 43,
-             'SER36': 42,
-             'ASP32': 42,
              'GLY48': 42,
+             'SER36': 42,
              'GLN33': 42,
-             'GLU37': 41,
-             'PRO55': 41,
+             'ASP32': 42,
              'SER47': 41,
              'TYR57': 41,
              'SER136': 41,
+             'PRO55': 41,
+             'GLU37': 41,
              'LYS107': 41,
-             'ALA151': 40,
-             'GLN143': 40,
              'GLU93': 40,
+             'ALA151': 40,
+             'SER7': 40,
              'ASP56': 40,
              'ASP98': 40,
-             'SER7': 40,
+             'GLN143': 40,
              'THR108': 40,
              'ASN53': 39,
-             'ARG97': 39,
              'GLN105': 39,
              'ARG58': 39,
+             'ARG97': 39,
              'TYR132': 39,
-             'VAL146': 38,
              'GLY14': 38,
+             'VAL146': 38,
              'ASN38': 38,
-             'SER43': 37,
              'ARG147': 37,
+             'SER43': 37,
+             'ASP120': 37,
+             'GLY52': 36,
+             'LEU29': 35,
+             'GLN144': 35,
+             'VAL141': 35,
+             'ALA74': 34,
+             'SER61': 33,
+             'TYR142': 33,
+             'ALA111': 33,
+             'GLU114': 33,
+             'ASN15': 32,
+             'LEU125': 32,
+             'LYS64': 32,
+             'PHE82': 32,
+             'GLN122': 31,
+             'ASP81': 30,
+             'PRO121': 30,
              ..
-	     ..
-	     'ALA45': 2,
-             'PRO20': 1,
-             'LEU99': 1,
+             ..
              'PHE26': 1})}
 
 
@@ -2279,30 +2352,28 @@ surface cavities.
    frequent_residue_names = calcFrequentObjectResidues(residues, count_residue_names=True)
    frequent_residue_names
 
-
 .. parsed-literal::
 
    {'P': Counter({'SER': 51,
              'TYR': 51,
-             'ARG': 51,
+             'ASP': 51,
+             'ALA': 51,
              'LYS': 51,
              'VAL': 51,
-             'HSE': 51,
-             'PRO': 51,
              'GLN': 51,
-             'THR': 51,
              'GLU': 51,
-             'ALA': 51,
-             'LEU': 51,
              'GLY': 51,
-             'ASP': 51,
+             'PRO': 51,
              'ILE': 51,
+             'LEU': 51,
+             'THR': 51,
+             'ARG': 51,
+             'HSE': 51,
              'PHE': 50,
              'ASN': 50,
              'TRP': 48,
              'MET': 43,
              'CYS': 35})}
-
 
 .. ipython:: python
    :verbatim:
@@ -2331,6 +2402,7 @@ frame-level occurrence.
        output_file_name='cavi_frequent_residue_occurrences')
 
    showFrequentObjectResidues(frequent_residue_occurrences, top=20)
+   plt.show()
 
 
 .. parsed-literal::
@@ -2375,10 +2447,10 @@ cavity regions that are detected in more frames.
    @> Resolution: 0.5
    @> max_proc: 4
    @> Calculating overlaps using 4 processes.
-   @> 686 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 946 atoms and 1 coordinate sets were parsed in 0.02s.
-   @> 1072 atoms and 1 coordinate sets were parsed in 0.02s.
-   @> 803 atoms and 1 coordinate sets were parsed in 0.02s.
+   @> 686 atoms and 1 coordinate sets were parsed in 0.00s.
+   @> 803 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 946 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 1072 atoms and 1 coordinate sets were parsed in 0.01s.
    @> 818 atoms and 1 coordinate sets were parsed in 0.00s.
    @> 966 atoms and 1 coordinate sets were parsed in 0.01s.
    @> 1140 atoms and 1 coordinate sets were parsed in 0.01s.
@@ -2387,17 +2459,15 @@ cavity regions that are detected in more frames.
    @> 1043 atoms and 1 coordinate sets were parsed in 0.01s.
    @> 723 atoms and 1 coordinate sets were parsed in 0.00s.
    @> 980 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 832 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 774 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 1020 atoms and 1 coordinate sets were parsed in 0.01s.
    ..
-   ..
+   @> 1171 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 749 atoms and 1 coordinate sets were parsed in 0.00s.
    @> 1020 atoms and 1 coordinate sets were parsed in 0.01s.
    @> 962 atoms and 1 coordinate sets were parsed in 0.01s.
    @> 691 atoms and 1 coordinate sets were parsed in 0.00s.
    @> 936 atoms and 1 coordinate sets were parsed in 0.01s.
    @> 899 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 869 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 869 atoms and 1 coordinate sets were parsed in 0.00s.
    @> 885 atoms and 1 coordinate sets were parsed in 0.00s.
    @> Overlap written to: surface_cavity_overlap.pdb
    @> Number of occupied overlap voxels: 138222
