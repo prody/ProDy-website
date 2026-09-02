@@ -813,7 +813,7 @@ parameter.
 
 
 To obtain information about the surface cavities, such as volume, depth or
-tetrahedra count, use :func:`getSurfaceCavityParameters`.
+tetrahedra count, use :func:`.getSurfaceCavityParameters`.
 
 .. ipython:: python
    :verbatim:
@@ -828,7 +828,7 @@ tetrahedra count, use :func:`getSurfaceCavityParameters`.
    @> cavity 2: 	503.05 		7.78 		133
 
 
-By assigning the output of :func:`getSurfaceCavityParameters` to the
+By assigning the output of :func:`.getSurfaceCavityParameters` to the
 variable parameters, the extracted cavity descriptors can be accessed as
 lists, including cavity volume (``parameters[0]``), depth
 (``parameters[1]``), and tetrahedra count (``parameters[2]``).
@@ -1162,7 +1162,7 @@ the protein structure, and identify channels.
 
    <Selection: 'protein' from 2fgq (2447 atoms)>
 
-Now, we are using :func:`calcChannels` to identify the channels with protein
+Now, we are using :func:`.calcChannels` to identify the channels with protein
 structure. ``starting point`` is selected and various channels are saved
 separately as PQR files (``separate`` = True). Additionally, we are using
 ``return_details`` parameter which is required for pores reconstruction. 
@@ -1203,7 +1203,7 @@ Becasue PQR files with channels were saved, they can be displayed in VMD_.
 .. figure:: images/cavitracer_figure25.jpg
    :scale: 50 %
 
-To reconstruct pores, we should use :func:`calcPoresFromChannels` function
+To reconstruct pores, we should use :func:`.calcPoresFromChannels` function
 by providing information about channels and its details.
 
 .. ipython:: python
@@ -1227,7 +1227,7 @@ by providing information about channels and its details.
     <prody.proteins.channels.Channel at 0x7ad5b8f93940>]
 
 Pores can be displayed directly in ProDy, but first, a model of protein
-should be created using :func:`getVmdModel`.
+should be created using :func:`.getVmdModel`.
 
 .. ipython:: python
    :verbatim:
@@ -1329,7 +1329,7 @@ length, and bottleneck.
 For some structures, particularly when a smaller ``r2`` value is used,
 predictions may provide a large number of channels. Consequently, the number
 of reconstructed pore candidates will be very large. Therefore, the function
-:func:`calcPoresFromChannels` provides several types of filters that can be
+:func:`.calcPoresFromChannels` provides several types of filters that can be
 used to retain only pores with the desired geometrical properties. 
 
 The available filters include:

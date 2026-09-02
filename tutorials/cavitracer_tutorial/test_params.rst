@@ -39,7 +39,7 @@ structure:
    @> 3999 atoms and 1 coordinate set(s) were parsed in 0.14s.
 
 
-Next, :func:`scanChannelParameters` can be use to explore various parameters 
+Next, :func:`.scanChannelParameters` can be use to explore various parameters 
 and how they affects channel detection. This is useful when the optimal values are
 not known for a given protein or when the user wants to identify channels that
 are robustly detected across several parameter combinations.
@@ -278,7 +278,7 @@ groove that accommodates the substrate.
 
    protein.setACSIndex(0)
 
-Now, we use model 1 for the analysis using :func:`scanSurfaceCavityParameters`.
+Now, we use model 1 for the analysis using :func:`.scanSurfaceCavityParameters`.
 
 By default, the function tests all combinations of the following parameters:
 

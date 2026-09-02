@@ -1124,7 +1124,7 @@ can be found in the tutorial files.
 
    <AtomGroup: case_study2_ev10_multi (5986 atoms; active #0 of 22 coordsets)>
 
-To identify pores, we should use :func:.`calcChannelsMultipleFrames`
+To identify pores, we should use :func:`.calcChannelsMultipleFrames`
 function first and identify channels. Results will be saved with ``'ch_multi_'``
 prefix, each channel in a separate file (``separate=True``). Additionally,
 the requirement to obtain information about pores is
@@ -1253,7 +1253,7 @@ processors for calculations.
    @> Channel calculation completed in 9.47s.
 
 
-After channels, :func:.`calcPoresFromChannelsMultipleFrames` function can be
+After channels, :func:`.calcPoresFromChannelsMultipleFrames` function can be
 applied to reconstruct pores.
 
 .. ipython:: python
@@ -1353,7 +1353,7 @@ applied to reconstruct pores.
      <prody.proteins.channels.Channel at 0x77083e8571c0>]]
 
 To obtain information about residues that are forming pores, use
-:func:.`getPoreResidueNamesMultipleFrames` function. When applying
+:func:`.getPoreResidueNamesMultipleFrames` function. When applying
 ``one_letter_aa=True`` all the residues will be written in a one-letter
 code.
 
@@ -1418,7 +1418,7 @@ code.
 
 
 To obtain information about pore's parameters, such as volume, length, or
-bottlenck, use :func:.`getPoreParametersMultipleFrames` function.
+bottlenck, use :func:`.getPoreParametersMultipleFrames` function.
 
 .. ipython:: python
    :verbatim:
