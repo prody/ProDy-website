@@ -674,6 +674,9 @@ II. Detection of surface cavities in a single PDB structure
 ===============================================================================
 
 
+CaviTracer prediction and visualization
+-------------------------------------------------------------------------------
+
 In this part of the tutorial, we will also use the Cytochrome P450 structure,
 but this time we will identify surface cavities instead of intraprotein
 cavities.  
@@ -853,7 +856,7 @@ lists, including cavity volume (``parameters[0]``), depth
 
 In addition to quantitative descriptors, CaviTracer also allows the
 identification of residues forming each detected surface cavity. This
-information can be obtained using :func:`getSurfaceCavityResidueNames`,
+information can be obtained using :func:`.getSurfaceCavityResidueNames`,
 which returns residue names and residue numbers for each cavity based on
 the distance between cavity points and protein residues. The results can be
 saved using the ``residues_file_name`` parameter. The provided name will 
@@ -895,9 +898,228 @@ sufix.
     GLU486:A']
 
 
+Channel–Surface Cavity Reconstruction
+-------------------------------------------------------------------------------
+
+When both channels and surface cavities have been identified, channels 
+associated with an additional cavity at their entrance can be further 
+distinguished using the func:`.connectChannelsToSurfaceCavities` function. 
+Spatially connected channel–surface cavity pairs are identified and 
+reconstructed as combined systems.
+
+As a post-processing approach, this analysis allows channels and surface 
+cavities to be calculated independently using parameters optimized for each 
+type of structure before their connectivity is evaluated. These 
+channel-associated surface cavities may highlight potential ligand-binding 
+or druggable sites whose occupation could restrict access to the channel.
+
+
+First, we parse `1tqn` structure and select `protein`:
+
+.. ipython:: python
+   :verbatim:
+
+   protein = parsePDB('1tqn').select('protein')
+
+
+.. parsed-literal::
+
+   @> PDB file is found in working directory (1tqn.pdb).
+   @> 3999 atoms and 1 coordinate set(s) were parsed in 0.21s.
+
+
+Next, channels are identified using :func:`.calcChannels`. Setting return_details=True provides 
+the additional geometric information required by connectChannelsToSurfaceCavities for 
+the subsequent identification and reconstruction of channel–surface cavity systems. 
+Importantly, channel detection parameters can be selected independently from those 
+used for surface cavity detection, which we do next.
+
+.. ipython:: python
+   :verbatim:
+
+   channels, channel_surface, channel_details = calcChannels(
+    	protein,
+    	inner_radius=0.8,
+    	min_depth=3,
+    	return_details=True,
+    	output_path='channels',
+    	separate=True)
+
+
+.. parsed-literal::
+
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> WARNING structure has no hydrogens and inner_radius=0.80 is below 1.2 Å: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise inner_radius to 1.2 Å or more, where protonated and unprotonated structures give the same channels.
+   @> Substituted 3766 atoms with 23638 homogeneous balls of radius 1.52 Å in 0.38s.
+   @> Delaunay tessellation of 23638 points constructed in 0.91s.
+   @> Surface and inner simplices filtered in 1.59s.
+   @> Surface cavities: 230 found, 7 deeper than min_depth=3.0 Å and searched for channels, in 0.42s.
+   @> Chambers (probe 1.40 Å): 2 of the 7 searched cavities have them; the other 6 are searched whole.
+   @>     cavity 0: 64 chambers, 27 of them qualify as sites, the 20 largest seeded (max_seeds=20).
+   @>     cavity 2: 1 chamber, none of them deep and large enough to seed; searched whole.
+   @> 26 search sites (sp) in 0.11s: one per seeded chamber, one per cavity searched whole.
+   @> Channel search (Dijkstra) over 26 search sites in 7 cavities completed in 5.40s.
+   @> Found 101 channels and 27 links (a link joins a deep chamber to a shallower one and never reaches the surface).
+   @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
+   @>     site  void                     volume [Å³]  depth [Å]  channels  links
+   @>     sp0   cavity 0, chamber 1/20          4853       14.1        32      -
+   @>     sp1   cavity 1, whole                  373        7.4         2      -
+   @>     sp2   cavity 2, whole                  302        3.1         1      -
+   @>     sp3   cavity 0, chamber 2/20           228        3.6         2      -
+   @>     sp4   cavity 0, chamber 3/20           216        6.9         5      -
+   @>     sp5   cavity 0, chamber 4/20           173        3.4         3      1  -> sp0
+   @>     sp6   cavity 3, whole                  161        3.9         1      -
+   @>     sp7   cavity 4, whole                  127        3.6         1      -
+   @>     sp8   cavity 0, chamber 5/20           123       10.4         -      2  -> sp0, sp5
+   @>     sp9   cavity 0, chamber 6/20           121        9.9         6      2  -> sp4, sp15
+   @>     sp10  cavity 0, chamber 7/20           120        4.8         3      2  -> sp0, sp22
+   @>     sp11  cavity 0, chamber 8/20           107       13.9         3      4  -> sp9, sp24, sp15, sp0
+   @>     sp12  cavity 5, whole                   86        5.6         -      -  sealed
+   @>     sp13  cavity 0, chamber 9/20            83       13.4         3      3  -> sp0, sp3, sp24
+   @>     sp14  cavity 0, chamber 10/20           69        3.9         2      1  -> sp0
+   @>     sp15  cavity 0, chamber 11/20           66        5.4         5      3  -> sp10, sp22, sp0
+   @>     sp16  cavity 6, whole                   55        3.4         1      -
+   @>     sp17  cavity 0, chamber 12/20           53        6.2         5      -
+   @>     sp18  cavity 0, chamber 13/20           50        5.1         2      -
+   @>     sp19  cavity 0, chamber 14/20           50        5.5         6      1  -> sp0
+   @>     sp20  cavity 0, chamber 15/20           50        6.1         3      -
+   @>     sp21  cavity 0, chamber 16/20           49        9.0         1      4  -> sp22, sp4, sp15, sp10
+   @>     sp22  cavity 0, chamber 17/20           48        3.1         4      -
+   @>     sp23  cavity 0, chamber 18/20           47       13.7         3      1  -> sp0
+   @>     sp24  cavity 0, chamber 19/20           47       12.1         5      1  -> sp0
+   @>     sp25  cavity 0, chamber 20/20           46        8.9         2      2  -> sp14, sp0
+   @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
+   @> Saving 101 channels and 27 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
+   @> Channel calculation completed in 9.54s.
+
+
+Next, surface cavities are identified using :func:`.calcSurfaceCavities`, with parameters selected independently from 
+those used for channel detection. In this example, more restrictive parameters are applied to retain sufficiently 
+large and deep surface cavities for subsequent analysis.
+
+
+.. ipython:: python
+   :verbatim:
+
+   cavities, cavity_surface = calcSurfaceCavities(
+    	protein,
+    	surf_radius=3.8,
+    	inner_radius=1.1,
+    	min_depth=5,
+    	min_volume=500,
+    	output_path='surface_cavities',
+    	separate=True)
+
+
+.. parsed-literal::
+
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> WARNING structure has no hydrogens and inner_radius=1.10 is below 1.2 Å: the space left by the missing H is then wide enough for the probe to pass, and channels will be found through interstices that do not exist in the real protein (their number can rise several-fold). Either add hydrogens, or raise inner_radius to 1.2 Å or more, where protonated and unprotonated structures give the same channels.
+   @> Substituted 3766 atoms with 23638 homogeneous balls of radius 1.52 Å in 0.27s.
+   @> Delaunay tessellation of 23638 points constructed in 0.85s.
+   @> Surface and inner simplices filtered in 0.37s.
+   @> Surface cavities: 309 found, 7 deeper than min_depth=5.0 Å and kept, in 0.50s.
+   @> Returning surface cavities
+   @> Saving multiple surface cavities to directory ..
+   @> Surface cavity calculation completed in 2.29s.
+
+
+Finally, the independently identified channels and surface cavities are analyzed using 
+:func:`.connectChannelsToSurfaceCavities`. The function identifies spatially connected 
+channel–surface cavity pairs and reconstructs them as combined systems. The
+``tolerance`` and ``min_contact_points`` parameters define the criteria for identifying 
+a connection, while ``cavity_margin`` controls the extent of the surface cavity retained 
+around the connected channel. Setting separate=True additionally saves each reconstructed 
+channel–surface cavity system as a separate PQR file.
+
+
+.. ipython:: python
+   :verbatim:
+
+   connected = connectChannelsToSurfaceCavities(
+    	channels,
+    	channel_details,
+    	cavities,
+    	cavity_surface,
+    	tolerance=1.0,
+    	min_contact_points=3,
+    	cavity_margin=4.0,
+    	output_path='connected_cavities_channels.pqr',
+    	separate=True)
+
+
+.. parsed-literal::
+
+   @> Detected 13 connected surface cavity-channel pair(s).
+   @> Connected surface cavities and channels:
+   @>     cavity 0 <-> channel 4 (sp2), minimum distance 0.00 A, local cavity 65/3897 tetrahedra
+   @>     cavity 2 <-> channel 7 (sp22), minimum distance 0.00 A, local cavity 36/418 tetrahedra
+   @>     cavity 0 <-> channel 19 (sp0), minimum distance 0.00 A, local cavity 76/3897 tetrahedra
+   @>     cavity 0 <-> channel 20 (sp0), minimum distance 0.00 A, local cavity 111/3897 tetrahedra
+   @>     cavity 0 <-> channel 23 (sp4), minimum distance 0.00 A, local cavity 38/3897 tetrahedra
+   @>     cavity 0 <-> channel 24 (sp14), minimum distance 0.00 A, local cavity 70/3897 tetrahedra
+   @>     cavity 0 <-> channel 28 (sp18), minimum distance 0.00 A, local cavity 60/3897 tetrahedra
+   @>     cavity 0 <-> channel 45 (sp1), minimum distance 0.00 A, local cavity 71/3897 tetrahedra
+   @>     cavity 0 <-> channel 46 (sp0), minimum distance 0.00 A, local cavity 43/3897 tetrahedra
+   @>     cavity 0 <-> channel 48 (sp0), minimum distance 0.00 A, local cavity 24/3897 tetrahedra
+   @>     cavity 3 <-> channel 51 (sp17), minimum distance 0.00 A, local cavity 50/288 tetrahedra
+   @>     cavity 0 <-> channel 52 (sp0), minimum distance 0.00 A, local cavity 39/3897 tetrahedra
+   @>     cavity 0 <-> channel 62 (sp13), minimum distance 0.00 A, local cavity 27/3897 tetrahedra
+   @> Surface cavities without connected channels: cavity 1.
+   @> Channels without connected surface cavities: channel 0 (sp5), channel 1 (sp3), channel 2 (sp3), channel 3 (sp5), channel 5 (sp14), channel 6 (sp22), channel 8 (sp10), channel 9 (sp22), channel 10 (sp0), channel 11 (sp15), channel 12 (sp7), channel 13 (sp15), channel 14 (sp15), channel 15 (sp22), channel 16 (sp19), channel 17 (sp0), channel 18 (sp0), channel 21 (sp4), channel 22 (sp0), channel 25 (sp5), channel 26 (sp16), channel 27 (sp19), channel 29 (sp6), channel 30 (sp0), channel 31 (sp0), channel 32 (sp20), channel 33 (sp20), channel 34 (sp4), channel 35 (sp4), channel 36 (sp17), channel 37 (sp0), channel 38 (sp17), channel 39 (sp0), channel 40 (sp4), channel 41 (sp18), channel 42 (sp10), channel 43 (sp19), channel 44 (sp17), channel 47 (sp9), channel 49 (sp21), channel 50 (sp1), channel 53 (sp17), channel 54 (sp25), channel 55 (sp15), channel 56 (sp0), channel 57 (sp0), channel 58 (sp13), channel 59 (sp24), channel 60 (sp0), channel 61 (sp0), channel 63 (sp0), channel 64 (sp11), channel 65 (sp19), channel 66 (sp24), channel 67 (sp0), channel 68 (sp0), channel 69 (sp9), channel 70 (sp19), channel 71 (sp10), channel 72 (sp25), channel 73 (sp0), channel 74 (sp0), channel 75 (sp24), channel 76 (sp0), channel 77 (sp19), channel 78 (sp11), channel 79 (sp0), channel 80 (sp9), channel 81 (sp0), channel 82 (sp23), channel 83 (sp24), channel 84 (sp24), channel 85 (sp20), channel 86 (sp15), channel 87 (sp23), channel 88 (sp23), channel 89 (sp11), channel 90 (sp0), channel 91 (sp0), channel 92 (sp13), channel 93 (sp0), channel 94 (sp9), channel 95 (sp9), channel 96 (sp9), channel 97 (sp0), channel 98 (sp0), channel 99 (sp0), channel 100 (sp0).
+   @> Connected surface cavities and channels saved to connected_cavities_channels.pqr.
+   @> Saved 13 individual connected cavity-channel file(s).
+
+
+We can then visualize the reconstructed channel–surface cavity system in ProDy. First, we create a model 
+of the protein using :func:`.getVmdModel`. Next, we load the selected reconstructed system from the 
+corresponding PQR file and create its QuickSurf representation. Finally, we use
+:func:`.showSurfaceCavities` to display the reconstructed channel–surface cavity system together with 
+the protein structure.
+
+
+.. ipython:: python
+   :verbatim:
+
+   vmd_path = '/usr/local/bin/vmd'
+   model = getVmdModel(vmd_path, protein)
+
+
+.. parsed-literal::
+   
+   @> Model created successfully.
+
+
+.. ipython:: python
+   :verbatim:
+
+   cav_model = getVmdModel(vmd_path,
+     	parsePQR('connected_cavities_channels_cavchl2.pqr'),
+     	representation='QuickSurf')
+
+
+.. parsed-literal::
+
+   @> Model created successfully.
+
+
+.. ipython:: python
+   :verbatim:
+
+   showSurfaceCavities(cavity_surface, model=model, cavity_atoms=cav_model)
+
+
+.. figure:: images/cavitracer_figure40.jpg
+   :scale: 50 %
+
+
+
 III. Indentification of pores in a single PDB structure
 ===============================================================================
 
+
+CaviTracer prediction and visualization
+-------------------------------------------------------------------------------
 
 In this example, we will identify pores in the outer membrane porin Omp32 from 
 Delftia acidovorans using the crystal structure deposited under PDB ID 2FGQ. 
