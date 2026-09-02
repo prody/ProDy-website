@@ -1113,6 +1113,9 @@ the protein structure.
    :scale: 50 %
 
 
+The figure above illustrates an example of a reconstructed channel–surface 
+cavity system, showing a channel connected to a surface cavity at its entrance.
+
 
 III. Indentification of pores in a single PDB structure
 ===============================================================================
