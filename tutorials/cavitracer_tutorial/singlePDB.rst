@@ -573,6 +573,82 @@ undisplayed, as shown bellow.
 
 
 
+Visualization in PyMol
+-------------------------------------------------------------------------------
+
+Since CaviTracer results can be exported in standard PDB or PQR formats, they 
+can be readily visualized using commonly available molecular visualization 
+programs, as demonstrated above with VMD. In addition, CaviTracer provides 
+a dedicated tool for PyMOL that automatically prepares the analyzed protein 
+structure together with the identified channels, facilitating direct inspection 
+of the results.
+
+To prepare the output for PyMOL visualization, :func:`.calcChannels` should be 
+called with ``output_format='mmcif'`` and ``output_path='.'``. This generates 
+the ``channels.cif`` file containing the identified channels together with 
+the ``vis_channels.py`` visualization script:
+
+.. ipython:: python
+   :verbatim:
+
+   channels, surface = calcChannels(atoms, 
+				    output_path='.',
+				    output_format='mmcif', 
+				    separate=True)
+
+
+.. parsed-literal::
+
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> Substituted 3766 atoms with 23638 homogeneous balls of radius 1.52 Å in 0.27s.
+    @> Delaunay tessellation of 23638 points constructed in 0.90s.
+    @> Surface and inner simplices filtered in 1.77s.
+    @> Cavities: 129 found, 7 deeper than min_depth=5.0 Å and searched for channels, in 0.29s.
+    @> Chambers (probe 1.40 Å): 6 of the 7 searched cavities have them; the other 4 are searched whole.
+    @>     cavity 0: 10 chambers, 2 of them seeded.
+    @>     cavity 1: 1 chamber, none of them deep and large enough to seed; searched whole.
+    @>     cavity 2: 1 chamber, seeded.
+    @>     cavity 3: 1 chamber, none of them deep and large enough to seed; searched whole.
+    @>     cavity 4: 3 chambers, 1 of them seeded.
+    @>     cavity 5: 1 chamber, none of them deep and large enough to seed; searched whole.
+    @> 8 search sites (sp) in 0.07s: one per seeded chamber, one per cavity searched whole.
+    @> Channel search (Dijkstra) over 8 search sites in 7 cavities completed in 0.21s.
+    @> Found 9 channels.
+    @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
+    @>     site  start_point [Å]              void                   volume [Å³]  depth [Å]  channels  links
+    @>     sp0   [-17.336, -19.734, -11.982]  cavity 0, chamber 1/2         4701       14.9         3      -
+    @>     sp1   [-9.260, -31.344, -5.479]    cavity 1, whole               1410        5.0         1      -
+    @>     sp2   [-27.710, -17.308, -22.652]  cavity 3, whole                359        5.0         1      -
+    @>     sp3   [-15.652, -41.491, -12.372]  cavity 5, whole                256        5.6         1      -
+    @>     sp4   [-13.208, -37.795, -3.550]   cavity 6, whole                247        5.0         1      -
+    @>     sp5   [-25.439, -42.211, -10.996]  cavity 2, chamber 1/1          199        6.9         -      -  sealed
+    @>     sp6   [-26.621, -29.554, -20.717]  cavity 0, chamber 2/2          116        5.1         1      -
+    @>     sp7   [-27.498, -24.585, 0.741]    cavity 4, chamber 1/1           50        9.3         1      -
+    @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
+    @> The 1 site marked sealed above report neither a channel nor a link: no route out of them survived - either narrower than bottleneck=1.20 Å, or dropped as a duplicate of a shallower site's, or the void is its own mouth and has nowhere to path to. Lower bottleneck to see how the first kind connect.
+    @> separate is ignored for mmCIF output: every channel goes into one file, which is what lets its categories refer to one another.
+    @> 9 channel(s) written to channels.cif.
+    @> Wrote the PyMOL viewer ./vis_channels.py. View the output with `pymol vis_channels.py -- <protein>.pdb "channels.cif"`.
+    @> Channel calculation completed in 3.54s.
+
+
+Once the files have been generated, the system and channels can be loaded 
+directly into PyMOL from the Bash terminal using:
+
+`pymol vis_channels.py -- 1tqn.pdb channels.cif`
+
+
+This command opens the protein structure and the identified channels in PyMOL 
+with the visualization settings prepared by the script. PyMOL is an external 
+molecular visualization program and therefore needs to be installed separately 
+before using this functionality.
+
+
+.. figure:: images/cavitracer_figure28.jpg
+   :scale: 50 %
+
+
+
 II. Detection of surface cavities in a single PDB structure
 ===============================================================================
 
