@@ -958,7 +958,7 @@ the protein structure.
    :verbatim:
 
    cav_model = getVmdModel(vmd_path,
-     	parsePQR('connected_cavities_channels_cavchl2.pqr'),
+     	parsePQR('connected_cavities_channels_cavchl6.pqr'),
      	representation='QuickSurf')
 
 
