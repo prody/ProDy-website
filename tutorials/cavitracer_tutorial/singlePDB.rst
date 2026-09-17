@@ -635,7 +635,9 @@ the ``vis_channels.py`` visualization script:
 Once the files have been generated, the system and channels can be loaded 
 directly into PyMOL from the Bash terminal using:
 
-`pymol vis_channels.py -- 1tqn.pdb channels.cif`
+.. code-block:: console
+
+    $ pymol vis_channels.py -- 1tqn.pdb channels.cif
 
 
 This command opens the protein structure and the identified channels in PyMOL 
