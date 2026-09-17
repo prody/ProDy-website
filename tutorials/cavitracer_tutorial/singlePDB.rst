@@ -375,14 +375,14 @@ Once the model is created, we can display several things:
    :scale: 50 %
 
 Channels can be visualized separately. Below are several examples of how to
-display single channels (channel #40, channel #15), two channels at once (channel
-#9 and channel #40), or a range of channels (channels from #10 to channel #20
+display single channels (channel #7, channel #5), two channels at once (channel
+#4 and channel #6), or a range of channels (channels from #4 to channel #7
 from the prediction).
 
 .. ipython:: python
    :verbatim:
 
-   showChannels(channels[3], model)
+   showChannels(channels[7], model)
 
 .. figure:: images/cavitracer_figure6.jpg
    :scale: 50 %
@@ -390,7 +390,7 @@ from the prediction).
 .. ipython:: python
    :verbatim:
 
-   showChannels(channels[41], model)
+   showChannels(channels[5], model)
 
 .. figure:: images/cavitracer_figure7.jpg
    :scale: 50 %
@@ -398,7 +398,7 @@ from the prediction).
 .. ipython:: python
    :verbatim:
 
-   selected_channels = [channels[9], channels[40]]
+   selected_channels = [channels[4], channels[6]]
    showChannels(selected_channels, model)
 
 .. figure:: images/cavitracer_figure8.jpg
@@ -407,7 +407,7 @@ from the prediction).
 .. ipython:: python
    :verbatim:
 
-   selected_channels = channels[10:20]
+   selected_channels = channels[4:7]
    showChannels(selected_channels, model)
 
 
@@ -420,24 +420,19 @@ about their parameters.
 .. ipython:: python
    :verbatim:
 
-   selected_channels = channels[10:20]
+   selected_channels = channels[5:9]
    lengths, bottlenecks, volumes = getChannelParameters(selected_channels)
    selected_channels_atoms = getChannelAtoms(selected_channels)
 
 .. parsed-literal::
 
    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> channel 0: 	392.91 		16.81 		1.33
-   @> channel 1: 	40.68 		6.49 		1.01
-   @> channel 2: 	54.21 		7.11 		1.11
-   @> channel 3: 	82.22 		8.29 		1.03
-   @> channel 4: 	81.91 		8.71 		1.13
-   @> channel 5: 	34.03 		5.36 		0.9
-   @> channel 6: 	604.32 		24.1 		1.12
-   @> channel 7: 	49.35 		7.36 		0.99
-   @> channel 8: 	59.47 		8.46 		0.99
-   @> channel 9: 	90.68 		11.23 		1.18
-   @> 845 atoms and 1 coordinate set(s) were parsed in 0.02s.
+   @> channel 0: 	396.19 		15.13 		1.92
+   @> channel 1: 	714.24 		24.04 		2.15
+   @> channel 2: 	390.67 		16.68 		1.33
+   @> channel 3: 	81.58 		9.31 		1.25
+   @> 430 atoms and 1 coordinate set(s) were parsed in 0.01s.
+
 
 
 Predefined starting point for channel prediction
