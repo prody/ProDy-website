@@ -573,12 +573,44 @@ undisplayed, as shown bellow.
 
 
 
+Visualization in VMD
+-------------------------------------------------------------------------------
+
+CaviTracer results can be visualized automatically in VMD_. The
+:func:`.writeVmdCaviTracerScript` function saves the molecular structure and
+the selected CaviTracer objects and generates a TCL script containing the VMD
+visualization settings.
+
+For channels:
+
+.. ipython:: python
+   :verbatim:
+
+   writeVmdCaviTracerScript(channels, protein)
+
+
+This generates ``channels.pqr``, ``protein.pdb`` and ``vis_channels.tcl``.
+Channels are displayed as VDW representations using their CaviTracer radii,
+with individual channels shown in different colors. The protein is displayed
+as NewCartoon together with a transparent molecular surface.
+
+The visualization can be opened directly from the Bash console:
+
+.. code-block:: console
+
+   $ vmd -e vis_channels.tcl
+
+
+.. figure:: images/cavitracer_figure41.jpg
+   :scale: 50 %
+
+
 Visualization in PyMol
 -------------------------------------------------------------------------------
 
 Since CaviTracer results can be exported in standard PDB or PQR formats, they 
 can be readily visualized using commonly available molecular visualization 
-programs, as demonstrated above with VMD. In addition, CaviTracer provides 
+programs, as demonstrated above with VMD_. In addition, CaviTracer provides 
 a dedicated tool for PyMOL that automatically prepares the analyzed protein 
 structure together with the identified channels, facilitating direct inspection 
 of the results.
@@ -648,7 +680,6 @@ before using this functionality.
 
 .. figure:: images/cavitracer_figure28.jpg
    :scale: 50 %
-
 
 
 II. Detection of surface cavities in a single PDB structure
