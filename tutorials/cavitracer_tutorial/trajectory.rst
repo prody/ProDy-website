@@ -49,236 +49,169 @@ separately (``separate=True``).
 
 .. parsed-literal::
 
-   @> Frame/model: 0
-   @> Frame/model: 14
-   @> Frame/model: 28
-   @> Frame/model: 42
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.27s.
-   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.27s.
-   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.28s.
-   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.29s.
-   @> Delaunay tessellation of 77434 points constructed in 3.91s.
-   @> Delaunay tessellation of 77434 points constructed in 3.97s.
-   @> Delaunay tessellation of 77434 points constructed in 3.96s.
-   @> Delaunay tessellation of 77434 points constructed in 4.02s.
-   @> Surface and inner simplices filtered in 3.55s.
-   @> Surface and inner simplices filtered in 3.63s.
-   @> Surface and inner simplices filtered in 3.69s.
-   @> Surface and inner simplices filtered in 3.82s.
-   @> Surface cavities: 341 found, 6 deeper than min_depth=5.0 Å and searched for channels, in 0.56s.
-   @> Surface cavities: 369 found, 7 deeper than min_depth=5.0 Å and searched for channels, in 0.61s.
-   @> Surface cavities: 348 found, 12 deeper than min_depth=5.0 Å and searched for channels, in 0.58s.
-   @> Surface cavities: 355 found, 11 deeper than min_depth=5.0 Å and searched for channels, in 0.57s.
-   @> Chambers (probe 1.40 Å): 5 of the 7 searched cavities have them; the other 3 are searched whole.
-   @>     cavity 0: 9 chambers, 5 of them seeded.
-   @>     cavity 1: 7 chambers, 2 of them seeded.
-   @>     cavity 2: 3 chambers, 2 of them seeded.
-   @>     cavity 3: 3 chambers, 1 of them seeded.
-   @>     cavity 4: 2 chambers, none of them deep and large enough to seed; searched whole.
-   @> 13 search sites (sp) in 0.06s: one per seeded chamber, one per cavity searched whole.
-   @> Chambers (probe 1.40 Å): 4 of the 11 searched cavities have them; the other 9 are searched whole.
-   @>     cavity 0: 9 chambers, 5 of them seeded.
-   @>     cavity 1: 3 chambers, 2 of them seeded.
-   @>     cavity 3: 1 chamber, none of them deep and large enough to seed; searched whole.
-   @>     cavity 6: 1 chamber, none of them deep and large enough to seed; searched whole.
-   @> 16 search sites (sp) in 0.05s: one per seeded chamber, one per cavity searched whole.
-   @> Chambers (probe 1.40 Å): 4 of the 12 searched cavities have them; the other 10 are searched whole.
-   @>     cavity 0: 12 chambers, 6 of them seeded.
-   @>     cavity 1: 7 chambers, 2 of them seeded.
-   @>     cavity 2: 1 chamber, none of them deep and large enough to seed; searched whole.
-   @>     cavity 6: 1 chamber, none of them deep and large enough to seed; searched whole.
-   @> 18 search sites (sp) in 0.05s: one per seeded chamber, one per cavity searched whole.
-   @> Chambers (probe 1.40 Å): 3 of the 6 searched cavities have them; the other 4 are searched whole.
-   @>     cavity 0: 15 chambers, 7 of them seeded.
-   @>     cavity 1: 2 chambers, 1 of them seeded.
-   @>     cavity 3: 1 chamber, none of them deep and large enough to seed; searched whole.
-   @> 12 search sites (sp) in 0.08s: one per seeded chamber, one per cavity searched whole.
-   @> Channel search (Dijkstra) over 18 search sites in 12 cavities completed in 1.02s.
-   @> Found 15 channels and 4 links (a link joins a deep chamber to a shallower one and never reaches the surface).
-   @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
-   @>     site  void                   volume [Å³]  depth [Å]  channels  links
-   @>     sp0   cavity 0, chamber 1/6         1390       17.7         -      1  -> sp10
-   @>     sp1   cavity 2, whole                836        7.6         2      -
-   @>     sp2   cavity 3, whole                484        5.9         2      -
-   @>     sp3   cavity 4, whole                248        6.2         1      -
-   @>     sp4   cavity 5, whole                233       13.7         -      -  sealed
-   @>     sp5   cavity 6, whole                179        5.5         -      -  sealed
-   @>     sp6   cavity 7, whole                157        8.6         2      -
-   @>     sp7   cavity 8, whole                154        5.0         3      -
-   @>     sp8   cavity 9, whole                126        5.0         1      -
-   @>     sp9   cavity 10, whole               116        5.3         1      -
-   @>     sp10  cavity 0, chamber 2/6          110        6.8         2      -
-   @>     sp11  cavity 11, whole               100        5.4         -      -  sealed
-   @>     sp12  cavity 0, chamber 3/6           67        7.7         -      -  sealed
-   @>     sp13  cavity 0, chamber 4/6           63       15.0         -      1  -> sp0
-   @>     sp14  cavity 0, chamber 5/6           59       12.7         -      1  -> sp10
-   @>     sp15  cavity 1, chamber 1/2           52        8.3         1      -
-   @>     sp16  cavity 1, chamber 2/2           36       19.7         -      -  sealed
-   @>     sp17  cavity 0, chamber 6/6           30       35.9         -      1  -> sp0
-   @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
-   @> The 2 sites marked sealed above report neither a channel nor a link: every route out of them is narrower than bottleneck=0.90 Å. Lower it to see how they connect.
-   @> Saving 15 channels and 4 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
-   @> Channel calculation completed in 9.90s.
-   @> Frame/model: 1
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Channel search (Dijkstra) over 16 search sites in 11 cavities completed in 1.16s.
-   @> Found 27 channels and 2 links (a link joins a deep chamber to a shallower one and never reaches the surface).
-   @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
-   @>     site  void                   volume [Å³]  depth [Å]  channels  links
-   @>     sp0   cavity 0, chamber 1/5         1452       17.0         2      1  -> sp7
-   @>     sp1   cavity 2, whole                470        8.1         1      -
-   @>     sp2   cavity 3, whole                450        5.3         -      -  sealed
-   @>     sp3   cavity 4, whole                223        7.2         2      -
-   @>     sp4   cavity 5, whole                217        5.3         2      -
-   @>     sp5   cavity 6, whole                131        5.7         -      -  sealed
-   @>     sp6   cavity 7, whole                112        6.2         1      -
-   @>     sp7   cavity 0, chamber 2/5          108        5.3         2      -
-   @>     sp8   cavity 8, whole                105        6.0         -      -  sealed
-   @>     sp9   cavity 9, whole                100        6.5         1      -
-   @>     sp10  cavity 10, whole                79        5.1         1      -
-   @>     sp11  cavity 1, chamber 1/2           68        7.6         1      -
-   @>     sp12  cavity 0, chamber 3/5           67        6.6         4      -
-   @>     sp13  cavity 0, chamber 4/5           34        5.8         8      -
-   @>     sp14  cavity 0, chamber 5/5           31       11.9         2      -
-   @>     sp15  cavity 1, chamber 2/2           31       16.3         -      1  -> sp11
-   @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
-   @> Saving 27 channels and 2 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
-   @> Channel calculation completed in 10.04s.
-   ..
-   ..
-   @> Frame/model: 195
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Delaunay tessellation of 77434 points constructed in 2.97s.
-   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.29s.
-   @> Surface and inner simplices filtered in 3.06s.
-   @> Surface and inner simplices filtered in 2.84s.
-   @> Surface cavities: 367 found, 11 deeper than min_depth=5.0 Å and searched for channels, in 0.58s.
-   @> Delaunay tessellation of 77434 points constructed in 3.12s.
-   @> Surface cavities: 347 found, 9 deeper than min_depth=5.0 Å and searched for channels, in 0.56s.
-   @> Chambers (probe 1.40 Å): 3 of the 11 searched cavities have them; the other 8 are searched whole.
-   @>     cavity 0: 25 chambers, 8 of them seeded.
-   @>     cavity 1: 2 chambers, 1 of them seeded.
-   @>     cavity 2: 1 chamber, seeded.
-   @> 18 search sites (sp) in 0.07s: one per seeded chamber, one per cavity searched whole.
-   @> Chambers (probe 1.40 Å): 5 of the 9 searched cavities have them; the other 5 are searched whole.
-   @>     cavity 0: 21 chambers, 7 of them seeded.
-   @>     cavity 1: 3 chambers, 1 of them seeded.
-   @>     cavity 2: 2 chambers, 1 of them seeded.
-   @>     cavity 3: 2 chambers, none of them deep and large enough to seed; searched whole.
-   @>     cavity 6: 1 chamber, seeded.
-   @> 15 search sites (sp) in 0.09s: one per seeded chamber, one per cavity searched whole.
-   @> Channel search (Dijkstra) over 18 search sites in 11 cavities completed in 1.13s.
-   @> Found 31 channels and 9 links (a link joins a deep chamber to a shallower one and never reaches the surface).
-   @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
-   @>     site  void                   volume [Å³]  depth [Å]  channels  links
-   @>     sp0   cavity 0, chamber 1/8         2613       11.9        14      -
-   @>     sp1   cavity 3, whole                346        5.2         1      -
-   @>     sp2   cavity 4, whole                246        6.1         1      -
-   @>     sp3   cavity 0, chamber 2/8          215       10.0         3      2  -> sp0, sp0
-   @>     sp4   cavity 0, chamber 3/8          186       11.9         1      1  -> sp0
-   @>     sp5   cavity 0, chamber 4/8          154        5.5         3      -
-   @>     sp6   cavity 5, whole                111        5.6         -      -  sealed
-   @>     sp7   cavity 6, whole                 85        5.3         1      -
-   @>     sp8   cavity 7, whole                 73        5.0         1      -
-   @>     sp9   cavity 8, whole                 62        5.0         -      -  sealed
-   @>     sp10  cavity 0, chamber 5/8           59       13.8         -      1  -> sp4
-   @>     sp11  cavity 1, chamber 1/1           58        5.1         5      -
-   @>     sp12  cavity 9, whole                 51        5.0         -      -  sealed
-   @>     sp13  cavity 0, chamber 6/8           45       19.0         -      3  -> sp0, sp10, sp0
-   @>     sp14  cavity 2, chamber 1/1           37        5.3         1      -
-   @>     sp15  cavity 0, chamber 7/8           35       16.2         -      1  -> sp0
-   @>     sp16  cavity 0, chamber 8/8           33       18.2         -      1  -> sp10
-   @>     sp17  cavity 10, whole                17        5.0         -      -  sealed
-   @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
-   @> Saving 31 channels and 9 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
-   @> Channel calculation completed in 8.61s.
+    @> Frame/model: 0
+    @> Frame/model: 14
+    @> Frame/model: 28
+    @> Frame/model: 42
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> The structure carries its hydrogens (105% of what a complete protein would hold), so inner_radius=1.20 is more conservative than it needs to be: the 1.2 Å floor exists only to keep a sub-water probe out of the space that missing hydrogens leave open, and here that space is filled. A smaller probe, down to about 0.9 Å, measures the narrow connections instead of reporting them closed.
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> The structure carries its hydrogens (105% of what a complete protein would hold), so inner_radius=1.20 is more conservative than it needs to be: the 1.2 Å floor exists only to keep a sub-water probe out of the space that missing hydrogens leave open, and here that space is filled. A smaller probe, down to about 0.9 Å, measures the narrow connections instead of reporting them closed.
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> The structure carries its hydrogens (105% of what a complete protein would hold), so inner_radius=1.20 is more conservative than it needs to be: the 1.2 Å floor exists only to keep a sub-water probe out of the space that missing hydrogens leave open, and here that space is filled. A smaller probe, down to about 0.9 Å, measures the narrow connections instead of reporting them closed.
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> The structure carries its hydrogens (105% of what a complete protein would hold), so inner_radius=1.20 is more conservative than it needs to be: the 1.2 Å floor exists only to keep a sub-water probe out of the space that missing hydrogens leave open, and here that space is filled. A smaller probe, down to about 0.9 Å, measures the narrow connections instead of reporting them closed.
+    @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.26s.
+    @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.26s.
+    @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.27s.
+    @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.27s.
+    @> Delaunay tessellation of 77434 points constructed in 3.84s.
+    @> Delaunay tessellation of 77434 points constructed in 3.85s.
+    @> Delaunay tessellation of 77434 points constructed in 3.94s.
+    @> Delaunay tessellation of 77434 points constructed in 4.00s.
+    @> Surface and inner simplices filtered in 4.13s.
+    @> Surface and inner simplices filtered in 4.05s.
+    @> Surface and inner simplices filtered in 4.21s.
+    @> Surface and inner simplices filtered in 4.17s.
+    @> Cavities: 178 found, 5 deeper than min_depth=5.0 Å and searched for channels, in 0.22s.
+    @> Chambers (probe 1.40 Å): 3 of the 5 searched cavities have them; the other 3 are searched whole.
+    @>     cavity 0: 4 chambers, 2 of them seeded.
+    @>     cavity 1: 1 chamber, none of them deep and large enough to seed; searched whole.
+    @>     cavity 3: 1 chamber, seeded.
+    @> 6 search sites (sp) in 0.01s: one per seeded chamber, one per cavity searched whole.
+    @> Cavities: 185 found, 11 deeper than min_depth=5.0 Å and searched for channels, in 0.34s.
+    @> Cavities: 175 found, 7 deeper than min_depth=5.0 Å and searched for channels, in 0.27s.
+    @> Channel search (Dijkstra) over 6 search sites in 5 cavities completed in 0.06s.
+    @> Found 5 channels and 1 link (a link joins a deep chamber to a shallower one and never reaches the surface).
+    @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
+    @>     site  start_point [Å]             void                   volume [Å³]  depth [Å]  channels  links
+    @>     sp0   [-3.683, -10.297, -19.324]  cavity 1, whole                548        5.3         1      -
+    @>     sp1   [15.053, -1.441, -19.567]   cavity 2, whole                300        6.0         1      -
+    @>     sp2   [-13.841, -3.510, 12.012]   cavity 4, whole                224        5.8         -      -  sealed
+    @>     sp3   [5.789, 8.884, 11.904]      cavity 0, chamber 1/2          115        6.8         1      -
+    @>     sp4   [-7.217, 7.866, 15.518]     cavity 3, chamber 1/1           78        5.7         2      -
+    @>     sp5   [6.642, 3.825, 8.825]       cavity 0, chamber 2/2           59       13.2         -      1  -> sp3
+    @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
+    @> The 1 site marked sealed above report neither a channel nor a link: no route out of them survived - either narrower than bottleneck=1.20 Å, or dropped as a duplicate of a shallower site's, or the void is its own mouth and has nowhere to path to. Lower bottleneck to see how the first kind connect.
+    @> Saving 5 channels and 1 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
+    @> Channel calculation completed in 8.63s.
+    @> Frame/model: 1
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> The structure carries its hydrogens (105% of what a complete protein would hold), so inner_radius=1.20 is more conservative than it needs to be: the 1.2 Å floor exists only to keep a sub-water probe out of the space that missing hydrogens leave open, and here that space is filled. A smaller probe, down to about 0.9 Å, measures the narrow connections instead of reporting them closed.
+    @> Chambers (probe 1.40 Å): 6 of the 7 searched cavities have them; the other 4 are searched whole.
+    @>     cavity 0: 2 chambers, all seeded.
+    @>     cavity 1: 2 chambers, 1 of them seeded.
+    @>     cavity 2: 3 chambers, none of them deep and large enough to seed; searched whole.
+    @>     cavity 3: 1 chamber, none of them deep and large enough to seed; searched whole.
+    @>     cavity 4: 1 chamber, none of them deep and large enough to seed; searched whole.
+    @>     cavity 5: 1 chamber, seeded.
+    @> 8 search sites (sp) in 0.05s: one per seeded chamber, one per cavity searched whole.
+    @> Chambers (probe 1.40 Å): 7 of the 11 searched cavities have them; the other 8 are searched whole.
+    @>     cavity 0: 3 chambers, 2 of them seeded.
+    @>     cavity 1: 4 chambers, 1 of them seeded.
+    @>     cavity 2: 2 chambers, none of them deep and large enough to seed; searched whole.
+    @>     cavity 3: 3 chambers, none of them deep and large enough to seed; searched whole.
+    @>     cavity 4: 2 chambers, none of them deep and large enough to seed; searched whole.
+    @>     cavity 5: 3 chambers, 1 of them seeded.
+    @>     cavity 6: 4 chambers, none of them deep and large enough to seed; searched whole.
+    @> 12 search sites (sp) in 0.05s: one per seeded chamber, one per cavity searched whole.
+    @> Channel search (Dijkstra) over 8 search sites in 7 cavities completed in 0.16s.
+    @> Found 7 channels and 1 link (a link joins a deep chamber to a shallower one and never reaches the surface).
+    @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
+    @>     site  start_point [Å]             void                   volume [Å³]  depth [Å]  channels  links
+    @>     sp0   [2.849, 3.805, 1.723]       cavity 0, chamber 1/2         1452       18.7         -      1  -> sp4
+    @>     sp1   [-13.991, -3.043, 13.028]   cavity 2, whole                429        5.6         1      -
+    @>     sp2   [-3.539, -10.671, -18.668]  cavity 3, whole                336        5.6         1      -
+    @>     sp3   [14.449, -1.190, -18.655]   cavity 4, whole                251        5.2         1      -
+    @>     sp4   [4.640, 9.767, 13.115]      cavity 0, chamber 2/2          251        5.8         1      -
+    @>     sp5   [10.134, -1.611, 16.422]    cavity 6, whole                133        5.3         1      -
+    @>     sp6   [13.306, 9.826, 14.612]     cavity 5, chamber 1/1           76       10.5         -      -  sealed
+    @>     sp7   [-8.841, 7.348, 17.300]     cavity 1, chamber 1/1           58        6.0         2      -
+    @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
+    @> The 1 site marked sealed above report neither a channel nor a link: no route out of them survived - either narrower than bottleneck=1.20 Å, or dropped as a duplicate of a shallower site's, or the void is its own mouth and has nowhere to path to. Lower bottleneck to see how the first kind connect.
+    @> Saving 7 channels and 1 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
+    @> Channel calculation completed in 8.77s.
+    @> Cavities: 195 found, 5 deeper than min_depth=5.0 Å and searched for channels, in 0.36s.
+    ..
+    ..
    @> Frame/model: 209
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Channel search (Dijkstra) over 15 search sites in 9 cavities completed in 1.07s.
-   @> Found 24 channels and 5 links (a link joins a deep chamber to a shallower one and never reaches the surface).
-   @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
-   @>     site  void                   volume [Å³]  depth [Å]  channels  links
-   @>     sp0   cavity 0, chamber 1/7         3067       11.1         8      -
-   @>     sp1   cavity 0, chamber 2/7          303       13.6         -      2  -> sp0, sp11
-   @>     sp2   cavity 3, whole                266        8.6         2      -
-   @>     sp3   cavity 4, whole                203        5.4         2      -
-   @>     sp4   cavity 5, whole                203        5.4         3      -
-   @>     sp5   cavity 7, whole                111        5.2         1      -
-   @>     sp6   cavity 1, chamber 1/1           87        5.0         2      -
-   @>     sp7   cavity 8, whole                 76        5.1         -      -  sealed
-   @>     sp8   cavity 0, chamber 3/7           50       32.0         -      1  -> sp0
-   @>     sp9   cavity 0, chamber 4/7           48       15.1         1      -
-   @>     sp10  cavity 2, chamber 1/1           42        5.4         5      -
-   @>     sp11  cavity 0, chamber 5/7           36        9.0         -      -  sealed
-   @>     sp12  cavity 6, chamber 1/1           35        6.9         -      -  sealed
-   @>     sp13  cavity 0, chamber 6/7           31       30.6         -      1  -> sp0
-   @>     sp14  cavity 0, chamber 7/7           30       20.7         -      1  -> sp0
-   @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
-   @> The 2 sites marked sealed above report neither a channel nor a link: every route out of them is narrower than bottleneck=0.90 Å. Lower it to see how they connect.
-   @> Saving 24 channels and 5 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
-   @> Channel calculation completed in 8.11s.
-   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.30s.
-   @> Surface and inner simplices filtered in 2.68s.
-   @> Surface cavities: 342 found, 6 deeper than min_depth=5.0 Å and searched for channels, in 0.54s.
-   @> Chambers (probe 1.40 Å): 4 of the 6 searched cavities have them; the other 4 are searched whole.
-   @>     cavity 0: 16 chambers, 6 of them seeded.
-   @>     cavity 1: 2 chambers, 1 of them seeded.
-   @>     cavity 2: 1 chamber, none of them deep and large enough to seed; searched whole.
-   @>     cavity 5: 1 chamber, none of them deep and large enough to seed; searched whole.
-   @> 11 search sites (sp) in 0.08s: one per seeded chamber, one per cavity searched whole.
-   @> Delaunay tessellation of 77434 points constructed in 2.94s.
-   @> Channel search (Dijkstra) over 11 search sites in 6 cavities completed in 1.48s.
-   @> Found 38 channels and 5 links (a link joins a deep chamber to a shallower one and never reaches the surface).
-   @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
-   @>     site  void                   volume [Å³]  depth [Å]  channels  links
-   @>     sp0   cavity 0, chamber 1/6         2362       11.8        13      -
-   @>     sp1   cavity 2, whole                438        5.1         2      -
-   @>     sp2   cavity 3, whole                373       11.5         2      -
-   @>     sp3   cavity 0, chamber 2/6          316       12.6         2      1  -> sp0
-   @>     sp4   cavity 0, chamber 3/6          252       12.2         3      1  -> sp0
-   @>     sp5   cavity 0, chamber 4/6          198        8.3         1      1  -> sp0
-   @>     sp6   cavity 4, whole                171        5.0         1      -
-   @>     sp7   cavity 1, chamber 1/1          153        7.0         3      -
-   @>     sp8   cavity 5, whole                139        6.9         1      -
-   @>     sp9   cavity 0, chamber 5/6          104        9.1         3      2  -> sp4, sp0
-   @>     sp10  cavity 0, chamber 6/6           68        7.1         7      -
-   @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
-   @> Saving 38 channels and 5 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
-   @> Channel calculation completed in 8.55s.
-   @> Surface and inner simplices filtered in 2.49s.
-   @> Surface cavities: 394 found, 9 deeper than min_depth=5.0 Å and searched for channels, in 0.50s.
-   @> Chambers (probe 1.40 Å): 3 of the 9 searched cavities have them; the other 7 are searched whole.
-   @>     cavity 0: 13 chambers, 7 of them seeded.
-   @>     cavity 1: 1 chamber, seeded.
-   @>     cavity 4: 1 chamber, none of them deep and large enough to seed; searched whole.
-   @> 15 search sites (sp) in 0.06s: one per seeded chamber, one per cavity searched whole.
-   @> Channel search (Dijkstra) over 15 search sites in 9 cavities completed in 0.93s.
-   @> Found 29 channels and 5 links (a link joins a deep chamber to a shallower one and never reaches the surface).
-   @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
-   @>     site  void                   volume [Å³]  depth [Å]  channels  links
-   @>     sp0   cavity 0, chamber 1/7         2514       10.2        12      1  -> sp2
-   @>     sp1   cavity 2, whole                315        5.9         1      -
-   @>     sp2   cavity 0, chamber 2/7          250        5.1         5      -
-   @>     sp3   cavity 3, whole                222        9.3         -      -  sealed
-   @>     sp4   cavity 0, chamber 3/7          202       33.7         -      -  sealed
-   @>     sp5   cavity 0, chamber 4/7          195        7.6         2      2  -> sp0, sp0
-   @>     sp6   cavity 4, whole                192        5.7         -      -  sealed
-   @>     sp7   cavity 5, whole                154        5.1         -      -  sealed
-   @>     sp8   cavity 0, chamber 5/7          141        6.5         6      -
-   @>     sp9   cavity 6, whole                105        6.3         -      -  sealed
-   @>     sp10  cavity 7, whole                 97        5.1         -      -  sealed
-   @>     sp11  cavity 8, whole                 60        5.7         -      -  sealed
-   @>     sp12  cavity 0, chamber 6/7           60       27.2         -      2  -> sp0, sp0
-   @>     sp13  cavity 0, chamber 7/7           48       15.1         -      -  sealed
-   @>     sp14  cavity 1, chamber 1/1           45        5.5         3      -
-   @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
-   @> The 2 sites marked sealed above report neither a channel nor a link: every route out of them is narrower than bottleneck=0.90 Å. Lower it to see how they connect.
-   @> Saving 29 channels and 5 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
-   @> Channel calculation completed in 7.51s.
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> The structure carries its hydrogens (105% of what a complete protein would hold), so inner_radius=1.20 is more conservative than it needs to be: the 1.2 Å floor exists only to keep a sub-water probe out of the space that missing hydrogens leave open, and here that space is filled. A smaller probe, down to about 0.9 Å, measures the narrow connections instead of reporting them closed.
+    @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.29s.
+    @> Surface and inner simplices filtered in 3.06s.
+    @> Cavities: 165 found, 6 deeper than min_depth=5.0 Å and searched for channels, in 0.35s.
+    @> Delaunay tessellation of 77434 points constructed in 3.11s.
+    @> Chambers (probe 1.40 Å): 6 of the 6 searched cavities have them; the other 4 are searched whole.
+    @>     cavity 0: 10 chambers, 1 of them seeded.
+    @>     cavity 1: 3 chambers, 1 of them seeded.
+    @>     cavity 2: 2 chambers, none of them deep and large enough to seed; searched whole.
+    @>     cavity 3: 2 chambers, none of them deep and large enough to seed; searched whole.
+    @>     cavity 4: 2 chambers, none of them deep and large enough to seed; searched whole.
+    @>     cavity 5: 1 chamber, none of them deep and large enough to seed; searched whole.
+    @> 6 search sites (sp) in 0.08s: one per seeded chamber, one per cavity searched whole.
+    @> Channel search (Dijkstra) over 6 search sites in 6 cavities completed in 0.19s.
+    @> Found 8 channels.
+    @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
+    @>     site  start_point [Å]             void                   volume [Å³]  depth [Å]  channels  links
+    @>     sp0   [0.516, -0.662, 11.707]     cavity 0, chamber 1/1         3079       11.1         3      -
+    @>     sp1   [-3.599, -10.845, -19.331]  cavity 2, whole                488        5.4         2      -
+    @>     sp2   [12.408, 6.748, 12.005]     cavity 3, whole                282        5.0         1      -
+    @>     sp3   [16.923, 1.103, -8.312]     cavity 4, whole                145        9.4         -      -  sealed
+    @>     sp4   [15.992, -2.265, 3.221]     cavity 5, whole                133        5.1         1      -
+    @>     sp5   [10.351, 8.329, -13.347]    cavity 1, chamber 1/1          107        5.6         1      -
+    @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
+    @> The 1 site marked sealed above report neither a channel nor a link: no route out of them survived - either narrower than bottleneck=1.20 Å, or dropped as a duplicate of a shallower site's, or the void is its own mouth and has nowhere to path to. Lower bottleneck to see how the first kind connect.
+    @> Saving 8 channels to directory ., one file per object named sp<site>_chl<n>.
+    @> Channel calculation completed in 7.21s.
+    @> Delaunay tessellation of 77434 points constructed in 3.11s.
+    @> Surface and inner simplices filtered in 3.27s.
+    @> Cavities: 143 found, 7 deeper than min_depth=5.0 Å and searched for channels, in 0.29s.
+    @> Chambers (probe 1.40 Å): 6 of the 7 searched cavities have them; the other 3 are searched whole.
+    @>     cavity 0: 9 chambers, 2 of them seeded.
+    @>     cavity 1: 2 chambers, 1 of them seeded.
+    @>     cavity 2: 1 chamber, seeded.
+    @>     cavity 3: 2 chambers, 1 of them seeded.
+    @>     cavity 4: 1 chamber, none of them deep and large enough to seed; searched whole.
+    @>     cavity 5: 1 chamber, none of them deep and large enough to seed; searched whole.
+    @> 8 search sites (sp) in 0.07s: one per seeded chamber, one per cavity searched whole.
+    @> Channel search (Dijkstra) over 8 search sites in 7 cavities completed in 0.23s.
+    @> Found 11 channels.
+    @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
+    @>     site  start_point [Å]             void                   volume [Å³]  depth [Å]  channels  links
+    @>     sp0   [-0.638, 0.102, 11.113]     cavity 0, chamber 1/2         2384       11.8         3      -
+    @>     sp1   [-4.464, 5.343, 18.136]     cavity 2, chamber 1/1          316       12.6         1      -
+    @>     sp2   [-11.826, -3.055, 12.025]   cavity 0, chamber 2/2          245        5.0         1      -
+    @>     sp3   [9.101, 1.844, -18.305]     cavity 4, whole                229        5.1         1      -
+    @>     sp4   [7.010, 7.107, -13.851]     cavity 3, chamber 1/1          167        7.0         1      -
+    @>     sp5   [-14.717, 3.685, -10.866]   cavity 5, whole                165        5.0         -      -  sealed
+    @>     sp6   [-11.989, 10.577, 15.484]   cavity 6, whole                127        5.1         1      -
+    @>     sp7   [-2.816, -11.821, -18.928]  cavity 1, chamber 1/1           68        7.1         3      -
+    @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
+    @> The 1 site marked sealed above report neither a channel nor a link: no route out of them survived - either narrower than bottleneck=1.20 Å, or dropped as a duplicate of a shallower site's, or the void is its own mouth and has nowhere to path to. Lower bottleneck to see how the first kind connect.
+    @> Saving 11 channels to directory ., one file per object named sp<site>_chl<n>.
+    @> Channel calculation completed in 7.20s.
+    @> Surface and inner simplices filtered in 3.22s.
+    @> Cavities: 183 found, 4 deeper than min_depth=5.0 Å and searched for channels, in 0.32s.
+    @> Chambers (probe 1.40 Å): 3 of the 4 searched cavities have them; the other 2 are searched whole.
+    @>     cavity 0: 8 chambers, 4 of them seeded.
+    @>     cavity 1: 1 chamber, none of them deep and large enough to seed; searched whole.
+    @>     cavity 2: 1 chamber, seeded.
+    @> 7 search sites (sp) in 0.06s: one per seeded chamber, one per cavity searched whole.
+    @> Channel search (Dijkstra) over 7 search sites in 4 cavities completed in 0.22s.
+    @> Found 14 channels and 2 links (a link joins a deep chamber to a shallower one and never reaches the surface).
+    @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
+    @>     site  start_point [Å]             void                   volume [Å³]  depth [Å]  channels  links
+    @>     sp0   [-0.147, -1.002, 11.590]    cavity 0, chamber 1/4         2548       10.2         6      1  -> sp2
+    @>     sp1   [-3.179, -12.027, -18.873]  cavity 1, whole                898        5.5         1      -
+    @>     sp2   [-9.973, -4.802, 11.669]    cavity 0, chamber 2/4          250        5.1         3      -
+    @>     sp3   [-5.381, 5.295, 18.108]     cavity 0, chamber 3/4          203       11.0         -      1  -> sp0
+    @>     sp4   [15.187, -2.137, -16.901]   cavity 3, whole                189        5.2         1      -
+    @>     sp5   [7.630, 8.967, -16.557]     cavity 2, chamber 1/1          142        5.1         3      -
+    @>     sp6   [-6.792, -3.004, -5.696]    cavity 0, chamber 4/4           60       33.4         -      -  sealed
+    @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
+    @> The 1 site marked sealed above report neither a channel nor a link: no route out of them survived - either narrower than bottleneck=1.20 Å, or dropped as a duplicate of a shallower site's, or the void is its own mouth and has nowhere to path to. Lower bottleneck to see how the first kind connect.
+    @> Saving 14 channels and 2 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
+    @> Channel calculation completed in 7.21s.
 
 
 All the details about the predicted channels can be displayed using
@@ -291,72 +224,163 @@ All the details about the predicted channels can be displayed using
 
 .. parsed-literal::
 
-   @> Frame/model: 0
-   @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> channel 0: 	125.89 		7.24 		1.94
-   @> channel 1: 	42.46 		5.14 		0.92
-   @> channel 2: 	40.06 		5.76 		1.15
-   @> channel 3: 	94.13 		8.67 		1.06
-   @> channel 4: 	39.01 		5.78 		0.99
-   @> channel 5: 	46.1 		6.4 		0.92
-   @> channel 6: 	39.64 		6.75 		0.92
-   @> channel 7: 	79.8 		9.0 		0.96
-   @> channel 8: 	63.79 		8.39 		1.07
-   @> channel 9: 	30.91 		6.26 		0.93
-   @> channel 10: 	56.22 		8.15 		0.95
-   @> channel 11: 	51.62 		8.52 		0.95
-   @> channel 12: 	50.45 		7.51 		0.95
-   @> channel 13: 	42.3 		9.26 		0.99
-   @> channel 14: 	53.96 		10.89 		0.96
-   @> Frame/model: 1
-   @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> channel 0: 	148.19 		6.84 		2.09
-   @> channel 1: 	37.81 		5.16 		1.06
-   @> channel 2: 	31.46 		5.37 		0.96
-   @> channel 3: 	94.89 		8.64 		1.05
-   @> channel 4: 	67.86 		8.28 		1.12
-   @> channel 5: 	59.15 		8.24 		1.05
-   @> channel 6: 	40.62 		9.52 		1.0
-   @> channel 7: 	56.37 		11.37 		0.97
-   @> channel 8: 	132.76 		16.34 		0.94
-   @> channel 9: 	85.46 		16.66 		0.94
-   ..
-   ..
-     [175.30773966919688,
-      88.09478729269907,
-      66.00423811897298,
-      63.804070602204675,
-      297.43903698829814,
-      60.53075285718887,
-      123.99350793003856,
-      258.286529749949,
-      314.3299188997082,
-      269.4301845043284,
-      314.1773832988233,
-      68.62253663530964,
-      349.6715888599749,
-      51.518665192573295,
-      33.16648967097703,
-      265.24299198353526,
-      311.70097919400695,
-      92.38451204228534,
-      341.7018244065562,
-      49.710136724648045,
-      264.05920713336366,
-      364.94249349945693,
-      104.81278549688504,
-      379.3983723125235,
-      293.7850763354074,
-      128.35461923733882,
-      70.6633654483086,
-      60.550568950720724,
-      54.421288014917394,
-      318.3344494957709,
-      59.678131560986486,
-      134.67647858098346,
-      335.2959131481778,
-      146.90921646827803,
-      144.8132766634451])]
+    @> Frame/model: 0
+    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> channel 0: 	133.94 		5.33 		1.57
+    @> channel 1: 	122.67 		7.0 		1.94
+    @> channel 2: 	109.21 		6.09 		1.23
+    @> channel 3: 	60.68 		5.86 		1.2
+    @> channel 4: 	72.68 		7.99 		1.25
+    @> Frame/model: 1
+    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> channel 0: 	145.47 		6.67 		2.09
+    @> channel 1: 	127.23 		5.42 		1.44
+    @> channel 2: 	131.92 		6.35 		1.5
+    @> channel 3: 	61.92 		5.78 		1.32
+    @> channel 4: 	42.95 		5.4 		1.21
+    @> Frame/model: 2
+    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> channel 0: 	118.38 		5.35 		1.37
+    @> channel 1: 	107.01 		5.29 		1.36
+    @> channel 2: 	129.91 		8.38 		1.77
+    @> channel 3: 	73.14 		6.6 		1.32
+    @> Frame/model: 3
+    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> channel 0: 	137.98 		5.5 		1.51
+    @> channel 1: 	108.45 		5.69 		1.91
+    @> channel 2: 	121.44 		5.92 		1.43
+    @> channel 3: 	66.54 		5.06 		1.5
+    @> channel 4: 	59.88 		5.35 		1.27
+    @> channel 5: 	65.03 		7.41 		1.34
+    @> Frame/model: 4
+    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> channel 0: 	102.95 		5.53 		1.78
+    @> channel 1: 	129.82 		6.09 		1.42
+    @> channel 2: 	114.55 		5.88 		1.3
+    @> channel 3: 	54.64 		5.79 		1.21
+    @> Frame/model: 5
+    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> channel 0: 	126.05 		5.84 		1.46
+    @> channel 1: 	109.5 		5.47 		1.32
+    @> channel 2: 	90.93 		5.07 		1.3
+    @> channel 3: 	135.77 		9.06 		1.8
+    @> channel 4: 	63.41 		6.1 		1.28
+    @> Frame/model: 6
+    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> channel 0: 	105.43 		5.44 		1.5
+    @> channel 1: 	142.46 		7.89 		1.91
+    @> channel 2: 	100.91 		6.2 		1.39
+    @> channel 3: 	86.71 		5.67 		1.21
+    @> channel 4: 	74.72 		7.45 		1.44
+    @> channel 5: 	81.93 		7.16 		1.27
+    @> channel 6: 	93.11 		7.81 		1.25
+    @> channel 7: 	101.84 		8.9 		1.35
+    @> channel 8: 	56.39 		7.73 		1.23
+    @> Frame/model: 7
+    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> channel 0: 	111.33 		5.2 		1.52
+    @> channel 1: 	110.31 		6.27 		1.74
+    @> channel 2: 	121.22 		5.52 		1.37
+    @> channel 3: 	102.25 		5.61 		1.49
+    @> channel 4: 	69.79 		5.05 		1.21
+    @> Frame/model: 8
+    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> channel 0: 	103.97 		5.31 		1.55
+    @> channel 1: 	122.22 		6.84 		1.91
+    @> channel 2: 	82.63 		5.34 		1.38
+    @> channel 3: 	55.86 		5.83 		1.27
+    @> channel 4: 	53.21 		6.15 		1.3
+    @> Frame/model: 9
+    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> channel 0: 	82.2 		5.17 		1.46
+    @> channel 1: 	123.87 		7.87 		1.63
+    @> channel 2: 	51.53 		5.11 		1.24
+    @> channel 3: 	170.7 		15.21 		1.28
+    @> Frame/model: 10
+    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> channel 0: 	94.01 		5.17 		1.67
+    @> channel 1: 	91.23 		5.57 		1.45
+    @> channel 2: 	58.61 		5.04 		1.31
+    @> channel 3: 	73.58 		5.35 		1.49
+    @> channel 4: 	48.58 		5.14 		1.29
+    @> channel 5: 	55.45 		6.07 		1.22
+    ..
+    ..
+    @> Frame/model: 210
+    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> channel 0: 	167.15 		5.05 		2.01
+    @> channel 1: 	83.6 		6.19 		1.33
+    @> channel 2: 	67.07 		5.3 		1.28
+    @> channel 3: 	289.49 		11.26 		1.66
+    @> channel 4: 	308.26 		13.46 		1.68
+    @> channel 5: 	252.38 		11.87 		1.47
+    @> channel 6: 	314.15 		13.51 		1.3
+    @> channel 7: 	343.86 		16.91 		1.34
+    @> channel 8: 	324.33 		17.24 		1.37
+    @> channel 9: 	363.67 		17.5 		1.31
+    [([5.331767742552358,
+       6.998387387741667,
+       6.085527676462607,
+       5.858854311444432,
+       7.98983939686644],
+      [1.572155685221137,
+       1.9405313948234382,
+       1.2296813140535539,
+       1.20167477329606,
+       1.2473063269041071],
+      [133.9415516958124,
+       122.67418882185356,
+       109.20952421817532,
+       60.68230076564663,
+       72.6753897409704]),
+     ([6.666208430331574,
+       5.424479193692954,
+       6.346111908810009,
+       5.777844656631124,
+       5.402867928697702],
+      [2.090812708434658,
+       1.4402877557423575,
+       1.504851521494053,
+       1.3243104022063263,
+       1.2119138481263352],
+      [145.47324696045195,
+       127.22547601324104,
+       131.92497925196335,
+       61.91661146109752,
+       42.95162370803827]),
+     ..
+     ..
+     ([5.053279294414388,
+       6.189079374115059,
+       5.304283702411966,
+       11.262593963001393,
+       13.459036504111774,
+       11.871591748508564,
+       13.509516942638102,
+       16.913899678851095,
+       17.238638340624938,
+       17.49961773787033],
+      [2.010772399129248,
+       1.3253521540721842,
+       1.2797909473647724,
+       1.6639913436549463,
+       1.684645260508318,
+       1.4660453547846706,
+       1.2963158417703402,
+       1.3370396034799514,
+       1.3738494561152466,
+       1.3114666587307637],
+      [167.1493593307516,
+       83.60335821671228,
+       67.07295039682602,
+       289.4915096364011,
+       308.2623126013169,
+       252.382705629095,
+       314.1454320762822,
+       343.8636015359858,
+       324.33082262735957,
+       363.66523396339335])]
+
 
 
 Assigning the function's output to the ``results`` variable grants access 
@@ -369,98 +393,61 @@ to these parameters, as shown below.
 
 .. parsed-literal::
 
-   @> Frame/model: 0
-   @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> channel 0: 	125.89 		7.24 		1.94
-   @> channel 1: 	42.46 		5.14 		0.92
-   @> channel 2: 	40.06 		5.76 		1.15
-   @> channel 3: 	94.13 		8.67 		1.06
-   @> channel 4: 	39.01 		5.78 		0.99
-   @> channel 5: 	46.1 		6.4 		0.92
-   @> channel 6: 	39.64 		6.75 		0.92
-   @> channel 7: 	79.8 		9.0 		0.96
-   @> channel 8: 	63.79 		8.39 		1.07
-   @> channel 9: 	30.91 		6.26 		0.93
-   @> channel 10: 	56.22 		8.15 		0.95
-   @> channel 11: 	51.62 		8.52 		0.95
-   @> channel 12: 	50.45 		7.51 		0.95
-   @> channel 13: 	42.3 		9.26 		0.99
-   @> channel 14: 	53.96 		10.89 		0.96
-   @> Frame/model: 1
-   @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> channel 0: 	148.19 		6.84 		2.09
-   @> channel 1: 	37.81 		5.16 		1.06
-   @> channel 2: 	31.46 		5.37 		0.96
-   @> channel 3: 	94.89 		8.64 		1.05
-   @> channel 4: 	67.86 		8.28 		1.12
-   @> channel 5: 	59.15 		8.24 		1.05
-   @> channel 6: 	40.62 		9.52 		1.0
-   @> channel 7: 	56.37 		11.37 		0.97
-   @> channel 8: 	132.76 		16.34 		0.94
-   @> channel 9: 	85.46 		16.66 		0.94
-   @> Frame/model: 2
-   @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> channel 0: 	110.67 		5.89 		1.21
-   @> channel 1: 	108.29 		7.45 		1.63
-   @> channel 2: 	130.36 		8.43 		1.77
-   @> channel 3: 	69.15 		6.37 		1.11
-   @> channel 4: 	36.6 		5.79 		1.06
-   @> channel 5: 	42.69 		5.73 		1.1
-   @> channel 6: 	137.38 		11.44 		1.05
-   @> channel 7: 	156.39 		12.22 		1.56
-   @> channel 8: 	31.61 		5.45 		0.91
-   @> channel 9: 	23.61 		5.43 		0.9
-   @> channel 10: 	38.49 		6.09 		0.91
-   @> channel 11: 	150.65 		14.17 		1.02
-   @> channel 12: 	78.39 		9.4 		0.92
-   @> channel 13: 	179.12 		16.94 		0.98
-   @> channel 14: 	42.08 		9.35 		0.98
-   @> channel 15: 	43.67 		10.11 		0.98
-   @> channel 16: 	79.96 		14.18 		0.91
-   @> channel 17: 	250.42 		29.54 		0.9
-   @> channel 18: 	295.18 		33.53 		0.9
-   @> channel 19: 	293.3 		33.95 		0.9
-   @> channel 20: 	270.99 		32.42 		0.9
-   @> channel 21: 	296.61 		35.37 		0.9
-   ..
-   ..
-   @> Frame/model: 210
-   @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> channel 0: 	175.31 		5.78 		1.92
-   @> channel 1: 	88.09 		6.54 		1.33
-   @> channel 2: 	66.0 		5.27 		1.28
-   @> channel 3: 	63.8 		5.36 		1.2
-   @> channel 4: 	297.44 		11.88 		1.66
-   @> channel 5: 	60.53 		5.38 		1.13
-   @> channel 6: 	123.99 		8.43 		1.37
-   @> channel 7: 	258.29 		11.41 		1.47
-   @> channel 8: 	314.33 		13.92 		1.68
-   @> channel 9: 	269.43 		12.99 		1.47
-   @> channel 10: 	314.18 		14.34 		1.3
-   @> channel 11: 	68.62 		8.38 		1.18
-   @> channel 12: 	349.67 		16.35 		1.34
-   @> channel 13: 	51.52 		5.16 		0.9
-   @> channel 14: 	33.17 		5.37 		0.94
-   @> channel 15: 	265.24 		13.77 		1.21
-   @> channel 16: 	311.7 		16.2 		1.3
-   @> channel 17: 	92.38 		8.74 		0.94
-   @> channel 18: 	341.7 		18.51 		1.37
-   @> channel 19: 	49.71 		7.5 		0.92
-   @> channel 20: 	264.06 		14.26 		0.91
-   @> channel 21: 	364.94 		20.56 		1.37
-   @> channel 22: 	104.81 		11.26 		1.02
-   @> channel 23: 	379.4 		18.22 		1.31
-   @> channel 24: 	293.79 		16.43 		1.06
-   @> channel 25: 	128.35 		11.62 		0.94
-   @> channel 26: 	70.66 		10.29 		0.94
-   @> channel 27: 	60.55 		9.23 		0.92
-   @> channel 28: 	54.42 		9.43 		0.98
-   @> channel 29: 	318.33 		19.02 		1.1
-   @> channel 30: 	59.68 		10.9 		0.97
-   @> channel 31: 	134.68 		16.82 		1.03
-   @> channel 32: 	335.3 		21.69 		0.91
-   @> channel 33: 	146.91 		19.18 		1.02
-   @> channel 34: 	144.81 		19.23 		0.98
+    @> Frame/model: 0
+    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> channel 0: 	133.94 		5.33 		1.57
+    @> channel 1: 	122.67 		7.0 		1.94
+    @> channel 2: 	109.21 		6.09 		1.23
+    @> channel 3: 	60.68 		5.86 		1.2
+    @> channel 4: 	72.68 		7.99 		1.25
+    @> Frame/model: 1
+    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> channel 0: 	145.47 		6.67 		2.09
+    @> channel 1: 	127.23 		5.42 		1.44
+    @> channel 2: 	131.92 		6.35 		1.5
+    @> channel 3: 	61.92 		5.78 		1.32
+    @> channel 4: 	42.95 		5.4 		1.21
+    @> Frame/model: 2
+    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> channel 0: 	118.38 		5.35 		1.37
+    @> channel 1: 	107.01 		5.29 		1.36
+    @> channel 2: 	129.91 		8.38 		1.77
+    @> channel 3: 	73.14 		6.6 		1.32
+    @> Frame/model: 3
+    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> channel 0: 	137.98 		5.5 		1.51
+    @> channel 1: 	108.45 		5.69 		1.91
+    @> channel 2: 	121.44 		5.92 		1.43
+    @> channel 3: 	66.54 		5.06 		1.5
+    @> channel 4: 	59.88 		5.35 		1.27
+    @> channel 5: 	65.03 		7.41 		1.34
+    @> Frame/model: 4
+    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> channel 0: 	102.95 		5.53 		1.78
+    @> channel 1: 	129.82 		6.09 		1.42
+    @> channel 2: 	114.55 		5.88 		1.3
+    @> channel 3: 	54.64 		5.79 		1.21
+    @> Frame/model: 5
+    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> channel 0: 	126.05 		5.84 		1.46
+    @> channel 1: 	109.5 		5.47 		1.32
+    @> channel 2: 	90.93 		5.07 		1.3
+    @> channel 3: 	135.77 		9.06 		1.8
+    @> channel 4: 	63.41 		6.1 		1.28
+    ..
+    ..
+    @> Frame/model: 210
+    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> channel 0: 	167.15 		5.05 		2.01
+    @> channel 1: 	83.6 		6.19 		1.33
+    @> channel 2: 	67.07 		5.3 		1.28
+    @> channel 3: 	289.49 		11.26 		1.66
+    @> channel 4: 	308.26 		13.46 		1.68
+    @> channel 5: 	252.38 		11.87 		1.47
+    @> channel 6: 	314.15 		13.51 		1.3
+    @> channel 7: 	343.86 		16.91 		1.34
+    @> channel 8: 	324.33 		17.24 		1.37
+    @> channel 9: 	363.67 		17.5 		1.31
 
 
 Results for the first frame in the trajectory:
@@ -472,52 +459,21 @@ Results for the first frame in the trajectory:
 
 .. parsed-literal::
 
-   ([7.237547988211908,
-     5.144402507035979,
-     5.758126317491529,
-     8.673826918661314,
-     5.777307864657912,
-     6.40433609818471,
-     6.747178340248176,
-     8.995070521346932,
-     8.38886691180554,
-     6.262049837320579,
-     8.152185962303829,
-     8.524949776455045,
-     7.506133097382014,
-     9.264016256534653,
-     10.894656389454092],
-    [1.9405313948234382,
-     0.9183425835659522,
-     1.152320766942539,
-     1.0645333889224762,
-     0.9859267878849265,
-     0.9183425835659522,
-     0.9183425835659522,
-     0.960869971959921,
-     1.0744438403030367,
-     0.9323814936614003,
-     0.9452131702271787,
-     0.9452131702271787,
-     0.9491493726837852,
-     0.9877666026933867,
-     0.9580799362892518],
-    [125.89351597814459,
-     42.45650052348401,
-     40.06400661240734,
-     94.12994668576012,
-     39.00936796390413,
-     46.10196615522554,
-     39.63935545626538,
-     79.8019348231187,
-     63.794869814082446,
-     30.909788582771164,
-     56.21756557555227,
-     51.61854329167826,
-     50.44705628831699,
-     42.30124537688385,
-     53.95573033329965])
-
+    ([5.331767742552358,
+      6.998387387741667,
+      6.085527676462607,
+      5.858854311444432,
+      7.98983939686644],
+     [1.572155685221137,
+      1.9405313948234382,
+      1.2296813140535539,
+      1.20167477329606,
+      1.2473063269041071],
+     [133.9415516958124,
+      122.67418882185356,
+      109.20952421817532,
+      60.68230076564663,
+      72.6753897409704])
 
 To obtain information about the lengths of the channels detected in the 
 first frame in the trajectory (#0):
@@ -529,21 +485,11 @@ first frame in the trajectory (#0):
 
 .. parsed-literal::
 
-   [7.237547988211908,
-    5.144402507035979,
-    5.758126317491529,
-    8.673826918661314,
-    5.777307864657912,
-    6.40433609818471,
-    6.747178340248176,
-    8.995070521346932,
-    8.38886691180554,
-    6.262049837320579,
-    8.152185962303829,
-    8.524949776455045,
-    7.506133097382014,
-    9.264016256534653,
-    10.894656389454092]
+    [5.331767742552358,
+     6.998387387741667,
+     6.085527676462607,
+     5.858854311444432,
+     7.98983939686644]
 
 Bottlenecks of the channels in the first frame in the trajectory (#0):
 
@@ -554,22 +500,11 @@ Bottlenecks of the channels in the first frame in the trajectory (#0):
 
 .. parsed-literal::
 
-   [1.9405313948234382,
-    0.9183425835659522,
-    1.152320766942539,
-    1.0645333889224762,
-    0.9859267878849265,
-    0.9183425835659522,
-    0.9183425835659522,
-    0.960869971959921,
-    1.0744438403030367,
-    0.9323814936614003,
-    0.9452131702271787,
-    0.9452131702271787,
-    0.9491493726837852,
-    0.9877666026933867,
-    0.9580799362892518]
-
+    [1.572155685221137,
+     1.9405313948234382,
+     1.2296813140535539,
+     1.20167477329606,
+     1.2473063269041071]
 
 Volume of the channels detected in the first frame in the trajectory:
 
@@ -580,22 +515,11 @@ Volume of the channels detected in the first frame in the trajectory:
 
 .. parsed-literal::
 
-   [125.89351597814459,
-    42.45650052348401,
-    40.06400661240734,
-    94.12994668576012,
-    39.00936796390413,
-    46.10196615522554,
-    39.63935545626538,
-    79.8019348231187,
-    63.794869814082446,
-    30.909788582771164,
-    56.21756557555227,
-    51.61854329167826,
-    50.44705628831699,
-    42.30124537688385,
-    53.95573033329965]
-
+    [133.9415516958124,
+     122.67418882185356,
+     109.20952421817532,
+     60.68230076564663,
+     72.6753897409704]
 
 Once we have access to ``results``, we can display bottleneck data for all
 the channels in the following way:
@@ -693,30 +617,12 @@ operations should be performed:
 
 .. parsed-literal::
 
-   @> Channel residues were saved to: DCD_fr3_res_Residues_All_channels.txt
+    @> Channel residues were saved to: DCD_fr3_res_Residues_All_channels.txt
 
-   ['channel0: ASP214:P, HSP353:P, GLY356:P, ARG357:P, TRP358:P, ILE405:P, TYR408:P, LEU409:P, LEU470:P, ARG471:P, PRO473:P',
-    'channel1: LEU315:P, ILE317:P, GLN329:P, VAL332:P, ALA333:P, PRO336:P, ILE381:P, ILE385:P, ASN388:P',
-    'channel2: LEU315:P, ILE317:P, GLN329:P, ALA333:P, PRO336:P, ILE381:P, TYR382:P, ILE385:P, ASN388:P',
-    'channel3: LEU315:P, ILE317:P, VAL332:P, ALA333:P, PRO336:P, ILE381:P, ILE385:P, ASN388:P',
-    'channel4: MET310:P, ALA444:P, PHE449:P, LEU452:P, MET453:P, ILE456:P',
-    'channel5: ILE405:P, TYR408:P, LEU409:P, LEU470:P, ARG471:P, SER472:P, PRO473:P',
-    'channel6: LEU315:P, PRO316:P, ILE317:P, ARG326:P, GLN329:P, ALA333:P, PRO336:P, ILE381:P, ILE385:P, ASN388:P',
-    'channel7: LEU315:P, PRO316:P, ILE317:P, ARG326:P, GLN329:P, ALA333:P, PRO336:P, ILE381:P, TYR382:P, ILE385:P, ASN388:P',
-    'channel8: ASP214:P, ARG217:P, ARG357:P, PRO404:P, TYR408:P, ASP411:P',
-    'channel9: ARG19:P, TYR211:P, THR212:P, ASP213:P, GLU216:P, ARG217:P',
-    'channel10: LEU285:P, LEU288:P, LEU289:P, ILE294:P, SER420:P, VAL421:P, ALA423:P, ILE424:P, VAL427:P',
-    'channel11: LEU315:P, PRO316:P, ILE317:P, ARG326:P, GLN329:P, ALA333:P, PRO336:P, ILE381:P, ILE385:P, ASN388:P',
-    'channel12: LEU151:P, ASN154:P, LYS281:P, GLY282:P, THR283:P, PRO284:P, LEU288:P, VAL410:P, VAL417:P, SER420:P, VAL421:P',
-    'channel13: LEU315:P, PRO316:P, ILE317:P, MET319:P, GLU321:P, THR322:P, ARG326:P, GLN329:P, ALA333:P, PRO336:P, ILE381:P, ILE385:P, ASN388:P',
-    'channel14: PHE303:P, ALA304:P, MET365:P, VAL368:P, ILE459:P, ASP460:P, PHE463:P',
-    'channel15: PHE303:P, ALA304:P, MET365:P, VAL368:P, ILE459:P, ASP460:P, LEU462:P, PHE463:P',
-    'channel16: GLU215:P, GLY218:P, GLY349:P, ILE350:P, ALA352:P, HSP353:P, LYS354:P, GLY356:P, ARG357:P, LEU359:P, CYS360:P, LEU363:P, SER401:P',
-    'channel17: ASN34:P, LEU37:P, THR38:P, VAL40:P, VAL41:P, PRO42:P, ILE44:P, PHE135:P, ARG189:P, VAL232:P, PRO236:P, SER240:P, ILE308:P, GLU312:P, ILE317:P, TRP318:P, LYS327:P, TRP328:P, LEU330:P, GLY331:P, ALA333:P, PHE334:P, TYR433:P',
-    'channel18: ASN34:P, LEU37:P, THR38:P, VAL40:P, VAL41:P, PRO42:P, ILE44:P, PHE135:P, ARG189:P, VAL232:P, PRO236:P, SER240:P, TYR243:P, GLU244:P, ILE308:P, GLU312:P, ILE317:P, TRP318:P, LYS327:P, TRP328:P, LEU330:P, GLY331:P, ALA333:P, PHE334:P, TYR433:P',
-    'channel19: ASN34:P, LEU37:P, THR38:P, VAL40:P, VAL41:P, PRO42:P, ILE44:P, PHE135:P, ARG189:P, VAL232:P, PRO236:P, SER240:P, TYR243:P, GLU244:P, ILE308:P, GLU312:P, ILE317:P, TRP318:P, LYS327:P, LEU330:P, GLY331:P, ALA333:P, PHE334:P, TYR433:P',
-    'channel20: ASN34:P, LEU37:P, THR38:P, VAL40:P, VAL41:P, PRO42:P, ILE44:P, PRO45:P, PHE135:P, ARG189:P, VAL232:P, PRO236:P, SER240:P, TYR243:P, ILE308:P, GLU312:P, ILE317:P, TRP318:P, LYS327:P, LEU330:P, GLY331:P, ALA333:P, PHE334:P, TYR433:P',
-    'channel21: ASN34:P, LEU37:P, THR38:P, VAL40:P, VAL41:P, PRO42:P, ILE44:P, PRO45:P, PHE135:P, ARG189:P, VAL232:P, PRO236:P, SER240:P, TYR243:P, ILE308:P, GLU312:P, ILE317:P, TRP318:P, MET323:P, LYS327:P, LEU330:P, GLY331:P, ALA333:P, PHE334:P, TYR433:P']
+    ['channel0: THR153:P, ASN154:P, GLY157:P, TYR158:P, SER209:P, GLN276:P, PRO277:P, GLU278:P, SER279:P, VAL417:P, TYR418:P, GLY419:P',
+     'channel1: ASP214:P, HSP353:P, GLY356:P, ARG357:P, TRP358:P, ILE405:P, TYR408:P, LEU409:P, LEU470:P, ARG471:P, PRO473:P',
+     'channel2: LEU315:P, ILE317:P, GLN329:P, ALA333:P, PRO336:P, ILE381:P, TYR382:P, LEU384:P, ILE385:P, ASN388:P',
+     'channel3: PRO42:P, PRO45:P, SER240:P, TYR243:P, GLU244:P, LYS327:P, TRP328:P, LEU330:P, GLY331:P']
 
 
 To display the results for a particular frame, we need to create a model
@@ -760,52 +666,49 @@ called ``pqr_files_channels`` is further use by
 
 .. parsed-literal::
 
-   ['chls_dcd35_sp0_chl15.pqr',
-    'chls_dcd203_sp1_chl5.pqr',
-    'chls_dcd33_sp0_chl19.pqr',
-    'chls_dcd195_sp9_chl32.pqr',
-    'chls_dcd189_sp4_chl27.pqr',
-    'chls_dcd28_sp7_chl41.pqr',
-    'chls_dcd63_sp12_chl18.pqr',
-    'chls_dcd3_sp6_chl13.pqr',
-    'chls_dcd41_sp0_chl20.pqr',
-    'chls_dcd123_sp9_chl7.pqr',
-    'chls_dcd69_sp2_chl5.pqr',
-    'chls_dcd43_sp0_chl6.pqr',
-    'chls_dcd112_sp4_chl8.pqr',
-    'chls_dcd40_sp8_chl1.pqr',
-    'chls_dcd96_sp0_chl28.pqr',
-    'chls_dcd114_sp0_chl23.pqr',
-    'chls_dcd27_sp1_chl25.pqr',
-    'chls_dcd44_sp0_chl27.pqr',
-    'chls_dcd27_sp17_chl29.pqr',
-    'chls_dcd190_sp5_chl0.pqr',
-    'chls_dcd90_sp6_chl6.pqr',
-    'chls_dcd166_sp2_chl5.pqr',
-    'chls_dcd107_sp0_chl10.pqr',
-    'chls_dcd0_sp1_chl11.pqr',
-    'chls_dcd200_sp11_chl13.pqr',
-    'chls_dcd103_sp5_chl16.pqr',
-    'chls_dcd82_sp2_chl24.pqr',
-    'chls_dcd83_sp7_chl3.pqr',
-    'chls_dcd193_sp12_chl0.pqr',
-    'chls_dcd131_sp11_chl5.pqr',
-    'chls_dcd167_sp4_chl27.pqr',
-    'chls_dcd20_sp13_chl8.pqr',
-    'chls_dcd204_sp4_chl25.pqr',
-    'chls_dcd44_sp7_chl6.pqr',
-    'chls_dcd35_sp7_chl11.pqr',
-    'chls_dcd138_sp1_chl22.pqr',
-    'chls_dcd20_sp13_chl17.pqr',
-    ..
-    ..
-    'chls_dcd110_sp0_chl29.pqr',
-    'chls_dcd47_sp0_chl22.pqr',
-    'chls_dcd160_sp0_chl16.pqr',
-    'chls_dcd63_sp6_chl20.pqr',
-    'chls_dcd32_sp3_chl8.pqr',
-    'chls_dcd26_sp0_chl36.pqr',
-    ...]
+    ['chls_dcd168_sp6_chl4.pqr',
+     'chls_dcd0_sp1_chl2.pqr',
+     'chls_dcd71_sp0_chl8.pqr',
+     'chls_dcd132_sp0_chl6.pqr',
+     'chls_dcd49_sp0_chl12.pqr',
+     'chls_dcd44_sp4_chl11.pqr',
+     'chls_dcd157_sp0_chl6.pqr',
+     'chls_dcd107_sp0_chl10.pqr',
+     'chls_dcd190_sp0_chl6.pqr',
+     'chls_dcd154_sp1_chl0.pqr',
+     'chls_dcd20_sp10_chl7.pqr',
+     'chls_dcd127_sp1_chl9.pqr',
+     'chls_dcd20_sp8_chl0.pqr',
+     'chls_dcd34_sp1_chl4.pqr',
+     'chls_dcd57_sp0_chl11.pqr',
+     'chls_dcd80_sp0_chl7.pqr',
+     'chls_dcd204_sp0_chl6.pqr',
+     'chls_dcd139_sp0_chl4.pqr',
+     'chls_dcd57_sp6_chl4.pqr',
+     'chls_dcd162_sp4_chl4.pqr',
+     'chls_dcd132_sp0_chl7.pqr',
+     ..
+     ..
+     'chls_dcd174_sp0_chl9.pqr',
+     'chls_dcd78_sp4_chl2.pqr',
+     'chls_dcd185_sp2_chl0.pqr',
+     'chls_dcd28_sp3_chl2.pqr',
+     'chls_dcd133_sp0_chl13.pqr',
+     'chls_dcd70_sp1_chl7.pqr',
+     'chls_dcd102_sp1_chl4.pqr',
+     'chls_dcd200_sp7_chl5.pqr',
+     'chls_dcd164_sp2_chl5.pqr',
+     'chls_dcd151_sp3_chl0.pqr',
+     'chls_dcd96_sp0_chl6.pqr',
+     'chls_dcd63_sp1_chl0.pqr',
+     'chls_dcd69_sp3_chl3.pqr',
+     'chls_dcd103_sp5_chl7.pqr',
+     'chls_dcd12_sp5_chl0.pqr',
+     'chls_dcd24_sp0_chl8.pqr',
+     'chls_dcd200_sp4_chl4.pqr',
+     'chls_dcd43_sp3_chl3.pqr',
+     'chls_dcd90_sp4_chl2.pqr',
+     ...]
 
 
 .. ipython:: python
@@ -818,55 +721,60 @@ called ``pqr_files_channels`` is further use by
 
 .. parsed-literal::
 
-   @> 245 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 55 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 90 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 105 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 150 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 145 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 60 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 105 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 105 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 45 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 115 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 90 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 75 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 35 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 125 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 125 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 60 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 105 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 85 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 55 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 50 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 50 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 95 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 100 atoms and 1 coordinate sets were parsed in 0.00s.
-   ..
-   ..
-   @> 80 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 215 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 190 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 70 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 200 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 50 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 85 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 40 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 105 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 90 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 65 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 100 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 75 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 205 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 70 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 55 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 160 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 50 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 60 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 50 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> Filtered files are now in: Selected_channel1
-   @> Selected files: 
-   @> chls_dcd44_sp0_chl27.pqr chls_dcd167_sp4_chl27.pqr chls_dcd35_sp7_chl11.pqr chls_dcd96_sp0_chl14.pqr chls_dcd145_sp0_chl14.pqr chls_dcd100_sp0_chl15.pqr chls_dcd9_sp0_chl18.pqr chls_dcd153_sp0_chl11.pqr chls_dcd135_sp0_chl15.pqr chls_dcd190_sp0_chl10.pqr chls_dcd113_sp0_chl8.pqr chls_dcd96_sp0_chl17.pqr chls_dcd175_sp4_chl11.pqr chls_dcd202_sp0_chl9.pqr chls_dcd25_sp4_chl9.pqr chls_dcd107_sp0_chl33.pqr chls_dcd37_sp5_chl18.pqr chls_dcd55_sp0_chl21.pqr chls_dcd157_sp0_chl11.pqr chls_dcd87_sp0_chl14.pqr chls_dcd193_sp0_chl8.pqr chls_dcd92_sp0_chl16.pqr chls_dcd50_sp0_chl18.pqr chls_dcd167_sp0_chl16.pqr chls_dcd92_sp0_chl17.pqr chls_dcd172_sp0_chl9.pqr chls_dcd143_sp3_chl5.pqr chls_dcd57_sp0_chl33.pqr chls_dcd1_sp11_chl8.pqr chls_dcd98_sp0_chl19.pqr chls_dcd148_sp0_chl26.pqr chls_dcd105_sp0_chl24.pqr chls_dcd91_sp0_chl16.pqr chls_dcd161_sp0_chl18.pqr chls_dcd113_sp0_chl22.pqr chls_dcd188_sp0_chl15.pqr chls_dcd152_sp0_chl16.pqr chls_dcd141_sp0_chl22.pqr chls_dcd112_sp0_chl15.pqr chls_dcd114_sp0_chl22.pqr chls_dcd87_sp0_chl15.pqr chls_dcd57_sp0_chl19.pqr chls_dcd66_sp0_chl13.pqr chls_dcd94_sp0_chl17.pqr chls_dcd57_sp0_chl27.pqr chls_dcd194_sp0_chl9.pqr chls_dcd201_sp3_chl14.pqr chls_dcd173_sp0_chl13.pqr chls_dcd149_sp0_chl14.pqr chls_dcd182_sp0_chl23.pqr chls_dcd14_sp14_chl22.pqr chls_dcd46_sp7_chl3.pqr chls_dcd12_sp16_chl22.pqr chls_dcd131_sp0_chl31.pqr chls_dcd156_sp0_chl16.pqr chls_dcd180_sp0_chl10.pqr chls_dcd120_sp0_chl9.pqr chls_dcd150_sp0_chl20.pqr chls_dcd10_sp12_chl24.pqr chls_dcd165_sp0_chl25.pqr chls_dcd111_sp0_chl19.pqr chls_dcd189_sp0_chl20.pqr chls_dcd176_sp5_chl8.pqr chls_dcd1_sp11_chl9.pqr chls_dcd85_sp0_chl17.pqr chls_dcd191_sp3_chl18.pqr chls_dcd188_sp0_chl11.pqr chls_dcd86_sp0_chl21.pqr chls_dcd173_sp0_chl22.pqr chls_dcd182_sp0_chl18.pqr chls_dcd176_sp0_chl14.pqr chls_dcd116_sp0_chl21.pqr chls_dcd117_sp0_chl13.pqr chls_dcd135_sp0_chl4.pqr chls_dcd204_sp0_chl35.pqr chls_dcd205_sp0_chl2.pqr chls_dcd114_sp0_chl16.pqr chls_dcd167_sp0_chl20.pqr chls_dcd132_sp0_chl10.pqr chls_dcd209_sp0_chl7.pqr chls_dcd65_sp0_chl8.pqr chls_dcd62_sp0_chl20.pqr chls_dcd180_sp0_chl19.pqr chls_dcd194_sp0_chl13.pqr chls_dcd68_sp0_chl12.pqr chls_dcd125_sp0_chl12.pqr chls_dcd111_sp0_chl4.pqr chls_dcd134_sp0_chl16.pqr chls_dcd149_sp0_chl3.pqr chls_dcd177_sp0_chl13.pqr chls_dcd106_sp0_chl19.pqr chls_dcd80_sp0_chl22.pqr chls_dcd37_sp5_chl20.pqr chls_dcd173_sp0_chl19.pqr chls_dcd72_sp0_chl13.pqr chls_dcd95_sp0_chl21.pqr chls_dcd147_sp0_chl16.pqr chls_dcd10_sp12_chl27.pqr chls_dcd198_sp0_chl15.pqr chls_dcd4_sp11_chl12.pqr chls_dcd133_sp0_chl9.pqr chls_dcd148_sp0_chl2.pqr chls_dcd10_sp12_chl25.pqr chls_dcd123_sp0_chl29.pqr chls_dcd180_sp0_chl13.pqr chls_dcd210_sp0_chl15.pqr chls_dcd110_sp0_chl17.pqr chls_dcd59_sp0_chl16.pqr chls_dcd187_sp0_chl11.pqr chls_dcd127_sp0_chl32.pqr chls_dcd191_sp0_chl16.pqr chls_dcd164_sp0_chl10.pqr chls_dcd117_sp0_chl14.pqr chls_dcd113_sp0_chl13.pqr chls_dcd35_sp7_chl14.pqr chls_dcd71_sp0_chl12.pqr chls_dcd59_sp0_chl14.pqr chls_dcd101_sp0_chl10.pqr chls_dcd109_sp0_chl20.pqr chls_dcd88_sp0_chl15.pqr chls_dcd98_sp0_chl18.pqr chls_dcd83_sp0_chl23.pqr chls_dcd84_sp0_chl19.pqr chls_dcd102_sp0_chl9.pqr chls_dcd104_sp0_chl23.pqr chls_dcd187_sp0_chl13.pqr chls_dcd12_sp16_chl24.pqr chls_dcd95_sp0_chl15.pqr chls_dcd147_sp0_chl2.pqr chls_dcd59_sp0_chl13.pqr chls_dcd155_sp0_chl2.pqr chls_dcd136_sp0_chl19.pqr chls_dcd111_sp0_chl20.pqr chls_dcd85_sp0_chl8.pqr chls_dcd181_sp0_chl8.pqr chls_dcd199_sp0_chl9.pqr chls_dcd118_sp0_chl18.pqr chls_dcd198_sp0_chl10.pqr chls_dcd151_sp0_chl3.pqr chls_dcd76_sp0_chl28.pqr chls_dcd148_sp0_chl15.pqr chls_dcd65_sp0_chl13.pqr chls_dcd70_sp0_chl23.pqr chls_dcd71_sp0_chl14.pqr chls_dcd110_sp0_chl16.pqr chls_dcd68_sp0_chl13.pqr chls_dcd167_sp4_chl22.pqr chls_dcd192_sp0_chl19.pqr chls_dcd138_sp0_chl3.pqr chls_dcd90_sp0_chl18.pqr chls_dcd104_sp0_chl18.pqr chls_dcd118_sp0_chl16.pqr chls_dcd105_sp0_chl23.pqr chls_dcd112_sp0_chl12.pqr chls_dcd130_sp0_chl18.pqr chls_dcd132_sp0_chl15.pqr chls_dcd14_sp0_chl23.pqr chls_dcd148_sp0_chl8.pqr chls_dcd18_sp0_chl24.pqr chls_dcd126_sp0_chl15.pqr chls_dcd178_sp0_chl8.pqr chls_dcd4_sp11_chl13.pqr chls_dcd171_sp0_chl31.pqr chls_dcd184_sp0_chl12.pqr chls_dcd171_sp0_chl14.pqr chls_dcd112_sp0_chl9.pqr chls_dcd142_sp0_chl16.pqr chls_dcd177_sp0_chl3.pqr chls_dcd93_sp0_chl19.pqr chls_dcd75_sp0_chl27.pqr chls_dcd101_sp0_chl15.pqr chls_dcd16_sp10_chl17.pqr chls_dcd179_sp2_chl16.pqr chls_dcd46_sp0_chl27.pqr chls_dcd114_sp0_chl21.pqr chls_dcd131_sp0_chl23.pqr chls_dcd157_sp0_chl16.pqr chls_dcd109_sp0_chl17.pqr chls_dcd158_sp0_chl13.pqr chls_dcd145_sp0_chl3.pqr chls_dcd141_sp0_chl5.pqr chls_dcd126_sp0_chl17.pqr chls_dcd153_sp0_chl4.pqr chls_dcd5_sp14_chl15.pqr chls_dcd210_sp9_chl26.pqr chls_dcd116_sp0_chl11.pqr chls_dcd6_sp11_chl33.pqr chls_dcd210_sp9_chl25.pqr chls_dcd191_sp3_chl14.pqr chls_dcd127_sp0_chl24.pqr chls_dcd120_sp0_chl10.pqr chls_dcd152_sp0_chl15.pqr chls_dcd149_sp0_chl10.pqr chls_dcd77_sp0_chl23.pqr chls_dcd180_sp0_chl6.pqr chls_dcd162_sp0_chl10.pqr chls_dcd66_sp0_chl14.pqr chls_dcd6_sp11_chl32.pqr chls_dcd97_sp0_chl16.pqr chls_dcd157_sp0_chl20.pqr chls_dcd181_sp0_chl18.pqr chls_dcd201_sp0_chl21.pqr chls_dcd97_sp0_chl20.pqr chls_dcd67_sp0_chl10.pqr chls_dcd202_sp0_chl16.pqr chls_dcd18_sp0_chl25.pqr chls_dcd119_sp0_chl18.pqr chls_dcd189_sp0_chl13.pqr chls_dcd10_sp12_chl26.pqr chls_dcd80_sp0_chl21.pqr chls_dcd122_sp0_chl13.pqr chls_dcd206_sp0_chl7.pqr chls_dcd143_sp3_chl8.pqr chls_dcd201_sp3_chl5.pqr chls_dcd173_sp0_chl21.pqr chls_dcd197_sp0_chl15.pqr chls_dcd178_sp0_chl9.pqr chls_dcd76_sp0_chl18.pqr chls_dcd9_sp0_chl19.pqr chls_dcd60_sp0_chl12.pqr chls_dcd76_sp0_chl22.pqr chls_dcd193_sp0_chl6.pqr chls_dcd66_sp0_chl22.pqr chls_dcd181_sp0_chl4.pqr chls_dcd90_sp0_chl21.pqr chls_dcd195_sp0_chl10.pqr chls_dcd146_sp0_chl12.pqr chls_dcd9_sp0_chl17.pqr chls_dcd102_sp0_chl17.pqr chls_dcd72_sp0_chl15.pqr chls_dcd206_sp0_chl21.pqr chls_dcd73_sp0_chl16.pqr chls_dcd55_sp0_chl24.pqr chls_dcd37_sp5_chl22.pqr chls_dcd57_sp0_chl34.pqr chls_dcd181_sp0_chl19.pqr chls_dcd101_sp0_chl19.pqr chls_dcd107_sp0_chl35.pqr chls_dcd179_sp2_chl15.pqr chls_dcd184_sp0_chl15.pqr chls_dcd96_sp0_chl16.pqr chls_dcd5_sp14_chl16.pqr chls_dcd69_sp0_chl32.pqr chls_dcd94_sp0_chl27.pqr chls_dcd93_sp0_chl22.pqr chls_dcd14_sp0_chl25.pqr chls_dcd197_sp0_chl18.pqr chls_dcd193_sp0_chl25.pqr chls_dcd139_sp0_chl11.pqr chls_dcd191_sp0_chl17.pqr chls_dcd83_sp0_chl22.pqr chls_dcd125_sp0_chl1.pqr chls_dcd16_sp10_chl14.pqr chls_dcd210_sp9_chl17.pqr chls_dcd148_sp0_chl16.pqr chls_dcd94_sp0_chl21.pqr chls_dcd113_sp0_chl21.pqr chls_dcd172_sp0_chl18.pqr chls_dcd42_sp7_chl5.pqr chls_dcd192_sp0_chl24.pqr chls_dcd179_sp2_chl19.pqr chls_dcd123_sp0_chl22.pqr chls_dcd134_sp0_chl14.pqr chls_dcd156_sp0_chl14.pqr chls_dcd140_sp0_chl3.pqr chls_dcd96_sp0_chl26.pqr chls_dcd12_sp16_chl23.pqr chls_dcd108_sp0_chl10.pqr chls_dcd210_sp0_chl7.pqr chls_dcd209_sp0_chl11.pqr chls_dcd206_sp0_chl6.pqr chls_dcd210_sp0_chl20.pqr chls_dcd168_sp0_chl30.pqr chls_dcd106_sp0_chl15.pqr chls_dcd81_sp0_chl22.pqr chls_dcd54_sp0_chl30.pqr chls_dcd74_sp0_chl7.pqr chls_dcd187_sp0_chl9.pqr chls_dcd14_sp14_chl17.pqr chls_dcd209_sp0_chl4.pqr chls_dcd133_sp0_chl4.pqr chls_dcd186_sp2_chl6.pqr chls_dcd28_sp5_chl35.pqr chls_dcd188_sp0_chl10.pqr chls_dcd179_sp0_chl26.pqr chls_dcd149_sp0_chl11.pqr chls_dcd122_sp0_chl14.pqr chls_dcd100_sp0_chl14.pqr chls_dcd59_sp0_chl17.pqr chls_dcd53_sp0_chl47.pqr chls_dcd146_sp0_chl15.pqr chls_dcd167_sp4_chl17.pqr chls_dcd207_sp0_chl3.pqr chls_dcd196_sp0_chl2.pqr chls_dcd132_sp0_chl25.pqr chls_dcd101_sp0_chl11.pqr chls_dcd146_sp0_chl14.pqr chls_dcd101_sp0_chl9.pqr chls_dcd205_sp0_chl6.pqr chls_dcd119_sp0_chl11.pqr chls_dcd88_sp0_chl11.pqr chls_dcd28_sp5_chl34.pqr chls_dcd97_sp0_chl18.pqr chls_dcd175_sp0_chl23.pqr chls_dcd126_sp0_chl13.pqr chls_dcd197_sp0_chl20.pqr chls_dcd150_sp0_chl22.pqr chls_dcd162_sp0_chl7.pqr chls_dcd116_sp0_chl22.pqr chls_dcd147_sp0_chl10.pqr chls_dcd131_sp0_chl30.pqr chls_dcd135_sp0_chl18.pqr chls_dcd88_sp0_chl18.pqr chls_dcd9_sp0_chl16.pqr chls_dcd129_sp0_chl17.pqr chls_dcd122_sp9_chl22.pqr chls_dcd196_sp0_chl22.pqr chls_dcd127_sp0_chl25.pqr chls_dcd95_sp0_chl14.pqr chls_dcd171_sp0_chl18.pqr chls_dcd205_sp0_chl1.pqr chls_dcd155_sp0_chl10.pqr chls_dcd109_sp0_chl23.pqr chls_dcd210_sp0_chl9.pqr chls_dcd147_sp0_chl11.pqr chls_dcd121_sp10_chl10.pqr chls_dcd55_sp0_chl23.pqr chls_dcd175_sp0_chl5.pqr chls_dcd173_sp0_chl8.pqr chls_dcd124_sp0_chl10.pqr
+    @> 95 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 65 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 170 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 95 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 200 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 110 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 125 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 160 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 150 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 50 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 65 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 95 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 55 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 55 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 235 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 80 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 170 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 80 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 60 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 65 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 100 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 40 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 210 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 40 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 40 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 50 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 85 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 40 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 125 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 115 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 195 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 70 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 45 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 80 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 140 atoms and 1 coordinate sets were parsed in 0.00s.
+    ..
+    ..
+    @> 40 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 185 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 100 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 40 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 60 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 35 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 85 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 50 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 55 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 65 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 85 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 70 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 75 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 120 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> Filtered files are now in: Selected_channel1
+    @> Selected files: 
+    @> chls_dcd71_sp0_chl8.pqr chls_dcd132_sp0_chl7.pqr chls_dcd100_sp0_chl9.pqr chls_dcd92_sp0_chl7.pqr chls_dcd89_sp0_chl9.pqr chls_dcd141_sp0_chl4.pqr chls_dcd175_sp0_chl4.pqr chls_dcd93_sp0_chl7.pqr chls_dcd188_sp0_chl8.pqr chls_dcd145_sp0_chl2.pqr chls_dcd180_sp0_chl10.pqr chls_dcd165_sp0_chl10.pqr chls_dcd131_sp0_chl11.pqr chls_dcd187_sp0_chl6.pqr chls_dcd133_sp0_chl6.pqr chls_dcd75_sp0_chl9.pqr chls_dcd65_sp0_chl3.pqr chls_dcd74_sp0_chl5.pqr chls_dcd191_sp1_chl8.pqr chls_dcd68_sp0_chl5.pqr chls_dcd35_sp1_chl5.pqr chls_dcd149_sp0_chl2.pqr chls_dcd205_sp0_chl3.pqr chls_dcd86_sp0_chl7.pqr chls_dcd173_sp0_chl10.pqr chls_dcd120_sp0_chl6.pqr chls_dcd98_sp0_chl5.pqr chls_dcd177_sp0_chl4.pqr chls_dcd66_sp0_chl7.pqr chls_dcd191_sp1_chl11.pqr chls_dcd181_sp0_chl3.pqr chls_dcd114_sp0_chl9.pqr chls_dcd123_sp0_chl12.pqr chls_dcd67_sp0_chl8.pqr chls_dcd93_sp0_chl6.pqr chls_dcd59_sp0_chl5.pqr chls_dcd153_sp0_chl3.pqr chls_dcd210_sp0_chl5.pqr chls_dcd184_sp0_chl6.pqr chls_dcd107_sp0_chl9.pqr chls_dcd179_sp1_chl8.pqr chls_dcd111_sp0_chl3.pqr chls_dcd59_sp0_chl4.pqr chls_dcd206_sp0_chl4.pqr chls_dcd90_sp0_chl10.pqr chls_dcd102_sp0_chl11.pqr chls_dcd88_sp0_chl10.pqr chls_dcd113_sp0_chl6.pqr chls_dcd72_sp0_chl6.pqr chls_dcd91_sp0_chl9.pqr chls_dcd171_sp0_chl7.pqr chls_dcd66_sp0_chl8.pqr chls_dcd196_sp0_chl3.pqr chls_dcd143_sp2_chl5.pqr chls_dcd152_sp0_chl2.pqr chls_dcd114_sp0_chl8.pqr chls_dcd181_sp0_chl7.pqr chls_dcd147_sp0_chl7.pqr chls_dcd95_sp0_chl6.pqr chls_dcd101_sp0_chl5.pqr chls_dcd155_sp0_chl3.pqr chls_dcd165_sp0_chl9.pqr chls_dcd140_sp0_chl3.pqr chls_dcd135_sp0_chl2.pqr chls_dcd76_sp0_chl11.pqr chls_dcd60_sp0_chl5.pqr chls_dcd101_sp0_chl6.pqr chls_dcd209_sp0_chl4.pqr chls_dcd191_sp0_chl9.pqr chls_dcd124_sp11_chl10.pqr chls_dcd97_sp0_chl9.pqr chls_dcd73_sp0_chl10.pqr chls_dcd178_sp0_chl5.pqr chls_dcd116_sp0_chl6.pqr chls_dcd106_sp0_chl13.pqr chls_dcd88_sp0_chl11.pqr chls_dcd176_sp0_chl10.pqr chls_dcd149_sp0_chl7.pqr chls_dcd110_sp0_chl6.pqr chls_dcd105_sp0_chl7.pqr chls_dcd137_sp0_chl11.pqr chls_dcd122_sp0_chl7.pqr chls_dcd117_sp0_chl7.pqr chls_dcd96_sp0_chl7.pqr chls_dcd74_sp0_chl9.pqr chls_dcd112_sp0_chl6.pqr
 
 
 Filtered pqr files will be stored in ``"Selected_channel1"``. Once the files
@@ -883,47 +791,65 @@ will be saved when using ``output_file_name`` option.
 
 .. parsed-literal::
 
-   @> Number of PQR files: 330
-   @> Resolution: 0.5
-   @> max_proc: 4
-   @> Calculating overlaps using 4 processes.
-   @> 170 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 165 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 105 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 200 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 155 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 115 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 155 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 225 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 145 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 150 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 155 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 120 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 175 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 95 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 155 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 100 atoms and 1 coordinate sets were parsed in 0.00s.
-   ..
-   ..
-   @> 145 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 50 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 255 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 190 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 75 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 105 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 100 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 320 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 110 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 70 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 100 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 105 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 110 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 110 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> Overlap written to: overlapping_surf_traj.pdb
-   @> Number of occupied overlap voxels: 30661
+    @> Number of PQR files: 86
+    @> Resolution: 0.5
+    @> max_proc: 4
+    @> Calculating overlaps using 4 processes.
+    @> 85 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 105 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 170 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 255 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 75 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 240 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 140 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 210 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 100 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 110 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 100 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 105 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 170 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 75 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 115 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 115 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 160 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 220 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 165 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 145 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 80 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 180 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 125 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 105 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 80 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 210 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 270 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 210 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 135 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 260 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 210 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 160 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 130 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 150 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 195 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 100 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 120 atoms and 1 coordinate sets were parsed in 0.00s.
+    ..
+    ..
+    @> 260 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 170 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 275 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 110 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 125 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 110 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 90 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 170 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 220 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 175 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 180 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 225 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> Overlap written to: overlapping_surf_traj.pdb
+    @> Number of occupied overlap voxels: 24776
 
-   'overlapping_surf_traj.pdb'
-
+    'overlapping_surf_traj.pdb'
 
 .. figure:: images/cavitracer_figure17.jpg
    :scale: 50 %
