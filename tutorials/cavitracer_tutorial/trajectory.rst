@@ -898,185 +898,154 @@ to find narrower passages within protein structure.
 
 .. parsed-literal::
 
-   @> Frame/model: 0
-   @> Frame/model: 14
-   @> Frame/model: 28
-   @> Frame/model: 42
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.28s.
-   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.29s.
-   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.29s.
-   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.29s.
-   @> Delaunay tessellation of 77434 points constructed in 3.97s.
-   @> Delaunay tessellation of 77434 points constructed in 3.99s.
-   @> Delaunay tessellation of 77434 points constructed in 4.02s.
-   @> Delaunay tessellation of 77434 points constructed in 4.11s.
-   @> Surface and inner simplices filtered in 3.64s.
-   @> Surface and inner simplices filtered in 3.77s.
-   @> Surface and inner simplices filtered in 3.83s.
-   @> Surface and inner simplices filtered in 3.86s.
-   @> Surface cavities: 395 found, 10 deeper than min_depth=5.0 Å and searched for channels, in 0.66s.
-   @> Surface cavities: 431 found, 7 deeper than min_depth=5.0 Å and searched for channels, in 0.73s.
-   @> Surface cavities: 409 found, 6 deeper than min_depth=5.0 Å and searched for channels, in 0.69s.
-   @> Surface cavities: 431 found, 14 deeper than min_depth=5.0 Å and searched for channels, in 0.71s.
-   @> Chambers (probe 1.40 Å): 1 of the 10 searched cavities have them; the other 9 are searched whole.
-   @>     cavity 0: 21 chambers, 8 of them seeded.
-   @> 17 search sites (sp) in 0.05s: one per seeded chamber, one per cavity searched whole.
-   @> Chambers (probe 1.40 Å): 3 of the 14 searched cavities have them; the other 12 are searched whole.
-   @>     cavity 0: 9 chambers, 5 of them seeded.
-   @>     cavity 1: 5 chambers, 3 of them seeded.
-   @>     cavity 2: 1 chamber, none of them deep and large enough to seed; searched whole.
-   @> 20 search sites (sp) in 0.06s: one per seeded chamber, one per cavity searched whole.
-   @> Chambers (probe 1.40 Å): 1 of the 7 searched cavities have them; the other 6 are searched whole.
-   @>     cavity 0: 26 chambers, 10 of them seeded.
-   @> 16 search sites (sp) in 0.07s: one per seeded chamber, one per cavity searched whole.
-   @> Chambers (probe 1.40 Å): 2 of the 6 searched cavities have them; the other 5 are searched whole.
-   @>     cavity 0: 15 chambers, 8 of them seeded.
-   @>     cavity 3: 1 chamber, none of them deep and large enough to seed; searched whole.
-   @> 13 search sites (sp) in 0.09s: one per seeded chamber, one per cavity searched whole.
-   @> Channel search (Dijkstra) over 20 search sites in 14 cavities completed in 2.09s.
-   @> Found 35 channels and 3 links (a link joins a deep chamber to a shallower one and never reaches the surface).
-   @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
-   @>     site  void                   volume [Å³]  depth [Å]  channels  links
-   @>     sp0   cavity 0, chamber 1/5         1452       17.0         2      1  -> sp9
-   @>     sp1   cavity 2, whole                862        5.3         1      -
-   @>     sp2   cavity 3, whole                286        9.4         2      -
-   @>     sp3   cavity 4, whole                259        5.2         2      -
-   @>     sp4   cavity 5, whole                254        6.6         2      -
-   @>     sp5   cavity 6, whole                198        6.7         -      -  sealed
-   @>     sp6   cavity 7, whole                158        6.2         1      -
-   @>     sp7   cavity 8, whole                138        6.5         1      -
-   @>     sp8   cavity 9, whole                126        6.0         -      -  sealed
-   @>     sp9   cavity 0, chamber 2/5          108        5.3         2      -
-   @>     sp10  cavity 10, whole               103        8.1         -      -  sealed
-   @>     sp11  cavity 11, whole                93        8.2         -      -  sealed
-   @>     sp12  cavity 12, whole                80        6.1         -      -  sealed
-   @>     sp13  cavity 1, chamber 1/3           68        7.6         2      -
-   @>     sp14  cavity 0, chamber 3/5           67        6.6         5      -
-   @>     sp15  cavity 1, chamber 2/3           57       11.3         -      -  sealed
-   @>     sp16  cavity 13, whole                56        6.0         1      -
-   @>     sp17  cavity 0, chamber 4/5           34        5.8        10      -
-   @>     sp18  cavity 0, chamber 5/5           31       11.9         2      1  -> sp0
-   @>     sp19  cavity 1, chamber 3/3           31       12.9         2      1  -> sp13
-   @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
-   @> The 1 site marked sealed above report neither a channel nor a link: every route out of them is narrower than bottleneck=0.80 Å. Lower it to see how they connect.
-   @> Saving 35 channels and 3 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
-   @> Channel calculation completed in 11.39s.
-   @> Frame/model: 15
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Channel search (Dijkstra) over 13 search sites in 6 cavities completed in 2.19s.
-   @> Found 40 channels and 5 links (a link joins a deep chamber to a shallower one and never reaches the surface).
-   @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
-   @>     site  void                   volume [Å³]  depth [Å]  channels  links
-   @>     sp0   cavity 0, chamber 1/8         2748       13.7        14      2  -> sp8, sp6
-   @>     sp1   cavity 1, whole                567       11.2         3      -
-   @>     sp2   cavity 2, whole                427       24.2         -      -  sealed
-   @>     sp3   cavity 3, whole                364        5.9         1      -
-   @>     sp4   cavity 4, whole                362        5.4         1      -
-   @>     sp5   cavity 0, chamber 2/8          256       12.1         2      -
-   @>     sp6   cavity 0, chamber 3/8          154        5.3         3      -
-   @>     sp7   cavity 5, whole                154        8.9         -      -  sealed
-   @>     sp8   cavity 0, chamber 4/8          148       10.0         1      -
-   @>     sp9   cavity 0, chamber 5/8          115        5.1         9      -
-   @>     sp10  cavity 0, chamber 6/8           59        6.9         4      1  -> sp0
-   @>     sp11  cavity 0, chamber 7/8           50       17.5         -      2  -> sp0, sp5
-   @>     sp12  cavity 0, chamber 8/8           31        5.4         2      -
-   @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
-   @> Saving 40 channels and 5 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
-   @> Channel calculation completed in 11.55s.
-   ..
-   ..
-   @> Frame/model: 209
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.27s.
-   @> Surface and inner simplices filtered in 2.72s.
-   @> Surface cavities: 429 found, 10 deeper than min_depth=5.0 Å and searched for channels, in 0.72s.
-   @> Channel search (Dijkstra) over 17 search sites in 10 cavities completed in 2.07s.
-   @> Found 32 channels and 6 links (a link joins a deep chamber to a shallower one and never reaches the surface).
-   @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
-   @>     site  void                   volume [Å³]  depth [Å]  channels  links
-   @>     sp0   cavity 0, chamber 1/8         3008       11.1        13      -
-   @>     sp1   cavity 2, whole                374        5.1         1      -
-   @>     sp2   cavity 3, whole                316        7.0         -      -  sealed
-   @>     sp3   cavity 4, whole                306        7.2         -      -  sealed
-   @>     sp4   cavity 0, chamber 2/8          303       12.7         1      2  -> sp0, sp13
-   @>     sp5   cavity 5, whole                300        8.6         2      -
-   @>     sp6   cavity 7, whole                139        5.2         1      -
-   @>     sp7   cavity 8, whole                120        6.3         1      -
-   @>     sp8   cavity 0, chamber 3/8           87        5.0         3      -
-   @>     sp9   cavity 9, whole                 64        6.2         -      -  sealed
-   @>     sp10  cavity 0, chamber 4/8           50       25.5         -      1  -> sp0
-   @>     sp11  cavity 0, chamber 5/8           48       15.1         3      1  -> sp0
-   @>     sp12  cavity 1, chamber 1/1           42        5.4         6      -
-   @>     sp13  cavity 0, chamber 6/8           36        7.7         1      -
-   @>     sp14  cavity 6, chamber 1/1           35        6.9         -      -  sealed
-   @>     sp15  cavity 0, chamber 7/8           31       26.7         -      1  -> sp0
-   @>     sp16  cavity 0, chamber 8/8           30       20.7         -      1  -> sp0
-   @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
-   @> The 1 site marked sealed above report neither a channel nor a link: every route out of them is narrower than bottleneck=0.80 Å. Lower it to see how they connect.
-   @> Saving 32 channels and 6 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
-   @> Channel calculation completed in 9.70s.
-   @> Chambers (probe 1.40 Å): 3 of the 10 searched cavities have them; the other 8 are searched whole.
-   @>     cavity 0: 17 chambers, 6 of them seeded.
-   @>     cavity 1: 3 chambers, 1 of them seeded.
-   @>     cavity 2: 1 chamber, none of them deep and large enough to seed; searched whole.
-   @> 15 search sites (sp) in 0.09s: one per seeded chamber, one per cavity searched whole.
-   @> Delaunay tessellation of 77434 points constructed in 2.95s.
-   @> Channel search (Dijkstra) over 15 search sites in 10 cavities completed in 1.91s.
-   @> Found 42 channels and 6 links (a link joins a deep chamber to a shallower one and never reaches the surface).
-   @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
-   @>     site  void                   volume [Å³]  depth [Å]  channels  links
-   @>     sp0   cavity 0, chamber 1/6         2362       11.8        16      -
-   @>     sp1   cavity 0, chamber 2/6          312        7.2         3      1  -> sp0
-   @>     sp2   cavity 2, whole                277        7.3         -      -  sealed
-   @>     sp3   cavity 0, chamber 3/6          252       12.2         4      3  -> sp0, sp8, sp6
-   @>     sp4   cavity 3, whole                251       14.2         -      -  sealed
-   @>     sp5   cavity 4, whole                216        5.0         2      -
-   @>     sp6   cavity 0, chamber 4/6          198        8.3         1      1  -> sp0
-   @>     sp7   cavity 1, chamber 1/1          153        7.0         6      -
-   @>     sp8   cavity 0, chamber 5/6          104        7.9         3      1  -> sp0
-   @>     sp9   cavity 5, whole                103        5.6         -      -  sealed
-   @>     sp10  cavity 6, whole                 77        5.3         -      -  sealed
-   @>     sp11  cavity 7, whole                 75        5.1         -      -  sealed
-   @>     sp12  cavity 0, chamber 6/6           68        7.1         7      -
-   @>     sp13  cavity 8, whole                 68        5.8         -      -  sealed
-   @>     sp14  cavity 9, whole                 65        5.8         -      -  sealed
-   @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
-   @> Saving 42 channels and 6 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
-   @> Channel calculation completed in 9.42s.
-   @> Surface and inner simplices filtered in 2.73s.
-   @> Surface cavities: 467 found, 10 deeper than min_depth=5.0 Å and searched for channels, in 0.66s.
-   @> Chambers (probe 1.40 Å): 2 of the 10 searched cavities have them; the other 8 are searched whole.
-   @>     cavity 0: 14 chambers, 8 of them seeded.
-   @>     cavity 1: 1 chamber, seeded.
-   @> 17 search sites (sp) in 0.07s: one per seeded chamber, one per cavity searched whole.
-   @> Channel search (Dijkstra) over 17 search sites in 10 cavities completed in 1.58s.
-   @> Found 46 channels and 9 links (a link joins a deep chamber to a shallower one and never reaches the surface).
-   @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
-   @>     site  void                   volume [Å³]  depth [Å]  channels  links
-   @>     sp0   cavity 0, chamber 1/8         2514       10.2        15      2  -> sp3, sp7
-   @>     sp1   cavity 2, whole                353        6.1         1      -
-   @>     sp2   cavity 3, whole                322        5.3         1      -
-   @>     sp3   cavity 0, chamber 2/8          250        5.1         5      -
-   @>     sp4   cavity 4, whole                207        5.6         1      -
-   @>     sp5   cavity 0, chamber 3/8          202       26.7         -      1  -> sp13
-   @>     sp6   cavity 0, chamber 4/8          195        7.6         6      2  -> sp0, sp0
-   @>     sp7   cavity 0, chamber 5/8          141        6.5         7      -
-   @>     sp8   cavity 5, whole                116        6.3         1      -
-   @>     sp9   cavity 6, whole                 69        5.2         1      -
-   @>     sp10  cavity 7, whole                 64        5.1         -      -  sealed
-   @>     sp11  cavity 8, whole                 62        5.0         -      -  sealed
-   @>     sp12  cavity 9, whole                 62        5.1         1      -
-   @>     sp13  cavity 0, chamber 6/8           60       20.4         1      2  -> sp0, sp0
-   @>     sp14  cavity 0, chamber 7/8           48       15.1         2      1  -> sp0
-   @>     sp15  cavity 1, chamber 1/1           45        5.5         4      -
-   @>     sp16  cavity 0, chamber 8/8           33       31.3         -      1  -> sp5
-   @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
-   @> Saving 46 channels and 9 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
-   @> Channel calculation completed in 8.70s.
+    @> Frame/model: 0
+    @> Frame/model: 14
+    @> Frame/model: 28
+    @> Frame/model: 42
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.26s.
+    @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.26s.
+    @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.27s.
+    @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.26s.
+    @> Delaunay tessellation of 77434 points constructed in 3.79s.
+    @> Delaunay tessellation of 77434 points constructed in 3.82s.
+    @> Delaunay tessellation of 77434 points constructed in 3.86s.
+    @> Delaunay tessellation of 77434 points constructed in 3.96s.
+    @> Surface and inner simplices filtered in 4.52s.
+    @> Surface and inner simplices filtered in 4.62s.
+    @> Surface and inner simplices filtered in 4.72s.
+    @> Surface and inner simplices filtered in 4.69s.
+    @> Cavities: 427 found, 7 deeper than min_depth=5.0 Å and searched for channels, in 1.09s.
+    @> Cavities: 395 found, 10 deeper than min_depth=5.0 Å and searched for channels, in 1.02s.
+    @> Cavities: 430 found, 14 deeper than min_depth=5.0 Å and searched for channels, in 1.03s.
+    @> Chambers (probe 1.40 Å): 1 of the 7 searched cavities have them; the other 6 are searched whole.
+    @>     cavity 0: 26 chambers, 3 of them seeded.
+    @> 9 search sites (sp) in 0.06s: one per seeded chamber, one per cavity searched whole.
+    @> Chambers (probe 1.40 Å): 1 of the 10 searched cavities have them; the other 9 are searched whole.
+    @>     cavity 0: 21 chambers, 6 of them seeded.
+    @> 15 search sites (sp) in 0.05s: one per seeded chamber, one per cavity searched whole.
+    @> Chambers (probe 1.40 Å): 3 of the 14 searched cavities have them; the other 12 are searched whole.
+    @>     cavity 0: 10 chambers, 3 of them seeded.
+    @>     cavity 1: 5 chambers, 2 of them seeded.
+    @>     cavity 2: 1 chamber, none of them deep and large enough to seed; searched whole.
+    @> 17 search sites (sp) in 0.06s: one per seeded chamber, one per cavity searched whole.
+    @> Cavities: 407 found, 6 deeper than min_depth=5.0 Å and searched for channels, in 1.11s.
+    @> Chambers (probe 1.40 Å): 2 of the 6 searched cavities have them; the other 5 are searched whole.
+    @>     cavity 0: 14 chambers, 7 of them seeded.
+    @>     cavity 3: 1 chamber, none of them deep and large enough to seed; searched whole.
+    @> 12 search sites (sp) in 0.09s: one per seeded chamber, one per cavity searched whole.
+    @> Channel search (Dijkstra) over 9 search sites in 7 cavities completed in 0.68s.
+    @> Found 10 channels and 1 link (a link joins a deep chamber to a shallower one and never reaches the surface).
+    @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
+    @>     site  start_point [Å]            void                   volume [Å³]  depth [Å]  channels  links
+    @>     sp0   [0.207, -2.294, 0.217]     cavity 0, chamber 1/3         1659       18.0         5      -
+    @>     sp1   [1.720, 5.813, -4.600]     cavity 1, whole                249        9.5         -      -  sealed
+    @>     sp2   [10.209, -4.149, -10.750]  cavity 2, whole                248        6.8         -      -  sealed
+    @>     sp3   [1.601, -2.764, 18.972]    cavity 3, whole                128        5.3         -      -  sealed
+    @>     sp4   [7.917, 7.068, 11.712]     cavity 0, chamber 2/3           79        8.3         3      -
+    @>     sp5   [-8.408, -3.405, 3.548]    cavity 0, chamber 3/3           79       13.9         1      1  -> sp0
+    @>     sp6   [-17.069, -2.605, -8.273]  cavity 4, whole                 57        5.7         1      -
+    @>     sp7   [21.624, 2.747, -2.671]    cavity 5, whole                 54        5.0         -      -  sealed
+    @>     sp8   [10.419, -6.575, 11.068]   cavity 6, whole                 51        5.0         -      -  sealed
+    @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
+    @> The 5 sites marked sealed above report neither a channel nor a link: no route out of them survived - either narrower than bottleneck=0.80 Å, or dropped as a duplicate of a shallower site's, or the void is its own mouth and has nowhere to path to. Lower bottleneck to see how the first kind connect.
+    @> Saving 10 channels and 1 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
+    @> Channel calculation completed in 10.41s.
+    @> Frame/model: 29
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> Channel search (Dijkstra) over 17 search sites in 14 cavities completed in 0.68s.
+    @> Found 14 channels and 1 link (a link joins a deep chamber to a shallower one and never reaches the surface).
+    @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
+    @>     site  start_point [Å]             void                   volume [Å³]  depth [Å]  channels  links
+    @>     sp0   [2.849, 3.805, 1.723]       cavity 0, chamber 1/3         1452       17.0         1      1  -> sp9
+    @>     sp1   [7.937, 7.759, -18.866]     cavity 2, whole                862        5.3         1      -
+    @>     sp2   [6.445, -4.187, 1.319]      cavity 3, whole                286        9.4         1      -
+    @>     sp3   [10.134, -1.611, 16.422]    cavity 4, whole                259        5.2         1      -
+    @>     sp4   [10.849, 9.741, -14.429]    cavity 5, whole                254        6.6         1      -
+    @>     sp5   [6.663, 9.509, -9.781]      cavity 6, whole                198        6.7         -      -  sealed
+    @>     sp6   [12.916, -12.369, -13.735]  cavity 7, whole                158        6.2         1      -
+    @>     sp7   [16.390, -2.596, -3.483]    cavity 8, whole                138        6.5         1      -
+    @>     sp8   [-5.321, 4.623, -12.118]    cavity 9, whole                126        6.0         -      -  sealed
+    @>     sp9   [5.156, 9.023, 11.677]      cavity 0, chamber 2/3          108        5.3         1      -
+    @>     sp10  [13.626, -8.476, -18.577]   cavity 10, whole               103        8.1         -      -  sealed
+    @>     sp11  [-5.706, 2.245, -19.519]    cavity 11, whole                93        8.2         -      -  sealed
+    @>     sp12  [-19.199, -1.418, 6.458]    cavity 12, whole                80        6.1         -      -  sealed
+    @>     sp13  [-10.068, -0.839, -15.343]  cavity 1, chamber 1/2           68        7.6         2      -
+    @>     sp14  [13.306, 9.826, 14.612]     cavity 0, chamber 3/3           67        6.6         3      -
+    @>     sp15  [4.655, -11.752, -19.758]   cavity 1, chamber 2/2           57       11.3         -      -  sealed
+    @>     sp16  [8.421, 10.488, -5.750]     cavity 13, whole                56        6.0         1      -
+    @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
+    @> The 6 sites marked sealed above report neither a channel nor a link: no route out of them survived - either narrower than bottleneck=0.80 Å, or dropped as a duplicate of a shallower site's, or the void is its own mouth and has nowhere to path to. Lower bottleneck to see how the first kind connect.
+    @> Saving 14 channels and 1 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
+    @> Channel calculation completed in 10.52s.
+    ..
+    ..
+    @> Frame/model: 209
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.27s.
+    @> Surface and inner simplices filtered in 3.24s.
+    @> Delaunay tessellation of 77434 points constructed in 2.92s.
+    @> Cavities: 426 found, 10 deeper than min_depth=5.0 Å and searched for channels, in 1.21s.
+    @> Chambers (probe 1.40 Å): 3 of the 10 searched cavities have them; the other 8 are searched whole.
+    @>     cavity 0: 19 chambers, 6 of them seeded.
+    @>     cavity 1: 3 chambers, 1 of them seeded.
+    @>     cavity 2: 1 chamber, none of them deep and large enough to seed; searched whole.
+    @> 15 search sites (sp) in 0.08s: one per seeded chamber, one per cavity searched whole.
+    @> Channel search (Dijkstra) over 15 search sites in 10 cavities completed in 0.95s.
+    @> Found 23 channels and 5 links (a link joins a deep chamber to a shallower one and never reaches the surface).
+    @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
+    @>     site  start_point [Å]             void                   volume [Å³]  depth [Å]  channels  links
+    @>     sp0   [-0.638, 0.102, 11.113]     cavity 0, chamber 1/6         2363       11.8         8      1  -> sp5
+    @>     sp1   [-4.464, 5.343, 18.136]     cavity 0, chamber 2/6          312        7.2         3      1  -> sp0
+    @>     sp2   [12.452, -9.233, -18.570]   cavity 2, whole                277        7.3         -      -  sealed
+    @>     sp3   [-12.397, -2.858, -5.864]   cavity 0, chamber 3/6          252       12.2         1      2  -> sp0, sp8
+    @>     sp4   [-0.434, 1.617, -17.901]    cavity 3, whole                251       14.2         -      -  sealed
+    @>     sp5   [-11.826, -3.055, 12.025]   cavity 0, chamber 4/6          245        5.0         1      -
+    @>     sp6   [-19.476, -1.969, 5.627]    cavity 4, whole                216        5.0         1      -
+    @>     sp7   [7.010, 7.107, -13.851]     cavity 1, chamber 1/1          153        7.0         4      -
+    @>     sp8   [-9.600, -2.217, -14.903]   cavity 0, chamber 5/6          104        7.9         2      1  -> sp0
+    @>     sp9   [13.423, 11.216, -10.429]   cavity 5, whole                103        5.6         -      -  sealed
+    @>     sp10  [-13.508, -7.888, 5.904]    cavity 6, whole                 77        5.3         -      -  sealed
+    @>     sp11  [13.864, -5.668, -20.527]   cavity 7, whole                 75        5.1         -      -  sealed
+    @>     sp12  [-2.816, -11.821, -18.928]  cavity 0, chamber 6/6           68        7.1         3      -
+    @>     sp13  [-5.556, 4.193, -12.621]    cavity 8, whole                 68        5.8         -      -  sealed
+    @>     sp14  [2.454, 10.766, -11.349]    cavity 9, whole                 65        5.8         -      -  sealed
+    @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
+    @> The 7 sites marked sealed above report neither a channel nor a link: no route out of them survived - either narrower than bottleneck=0.80 Å, or dropped as a duplicate of a shallower site's, or the void is its own mouth and has nowhere to path to. Lower bottleneck to see how the first kind connect.
+    @> Saving 23 channels and 5 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
+    @> Channel calculation completed in 8.65s.
+    @> Surface and inner simplices filtered in 3.31s.
+    @> Cavities: 465 found, 10 deeper than min_depth=5.0 Å and searched for channels, in 1.01s.
+    @> Chambers (probe 1.40 Å): 2 of the 10 searched cavities have them; the other 9 are searched whole.
+    @>     cavity 0: 14 chambers, 6 of them seeded.
+    @>     cavity 1: 1 chamber, none of them deep and large enough to seed; searched whole.
+    @> 15 search sites (sp) in 0.07s: one per seeded chamber, one per cavity searched whole.
+    @> Channel search (Dijkstra) over 15 search sites in 10 cavities completed in 0.79s.
+    @> Found 29 channels and 6 links (a link joins a deep chamber to a shallower one and never reaches the surface).
+    @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
+    @>     site  start_point [Å]             void                   volume [Å³]  depth [Å]  channels  links
+    @>     sp0   [-0.147, -1.002, 11.590]    cavity 0, chamber 1/6         2514       10.2         8      2  -> sp4, sp8
+    @>     sp1   [-3.179, -12.027, -18.873]  cavity 1, whole               1306        5.5         3      -
+    @>     sp2   [8.754, -6.592, -8.759]     cavity 2, whole                353        6.1         1      -
+    @>     sp3   [4.492, -10.888, -18.088]   cavity 3, whole                322        5.3         1      -
+    @>     sp4   [-9.973, -4.802, 11.669]    cavity 0, chamber 2/6          250        5.1         2      -
+    @>     sp5   [-16.283, 2.060, -12.027]   cavity 4, whole                207        5.6         1      -
+    @>     sp6   [-12.836, -2.186, -6.064]   cavity 0, chamber 3/6          202       26.7         1      1  -> sp14
+    @>     sp7   [-5.381, 5.295, 18.108]     cavity 0, chamber 4/6          195        7.6         4      2  -> sp0, sp0
+    @>     sp8   [7.487, 7.767, -15.132]     cavity 0, chamber 5/6          141        6.5         4      -
+    @>     sp9   [15.039, 7.514, 13.112]     cavity 5, whole                116        6.3         1      -
+    @>     sp10  [11.920, 10.767, -3.445]    cavity 6, whole                 69        5.2         1      -
+    @>     sp11  [15.516, -5.408, -20.311]   cavity 7, whole                 64        5.1         -      -  sealed
+    @>     sp12  [15.229, 9.710, -7.024]     cavity 8, whole                 62        5.0         -      -  sealed
+    @>     sp13  [19.533, 3.245, -0.270]     cavity 9, whole                 62        5.1         1      -
+    @>     sp14  [-6.792, -3.004, -5.696]    cavity 0, chamber 6/6           60       20.4         1      1  -> sp0
+    @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
+    @> The 2 sites marked sealed above report neither a channel nor a link: no route out of them survived - either narrower than bottleneck=0.80 Å, or dropped as a duplicate of a shallower site's, or the void is its own mouth and has nowhere to path to. Lower bottleneck to see how the first kind connect.
+    @> Saving 29 channels and 6 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
+    @> Channel calculation completed in 8.36s.
 
 
 Once the channels are identified, a function called
@@ -1115,37 +1084,68 @@ such as ``min_end_to_end`` and ``min_bottleneck``.
 
 .. parsed-literal::
 
-   [[<prody.proteins.channels.Channel at 0x723a25804250>,
-     <prody.proteins.channels.Channel at 0x723a258043d0>,
-     <prody.proteins.channels.Channel at 0x723a258044c0>,
-     <prody.proteins.channels.Channel at 0x723a25804610>,
-     <prody.proteins.channels.Channel at 0x723a25804700>,
-     <prody.proteins.channels.Channel at 0x723a25804820>,
-     <prody.proteins.channels.Channel at 0x723a258048e0>,
-     <prody.proteins.channels.Channel at 0x723a25804a00>,
-     <prody.proteins.channels.Channel at 0x723a25804af0>,
-     <prody.proteins.channels.Channel at 0x723a25804c10>,
-     <prody.proteins.channels.Channel at 0x723a25804d00>,
-     <prody.proteins.channels.Channel at 0x723a25804e50>,
-     <prody.proteins.channels.Channel at 0x723a25804f10>,
-     <prody.proteins.channels.Channel at 0x723a25805060>,
-     <prody.proteins.channels.Channel at 0x723a25805120>,
-     <prody.proteins.channels.Channel at 0x723a25805240>,
-     <prody.proteins.channels.Channel at 0x723a25805390>],
-    [<prody.proteins.channels.Channel at 0x723a25805480>,
-     <prody.proteins.channels.Channel at 0x723a258055a0>,
-     <prody.proteins.channels.Channel at 0x723a25805690>,
-     <prody.proteins.channels.Channel at 0x723a25805780>,
-     <prody.proteins.channels.Channel at 0x723a258058a0>,
-     <prody.proteins.channels.Channel at 0x723a25805990>,
-     <prody.proteins.channels.Channel at 0x723a25805a80>,
+    [[],
+     [<prody.proteins.channels.Channel at 0x7fce751db340>,
+      <prody.proteins.channels.Channel at 0x7fce751db310>],
+     [],
+     [],
+     [],
+     [<prody.proteins.channels.Channel at 0x7fce74086290>,
+      <prody.proteins.channels.Channel at 0x7fce740849d0>],
+     [],
+     [],
+     [],
+     [],
+     [],
+     [],
+     [],
+     [<prody.proteins.channels.Channel at 0x7fce74087a00>,
+      <prody.proteins.channels.Channel at 0x7fce740849a0>,
+      <prody.proteins.channels.Channel at 0x7fce74086500>],
+     [],
+     [],
+     [],
+     [],
+     [],
+     [],
+     [],
+     [],
+     [],
+     [],
+     [],
+     [],
+     [],
+     [],
+     [<prody.proteins.channels.Channel at 0x7fcd75423130>,
+      <prody.proteins.channels.Channel at 0x7fcd75423940>],
+     [],
+     [],
+     [],
+     [<prody.proteins.channels.Channel at 0x7fcd75423e80>,
+      <prody.proteins.channels.Channel at 0x7fcd754218d0>],
+     [],
+     [<prody.proteins.channels.Channel at 0x7fce02987640>,
+      <prody.proteins.channels.Channel at 0x7fce02986f80>,
+      <prody.proteins.channels.Channel at 0x7fce029845e0>,
+      <prody.proteins.channels.Channel at 0x7fce02985600>,
+      <prody.proteins.channels.Channel at 0x7fce029877c0>,
+      <prody.proteins.channels.Channel at 0x7fce029845b0>],
+     [<prody.proteins.channels.Channel at 0x7fce02984ee0>,
+      <prody.proteins.channels.Channel at 0x7fce02985570>,
+      <prody.proteins.channels.Channel at 0x7fce02985ba0>],
+     [],
      ..
-     <prody.proteins.channels.Channel at 0x723a76160c40>,
-     <prody.proteins.channels.Channel at 0x723a76161ed0>,
-     <prody.proteins.channels.Channel at 0x723a76161bd0>,
-     <prody.proteins.channels.Channel at 0x723a76162ce0>,
-     <prody.proteins.channels.Channel at 0x723a76160130>,
-     <prody.proteins.channels.Channel at 0x723a76160430>]]
+     ..
+     [<prody.proteins.channels.Channel at 0x7fce02000580>,
+      <prody.proteins.channels.Channel at 0x7fce020006d0>,
+      <prody.proteins.channels.Channel at 0x7fce02000880>],
+     [],
+     [],
+     [],
+     [],
+     [],
+     [],
+     []]
 
 
 .. ipython:: python
@@ -1155,602 +1155,366 @@ such as ``min_end_to_end`` and ``min_bottleneck``.
 
 .. parsed-literal::
 
-   @> Frame/model: 0
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 1
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	707.21 		83.72 		0.82
-   @> pore 1: 	724.46 		85.46 		0.82
-   @> Frame/model: 2
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 3
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 4
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 5
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 6
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 7
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 8
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 9
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 10
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 11
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 12
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 13
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 14
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 15
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 16
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 17
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 18
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 19
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 20
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 21
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 22
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 23
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 24
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 25
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 26
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 27
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 28
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 29
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 30
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 31
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 32
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	701.25 		69.59 		0.9
-   @> pore 1: 	709.49 		70.43 		0.9
-   @> pore 2: 	709.35 		72.61 		0.9
-   @> pore 3: 	724.86 		72.81 		0.9
-   @> pore 4: 	656.23 		68.74 		0.9
-   @> pore 5: 	664.47 		69.57 		0.9
-   @> pore 6: 	664.33 		71.75 		0.9
-   @> pore 7: 	667.89 		70.18 		0.9
-   @> pore 8: 	676.13 		71.02 		0.9
-   @> pore 9: 	675.99 		73.2 		0.9
-   @> pore 10: 	667.69 		71.78 		0.83
-   @> pore 11: 	675.93 		72.61 		0.83
-   @> pore 12: 	675.79 		74.79 		0.83
-   @> pore 13: 	678.16 		74.01 		0.9
-   @> pore 14: 	686.26 		77.03 		0.9
-   @> Frame/model: 33
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 34
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	689.31 		66.51 		0.84
-   @> pore 1: 	855.15 		76.99 		0.84
-   @> pore 2: 	877.82 		78.06 		0.84
-   @> Frame/model: 35
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 36
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 37
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	861.31 		72.16 		0.84
-   @> pore 1: 	858.31 		73.62 		0.84
-   @> pore 2: 	847.59 		73.02 		0.84
-   @> pore 3: 	865.16 		75.06 		0.84
-   @> Frame/model: 38
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 39
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 40
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 41
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 42
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 43
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 44
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 45
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 46
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 47
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	820.01 		65.24 		0.93
-   @> Frame/model: 48
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 49
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 50
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 51
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 52
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 53
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 54
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 55
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 56
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 57
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	893.65 		60.69 		0.86
-   @> Frame/model: 58
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 59
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 60
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 61
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	930.42 		66.35 		0.83
-   @> Frame/model: 62
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 63
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 64
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 65
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 66
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 67
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 68
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 69
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	1176.59 	70.54 		0.91
-   @> pore 1: 	1164.71 	70.27 		0.82
-   @> pore 2: 	1108.46 	75.52 		0.81
-   @> pore 3: 	1186.28 	72.98 		0.91
-   @> pore 4: 	1174.4 		72.7 		0.82
-   @> pore 5: 	1057.83 	77.63 		0.81
-   @> pore 6: 	1167.48 	72.58 		0.89
-   @> pore 7: 	1155.6 		72.3 		0.82
-   @> pore 8: 	1099.35 	77.56 		0.81
-   @> pore 9: 	1076.07 	79.94 		0.81
-   @> Frame/model: 70
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 71
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 72
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 73
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 74
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 75
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 76
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 77
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 78
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 79
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 80
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 81
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	795.21 		67.59 		0.81
-   @> Frame/model: 82
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 83
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	1108.72 	65.41 		0.88
-   @> Frame/model: 84
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 85
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 86
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 87
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 88
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 89
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 90
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 91
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 92
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 93
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	1144.18 	68.3 		0.86
-   @> pore 1: 	1060.45 	68.18 		0.86
-   @> pore 2: 	1085.82 	69.92 		0.86
-   @> pore 3: 	942.95 		68.95 		0.86
-   @> Frame/model: 94
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 95
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 96
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 97
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	830.66 		60.01 		0.86
-   @> pore 1: 	833.23 		60.23 		0.83
-   @> pore 2: 	858.98 		66.3 		0.85
-   @> pore 3: 	805.77 		60.0 		0.87
-   @> pore 4: 	808.33 		60.23 		0.83
-   @> pore 5: 	834.08 		66.3 		0.85
-   @> pore 6: 	782.83 		63.5 		0.86
-   @> pore 7: 	785.39 		63.73 		0.83
-   @> pore 8: 	801.0 		67.76 		0.84
-   @> pore 9: 	811.14 		69.8 		0.85
-   @> pore 10: 	798.51 		66.21 		0.87
-   @> pore 11: 	801.08 		66.44 		0.83
-   @> pore 12: 	816.69 		70.47 		0.84
-   @> pore 13: 	826.83 		72.5 		0.85
-   @> Frame/model: 98
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 99
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	1238.29 	69.38 		0.99
-   @> pore 1: 	1213.77 	69.32 		1.05
-   @> pore 2: 	1154.92 	72.43 		0.9
-   @> Frame/model: 100
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	989.59 		63.76 		0.91
-   @> pore 1: 	860.23 		64.99 		0.89
-   @> pore 2: 	862.52 		66.36 		0.8
-   @> Frame/model: 101
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	968.66 		70.49 		0.9
-   @> pore 1: 	934.0 		71.32 		0.84
-   @> Frame/model: 102
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 103
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 104
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 105
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 106
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 107
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 108
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 109
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 110
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	966.59 		65.25 		1.02
-   @> pore 1: 	962.3 		66.72 		1.04
-   @> pore 2: 	967.57 		68.76 		1.05
-   @> pore 3: 	943.48 		69.54 		0.91
-   @> pore 4: 	1016.2 		68.52 		1.04
-   @> pore 5: 	1021.47 	70.56 		1.05
-   @> pore 6: 	980.77 		68.13 		1.04
-   @> pore 7: 	986.04 		70.16 		1.05
-   @> pore 8: 	960.28 		67.83 		1.04
-   @> pore 9: 	965.55 		69.86 		1.05
-   @> Frame/model: 111
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	1034.87 	62.91 		1.06
-   @> pore 1: 	1065.49 	63.72 		1.06
-   @> pore 2: 	1053.66 	63.97 		1.06
-   @> pore 3: 	1041.08 	68.13 		0.81
-   @> Frame/model: 112
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	948.16 		64.22 		0.81
-   @> pore 1: 	864.89 		64.85 		0.81
-   @> Frame/model: 113
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 114
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 115
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 116
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	876.28 		69.2 		0.82
-   @> pore 1: 	889.76 		74.78 		0.82
-   @> pore 2: 	898.28 		75.65 		0.82
-   @> pore 3: 	911.33 		76.67 		0.82
-   @> Frame/model: 117
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	998.54 		64.7 		0.88
-   @> pore 1: 	983.81 		65.91 		0.88
-   @> pore 2: 	973.74 		72.61 		0.88
-   @> Frame/model: 118
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	1046.85 	68.35 		0.92
-   @> pore 1: 	1040.18 	68.24 		0.81
-   @> pore 2: 	980.96 		71.31 		0.92
-   @> pore 3: 	974.29 		71.19 		0.81
-   @> pore 4: 	1054.73 	68.35 		0.99
-   @> pore 5: 	1004.6 		68.69 		0.99
-   @> pore 6: 	1032.15 	74.8 		0.92
-   @> pore 7: 	1025.48 	74.69 		0.81
-   @> pore 8: 	1040.33 	75.56 		0.9
-   @> pore 9: 	1062.8 		69.78 		0.99
-   @> pore 10: 	1012.67 	70.13 		0.99
-   @> pore 11: 	1040.22 	76.24 		0.92
-   @> pore 12: 	1033.55 	76.12 		0.81
-   @> pore 13: 	1048.4 		77.0 		0.9
-   @> pore 14: 	742.19 		68.97 		0.81
-   @> pore 15: 	884.19 		67.34 		0.85
-   @> pore 16: 	834.06 		67.69 		0.85
-   @> pore 17: 	861.61 		73.78 		0.85
-   @> pore 18: 	854.94 		73.67 		0.81
-   @> pore 19: 	869.79 		74.55 		0.85
-   @> pore 20: 	791.32 		66.88 		0.85
-   @> pore 21: 	741.2 		67.22 		0.85
-   @> pore 22: 	768.74 		73.33 		0.85
-   @> pore 23: 	762.08 		73.21 		0.81
-   @> pore 24: 	776.93 		74.09 		0.85
-   @> Frame/model: 119
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 120
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 121
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 122
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 123
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 124
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 125
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 126
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	943.17 		68.97 		0.82
-   @> pore 1: 	870.09 		71.6 		0.82
-   @> pore 2: 	875.44 		76.61 		0.82
-   @> pore 3: 	877.86 		78.0 		0.82
-   @> pore 4: 	880.76 		78.43 		0.82
-   @> Frame/model: 127
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 128
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 129
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 130
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 131
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 132
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	712.66 		76.07 		0.81
-   @> Frame/model: 133
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 134
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 135
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 136
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 137
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 138
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 139
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 140
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 141
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 142
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 143
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 144
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 145
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 146
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 147
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 148
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 149
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	850.56 		66.88 		0.88
-   @> pore 1: 	846.51 		65.5 		0.89
-   @> pore 2: 	843.03 		68.95 		0.88
-   @> pore 3: 	823.02 		69.18 		0.88
-   @> pore 4: 	805.46 		69.65 		0.88
-   @> Frame/model: 150
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	826.42 		65.89 		0.9
-   @> pore 1: 	808.95 		65.19 		0.9
-   @> pore 2: 	856.57 		67.05 		0.9
-   @> pore 3: 	815.74 		66.1 		0.9
-   @> pore 4: 	776.43 		65.71 		0.9
-   @> pore 5: 	758.96 		65.01 		0.9
-   @> pore 6: 	806.58 		66.87 		0.9
-   @> pore 7: 	765.75 		65.92 		0.9
-   @> pore 8: 	819.02 		68.64 		0.9
-   @> pore 9: 	801.55 		67.94 		0.9
-   @> pore 10: 	849.17 		69.8 		0.9
-   @> pore 11: 	808.35 		68.85 		0.9
-   @> Frame/model: 151
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 152
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 153
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 154
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> Frame/model: 155
-   @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
-   @> pore 0: 	886.15 		67.7 		0.88
-   @> pore 1: 	852.29 		62.77 		0.99
-   @> pore 2: 	887.65 		63.75 		0.99
-   @> pore 3: 	870.92 		65.88 		0.99
-   @> pore 4: 	861.77 		69.53 		0.99
-   @> pore 5: 	860.44 		69.12 		0.91
-   @> pore 6: 	851.76 		69.59 		0.88
-   @> pore 7: 	854.81 		70.82 		0.88
-   @> pore 8: 	887.56 		66.04 		0.99
-   @> pore 9: 	922.92 		67.02 		0.99
-   @> pore 10: 	906.19 		69.15 		0.99
-   @> pore 11: 	897.04 		72.8 		0.99
-   @> pore 12: 	895.7 		72.4 		0.91
-   @> pore 13: 	887.02 		72.86 		0.88
-   @> pore 14: 	985.69 		73.86 		0.99
-   @> pore 15: 	1021.04 	74.84 		0.99
-   @> pore 16: 	1004.31 	76.97 		0.99
-   @> pore 17: 	995.17 		80.62 		0.99
-   @> pore 18: 	993.83 		80.21 		0.91
-   @> pore 19: 	985.15 		80.68 		0.88
-   @> pore 20: 	988.2 		81.91 		0.88
-   @> pore 21: 	947.58 		73.15 		0.99
-   @> pore 22: 	982.93 		74.13 		0.99
-   @> pore 23: 	966.2 		76.26 		0.99
-   @> pore 24: 	957.06 		79.91 		0.99
-   @> pore 25: 	955.72 		79.5 		0.91
-   @> pore 26: 	947.04 		79.97 		0.88
-   @> pore 27: 	950.1 		81.2 		0.88
-   @> pore 28: 	906.84 		71.65 		0.99
-   @> pore 29: 	942.2 		72.63 		0.99
-   @> pore 30: 	925.47 		74.76 		0.99
-   @> pore 31: 	916.32 		78.41 		0.99
-   @> pore 32: 	914.98 		78.0 		0.91
-   @> pore 33: 	906.31 		78.47 		0.88
-   @> pore 34: 	909.36 		79.7 		0.88
-   @> pore 35: 	856.95 		76.3 		0.88
-   @> pore 36: 	856.12 		75.86 		0.88
-   @> pore 37: 	680.2 		72.13 		0.81
-   @> pore 38: 	678.86 		71.72 		0.81
-   @> pore 39: 	670.19 		72.18 		0.81
-   @> pore 40: 	915.94 		80.73 		0.96
-   @> pore 41: 	906.79 		84.38 		0.96
-   @> pore 42: 	905.46 		83.98 		0.91
-   @> pore 43: 	896.78 		84.44 		0.88
-   @> pore 44: 	688.33 		73.15 		0.81
-   @> pore 45: 	686.99 		72.74 		0.81
-   @> pore 46: 	678.31 		73.2 		0.81
-   @> pore 47: 	885.53 		83.95 		0.86
-   ..
-   ..
-
-
-   [([], [], []),
-    ([83.72181023903833, 85.46162472147293],
-     [0.8227300033137241, 0.8227300033137241],
-     [707.2123815585367, 724.4646694011919]),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([], [], []),
-    ([69.5949898851407,
-      70.42852451372993,
-      72.60822067706627,
-      72.81313607212425,
-      68.73784984146138,
-      69.57114702715292,
-      71.75016583222246,
-      70.18230030971134,
-      71.01620131367125,
-      73.19713589126198,
-      71.78021275467378,
-      72.61364881055758,
-      74.7936466868367,
-      74.00589255027344,
-      77.026290787233],
-     [0.9034884486107735,
-      0.9034884486107735,
-      0.9034884486107735,
-      0.9034884486107735,
-      0.9034884486107735,
-      0.9034884486107735,
-      0.9034884486107735,
-      0.9034884486107735,
-      0.9034884486107735,
-      0.9034884486107735,
-      0.825794417769907,
-      0.825794417769907,
-      0.825794417769907,
-      0.9034884486107735,
-      0.9034884486107735],
-     [701.2501227800298,
-      709.4917858287764,
-      709.3492774145426,
-      724.8622564896269,
-      656.2258665272245,
-      664.4675295759711,
-      664.3250211617374,
-      667.8930749725629,
-      676.1347380213094,
-      675.9922296070758,
-      667.6876949427416,
-      675.9293579914882,
-      675.7868495772544,
-      678.1626699366484,
-      686.2618245711614]),
-    ([], [], []),
-    ([66.50699517343948, 76.99357439825909, 78.05759150154641],
-     [0.8411005602059334, 0.8411005602059334, 0.8411005602059334],
-     [689.3078797713896, 855.1473499011635, 877.821764326892]),
-    ([], [], []),
-    ([], [], []),
-    ([72.1598121093621, 73.6212787291321, 73.01609384001452, 75.06090159160428],
-     [0.8383209859042193,
-      0.8383209859042193,
-      0.8383209859042193,
-      0.8383209859042193],
-     [861.3065768018067,
-      858.3125545315595,
-      847.5870240474648,
-      865.1578695365567]),
-     ..
-     ..
+    @> Frame/model: 0
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 1
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	774.03 		80.74 		0.86
+    @> pore 1: 	681.92 		80.16 		0.82
+    @> Frame/model: 2
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 3
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 4
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 5
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	518.94 		70.07 		0.87
+    @> pore 1: 	532.15 		74.59 		0.82
+    @> Frame/model: 6
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 7
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 8
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 9
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 10
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 11
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 12
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 13
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	508.17 		66.15 		0.88
+    @> pore 1: 	509.16 		68.02 		0.88
+    @> pore 2: 	534.39 		73.1 		0.87
+    @> Frame/model: 14
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 15
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 16
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 17
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 18
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 19
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 20
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 21
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 22
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 23
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 24
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 25
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 26
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 27
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 28
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	582.59 		63.76 		0.8
+    @> pore 1: 	535.51 		66.24 		0.8
+    @> Frame/model: 29
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 30
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 31
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 32
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	650.39 		65.52 		0.9
+    @> pore 1: 	622.7 		68.91 		0.9
+    @> Frame/model: 33
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 34
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	823.69 		65.27 		0.84
+    @> pore 1: 	837.65 		64.92 		0.84
+    @> pore 2: 	780.47 		81.5 		0.84
+    @> pore 3: 	794.44 		81.15 		0.84
+    @> pore 4: 	761.93 		79.41 		0.82
+    @> pore 5: 	775.9 		79.05 		0.82
+    @> Frame/model: 35
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	1057.82 		69.9 		0.87
+    @> pore 1: 	1040.13 		74.77 		0.83
+    @> pore 2: 	916.87 		80.29 		0.86
+    @> Frame/model: 36
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 37
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	1043.23 		63.57 		0.92
+    @> pore 1: 	1016.1 		66.41 		0.83
+    @> pore 2: 	963.0 		67.85 		0.92
+    @> pore 3: 	935.87 		70.69 		0.83
+    @> pore 4: 	761.93 		68.75 		0.89
+    @> pore 5: 	734.8 		71.59 		0.83
+    @> pore 6: 	694.4 		68.46 		0.83
+    @> pore 7: 	834.84 		74.68 		0.92
+    @> pore 8: 	807.71 		77.52 		0.83
+    @> Frame/model: 38
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 39
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 40
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 41
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 42
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 43
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	747.63 		61.4 		0.9
+    @> pore 1: 	760.39 		59.34 		0.85
+    @> pore 2: 	813.97 		66.84 		0.9
+    @> Frame/model: 44
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 45
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	777.37 		58.3 		0.95
+    @> pore 1: 	843.23 		68.85 		0.94
+    @> Frame/model: 46
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 47
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 48
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 49
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 50
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 51
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 52
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 53
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 54
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 55
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 56
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 57
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	848.18 		58.4 		1.03
+    @> pore 1: 	983.04 		66.61 		1.03
+    @> Frame/model: 58
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 59
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 60
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 61
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	867.36 		62.78 		0.83
+    @> Frame/model: 62
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 63
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 64
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 65
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 66
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 67
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 68
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 69
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	950.59 		60.48 		0.91
+    @> pore 1: 	1228.6 		69.39 		0.91
+    @> pore 2: 	1074.47 		73.45 		0.81
+    @> pore 3: 	1024.73 		75.32 		0.81
+    @> Frame/model: 70
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	794.43 		59.76 		0.84
+    @> Frame/model: 71
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 72
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 73
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 74
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 75
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 76
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 77
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	858.71 		60.98 		0.85
+    @> pore 1: 	904.72 		70.78 		0.85
+    @> pore 2: 	933.39 		78.19 		0.85
+    @> pore 3: 	929.62 		78.33 		0.85
+    @> pore 4: 	922.12 		64.96 		0.85
+    @> pore 5: 	968.13 		74.77 		0.85
+    @> pore 6: 	996.8 		82.18 		0.85
+    @> pore 7: 	868.02 		63.47 		0.85
+    @> Frame/model: 78
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 79
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	1107.55 		61.82 		1.01
+    @> Frame/model: 80
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 81
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	824.6 		61.16 		0.81
+    @> pore 1: 	728.69 		61.67 		0.81
+    @> pore 2: 	743.21 		64.14 		0.81
+    @> Frame/model: 82
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	844.62 		78.14 		0.82
+    @> Frame/model: 83
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	1032.92 		61.17 		0.88
+    @> Frame/model: 84
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 85
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 86
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 87
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 88
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 89
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 90
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 91
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 92
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 93
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	1073.37 		63.18 		0.86
+    @> pore 1: 	1002.4 		63.44 		0.86
+    @> pore 2: 	895.82 		64.82 		0.86
+    @> Frame/model: 94
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 95
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 96
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 97
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	762.15 		56.28 		0.86
+    @> pore 1: 	733.51 		60.53 		0.86
+    @> pore 2: 	749.75 		64.37 		0.84
+    @> Frame/model: 98
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 99
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	1126.54 		65.58 		1.05
+    @> pore 1: 	1062.73 		68.34 		0.9
+    @> pore 2: 	1092.38 		69.42 		0.92
+    @> Frame/model: 100
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	784.64 		61.2 		0.89
+    @> Frame/model: 101
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	1003.78 		62.12 		0.9
+    @> pore 1: 	916.19 		66.54 		0.9
+    @> Frame/model: 102
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 103
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 104
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 105
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	948.68 		64.64 		0.82
+    @> pore 1: 	912.68 		65.21 		0.89
+    @> Frame/model: 106
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 107
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 108
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 109
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 110
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	924.87 		65.63 		1.05
+    @> pore 1: 	980.78 		67.67 		1.05
+    @> pore 2: 	789.28 		62.62 		0.83
+    @> Frame/model: 111
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	1029.69 		61.31 		1.06
+    @> pore 1: 	1049.5 		69.1 		0.83
+    @> pore 2: 	958.11 		63.95 		0.81
+    @> Frame/model: 112
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	873.44 		60.3 		0.81
+    @> pore 1: 	653.81 		70.02 		0.8
+    @> pore 2: 	703.69 		75.01 		0.81
+    @> Frame/model: 113
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 114
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	1007.88 		61.73 		0.86
+    @> Frame/model: 115
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> Frame/model: 116
+    @> Pore ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
+    @> pore 0: 	1006.55 		65.56 		0.82
+    @> pore 1: 	859.21 		66.44 		0.82
+    @> pore 2: 	860.92 		72.12 		0.82
+    ..
+    ..
+     ([72.5582537353563, 78.84971226529137, 76.7582392743217],
+      [0.8275522707399434, 0.8275522707399434, 0.8275522707399434],
+      [826.3574064922473, 929.3639019541449, 889.9899716000948]),
+     ([], [], []),
+     ([], [], []),
+     ([], [], []),
+     ([65.3589430375765, 74.15422479015022, 74.92814257640121],
+      [0.8880888092106989, 0.8880888092106989, 0.8758236837301101],
+      [739.1995744742641, 805.1452880694223, 816.2549748183264]),
+     ([], [], []),
+     ([], [], []),
+     ([], [], []),
+     ([], [], []),
+     ([], [], []),
+     ([], [], []),
+     ([], [], []),
+     ([], [], []),
+     ([], [], []),
+     ([], [], []),
+     ([], [], []),
+     ([], [], []),
+     ([], [], []),
+     ([], [], []),
+     ([], [], []),
+     ([62.97142106551004, 64.34877600845904, 64.74572580571376],
+      [0.9221146872063575, 0.9221146872063575, 0.8444739252098838],
+      [775.374631951892, 793.2050133606698, 780.1167351262897]),
+     ([], [], []),
+     ([], [], []),
+     ([], [], []),
+     ([], [], []),
+     ([64.80745598856693, 67.76127705446518, 65.95463897280592],
+      [0.8274116417737531, 0.8238053792078694, 0.8238053792078694],
+      [702.743437435241, 712.5019876375803, 672.3391897473211]),
+     ([], [], []),
+     ([], [], []),
+     ([], [], []),
+     ([], [], []),
+     ([], [], []),
+     ([], [], []),
+     ([], [], [])]
 
 
 To visualize the results directly in ProDy create the model and use
@@ -1855,46 +1619,47 @@ Next, the residues that are forming the pores can be identified using
    ..
    ..
 
-
-    ['pore0: ASP33:P, ASN34:P, LEU37:P, THR38:P, VAL41:P, ILE44:P, GLU120:P, ASP121:P, LYS122:P, ASP123:P, GLU127:P, ASN128:P, VAL131:P, GLY132:P, PHE135:P, LYS138:P, GLN142:P, SER196:P, SER200:P, MET204:P, LEU207:P, ALA208:P, TYR211:P, THR212:P, ARG217:P, VAL220:P, MET221:P, LEU225:P, LEU228:P, VAL232:P, GLU312:P, PRO313:P, LEU315:P, PRO316:P, ILE317:P, TRP318:P, PHE334:P, TYR341:P, MET403:P, GLY407:P, ASP411:P, TYR418:P, TYR422:P, ALA425:P, ASP426:P, PHE429:P, TYR433:P',
-     'pore1: ASP33:P, ASN34:P, LEU37:P, THR38:P, VAL41:P, ILE44:P, GLU120:P, ASP121:P, LYS122:P, ASP123:P, GLU127:P, ASN128:P, VAL131:P, GLY132:P, PHE135:P, LYS138:P, GLN142:P, SER196:P, SER200:P, MET204:P, LEU207:P, ALA208:P, TYR211:P, ASP214:P, GLU215:P, ARG217:P, GLY218:P, VAL220:P, MET221:P, LEU225:P, LEU228:P, VAL232:P, GLU312:P, PRO313:P, LEU315:P, PRO316:P, ILE317:P, TRP318:P, PHE334:P, TYR341:P, ARG357:P, MET403:P, PRO404:P, GLY407:P, TYR422:P, ALA425:P, ASP426:P, PHE429:P, TYR433:P',
-     'pore2: ASP33:P, ASN34:P, LEU37:P, THR38:P, VAL41:P, ILE44:P, GLU120:P, ASP121:P, LYS122:P, ASP123:P, GLU127:P, ASN128:P, VAL131:P, GLY132:P, PHE135:P, LYS138:P, GLN142:P, SER196:P, SER200:P, MET204:P, LEU207:P, ALA208:P, TYR211:P, ASP214:P, GLU215:P, ARG217:P, GLY218:P, VAL220:P, MET221:P, LEU225:P, LEU228:P, VAL232:P, GLU312:P, PRO313:P, LEU315:P, PRO316:P, ILE317:P, TRP318:P, PHE334:P, TYR341:P, ARG357:P, MET403:P, PRO404:P, GLY407:P, TYR422:P, ALA425:P, ASP426:P, PHE429:P, TYR433:P',
-     'pore3: ASP33:P, ASN34:P, LEU37:P, THR38:P, VAL41:P, PRO42:P, ILE44:P, SER46:P, ASN128:P, VAL131:P, GLY132:P, PHE135:P, LYS138:P, GLN142:P, SER196:P, SER200:P, MET204:P, LEU207:P, ALA208:P, TYR211:P, THR212:P, ARG217:P, VAL220:P, MET221:P, LEU225:P, LEU228:P, VAL232:P, GLU312:P, PRO313:P, ILE317:P, TRP318:P, MET319:P, GLU321:P, THR322:P, MET323:P, ARG326:P, LYS327:P, TRP328:P, GLN329:P, LEU330:P, PHE334:P, TYR341:P, MET403:P, GLY407:P, ASP411:P, TYR418:P, TYR422:P, ALA425:P, ASP426:P, PHE429:P, TYR433:P'],
-    [],
-    [],
-    [],
-    ['pore0: LEU30:P, ASN34:P, LEU37:P, THR38:P, VAL41:P, ILE44:P, GLU120:P, ASN128:P, GLN130:P, VAL131:P, GLY132:P, PHE135:P, LYS138:P, GLN142:P, SER200:P, MET204:P, ALA208:P, TYR211:P, THR212:P, ARG217:P, MET221:P, ALA224:P, LEU225:P, LEU228:P, VAL232:P, ILE308:P, GLU312:P, PRO313:P, ILE317:P, TRP318:P, PHE334:P, TYR341:P, MET403:P, PRO404:P, GLY407:P, ASP411:P, TYR418:P, TYR422:P, ASP426:P, PHE429:P, TYR433:P',
-     'pore1: LEU30:P, ASN34:P, LEU37:P, THR38:P, VAL41:P, PRO42:P, ILE43:P, ILE44:P, SER46:P, VAL131:P, GLY132:P, PHE135:P, LYS138:P, GLN142:P, SER200:P, MET204:P, ALA208:P, TYR211:P, THR212:P, ARG217:P, MET221:P, ALA224:P, LEU225:P, LEU228:P, VAL232:P, TYR243:P, GLU244:P, ILE308:P, GLU312:P, PRO313:P, ILE317:P, TRP318:P, MET319:P, MET320:P, THR322:P, MET323:P, SER325:P, LEU330:P, PHE334:P, TYR341:P, MET403:P, PRO404:P, GLY407:P, ASP411:P, TYR418:P, TYR422:P, ASP426:P, PHE429:P, TYR433:P',
-     'pore2: LEU30:P, ASN34:P, LEU37:P, THR38:P, VAL41:P, PRO42:P, ILE44:P, VAL131:P, GLY132:P, PHE135:P, LYS138:P, GLN142:P, SER200:P, MET204:P, ALA208:P, TYR211:P, THR212:P, ARG217:P, MET221:P, ALA224:P, LEU225:P, LEU228:P, VAL232:P, ILE308:P, GLU312:P, PRO313:P, ILE317:P, TRP318:P, MET319:P, GLU321:P, THR322:P, ARG326:P, LYS327:P, TRP328:P, GLN329:P, LEU330:P, PHE334:P, TYR341:P, MET403:P, PRO404:P, GLY407:P, ASP411:P, TYR418:P, TYR422:P, ASP426:P, PHE429:P, TYR433:P',
-     'pore3: LEU30:P, ASN34:P, LEU37:P, THR38:P, VAL41:P, PRO42:P, ILE44:P, VAL131:P, GLY132:P, PHE135:P, LYS138:P, GLN142:P, SER200:P, MET204:P, ALA208:P, TYR211:P, THR212:P, ARG217:P, MET221:P, ALA224:P, LEU225:P, LEU228:P, VAL232:P, ILE308:P, GLU312:P, PRO313:P, ILE317:P, TRP318:P, MET319:P, GLU321:P, THR322:P, ARG326:P, LYS327:P, TRP328:P, GLN329:P, LEU330:P, PHE334:P, TYR341:P, MET403:P, PRO404:P, GLY407:P, ASP411:P, TYR418:P, TYR422:P, ASP426:P, PHE429:P, TYR433:P'],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    []]
+     ['pore0: LEU30:P, ASP33:P, ASN34:P, LEU37:P, THR38:P, VAL40:P, VAL41:P, ILE44:P, GLU120:P, ASP121:P, LYS122:P, ASP123:P, LEU124:P, GLU127:P, ASN128:P, VAL131:P, GLY132:P, PHE135:P, LYS138:P, GLN142:P, SER196:P, SER200:P, MET204:P, LEU207:P, ALA208:P, TYR211:P, THR212:P, ARG217:P, VAL220:P, MET221:P, LEU225:P, LEU228:P, VAL232:P, GLU312:P, PRO313:P, LEU315:P, PRO316:P, ILE317:P, TRP318:P, PHE334:P, TYR341:P, MET403:P, GLY407:P, ASP411:P, TYR418:P, TYR422:P, ALA425:P, ASP426:P, PHE429:P, CYS430:P, TYR433:P',
+      'pore1: LEU30:P, ASP33:P, ASN34:P, LEU37:P, THR38:P, VAL40:P, VAL41:P, ILE44:P, GLU120:P, ASP121:P, LYS122:P, ASP123:P, LEU124:P, GLU127:P, ASN128:P, VAL131:P, GLY132:P, PHE135:P, LYS138:P, GLN142:P, SER196:P, SER200:P, MET204:P, LEU207:P, ALA208:P, TYR211:P, ASP214:P, GLU215:P, ARG217:P, GLY218:P, ASN219:P, VAL220:P, MET221:P, LEU225:P, LEU228:P, VAL232:P, GLU312:P, PRO313:P, LEU315:P, PRO316:P, ILE317:P, TRP318:P, PHE334:P, TYR341:P, PHE348:P, HSP353:P, ARG357:P, MET403:P, PRO404:P, GLY407:P, TYR422:P, ALA425:P, ASP426:P, PHE429:P, CYS430:P, TYR433:P',
+      'pore2: LEU30:P, ASP33:P, ASN34:P, LEU37:P, THR38:P, VAL40:P, VAL41:P, PRO42:P, ILE44:P, SER46:P, ASN128:P, VAL131:P, GLY132:P, PHE135:P, LYS138:P, GLN142:P, SER196:P, SER200:P, MET204:P, LEU207:P, ALA208:P, TYR211:P, THR212:P, ARG217:P, VAL220:P, MET221:P, LEU225:P, LEU228:P, VAL232:P, GLU312:P, PRO313:P, ILE317:P, TRP318:P, MET319:P, MET320:P, GLU321:P, THR322:P, MET323:P, ARG326:P, LYS327:P, TRP328:P, GLN329:P, LEU330:P, PHE334:P, TYR341:P, MET403:P, GLY407:P, ASP411:P, TYR418:P, TYR422:P, ALA425:P, ASP426:P, PHE429:P, CYS430:P, TYR433:P'],
+     [],
+     [],
+     [],
+     ['pore0: LEU30:P, ASN34:P, LEU37:P, THR38:P, VAL41:P, ILE44:P, GLU120:P, ASN128:P, GLN130:P, VAL131:P, GLY132:P, PHE135:P, LYS138:P, GLN142:P, SER200:P, MET204:P, ALA208:P, SER209:P, TYR211:P, THR212:P, ARG217:P, MET221:P, ALA224:P, LEU225:P, LEU228:P, VAL232:P, ILE308:P, GLU312:P, PRO313:P, ILE317:P, TRP318:P, PHE334:P, TYR341:P, MET403:P, PRO404:P, GLY407:P, ASP411:P, TYR418:P, TYR422:P, ASP426:P, PHE429:P, TYR433:P',
+      'pore1: LEU30:P, ASN34:P, LEU37:P, THR38:P, VAL41:P, PRO42:P, ILE44:P, SER46:P, VAL131:P, GLY132:P, PHE135:P, LYS138:P, GLN142:P, SER200:P, MET204:P, ALA208:P, SER209:P, TYR211:P, THR212:P, ARG217:P, MET221:P, ALA224:P, LEU225:P, LEU228:P, VAL232:P, ILE308:P, GLU312:P, PRO313:P, ILE317:P, TRP318:P, MET319:P, MET320:P, GLU321:P, THR322:P, ARG326:P, LYS327:P, TRP328:P, GLN329:P, LEU330:P, PHE334:P, TYR341:P, MET403:P, PRO404:P, GLY407:P, ASP411:P, TYR418:P, TYR422:P, ASP426:P, PHE429:P, TYR433:P',
+      'pore2: LEU30:P, ASN34:P, LEU37:P, THR38:P, VAL41:P, PRO42:P, ILE43:P, ILE44:P, SER46:P, VAL131:P, GLY132:P, PHE135:P, LYS138:P, GLN142:P, SER200:P, MET204:P, ALA208:P, SER209:P, TYR211:P, THR212:P, ARG217:P, MET221:P, ALA224:P, LEU225:P, LEU228:P, VAL232:P, TYR243:P, GLU244:P, ILE308:P, GLU312:P, PRO313:P, ILE317:P, TRP318:P, MET319:P, MET320:P, THR322:P, MET323:P, SER325:P, LEU330:P, PHE334:P, TYR341:P, MET403:P, PRO404:P, GLY407:P, ASP411:P, TYR418:P, TYR422:P, ASP426:P, PHE429:P, TYR433:P'],
+     [],
+     [],
+     [],
+     [],
+     [],
+     [],
+     [],
+     [],
+     [],
+     [],
+     [],
+     [],
+     [],
+     [],
+     [],
+     ['pore0: ARG17:P, ILE22:P, ILE25:P, VAL26:P, ALA29:P, LEU30:P, ASP33:P, ASN34:P, LEU37:P, THR38:P, VAL41:P, LYS122:P, LEU124:P, ASN128:P, VAL131:P, GLY132:P, PHE135:P, LYS138:P, GLN142:P, TYR158:P, PRO159:P, ILE162:P, SER196:P, SER199:P, SER200:P, GLY203:P, MET206:P, LEU228:P, VAL232:P, VAL269:P, LEU270:P, GLN276:P, ILE308:P, GLU312:P, PRO313:P, ALA314:P, LEU315:P, PRO316:P, ILE317:P, TRP318:P, PHE334:P, TYR341:P, ASP426:P, PHE429:P, TYR433:P',
+      'pore1: ARG17:P, ILE22:P, ILE25:P, VAL26:P, ALA29:P, LEU30:P, ASP33:P, ASN34:P, LEU37:P, THR38:P, VAL41:P, GLU120:P, ASP121:P, LYS122:P, ASP123:P, LEU124:P, GLU127:P, ASN128:P, VAL131:P, GLY132:P, PHE135:P, LYS138:P, GLN142:P, TYR158:P, PRO159:P, ILE162:P, SER196:P, SER199:P, SER200:P, GLY203:P, MET206:P, LEU228:P, VAL232:P, VAL269:P, LEU270:P, GLN276:P, ILE308:P, GLU312:P, PRO313:P, LEU315:P, ILE317:P, TRP318:P, PHE334:P, TYR341:P, ASP426:P, PHE429:P, TYR433:P',
+      'pore2: ARG17:P, ILE22:P, ILE25:P, VAL26:P, ALA29:P, LEU30:P, ASP33:P, ASN34:P, LEU37:P, THR38:P, VAL41:P, LYS122:P, ASP123:P, LEU124:P, GLU127:P, ASN128:P, VAL131:P, GLY132:P, PHE135:P, LYS138:P, GLN142:P, TYR158:P, PRO159:P, ILE162:P, SER196:P, SER199:P, SER200:P, GLY203:P, MET206:P, LEU228:P, VAL232:P, VAL269:P, LEU270:P, GLN276:P, ILE308:P, GLU312:P, PRO313:P, LEU315:P, ILE317:P, TRP318:P, PHE334:P, TYR341:P, ASP426:P, PHE429:P, TYR433:P'],
+     [],
+     [],
+     [],
+     [],
+     ['pore0: VAL26:P, LEU30:P, ASP33:P, ASN34:P, LEU37:P, THR38:P, VAL40:P, VAL41:P, GLU120:P, ASP121:P, LYS122:P, ASP123:P, LEU124:P, GLU127:P, ASN128:P, VAL131:P, PHE135:P, LYS138:P, GLN142:P, ARG189:P, SER196:P, SER200:P, MET204:P, LEU207:P, ALA208:P, SER209:P, TYR211:P, THR212:P, ARG217:P, VAL220:P, MET221:P, ALA224:P, LEU225:P, LEU228:P, VAL232:P, ILE308:P, GLU312:P, PRO313:P, LEU315:P, ILE317:P, TRP318:P, PHE334:P, TYR341:P, MET403:P, TYR418:P, ASP426:P, PHE429:P, TYR433:P',
+      'pore1: VAL26:P, LEU30:P, ASP33:P, ASN34:P, LEU37:P, THR38:P, VAL40:P, VAL41:P, GLU120:P, ASP121:P, LYS122:P, ASP123:P, LEU124:P, GLU127:P, ASN128:P, VAL131:P, PHE135:P, LYS138:P, GLN142:P, ARG189:P, SER196:P, SER200:P, MET204:P, LEU207:P, ALA208:P, TYR211:P, THR212:P, ASP213:P, ASP214:P, ARG217:P, VAL220:P, MET221:P, ALA224:P, LEU225:P, LEU228:P, VAL232:P, ILE308:P, GLU312:P, PRO313:P, LEU315:P, ILE317:P, TRP318:P, PHE334:P, TYR341:P, MET403:P, ASP411:P, TYR418:P, ASP426:P, PHE429:P, TYR433:P',
+      'pore2: VAL26:P, LEU30:P, ASP33:P, ASN34:P, LEU37:P, THR38:P, VAL40:P, VAL41:P, ILE44:P, GLU120:P, ASN128:P, GLN130:P, VAL131:P, LEU134:P, PHE135:P, LYS138:P, GLN142:P, ARG189:P, SER196:P, SER200:P, MET204:P, LEU207:P, ALA208:P, TYR211:P, THR212:P, ASP213:P, ASP214:P, ARG217:P, VAL220:P, MET221:P, ALA224:P, LEU225:P, LEU228:P, VAL232:P, ILE308:P, GLU312:P, ILE317:P, TRP318:P, PHE334:P, TYR341:P, MET403:P, ASP411:P, TYR418:P, ASP426:P, PHE429:P, TYR433:P'],
+     [],
+     [],
+     [],
+     [],
+     [],
+     [],
+     []]
 
 
 III. Identification of surface cavities in molecular dynamics (MD) trajectory
