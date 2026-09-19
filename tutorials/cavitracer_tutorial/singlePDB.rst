@@ -750,7 +750,7 @@ representation used during the CaviTracer calculation:
 .. ipython:: python
    :verbatim:
 
-   writeChimeraXCaviTracerScript(cavities, protein, 
+   writeChimeraXCaviTracerScript(cavities, atoms, 
 		object_type='surface_cavities', surface=surface)
 
 In this case, the generated script is:
@@ -765,7 +765,7 @@ Chamber links can be visualized in the same way:
 .. ipython:: python
    :verbatim:
 
-   writeChimeraXCaviTracerScript(links, protein, object_type='links')
+   writeChimeraXCaviTracerScript(links, atoms, object_type='links')
 
 
 Connected channel-surface cavity systems can also be prepared for ChimeraX:
@@ -773,7 +773,7 @@ Connected channel-surface cavity systems can also be prepared for ChimeraX:
 .. ipython:: python
    :verbatim:
 
-   writeChimeraXCaviTracerScript(connected, protein, 
+   writeChimeraXCaviTracerScript(connected, atoms, 
 		object_type='connected_cavities_channels', surface=surface)
 
 
