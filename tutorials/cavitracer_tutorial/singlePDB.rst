@@ -572,7 +572,6 @@ undisplayed, as shown bellow.
    :scale: 50 %
 
 
-
 Visualization in VMD
 -------------------------------------------------------------------------------
 
@@ -680,6 +679,102 @@ before using this functionality.
 
 .. figure:: images/cavitracer_figure28.jpg
    :scale: 50 %
+
+The same visualization in PyMol can be obtained using after predicting the
+channels or pores using :func:`.writePyMolCaviTracerScript`.
+
+
+.. ipython:: python
+   :verbatim:
+
+   writePyMolCaviTracerScript(channels, atoms)
+
+
+Visualization in ChimeraX
+-------------------------------------------------------------------------------
+
+CaviTracer results can also be visualized in UCSF ChimeraX. A ChimeraX
+command file can be generated using :func:writeChimeraXCaviTracerScript.
+
+.. ipython:: python
+   :verbatim:
+
+   writeChimeraXCaviTracerScript(channels, atoms)
+
+
+The function generates three files in the current directory:
+
+.. code-block:: text
+
+   protein.pdb
+   channels.pqr
+   vis_channels.cxc
+
+The generated ChimeraX script loads both the protein structure and the
+CaviTracer results, applies the visualization settings, and assigns the
+CaviTracer-derived local radii to the channel points.
+
+The visualization can be opened directly from the command line:
+
+.. code-block:: console
+
+   $ chimerax vis_channels.cxc
+
+
+.. figure:: images/cavitracer_figure42.jpg
+   :scale: 50 %
+
+In all visualizations (VMD, PyMol, and ChimeraX) channels are displayed as
+spheres whose radii correspond to the local channel radii calculated by 
+CaviTracer. Individual channels are shown in different colors. The protein 
+is displayed as a cartoon together with a transparent molecular surface.
+
+The same function can be used to visualize pores:
+
+.. ipython:: python
+   :verbatim:
+
+   writeChimeraXCaviTracerScript(pores, atoms, object_type='pores')
+
+This generates:
+
+.. code-block:: text
+
+   protein.pdb
+   pores.pqr
+   vis_pores.cxc
+
+Surface cavities can be visualized by additionally providing the surface
+representation used during the CaviTracer calculation:
+
+.. ipython:: python
+   :verbatim:
+
+   writeChimeraXCaviTracerScript(cavities, protein, 
+		object_type='surface_cavities', surface=surface)
+
+In this case, the generated script is:
+
+.. code-block:: text
+
+   vis_surface_cavities.cxc
+
+
+Chamber links can be visualized in the same way:
+
+.. ipython:: python
+   :verbatim:
+
+   writeChimeraXCaviTracerScript(links, protein, object_type='links')
+
+
+Connected channel-surface cavity systems can also be prepared for ChimeraX:
+
+.. ipython:: python
+   :verbatim:
+
+   writeChimeraXCaviTracerScript(connected, protein, 
+		object_type='connected_cavities_channels', surface=surface)
 
 
 II. Detection of surface cavities in a single PDB structure
