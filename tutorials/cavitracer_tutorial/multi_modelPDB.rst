@@ -845,78 +845,81 @@ when ``separate`` parameter is set.
 
 .. parsed-literal::
 
-   @> Frame/model: 0
-   @> Frame/model: 3
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Substituted 2360 atoms with 30586 homogeneous balls of radius 1.20 Å in 0.17s.
-   @> Substituted 2360 atoms with 30586 homogeneous balls of radius 1.20 Å in 0.15s.
-   @> Delaunay tessellation of 30586 points constructed in 1.36s.
-   @> Delaunay tessellation of 30586 points constructed in 1.42s.
-   @> Surface and inner simplices filtered in 0.45s.
-   @> Surface and inner simplices filtered in 0.42s.
-   @> Surface cavities: 244 found, 26 deeper than min_depth=1.5 Å and kept, in 0.31s.
-   @> Surface cavities: 238 found, 26 deeper than min_depth=1.5 Å and kept, in 0.31s.
-   @> Returning surface cavities
-   @> Saving multiple surface cavities to directory ..
-   @> Surface cavity calculation completed in 2.43s.
-   @> Frame/model: 1
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Returning surface cavities
-   @> Saving multiple surface cavities to directory ..
-   @> Surface cavity calculation completed in 2.46s.
-   @> Frame/model: 4
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Substituted 2360 atoms with 30586 homogeneous balls of radius 1.20 Å in 0.10s.
-   @> Substituted 2360 atoms with 30586 homogeneous balls of radius 1.20 Å in 0.11s.
-   @> Delaunay tessellation of 30586 points constructed in 1.28s.
-   @> Delaunay tessellation of 30586 points constructed in 1.36s.
-   @> Surface and inner simplices filtered in 0.43s.
-   @> Surface and inner simplices filtered in 0.40s.
-   @> Surface cavities: 232 found, 32 deeper than min_depth=1.5 Å and kept, in 0.30s.
-   @> Surface cavities: 220 found, 28 deeper than min_depth=1.5 Å and kept, in 0.29s.
-   @> Returning surface cavities
-   @> Saving multiple surface cavities to directory ..
-   @> Surface cavity calculation completed in 2.26s.
-   @> Frame/model: 2
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Returning surface cavities
-   @> Saving multiple surface cavities to directory ..
-   @> Surface cavity calculation completed in 2.31s.
-   ..
-   @> Frame/model: 17
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Substituted 2360 atoms with 30586 homogeneous balls of radius 1.20 Å in 0.11s.
-   @> Delaunay tessellation of 30586 points constructed in 1.21s.
-   @> Surface and inner simplices filtered in 0.43s.
-   @> Delaunay tessellation of 30586 points constructed in 1.23s.
-   @> Surface cavities: 221 found, 23 deeper than min_depth=1.5 Å and kept, in 0.30s.
-   @> Returning surface cavities
-   @> Saving multiple surface cavities to directory ..
-   @> Surface cavity calculation completed in 2.19s.
-   @> Surface and inner simplices filtered in 0.40s.
-   @> Frame/model: 18
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Substituted 2360 atoms with 30586 homogeneous balls of radius 1.20 Å in 0.10s.
-   @> Surface cavities: 255 found, 25 deeper than min_depth=1.5 Å and kept, in 0.33s.
-   @> Returning surface cavities
-   @> Saving multiple surface cavities to directory ..
-   @> Surface cavity calculation completed in 2.22s.
-   @> Delaunay tessellation of 30586 points constructed in 1.22s.
-   @> Surface and inner simplices filtered in 0.38s.
-   @> Surface cavities: 216 found, 25 deeper than min_depth=1.5 Å and kept, in 0.28s.
-   @> Returning surface cavities
-   @> Saving multiple surface cavities to directory ..
-   @> Surface cavity calculation completed in 2.13s.
-   @> Frame/model: 19
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Substituted 2360 atoms with 30586 homogeneous balls of radius 1.20 Å in 0.10s.
-   @> Delaunay tessellation of 30586 points constructed in 1.17s.
-   @> Surface and inner simplices filtered in 0.39s.
-   @> Surface cavities: 230 found, 25 deeper than min_depth=1.5 Å and kept, in 0.27s.
-   @> Returning surface cavities
-   @> Saving multiple surface cavities to directory ..
-   @> Surface cavity calculation completed in 2.07s.
+    @> Frame/model: 0
+    @> Frame/model: 3
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> The structure carries its hydrogens (101% of what a complete protein would hold), so inner_radius=1.50 is more conservative than it needs to be: the 1.2 Å floor exists only to keep a sub-water probe out of the space that missing hydrogens leave open, and here that space is filled. A smaller probe, down to about 0.9 Å, measures the narrow connections instead of reporting them closed.
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> The structure carries its hydrogens (101% of what a complete protein would hold), so inner_radius=1.50 is more conservative than it needs to be: the 1.2 Å floor exists only to keep a sub-water probe out of the space that missing hydrogens leave open, and here that space is filled. A smaller probe, down to about 0.9 Å, measures the narrow connections instead of reporting them closed.
+    @> Substituted 2360 atoms with 30586 homogeneous balls of radius 1.20 Å in 0.11s.
+    @> Substituted 2360 atoms with 30586 homogeneous balls of radius 1.20 Å in 0.11s.
+    @> Delaunay tessellation of 30586 points constructed in 1.33s.
+    @> Delaunay tessellation of 30586 points constructed in 1.36s.
+    @> Surface and inner simplices filtered in 0.38s.
+    @> Surface and inner simplices filtered in 0.39s.
+    @> Cavities: 238 found, 26 deeper than min_depth=1.5 Å and kept, in 0.22s.
+    @> Cavities: 244 found, 26 deeper than min_depth=1.5 Å and kept, in 0.23s.
+    @> Returning surface cavities
+    @> Saving multiple surface cavities to directory ..
+    @> Surface cavity calculation completed in 2.16s.
+    @> Frame/model: 4
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> The structure carries its hydrogens (101% of what a complete protein would hold), so inner_radius=1.50 is more conservative than it needs to be: the 1.2 Å floor exists only to keep a sub-water probe out of the space that missing hydrogens leave open, and here that space is filled. A smaller probe, down to about 0.9 Å, measures the narrow connections instead of reporting them closed.
+    @> Returning surface cavities
+    @> Saving multiple surface cavities to directory ..
+    @> Surface cavity calculation completed in 2.20s.
+    @> Frame/model: 1
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> The structure carries its hydrogens (101% of what a complete protein would hold), so inner_radius=1.50 is more conservative than it needs to be: the 1.2 Å floor exists only to keep a sub-water probe out of the space that missing hydrogens leave open, and here that space is filled. A smaller probe, down to about 0.9 Å, measures the narrow connections instead of reporting them closed.
+    @> Substituted 2360 atoms with 30586 homogeneous balls of radius 1.20 Å in 0.10s.
+    @> Substituted 2360 atoms with 30586 homogeneous balls of radius 1.20 Å in 0.10s.
+    @> Delaunay tessellation of 30586 points constructed in 1.26s.
+    @> Delaunay tessellation of 30586 points constructed in 1.30s.
+    @> Surface and inner simplices filtered in 0.38s.
+    @> Surface and inner simplices filtered in 0.36s.
+    @> Cavities: 220 found, 28 deeper than min_depth=1.5 Å and kept, in 0.21s.
+    @> Cavities: 232 found, 32 deeper than min_depth=1.5 Å and kept, in 0.21s.
+    @> Returning surface cavities
+    @> Saving multiple surface cavities to directory ..
+    @> Surface cavity calculation completed in 2.07s.
+    ..
+    ..
+    @> Frame/model: 17
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> The structure carries its hydrogens (101% of what a complete protein would hold), so inner_radius=1.50 is more conservative than it needs to be: the 1.2 Å floor exists only to keep a sub-water probe out of the space that missing hydrogens leave open, and here that space is filled. A smaller probe, down to about 0.9 Å, measures the narrow connections instead of reporting them closed.
+    @> Substituted 2360 atoms with 30586 homogeneous balls of radius 1.20 Å in 0.10s.
+    @> Delaunay tessellation of 30586 points constructed in 1.15s.
+    @> Delaunay tessellation of 30586 points constructed in 1.22s.
+    @> Surface and inner simplices filtered in 0.41s.
+    @> Cavities: 221 found, 23 deeper than min_depth=1.5 Å and kept, in 0.21s.
+    @> Surface and inner simplices filtered in 0.38s.
+    @> Returning surface cavities
+    @> Saving multiple surface cavities to directory ..
+    @> Surface cavity calculation completed in 1.98s.
+    @> Frame/model: 18
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> The structure carries its hydrogens (101% of what a complete protein would hold), so inner_radius=1.50 is more conservative than it needs to be: the 1.2 Å floor exists only to keep a sub-water probe out of the space that missing hydrogens leave open, and here that space is filled. A smaller probe, down to about 0.9 Å, measures the narrow connections instead of reporting them closed.
+    @> Cavities: 255 found, 25 deeper than min_depth=1.5 Å and kept, in 0.23s.
+    @> Substituted 2360 atoms with 30586 homogeneous balls of radius 1.20 Å in 0.10s.
+    @> Returning surface cavities
+    @> Saving multiple surface cavities to directory ..
+    @> Surface cavity calculation completed in 2.05s.
+    @> Delaunay tessellation of 30586 points constructed in 1.08s.
+    @> Surface and inner simplices filtered in 0.33s.
+    @> Cavities: 216 found, 25 deeper than min_depth=1.5 Å and kept, in 0.19s.
+    @> Returning surface cavities
+    @> Saving multiple surface cavities to directory ..
+    @> Surface cavity calculation completed in 1.84s.
+    @> Frame/model: 19
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> The structure carries its hydrogens (101% of what a complete protein would hold), so inner_radius=1.50 is more conservative than it needs to be: the 1.2 Å floor exists only to keep a sub-water probe out of the space that missing hydrogens leave open, and here that space is filled. A smaller probe, down to about 0.9 Å, measures the narrow connections instead of reporting them closed.
+    @> Substituted 2360 atoms with 30586 homogeneous balls of radius 1.20 Å in 0.10s.
+    @> Delaunay tessellation of 30586 points constructed in 1.08s.
+    @> Surface and inner simplices filtered in 0.35s.
+    @> Cavities: 230 found, 25 deeper than min_depth=1.5 Å and kept, in 0.20s.
+    @> Returning surface cavities
+    @> Saving multiple surface cavities to directory ..
+    @> Surface cavity calculation completed in 1.85s.
 
 
 Next, we generate a VMD molecular model of the protein, which can be used
@@ -950,249 +953,249 @@ regions of Sortase A.
 
 .. parsed-literal::
 
-   @> Model/frame: 0
-   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	599.86 		6.67 		360
-   @> cavity 1: 	521.74 		4.69 		308
-   @> cavity 2: 	484.91 		6.86 		156
-   @> cavity 3: 	389.91 		4.73 		297
-   @> cavity 4: 	369.42 		8.6 		181
-   @> cavity 5: 	343.3 		6.07 		160
-   @> cavity 6: 	132.38 		3.98 		127
-   @> cavity 7: 	96.49 		3.23 		70
-   @> cavity 8: 	81.99 		3.14 		52
-   @> cavity 9: 	80.0 		2.24 		95
-   @> cavity 10: 	77.69 		1.86 		39
-   @> cavity 11: 	67.58 		3.14 		66
-   @> cavity 12: 	65.45 		3.93 		58
-   @> cavity 13: 	54.74 		1.9 		43
-   @> Model/frame: 1
-   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	1584.91 		7.96 		980
-   @> cavity 1: 	303.16 		4.19 		215
-   @> cavity 2: 	211.44 		6.01 		110
-   @> cavity 3: 	180.99 		4.45 		105
-   @> cavity 4: 	174.84 		6.11 		71
-   @> cavity 5: 	164.29 		2.28 		157
-   @> cavity 6: 	123.68 		3.5 		59
-   @> cavity 7: 	118.85 		3.8 		63
-   @> cavity 8: 	85.18 		5.62 		45
-   @> cavity 9: 	78.4 		2.06 		75
-   @> cavity 10: 	66.94 		2.9 		48
-   @> cavity 11: 	64.48 		4.45 		78
-   @> cavity 12: 	60.96 		1.59 		60
-   @> Model/frame: 2
-   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	1041.57 		7.92 		504
-   @> cavity 1: 	704.89 		5.96 		451
-   @> cavity 2: 	409.74 		6.44 		222
-   @> cavity 3: 	408.56 		8.82 		150
-   @> cavity 4: 	282.52 		6.58 		161
-   @> cavity 5: 	242.03 		6.5 		151
-   @> cavity 6: 	135.95 		2.56 		110
-   @> cavity 7: 	85.45 		2.02 		79
-   @> cavity 8: 	74.31 		3.18 		74
-   @> cavity 9: 	54.49 		1.64 		40
-   @> Model/frame: 3
-   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	743.6 		11.04 		488
-   @> cavity 1: 	645.63 		4.06 		422
-   @> cavity 2: 	533.04 		7.76 		267
-   @> cavity 3: 	498.7 		5.82 		313
-   @> cavity 4: 	316.88 		7.25 		154
-   @> cavity 5: 	186.54 		2.92 		120
-   @> cavity 6: 	120.94 		5.19 		80
-   @> cavity 7: 	113.18 		6.39 		61
-   @> cavity 8: 	104.42 		3.87 		91
-   @> cavity 9: 	67.45 		1.69 		78
-   @> cavity 10: 	65.77 		2.11 		41
-   @> cavity 11: 	53.98 		2.47 		37
-   @> Model/frame: 4
-   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	1013.8 		7.65 		536
-   @> cavity 1: 	538.61 		3.94 		445
-   @> cavity 2: 	427.02 		5.2 		215
-   @> cavity 3: 	316.25 		5.37 		154
-   @> cavity 4: 	297.92 		5.47 		207
-   @> cavity 5: 	207.6 		4.57 		164
-   @> cavity 6: 	185.04 		10.36 		109
-   @> cavity 7: 	121.18 		2.87 		103
-   @> cavity 8: 	83.46 		1.78 		42
-   @> cavity 9: 	74.88 		2.99 		61
-   @> cavity 10: 	66.31 		2.78 		74
-   @> cavity 11: 	53.17 		2.46 		38
-   @> Model/frame: 5
-   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	1313.24 		7.53 		807
-   @> cavity 1: 	420.76 		4.29 		302
-   @> cavity 2: 	359.53 		6.31 		257
-   @> cavity 3: 	285.6 		6.13 		197
-   @> cavity 4: 	270.55 		6.46 		165
-   @> cavity 5: 	105.65 		2.67 		112
-   @> cavity 6: 	87.06 		2.05 		45
-   @> cavity 7: 	86.81 		2.75 		35
-   @> cavity 8: 	71.32 		3.64 		59
-   @> Model/frame: 6
-   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	1894.14 		6.23 		1052
-   @> cavity 1: 	473.35 		5.12 		268
-   @> cavity 2: 	310.75 		5.07 		287
-   @> cavity 3: 	165.67 		4.84 		99
-   @> cavity 4: 	159.91 		8.57 		54
-   @> cavity 5: 	135.33 		3.52 		78
-   @> cavity 6: 	79.55 		4.07 		57
-   @> cavity 7: 	64.64 		2.39 		49
-   @> cavity 8: 	51.42 		2.75 		44
-   @> Model/frame: 7
-   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	1032.11 		5.72 		593
-   @> cavity 1: 	608.6 		7.25 		379
-   @> cavity 2: 	423.08 		4.78 		214
-   @> cavity 3: 	246.54 		7.99 		134
-   @> cavity 4: 	239.05 		2.36 		141
-   @> cavity 5: 	154.19 		3.43 		100
-   @> cavity 6: 	150.54 		2.61 		99
-   @> cavity 7: 	141.99 		4.32 		133
-   @> cavity 8: 	115.31 		3.04 		119
-   @> cavity 9: 	98.74 		2.56 		64
-   @> cavity 10: 	73.49 		2.38 		58
-   @> Model/frame: 8
-   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	813.97 		6.84 		650
-   @> cavity 1: 	582.41 		6.27 		320
-   @> cavity 2: 	440.57 		4.58 		216
-   @> cavity 3: 	378.83 		6.9 		141
-   @> cavity 4: 	326.96 		5.94 		208
-   @> cavity 5: 	160.36 		5.11 		50
-   @> cavity 6: 	108.76 		6.62 		58
-   @> cavity 7: 	69.88 		2.47 		61
-   @> cavity 8: 	67.22 		1.67 		47
-   @> Model/frame: 9
-   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	882.04 		9.36 		364
-   @> cavity 1: 	439.5 		3.4 		309
-   @> cavity 2: 	421.07 		5.14 		266
-   @> cavity 3: 	353.77 		7.89 		129
-   @> cavity 4: 	336.98 		6.57 		215
-   @> cavity 5: 	329.21 		5.73 		199
-   @> cavity 6: 	253.94 		9.67 		192
-   @> cavity 7: 	134.6 		3.55 		116
-   @> cavity 8: 	104.39 		2.85 		37
-   @> cavity 9: 	92.26 		2.23 		54
-   @> cavity 10: 	67.0 		2.6 		61
-   @> cavity 11: 	62.02 		3.27 		69
-   @> cavity 12: 	59.87 		1.75 		47
-   @> cavity 13: 	58.8 		2.42 		43
-   @> cavity 14: 	58.26 		2.93 		46
-   @> Model/frame: 10
-   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	1504.0 		7.49 		826
-   @> cavity 1: 	795.94 		9.65 		441
-   @> cavity 2: 	569.56 		4.85 		361
-   @> cavity 3: 	225.63 		5.36 		149
-   @> cavity 4: 	147.11 		2.94 		111
-   @> cavity 5: 	69.97 		2.38 		70
-   @> Model/frame: 11
-   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	1186.46 		8.9 		538
-   @> cavity 1: 	621.2 		7.71 		364
-   @> cavity 2: 	566.42 		7.08 		399
-   @> cavity 3: 	281.48 		9.79 		205
-   @> cavity 4: 	216.96 		2.89 		177
-   @> cavity 5: 	212.12 		3.74 		132
-   @> cavity 6: 	111.26 		2.34 		90
-   @> cavity 7: 	89.38 		4.16 		53
-   @> cavity 8: 	83.61 		2.76 		86
-   @> cavity 9: 	62.0 		1.95 		49
-   @> Model/frame: 12
-   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	1120.03 		10.15 		651
-   @> cavity 1: 	882.51 		7.9 		516
-   @> cavity 2: 	456.85 		5.46 		271
-   @> cavity 3: 	215.66 		3.72 		122
-   @> cavity 4: 	207.94 		10.73 		120
-   @> cavity 5: 	172.32 		2.87 		133
-   @> cavity 6: 	109.18 		2.52 		71
-   @> cavity 7: 	91.33 		2.13 		50
-   @> Model/frame: 13
-   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	924.55 		12.8 		533
-   @> cavity 1: 	707.43 		4.08 		374
-   @> cavity 2: 	442.47 		4.86 		261
-   @> cavity 3: 	389.81 		5.27 		227
-   @> cavity 4: 	203.99 		5.63 		147
-   @> cavity 5: 	201.09 		4.35 		155
-   @> cavity 6: 	131.22 		6.65 		79
-   @> cavity 7: 	124.74 		2.54 		78
-   @> cavity 8: 	56.42 		2.72 		45
-   @> cavity 9: 	53.6 		3.18 		30
-   @> Model/frame: 14
-   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	1510.06 		6.51 		720
-   @> cavity 1: 	1375.79 		7.96 		682
-   @> cavity 2: 	401.6 		5.37 		234
-   @> cavity 3: 	182.55 		5.62 		66
-   @> cavity 4: 	177.66 		2.57 		120
-   @> cavity 5: 	87.75 		2.78 		67
-   @> cavity 6: 	78.44 		9.66 		56
-   @> Model/frame: 15
-   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	1306.11 		7.56 		810
-   @> cavity 1: 	552.46 		8.72 		323
-   @> cavity 2: 	526.45 		6.51 		396
-   @> cavity 3: 	324.56 		5.79 		197
-   @> cavity 4: 	277.43 		3.4 		148
-   @> cavity 5: 	251.42 		4.28 		162
-   @> cavity 6: 	176.09 		3.27 		135
-   @> cavity 7: 	150.08 		3.24 		105
-   @> cavity 8: 	76.55 		2.33 		47
-   @> cavity 9: 	67.61 		2.09 		55
-   @> Model/frame: 16
-   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	1523.36 		6.69 		874
-   @> cavity 1: 	788.97 		5.88 		370
-   @> cavity 2: 	310.64 		4.03 		183
-   @> cavity 3: 	304.92 		5.95 		213
-   @> cavity 4: 	136.76 		3.72 		123
-   @> cavity 5: 	98.55 		2.16 		73
-   @> cavity 6: 	93.83 		3.51 		104
-   @> cavity 7: 	73.64 		1.64 		59
-   @> cavity 8: 	72.21 		2.3 		54
-   @> cavity 9: 	70.23 		2.41 		38
-   @> Model/frame: 17
-   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	1136.94 		7.07 		599
-   @> cavity 1: 	594.88 		6.76 		399
-   @> cavity 2: 	333.92 		6.15 		240
-   @> cavity 3: 	303.18 		6.35 		229
-   @> cavity 4: 	276.13 		4.08 		174
-   @> cavity 5: 	183.9 		5.73 		109
-   @> cavity 6: 	169.33 		3.03 		127
-   @> cavity 7: 	120.97 		3.08 		66
-   @> cavity 8: 	112.92 		3.02 		90
-   @> Model/frame: 18
-   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	1329.65 		7.74 		620
-   @> cavity 1: 	942.27 		7.62 		585
-   @> cavity 2: 	536.1 		6.4 		378
-   @> cavity 3: 	400.23 		5.67 		248
-   @> cavity 4: 	206.96 		12.19 		114
-   @> cavity 5: 	153.19 		2.51 		107
-   @> cavity 6: 	153.08 		2.18 		118
-   @> cavity 7: 	104.02 		3.82 		43
-   @> cavity 8: 	103.13 		3.3 		89
-   @> cavity 9: 	85.65 		1.84 		68
-   @> cavity 10: 	74.67 		2.51 		68
-   @> Model/frame: 19
-   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	1462.62 		7.46 		873
-   @> cavity 1: 	1243.19 		4.59 		614
-   @> cavity 2: 	546.92 		6.01 		302
-   @> cavity 3: 	273.83 		6.53 		105
-   @> cavity 4: 	154.38 		5.37 		79
-   @> cavity 5: 	151.99 		2.73 		135
-   @> cavity 6: 	58.85 		3.6 		52
-   @> cavity 7: 	57.84 		2.29 		47
+    @> Model/frame: 0
+    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+    @> cavity 0: 	599.86 		6.67 		360
+    @> cavity 1: 	521.74 		4.69 		308
+    @> cavity 2: 	484.91 		6.86 		156
+    @> cavity 3: 	389.91 		4.73 		297
+    @> cavity 4: 	369.42 		8.6 		181
+    @> cavity 5: 	343.3 		6.07 		160
+    @> cavity 6: 	132.38 		3.98 		127
+    @> cavity 7: 	96.49 		3.23 		70
+    @> cavity 8: 	81.99 		3.14 		52
+    @> cavity 9: 	80.0 		2.24 		95
+    @> cavity 10: 	77.69 		1.86 		39
+    @> cavity 11: 	67.58 		3.14 		66
+    @> cavity 12: 	65.45 		3.93 		58
+    @> cavity 13: 	54.74 		1.9 		43
+    @> Model/frame: 1
+    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+    @> cavity 0: 	1584.91 		7.96 		980
+    @> cavity 1: 	303.16 		4.19 		215
+    @> cavity 2: 	211.44 		6.01 		110
+    @> cavity 3: 	180.99 		4.45 		105
+    @> cavity 4: 	174.84 		6.11 		71
+    @> cavity 5: 	164.29 		2.28 		157
+    @> cavity 6: 	123.68 		3.5 		59
+    @> cavity 7: 	118.85 		3.8 		63
+    @> cavity 8: 	85.18 		5.62 		45
+    @> cavity 9: 	78.4 		2.06 		75
+    @> cavity 10: 	66.94 		2.9 		48
+    @> cavity 11: 	64.48 		4.45 		78
+    @> cavity 12: 	60.96 		1.59 		60
+    @> Model/frame: 2
+    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+    @> cavity 0: 	1041.57 		7.92 		504
+    @> cavity 1: 	704.89 		5.96 		451
+    @> cavity 2: 	409.74 		6.44 		222
+    @> cavity 3: 	408.56 		8.82 		150
+    @> cavity 4: 	282.52 		6.58 		161
+    @> cavity 5: 	242.03 		6.5 		151
+    @> cavity 6: 	135.95 		2.56 		110
+    @> cavity 7: 	85.45 		2.02 		79
+    @> cavity 8: 	74.31 		3.18 		74
+    @> cavity 9: 	54.49 		1.64 		40
+    @> Model/frame: 3
+    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+    @> cavity 0: 	743.6 		11.04 		488
+    @> cavity 1: 	645.63 		4.06 		422
+    @> cavity 2: 	533.04 		7.76 		267
+    @> cavity 3: 	498.7 		5.82 		313
+    @> cavity 4: 	316.88 		7.25 		154
+    @> cavity 5: 	186.54 		2.92 		120
+    @> cavity 6: 	120.94 		5.19 		80
+    @> cavity 7: 	113.18 		6.39 		61
+    @> cavity 8: 	104.42 		3.87 		91
+    @> cavity 9: 	67.45 		1.69 		78
+    @> cavity 10: 	65.77 		2.11 		41
+    @> cavity 11: 	53.98 		2.47 		37
+    @> Model/frame: 4
+    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+    @> cavity 0: 	1013.8 		7.65 		536
+    @> cavity 1: 	538.61 		3.94 		445
+    @> cavity 2: 	427.02 		5.2 		215
+    @> cavity 3: 	316.25 		5.37 		154
+    @> cavity 4: 	297.92 		5.47 		207
+    @> cavity 5: 	207.6 		4.57 		164
+    @> cavity 6: 	185.04 		10.36 		109
+    @> cavity 7: 	121.18 		2.87 		103
+    @> cavity 8: 	83.46 		1.78 		42
+    @> cavity 9: 	74.88 		2.99 		61
+    @> cavity 10: 	66.31 		2.78 		74
+    @> cavity 11: 	53.17 		2.46 		38
+    @> Model/frame: 5
+    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+    @> cavity 0: 	1313.24 		7.53 		807
+    @> cavity 1: 	420.76 		4.29 		302
+    @> cavity 2: 	359.53 		6.31 		257
+    @> cavity 3: 	285.6 		6.13 		197
+    @> cavity 4: 	270.55 		6.46 		165
+    @> cavity 5: 	105.65 		2.67 		112
+    @> cavity 6: 	87.06 		2.05 		45
+    @> cavity 7: 	86.81 		2.75 		35
+    @> cavity 8: 	71.32 		3.64 		59
+    @> Model/frame: 6
+    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+    @> cavity 0: 	1894.14 		6.23 		1052
+    @> cavity 1: 	473.35 		5.12 		268
+    @> cavity 2: 	310.75 		5.07 		287
+    @> cavity 3: 	165.67 		4.84 		99
+    @> cavity 4: 	159.91 		8.57 		54
+    @> cavity 5: 	135.33 		3.52 		78
+    @> cavity 6: 	79.55 		4.07 		57
+    @> cavity 7: 	64.64 		2.39 		49
+    @> cavity 8: 	51.42 		2.75 		44
+    @> Model/frame: 7
+    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+    @> cavity 0: 	1032.11 		5.72 		593
+    @> cavity 1: 	608.6 		7.25 		379
+    @> cavity 2: 	423.08 		4.78 		214
+    @> cavity 3: 	246.54 		7.99 		134
+    @> cavity 4: 	239.05 		2.36 		141
+    @> cavity 5: 	154.19 		3.43 		100
+    @> cavity 6: 	150.54 		2.61 		99
+    @> cavity 7: 	141.99 		4.32 		133
+    @> cavity 8: 	115.31 		3.04 		119
+    @> cavity 9: 	98.74 		2.56 		64
+    @> cavity 10: 	73.49 		2.38 		58
+    @> Model/frame: 8
+    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+    @> cavity 0: 	813.97 		6.84 		650
+    @> cavity 1: 	582.41 		6.27 		320
+    @> cavity 2: 	440.57 		4.58 		216
+    @> cavity 3: 	378.83 		6.9 		141
+    @> cavity 4: 	326.96 		5.94 		208
+    @> cavity 5: 	160.36 		5.11 		50
+    @> cavity 6: 	108.76 		6.62 		58
+    @> cavity 7: 	69.88 		2.47 		61
+    @> cavity 8: 	67.22 		1.67 		47
+    @> Model/frame: 9
+    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+    @> cavity 0: 	882.04 		9.36 		364
+    @> cavity 1: 	439.5 		3.4 		309
+    @> cavity 2: 	421.07 		5.14 		266
+    @> cavity 3: 	353.77 		7.89 		129
+    @> cavity 4: 	336.98 		6.57 		215
+    @> cavity 5: 	329.21 		5.73 		199
+    @> cavity 6: 	253.94 		9.67 		192
+    @> cavity 7: 	134.6 		3.55 		116
+    @> cavity 8: 	104.39 		2.85 		37
+    @> cavity 9: 	92.26 		2.23 		54
+    @> cavity 10: 	67.0 		2.6 		61
+    @> cavity 11: 	62.02 		3.27 		69
+    @> cavity 12: 	59.87 		1.75 		47
+    @> cavity 13: 	58.8 		2.42 		43
+    @> cavity 14: 	58.26 		2.93 		46
+    @> Model/frame: 10
+    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+    @> cavity 0: 	1504.0 		7.49 		826
+    @> cavity 1: 	795.94 		9.65 		441
+    @> cavity 2: 	569.56 		4.85 		361
+    @> cavity 3: 	225.63 		5.36 		149
+    @> cavity 4: 	147.11 		2.94 		111
+    @> cavity 5: 	69.97 		2.38 		70
+    @> Model/frame: 11
+    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+    @> cavity 0: 	1186.46 		8.9 		538
+    @> cavity 1: 	621.2 		7.71 		364
+    @> cavity 2: 	566.42 		7.08 		399
+    @> cavity 3: 	281.48 		9.79 		205
+    @> cavity 4: 	216.96 		2.89 		177
+    @> cavity 5: 	212.12 		3.74 		132
+    @> cavity 6: 	111.26 		2.34 		90
+    @> cavity 7: 	89.38 		4.16 		53
+    @> cavity 8: 	83.61 		2.76 		86
+    @> cavity 9: 	62.0 		1.95 		49
+    @> Model/frame: 12
+    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+    @> cavity 0: 	1120.03 		10.15 		651
+    @> cavity 1: 	882.51 		7.9 		516
+    @> cavity 2: 	456.85 		5.46 		271
+    @> cavity 3: 	215.66 		3.72 		122
+    @> cavity 4: 	207.94 		10.73 		120
+    @> cavity 5: 	172.32 		2.87 		133
+    @> cavity 6: 	109.18 		2.52 		71
+    @> cavity 7: 	91.33 		2.13 		50
+    @> Model/frame: 13
+    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+    @> cavity 0: 	924.55 		12.8 		533
+    @> cavity 1: 	707.43 		4.08 		374
+    @> cavity 2: 	442.47 		4.86 		261
+    @> cavity 3: 	389.81 		5.27 		227
+    @> cavity 4: 	203.99 		5.63 		147
+    @> cavity 5: 	201.09 		4.35 		155
+    @> cavity 6: 	131.22 		6.65 		79
+    @> cavity 7: 	124.74 		2.54 		78
+    @> cavity 8: 	56.42 		2.72 		45
+    @> cavity 9: 	53.6 		3.18 		30
+    @> Model/frame: 14
+    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+    @> cavity 0: 	1510.06 		6.51 		720
+    @> cavity 1: 	1375.79 		7.96 		682
+    @> cavity 2: 	401.6 		5.37 		234
+    @> cavity 3: 	182.55 		5.62 		66
+    @> cavity 4: 	177.66 		2.57 		120
+    @> cavity 5: 	87.75 		2.78 		67
+    @> cavity 6: 	78.44 		9.66 		56
+    @> Model/frame: 15
+    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+    @> cavity 0: 	1306.11 		7.56 		810
+    @> cavity 1: 	552.46 		8.72 		323
+    @> cavity 2: 	526.45 		6.51 		396
+    @> cavity 3: 	324.56 		5.79 		197
+    @> cavity 4: 	277.43 		3.4 		148
+    @> cavity 5: 	251.42 		4.28 		162
+    @> cavity 6: 	176.09 		3.27 		135
+    @> cavity 7: 	150.08 		3.24 		105
+    @> cavity 8: 	76.55 		2.33 		47
+    @> cavity 9: 	67.61 		2.09 		55
+    @> Model/frame: 16
+    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+    @> cavity 0: 	1523.36 		6.69 		874
+    @> cavity 1: 	788.97 		5.88 		370
+    @> cavity 2: 	310.64 		4.03 		183
+    @> cavity 3: 	304.92 		5.95 		213
+    @> cavity 4: 	136.76 		3.72 		123
+    @> cavity 5: 	98.55 		2.16 		73
+    @> cavity 6: 	93.83 		3.51 		104
+    @> cavity 7: 	73.64 		1.64 		59
+    @> cavity 8: 	72.21 		2.3 		54
+    @> cavity 9: 	70.23 		2.41 		38
+    @> Model/frame: 17
+    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+    @> cavity 0: 	1136.94 		7.07 		599
+    @> cavity 1: 	594.88 		6.76 		399
+    @> cavity 2: 	333.92 		6.15 		240
+    @> cavity 3: 	303.18 		6.35 		229
+    @> cavity 4: 	276.13 		4.08 		174
+    @> cavity 5: 	183.9 		5.73 		109
+    @> cavity 6: 	169.33 		3.03 		127
+    @> cavity 7: 	120.97 		3.08 		66
+    @> cavity 8: 	112.92 		3.02 		90
+    @> Model/frame: 18
+    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+    @> cavity 0: 	1329.65 		7.74 		620
+    @> cavity 1: 	942.27 		7.62 		585
+    @> cavity 2: 	536.1 		6.4 		378
+    @> cavity 3: 	400.23 		5.67 		248
+    @> cavity 4: 	206.96 		12.19 		114
+    @> cavity 5: 	153.19 		2.51 		107
+    @> cavity 6: 	153.08 		2.18 		118
+    @> cavity 7: 	104.02 		3.82 		43
+    @> cavity 8: 	103.13 		3.3 		89
+    @> cavity 9: 	85.65 		1.84 		68
+    @> cavity 10: 	74.67 		2.51 		68
+    @> Model/frame: 19
+    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+    @> cavity 0: 	1462.62 		7.46 		873
+    @> cavity 1: 	1243.19 		4.59 		614
+    @> cavity 2: 	546.92 		6.01 		302
+    @> cavity 3: 	273.83 		6.53 		105
+    @> cavity 4: 	154.38 		5.37 		79
+    @> cavity 5: 	151.99 		2.73 		135
+    @> cavity 6: 	58.85 		3.6 		52
+    @> cavity 7: 	57.84 		2.29 		47
 
 
 .. ipython:: python
@@ -1252,34 +1255,34 @@ across the conformational ensemble.
 
 .. parsed-literal::
 
-   @> Number of PQR files: 20
-   @> Resolution: 0.5
-   @> max_proc: 4
-   @> Calculating overlaps using 4 processes.
-   @> 1942 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 1979 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 1988 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 2148 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 2147 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 1751 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 2034 atoms and 1 coordinate sets were parsed in 0.02s.
-   @> 2152 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 2066 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 2012 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 2033 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 2207 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 1958 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 1934 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 2091 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 2093 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 2438 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 2378 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 1929 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 1945 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> Overlap written to: 2KIDsurface_cavity_overlap.pdb
-   @> Number of occupied overlap voxels: 118035
-   
-   '2KIDsurface_cavity_overlap.pdb'
+    @> Number of PQR files: 20
+    @> Resolution: 0.5
+    @> max_proc: 4
+    @> Calculating overlaps using 4 processes.
+    @> 1942 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 1988 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 1979 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 2148 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 2147 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 1751 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 2034 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 2152 atoms and 1 coordinate sets were parsed in 0.02s.
+    @> 2066 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 2012 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 2033 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 2207 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 1958 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 1934 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 2091 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 2093 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 2438 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 2378 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 1929 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 1945 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> Overlap written to: 2KIDsurface_cavity_overlap.pdb
+    @> Number of occupied overlap voxels: 118035
+
+    '2KIDsurface_cavity_overlap.pdb'
 
 
 The final outcome can be displayed in VMD_. In the example shown below, 
