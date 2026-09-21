@@ -1189,38 +1189,38 @@ to find narrower passages within protein structure.
     @> The atoms supplied to calcChannels contain protein atoms only.
     @> The atoms supplied to calcChannels contain protein atoms only.
     @> The atoms supplied to calcChannels contain protein atoms only.
-    @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.26s.
-    @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.26s.
-    @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.27s.
-    @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.26s.
-    @> Delaunay tessellation of 77434 points constructed in 3.79s.
-    @> Delaunay tessellation of 77434 points constructed in 3.82s.
-    @> Delaunay tessellation of 77434 points constructed in 3.86s.
-    @> Delaunay tessellation of 77434 points constructed in 3.96s.
-    @> Surface and inner simplices filtered in 4.52s.
-    @> Surface and inner simplices filtered in 4.62s.
-    @> Surface and inner simplices filtered in 4.72s.
-    @> Surface and inner simplices filtered in 4.69s.
-    @> Cavities: 427 found, 7 deeper than min_depth=5.0 Å and searched for channels, in 1.09s.
-    @> Cavities: 395 found, 10 deeper than min_depth=5.0 Å and searched for channels, in 1.02s.
-    @> Cavities: 430 found, 14 deeper than min_depth=5.0 Å and searched for channels, in 1.03s.
+    @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.28s.
+    @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.28s.
+    @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.28s.
+    @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.28s.
+    @> Delaunay tessellation of 77434 points constructed in 3.87s.
+    @> Delaunay tessellation of 77434 points constructed in 3.98s.
+    @> Delaunay tessellation of 77434 points constructed in 3.98s.
+    @> Delaunay tessellation of 77434 points constructed in 3.99s.
+    @> Surface and inner simplices filtered in 4.61s.
+    @> Surface and inner simplices filtered in 4.86s.
+    @> Surface and inner simplices filtered in 4.77s.
+    @> Surface and inner simplices filtered in 4.78s.
+    @> Cavities: 427 found, 7 deeper than min_depth=5.0 Å and searched for channels, in 1.17s.
+    @> Cavities: 430 found, 14 deeper than min_depth=5.0 Å and searched for channels, in 1.11s.
+    @> Cavities: 395 found, 10 deeper than min_depth=5.0 Å and searched for channels, in 1.17s.
+    @> Cavities: 407 found, 6 deeper than min_depth=5.0 Å and searched for channels, in 1.20s.
     @> Chambers (probe 1.40 Å): 1 of the 7 searched cavities have them; the other 6 are searched whole.
     @>     cavity 0: 26 chambers, 3 of them seeded.
-    @> 9 search sites (sp) in 0.06s: one per seeded chamber, one per cavity searched whole.
-    @> Chambers (probe 1.40 Å): 1 of the 10 searched cavities have them; the other 9 are searched whole.
-    @>     cavity 0: 21 chambers, 6 of them seeded.
-    @> 15 search sites (sp) in 0.05s: one per seeded chamber, one per cavity searched whole.
+    @> 9 search sites (sp) in 0.07s: one per seeded chamber, one per cavity searched whole.
     @> Chambers (probe 1.40 Å): 3 of the 14 searched cavities have them; the other 12 are searched whole.
     @>     cavity 0: 10 chambers, 3 of them seeded.
     @>     cavity 1: 5 chambers, 2 of them seeded.
     @>     cavity 2: 1 chamber, none of them deep and large enough to seed; searched whole.
     @> 17 search sites (sp) in 0.06s: one per seeded chamber, one per cavity searched whole.
-    @> Cavities: 407 found, 6 deeper than min_depth=5.0 Å and searched for channels, in 1.11s.
+    @> Chambers (probe 1.40 Å): 1 of the 10 searched cavities have them; the other 9 are searched whole.
+    @>     cavity 0: 21 chambers, 6 of them seeded.
+    @> 15 search sites (sp) in 0.06s: one per seeded chamber, one per cavity searched whole.
     @> Chambers (probe 1.40 Å): 2 of the 6 searched cavities have them; the other 5 are searched whole.
     @>     cavity 0: 14 chambers, 7 of them seeded.
     @>     cavity 3: 1 chamber, none of them deep and large enough to seed; searched whole.
-    @> 12 search sites (sp) in 0.09s: one per seeded chamber, one per cavity searched whole.
-    @> Channel search (Dijkstra) over 9 search sites in 7 cavities completed in 0.68s.
+    @> 12 search sites (sp) in 0.10s: one per seeded chamber, one per cavity searched whole.
+    @> Channel search (Dijkstra) over 9 search sites in 7 cavities completed in 0.77s.
     @> Found 10 channels and 1 link (a link joins a deep chamber to a shallower one and never reaches the surface).
     @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
     @>     site  start_point [Å]            void                   volume [Å³]  depth [Å]  channels  links
@@ -1236,10 +1236,10 @@ to find narrower passages within protein structure.
     @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
     @> The 5 sites marked sealed above report neither a channel nor a link: no route out of them survived - either narrower than bottleneck=0.80 Å, or dropped as a duplicate of a shallower site's, or the void is its own mouth and has nowhere to path to. Lower bottleneck to see how the first kind connect.
     @> Saving 10 channels and 1 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
-    @> Channel calculation completed in 10.41s.
+    @> Channel calculation completed in 10.87s.
     @> Frame/model: 29
     @> The atoms supplied to calcChannels contain protein atoms only.
-    @> Channel search (Dijkstra) over 17 search sites in 14 cavities completed in 0.68s.
+    @> Channel search (Dijkstra) over 17 search sites in 14 cavities completed in 0.77s.
     @> Found 14 channels and 1 link (a link joins a deep chamber to a shallower one and never reaches the surface).
     @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
     @>     site  start_point [Å]             void                   volume [Å³]  depth [Å]  channels  links
@@ -1263,21 +1263,51 @@ to find narrower passages within protein structure.
     @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
     @> The 6 sites marked sealed above report neither a channel nor a link: no route out of them survived - either narrower than bottleneck=0.80 Å, or dropped as a duplicate of a shallower site's, or the void is its own mouth and has nowhere to path to. Lower bottleneck to see how the first kind connect.
     @> Saving 14 channels and 1 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
-    @> Channel calculation completed in 10.52s.
+    @> Channel calculation completed in 10.94s.
     ..
     ..
     @> Frame/model: 209
     @> The atoms supplied to calcChannels contain protein atoms only.
-    @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.27s.
-    @> Surface and inner simplices filtered in 3.24s.
-    @> Delaunay tessellation of 77434 points constructed in 2.92s.
-    @> Cavities: 426 found, 10 deeper than min_depth=5.0 Å and searched for channels, in 1.21s.
+    @> Substituted 5986 atoms with 77434 homogeneous balls of radius 1.20 Å in 0.28s.
+    @> Cavities: 425 found, 10 deeper than min_depth=5.0 Å and searched for channels, in 1.21s.
+    @> Chambers (probe 1.40 Å): 5 of the 10 searched cavities have them; the other 9 are searched whole.
+    @>     cavity 0: 26 chambers, 3 of them seeded.
+    @>     cavity 1: 1 chamber, none of them deep and large enough to seed; searched whole.
+    @>     cavity 2: 1 chamber, none of them deep and large enough to seed; searched whole.
+    @>     cavity 5: 2 chambers, none of them deep and large enough to seed; searched whole.
+    @>     cavity 6: 1 chamber, none of them deep and large enough to seed; searched whole.
+    @> 12 search sites (sp) in 0.10s: one per seeded chamber, one per cavity searched whole.
+    @> Channel search (Dijkstra) over 12 search sites in 10 cavities completed in 0.78s.
+    @> Found 21 channels and 1 link (a link joins a deep chamber to a shallower one and never reaches the surface).
+    @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
+    @>     site  start_point [Å]             void                   volume [Å³]  depth [Å]  channels  links
+    @>     sp0   [0.516, -0.662, 11.707]     cavity 0, chamber 1/3         3008       11.1        10      -
+    @>     sp1   [-3.599, -10.845, -19.331]  cavity 1, whole                791        5.4         3      -
+    @>     sp2   [4.744, -11.119, -19.429]   cavity 2, whole                374        5.1         1      -
+    @>     sp3   [9.151, -13.918, -12.758]   cavity 3, whole                316        7.0         -      -  sealed
+    @>     sp4   [16.344, -6.713, 14.820]    cavity 4, whole                306        7.2         -      -  sealed
+    @>     sp5   [-12.275, -3.120, -5.575]   cavity 0, chamber 2/3          303       12.7         2      1  -> sp0
+    @>     sp6   [16.923, 1.103, -8.312]     cavity 5, whole                300        8.6         1      -
+    @>     sp7   [-14.916, -5.923, -13.430]  cavity 6, whole                174        6.9         -      -  sealed
+    @>     sp8   [2.725, 10.038, -9.560]     cavity 7, whole                139        5.2         1      -
+    @>     sp9   [-4.679, 3.663, -18.405]    cavity 8, whole                120        6.3         1      -
+    @>     sp10  [10.205, 8.239, -13.349]    cavity 0, chamber 3/3           87        5.0         2      -
+    @>     sp11  [-12.641, -7.949, 6.029]    cavity 9, whole                 64        6.2         -      -  sealed
+    @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
+    @> The 4 sites marked sealed above report neither a channel nor a link: no route out of them survived - either narrower than bottleneck=0.80 Å, or dropped as a duplicate of a shallower site's, or the void is its own mouth and has nowhere to path to. Lower bottleneck to see how the first kind connect.
+    @> Saving 21 channels and 1 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
+    @> Channel calculation completed in 9.51s.
+    @> Delaunay tessellation of 77434 points constructed in 3.19s.
+    @> Delaunay tessellation of 77434 points constructed in 3.40s.
+    @> Surface and inner simplices filtered in 3.84s.
+    @> Cavities: 426 found, 10 deeper than min_depth=5.0 Å and searched for channels, in 1.29s.
     @> Chambers (probe 1.40 Å): 3 of the 10 searched cavities have them; the other 8 are searched whole.
     @>     cavity 0: 19 chambers, 6 of them seeded.
     @>     cavity 1: 3 chambers, 1 of them seeded.
     @>     cavity 2: 1 chamber, none of them deep and large enough to seed; searched whole.
-    @> 15 search sites (sp) in 0.08s: one per seeded chamber, one per cavity searched whole.
-    @> Channel search (Dijkstra) over 15 search sites in 10 cavities completed in 0.95s.
+    @> 15 search sites (sp) in 0.09s: one per seeded chamber, one per cavity searched whole.
+    @> Surface and inner simplices filtered in 3.83s.
+    @> Channel search (Dijkstra) over 15 search sites in 10 cavities completed in 0.98s.
     @> Found 23 channels and 5 links (a link joins a deep chamber to a shallower one and never reaches the surface).
     @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
     @>     site  start_point [Å]             void                   volume [Å³]  depth [Å]  channels  links
@@ -1299,14 +1329,13 @@ to find narrower passages within protein structure.
     @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
     @> The 7 sites marked sealed above report neither a channel nor a link: no route out of them survived - either narrower than bottleneck=0.80 Å, or dropped as a duplicate of a shallower site's, or the void is its own mouth and has nowhere to path to. Lower bottleneck to see how the first kind connect.
     @> Saving 23 channels and 5 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
-    @> Channel calculation completed in 8.65s.
-    @> Surface and inner simplices filtered in 3.31s.
-    @> Cavities: 465 found, 10 deeper than min_depth=5.0 Å and searched for channels, in 1.01s.
+    @> Channel calculation completed in 9.65s.
+    @> Cavities: 465 found, 10 deeper than min_depth=5.0 Å and searched for channels, in 1.31s.
     @> Chambers (probe 1.40 Å): 2 of the 10 searched cavities have them; the other 9 are searched whole.
     @>     cavity 0: 14 chambers, 6 of them seeded.
     @>     cavity 1: 1 chamber, none of them deep and large enough to seed; searched whole.
-    @> 15 search sites (sp) in 0.07s: one per seeded chamber, one per cavity searched whole.
-    @> Channel search (Dijkstra) over 15 search sites in 10 cavities completed in 0.79s.
+    @> 15 search sites (sp) in 0.10s: one per seeded chamber, one per cavity searched whole.
+    @> Channel search (Dijkstra) over 15 search sites in 10 cavities completed in 0.97s.
     @> Found 29 channels and 6 links (a link joins a deep chamber to a shallower one and never reaches the surface).
     @> Search sites (sp), the void each search ran from, largest first; sp<n> tags every channel, link and output file:
     @>     site  start_point [Å]             void                   volume [Å³]  depth [Å]  channels  links
@@ -1328,7 +1357,7 @@ to find narrower passages within protein structure.
     @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
     @> The 2 sites marked sealed above report neither a channel nor a link: no route out of them survived - either narrower than bottleneck=0.80 Å, or dropped as a duplicate of a shallower site's, or the void is its own mouth and has nowhere to path to. Lower bottleneck to see how the first kind connect.
     @> Saving 29 channels and 6 links to directory ., one file per object named sp<site>_chl<n> and sp<site>_lnk<n>.
-    @> Channel calculation completed in 8.36s.
+    @> Channel calculation completed in 9.86s.
 
 
 Once the channels are identified, a function called
@@ -1994,58 +2023,101 @@ prefix provided by ``output_path``.
 
 .. parsed-literal::
 
-   @> Frame/model: 0
-   @> Frame/model: 7
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 Å in 0.17s.
-   @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 Å in 0.17s.
-   @> Delaunay tessellation of 31833 points constructed in 1.40s.
-   @> Delaunay tessellation of 31833 points constructed in 1.40s.
-   @> Surface and inner simplices filtered in 0.41s.
-   @> Surface and inner simplices filtered in 0.44s.
-   @> Surface cavities: 228 found, 25 deeper than min_depth=1.5 Å and kept, in 0.23s.
-   @> Surface cavities: 222 found, 22 deeper than min_depth=1.5 Å and kept, in 0.21s.
-   @> Returning surface cavities
-   @> Saving multiple surface cavities to directory ..
-   @> Surface cavity calculation completed in 2.29s.
-   @> Frame/model: 8
-   @> Returning surface cavities
-   @> Saving multiple surface cavities to directory ..
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Surface cavity calculation completed in 2.31s.
-   @> Frame/model: 1
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 Å in 0.11s.
-   @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 Å in 0.12s.
-   @> Delaunay tessellation of 31833 points constructed in 1.35s.
-   @> Delaunay tessellation of 31833 points constructed in 1.37s.
-   @> Surface and inner simplices filtered in 0.39s.
-   @> Surface and inner simplices filtered in 0.49s.
-   @> Surface cavities: 209 found, 22 deeper than min_depth=1.5 Å and kept, in 0.23s.
-   @> Returning surface cavities
-   @> Saving multiple surface cavities to directory ..
-   @> Surface cavity calculation completed in 2.16s.
-   ..
-   ..
-   @> Frame/model: 47
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 Å in 0.10s.
-   @> Delaunay tessellation of 31833 points constructed in 1.15s.
-   @> Surface and inner simplices filtered in 0.40s.
-   @> Surface cavities: 225 found, 25 deeper than min_depth=1.5 Å and kept, in 0.21s.
-   @> Returning surface cavities
-   @> Saving multiple surface cavities to directory ..
-   @> Surface cavity calculation completed in 1.94s.
-   @> Frame/model: 48
-   @> The atoms supplied to calcChannels contain protein atoms only.
-   @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 Å in 0.11s.
-   @> Delaunay tessellation of 31833 points constructed in 1.15s.
-   @> Surface and inner simplices filtered in 0.43s.
-   @> Surface cavities: 251 found, 26 deeper than min_depth=1.5 Å and kept, in 0.24s.
-   @> Returning surface cavities
-   @> Saving multiple surface cavities to directory ..
-   @> Surface cavity calculation completed in 1.99s.
+    @> Frame/model: 0
+    @> Frame/model: 7
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> The structure carries its hydrogens (98% of what a complete protein would hold), so inner_radius=2.00 is more conservative than it needs to be: the 1.2 Å floor exists only to keep a sub-water probe out of the space that missing hydrogens leave open, and here that space is filled. A smaller probe, down to about 0.9 Å, measures the narrow connections instead of reporting them closed.
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> The structure carries its hydrogens (98% of what a complete protein would hold), so inner_radius=2.00 is more conservative than it needs to be: the 1.2 Å floor exists only to keep a sub-water probe out of the space that missing hydrogens leave open, and here that space is filled. A smaller probe, down to about 0.9 Å, measures the narrow connections instead of reporting them closed.
+    @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 Å in 0.14s.
+    @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 Å in 0.14s.
+    @> Delaunay tessellation of 31833 points constructed in 1.45s.
+    @> Delaunay tessellation of 31833 points constructed in 1.50s.
+    @> Surface and inner simplices filtered in 0.46s.
+    @> Surface and inner simplices filtered in 0.43s.
+    @> Cavities: 222 found, 22 deeper than min_depth=1.5 Å and kept, in 0.20s.
+    @> Cavities: 228 found, 25 deeper than min_depth=1.5 Å and kept, in 0.21s.
+    @> Returning surface cavities
+    @> Saving multiple surface cavities to directory ..
+    @> Surface cavity calculation completed in 2.34s.
+    @> Frame/model: 1
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> The structure carries its hydrogens (98% of what a complete protein would hold), so inner_radius=2.00 is more conservative than it needs to be: the 1.2 Å floor exists only to keep a sub-water probe out of the space that missing hydrogens leave open, and here that space is filled. A smaller probe, down to about 0.9 Å, measures the narrow connections instead of reporting them closed.
+    @> Returning surface cavities
+    @> Saving multiple surface cavities to directory ..
+    @> Surface cavity calculation completed in 2.37s.
+    @> Frame/model: 8
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> The structure carries its hydrogens (98% of what a complete protein would hold), so inner_radius=2.00 is more conservative than it needs to be: the 1.2 Å floor exists only to keep a sub-water probe out of the space that missing hydrogens leave open, and here that space is filled. A smaller probe, down to about 0.9 Å, measures the narrow connections instead of reporting them closed.
+    @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 Å in 0.12s.
+    @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 Å in 0.15s.
+    @> Delaunay tessellation of 31833 points constructed in 1.45s.
+    @> Delaunay tessellation of 31833 points constructed in 1.48s.
+    @> Surface and inner simplices filtered in 0.40s.
+    @> Surface and inner simplices filtered in 0.48s.
+    @> Cavities: 209 found, 22 deeper than min_depth=1.5 Å and kept, in 0.19s.
+    @> Returning surface cavities
+    @> Saving multiple surface cavities to directory ..
+    @> Surface cavity calculation completed in 2.26s.
+    @> Frame/model: 2
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> The structure carries its hydrogens (98% of what a complete protein would hold), so inner_radius=2.00 is more conservative than it needs to be: the 1.2 Å floor exists only to keep a sub-water probe out of the space that missing hydrogens leave open, and here that space is filled. A smaller probe, down to about 0.9 Å, measures the narrow connections instead of reporting them closed.
+    @> Cavities: 220 found, 19 deeper than min_depth=1.5 Å and kept, in 0.21s.
+    @> Returning surface cavities
+    @> Saving multiple surface cavities to directory ..
+    @> Surface cavity calculation completed in 2.35s.
+    @> Frame/model: 9
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> The structure carries its hydrogens (98% of what a complete protein would hold), so inner_radius=2.00 is more conservative than it needs to be: the 1.2 Å floor exists only to keep a sub-water probe out of the space that missing hydrogens leave open, and here that space is filled. A smaller probe, down to about 0.9 Å, measures the narrow connections instead of reporting them closed.
+    @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 Å in 0.12s.
+    @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 Å in 0.12s.
+    @> Delaunay tessellation of 31833 points constructed in 1.38s.
+    @> Delaunay tessellation of 31833 points constructed in 1.41s.
+    @> Surface and inner simplices filtered in 0.46s.
+    @> Surface and inner simplices filtered in 0.43s.
+    @> Cavities: 238 found, 26 deeper than min_depth=1.5 Å and kept, in 0.21s.
+    @> Returning surface cavities
+    @> Saving multiple surface cavities to directory ..
+    @> Surface cavity calculation completed in 2.24s.
+    @> Frame/model: 3
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> The structure carries its hydrogens (98% of what a complete protein would hold), so inner_radius=2.00 is more conservative than it needs to be: the 1.2 Å floor exists only to keep a sub-water probe out of the space that missing hydrogens leave open, and here that space is filled. A smaller probe, down to about 0.9 Å, measures the narrow connections instead of reporting them closed.
+    @> Cavities: 232 found, 21 deeper than min_depth=1.5 Å and kept, in 0.20s.
+    @> Returning surface cavities
+    @> Saving multiple surface cavities to directory ..
+    @> Surface cavity calculation completed in 2.22s.
+    ..
+    ..
+    @> Frame/model: 46
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> The structure carries its hydrogens (98% of what a complete protein would hold), so inner_radius=2.00 is more conservative than it needs to be: the 1.2 Å floor exists only to keep a sub-water probe out of the space that missing hydrogens leave open, and here that space is filled. A smaller probe, down to about 0.9 Å, measures the narrow connections instead of reporting them closed.
+    @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 Å in 0.12s.
+    @> Delaunay tessellation of 31833 points constructed in 1.25s.
+    @> Surface and inner simplices filtered in 0.43s.
+    @> Cavities: 242 found, 29 deeper than min_depth=1.5 Å and kept, in 0.21s.
+    @> Returning surface cavities
+    @> Saving multiple surface cavities to directory ..
+    @> Surface cavity calculation completed in 2.10s.
+    @> Frame/model: 47
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> The structure carries its hydrogens (98% of what a complete protein would hold), so inner_radius=2.00 is more conservative than it needs to be: the 1.2 Å floor exists only to keep a sub-water probe out of the space that missing hydrogens leave open, and here that space is filled. A smaller probe, down to about 0.9 Å, measures the narrow connections instead of reporting them closed.
+    @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 Å in 0.12s.
+    @> Delaunay tessellation of 31833 points constructed in 1.25s.
+    @> Surface and inner simplices filtered in 0.44s.
+    @> Cavities: 225 found, 25 deeper than min_depth=1.5 Å and kept, in 0.20s.
+    @> Returning surface cavities
+    @> Saving multiple surface cavities to directory ..
+    @> Surface cavity calculation completed in 2.09s.
+    @> Frame/model: 48
+    @> The atoms supplied to calcChannels contain protein atoms only.
+    @> The structure carries its hydrogens (98% of what a complete protein would hold), so inner_radius=2.00 is more conservative than it needs to be: the 1.2 Å floor exists only to keep a sub-water probe out of the space that missing hydrogens leave open, and here that space is filled. A smaller probe, down to about 0.9 Å, measures the narrow connections instead of reporting them closed.
+    @> Substituted 2425 atoms with 31833 homogeneous balls of radius 1.20 Å in 0.12s.
+    @> Delaunay tessellation of 31833 points constructed in 1.27s.
+    @> Surface and inner simplices filtered in 0.44s.
+    @> Cavities: 251 found, 26 deeper than min_depth=1.5 Å and kept, in 0.22s.
+    @> Returning surface cavities
+    @> Saving multiple surface cavities to directory ..
+    @> Surface cavity calculation completed in 2.13s.
 
 
 The parameters of the detected surface cavities can be extracted with
@@ -2063,58 +2135,88 @@ using this name as a prefix.
 
 .. parsed-literal::
 
-   @> Model/frame: 0
-   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	402.75 		4.87 		132
-   @> cavity 1: 	392.11 		4.12 		161
-   @> cavity 2: 	318.46 		6.12 		136
-   @> cavity 3: 	214.1 		2.99 		110
-   @> cavity 4: 	169.45 		3.64 		48
-   @> cavity 5: 	116.88 		5.59 		27
-   @> cavity 6: 	114.71 		1.97 		61
-   @> cavity 7: 	103.98 		2.34 		47
-   @> cavity 8: 	92.73 		1.84 		29
-   @> cavity 9: 	89.05 		1.62 		48
-   @> cavity 10: 	83.4 		1.93 		27
-   @> cavity 11: 	77.01 		3.19 		60
-   @> cavity 12: 	74.52 		1.99 		34
-   @> cavity 13: 	67.8 		1.96 		38
-   @> cavity 14: 	53.49 		2.6 		22
-   @> Model/frame: 1
-   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	355.13 		4.06 		111
-   @> cavity 1: 	273.6 		5.54 		137
-   @> cavity 2: 	247.31 		2.26 		105
-   @> cavity 3: 	188.24 		2.05 		78
-   @> cavity 4: 	176.18 		7.41 		107
-   @> cavity 5: 	162.63 		2.34 		56
-   @> cavity 6: 	149.92 		3.13 		54
-   @> cavity 7: 	142.73 		1.79 		61
-   @> cavity 8: 	133.09 		5.38 		42
-   @> cavity 9: 	94.12 		2.03 		54
-   @> cavity 10: 	84.77 		1.75 		48
-   @> cavity 11: 	84.44 		2.76 		26
-   @> cavity 12: 	73.41 		2.48 		27
-   @> cavity 13: 	53.78 		2.42 		40
-   ..
-   ..
-   @> Model/frame: 50
-   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
-   @> cavity 0: 	503.78 		4.84 		145
-   @> cavity 1: 	214.13 		3.85 		108
-   @> cavity 2: 	188.51 		2.75 		95
-   @> cavity 3: 	173.52 		2.4 		62
-   @> cavity 4: 	158.52 		3.03 		71
-   @> cavity 5: 	158.33 		1.82 		64
-   @> cavity 6: 	130.09 		2.08 		38
-   @> cavity 7: 	126.88 		2.82 		58
-   @> cavity 8: 	94.47 		4.01 		51
-   @> cavity 9: 	89.66 		1.78 		42
-   @> cavity 10: 	86.84 		1.89 		28
-   @> cavity 11: 	80.71 		2.55 		54
-   @> cavity 12: 	68.29 		2.36 		22
-   @> cavity 13: 	54.54 		2.17 		40
-   @> cavity 14: 	54.13 		1.71 		21
+    @> Model/frame: 0
+    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+    @> cavity 0: 	402.75 		4.87 		132
+    @> cavity 1: 	392.11 		4.12 		161
+    @> cavity 2: 	318.46 		6.12 		136
+    @> cavity 3: 	214.1 		2.99 		110
+    @> cavity 4: 	169.45 		3.64 		48
+    @> cavity 5: 	116.88 		5.59 		27
+    @> cavity 6: 	114.71 		1.97 		61
+    @> cavity 7: 	103.98 		2.34 		47
+    @> cavity 8: 	92.73 		1.84 		29
+    @> cavity 9: 	89.05 		1.62 		48
+    @> cavity 10: 	83.4 		1.93 		27
+    @> cavity 11: 	77.01 		3.19 		60
+    @> cavity 12: 	74.52 		1.99 		34
+    @> cavity 13: 	67.8 		1.96 		38
+    @> cavity 14: 	53.49 		2.6 		22
+    @> Model/frame: 1
+    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+    @> cavity 0: 	355.13 		4.06 		111
+    @> cavity 1: 	273.6 		5.54 		137
+    @> cavity 2: 	247.31 		2.26 		105
+    @> cavity 3: 	188.24 		2.05 		78
+    @> cavity 4: 	176.18 		7.41 		107
+    @> cavity 5: 	162.63 		2.34 		56
+    @> cavity 6: 	149.92 		3.13 		54
+    @> cavity 7: 	142.73 		1.79 		61
+    @> cavity 8: 	133.09 		5.38 		42
+    @> cavity 9: 	94.12 		2.03 		54
+    @> cavity 10: 	84.77 		1.75 		48
+    @> cavity 11: 	84.44 		2.76 		26
+    @> cavity 12: 	73.41 		2.48 		27
+    @> cavity 13: 	53.78 		2.42 		40
+    @> Model/frame: 2
+    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+    @> cavity 0: 	319.82 		7.57 		150
+    @> cavity 1: 	257.64 		3.02 		93
+    @> cavity 2: 	250.78 		4.33 		87
+    @> cavity 3: 	212.92 		3.0 		59
+    @> cavity 4: 	157.35 		2.34 		83
+    @> cavity 5: 	139.55 		3.26 		48
+    @> cavity 6: 	99.49 		1.88 		65
+    @> cavity 7: 	73.13 		1.81 		25
+    @> cavity 8: 	64.63 		1.93 		28
+    @> cavity 9: 	59.25 		2.5 		24
+    @> cavity 10: 	54.5 		3.0 		19
+    @> cavity 11: 	50.28 		1.96 		5
+    ..
+    ..
+    @> Model/frame: 49
+    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+    @> cavity 0: 	644.81 		5.03 		271
+    @> cavity 1: 	186.85 		3.18 		93
+    @> cavity 2: 	180.0 		2.71 		63
+    @> cavity 3: 	147.08 		4.14 		56
+    @> cavity 4: 	144.13 		3.14 		45
+    @> cavity 5: 	126.09 		2.36 		47
+    @> cavity 6: 	98.62 		1.8 		33
+    @> cavity 7: 	97.26 		3.01 		56
+    @> cavity 8: 	96.58 		2.21 		63
+    @> cavity 9: 	78.52 		3.16 		31
+    @> cavity 10: 	78.41 		1.95 		30
+    @> cavity 11: 	66.82 		2.74 		32
+    @> cavity 12: 	66.53 		2.34 		27
+    @> cavity 13: 	51.27 		2.48 		34
+    @> Model/frame: 50
+    @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+    @> cavity 0: 	503.78 		4.84 		145
+    @> cavity 1: 	214.13 		3.85 		108
+    @> cavity 2: 	188.51 		2.75 		95
+    @> cavity 3: 	173.52 		2.4 		62
+    @> cavity 4: 	158.52 		3.03 		71
+    @> cavity 5: 	158.33 		1.82 		64
+    @> cavity 6: 	130.09 		2.08 		38
+    @> cavity 7: 	126.88 		2.82 		58
+    @> cavity 8: 	94.47 		4.01 		51
+    @> cavity 9: 	89.66 		1.78 		42
+    @> cavity 10: 	86.84 		1.89 		28
+    @> cavity 11: 	80.71 		2.55 		54
+    @> cavity 12: 	68.29 		2.36 		22
+    @> cavity 13: 	54.54 		2.17 		40
+    @> cavity 14: 	54.13 		1.71 		21
    	
 
 Residues lining the detected surface cavities can be identified with
@@ -2193,114 +2295,74 @@ object.
 
 .. parsed-literal::
 
-   'P': Counter({'GLU128': 51,
-             'HSE72': 51,
-             'ARG75': 51,
-             'LYS6': 50,
-             'LEU13': 50,
-             'HSE157': 50,
-             'GLN76': 50,
-             'THR78': 50,
-             'LYS79': 50,
-             'ARG40': 50,
-             'PRO130': 50,
-             'ASP129': 50,
-             'LYS155': 49,
-             'THR140': 49,
-             'SER71': 49,
-             'ASP137': 49,
-             'TYR131': 49,
-             'ARG27': 49,
-             'GLU80': 48,
-             'ASP42': 48,
-             'TYR119': 48,
-             'THR84': 48,
-             'LYS102': 48,
-             'ILE16': 48,
-             'ILE51': 48,
-             'THR31': 48,
-             'TRP39': 48,
-             'ALA156': 48,
-             'ILE126': 47,
-             'SER94': 47,
-             'ILE77': 47,
-             'TYR49': 47,
-             'GLU154': 47,
-             'LYS28': 46,
-             'THR5': 46,
-             'PHE85': 46,
-             'LEU153': 46,
-             'LYS110': 46,
-             'ASP86': 46,
-             'GLN124': 45,
-             'VAL73': 45,
-             'THR46': 45,
-             'VAL106': 45,
-             'GLU23': 44,
-             'SER118': 44,
-             'LYS123': 44,
-             'ILE68': 44,
-             'PRO54': 44,
-             'ARG101': 44,
-             'ARG150': 44,
-             'VAL41': 44,
-             'ALA83': 44,
-             'LYS112': 44,
-             'GLN60': 43,
-             'GLU50': 43,
-             'PRO69': 43,
-             'ILE35': 43,
-             'MET70': 43,
-             'ASP92': 43,
-             'ARG18': 43,
-             'TYR87': 43,
-             'GLY48': 42,
-             'SER36': 42,
-             'GLN33': 42,
-             'ASP32': 42,
-             'SER47': 41,
-             'TYR57': 41,
-             'SER136': 41,
-             'PRO55': 41,
-             'GLU37': 41,
-             'LYS107': 41,
-             'GLU93': 40,
-             'ALA151': 40,
-             'SER7': 40,
-             'ASP56': 40,
-             'ASP98': 40,
-             'GLN143': 40,
-             'THR108': 40,
-             'ASN53': 39,
-             'GLN105': 39,
-             'ARG58': 39,
-             'ARG97': 39,
-             'TYR132': 39,
-             'GLY14': 38,
-             'VAL146': 38,
-             'ASN38': 38,
-             'ARG147': 37,
-             'SER43': 37,
-             'ASP120': 37,
-             'GLY52': 36,
-             'LEU29': 35,
-             'GLN144': 35,
-             'VAL141': 35,
-             'ALA74': 34,
-             'SER61': 33,
-             'TYR142': 33,
-             'ALA111': 33,
-             'GLU114': 33,
-             'ASN15': 32,
-             'LEU125': 32,
-             'LYS64': 32,
-             'PHE82': 32,
-             'GLN122': 31,
-             'ASP81': 30,
-             'PRO121': 30,
-             ..
-             ..
-             'PHE26': 1})}
+    {'P': Counter({'ARG75': 51,
+              'HSE72': 51,
+              'GLU128': 51,
+              'LYS6': 50,
+              'THR78': 50,
+              'PRO130': 50,
+              'LEU13': 50,
+              'ASP129': 50,
+              'LYS79': 50,
+              'GLN76': 50,
+              'HSE157': 50,
+              'ARG40': 50,
+              'LYS155': 49,
+              'ARG27': 49,
+              'THR140': 49,
+              'ASP42': 49,
+              'ASP137': 49,
+              'SER71': 49,
+              'TYR131': 49,
+              'TRP39': 49,
+              'ILE16': 48,
+              'PHE85': 48,
+              'TYR49': 48,
+              'THR84': 48,
+              'ILE51': 48,
+              'SER94': 48,
+              'THR31': 48,
+              'ALA156': 48,
+              'LYS102': 48,
+              'GLU80': 48,
+              'TYR119': 48,
+              'ILE77': 48,
+              'ASP86': 47,
+              'GLU154': 47,
+              'GLN124': 47,
+              'ILE126': 47,
+              'VAL73': 46,
+              'ALA83': 46,
+              'LYS28': 46,
+              'LEU153': 46,
+              'LYS110': 46,
+              'THR5': 46,
+              'GLU50': 46,
+              'GLU23': 45,
+              'THR46': 45,
+              'ARG18': 45,
+              'VAL106': 45,
+              'LYS112': 45,
+              'VAL41': 44,
+              'LYS123': 44,
+              'ILE68': 44,
+              'ARG150': 44,
+              'MET70': 44,
+              'GLN60': 44,
+              'PRO69': 44,
+              'SER118': 44,
+              'ARG101': 44,
+              'SER47': 44,
+              'PRO54': 44,
+              'GLY48': 43,
+              'ARG58': 43,
+              'SER36': 43,
+              'ASP98': 43,
+               ..
+               ..
+              'LEU99': 3,
+              'PRO20': 1,
+              'PHE26': 1})}
 
 
 .. ipython:: python
@@ -2311,7 +2373,7 @@ object.
    plt.show()
 
 
-.. figure:: images/cavitracer_figure37.png
+.. figure:: images/cavitracer_figure37.jpg
    :scale: 50 %
 
 If ``count_residue_names=True``, residue types are counted instead of individual
@@ -2329,26 +2391,27 @@ surface cavities.
 
 .. parsed-literal::
 
-   {'P': Counter({'SER': 51,
-             'TYR': 51,
-             'ASP': 51,
-             'ALA': 51,
-             'LYS': 51,
-             'VAL': 51,
-             'GLN': 51,
-             'GLU': 51,
-             'GLY': 51,
-             'PRO': 51,
-             'ILE': 51,
-             'LEU': 51,
-             'THR': 51,
-             'ARG': 51,
-             'HSE': 51,
-             'PHE': 50,
-             'ASN': 50,
-             'TRP': 48,
-             'MET': 43,
-             'CYS': 35})}
+    {'P': Counter({'ASP': 51,
+              'TYR': 51,
+              'ARG': 51,
+              'HSE': 51,
+              'ILE': 51,
+              'LEU': 51,
+              'ASN': 51,
+              'VAL': 51,
+              'THR': 51,
+              'GLN': 51,
+              'GLY': 51,
+              'PRO': 51,
+              'PHE': 51,
+              'LYS': 51,
+              'ALA': 51,
+              'GLU': 51,
+              'SER': 51,
+              'TRP': 49,
+              'MET': 44,
+              'CYS': 38})}
+
 
 .. ipython:: python
    :verbatim:
@@ -2358,7 +2421,7 @@ surface cavities.
    plt.show()
 
 
-.. figure:: images/cavitracer_figure38.png
+.. figure:: images/cavitracer_figure38.jpg
    :scale: 50 %
 
 
@@ -2385,7 +2448,7 @@ frame-level occurrence.
    @> Residue counts by chain were saved to: cavi_frequent_residue_occurrences_ResCounts.txt
 
 
-.. figure:: images/cavitracer_figure39.png
+.. figure:: images/cavitracer_figure39.jpg
    :scale: 50 %
 
 
@@ -2418,36 +2481,30 @@ cavity regions that are detected in more frames.
 
 .. parsed-literal::
 
-   @> Number of PQR files: 51
-   @> Resolution: 0.5
-   @> max_proc: 4
-   @> Calculating overlaps using 4 processes.
-   @> 686 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 803 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 946 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 1072 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 818 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 966 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 1140 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 772 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 858 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 1043 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 723 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 980 atoms and 1 coordinate sets were parsed in 0.01s.
-   ..
-   @> 1171 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 749 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 1020 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 962 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 691 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 936 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 899 atoms and 1 coordinate sets were parsed in 0.01s.
-   @> 869 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> 885 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> Overlap written to: surface_cavity_overlap.pdb
-   @> Number of occupied overlap voxels: 138222
+    @> Number of PQR files: 100
+    @> Resolution: 0.5
+    @> max_proc: 4
+    @> Calculating overlaps using 4 processes.
+    @> 832 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 794 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 946 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 1072 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 774 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 1852 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 1140 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 772 atoms and 1 coordinate sets were parsed in 0.00s.
+    @> 1337 atoms and 1 coordinate sets were parsed in 0.01s.
+    ..
+    ..
+    @> 1291 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 869 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 1579 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 885 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> 1627 atoms and 1 coordinate sets were parsed in 0.01s.
+    @> Overlap written to: surface_cavity_overlap.pdb
+    @> Number of occupied overlap voxels: 329286
 
-   'surface_cavity_overlap.pdb'
+    'surface_cavity_overlap.pdb'
 
 
 The results can be visualized using VMD_ as shown below.
