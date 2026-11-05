@@ -134,7 +134,7 @@ The resulting animation makes it possible to follow changes in the detected
 channels along the selected normal mode.
 
 .. image:: images/cavitracer_channels.gif
-   :width: 70 %
+   :width: 80 %
 
 
 
@@ -155,7 +155,7 @@ the channel calculation again.
    :scale: 60 %
 
 .. image:: images/cavitracer_channels_startpoint.gif
-   :width: 70 %
+   :width: 80 %
 
 
 Please note that when a new CaviTracer calculation is performed, for example 
@@ -184,7 +184,7 @@ After the calculation is completed, the detected pores are displayed for the
 individual conformations and can be followed along the selected normal mode.
 
 .. image:: images/cavitracer_pores.gif
-   :width: 70 %
+   :width: 80 %
 
 
 
@@ -219,6 +219,6 @@ The resulting animation can then be used to inspect how the size and shape of
 surface cavities change along the selected normal mode.
 
 .. image:: images/cavitracer_surface_cavities.gif
-   :width: 70 %
+   :width: 80 %
 
 
