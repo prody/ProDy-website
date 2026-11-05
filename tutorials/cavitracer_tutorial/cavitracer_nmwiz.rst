@@ -154,13 +154,12 @@ the channel calculation again.
 .. image:: images/cavitracer_channels_startpoint.gif
    :width: 70 %
 
-.. note::
 
-   When a new CaviTracer calculation is performed, for example after changing
-   the channel parameters or start point, the previously displayed CaviTracer
-   results are replaced by the results of the new calculation. Existing
-   output files may also be overwritten when the same output location and
-   filenames are used.
+Please note that when a new CaviTracer calculation is performed, for example 
+after changing the channel parameters or start point, the previously displayed 
+CaviTracer results are replaced by the results of the new calculation. 
+Existing output files may also be overwritten when the same output location 
+and filenames are used.
 
 
 
