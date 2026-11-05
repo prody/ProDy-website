@@ -71,18 +71,18 @@ normal mode results will appear.
 
 For this example, we use the following visualization settings.
 
-Under *MOLECULE*, open Options and change the protein representation from
+Under ``MOLECULE``, open Options and change the protein representation from
 ``Tube`` to ``NewCartoon``.
 
 .. figure:: images/cavitracer_nmwiz_03.png
    :scale: 60 %
 
-Under *MODE*, select the mode that will be used to generate the
+Under ``MODE``, select the mode that will be used to generate the
 conformational ensemble. Here, Mode 1 is used with the default settings.
 The choice of the mode and its amplitude should, however, be adjusted
 according to the system and motion of interest.
 
-Under *ANIMATION*, set the number of frames to 20 and click Make.
+Under ``ANIMATION``, set the number of frames to 20 and click ``Make``.
 Twenty frames provide sufficient sampling for the example presented here
 while keeping the subsequent CaviTracer calculations relatively fast.
 
@@ -96,6 +96,7 @@ For a clearer visualization of the resulting ensemble, the initial protein
 structure can be hidden in the VMD Main window by clicking ``D`` next to its
 representation. The arrows showing the direction of the normal mode motion
 can also be hidden if desired.
+
 
 
 Channel detection
@@ -130,7 +131,7 @@ The resulting animation makes it possible to follow changes in the detected
 channels along the selected normal mode.
 
 .. image:: images/cavitracer_channels.gif
-:width: 70 %
+   :width: 70 %
 
 
 
@@ -162,11 +163,12 @@ the channel calculation again.
    filenames are used.
 
 
+
 Pore detection
 -------------------------------------------------------------------------------
 
 Pores can be identified from the same NMWiz conformational ensemble by
-selecting ``Find Pores``.
+selecting ``Pore`` instead of ``Channel``.
 
 As for channels, the parameters should be adjusted according to the analyzed
 system. In this example, the bottleneck radius is set to 1.2 Å, and
@@ -188,7 +190,7 @@ Surface-cavity detection
 -------------------------------------------------------------------------------
 
 Surface cavities can be analyzed in the same way by selecting
-``Surface Cavities`` in the CaviTracer interface.
+``Surface cavity`` in the CaviTracer interface.
 
 For the 1TQN example, the default CaviTracer parameters are used.
 
