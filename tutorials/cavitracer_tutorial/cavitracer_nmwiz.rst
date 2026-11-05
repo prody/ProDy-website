@@ -129,7 +129,7 @@ the detected channels is written to the selected output directory.
 The resulting animation makes it possible to follow changes in the detected
 channels along the selected normal mode.
 
-.. image:: images/cavitracer_channels.gif-----------------
+.. image:: images/cavitracer_channels.gif
 :width: 70 %
 
 
@@ -150,7 +150,7 @@ the channel calculation again.
 .. figure:: images/cavitracer_nmwiz_07.png
    :scale: 60 %
 
-.. image:: images/cavitracer_channels_startpoint.gif---------------------
+.. image:: images/cavitracer_channels_startpoint.gif
    :width: 70 %
 
 .. note::
@@ -179,7 +179,7 @@ analysis to pathways spanning a sufficiently large region of the protein.
 After the calculation is completed, the detected pores are displayed for the
 individual conformations and can be followed along the selected normal mode.
 
-.. image:: images/cavitracer_pores.gif-------------------------------
+.. image:: images/cavitracer_pores.gif
    :width: 70 %
 
 
@@ -203,12 +203,12 @@ CaviTracer interface. If a surface representation is preferred, open
 
 .. parsed-literal::
 
-Graphics -> Representations
+   Graphics -> Representations
 
 in VMD and change the drawing method of the corresponding cavity
 representation to QuickSurf.
 
-.. figure:: images/cavitracer_nmwiz_12.png
+.. figure:: images/cavitracer_nmwiz_10.png
    :scale: 60 %
 
 The resulting animation can then be used to inspect how the size and shape of
