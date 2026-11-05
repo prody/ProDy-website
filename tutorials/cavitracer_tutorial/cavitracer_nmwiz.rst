@@ -89,13 +89,16 @@ while keeping the subsequent CaviTracer calculations relatively fast.
 .. figure:: images/cavitracer_nmwiz_04.png
    :scale: 60 %
 
-The generated frames represent conformations of the protein sampled along the
-selected normal mode.
+The generated frames represent conformations of the protein sampled along 
+the selected normal mode.
 
-For a clearer visualization of the resulting ensemble, the initial protein
-structure can be hidden in the VMD Main window by clicking ``D`` next to its
-representation. The arrows showing the direction of the normal mode motion
-can also be hidden if desired.
+For a clearer visualization of the resulting ensemble (see below), the initial 
+protein structure can be hidden in the VMD Main window by clicking ``D`` next 
+to its representation. The arrows showing the direction of the normal mode 
+motion can also be hidden if desired.
+
+.. image:: images/cavitracer_nmwiz_mode1.gif
+   :width: 70 %
 
 
 
