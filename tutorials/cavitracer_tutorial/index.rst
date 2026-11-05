@@ -24,6 +24,7 @@ CaviTracer - detection of tunnels, channels and cavities within proteins
    multi_modelPDB
    trajectory
    test_params
+   cavitracer_nmwiz
 
 
 .. only:: html
