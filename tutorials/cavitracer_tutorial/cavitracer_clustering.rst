@@ -723,8 +723,10 @@ VII. Assessing clustering stability
 The :func:`.computeBootstrapStability` function can be used to examine how
 sensitive the cluster assignments are to subsampling. For a trajectory,
 ``sampling='frame'`` is useful because entire conformations, rather than
-individual channels, are selected in each replicate. This is an additional
-analysis and is not included in the results reported above.
+individual channels, are selected in each replicate. In this example, 80%
+of the frames are randomly selected in each of 50 replicates, and the
+resulting assignments are compared with the clustering obtained using all
+20 frames.
 
 .. ipython:: python
    :verbatim:
@@ -740,27 +742,195 @@ analysis and is not included in the results reported above.
 
    Mean bootstrap ARI: 0.9806513111664771
 
-The returned dictionary also contains a co-association matrix describing
-how frequently pairs of channels were assigned to the same cluster when
-both were included in a bootstrap replicate. For example, we can calculate
-the consensus strength of a particular voxel-based cluster:
+The adjusted Rand index (ARI) measures the agreement between cluster
+assignments. A value of 1 indicates identical clustering, whereas values
+close to 0 indicate agreement comparable to random assignments. The mean
+ARI of 0.981 indicates that the voxel-based clustering is highly stable
+under the selected frame-subsampling procedure.
+
+
+Persistence and stability of selected channel clusters
+-------------------------------------------------------------------------------
+
+Clustering can also help us identify channel families that are repeatedly
+observed during a trajectory. To select clusters for further analysis,
+we first rank them according to their persistence, defined as the fraction
+of frames containing at least one channel from a given cluster. If two
+clusters have the same persistence, we use the total number of channel
+instances assigned to each cluster as an additional ranking criterion.
 
 .. ipython:: python
    :verbatim:
 
-   cluster_indices = np.flatnonzero(labels_voxel == 21)
-   consensus = clusterConsensusStrength(
-       stability['coassociation_matrix'], cluster_indices)
-   print('Cluster consensus:', consensus)
+   n_frames = len(channels)
+   ranked_clusters = sorted(clustering_voxel.clusters,
+   key=lambda c: (c.calcPersistence(n_frames), c.size), reverse=True)
 
+   for cluster in ranked_clusters[:5]:
+       n_present = len(set(cluster.conformation_ids))
+       print('Cluster {}: {} channels, {}/{} frames ({:.0f}%)'.format(
+       cluster.label, cluster.size, n_present, n_frames, 
+       100 * cluster.calcPersistence(n_frames)))
+
+.. parsed-literal::
+
+   Cluster 21: 46 channels, 20/20 frames (100%)
+   Cluster 14: 25 channels, 13/20 frames (65%)
+   Cluster 25: 13 channels, 13/20 frames (65%)
+   Cluster 19: 12 channels, 12/20 frames (60%)
+   Cluster 5: 11 channels, 11/20 frames (55%)
+
+The three most persistent clusters are therefore selected for further
+analysis:
+
+.. ipython:: python
+   :verbatim:
+
+   selected_clusters = [cluster.label for cluster in ranked_clusters[:3]]
+   print(selected_clusters)
+
+.. parsed-literal::
+
+   [21, 14, 25]
+
+Cluster 21 contains 46 detected channel instances and is present in all
+20 frames. Clusters 14 and 25 are each observed in 65% of the frames,
+although they contain different numbers of channel instances. A channel
+instance corresponds to one detection in a particular frame; the cluster
+connects similar detections across frames. Therefore, cluster size and
+persistence should not be interpreted as the same quantity.
+
+Persistence does not tell us whether the cluster assignments are robust.
+For this purpose, the bootstrap analysis also provides a co-association
+matrix, in which each entry describes how frequently two channels were
+assigned to the same cluster in the replicates containing both channels.
+The :func:.clusterConsensusStrength function summarizes the mean
+co-association of the channel pairs within a selected cluster.
+
+For example, we can calculate this value for the most persistent cluster:
+
+.. ipython:: python
+   :verbatim:
+
+   cluster_indices = np.flatnonzero(labels_voxel == selected_clusters[0])
+   consensus = clusterConsensusStrength(
+   stability['coassociation_matrix'], cluster_indices)
+   print('Cluster consensus:', consensus)
 
 .. parsed-literal::
 
    Cluster consensus: 0.9965831
 
-When interpreting the results, note that the number of clusters and the
-stability statistics depend on the distance metric, the clustering threshold,
-and the subsampling strategy. Persistence, in contrast, measures how often a
-cluster appears across frames, not how robust its membership is to
-reclustering.
+The consensus of approximately 0.997 indicates that channels belonging
+to cluster 21 are almost always assigned together when they are included
+in the same bootstrap replicate. Thus, cluster 21 is both frequently
+observed (100% persistence) and stable under subsampling (high consensus).
 
+We can examine the remaining selected clusters in the same way:
+
+.. ipython:: python
+   :verbatim:
+
+   for cluster_id in selected_clusters[1:]:
+      indices = np.flatnonzero(labels_voxel == cluster_id)
+      consensus = clusterConsensusStrength(
+      stability['coassociation_matrix'], indices)
+      print('Cluster {} consensus: {:.3f}'.format(cluster_id, consensus))
+
+.. parsed-literal::
+
+   Cluster 14 consensus: 0.981
+   Cluster 25 consensus: 1.000
+
+
+Co-occurrence of channel families across trajectory frames
+-------------------------------------------------------------------------------
+
+Besides identifying frequently observed channel families, we can examine
+whether different clusters occur in the same frames. Here, we compare the
+three most persistent voxel-based clusters. We construct a Boolean matrix
+whose entries indicate whether at least one channel from a given cluster
+was detected in each frame.
+
+.. ipython:: python
+   :verbatim:
+
+   frame_ids = np.repeat(np.arange(n_frames),
+   [len(frame_channels) for frame_channels in channels])
+
+   presence = np.array([[np.any((labels_voxel == cluster_id) & (frame_ids == frame))
+   for frame in range(n_frames)]
+   for cluster_id in selected_clusters], dtype=bool)
+
+   for cluster_id, row in zip(selected_clusters, presence):
+      print('Cluster {}: {} of {} frames'.format(
+      cluster_id, np.count_nonzero(row), n_frames))
+
+.. parsed-literal::
+
+   Cluster 21: 20 of 20 frames
+   Cluster 14: 13 of 20 frames
+   Cluster 25: 13 of 20 frames
+
+Although clusters 14 and 25 have the same persistence, this does not
+necessarily mean that they appear in the same conformations. We can check
+how often they are observed together or independently:
+
+.. ipython:: python
+   :verbatim:
+
+   present_14 = presence[selected_clusters.index(14)]
+   present_25 = presence[selected_clusters.index(25)]
+
+   print('Both clusters:', np.count_nonzero(present_14 & present_25))
+   print('Only cluster 14:', np.count_nonzero(present_14 & ~present_25))
+   print('Only cluster 25:', np.count_nonzero(~present_14 & present_25))
+   print('Neither cluster:', np.count_nonzero(~present_14 & ~present_25))
+
+.. parsed-literal::
+
+   Both clusters: 7
+   Only cluster 14: 6
+   Only cluster 25: 6
+   Neither cluster: 1
+
+Clusters 14 and 25 coexist in 7 frames. In 12 other frames, only one of
+these two families is detected, and neither is detected in the remaining
+frame. This comparison reveals differences in the occurrence patterns of
+channel families that would not be apparent from their persistence values
+alone.
+
+To visualize these patterns, we can plot the presence of each selected
+cluster along the analyzed trajectory:
+
+.. ipython:: python
+   :verbatim:
+
+   import matplotlib.pyplot as plt
+
+   fig, ax = plt.subplots(figsize=(12, 3.5))
+   image = ax.imshow(presence.astype(int), aspect='auto',
+   interpolation='nearest', cmap='Greys', vmin=0, vmax=1)
+   ax.set_xticks(np.arange(n_frames))
+   ax.set_yticks(np.arange(len(selected_clusters)))
+   ax.set_yticklabels(['Cluster {}'.format(i) for i in selected_clusters])
+   ax.set_xlabel('Trajectory frame')
+   ax.set_ylabel('Voxel-based cluster')
+   bar = fig.colorbar(image, ax=ax, ticks=[0, 1], pad=0.02)
+   bar.ax.set_yticklabels(['Absent', 'Present'])
+   fig.tight_layout()
+   fig.savefig('voxel_cluster_occurrence.png', dpi=300)
+
+.. figure:: images/voxel_cluster_occurrence.png
+   :scale: 55 %
+
+Presence of the three most persistent voxel-based channel clusters
+across 20 trajectory frames. Dark cells indicate that at least one
+channel belonging to the corresponding cluster was detected.
+
+The analysis illustrates three complementary properties of channel
+families: cluster size describes the number of detected channel instances,
+persistence measures their occurrence across frames, and consensus measures
+the robustness of cluster assignments under subsampling. Co-occurrence 
+analysis additionally shows whether different channel families are detected 
+in the same conformations.
