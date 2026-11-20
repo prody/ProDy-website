@@ -10,7 +10,8 @@ CaviTracer - detection of tunnels, channels and cavities within proteins
 
     You can also read this tutorial in `PDF format <cavitracer_tutorial.pdf>`_.
 
-    Tutorial files: `ZIP <cavitracer_tutorial_files.zip>`_ `TGZ <cavitracer_tutorial_files.tgz>`_
+    Tutorial files: `ZIP <nmwiz_cavitracer.zip>`_ `TGZ <nmwiz_cavitracer.tgz>`_
+    Plugin files: `ZIP <nmwiz_plugin.zip>`_
 
 .. add .rst files to `toctree` in the order that you want them
 
