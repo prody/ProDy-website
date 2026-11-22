@@ -815,7 +815,7 @@ previous analyses.
    ..
    ..
    @> The 2 sites marked sealed above report neither a channel nor a link: no route out of them survived - either narrower than bottleneck=1.20 Å, or dropped as a duplicate of a shallower site's, or the void is its own mouth and has nowhere to path to. Lower bottleneck to see how the first kind connect.
-   @> Saving 9 channels to /home/karolamik/Desktop/CaviTracer_Project_Analiza/signature__tests/na_stroneProDy/ensemble_out_channels/aligned/cavities/channel_1yqpA.pqr and 2 links to /home/karolamik/Desktop/CaviTracer_Project_Analiza/signature__tests/na_stroneProDy/ensemble_out_channels/aligned/cavities/channel_1yqpA_links.pqr.
+   @> Saving 9 channels to ./ensemble_out_channels/aligned/cavities/channel_1yqpA.pqr and 2 links to ./ensemble_out_channels/aligned/cavities/channel_1yqpA_links.pqr.
    @> Channel calculation completed in 3.15s.
    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
    @> channel 0: 	468.48 		7.74 		3.25
@@ -860,7 +860,7 @@ previous analyses.
    @>     sp12  [-30.423, -34.815, -6.164]   cavity 0, chamber 5/5           59        5.1         1      -
    @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
    @> The 2 sites marked sealed above report neither a channel nor a link: no route out of them survived - either narrower than bottleneck=1.20 Å, or dropped as a duplicate of a shallower site's, or the void is its own mouth and has nowhere to path to. Lower bottleneck to see how the first kind connect.
-   @> Saving 14 channels to /home/karolamik/Desktop/CaviTracer_Project_Analiza/signature__tests/na_stroneProDy/ensemble_out_channels/aligned/cavities/channel_8hkjB.pqr and 2 links to /home/karolamik/Desktop/CaviTracer_Project_Analiza/signature__tests/na_stroneProDy/ensemble_out_channels/aligned/cavities/channel_8hkjB_links.pqr.
+   @> Saving 14 channels to ./ensemble_out_channels/aligned/cavities/channel_8hkjB.pqr and 2 links to ./ensemble_out_channels/aligned/cavities/channel_8hkjB_links.pqr.
    @> Channel calculation completed in 3.21s.
    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
    @> channel 0: 	319.13 		5.32 		3.09
@@ -901,7 +901,7 @@ previous analyses.
    @>     sp8   [-26.263, -30.215, -17.778]  cavity 0, chamber 5/5           53        6.1         1      -
    @>     (site volumes measure the void itself and are not on the swept-sphere scale of the channel volumes)
    @> The 2 sites marked sealed above report neither a channel nor a link: no route out of them survived - either narrower than bottleneck=1.20 Å, or dropped as a duplicate of a shallower site's, or the void is its own mouth and has nowhere to path to. Lower bottleneck to see how the first kind connect.
-   @> Saving 9 channels to /home/karolamik/Desktop/CaviTracer_Project_Analiza/signature__tests/na_stroneProDy/ensemble_out_channels/aligned/cavities/channel_1jmeA.pqr and 2 links to /home/karolamik/Desktop/CaviTracer_Project_Analiza/signature__tests/na_stroneProDy/ensemble_out_channels/aligned/cavities/channel_1jmeA_links.pqr.
+   @> Saving 9 channels to ./ensemble_out_channels/aligned/cavities/channel_1jmeA.pqr and 2 links to ./ensemble_out_channels/aligned/cavities/channel_1jmeA_links.pqr.
    @> Channel calculation completed in 3.28s.
    @> Channel ID: 	Volume [Å³] 	Length [Å] 	Bottleneck [Å]
    @> channel 0: 	452.52 		6.96 		3.28
@@ -953,7 +953,7 @@ previous analyses.
    @> 820 atoms and 1 coordinate sets were parsed in 0.00s.
    @> 660 atoms and 1 coordinate sets were parsed in 0.00s.
    @> 755 atoms and 1 coordinate sets were parsed in 0.00s.
-   @> Overlap written to: /home/karolamik/Desktop/CaviTracer_Project_Analiza/signature__tests/na_stroneProDy/ensemble_out_channels/overlaps/channel_overlap.pdb
+   @> Overlap written to: ./ensemble_out_channels/overlaps/channel_overlap.pdb
    @> Number of occupied overlap voxels: 84647
    @> 84647 atoms and 1 coordinate set(s) were parsed in 0.81s.
    @> Signature channel written: signature_channel_pt20.pdb (10405 voxels, threshold=20%)
@@ -1195,6 +1195,415 @@ These residues describe the protein region near the *consensus voxels*.
 They should not be interpreted as residues lining every individual channel
 in the ensemble.
 
+
+III. Identification of signature surface cavities
+===============================================================================
+
+We can perform an analogous analysis of surface cavities using
+:func:`.calcSignatureCavities`. The same 20 structures and reference
+are used so that the resulting maps can be compared in the same
+coordinate frame. This function uses :func:`.calcSurfaceCavities`
+instead of :func:`.calcChannels`.
+
+.. ipython:: python
+   :verbatim:
+
+   result_cav = calcSignatureCavities(
+       structures=targets, ref_structure=ref_structure,
+       output_path='ensemble_out_cavities',
+       voxel_res=0.5, threshold=20, distA=4.5)
+
+   print('Signature PDB:', result_cav['signature_pdb'])
+   print('Occupancy map:', result_cav['ensemble_voxels'])
+   print('MSA:', result_cav['msa_fasta_path'])
+   print('Detected surface cavities:', len(result_cav['cavity_records']))
+
+.. parsed-literal::
+
+   @> 20 PDBs were parsed in 11.45s.
+   @> 3766 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> Trying to map atoms based on residue numbers and identities:
+   @>   Comparing Chain A from 1tqnA (len=468) with Chain A from 1tqnA:
+   @> 	Mapped: 468 residues match with 100% sequence identity and 100% overlap.
+   @> 1tqnA RMSD=0.000A coverage=100.0% identity=100.0%
+   @> Trying to map atoms based on residue numbers and identities:
+   @>   Comparing Chain A from 5ylwA (len=466) with Chain A from 1tqnA:
+   @> Trying to map atoms based on CEalign:
+   @>   Comparing Chain A from 5ylwA (len=466) with Chain A from 1tqnA:
+   @> 	Mapped: 440 residues match with 23% sequence identity and 94% overlap.
+   @> WARNING 5ylwA: superposition RMSD is 3.11 A (>2 Angstroms) -- alignment may be less reliable.
+   @> 5ylwA RMSD=3.112A coverage=94.0% identity=23.0%
+   @> Trying to map atoms based on residue numbers and identities:
+   @>   Comparing Chain A from 7cb9A (len=466) with Chain A from 1tqnA:
+   @> Trying to map atoms based on CEalign:
+   @>   Comparing Chain A from 7cb9A (len=466) with Chain A from 1tqnA:
+   @> 	Mapped: 440 residues match with 23% sequence identity and 94% overlap.
+   @> WARNING 7cb9A: superposition RMSD is 3.06 A (>2 Angstroms) -- alignment may be less reliable.
+   @> 7cb9A RMSD=3.063A coverage=94.0% identity=23.0%
+   @> Trying to map atoms based on residue numbers and identities:
+   @>   Comparing Chain A from 5ym3A (len=466) with Chain A from 1tqnA:
+   @> Trying to map atoms based on CEalign:
+   @>   Comparing Chain A from 5ym3A (len=466) with Chain A from 1tqnA:
+   @> 	Mapped: 440 residues match with 22% sequence identity and 94% overlap.
+   @> WARNING 5ym3A: superposition RMSD is 3.12 A (>2 Angstroms) -- alignment may be less reliable.
+   @> 5ym3A RMSD=3.120A coverage=94.0% identity=21.6%
+   @> Trying to map atoms based on residue numbers and identities:
+   @>   Comparing Chain A from 7x2qA (len=467) with Chain A from 1tqnA:
+   @> Trying to map atoms based on CEalign:
+   @>   Comparing Chain A from 7x2qA (len=467) with Chain A from 1tqnA:
+   @> 	Mapped: 440 residues match with 22% sequence identity and 94% overlap.
+   @> WARNING 7x2qA: superposition RMSD is 3.31 A (>2 Angstroms) -- alignment may be less reliable.
+   @> 7x2qA RMSD=3.305A coverage=94.0% identity=21.6%
+   @> Trying to map atoms based on residue numbers and identities:
+   @>   Comparing Chain B from 7x2qB (len=467) with Chain A from 1tqnA:
+   @> Trying to map atoms based on CEalign:
+   @>   Comparing Chain B from 7x2qB (len=467) with Chain A from 1tqnA:
+   @> 	Mapped: 440 residues match with 22% sequence identity and 94% overlap.
+   @> WARNING 7x2qB: superposition RMSD is 3.12 A (>2 Angstroms) -- alignment may be less reliable.
+   @> 7x2qB RMSD=3.115A coverage=94.0% identity=22.5%
+   @> Trying to map atoms based on residue numbers and identities:
+   @>   Comparing Chain A from 7ls4A (len=432) with Chain A from 1tqnA:
+   @> Trying to map atoms based on CEalign:
+   @>   Comparing Chain A from 7ls4A (len=432) with Chain A from 1tqnA:
+   @> 	Mapped: 360 residues match with 21% sequence identity and 77% overlap.
+   @> WARNING 7ls4A: superposition RMSD is 4.09 A (>2 Angstroms) -- alignment may be less reliable.
+   ..
+   ..
+   @> Cavities: 314 found, 26 deeper than min_depth=2.0 Å and kept, in 0.20s.
+   @> Returning surface cavities
+   @> Saving surface cavities to ./ensemble_out_cavities/aligned/cavities/cavity_1yqpA.pqr.
+   @> Surface cavity calculation completed in 1.48s.
+   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+   @> cavity 0: 	4127.28 		37.74 		778
+   @> cavity 1: 	949.58 		7.07 		171
+   @> cavity 2: 	884.51 		4.34 		210
+   @> cavity 3: 	339.66 		4.97 		74
+   @> cavity 4: 	279.61 		3.29 		88
+   @> cavity 5: 	263.39 		2.21 		62
+   @> cavity 6: 	256.57 		4.26 		58
+   @> cavity 7: 	223.07 		3.38 		52
+   @> cavity 8: 	211.86 		3.51 		58
+   @> cavity 9: 	205.41 		2.26 		33
+   @> cavity 10: 	171.74 		2.2 		36
+   @> cavity 11: 	163.22 		2.4 		42
+   @> cavity 12: 	143.55 		2.36 		60
+   @> cavity 13: 	142.65 		2.34 		50
+   @> cavity 14: 	116.03 		2.19 		19
+   @> cavity 15: 	114.91 		4.03 		22
+   @> cavity 16: 	114.14 		2.1 		31
+   @> cavity 17: 	112.99 		3.55 		35
+   @> cavity 18: 	112.63 		3.7 		35
+   @> cavity 19: 	91.52 		2.71 		55
+   @> cavity 20: 	91.48 		2.94 		17
+   @> cavity 21: 	86.35 		2.39 		49
+   @> cavity 22: 	72.48 		2.42 		33
+   @> cavity 23: 	63.43 		2.05 		43
+   @> 3473 atoms and 1 coordinate set(s) were parsed in 0.03s.
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> Substituted 3473 atoms with 21475 homogeneous balls of radius 1.52 Å in 0.16s.
+   @> Delaunay tessellation of 21475 points constructed in 0.68s.
+   @> Surface and inner simplices filtered in 0.28s.
+   @> Cavities: 353 found, 35 deeper than min_depth=2.0 Å and kept, in 0.21s.
+   @> Returning surface cavities
+   @> Saving surface cavities to ./ensemble_out_cavities/aligned/cavities/cavity_8hkjB.pqr.
+   @> Surface cavity calculation completed in 1.45s.
+   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+   @> cavity 0: 	3179.16 		41.12 		549
+   @> cavity 1: 	907.59 		4.55 		191
+   @> cavity 2: 	661.74 		5.25 		140
+   @> cavity 3: 	408.58 		4.3 		106
+   @> cavity 4: 	368.46 		2.62 		102
+   @> cavity 5: 	365.53 		3.42 		84
+   @> cavity 6: 	350.08 		4.97 		81
+   @> cavity 7: 	271.4 		2.85 		67
+   @> cavity 8: 	260.9 		3.36 		66
+   @> cavity 9: 	260.24 		2.55 		101
+   @> cavity 10: 	241.72 		3.47 		62
+   @> cavity 11: 	219.08 		3.06 		38
+   @> cavity 12: 	214.32 		3.32 		64
+   @> cavity 13: 	199.99 		2.32 		83
+   @> cavity 14: 	196.82 		3.91 		47
+   @> cavity 15: 	163.96 		2.55 		35
+   @> cavity 16: 	151.8 		2.24 		47
+   @> cavity 17: 	143.47 		2.75 		38
+   @> cavity 18: 	125.62 		2.55 		45
+   @> cavity 19: 	125.36 		2.8 		27
+   @> cavity 20: 	122.94 		3.48 		37
+   @> cavity 21: 	110.26 		2.32 		25
+   @> cavity 22: 	100.71 		2.8 		37
+   @> cavity 23: 	86.97 		2.85 		34
+   @> cavity 24: 	84.3 		2.19 		34
+   @> cavity 25: 	79.25 		3.22 		39
+   @> cavity 26: 	77.59 		2.28 		19
+   @> cavity 27: 	51.38 		2.17 		13
+   @> 3496 atoms and 1 coordinate set(s) were parsed in 0.03s.
+   @> The atoms supplied to calcChannels contain protein atoms only.
+   @> Substituted 3496 atoms with 21645 homogeneous balls of radius 1.52 Å in 0.16s.
+   @> Delaunay tessellation of 21645 points constructed in 0.71s.
+   @> Surface and inner simplices filtered in 0.27s.
+   @> Cavities: 322 found, 26 deeper than min_depth=2.0 Å and kept, in 0.20s.
+   @> Returning surface cavities
+   @> Saving surface cavities to ./ensemble_out_cavities/aligned/cavities/cavity_1jmeA.pqr.
+   @> Surface cavity calculation completed in 1.45s.
+   @> Cavity ID: 	Volume [Å³] 	Depth [Å] 	Tetrahedra count
+   @> cavity 0: 	4935.07 		26.7 		957
+   @> cavity 1: 	770.9 		4.44 		180
+   @> cavity 2: 	758.27 		4.5 		175
+   @> cavity 3: 	409.41 		4.73 		71
+   @> cavity 4: 	374.58 		4.23 		91
+   @> cavity 5: 	280.89 		3.93 		82
+   @> cavity 6: 	276.2 		2.22 		94
+   @> cavity 7: 	261.34 		2.64 		92
+   @> cavity 8: 	212.97 		3.11 		31
+   @> cavity 9: 	184.54 		3.48 		40
+   @> cavity 10: 	180.78 		2.69 		39
+   @> cavity 11: 	156.0 		2.38 		47
+   @> cavity 12: 	138.28 		3.8 		44
+   @> cavity 13: 	134.67 		3.01 		28
+   @> cavity 14: 	130.32 		2.0 		47
+   @> cavity 15: 	124.85 		2.57 		31
+   @> cavity 16: 	117.49 		3.18 		34
+   @> cavity 17: 	109.7 		2.07 		40
+   @> cavity 18: 	87.94 		3.3 		41
+   @> cavity 19: 	83.41 		2.08 		58
+   @> cavity 20: 	71.31 		2.03 		38
+   @> cavity 21: 	68.97 		3.39 		39
+   @> cavity 22: 	57.08 		2.16 		31
+   @> cavity 23: 	53.38 		2.15 		23
+   @> Number of PQR files: 20
+   @> Resolution: 0.5
+   @> max_proc: 2
+   @> Calculating overlaps using 2 processes.
+   @> 2111 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 2455 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 1947 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 2772 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 2902 atoms and 1 coordinate sets were parsed in 0.02s.
+   @> 2528 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 2245 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 1687 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 2252 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 2216 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 2290 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 2211 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 2340 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 2549 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 1725 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 2755 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 1845 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 2622 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 2353 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> 2185 atoms and 1 coordinate sets were parsed in 0.01s.
+   @> Overlap written to: ./ensemble_out_cavities/overlaps/cavity_overlap.pdb
+   @> Number of occupied overlap voxels: 219596
+   @> 219596 atoms and 1 coordinate set(s) were parsed in 4.53s.
+   @> Signature cavity written: signature_cavity_pt20.pdb (46784 voxels, threshold=20%)
+   @> Signature cavity: 302 reference residues within 4.5 A
+   @> 3766 atoms and 1 coordinate set(s) were parsed in 0.03s.
+   @> 3667 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3667 atoms and 1 coordinate set(s) were parsed in 0.03s.
+   @> 3667 atoms and 1 coordinate set(s) were parsed in 0.03s.
+   @> 3701 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3701 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3479 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3441 atoms and 1 coordinate set(s) were parsed in 0.03s.
+   @> 3392 atoms and 1 coordinate set(s) were parsed in 0.03s.
+   @> 3506 atoms and 1 coordinate set(s) were parsed in 0.03s.
+   @> 3447 atoms and 1 coordinate set(s) were parsed in 0.04s.
+   @> 3497 atoms and 1 coordinate set(s) were parsed in 0.03s.
+   @> 3332 atoms and 1 coordinate set(s) were parsed in 0.03s.
+   @> 3531 atoms and 1 coordinate set(s) were parsed in 0.03s.
+   @> 3322 atoms and 1 coordinate set(s) were parsed in 0.03s.
+   @> 3535 atoms and 1 coordinate set(s) were parsed in 0.03s.
+   @> 3508 atoms and 1 coordinate set(s) were parsed in 0.03s.
+   @> 3524 atoms and 1 coordinate set(s) were parsed in 0.03s.
+   @> 3473 atoms and 1 coordinate set(s) were parsed in 0.03s.
+   @> 3496 atoms and 1 coordinate set(s) were parsed in 0.03s.
+   @> Signature cavity residues written: signature_cavity_pt20_residues.txt
+   
+   Signature PDB: ./ensemble_out_cavities/signature_cavity_pt20.pdb
+   Occupancy map: ./ensemble_out_cavities/overlaps/cavity_overlap.pdb
+   MSA: ./ensemble_out_cavities/signature_cavity_msa.fasta
+   Detected surface cavities: 475
+
+In the analysis, 475 surface cavities were detected across 20 structures. 
+As with channels, this number is the total number of
+individual detections, not the number of conserved surface-cavity sites.
+
+The ``cavity_records`` table contains the volume, depth, number of
+tetrahedra and cavity-lining residues for each detected cavity.
+The results are also written to ``aligned_cavity_params.csv``.
+
+.. ipython:: python
+   :verbatim:
+
+   cavity_records = result_cav['cavity_records']
+   print(cavity_records[['pdb', 'cavity_id', 'volume_A3',
+                         'depth_A', 'tetrahedra_count']].head().to_string(index=False))
+
+.. parsed-literal::
+
+     pdb  cavity_id  volume_A3  depth_A  tetrahedra_count
+   1tqnA          0   3862.542   43.479               758
+   1tqnA          1   1525.569    8.293               385
+   1tqnA          2    939.186    7.781               195
+   1tqnA          3    794.077    8.007               184
+   1tqnA          4    495.278    4.563               125
+
+
+The surface cavities detected in individual proteins are saved in
+``aligned/cavities/cavity_<label>.pqr``. Their combined occupancy map is
+``overlaps/cavity_overlap.pdb``, and the final signature is stored in
+``signature_cavity_pt20.pdb``.
+
+.. ipython:: python
+   :verbatim:
+
+   counts_cav = cavity_records.groupby('pdb').size().reindex(targets, fill_value=0)
+
+   fig, ax = plt.subplots(figsize=(13, 5))
+   ax.bar(np.arange(len(targets)), counts_cav.values)
+   ax.set_xticks(np.arange(len(targets)))
+   ax.set_xticklabels(targets, rotation=60, ha='right')
+   ax.set_xlabel('PDB chain', fontsize=15)
+   ax.set_ylabel('Number of surface cavities', fontsize=15)
+   fig.tight_layout()
+   fig.savefig('signature_cavity_counts.png', dpi=300)
+   plt.show()
+
+.. figure:: images/signature_cavity_counts.png
+   :scale: 60 %
+
+   Number of surface cavities identified in each of the selected
+   cytochrome P450 chains.
+
+The occupancy values are calculated over the cavity PQR files. In this
+example, one cavity PQR is written for each of the 20 analyzed structures.
+Consequently, a threshold of 20% retains voxels detected in at least
+four of these structures. As with channels, the signature cavity may
+contain several disconnected spatial regions rather than one pocket.
+
+.. ipython:: python
+   :verbatim:
+
+   overlap_cav = parsePDB(result_cav['ensemble_voxels'])
+   occupancy_cav = overlap_cav.select('resname FIL').getOccupancies()
+
+   for threshold in (20, 40, 60, 80):
+       count = np.count_nonzero(occupancy_cav >= threshold / 100.0)
+       print('Threshold {}%: {} voxels'.format(threshold, count))
+
+   signature_residues_cav = result_cav.get('signature_cavity_residues', {})
+   print('Reference cavity residues:', signature_residues_cav.get('ref', 'None'))
+
+.. parsed-literal::
+
+   @> 219596 atoms and 1 coordinate set(s) were parsed in 4.80s.
+   Threshold 20%: 46784 voxels
+   Threshold 40%: 10225 voxels
+   Threshold 60%: 2224 voxels
+   Threshold 80%: 256 voxels
+   Reference cavity residues: H28, S29, H30, G31, L32, F33, K35, L36, G37, I38, 
+   P41, T42, F46, L47, G48, I50, L51, S52, Y53, H54, K55, G56, F57, C58, M59, 
+   M62, E63, H65, K66, Y68, G69, K70, V71, Y75, D76, G77, Q78, Q79, P80, T85, D86, 
+   P87, D88, L94, V95, K96, C98, Y99, S100, T103, N104, R105, R106, P107, F108, 
+   V111, G112, F113, M114, K115, S116, I118, S119, A121, E122, D123, E124, E125, 
+   K127, R128, L129, R130, S131, S134, F137, T138, S139, G140, K141, K143, E144, 
+   M145, P147, I148, Q151, D154, V155, R158, N159, R162, E163, A164, E165, T166, 
+   G167, K168, P169, V170, T171, K173, D174, V175, G177, A178, F189, G190, V191, 
+   N192, I193, D194, L196, N197, P199, P202, F203, N206, K208, K209, L210, L211, 
+   R212, F213, D214, F215, L216, D217, P218, F219, F220, L221, S222, I223, T224, 
+   V225, F226, P227, L233, L236, N237, I238, E244, F248, K251, S252, K254, R255, 
+   M256, E258, S259, R260, L261, E262, T264, Q265, K266, H267, R268, V269, D270, 
+   Q273, I276, D277, S278, Q279, N280, S281, S286, H287, K288, A289, L290, S291, 
+   D292, L293, E294, I301, F302, F304, A305, G306, E308, T309, T310, A322, T323, 
+   H324, P325, D326, V327, Q328, Q329, K330, Q332, E333, E334, D336, P340, N341, 
+   K342, A343, T346, Y347, D348, V350, L351, Q352, M353, E354, Y355, D357, M358, 
+   L366, I369, A370, M371, R372, L373, E374, V376, D380, V381, E382, F387, P389, 
+   G391, V392, V393, A400, L401, R403, D404, P405, K406, Y407, W408, T409, E410, 
+   P411, E412, K413, F414, L415, R418, F419, S420, K421, N423, K424, N426, I427, 
+   D428, P429, T433, P434, F435, G436, S437, G438, P439, R440, N441, C442, I443, 
+   G444, M445, R446, F447, A448, L449, M450, Q461, N462, F463, S464, F465, K466, 
+   P467, C468, K469, E470, T471, Q472, I473, P474, K476, L477, S478, L479, G480, 
+   G481, L482, E486, P488, V489, V490, K492, V493, E494, S495, R496, D497, G498
+
+
+Sequence conservation of signature regions
+-------------------------------------------------------------------------------
+
+Both signature functions also calculate Shannon entropy for the
+structurally aligned sequences. Low entropy indicates relatively conserved
+residues within the selected MSA, whereas higher entropy indicates greater
+sequence variability. Because no external FASTA file was supplied in this
+example, these values characterize the selected set of 20 P450 chains,
+not the entire cytochrome P450 family.
+
+The entropy values are returned in the ``entropy`` DataFrame and saved as
+``signature_channel_entropy.csv`` or ``signature_cavity_entropy.csv``.
+The tables contain the reference residue number, residue name and entropy.
+
+.. ipython:: python
+   :verbatim:
+
+   entropy_ch = result_ch['entropy']
+   print(entropy_ch.head().to_string(index=False))
+
+   fig, ax = plt.subplots(figsize=(12, 5))
+   ax.plot(entropy_ch['resnum'], entropy_ch['entropy'])
+   ax.set_xlabel('Residue number in 1tqnA', fontsize=15)
+   ax.set_ylabel('Shannon entropy', fontsize=15)
+   fig.tight_layout()
+   fig.savefig('signature_sequence_entropy.png', dpi=300)
+   plt.show()
+
+.. parsed-literal::
+
+    resnum resname  entropy
+        28     HIS     -0.0
+        29     SER     -0.0
+        30     HIS     -0.0
+        31     GLY     -0.0
+        32     LEU     -0.0
+
+.. figure:: images/signature_sequence_entropy.png
+   :scale: 60 %
+
+The reference structure stored in ``aligned/ref.pdb`` can also be colored
+by B-factor in VMD to visualize the entropy distribution. It is important
+to distinguish this from the FIL pseudoatoms in the signature PDB, whose
+B-factors represent occupancy percentages rather than sequence entropy.
+
+The combination of both measurements can be informative: occupancy
+identifies spatial regions repeatedly occupied by channels or cavities,
+whereas entropy describes the variability of neighboring residues. However,
+structural occupancy and sequence conservation measure different properties
+and need not follow the same pattern.
+
+
+Visualization and interpretation
+-------------------------------------------------------------------------------
+
+The thresholded signature PDB files can be opened directly in VMD. For
+example, after running the channel analysis:
+
+.. code-block:: console
+
+   $ vmd ensemble_out_channels/signature_channel_pt20.pdb
+
+The protein can be displayed as NewCartoon (atom selection ``protein``)
+and the signature voxels as VDW spheres (selection ``resname FIL``). For
+the FIL representation, selecting the ``Beta`` coloring method displays
+the spatial occupancy percentages. The displayed sphere size is a
+visualization setting; it is not the local radius of a CaviTracer channel.
+A separate VMD TCL script is provided with this tutorial to reproduce
+these representations and their colors.
+
+Because all structures were aligned to ``1tqnA``, the channel and cavity
+signature maps can be compared relative to the same reference protein.
+Regions with high occupancy suggest spatially recurring pathways or
+surface pockets within this set of P450s. Their functional relevance
+should be evaluated together with the protein's structure and, where
+available, biochemical or experimental evidence.
 
 
 .. _InSty tutorial: http://www.bahargroup.org/prody/tutorials/insty_tutorial/
