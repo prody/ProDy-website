@@ -1664,6 +1664,13 @@ from the directory containing ``ensemble_out_channels``:
 
    $ vmd -e vis_signature_channels.tcl
 
+
+Below, we display the outcome of the prediction.
+
+.. figure:: images/signature_channels.jpg
+   :scale: 50 %
+
+
 Similarly, signature surface cavities can be displayed using:
 
 .. code-block:: console
