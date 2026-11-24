@@ -1601,9 +1601,53 @@ these representations and their colors.
 Because all structures were aligned to ``1tqnA``, the channel and cavity
 signature maps can be compared relative to the same reference protein.
 Regions with high occupancy suggest spatially recurring pathways or
-surface pockets within this set of P450s. Their functional relevance
-should be evaluated together with the protein's structure and, where
-available, biochemical or experimental evidence.
+surface pockets within this set of P450s.
+
+For more detailed visualization, two VMD TCL scripts are provided:
+:download:`vis_signature_channels.tcl <vis_signature_channels.tcl>` and
+:download:`vis_signature_cavities.tcl <vis_signature_cavities.tcl>`.
+These scripts automatically load the corresponding signature PDB files
+and apply predefined representations and coloring settings.
+
+Both scripts display the reference protein in the NewCartoon
+representation, colored according to sequence conservation calculated
+from Shannon entropy. The conservation values are read from
+``signature_channel_entropy.csv`` or ``signature_cavity_entropy.csv``,
+respectively. The blue-white-red (BWR) color scale is used, with red
+indicating the most conserved residues (lowest Shannon entropy) and blue
+the most variable residues (highest Shannon entropy). Residues without
+available conservation data are displayed in gray.
+
+Signature channels and surface cavities are displayed as transparent
+QuickSurf representations. Their colors correspond to the occupancy
+percentages stored in the B-factor column of the signature PDB files.
+The same BWR color scale is applied, with red indicating regions with
+the highest occupancy and blue those with the lowest occupancy.
+The occupancy and sequence conservation color scales are normalized
+independently.
+
+To visualize signature channels, download the TCL script and run it
+from the directory containing ``ensemble_out_channels``:
+
+.. code-block:: console
+
+   $ vmd -e vis_signature_channels.tcl
+
+Similarly, signature surface cavities can be displayed using:
+
+.. code-block:: console
+
+   $ vmd -e vis_signature_cavities.tcl
+
+In this case, the directory should contain ``ensemble_out_cavities``.
+
+These visualizations allow us to examine the spatial distribution of
+frequently observed channels and surface cavities and compare their
+locations with conserved and variable regions of the reference protein.
+Combining structural occupancy with sequence conservation can help
+identify regions that are conserved at both the structural and sequence
+levels, as well as regions where similar pathways or pockets are
+maintained despite sequence variability.
 
 
 Using an external MSA
