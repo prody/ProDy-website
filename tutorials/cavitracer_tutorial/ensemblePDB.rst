@@ -1580,8 +1580,39 @@ structural occupancy and sequence conservation measure different properties
 and need not follow the same pattern.
 
 
-Visualization and interpretation
+Using an external MSA
 -------------------------------------------------------------------------------
+
+The optional ``msa_fasta`` argument allows the user to supply a previously
+prepared multiple sequence alignment. For example, an MSA obtained from
+Pfam may be more appropriate when the goal is to examine conservation
+within a larger protein family. The ``msa_ref_label`` argument can be
+used to specify the row corresponding to the reference sequence.
+
+.. ipython:: python
+   :verbatim:
+
+   result_msa = calcSignatureChannels(
+       structures=targets, ref_structure=ref_structure,
+       msa_fasta='P450_seed.fasta', msa_ref_label='REFERENCE_ROW',
+       output_path='ensemble_channels_external_msa')
+
+The name ``'REFERENCE_ROW'`` above is a placeholder and must be replaced
+by a label that actually occurs in the supplied FASTA MSA. The reference
+sequence must be represented or reliably aligned to a row in the MSA.
+An unrelated sequence or incorrect reference-row selection can lead to
+incorrect residue mapping.
+
+The output directories also contain
+``signature_channel_run_summary.json`` and
+``signature_cavity_run_summary.json``. These files record the input
+structures, parameters, MSA source and the alignment and detection status
+of each analyzed structure. They can be used to document and check the
+reproducibility of an analysis.
+
+
+Visualization and interpretation
+===============================================================================
 
 The thresholded signature PDB files can be opened directly in VMD. For
 example, after running the channel analysis:
@@ -1648,37 +1679,6 @@ Combining structural occupancy with sequence conservation can help
 identify regions that are conserved at both the structural and sequence
 levels, as well as regions where similar pathways or pockets are
 maintained despite sequence variability.
-
-
-Using an external MSA
--------------------------------------------------------------------------------
-
-The optional ``msa_fasta`` argument allows the user to supply a previously
-prepared multiple sequence alignment. For example, an MSA obtained from
-Pfam may be more appropriate when the goal is to examine conservation
-within a larger protein family. The ``msa_ref_label`` argument can be
-used to specify the row corresponding to the reference sequence.
-
-.. ipython:: python
-   :verbatim:
-
-   result_msa = calcSignatureChannels(
-       structures=targets, ref_structure=ref_structure,
-       msa_fasta='P450_seed.fasta', msa_ref_label='REFERENCE_ROW',
-       output_path='ensemble_channels_external_msa')
-
-The name ``'REFERENCE_ROW'`` above is a placeholder and must be replaced
-by a label that actually occurs in the supplied FASTA MSA. The reference
-sequence must be represented or reliably aligned to a row in the MSA.
-An unrelated sequence or incorrect reference-row selection can lead to
-incorrect residue mapping.
-
-The output directories also contain
-``signature_channel_run_summary.json`` and
-``signature_cavity_run_summary.json``. These files record the input
-structures, parameters, MSA source and the alignment and detection status
-of each analyzed structure. They can be used to document and check the
-reproducibility of an analysis.
 
 
 .. _InSty tutorial: http://www.bahargroup.org/prody/tutorials/insty_tutorial/
