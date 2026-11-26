@@ -793,6 +793,9 @@ Both visualization modes use the same clustering assignments. The
 channels assigned to the same cluster, whereas the ``frames`` view allows
 their distribution across individual conformations to be inspected.
 
+.. figure:: images/VMD_clusters.jpg
+   :scale: 50 %
+
 
 VII. Assessing clustering stability
 ===============================================================================
