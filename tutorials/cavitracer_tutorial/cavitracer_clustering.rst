@@ -634,8 +634,11 @@ to the most populated voxel-based clusters in each of the 20 frames.
    across the 20 analyzed trajectory frames.
 
 
-VI. Saving cluster assignments and visualizing them in PyMOL
+VI. Saving cluster assignments and visualizing them in PyMOL and VMD
 ===============================================================================
+
+Visualization in PyMOL
+-------------------------------------------------------------------------------
 
 The :func:`.writeClusterLabels` function saves clustering assignments in a
 text file. Importantly, the rows must retain the same order as the channel
@@ -715,6 +718,80 @@ The PQR files, TSV tables, PyMOL sessions, and distance plots provide
 complementary representations of the same analysis. In particular, the
 cluster assignments allow the same channel family to be followed across
 frames even when its local channel index changes.
+
+
+Visualization in VMD
+-------------------------------------------------------------------------------
+
+The clustering results can also be visualized in VMD using
+:func:`.writeVmdClusterScript`. Unlike the standard multi-frame visualization,
+which displays channels from one trajectory frame at a time, this function
+allows channels from different frames to be displayed simultaneously and
+colored according to their cluster assignments.
+
+First, we combine the PQR files generated for individual trajectory frames
+into a single multi-model PQR file using :func:`.mergeFramesPQR`:
+
+.. ipython:: python
+   :verbatim:
+
+   mergeFramesPQR(str(output / 'channels'),
+                  str(output / 'channels_frames.pqr'),
+                  prefix='channels', frames=range(len(channels)))
+
+Next, we generate a VMD script for the voxel-overlap clustering results.
+For clarity, we select three clusters containing relatively large numbers
+of channel instances: clusters 21, 14, and 25.
+
+.. ipython:: python
+   :verbatim:
+
+   _, _, tcl_file = writeVmdClusterScript(
+       str(output / 'channels_frames.pqr'), protein, labels_voxel,
+       output_path=str(output / 'vmd_voxel'),
+       selected_clusters=[21, 14, 25],
+       representation='Licorice', view='overlay')
+
+The ``view='overlay'`` option displays all channels belonging to the selected
+clusters simultaneously, regardless of the trajectory frame in which they
+were detected. Channels assigned to the same cluster receive the same color,
+allowing their spatial distribution and geometric variability to be examined.
+
+In this example, cluster 21 contains 46 channel instances, cluster 14
+contains 25, and cluster 25 contains 13. They are displayed in blue, red,
+and green, respectively, while the protein is shown as a silver cartoon.
+The colors are assigned according to the order specified in
+``selected_clusters``.
+
+The generated visualization can be opened in VMD from the Bash terminal:
+
+.. code-block:: console
+
+   $ cd caseStudy2_analysis/vmd_voxel
+   $ vmd -e vis_channels_frames.tcl
+
+The ``Licorice`` representation displays channel centerlines as thin
+cylinders, making it easier to distinguish overlapping pathways. Other
+representations, including ``Lines``, ``VDW``, ``CPK``, and ``QuickSurf``,
+are also available. For example, to display the same clusters as lines:
+
+.. ipython:: python
+   :verbatim:
+
+   _, _, tcl_file = writeVmdClusterScript(str(output / 'channels_frames.pqr'), 
+		protein, labels_voxel, output_path=str(output / 'vmd_voxel_lines'),
+       		selected_clusters=[21, 14, 25],
+       		representation='Lines', view='overlay')
+
+Alternatively, setting ``view='frames'`` displays channels from one
+trajectory frame at a time while preserving their cluster colors across
+frames. This representation can be useful for examining how the occurrence
+of particular channel families changes between conformations.
+
+Both visualization modes use the same clustering assignments. The
+``overlay`` view is particularly useful for comparing the geometries of
+channels assigned to the same cluster, whereas the ``frames`` view allows
+their distribution across individual conformations to be inspected.
 
 
 VII. Assessing clustering stability
