@@ -690,7 +690,9 @@ Preparing the protein ensemble
 
 Each structure is specified by a four-character PDB identifier followed
 by its chain identifier, for example ``'1tqnA'``. We choose ``1tqnA`` as
-the reference onto which the remaining structures will be aligned.
+the reference onto which the remaining structures will be aligned. In the
+event ``ref_structure`` is not provided, the first structure in the list of 
+``targets`` will be automatically selected as the ``ref_structure``.
 
 .. ipython:: python
    :verbatim:
@@ -717,7 +719,7 @@ The function downloads any missing structures using :func:`.parsePDB`
 and subsequently uses CE-align to superpose each chain onto the reference.
 
 The list can also be prepared from a search for homologues, for example
-using DALI, BLAST or Foldsick followed by inspection of the corresponding PDB 
+using DALI, BLAST or Foldseek followed by inspection of the corresponding PDB 
 chains. Because search results and available structures may change over time, 
 we use the fixed list above for the calculations below.
 
@@ -730,8 +732,8 @@ in each aligned structure and determines which spatial regions are
 recurrently occupied by channels across the ensemble. In the example
 below, ``voxel_res=0.5`` defines the spatial resolution of the occupancy
 map in Å. The ``threshold=20`` parameter retains voxels whose occupancy
-is at least 20%. The ``distA=4.5`` parameter controls which reference
-residues are reported near the signature voxels.
+is present in at least 20% of the structures. The ``distA=4.5`` parameter 
+controls which reference residues are reported near the signature voxels.
 
 We do not supply ``msa_fasta``. In this case, ProDy builds an MSA from the
 structurally aligned proteins and uses it to calculate Shannon entropy.
@@ -1191,15 +1193,16 @@ other entries contain the corresponding mapped residues in each protein.
    Residue summary file: signature_channel_pt20_residues.txt
 
 
-These residues describe the protein region near the *consensus voxels*.
-They should not be interpreted as residues lining every individual channel
-in the ensemble.
+These residues describe the protein region near the *consensus voxels*. Note that,
+(1) they should not be interpreted as residues lining every individual channel
+in the ensemble; (2) these residue names and numbering can differ in each homologue.
+Thus, upon inspection of these sites, the aligned structures from the ``aligned/cavities/`` directory can be utilized to visualize and distinguish their role in the signature regions. 
 
 
 III. Identification of signature surface cavities
 ===============================================================================
 
-We can perform an analogous analysis of surface cavities using
+Similarly, we can perform analysis of surface cavities using
 :func:`.calcSignatureCavities`. The same 20 structures and reference
 are used so that the resulting maps can be compared in the same
 coordinate frame. This function uses :func:`.calcSurfaceCavities`
@@ -1584,7 +1587,7 @@ Using an external MSA
 -------------------------------------------------------------------------------
 
 The optional ``msa_fasta`` argument allows the user to supply a previously
-prepared multiple sequence alignment. For example, an MSA obtained from
+prepared multiple sequence alignment (MSA). For example, an MSA obtained from
 Pfam may be more appropriate when the goal is to examine conservation
 within a larger protein family. The ``msa_ref_label`` argument can be
 used to specify the row corresponding to the reference sequence.
@@ -1679,13 +1682,14 @@ Similarly, signature surface cavities can be displayed using:
 
 In this case, the directory should contain ``ensemble_out_cavities``.
 
-These visualizations allow us to examine the spatial distribution of
-frequently observed channels and surface cavities and compare their
-locations with conserved and variable regions of the reference protein.
-Combining structural occupancy with sequence conservation can help
-identify regions that are conserved at both the structural and sequence
-levels, as well as regions where similar pathways or pockets are
-maintained despite sequence variability.
+These visualizations allow us to examine the distribution of
+frequently observed spaces (channels and cavities) and compare their
+locations with respect to the evolutionarily conserved and variable 
+amino acids in the reference protein. Such approach, on one hand, enable better understanding 
+of the geometry (conserved shape) and chemistry (conserved amino acids) of the intramolecular 
+space essential for function. On the other hand, we can also derive insights into how cavities 
+and channels are maintained despite sequence variations and capable to recognize specific ligands. 
+
 
 
 .. _InSty tutorial: http://www.bahargroup.org/prody/tutorials/insty_tutorial/
